@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpi6g3dw4wg50"]
+
+[ext_resource type="Script" uid="uid://cehlrxrndrv8w" path="res://Scenes/Objects/2D/Tutato/Comps/Explain/Scripts/Explain_Base.gd" id="1_lfevj"]
+[ext_resource type="Theme" uid="uid://budcfl16xj2tt" path="res://Global_Resources/Themes/Default/Default.tres" id="2_xrn00"]
+
+[node name="Explain_Base" type="CanvasLayer" groups=["Comp"]]
+layer = 20
+script = ExtResource("1_lfevj")
+
+[node name="Control" type="Control" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_xrn00")
+
+[node name="Background" type="ColorRect" parent="Control"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.196078)
+
+[node name="Parts" type="Control" parent="Control"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

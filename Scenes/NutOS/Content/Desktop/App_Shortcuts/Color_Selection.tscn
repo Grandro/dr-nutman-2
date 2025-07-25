@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cn805irbxe1fy"]
+
+[ext_resource type="PackedScene" uid="uid://bcc063ppvohhg" path="res://Scenes/NutOS/Content/Desktop/App_Shortcuts/App_Shortcut.tscn" id="1"]
+
+[node name="Color_Selection" instance=ExtResource("1")]
+_e_app_path = "res://Scenes/NutOS/Content/Desktop/Apps/Color_Selection.tscn"

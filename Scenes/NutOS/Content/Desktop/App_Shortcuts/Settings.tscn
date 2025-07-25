@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cw1oepvwa2n71"]
+
+[ext_resource type="PackedScene" uid="uid://bcc063ppvohhg" path="res://Scenes/NutOS/Content/Desktop/App_Shortcuts/App_Shortcut.tscn" id="1"]
+[ext_resource type="Texture2D" uid="uid://dfo3cl3py3eim" path="res://Scenes/NutOS/Content/Desktop/Apps/Sprites/Installed/Settings.png" id="2"]
+
+[node name="Settings" instance=ExtResource("1")]
+_e_app_path = "res://Scenes/NutOS/Content/Desktop/Apps/Settings/Settings.tscn"
+
+[node name="Icon" parent="VBox" index="0"]
+texture = ExtResource("2")
+
+[node name="Text" parent="VBox" index="1"]
+text = "NUTOS_APP_SETTINGS"

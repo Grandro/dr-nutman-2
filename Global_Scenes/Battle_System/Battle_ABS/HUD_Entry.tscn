@@ -1,0 +1,99 @@
+[gd_scene load_steps=8 format=3 uid="uid://diclq3qqk6hfo"]
+
+[ext_resource type="Script" uid="uid://bv0vy58ciobtd" path="res://Global_Scenes/Battle_System/Battle_ABS/Scripts/HUD_Entry.gd" id="1"]
+[ext_resource type="Theme" uid="uid://budcfl16xj2tt" path="res://Global_Resources/Themes/Default/Default.tres" id="1_okgpe"]
+[ext_resource type="Texture2D" uid="uid://duorbue31tuf" path="res://Global_Scenes/Battle_System/Battle_ABS/Sprites/Bust_Circle.png" id="2"]
+[ext_resource type="StyleBox" path="res://Global_Scenes/Battle_System/Battle_ABS/Tres/HP_FG.tres" id="4_c6ss5"]
+[ext_resource type="FontFile" uid="uid://bc3cxhu6w0ljt" path="res://Global_Resources/Fonts/ProFont.ttf" id="5_wff4s"]
+[ext_resource type="StyleBox" path="res://Global_Scenes/Battle_System/Battle_ABS/Tres/SP_FG.tres" id="6_wpxb2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_t68wm"]
+font = ExtResource("5_wff4s")
+font_size = 80
+
+[node name="HUD_Entry" type="HBoxContainer"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(270, 120)
+offset_right = 270.0
+offset_bottom = 120.0
+theme = ExtResource("1_okgpe")
+theme_override_constants/separation = 20
+script = ExtResource("1")
+
+[node name="Center" type="CenterContainer" parent="."]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(104, 104)
+layout_mode = 2
+
+[node name="Bust" type="TextureRect" parent="Center"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(98, 98)
+layout_mode = 2
+
+[node name="Circle" type="TextureRect" parent="Center"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+texture = ExtResource("2")
+stretch_mode = 5
+
+[node name="Bars" type="VBoxContainer" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="HP" type="ProgressBar" parent="Bars"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_styles/fill = ExtResource("4_c6ss5")
+show_percentage = false
+
+[node name="Text" type="Label" parent="Bars/HP"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 584.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.2, 0.2)
+label_settings = SubResource("LabelSettings_t68wm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SP" type="ProgressBar" parent="Bars"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_styles/fill = ExtResource("6_wpxb2")
+show_percentage = false
+
+[node name="Text" type="Label" parent="Bars/SP"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 584.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.2, 0.2)
+label_settings = SubResource("LabelSettings_t68wm")
+horizontal_alignment = 1
+vertical_alignment = 1

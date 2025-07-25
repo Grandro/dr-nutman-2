@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://b88lld3lc8b2y"]
+
+[ext_resource type="Texture2D" uid="uid://dteo2ddfuqqta" path="res://Global_Resources/Sprites/Mini_Busts/Buffin_Base/Default.png" id="1"]
+[ext_resource type="PackedScene" uid="uid://cahxe34atpwlg" path="res://Global_Scenes/Main_Menu/Sub_Menus/Journal/File_Entry/Mini_Busts/Base.tscn" id="2"]
+
+[node name="Buffin_Assistant_1" instance=ExtResource("2")]
+texture = ExtResource("1")

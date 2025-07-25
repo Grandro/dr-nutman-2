@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3 uid="uid://7sgyjiuqw0jo"]
+
+[ext_resource type="PackedScene" uid="uid://cd4spbjjxip61" path="res://Global_Scenes/Battle_System/Battle_SV/Party_Members/Comps/Shield_Bar/Shield_Bars/Shield_Bar_Base.tscn" id="1_1xcuo"]
+[ext_resource type="Script" uid="uid://dqyxbf708e3gw" path="res://Global_Scenes/Battle_System/Battle_SV/Party_Members/Comps/Shield_Bar/Shield_Bars/Citrin_Shield/Scripts/Citrin_Shield.gd" id="2_bff0q"]
+[ext_resource type="PackedScene" uid="uid://8oii3sr56byc" path="res://Global_Scenes/Battle_System/Battle_SV/Party_Members/Comps/Shield_Bar/Shield_Bars/Citrin_Shield/Citrin_Shield_UI.tscn" id="2_jsv6q"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_eu0wt"]
+viewport_path = NodePath("VP")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_duksx"]
+resource_local_to_scene = true
+transparency = 1
+shading_mode = 0
+albedo_texture = SubResource("ViewportTexture_eu0wt")
+texture_filter = 0
+billboard_mode = 1
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_3uc2o"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_duksx")
+size = Vector2(3, 2)
+orientation = 2
+
+[node name="Citrin_Shield" instance=ExtResource("1_1xcuo")]
+script = ExtResource("2_bff0q")
+
+[node name="Plane" parent="." index="0"]
+layers = 4
+mesh = SubResource("PlaneMesh_3uc2o")
+
+[node name="VP" parent="." index="1"]
+canvas_cull_mask = 4293918728
+
+[node name="Citrin_Shield" parent="VP" index="0" instance=ExtResource("2_jsv6q")]
+light_mask = 8
+visibility_layer = 8

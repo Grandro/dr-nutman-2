@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ContextMenuOptionEntryData" load_steps=4 format=3 uid="uid://j15ay0mpeta5"]
+
+[ext_resource type="Script" uid="uid://v0jwe56fkhao" path="res://Scenes/Context_Menu/Option_Entry_Data.gd" id="1_1cqq2"]
+[ext_resource type="Resource" uid="uid://bcweorhp3wmn1" path="res://Scenes/NutOS/Content/Start_Menu/Power_Options/Shutdown.tres" id="1_wnme8"]
+[ext_resource type="Resource" uid="uid://bnkdpyvoghvco" path="res://Scenes/NutOS/Content/Start_Menu/Power_Options/Leave.tres" id="2_ijbuy"]
+
+[resource]
+script = ExtResource("1_1cqq2")
+_e_hsep = false
+_e_show_left = true
+_e_show_right = false
+_e_visible = true
+_e_disabled = false
+_e_options = {
+"Leave": ExtResource("2_ijbuy"),
+"Shutdown": ExtResource("1_wnme8")
+}
+_e_options_order = Array[String](["Shutdown", "Leave"])

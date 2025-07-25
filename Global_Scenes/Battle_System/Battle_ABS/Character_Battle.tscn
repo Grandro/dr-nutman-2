@@ -1,0 +1,36 @@
+[gd_scene load_steps=2 format=3 uid="uid://fhm322qbafxa"]
+
+[ext_resource type="Script" uid="uid://bkakhy85y3rgw" path="res://Global_Scenes/Battle_System/Battle_ABS/Scripts/Character_Battle.gd" id="1"]
+
+[node name="Character_Battle" type="CharacterBody3D"]
+collision_layer = 8
+collision_mask = 8
+script = ExtResource("1")
+
+[node name="Sprite" type="Sprite3D" parent="."]
+layers = 4
+
+[node name="Collision" type="CollisionShape3D" parent="."]
+
+[node name="Hitbox" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 0
+monitorable = false
+
+[node name="Collision" type="CollisionShape3D" parent="Hitbox"]
+
+[node name="Hurtbox" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 0
+
+[node name="Collision" type="CollisionShape3D" parent="Hurtbox"]
+
+[node name="Anims" type="AnimationPlayer" parent="."]
+
+[node name="Idle_CD" type="Timer" parent="."]
+
+[node name="SP_Regen" type="Timer" parent="."]
+
+[node name="Lock_CD" type="Timer" parent="."]
+
+[node name="Knockbacks" type="Node" parent="."]

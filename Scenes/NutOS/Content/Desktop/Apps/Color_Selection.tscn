@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://ddtk6xcbdnhwm"]
+
+[ext_resource type="PackedScene" uid="uid://dmh0h801kn6ye" path="res://Scenes/NutOS/Content/Desktop/Apps/App.tscn" id="1_ewqee"]
+[ext_resource type="Script" uid="uid://c1es2rfyujf26" path="res://Scenes/NutOS/Content/Desktop/Apps/Scripts/Color_Selection.gd" id="2"]
+[ext_resource type="PackedScene" uid="uid://c218f8s0a4f2i" path="res://Scenes/Mini_Games/Color_Selection/Color_Selection.tscn" id="3_h5fu0"]
+
+[node name="Color_Selection" instance=ExtResource("1_ewqee")]
+title = "Hallo"
+position = Vector2i(143, 29)
+script = ExtResource("2")
+
+[node name="Color_Selection" parent="." index="0" instance=ExtResource("3_h5fu0")]
+_e_in_nutOS = true

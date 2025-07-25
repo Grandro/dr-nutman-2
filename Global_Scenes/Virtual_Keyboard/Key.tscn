@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://ctrt4xul7i2hc"]
+[gd_scene load_steps=7 format=3 uid="uid://ctrt4xul7i2hc"]
 
 [ext_resource type="Script" uid="uid://cmyhoycvg777s" path="res://Global_Scenes/Virtual_Keyboard/Scripts/Key.gd" id="1"]
+[ext_resource type="Theme" uid="uid://budcfl16xj2tt" path="res://Global_Resources/Themes/Default/Default.tres" id="1_0tl1h"]
 [ext_resource type="Texture2D" uid="uid://dtibx7edryw0s" path="res://Global_Resources/Sprites/Keys/27.png" id="2_eoyt4"]
 
 [sub_resource type="Animation" id="1"]
@@ -48,11 +49,12 @@ custom_minimum_size = Vector2(67.5, 67.5)
 offset_right = 67.5
 offset_bottom = 67.5
 pivot_offset = Vector2(33.75, 33.75)
+theme = ExtResource("1_0tl1h")
 texture_normal = ExtResource("2_eoyt4")
 stretch_mode = 5
 script = ExtResource("1")
 
 [node name="Anims" type="AnimationPlayer" parent="."]
 libraries = {
-&"": SubResource("AnimationLibrary_123lf")
+"": SubResource("AnimationLibrary_123lf")
 }

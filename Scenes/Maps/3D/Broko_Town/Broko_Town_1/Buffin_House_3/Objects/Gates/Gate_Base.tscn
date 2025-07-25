@@ -1,0 +1,27 @@
+[gd_scene load_steps=8 format=3 uid="uid://bpvtcsv82dm3l"]
+
+[ext_resource type="Script" uid="uid://u2h51f0r2vch" path="res://Scenes/Object/Scripts/Static3D_Object.gd" id="1_ahd3y"]
+[ext_resource type="PackedScene" uid="uid://bblmb8yfchyxr" path="res://Scenes/Object/Comps/3D/Display.tscn" id="2_xwodq"]
+[ext_resource type="PackedScene" uid="uid://dsp0njc065uev" path="res://Scenes/Object/Comps/3D/Collision_Shape.tscn" id="3_qp7oj"]
+[ext_resource type="PackedScene" uid="uid://cfdwl620axohy" path="res://Scenes/Object/Comps/3D/Audio.tscn" id="4_dktm6"]
+[ext_resource type="PackedScene" uid="uid://b1q143fixhaj5" path="res://Scenes/Object/Comps/Anims.tscn" id="5_g3yj5"]
+[ext_resource type="PackedScene" uid="uid://boh1rwcj5rgwf" path="res://Scenes/Object/Comps/States.tscn" id="5_qp7oj"]
+[ext_resource type="PackedScene" uid="uid://de2jy2ixhp2mw" path="res://Scenes/Object/Comps/Save.tscn" id="6_dktm6"]
+
+[node name="Gate_Base" type="StaticBody3D" groups=["Object"]]
+script = ExtResource("1_ahd3y")
+metadata/_custom_type_script = "uid://u2h51f0r2vch"
+
+[node name="Display" parent="." instance=ExtResource("2_xwodq")]
+
+[node name="Collision" parent="." instance=ExtResource("3_qp7oj")]
+
+[node name="Audio" parent="." instance=ExtResource("4_dktm6")]
+
+[node name="States" parent="." instance=ExtResource("5_qp7oj")]
+_e_states = Array[String](["Open", "Opened", "Close", "Closed"])
+_e_state = "Closed"
+
+[node name="Save" parent="." instance=ExtResource("6_dktm6")]
+
+[node name="Anims" parent="." instance=ExtResource("5_g3yj5")]

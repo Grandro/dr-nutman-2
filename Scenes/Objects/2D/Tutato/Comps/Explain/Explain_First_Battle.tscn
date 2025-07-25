@@ -1,0 +1,462 @@
+[gd_scene load_steps=15 format=3 uid="uid://nejpwwkbci35"]
+
+[ext_resource type="PackedScene" uid="uid://dpi6g3dw4wg50" path="res://Scenes/Objects/2D/Tutato/Comps/Explain/Explain_Base.tscn" id="1_6u6ay"]
+[ext_resource type="Script" uid="uid://dvncvaoq8rigp" path="res://Scenes/Objects/2D/Tutato/Comps/Explain/Scripts/Explain_First_Battle.gd" id="2_u8hk1"]
+[ext_resource type="Texture2D" uid="uid://boxmgf0temvst" path="res://Global_Resources/Sprites/Icons/Stats/HP.png" id="3_c1onk"]
+[ext_resource type="Texture2D" uid="uid://b1ftk52xqfipp" path="res://Global_Resources/Sprites/Icons/Stats/SP.png" id="4_eskc1"]
+[ext_resource type="Texture2D" uid="uid://blc7mjle1y1k3" path="res://Global_Resources/Sprites/Icons/Stats/ATK.png" id="5_8g154"]
+[ext_resource type="Texture2D" uid="uid://37jujt11p6hh" path="res://Global_Resources/Sprites/Icons/Stats/MAG.png" id="6_jk0wb"]
+[ext_resource type="Texture2D" uid="uid://boiiegmkhe7sx" path="res://Global_Resources/Sprites/Icons/Stats/DEF.png" id="7_ciuf6"]
+[ext_resource type="Texture2D" uid="uid://cojxa2j3i2dwf" path="res://Global_Resources/Sprites/Icons/Stats/SPEED.png" id="8_mwqig"]
+[ext_resource type="Texture2D" uid="uid://dsgj1n6d3wir2" path="res://Global_Resources/Sprites/Icons/Stats/LUCK.png" id="9_1rvwr"]
+[ext_resource type="Texture2D" uid="uid://cy3my7nssxl8m" path="res://Global_Scenes/Battle_System/Battle_SV/Encounters/Command_Circle/Sprites/Commands/Attack_ATK.png" id="10_1rvwr"]
+[ext_resource type="Texture2D" uid="uid://dpwrrsknsw8fm" path="res://Global_Scenes/Battle_System/Battle_SV/Encounters/Command_Circle/Sprites/Commands/Defense_DEF.png" id="11_sck1w"]
+[ext_resource type="Texture2D" uid="uid://5aoswujhwbye" path="res://Global_Scenes/Battle_System/Battle_SV/Encounters/Command_Circle/Sprites/Commands/Special.png" id="12_qtwl8"]
+[ext_resource type="Texture2D" uid="uid://e0foefmbc388" path="res://Global_Scenes/Battle_System/Battle_SV/Encounters/Command_Circle/Sprites/Commands/Flee.png" id="13_j5k3d"]
+[ext_resource type="Texture2D" uid="uid://bjrwc227u4yhn" path="res://Global_Scenes/Battle_System/Battle_SV/Encounters/Command_Circle/Sprites/Commands/Help.png" id="14_wqwju"]
+
+[node name="Explain_First_Battle" instance=ExtResource("1_6u6ay")]
+script = ExtResource("2_u8hk1")
+
+[node name="Background" parent="Control" index="0"]
+color = Color(1, 1, 1, 1)
+
+[node name="Stats_Overview" type="HFlowContainer" parent="Control/Parts" index="0"]
+visible = false
+light_mask = 8
+visibility_layer = 8
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -488.0
+offset_top = -132.0
+offset_right = -200.0
+offset_bottom = 132.0
+grow_horizontal = 0
+grow_vertical = 2
+pivot_offset = Vector2(144, 132)
+theme_override_constants/h_separation = 24
+theme_override_constants/v_separation = 24
+alignment = 1
+
+[node name="HP" type="TextureRect" parent="Control/Parts/Stats_Overview" index="0"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 2
+texture = ExtResource("3_c1onk")
+stretch_mode = 5
+
+[node name="SP" type="TextureRect" parent="Control/Parts/Stats_Overview" index="1"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 2
+texture = ExtResource("4_eskc1")
+stretch_mode = 5
+
+[node name="ATK" type="TextureRect" parent="Control/Parts/Stats_Overview" index="2"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 2
+texture = ExtResource("5_8g154")
+stretch_mode = 5
+
+[node name="MAG" type="TextureRect" parent="Control/Parts/Stats_Overview" index="3"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 2
+texture = ExtResource("6_jk0wb")
+stretch_mode = 5
+
+[node name="DEF" type="TextureRect" parent="Control/Parts/Stats_Overview" index="4"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 2
+texture = ExtResource("7_ciuf6")
+stretch_mode = 5
+
+[node name="SPEED" type="TextureRect" parent="Control/Parts/Stats_Overview" index="5"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 2
+texture = ExtResource("8_mwqig")
+stretch_mode = 5
+
+[node name="LUCK" type="TextureRect" parent="Control/Parts/Stats_Overview" index="6"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 2
+texture = ExtResource("9_1rvwr")
+stretch_mode = 5
+
+[node name="Stats_Detail" type="VBoxContainer" parent="Control/Parts" index="1"]
+visible = false
+light_mask = 8
+visibility_layer = 8
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -508.0
+offset_top = -300.0
+offset_bottom = 300.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="HP" type="HBoxContainer" parent="Control/Parts/Stats_Detail" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="HBox" type="HBoxContainer" parent="Control/Parts/Stats_Detail/HP" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Image" type="TextureRect" parent="Control/Parts/Stats_Detail/HP/HBox" index="0"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 2
+texture = ExtResource("3_c1onk")
+stretch_mode = 5
+
+[node name="Desc" type="Label" parent="Control/Parts/Stats_Detail/HP/HBox" index="1"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(84, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 28
+text = "HP"
+
+[node name="Desc" type="Label" parent="Control/Parts/Stats_Detail/HP" index="1"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 28
+text = "STAT_HP"
+
+[node name="SP" type="HBoxContainer" parent="Control/Parts/Stats_Detail" index="1"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="HBox" type="HBoxContainer" parent="Control/Parts/Stats_Detail/SP" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Image" type="TextureRect" parent="Control/Parts/Stats_Detail/SP/HBox" index="0"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 2
+texture = ExtResource("4_eskc1")
+stretch_mode = 5
+
+[node name="Desc" type="Label" parent="Control/Parts/Stats_Detail/SP/HBox" index="1"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(84, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 28
+text = "SP"
+
+[node name="Desc" type="Label" parent="Control/Parts/Stats_Detail/SP" index="1"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 28
+text = "STAT_SP"
+
+[node name="ATK" type="HBoxContainer" parent="Control/Parts/Stats_Detail" index="2"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="HBox" type="HBoxContainer" parent="Control/Parts/Stats_Detail/ATK" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Image" type="TextureRect" parent="Control/Parts/Stats_Detail/ATK/HBox" index="0"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 2
+texture = ExtResource("5_8g154")
+stretch_mode = 5
+
+[node name="Desc" type="Label" parent="Control/Parts/Stats_Detail/ATK/HBox" index="1"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(84, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 28
+text = "ATK"
+
+[node name="Desc" type="Label" parent="Control/Parts/Stats_Detail/ATK" index="1"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 28
+text = "STAT_ATK"
+
+[node name="MAG" type="HBoxContainer" parent="Control/Parts/Stats_Detail" index="3"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="HBox" type="HBoxContainer" parent="Control/Parts/Stats_Detail/MAG" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Image" type="TextureRect" parent="Control/Parts/Stats_Detail/MAG/HBox" index="0"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 2
+texture = ExtResource("6_jk0wb")
+stretch_mode = 5
+
+[node name="Desc" type="Label" parent="Control/Parts/Stats_Detail/MAG/HBox" index="1"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(84, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 28
+text = "MAG"
+
+[node name="Desc" type="Label" parent="Control/Parts/Stats_Detail/MAG" index="1"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 28
+text = "STAT_MAG"
+
+[node name="DEF" type="HBoxContainer" parent="Control/Parts/Stats_Detail" index="4"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="HBox" type="HBoxContainer" parent="Control/Parts/Stats_Detail/DEF" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Image" type="TextureRect" parent="Control/Parts/Stats_Detail/DEF/HBox" index="0"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 2
+texture = ExtResource("7_ciuf6")
+stretch_mode = 5
+
+[node name="Desc" type="Label" parent="Control/Parts/Stats_Detail/DEF/HBox" index="1"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(84, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 28
+text = "DEF"
+
+[node name="Desc" type="Label" parent="Control/Parts/Stats_Detail/DEF" index="1"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 28
+text = "STAT_DEF"
+
+[node name="SPEED" type="HBoxContainer" parent="Control/Parts/Stats_Detail" index="5"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="HBox" type="HBoxContainer" parent="Control/Parts/Stats_Detail/SPEED" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Image" type="TextureRect" parent="Control/Parts/Stats_Detail/SPEED/HBox" index="0"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 2
+texture = ExtResource("8_mwqig")
+stretch_mode = 5
+
+[node name="Desc" type="Label" parent="Control/Parts/Stats_Detail/SPEED/HBox" index="1"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(84, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 28
+text = "SPEED"
+
+[node name="Desc" type="Label" parent="Control/Parts/Stats_Detail/SPEED" index="1"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 28
+text = "STAT_SPEED"
+
+[node name="LUCK" type="HBoxContainer" parent="Control/Parts/Stats_Detail" index="6"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="HBox" type="HBoxContainer" parent="Control/Parts/Stats_Detail/LUCK" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Image" type="TextureRect" parent="Control/Parts/Stats_Detail/LUCK/HBox" index="0"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 2
+texture = ExtResource("9_1rvwr")
+stretch_mode = 5
+
+[node name="Desc" type="Label" parent="Control/Parts/Stats_Detail/LUCK/HBox" index="1"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(84, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 28
+text = "LUCK"
+
+[node name="Desc" type="Label" parent="Control/Parts/Stats_Detail/LUCK" index="1"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 28
+text = "STAT_LUCK"
+
+[node name="Actions_Overview" type="HFlowContainer" parent="Control/Parts" index="2"]
+visible = false
+light_mask = 8
+visibility_layer = 8
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -488.0
+offset_top = -84.0
+offset_right = -200.0
+offset_bottom = 84.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/h_separation = 24
+theme_override_constants/v_separation = 24
+alignment = 1
+
+[node name="Attack_ATK" type="TextureRect" parent="Control/Parts/Actions_Overview" index="0"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 2
+texture = ExtResource("10_1rvwr")
+stretch_mode = 5
+
+[node name="Defense_DEF" type="TextureRect" parent="Control/Parts/Actions_Overview" index="1"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 2
+texture = ExtResource("11_sck1w")
+stretch_mode = 5
+
+[node name="Special" type="TextureRect" parent="Control/Parts/Actions_Overview" index="2"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 2
+texture = ExtResource("12_qtwl8")
+stretch_mode = 5
+
+[node name="Flee" type="TextureRect" parent="Control/Parts/Actions_Overview" index="3"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 2
+texture = ExtResource("13_j5k3d")
+stretch_mode = 5
+
+[node name="Help" type="TextureRect" parent="Control/Parts/Actions_Overview" index="4"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 2
+texture = ExtResource("14_wqwju")
+stretch_mode = 5

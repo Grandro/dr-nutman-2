@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckgoi0d3lyv7h"]
+
+[ext_resource type="PackedScene" uid="uid://r41nl45w54n2" path="res://Global_Scenes/Progress/Quests/Objective_Sub_Quest.tscn" id="1_uwbv2"]
+[ext_resource type="Resource" uid="uid://csxsmncyym3hy" path="res://Global_Resources/Databases/Quests/Broko_Town/Main/Great_Broko_Town_Festival/Objective_Right_On_The_Nut.tres" id="2_6v5y6"]
+
+[node name="Right_On_The_Nut" instance=ExtResource("1_uwbv2")]
+_e_data = ExtResource("2_6v5y6")

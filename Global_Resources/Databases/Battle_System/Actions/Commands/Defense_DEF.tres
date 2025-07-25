@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bujvq36ubvad2"]
+
+[ext_resource type="Script" uid="uid://jld012h8pf8w" path="res://Global_Resources/Databases/Battle_System/Actions/Actions_Data.gd" id="1_gcl77"]
+
+[resource]
+script = ExtResource("1_gcl77")
+_e_key = "Defense_DEF"
+_e_target_type = "None"
+_e_target_amount = 0
+_e_ATK_scaling = 0.0
+_e_MAG_scaling = 0.0
+_e_SP_cost = 0

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://biqm2o5t7yvnt"]
+
+[ext_resource type="Script" uid="uid://jld012h8pf8w" path="res://Global_Resources/Databases/Battle_System/Actions/Actions_Data.gd" id="1_42d2s"]
+
+[resource]
+script = ExtResource("1_42d2s")
+_e_key = "Attack_ATK"
+_e_target_type = "Enemy"
+_e_target_amount = 1
+_e_ATK_scaling = 1.0
+_e_MAG_scaling = 0.0
+_e_SP_cost = 0

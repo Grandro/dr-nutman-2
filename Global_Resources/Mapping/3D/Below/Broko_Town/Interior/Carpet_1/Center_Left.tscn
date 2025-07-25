@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://kg1umiq4tlea"]
+
+[ext_resource type="PackedScene" uid="uid://dbxigq53qnnvo" path="res://Global_Resources/Mapping/3D/Plane/Plane_Tile.tscn" id="1_gtdig"]
+[ext_resource type="Texture2D" uid="uid://lswki5cnq3ia" path="res://Global_Resources/Mapping/Sprites/Below/Broko_Town/Interior/Carpet_1/Center_Left.png" id="2_30bfw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fexev"]
+transparency = 1
+albedo_texture = ExtResource("2_30bfw")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_m2g5p"]
+material = SubResource("StandardMaterial3D_fexev")
+size = Vector2(1, 1)
+
+[node name="Carpet_1" instance=ExtResource("1_gtdig")]
+mesh = SubResource("PlaneMesh_m2g5p")

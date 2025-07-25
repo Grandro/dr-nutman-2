@@ -1,11 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://lq5yp1lm6rri"]
+[gd_scene load_steps=7 format=3 uid="uid://lq5yp1lm6rri"]
 
 [ext_resource type="PackedScene" uid="uid://c8lns07r4xyu8" path="res://Global_Scenes/Debug/Command_Editor/Entries/Branches/Base.tscn" id="1"]
 [ext_resource type="Texture2D" uid="uid://r6vb6j06pcdg" path="res://Global_Scenes/Debug/Command_Editor/Entries/Branches/Sprites/Mark_Default.png" id="2"]
 [ext_resource type="Script" uid="uid://bc38f7lkxp3hj" path="res://Global_Scenes/Debug/Command_Editor/Entries/Branches/Scripts/Main.gd" id="3"]
 [ext_resource type="Texture2D" uid="uid://xion13fov5c7" path="res://Global_Resources/Sprites/Debug/Warning.png" id="4"]
+[ext_resource type="FontFile" uid="uid://bc3cxhu6w0ljt" path="res://Global_Resources/Fonts/ProFont.ttf" id="4_7xefx"]
 
 [sub_resource type="FontVariation" id="FontVariation_7hyox"]
+base_font = ExtResource("4_7xefx")
 spacing_top = -4
 spacing_bottom = -5
 

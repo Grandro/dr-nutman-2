@@ -1,0 +1,224 @@
+[gd_scene load_steps=39 format=3 uid="uid://77lygxoeegn6"]
+
+[ext_resource type="PackedScene" uid="uid://rwpfs10v6p2a" path="res://Global_Scenes/Battle_System/Battle_SV/Encounters/Encounter_Base.tscn" id="1_7apoy"]
+[ext_resource type="Script" uid="uid://dxk0irqj4pxq3" path="res://Global_Scenes/Battle_System/Battle_SV/Encounters/Special/SP_Sick_Apprentice_1/Scripts/SP_Sick_Apprentice_1.gd" id="2_snuwg"]
+[ext_resource type="PackedScene" uid="uid://ff33i620lkpe" path="res://Global_Resources/Mapping/3D/Below/Broko_Town/Doctor_Dream_1/Floor_Tile_1.tscn" id="3_71n6v"]
+[ext_resource type="AudioStream" uid="uid://b4q4cvj0hatg7" path="res://Global_Resources/Audio/BGM/Intro_Battle.ogg" id="3_v7o1y"]
+[ext_resource type="Texture2D" uid="uid://ig6wvy5wwp2g" path="res://Global_Resources/Mapping/Sprites/Below/Broko_Town/Doctor_Dream_1/Floor_Tile_1.png" id="4_i7gc7"]
+[ext_resource type="Script" uid="uid://b3q13t5wk5s2w" path="res://Global_Scenes/Audio_Manager/Scripts/Audio_Playback.gd" id="4_sg2px"]
+[ext_resource type="PackedScene" uid="uid://b43uus1j31k2o" path="res://Global_Resources/Mapping/3D/Same_As/Broko_Town/Doctor_Dream_1/Wall_1/Main_Side_Down_Center.tscn" id="5_m6if2"]
+[ext_resource type="PackedScene" uid="uid://dedghquqbg5od" path="res://Global_Resources/Mapping/3D/Same_As/Broko_Town/Doctor_Dream_1/Wall_1/Main_Side_Down_Left.tscn" id="6_t4yvn"]
+[ext_resource type="PackedScene" uid="uid://bxoj7ay1iqu54" path="res://Scenes/Maps/3D/Broko_Town/Doctor_Dream_1/Objects/Thermometer_Sign/Thermometer_Sign.tscn" id="7_8t18v"]
+[ext_resource type="PackedScene" uid="uid://byil0fm61koji" path="res://Scenes/Objects/3D/Tables/White_1/White_1.tscn" id="7_0502v"]
+[ext_resource type="PackedScene" uid="uid://cvoqkyeg5qbe3" path="res://Global_Resources/Mapping/3D/Same_As/Broko_Town/Doctor_Dream_1/Wall_1/Main_Side_Down_Right.tscn" id="7_gxs0q"]
+[ext_resource type="PackedScene" uid="uid://beerqvwo1sjnn" path="res://Scenes/NPC/3D/Buffins/Paint_DeLere/Canvases/1.tscn" id="8_nwdfh"]
+[ext_resource type="PackedScene" uid="uid://c4335vwvdguto" path="res://Global_Resources/Mapping/3D/Same_As/Broko_Town/Doctor_Dream_1/Wall_1/Main_Side_Center_Center.tscn" id="8_r2hei"]
+[ext_resource type="PackedScene" uid="uid://5m27hd5fwqte" path="res://Global_Resources/Mapping/3D/Same_As/Broko_Town/Doctor_Dream_1/Wall_1/Single_Top_Center.tscn" id="9_v7o1y"]
+[ext_resource type="PackedScene" uid="uid://g1xmmyeqd68f" path="res://Global_Resources/Mapping/3D/Same_As/Broko_Town/Doctor_Dream_1/Wall_1/Main_Side_Center_Right.tscn" id="10_sg2px"]
+[ext_resource type="PackedScene" uid="uid://c07q83jqeel76" path="res://Scenes/NPC/3D/Buffins/Paint_DeLere/Frames/1.tscn" id="11_5fv4t"]
+[ext_resource type="PackedScene" uid="uid://dajgir3u3yfbo" path="res://Global_Resources/Mapping/3D/Same_As/Broko_Town/Doctor_Dream_1/Wall_1/Single_Side_Up_Left.tscn" id="11_j1mit"]
+[ext_resource type="PackedScene" uid="uid://vhrixpxva03m" path="res://Global_Resources/Mapping/3D/Same_As/Broko_Town/Doctor_Dream_1/Wall_1/Single_Side_Center_Left.tscn" id="12_jnvsa"]
+[ext_resource type="PackedScene" uid="uid://beo8v4vdoxvyk" path="res://Scenes/NPC/3D/Buffins/Paint_DeLere/Paint_DeLere.tscn" id="14_i8o08"]
+[ext_resource type="PackedScene" uid="uid://dxtaacw213udp" path="res://Global_Scenes/Battle_System/Battle_SV/Encounters/Special/SP_Sick_Apprentice_1/Objects/Bag_1/Bag_1.tscn" id="15_t6wyw"]
+[ext_resource type="PackedScene" uid="uid://dsaweqjwudgxu" path="res://Global_Scenes/Battle_System/Battle_SV/Encounters/Special/SP_Sick_Apprentice_1/Objects/Disposable_Glove_1/Disposable_Glove_1.tscn" id="16_p2kgd"]
+[ext_resource type="PackedScene" uid="uid://df7i4l2sejnt8" path="res://Global_Scenes/Battle_System/Battle_SV/Encounters/Special/SP_Sick_Apprentice_1/Objects/Popsicle_Stick_1/Popsicle_Stick_1.tscn" id="17_h1obd"]
+[ext_resource type="PackedScene" uid="uid://mw0nvucjwb54" path="res://Global_Scenes/Battle_System/Battle_SV/Encounters/Special/SP_Sick_Apprentice_1/Objects/Pill_1/Pill_1.tscn" id="18_rolmv"]
+[ext_resource type="PackedScene" uid="uid://mp23fryjb2qh" path="res://Global_Scenes/Battle_System/Battle_SV/Encounters/Special/SP_Sick_Apprentice_1/Party_Members/Dr_Nutman_Tutorial/Dr_Nutman_Tutorial.tscn" id="19_87r8x"]
+[ext_resource type="Texture2D" uid="uid://dpqtsje5t4v5f" path="res://Scenes/NPC/3D/Buffins/Paint_DeLere/Canvases/Sprites/Pictures/Disposable_Glove.png" id="19_gxs0q"]
+[ext_resource type="PackedScene" uid="uid://ccwfqfxxy14ws" path="res://Global_Scenes/Battle_System/Battle_SV/Encounters/Special/SP_Sick_Apprentice_1/Party_Members/Buffin_Assistant_1/Buffin_Assistant_1.tscn" id="20_pveni"]
+[ext_resource type="Texture2D" uid="uid://dg22tot2xi4w0" path="res://Scenes/NPC/3D/Buffins/Paint_DeLere/Canvases/Sprites/Pictures/Brown_Popsicle.png" id="20_r2hei"]
+[ext_resource type="PackedScene" uid="uid://hxm6bm7ao1mr" path="res://Global_Scenes/Battle_System/Battle_SV/Encounters/Special/SP_Sick_Apprentice_1/Enemies/Sick_Apprentice_1/Sick_Apprentice_1.tscn" id="21_bhy24"]
+[ext_resource type="PackedScene" uid="uid://bevsfn8gnppb1" path="res://Scenes/Maps/Map_Base/3D/Terrain_Area/Shape.tscn" id="22_o4ji8"]
+[ext_resource type="Shader" uid="uid://d3qm2ur0f8ihk" path="res://Global_Resources/Materials/2D/Shaders/Dream_Noise.gdshader" id="28_r2hei"]
+
+[sub_resource type="Resource" id="Resource_j1mit"]
+script = ExtResource("4_sg2px")
+_e_stream = ExtResource("3_v7o1y")
+_e_volume = 1.0
+_e_pitch = 1.0
+_e_from = 0.0
+metadata/_custom_type_script = "uid://b3q13t5wk5s2w"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w2dn0"]
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_2o5y5"]
+material = SubResource("StandardMaterial3D_w2dn0")
+size = Vector2(50, 50)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sg2px"]
+albedo_texture = ExtResource("4_i7gc7")
+uv1_scale = Vector3(16, 10, 1)
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_j1mit"]
+material = SubResource("StandardMaterial3D_sg2px")
+size = Vector2(16, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_71n6v"]
+size = Vector3(16, 1, 10)
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_r2hei"]
+vertices = PackedVector3Array(20.4, 0.4, 16.4, 20.2, 0.4, 15.4, 16.4, 0.4, 15.4, 22.4, 0.4, 24.6, 22.2, 0.4, 16.4, 16.4, 0.4, 24.6, 26, 0.4, 16.4, 25.8, 0.4, 15.4, 23.6, 0.4, 15.4, 23.4, 0.4, 16.4, 27, 0.4, 24.6, 27.2, 0.4, 16.4, 31.6, 0.4, 15.4, 29.2, 0.4, 15.4, 29, 0.4, 16.4, 31.6, 0.4, 24.6)
+polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(3, 0, 4), PackedInt32Array(2, 0, 5), PackedInt32Array(5, 0, 3), PackedInt32Array(7, 6, 8), PackedInt32Array(8, 6, 9), PackedInt32Array(9, 6, 10), PackedInt32Array(9, 10, 3), PackedInt32Array(9, 3, 4), PackedInt32Array(6, 11, 10), PackedInt32Array(14, 13, 12), PackedInt32Array(10, 11, 14), PackedInt32Array(12, 15, 14), PackedInt32Array(14, 15, 10)]
+geometry_source_geometry_mode = 2
+geometry_source_group_name = &"NavMesh_Main"
+cell_size = 0.2
+cell_height = 0.2
+agent_height = 1.8
+agent_radius = 0.4
+agent_max_climb = 0.2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r2hei"]
+shader = ExtResource("28_r2hei")
+shader_parameter/radius = 0.67
+shader_parameter/speed = 8.0
+shader_parameter/effect_color = Color(0.825, 0.7, 1, 1)
+shader_parameter/gamma = 7.0
+shader_parameter/vignette_radius = 1.0
+
+[node name="SP_Sick_Apprentice_1" instance=ExtResource("1_7apoy")]
+script = ExtResource("2_snuwg")
+_e_BGM = SubResource("Resource_j1mit")
+_e_special = true
+
+[node name="Background" type="MeshInstance3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, -0.01, 20)
+mesh = SubResource("PlaneMesh_2o5y5")
+
+[node name="Floor_Tile_1" parent="Terrain/Below" index="0" instance=ExtResource("3_71n6v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 20)
+mesh = SubResource("PlaneMesh_j1mit")
+_e_size = Vector3(16, 1, 10)
+
+[node name="Wall_Up_1" type="Node3D" parent="Terrain/Same_As" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 14.5)
+
+[node name="Main_6" parent="Terrain/Same_As/Wall_Up_1" index="0" instance=ExtResource("5_m6if2")]
+_e_size = Vector3(14, 1, 1)
+
+[node name="Main_4" parent="Terrain/Same_As/Wall_Up_1" index="1" instance=ExtResource("6_t4yvn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 0)
+
+[node name="Main_3" parent="Terrain/Same_As/Wall_Up_1" index="2" instance=ExtResource("7_gxs0q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, 0)
+
+[node name="Main_8" parent="Terrain/Same_As/Wall_Up_1" index="3" instance=ExtResource("8_r2hei")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+_e_size = Vector3(14, 1, 1)
+
+[node name="Single_1" parent="Terrain/Same_As/Wall_Up_1" index="4" instance=ExtResource("9_v7o1y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+_e_size = Vector3(14, 1, 1)
+
+[node name="Main_9" parent="Terrain/Same_As/Wall_Up_1" index="5" instance=ExtResource("10_sg2px")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 1, 0)
+
+[node name="Single_3" parent="Terrain/Same_As/Wall_Up_1" index="6" instance=ExtResource("11_j1mit")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 7.5, 2, 0)
+
+[node name="Single_7" parent="Terrain/Same_As/Wall_Up_1" index="7" instance=ExtResource("12_jnvsa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 1, 0)
+
+[node name="Single_8" parent="Terrain/Same_As/Wall_Up_1" index="8" instance=ExtResource("11_j1mit")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 2, 0)
+
+[node name="Table_1" parent="Terrain/Same_As" index="1" instance=ExtResource("7_0502v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 15.5)
+
+[node name="Table_2" parent="Terrain/Same_As" index="2" instance=ExtResource("7_0502v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.5, 0, 15.5)
+
+[node name="Thermometer_Sign" parent="Terrain/Same_As" index="3" instance=ExtResource("7_8t18v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 1.5, 15.01)
+
+[node name="Tile_1" parent="Terrain/Areas" index="0" instance=ExtResource("22_o4ji8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 20)
+_e_audio_keys = Array[String](["Tile_1"])
+
+[node name="Collision" parent="Terrain/Areas/Tile_1" index="0"]
+shape = SubResource("BoxShape3D_71n6v")
+
+[node name="$Free_Camera" parent="Objects" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 0, 18)
+
+[node name="Paint_DeLere" parent="Objects" index="2" instance=ExtResource("14_i8o08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.5, 0, 22.5)
+
+[node name="Equipment" parent="Objects/Paint_DeLere" index="2"]
+_e_shaded = true
+
+[node name="Movement" parent="Objects/Paint_DeLere" index="4"]
+_e_reset_dir = "Up"
+
+[node name="Canvas" parent="Objects" index="3" instance=ExtResource("8_nwdfh")]
+process_mode = 3
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.5, 0, 22)
+
+[node name="Frame_Disposable_Glove" parent="Objects" index="4" instance=ExtResource("11_5fv4t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.5, 1.335, 22)
+visible = false
+
+[node name="Picture" parent="Objects/Frame_Disposable_Glove" index="1"]
+texture = ExtResource("19_gxs0q")
+
+[node name="Frame_Brown_Popsicle" parent="Objects" index="5" instance=ExtResource("11_5fv4t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.5, 1.335, 22.01)
+visible = false
+
+[node name="Picture" parent="Objects/Frame_Brown_Popsicle" index="1"]
+texture = ExtResource("20_r2hei")
+
+[node name="Bag" parent="Objects" index="6" instance=ExtResource("15_t6wyw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0.5, 16.125)
+
+[node name="Disposable_Glove" parent="Objects" index="7" instance=ExtResource("16_p2kgd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0.5, 15.5)
+
+[node name="Popsicle_Stick" parent="Objects" index="8" instance=ExtResource("17_h1obd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 1, 15.5)
+
+[node name="Pill" parent="Objects" index="9" instance=ExtResource("18_rolmv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 1, 15.5)
+
+[node name="Dr_Nutman" parent="Objects/Party_Members/Instances" index="0" instance=ExtResource("19_87r8x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, 19)
+
+[node name="Buffin_Assistant_1" parent="Objects/Party_Members/Instances" index="1" instance=ExtResource("20_pveni")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 16.25)
+_e_command_circle_offset = Vector3(0, 3.7, 0)
+
+[node name="Sick_Apprentice_1" parent="Objects/Enemies" index="0" instance=ExtResource("21_bhy24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 19)
+
+[node name="Main" parent="Nav_Regions" index="0"]
+navigation_mesh = SubResource("NavigationMesh_r2hei")
+
+[node name="Sun" type="DirectionalLight3D" parent="." index="9"]
+transform = Transform3D(0.707107, 0.5, -0.5, 0, 0.707107, 0.707107, 0.707107, -0.5, 0.5, 0, 0, 0)
+shadow_enabled = true
+shadow_opacity = 0.5
+
+[node name="Dream_Noise" type="ColorRect" parent="Canvas" index="0"]
+material = SubResource("ShaderMaterial_r2hei")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[editable path="Terrain/Areas/Tile_1"]
+[editable path="Objects/Paint_DeLere"]
+[editable path="Objects/Paint_DeLere/Equipment"]
+[editable path="Objects/Paint_DeLere/Interactions"]
+[editable path="Objects/Paint_DeLere/Interactions/1"]
+[editable path="Objects/Paint_DeLere/Movement/Terrain"]
+[editable path="Objects/Paint_DeLere/Movement/Terrain/Areas/Left_Foot"]
+[editable path="Objects/Paint_DeLere/Movement/Terrain/Areas/Right_Foot"]
+[editable path="Objects/Paint_DeLere/Popup"]
+[editable path="Objects/Frame_Disposable_Glove"]
+[editable path="Objects/Frame_Brown_Popsicle"]
+[editable path="Indicators"]
+[editable path="Canvas/Stats_Display"]

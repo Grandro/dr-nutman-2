@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfqgsidwyjgxn"]
+
+[ext_resource type="PackedScene" uid="uid://ghkcsy8pm7pn" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Objects/Comps/Balloons/Balloons_Base.tscn" id="1_fuv1a"]
+[ext_resource type="Script" uid="uid://4a3biokxx33g" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Objects/Comps/Balloons/Scripts/Balloons_Carry.gd" id="2_8oclv"]
+
+[node name="Balloons_Carry" instance=ExtResource("1_fuv1a")]
+script = ExtResource("2_8oclv")
+_e_containers_offset = {
+"Down": Vector3(0, 0, 0),
+"Left": Vector3(0, 0, 0),
+"Right": Vector3(0, 0, 0),
+"Up": Vector3(0, 0, 0)
+}
+
+[node name="Lines" parent="." index="2"]
+layers = 4
+
+[node name="Anims" type="AnimationPlayer" parent="." index="3"]

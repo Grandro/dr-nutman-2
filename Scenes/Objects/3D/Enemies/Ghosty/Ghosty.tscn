@@ -1,0 +1,45 @@
+[gd_scene load_steps=9 format=3 uid="uid://cn4livtidiyqn"]
+
+[ext_resource type="PackedScene" uid="uid://osrm8oliivfv" path="res://Scenes/Objects/3D/Enemies/Enemy_Base.tscn" id="1_2mua1"]
+[ext_resource type="Texture2D" uid="uid://cnflp2be3lbyg" path="res://Global_Resources/Sprites/Objects/Enemies/Ghosty/Spritesheet.png" id="2_cpnii"]
+[ext_resource type="PackedScene" uid="uid://cfdwl620axohy" path="res://Scenes/Object/Comps/3D/Audio.tscn" id="3_e5on6"]
+[ext_resource type="PackedScene" uid="uid://b028hrfen5mpa" path="res://Scenes/Object/Comps/3D/Movement/Comps/Terrain/Area.tscn" id="8_ikul1"]
+[ext_resource type="PackedScene" uid="uid://boh1rwcj5rgwf" path="res://Scenes/Object/Comps/States.tscn" id="29_4x276"]
+[ext_resource type="PackedScene" uid="uid://drpp26gth4snn" path="res://Scenes/Object/Comps/Reference.tscn" id="30_8yh0i"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_d2vk4"]
+radius = 0.4
+height = 1.0
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cpnii"]
+
+[node name="Citrin" instance=ExtResource("1_2mua1")]
+
+[node name="Display" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.14, 0)
+shaded = false
+texture = ExtResource("2_cpnii")
+hframes = 8
+
+[node name="Collision" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.14, 0)
+shape = SubResource("CapsuleShape3D_d2vk4")
+
+[node name="Audio" parent="." index="2" instance=ExtResource("3_e5on6")]
+
+[node name="Left_Foot" parent="Movement/Terrain" index="2" instance=ExtResource("8_ikul1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17, 0, 0)
+
+[node name="Right_Foot" parent="Movement/Terrain" index="3" instance=ExtResource("8_ikul1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, 0)
+
+[node name="States" parent="." index="5" instance=ExtResource("29_4x276")]
+_e_states = Array[String](["Stop", "Idle", "Walk"])
+_e_state = "Idle"
+
+[node name="Reference" parent="." index="6" instance=ExtResource("30_8yh0i")]
+
+[node name="Anims" parent="." index="7"]
+libraries = {
+&"": SubResource("AnimationLibrary_cpnii")
+}

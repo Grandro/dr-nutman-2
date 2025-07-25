@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://d22a63jd5eylg"]
+
+[ext_resource type="Script" uid="uid://gxo7txpgnyj8" path="res://Global_Resources/Databases/Quests/Objective_Sub_Quest_Data.gd" id="1_lep6q"]
+[ext_resource type="Resource" uid="uid://byeid03r2knxj" path="res://Global_Resources/Databases/Quests/Broko_Town/Main/A_Child_For_A_Balloon/A_Child_For_A_Balloon.tres" id="1_mnfst"]
+
+[resource]
+script = ExtResource("1_lep6q")
+_e_sub_quest = ExtResource("1_mnfst")
+_e_type = "Sub_Quest"
+_e_desc = "PROGRESS_QUESTS_BROKO_TOWN_1_MAIN_A_CHILD_FOR_A_BALLOON_NAME"

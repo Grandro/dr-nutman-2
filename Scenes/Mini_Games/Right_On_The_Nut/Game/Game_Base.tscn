@@ -1,0 +1,271 @@
+[gd_scene load_steps=22 format=3 uid="uid://0fiuqormgykw"]
+
+[ext_resource type="PackedScene" uid="uid://xuy0gyipng5m" path="res://Scenes/Mini_Games/Mini_Game_Base/Game_Base.tscn" id="1_2f315"]
+[ext_resource type="Script" uid="uid://cmoxcm1lus3bj" path="res://Scenes/Mini_Games/Right_On_The_Nut/Game/Scripts/Game_Base.gd" id="2_ky4c0"]
+[ext_resource type="Texture2D" uid="uid://dryjuh3483nau" path="res://Scenes/Mini_Games/Right_On_The_Nut/Game/Sprites/Background.png" id="2_whx67"]
+[ext_resource type="Script" uid="uid://cmy36x55mvstq" path="res://Scenes/Mini_Games/Right_On_The_Nut/Game/Scripts/QT_Bar.gd" id="3_fumxx"]
+[ext_resource type="PackedScene" uid="uid://dc61tj5s4jm3j" path="res://Scenes/Mini_Games/Right_On_The_Nut/Game/Dot.tscn" id="3_iglf7"]
+[ext_resource type="Texture2D" uid="uid://c5t15y1opc4r0" path="res://Global_Resources/Sprites/Box_Inner.png" id="4_cyllw"]
+[ext_resource type="Texture2D" uid="uid://sohksw8yt8eo" path="res://Scenes/Mini_Games/Right_On_The_Nut/Game/Sprites/Nutcracker_Base.png" id="4_vi6wy"]
+[ext_resource type="Texture2D" uid="uid://wgrqr557p8ah" path="res://Scenes/Mini_Games/Right_On_The_Nut/Game/Sprites/Nutcracker_Jaw.png" id="5_owpaj"]
+[ext_resource type="Texture2D" uid="uid://ko7fp446lqab" path="res://Global_Resources/Sprites/Box_Outer.png" id="5_sp60d"]
+[ext_resource type="Texture2D" uid="uid://w7i6nf4arry4" path="res://Scenes/Mini_Games/Right_On_The_Nut/Game/Sprites/Uncracked_Peanut.png" id="6_gjgoq"]
+[ext_resource type="Texture2D" uid="uid://c754kwabi0qe5" path="res://Global_Scenes/Main_Menu/Sub_Menus/Journal/Sprites/Arrow.png" id="6_rbjql"]
+[ext_resource type="PackedScene" uid="uid://bs8m1n5rmnwfd" path="res://Scenes/Object/Comps/2D/Camera.tscn" id="7_0w6mx"]
+[ext_resource type="AudioStream" uid="uid://ba12nswedryws" path="res://Global_Resources/Audio/SFX/Tock_Low_1.wav" id="7_vlyp5"]
+[ext_resource type="AudioStream" uid="uid://djrgv4onh2fv8" path="res://Global_Resources/Audio/SFX/Positive_2.wav" id="8_vnavj"]
+[ext_resource type="AudioStream" uid="uid://bqxr0y7usdr43" path="res://Global_Resources/Audio/SFX/Negative_1.wav" id="9_bpukm"]
+
+[sub_resource type="Animation" id="3"]
+resource_name = "Move_Arrow"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Arrow:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-17, 79), Vector2(540, 79)]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Audio/Move")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("7_vlyp5")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("7_vlyp5")
+}],
+"times": PackedFloat32Array(0, 1.5)
+}
+tracks/1/use_blend = true
+
+[sub_resource type="Animation" id="Animation_v0n6q"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Arrow:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-17, 79)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1ilq6"]
+_data = {
+&"Move_Arrow": SubResource("3"),
+&"RESET": SubResource("Animation_v0n6q")
+}
+
+[sub_resource type="Animation" id="Animation_lr6p5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="4"]
+resource_name = "Spin"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 360.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6rss1"]
+_data = {
+&"RESET": SubResource("Animation_lr6p5"),
+&"Spin": SubResource("4")
+}
+
+[node name="Game_Base" instance=ExtResource("1_2f315")]
+script = ExtResource("2_ky4c0")
+
+[node name="QT_Bar" type="Control" parent="Canvas_2" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -288.0
+offset_top = 96.0
+offset_right = 288.0
+offset_bottom = 192.0
+grow_horizontal = 2
+script = ExtResource("3_fumxx")
+
+[node name="Box_Inner" type="NinePatchRect" parent="Canvas_2/QT_Bar" index="0"]
+editor_description = "10061E"
+self_modulate = Color(0.4, 0, 0.00666656, 1)
+light_mask = 8
+visibility_layer = 8
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource("4_cyllw")
+patch_margin_left = 24
+patch_margin_top = 24
+patch_margin_right = 24
+patch_margin_bottom = 24
+
+[node name="Target" type="ColorRect" parent="Canvas_2/QT_Bar" index="1"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 0
+offset_left = 9.0
+offset_top = 9.0
+offset_right = 136.0
+offset_bottom = 87.0
+color = Color(0.133333, 0.913725, 0.0666667, 1)
+
+[node name="Box_Outer" type="NinePatchRect" parent="Canvas_2/QT_Bar" index="2"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -288.0
+offset_right = 288.0
+offset_bottom = 96.0
+texture = ExtResource("5_sp60d")
+patch_margin_left = 24
+patch_margin_top = 24
+patch_margin_right = 24
+patch_margin_bottom = 24
+
+[node name="Arrow" type="TextureRect" parent="Canvas_2/QT_Bar" index="3"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 0
+offset_left = -17.0
+offset_top = 79.0
+offset_right = 37.0014
+offset_bottom = 119.0
+texture = ExtResource("6_rbjql")
+
+[node name="Anims" type="AnimationPlayer" parent="Canvas_2/QT_Bar" index="4"]
+libraries = {
+"": SubResource("AnimationLibrary_1ilq6")
+}
+
+[node name="Audio" type="Node" parent="Canvas_2/QT_Bar" index="5"]
+
+[node name="Move" type="AudioStreamPlayer" parent="Canvas_2/QT_Bar/Audio" index="0"]
+bus = &"SFX"
+
+[node name="Hit" type="AudioStreamPlayer" parent="Canvas_2/QT_Bar/Audio" index="1"]
+stream = ExtResource("8_vnavj")
+bus = &"SFX"
+
+[node name="Miss" type="AudioStreamPlayer" parent="Canvas_2/QT_Bar/Audio" index="2"]
+stream = ExtResource("9_bpukm")
+bus = &"SFX"
+
+[node name="Node2D" type="Node2D" parent="." index="2"]
+light_mask = 4
+visibility_layer = 4
+
+[node name="Background" type="Sprite2D" parent="Node2D" index="0"]
+light_mask = 4
+visibility_layer = 4
+position = Vector2(640, 1000)
+texture = ExtResource("2_whx67")
+
+[node name="Dots" type="Node2D" parent="Node2D" index="1"]
+light_mask = 4
+visibility_layer = 4
+
+[node name="1" parent="Node2D/Dots" index="0" instance=ExtResource("3_iglf7")]
+position = Vector2(640, 524)
+
+[node name="2" parent="Node2D/Dots" index="1" instance=ExtResource("3_iglf7")]
+position = Vector2(640, 672)
+
+[node name="3" parent="Node2D/Dots" index="2" instance=ExtResource("3_iglf7")]
+position = Vector2(640, 820)
+
+[node name="4" parent="Node2D/Dots" index="3" instance=ExtResource("3_iglf7")]
+position = Vector2(640, 968)
+
+[node name="5" parent="Node2D/Dots" index="4" instance=ExtResource("3_iglf7")]
+position = Vector2(640, 1116)
+
+[node name="6" parent="Node2D/Dots" index="5" instance=ExtResource("3_iglf7")]
+position = Vector2(640, 1264)
+
+[node name="7" parent="Node2D/Dots" index="6" instance=ExtResource("3_iglf7")]
+position = Vector2(640, 1412)
+
+[node name="8" parent="Node2D/Dots" index="7" instance=ExtResource("3_iglf7")]
+position = Vector2(640, 1560)
+
+[node name="9" parent="Node2D/Dots" index="8" instance=ExtResource("3_iglf7")]
+position = Vector2(640, 1708)
+
+[node name="10" parent="Node2D/Dots" index="9" instance=ExtResource("3_iglf7")]
+position = Vector2(640, 1856)
+
+[node name="Nutcracker_Base" type="Sprite2D" parent="Node2D" index="2"]
+light_mask = 4
+visibility_layer = 4
+position = Vector2(640, 610)
+texture = ExtResource("4_vi6wy")
+
+[node name="Nutcracker_Jaw" type="Sprite2D" parent="Node2D" index="3"]
+light_mask = 4
+visibility_layer = 4
+position = Vector2(640, 642)
+texture = ExtResource("5_owpaj")
+offset = Vector2(0, -64)
+
+[node name="Uncracked_Peanut" type="Sprite2D" parent="Node2D" index="4"]
+light_mask = 4
+visibility_layer = 4
+position = Vector2(640, 1856)
+texture = ExtResource("6_gjgoq")
+
+[node name="Camera" parent="Node2D/Uncracked_Peanut" index="0" instance=ExtResource("7_0w6mx")]
+limit_top = 0
+limit_bottom = 2000
+limit_smoothed = true
+position_smoothing_enabled = true
+
+[node name="Anims" type="AnimationPlayer" parent="Node2D/Uncracked_Peanut" index="1"]
+libraries = {
+"": SubResource("AnimationLibrary_6rss1")
+}
+autoplay = "Spin"

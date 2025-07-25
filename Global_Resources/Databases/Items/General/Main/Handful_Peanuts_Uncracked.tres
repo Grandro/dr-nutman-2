@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://nph6dbvmj8yu"]
+
+[ext_resource type="Script" uid="uid://cytubor452swf" path="res://Global_Resources/Databases/Items/Item_Data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+_e_key = "Handful_Peanuts_Uncracked"
+_e_type = "General"
+_e_group = "Main"
+_e_category_type = "Static"
+_e_stack = 99

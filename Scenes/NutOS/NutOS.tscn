@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3flr4rl6ejv0"]
+
+[ext_resource type="PackedScene" uid="uid://ba34eyav3ir6j" path="res://Scenes/VP_Container/VP_Container.tscn" id="1_ltfu3"]
+[ext_resource type="Script" uid="uid://cp2otg4m6e6qt" path="res://Scenes/NutOS/Scripts/NutOS.gd" id="2_6elpo"]
+[ext_resource type="PackedScene" uid="uid://erjiogqrmk5j" path="res://Scenes/NutOS/Content/Content.tscn" id="2_pwl5k"]
+
+[node name="NutOS" instance=ExtResource("1_ltfu3")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1280.0
+offset_bottom = 720.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+stretch = false
+script = ExtResource("2_6elpo")
+
+[node name="VP" parent="." index="0"]
+audio_listener_enable_2d = true
+gui_embed_subwindows = true
+size = Vector2i(2560, 1440)
+size_2d_override = Vector2i(1280, 720)
+_e_sub_world = false
+_e_game_world = false
+
+[node name="Content" parent="VP" index="0" instance=ExtResource("2_pwl5k")]

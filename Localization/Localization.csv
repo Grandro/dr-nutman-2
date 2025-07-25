@@ -244,6 +244,7 @@ DEBUG_CHOICE_ADD,Auswahl hinzufügen:,Add choice:
 DEBUG_FIX_WARNINGS,Warnungen Beheben,Fix Warnings
 DEBUG_OLD_VALUE,Alter Wert:,Old Value:
 DEBUG_NEW_VALUE,Neuer Wert:,New Value:
+PROGRESS_CHAPTER_1_NAME,Ein Fest für einen Helden,A festival for a hero
 PROGRESS_PIN_NO_PINS,Noch nichts angepinnt...,Nothing pinned yet...
 PROGRESS_QUEST_TYPE_MAIN,Hauptquest,Main Quest
 PROGRESS_QUEST_TYPE_MAIN_SUB,Hauptquest,Main Quest
@@ -253,8 +254,60 @@ PROGRESS_QUEST_INFO_REWARDS,Belohnungen,Rewards
 PROGRESS_QUEST_INFO_STATUS_START,Begonnen,Started
 PROGRESS_QUEST_INFO_STATUS_COMPLETED,Abgeschlossen,Completed
 PROGRESS_LOOT_INFO_HEADING,Loot erhalten!,Loot obtained!
+PROGRESS_QUESTS_BROKO_TOWN_1_MAIN_GREAT_FESTIVAL_NAME,Das große Broko Town Festival,The great Broko Town festival
+PROGRESS_QUESTS_BROKO_TOWN_1_MAIN_GREAT_FESTIVAL_DESC,"Die Dorfbewohner von Broko Town haben sich mächtig Mühe gegeben, um eine Fete für ihren Helden Dr. Nutman zu schmeißen. Es wäre also nur fair, sich alle Attraktionen anzusehen.",The villagers of Broko Town have gone to great lengths to throw a party for their hero Dr. Nutman. So it would only be fair to check out all the attractions.
+PROGRESS_QUESTS_BROKO_TOWN_1_MAIN_A_CHILD_FOR_A_BALLOON_NAME,Ein Kind für einen Ballon,A child for a balloon
+PROGRESS_QUESTS_BROKO_TOWN_1_MAIN_A_CHILD_FOR_A_BALLOON_DESC,"Der Ballon-Verkäufer ist etwas enttäuscht: Eigentlich wollte er seine Ballons an die Kinder in Broko-Town verteilen, aber bis jetzt ist noch keines vorbeigekommen. Also muss Dr. Nutman losgehen um die Ballons zu verteilen...","The balloon seller is a little disappointed: he actually wanted to distribute his balloons to the children in Broko Town, but none have come by yet. So Dr. Nutman has to go out to distribute the balloons..."
+PROGRESS_QUESTS_BROKO_TOWN_1_MAIN_A_CHILD_FOR_A_BALLOON_OBJECTIVE_CHILDREN,Kinder beschenkt,Balloons delivered
+PROGRESS_QUESTS_BROKO_TOWN_1_MAIN_RIGHT_ON_THE_NUT_NAME,Voll auf die Nuss,Right on the nut
+PROGRESS_QUESTS_BROKO_TOWN_1_MAIN_RIGHT_ON_THE_NUT_DESC,"Die Dorfbewohner von Broko Town haben eine ganz fabelhafte Maschine organisiert bekommen: Den Voll auf die Nuss! Es wäre doch gelacht, wenn man damit nicht ein paar Nüsse knacken kann...",The villagers of Broko Town have organized a fabulous machine: The Right on the nut! It would be ridiculous if you couldn't crack a few nuts with it...
+PROGRESS_QUESTS_BROKO_TOWN_1_MAIN_RIGHT_ON_THE_NUT_OBJECTIVE_FIND_NUTS,Nüsse gefunden,Nuts found
+PROGRESS_QUESTS_BROKO_TOWN_1_MAIN_RIGHT_ON_THE_NUT_OBJECTIVE_CRACK_NUTS,Nüsse geknackt,Nuts cracked
+PROGRESS_QUESTS_BROKO_TOWN_1_MAIN_AN_UPLIFTING_NUT_NAME,Eine erhebende Nuss,An uplifting nut
+PROGRESS_QUESTS_BROKO_TOWN_1_MAIN_AN_UPLIFTING_NUT_DESC,"Auf der südlichen Wiese in Broko Town treiben sich ein paar raffinierte Hörnchen herum. Sie lassen sich in die Luft heben, wenn man ihnen dafür eine Nuss gibt...",There are a few sneaky squirrels hanging around on the southern meadow in Broko Town. They can be lifted into the air if you give them a nut in return...
+PROGRESS_QUESTS_BROKO_TOWN_1_MAIN_AN_UPLIFTING_NUT_OBJECTIVE_CRACK_NUTS,Nüsse geknackt,Nuts cracked
+PROGRESS_QUESTS_BROKO_TOWN_1_MAIN_AN_UPLIFTING_NUT_OBJECTIVE_LIFT_SQUIRRELS,Hörnchen gehoben,Squirrels lifted
 LOCALE_DE,Deutsch,Deutsch
 LOCALE_EN,English,English
+MINIGAMES_CONTROLS,Steuerung,Controls
+MINIGAMES_COLOR_SELECTION_HEADING,[center][wave amp=50 freq=2]F[color=red]a[/color]rb[color=green]a[/color]usw[color=blue]a[/color]hl,[center][wave amp=50 freq=2]C[color=red]o[/color]l[color=green]o[/color]r Selecti[color=blue]o[/color]n
+MINIGAMES_COLOR_SELECTION_DESC,"Bestimme deine Lieblingsfarbe!\n\nDer Assistent wird abwechselnd Farbe von oben in den Trichter spritzen. Deine Aufgabe ist es, mithilfe der Flipper, die Farbe im Krug so zu mischen, dass am Ende deine Lieblingsfarbe entsteht.",Choose your favourite color!\n\nThe assistant will take turns squirting paint from the top into the funnel. Your task is to use the flippers to mix the paint in the jug so that in the end your favorite color is created.
+MINIGAMES_COLOR_SELECTION_CONTROL_FLIPPERS,Flipper steuern,Control flippers
+MINIGAMES_COLOR_SELECTION_MOVE_CAMERA,Kamera bewegen,Move camera
+MINIGAMES_COLOR_SELECTION_COUNTDOWN_3,3,3
+MINIGAMES_COLOR_SELECTION_COUNTDOWN_2,2,2
+MINIGAMES_COLOR_SELECTION_COUNTDOWN_1,1,1
+MINIGAMES_COLOR_SELECTION_COUNTDOWN_GO,Los!,Go!
+MINIGAMES_COLOR_SELECTION_NEXT_COLOR,Nächste Farbe :,Next Color :
+MINIGAMES_COLOR_SELECTION_RESULT,Ergebnis,Result
+MINIGAMES_COLOR_SELECTION_ISTHATFAVCOLOR,[center]Ist [wave amp=20 freq=5]das[/wave] Ihre Lieblingsfarbe?,[center]Is [wave amp=20 freq=5]that[/wave] your favourite color?
+MINIGAMES_COLOR_SELECTION_PREVCOLORS,Vorherige Farben,Previous Colors
+MINIGAMES_COLOR_SELECTION_PREVCOLORS_NEW,[rainbow freq=0.5 sat=4 val=20][wave amp=20 freq=1]NEU,[rainbow freq=0.5 sat=4 val=20][wave amp=20 freq=1]NEW
+MINIGAMES_RIGHT_ON_THE_NUT_HEADING,[center][wave amp=50 freq=2][rainbow freq=0.3 sat=0.8 val=1]Voll[/rainbow] Auf Die Nuss,[center][wave amp=50 freq=2][rainbow freq=0.3 sat=0.8 val=1]Right[/rainbow] On The Nut
+MINIGAMES_RIGHT_ON_THE_NUT_DESC,Lass es mal so richtig knacken! Nur mit dem richtigen Timing kann die ungeknackte Nuss bis zum Nussknacker gelangen.,Let it crack on! Only with the right timing can the uncracked nut reach the nutcracker.
+MINIGAMES_RIGHT_ON_THE_NUT_CONFIRM_TIMING,Timing bestätigen,Confirm timing
+MINIGAMES_SQUIRREL_FISHING_HEADING,[center][wave amp=50 freq=2]Hörnchenangeln,[center][wave amp=50 freq=2]Squirrel Fishing
+MINIGAMES_SQUIRREL_FISHING_DESC,"Dr. Nutman kann mit seinen geknackten Erdnüssen flauschige Hörnchen angeln. Das Ziel ist es hierbei das Hörnchen mit seinem gesamten Körpergewicht vom Boden in die Luft zu heben, während es die Nuss festhält. Doch auch das Hörnchen weiß, wie dieses Spiel gespielt wird...",Dr. Nutman can fish for fluffy squirrels with his cracked peanuts. The aim is to lift the squirrel from the ground into the air with its entire body weight while it is holding on to the nut. But the squirrel also knows how to play this game...
+MINIGAMES_SQUIRREL_FISHING_CONFIRM_TIMING,Timing bestätigen,Confirm timing
+NUTOS_APP_COLOR_SELECTION,Farbauswahl,Color Selection
+NUTOS_APP_SETTINGS,Einstellungen,Settings
+NUTOS_APP_SETTINGS_OPTIONS_APPS_HEADING,Apps,Apps
+NUTOS_APP_SETTINGS_OPTIONS_APPS_DESC,Apps verwalten,Manage apps
+NUTOS_APP_SETTINGS_OPTIONS_KEYBOARD_HEADING,Tastatur,Keyboard
+NUTOS_APP_SETTINGS_OPTIONS_KEYBOARD_DESC,Aussehen der Tastatur anpassen,Customize the look of the keyboard
+NUTOS_APP_SETTINGS_OPTIONS_BACKGROUND_HEADING,Hintergrund,Background
+NUTOS_APP_SETTINGS_OPTIONS_BACKGROUND_DESC,Hintergrundbild anpassen,Customize the background image
+NUTOS_APP_APP_MANAGER,App Manager,App Manager
+NUTOS_ON_OFF,Ein/Aus,On/Off
+NUTOS_ADDED_LASTLY,Zuletzt Hinzugefügt,Added Lastly
+DISK_DRIVE_HEADING,Disk-Laufwerk,Disk Drive
+TUTATO_HI,Hi!,Hi!
+COLORS,Farben,Colors
+AVAILABLE,Verfügbar,Available
+STATIC,Statisch,Static
+PATTERN,Muster,Pattern
+CUSTOM,Benutzerdefiniert,Custom
+NEW,Neu,New
 OK,Ok,Ok
 CANCEL,Abbrechen,Cancel
 YES,Ja,Yes
@@ -270,6 +323,7 @@ DELETE,Löschen,Delete
 SELECT,Auswählen,Select
 PROCEED,Fortfahren,Proceed
 ADD,Hinzufügen,Add
+PLAYAGAIN,Nochmal Spielen,Play Again
 SEARCH,Suche,Search
 PREVIEW,Vorschau,Preview
 REPEAT,Wiederholen,Repeat
@@ -287,8 +341,17 @@ EXP,EXP,EXP
 USE,Benutzen,Use
 PIN,Anpinnen,Pin
 PINNED,Angepinnt,Pinned
+INSTALL,Installieren,Install
+UNINSTALL,Deinstallieren,Uninstall
 ROTATE_LEFT,Links Drehen,Rotate Left
 ROTATE_RIGHT,Rechts Drehen,Rotate Right
+COLOR_RED,Rot,Red
+COLOR_GREEN,Grün,Green
+COLOR_DARK_BLUE,Dunkelblau,Dark Blue
+COLOR_ORANGE,Orange,Orange
+COLOR_PURPLE,Lila,Purple
+COLOR_LIGHT_BLUE,Hellblau,Light Blue
+COLOR_PINK,Rosa,Pink
 STAT_HP,Lebenspunkte,Health Points
 STAT_SP,Spezialpunkte,Special Points
 STAT_ATK,Angriff,Attack
@@ -348,6 +411,7 @@ OPTIONS_VIDEO_VSYNC_MODE_MAILBOX,Mailbox,Mailbox
 OPTIONS_VIDEO_WINDOW_SIZE,Fenstergröße,Window Size
 OPTIONS_VIDEO_WINDOW_MODE,Fenster Modus,Window Mode
 OPTIONS_GAMEPLAY,Gameplay,Gameplay
+OPTIONS_GAMEPLAY_SHOW_TUTATO_EXPLAIN,Tutato Erklärungen Anzeigen,Show Tutato Explanations
 OPTIONS_CONTROLS,Steuerung,Controls
 OPTIONS_CONTROLS_KEYBOARD_LAYOUT,Tastaturlayout,Keyboard Layout
 POS_TOP,Oben,Top
@@ -384,6 +448,10 @@ CONTEXT_MENU_OPTIONS_SWAP_PROCESS_RIGHT,Strg+P,Ctrl+P
 CONTEXT_MENU_OPTIONS_CHANGE_MARK_LEFT,Markierung Ändern,Change Mark
 CONTEXT_MENU_OPTIONS_CHANGE_MARK_DEFAULT_LEFT,Standard,Default
 CONTEXT_MENU_OPTIONS_CHANGE_MARK_TEST_LEFT,Test,Test
+CONTEXT_MENU_OPTIONS_OPEN_LEFT,Öffnen,Open
+CONTEXT_MENU_OPTIONS_SHUTDOWN_OR_LEAVE_LEFT,Herunterfahren oder weggehen,Shutdown or leave
+CONTEXT_MENU_OPTIONS_SHUTDOWN_LEFT,Herunterfahren,Shutdown
+CONTEXT_MENU_OPTIONS_LEAVE_LEFT,Weggehen,Leave
 SV_DAMAGE_RATING_NOTHING,NICHTS!,NOTHING!
 SV_DAMAGE_RATING_OK,OK!,OK!
 SV_DAMAGE_RATING_GOOD,GUT!,GOOD!
@@ -394,7 +462,526 @@ SV_ACTIONS_ATTACK_ATK,Angriff,Attack
 SV_ACTIONS_DEFENSE_DEF,Verteidigung,Defense
 SV_ACTIONS_SPECIAL,Spezial,Special
 SV_ACTIONS_FLEE,Flüchten,Flee
+SV_ACTIONS_HELP,Hilfe,Help
 SV_ACTIONS_NONE_DESC,Dieser Charakter kennt noch keine Spezial-Attacke.,This character does not yet know a special attack.
+SV_ACTIONS_NUT_MUNCH_PUNCH_NAME,Nussmanschlag,Nut Munch Punch
+SV_ACTIONS_NUT_MUNCH_PUNCH_DESC,"Der Nussmansch wurde geöffnet! Nun regnen Nüsse und Rosinen vom Himmel, die der Anwender gekonnt in das Gesicht eines Gegners umlenken muss.","The nut munch has been opened! Nuts and raisins now fall from the sky, which the user must skillfully deflect into the face of an opponent."
 SV_REACTIONS_JUMP,Springen,Jump
 SV_REACTIONS_DUCK,Ducken,Duck
+ENEMY_SICK_APPRENTICE_1_NAME,Fiebriger Lehrling,Feverish Apprentice
+ENEMY_SICK_APPRENTICE_1_DESC,"Noch nie zuvor vorgekommen hat das Fibri-Vibri tatsächlich bei jemandem angeschlagen! Gut, dass die Krankheit bekämpft wurde.",Never before has the Fibri-Vibri actually alarmed someone! Good that the disease was fought off.
+ENEMY_CITRIN_NAME,Zitrine,Citrin
+ENEMY_CITRIN_DESC,Dieser süß-saure Zweibeiner lebt im Wald und scheut sich nicht davor mit Zitronenkugeln zu spucken.,This sweet and sour biped lives in the forest and is not afraid to spit lemon balls.
 COINS_NAME,Münzen,Coins
+ITEMS_GENERAL_COOKIE_NAME,Keks,Cookie
+ITEMS_GENERAL_COOKIE_DESC,"Ein knusprig-leckerer Keks, welcher 7 [img]res://Global_Resources/Sprites/Icons/Stats/HP.png[/img] wiederherstellt.",A crispy and delicious cookie which restores 7 [img]res://Global_Resources/Sprites/Icons/Stats/HP.png[/img].
+ITEMS_GENERAL_HANDFUL_PEANUTS_UNCRACKED_NAME,Handvoll ungeknackter Erdnüsse,Handful uncracked peanuts
+ITEMS_GENERAL_HANDFUL_PEANUTS_UNCRACKED_DESC,Diese Erdnüsse schlummern noch tief in ihrer Schale und sind daher nicht zum Verzehr geeignet.,These peanuts are still deep in their shells and are therefore not suitable for consumption.
+ITEMS_GENERAL_HANDFUL_PEANUTS_CRACKED_NAME,Handvoll geknackter Erdnüsse,Handful cracked peanuts
+ITEMS_GENERAL_HANDFUL_PEANUTS_CRACKED_DESC,Die Nüsse wurden befreit und können nun gegessen werden. Stellt 2 [img]res://Global_Resources/Sprites/Icons/Stats/SP.png[/img] wieder her.,The nuts have been freed and can now be eaten. Restores 2 [img]res://Global_Resources/Sprites/Icons/Stats/SP.png[/img].
+ITEMS_GENERAL_CITRIN_SHELL_NAME,Zitrinplatt,Citrin Shell
+ITEMS_GENERAL_CITRIN_SHELL_DESC,"Ein Stück Schild, das auf dem Rücken einer Zitrine zu finden ist. Es wirkt recht robust.",A piece of shield that can be found on the back of a Citrin. It looks quite robust.
+ITEMS_KEY_AMETHYST_NAME,Amethyst,Amethyst
+ITEMS_KEY_AMETHYST_DESC,"Ein unglaublich schöner Edelstein, welcher in lilaner Farbe glänzt.",An incredibly beautiful gem shimmering in purple color
+ITEMS_KEY_BALLOON_DARK_BLUE_NAME,Dunkelblauer Ballon,Dark blue balloon
+ITEMS_KEY_BALLOON_DARK_BLUE_DESC,So dunkelblau wie der tiefe Ozean. Ich sollte ihn einem Kind in Broko Town geben.,As dark blue as the deep ocean. I should give it to a child in Broko Town.
+ITEMS_KEY_BALLOON_GREEN_NAME,Grüner Ballon,Green balloon
+ITEMS_KEY_BALLOON_GREEN_DESC,So grün wie eine taufrische Wiese am Morgen. Ich sollte ihn einem Kind in Broko Town geben.,As green as a dewy meadow in the morning. I should give it to a child in Broko Town.
+ITEMS_KEY_BALLOON_LIGHT_BLUE_NAME,Hellblauer Ballon,Light blue balloon
+ITEMS_KEY_BALLOON_LIGHT_BLUE_DESC,So hellblau wie der Horizont an einem klaren Sommertag. Ich sollte ihn einem Kind in Broko Town geben.,As light blue as the horizon on a clear summer's day. I should give it to a child in Broko Town.
+ITEMS_KEY_BALLOON_ORANGE_NAME,Orangener Ballon,Orange balloon
+ITEMS_KEY_BALLOON_ORANGE_DESC,So orange wie eine Orange. Ich sollte ihn einem Kind in Broko Town geben.,As orange as an orange. I should give it to a child in Broko Town.
+ITEMS_KEY_BALLOON_PINK_NAME,Pinker Ballon,Pink balloon
+ITEMS_KEY_BALLOON_PINK_DESC,So pink wie ein Flamingo. Ich sollte ihn einem Kind in Broko Town geben.,As pink as a flamingo. I should give it to a child in Broko Town.
+ITEMS_KEY_BALLOON_PURPLE_NAME,Lilaner Ballon,Purple balloon
+ITEMS_KEY_BALLOON_PURPLE_DESC,So lila wie ein wunderschöner Amethyst. Ich sollte ihn einem Kind in Broko Town geben.,As purple as a beautiful amethyst. I should give it to a child in Broko Town.
+ITEMS_KEY_BALLOON_RED_NAME,Roter Ballon,Red balloon
+ITEMS_KEY_BALLOON_RED_DESC,So rot wie eine erblühende Rose. Die wohl natürlichste Farbe für Ballons. Ich sollte ihn einem Kind in Broko Town geben.,As red as a blooming rose. Probably the most natural color for balloons. I should give it to a child in Broko Town.
+ITEMS_KEY_DISK_COLOR_SELECTION_NAME,Farbauswahl-Disk,Color Selection Disk
+ITEMS_KEY_DISK_COLOR_SELECTION_DESC,"Eine Disk, auf der das Minispiel ""Farbauswahl"" gespeichert ist.","A disk on which the mini-game ""Color Selection"" is stored."
+ITEMS_EQUIPMENT_PARTY_HAT_1_NAME,Blau-Lilaner Partyhut,Blue-purple Party Hat
+ITEMS_EQUIPMENT_PARTY_HAT_1_DESC,"Ein Partyhut, um einem gegebenen festlichen Anlass einen besonderen Pepp zu verleihen.",A party hat to add special pep to a given festive occassion.
+ITEMS_EQUIPMENT_DISPOSABLE_GLOVE_NAME,Einmalhandschuh,Disposable Glove
+ITEMS_EQUIPMENT_DISPOSABLE_GLOVE_DESC,Manche Einmalhandschuhe kann man gerne auch mehrmals verwenden.,"If gloves are disposable, their disposal is not a must."
+ITEMS_EQUIPMENT_CITRIN_SHIELD_NAME,Zitrin Schild,Citrin Shield
+ITEMS_EQUIPMENT_CITRIN_SHIELD_DESC,Ein Schild hergestellt aus Zitrinplatt.,A shield made out of Citrin Shell.
+LOCATION_DOCTOR_DREAM_1,Dr. Nutmans Arztpraxis,Dr. Nutman's Doctors Office
+LOCATION_DR_NUTMAN_HOME_1,Dr. Nutmans Zuhause,Dr. Nutman's Home
+LOCATION_BROKO_TOWN_1,Broko Town,Broko Town
+LOCATION_BUFFIN_HOUSE_3,Buffin Haus,Buffin House
+LOCATION_BROKO_FOREST_1,Broko Wald,Broko Forest
+NAME_DR_NUTMAN,Dr. Nutman,Dr. Nutman
+NAME_ASSISTANT,Assistent,Assistant
+DIALOGUE_TUTATO_EXPLAIN_WONDERFUL_1_1_1,Ist das nicht wunderbar?,Isn't that just wonderful?
+DIALOGUE_TUTATO_EXPLAIN_INTRO_1_1_1,Ich bin die Tutoffel! Ich werde dir jetzt und auch im späteren Verlauf deines Abenteuers ein paar hilfreiche Tipps geben!,I am the Tutato! I'll give you a few helpful tips now and later on throughout your adventure!
+DIALOGUE_TUTATO_EXPLAIN_INTRO_1_2_1,Zum einen kannst du dich mit diesen Tasten bewegen!,"First of all, you can move around using these buttons!"
+DIALOGUE_TUTATO_EXPLAIN_INTRO_1_3_1,"Falls du etwas schneller unterwegs sein möchtest, kannst du dafür diese Taste gedrückt halten!","If you want to move around a little faster, you can push down this button!"
+DIALOGUE_TUTATO_EXPLAIN_INTRO_1_4_1,"Du kannst auch springen, insofern du dich nicht in einem Gebäude befindest!",You can also jump as long as you are not inside a building!
+DIALOGUE_TUTATO_EXPLAIN_INTRO_1_5_1,"Zusätzlich kannst du mit der Aktionstaste mit Objekten interagieren, oder auch Textboxen wie diese bestätigen!","Additionally, you can use the action button to interact with objects or confirm text boxes like this one!"
+DIALOGUE_TUTATO_EXPLAIN_INTRO_1_6_1,"Und zu guter Letzt kannst du mit dieser Taste das Hauptmenü öffnen, wenn du dich frei bewegen kannst.","And last but not least, you can use this button to open the main menu when you can move around freely."
+DIALOGUE_TUTATO_EXPLAIN_INTRO_1_7_1,Das soll es erstmal gewesen sein.,That should be it for now.
+DIALOGUE_TUTATO_EXPLAIN_INTRO_1_8_1,Viel Erfolg!,Good luck!
+DIALOGUE_TUTATO_EXPLAIN_FIRST_BATTLE_1_1_1,"Hallo, hier ist wieder die Tutoffel!","Hello, it's the Tutato again!"
+DIALOGUE_TUTATO_EXPLAIN_FIRST_BATTLE_1_2_1,"Scheint, als hättest du dich in deinen ersten Kampf verwickelt.",Seems like you've gotten yourself into your first fight.
+DIALOGUE_TUTATO_EXPLAIN_FIRST_BATTLE_1_2_2,"Ich möchte dich gerne unterstützen, indem ich dir etwas über die Grundlagen des Kampfsystems erzähle!",I would like to support you by telling you something about the basics of the combat system!
+DIALOGUE_TUTATO_EXPLAIN_FIRST_BATTLE_1_3_1,"Jeder Charakter, der am Kampf teilnimmt, hat eine Menge an Werten.",Every character who takes part in the battle has a set of stats.
+DIALOGUE_TUTATO_EXPLAIN_FIRST_BATTLE_1_3_2,Diese können bei Teammitgliedern im Verlauf des Spiels verbessert werden.,Those of team members can be improved over the course of the game.
+DIALOGUE_TUTATO_EXPLAIN_FIRST_BATTLE_1_4_1,"HP steht für Lebenspunkte. Ist dieser Wert auf 0, kann der Charakter nicht mehr weiterkämpfen.","HP stands for health points. If this value is 0, the character can no longer continue fighting."
+DIALOGUE_TUTATO_EXPLAIN_FIRST_BATTLE_1_5_1,"SP steht für Spezialpunkte. Sie werden benötigt, um Spezialattacken auszuführen.",SP stands for special points. They are needed to perform special attacks.
+DIALOGUE_TUTATO_EXPLAIN_FIRST_BATTLE_1_6_1,"ATK steht für Angriff. Dieser Wert gibt den Grundschaden an, den ein normaler Angriff verursacht.",ATK stands for attack. This value indicates the basic damage caused by a normal attack.
+DIALOGUE_TUTATO_EXPLAIN_FIRST_BATTLE_1_7_1,"MAG steht für Magie. Dieser Wert gibt den Grundschaden an, den ein magischer Angriff verursacht.",MAG stands for magic. This value indicates the basic damage caused by a magic attack.
+DIALOGUE_TUTATO_EXPLAIN_FIRST_BATTLE_1_8_1,"DEF steht für Verteidigung. Dieser Wert gibt den Schaden an, der bei einem gegnerischen Angriff geblockt wird.",DEF stands for defense. This value indicates the damage that is blocked by an opponent's attack.
+DIALOGUE_TUTATO_EXPLAIN_FIRST_BATTLE_1_9_1,"SPEED steht für Geschwindigkeit. Je höher dieser Wert ist, desto schneller kommt ein Charakter zum Zug.","SPEED stands for speed. The higher this value, the faster a character can perform a turn."
+DIALOGUE_TUTATO_EXPLAIN_FIRST_BATTLE_1_10_1,"Und zu guter Letzt: LUCK steht für Glück und kann bei Angriffen für kritische Treffer sorgen, die zusätzlichen Schaden verursachen.",And last but not least: LUCK stands for luck and can provide critical hits on attacks that cause additional damage.
+DIALOGUE_TUTATO_EXPLAIN_FIRST_BATTLE_1_11_1,"Ein Kampf spielt sich immer in Runden ab, in denen ein Charakter nach dem anderen eine Aktion ausführt.",A battle always takes place in rounds in which one character performs an action after the other.
+DIALOGUE_TUTATO_EXPLAIN_FIRST_BATTLE_1_12_1,Jeder Charakter hat seine eigenen Aktionen. Bei Teammitgliedern werden sie am Anfang des Zuges über ihren Köpfen angezeigt.,"Each character has their own actions. For party members, they are displayed above their heads at the start of the turn."
+DIALOGUE_TUTATO_EXPLAIN_FIRST_BATTLE_1_13_1,"Nachdem die gewünschte Aktion ausgewählt wurde, kann sie mit der Aktionstaste bestätigt werden.","Once the desired action has been selected, it can be confirmed with the action button."
+DIALOGUE_TUTATO_EXPLAIN_FIRST_BATTLE_1_14_1,"Es ist Zeit, deinen ersten Zug zu machen!",It's time to make your first move!
+DIALOGUE_TUTATO_EXPLAIN_FIRST_BATTLE_1_15_1,Viel Erfolg!,Good luck!
+DIALOGUE_TUTATO_EXPLAIN_FIRST_BATTLE_2_1_1,"Drücke die Aktionstaste genau dann, wenn Dr. Nutman am weitesten mit seiner Faust ausgeholt hat.",Press the action button exactly when Dr. Nutman has reached the furthest with his fist.
+DIALOGUE_TUTATO_EXPLAIN_FIRST_BATTLE_2_2_1,"Jetzt! Wenn Dr. Nutman mit seiner Faust am weitesten ausgeholt hat, verursacht der Angriff am meisten Schaden.","Now! When Dr. Nutman has reached the furthest with his fist, the attack deals the most damage."
+DIALOGUE_TUTATO_EXPLAIN_FIRST_BATTLE_3_1_1,"Um dem Schaden durch Gegnern zu entgehen, können ihren Attacken mit einem Sprung ausgewichen werden.","To avoid damage from enemies, you can dodge their attacks with a jump."
+DIALOGUE_TUTATO_EXPLAIN_FIRST_BATTLE_3_2_1,"Drücke dazu die Aktionstaste genau dann, wenn die gegnerische Attacke Dr. Nutman zu treffen droht.","To do this, press the action button exactly when the opponent's attack threatens to hit Dr. Nutman."
+DIALOGUE_TUTATO_EXPLAIN_FIRST_BATTLE_3_3_1,Jetzt! Das ist der perfekte Moment um der gegnerischen Attacke mit einem Sprung zu entgehen!,Now! This is the perfect moment to escape your opponent's attack with a jump!
+DIALOGUE_TUTATO_EXPLAIN_MAIN_MENU_INVENTORY_1_1_1,"Hallo, Tutoffel hier!","Hello there, Tutoffel here!"
+DIALOGUE_TUTATO_EXPLAIN_MAIN_MENU_INVENTORY_1_2_1,Du hast dich erfolgreich zu deinem Inventar navigiert.,You have successfully navigated to your inventory.
+DIALOGUE_TUTATO_EXPLAIN_MAIN_MENU_INVENTORY_1_3_1,Auf der linken Seite kannst du alle bisher gesammelten Items nach Typ sortiert sehen.,"On the left-hand side you can see all the items you have collected so far, sorted by type."
+DIALOGUE_TUTATO_EXPLAIN_MAIN_MENU_INVENTORY_1_4_1,Allgemeine Items können hier verbraucht oder an anderen Orten als Materialien zum Herstellen von neuen Items verwendet werden.,General items can be consumed here or used elsewhere as materials to create new items.
+DIALOGUE_TUTATO_EXPLAIN_MAIN_MENU_INVENTORY_1_5_1,"Schlüsselitems sind wichtige Gegenstände die für Quests benötigt werden. Somit können sie, im Gegensatz zu anderen Items, nicht verkauft werden.","Key items are important items that are required for quests. This means that, unlike other items, they cannot be sold."
+DIALOGUE_TUTATO_EXPLAIN_MAIN_MENU_INVENTORY_1_6_1,Ausrüstungsitems verstärken die Werte von Teammitgliedern und verändern ihr Aussehen. Sie können im Team-Menü ausgerüstet werden.,Equipment items increase the stats of party members and change their appearance. They can be equipped in the party menu.
+DIALOGUE_TUTATO_EXPLAIN_MAIN_MENU_INVENTORY_1_7_1,Auf der rechten Seite kannst du dann Details zu dem ausgewählten Item sehen.,You can then see details of the selected item on the right-hand side.
+DIALOGUE_TUTATO_EXPLAIN_MAIN_MENU_INVENTORY_1_8_1,Viel Spaß beim Sammeln!,Have fun collecting!
+DIALOGUE_TUTATO_EXPLAIN_MAIN_MENU_JOURNAL_1_1_1,Tutoffel hier! Willkommen in deinem Tagebuch!,Tutoffel here! Welcome to your journal!
+DIALOGUE_TUTATO_EXPLAIN_MAIN_MENU_JOURNAL_1_2_1,"Hier kannst du entweder das momentane Abenteuer niederschreiben, oder dich in ein vorhandenes hineinlesen.",Here you can either write down the current adventure or read into an existing one.
+DIALOGUE_TUTATO_EXPLAIN_MAIN_MENU_JOURNAL_1_3_1,"Bitte vergiss nicht, deinen Fortschritt ab und zu festzuhalten.",Please don't forget to record your progress from time to time.
+DIALOGUE_TUTATO_EXPLAIN_MAIN_MENU_JOURNAL_1_4_1,Das soll es gewesen sein. Viel Erfolg beim Abenteurern!,That should be it. Good luck with your adventures!
+DIALOGUE_TUTATO_EXPLAIN_MAIN_MENU_PARTY_1_1_1,Hier bin ich wieder! Die Tutoffel.,Here I am again! The Tutoffel.
+DIALOGUE_TUTATO_EXPLAIN_MAIN_MENU_PARTY_1_2_1,Im Team-Menü kannst für jedes Teammitglied auf der linken Seite seinen Status einsehen.,"In the party menu, you can view the status of each party member on the left-hand side."
+DIALOGUE_TUTATO_EXPLAIN_MAIN_MENU_PARTY_1_3_1,Mithilfe des Inventars auf der rechten Seite kannst du dann seine Ausrüstung ändern.,You can then use the inventory on the right-hand side to change their equipment.
+DIALOGUE_TUTATO_EXPLAIN_MAIN_MENU_PARTY_1_4_1,Ziehe hierfür das gewünschte Ausrüstungsitem in den dafür vorgesehenen Ausrüstungs-Slot neben dem Charakter.,"To do this, drag the desired equipment item into the fitting equipment slot next to the character."
+DIALOGUE_TUTATO_EXPLAIN_MAIN_MENU_PARTY_1_5_1,Unten kannst du zusätzlich schnell zwischen den verschiedenen Teammitgliedern hin- und herwechseln.,"At the bottom, you can also quickly switch between the different party members."
+DIALOGUE_TUTATO_EXPLAIN_MAIN_MENU_PARTY_1_6_1,"Ich hoffe du kannst ein Outfit finden, das dir gefällt!",I hope you can find an outfit that you like!
+DIALOGUE_TUTATO_EXPLAIN_MAIN_MENU_QUESTS_1_1_1,Hallo! Hier ist die Tutoffel!,"Hello, this is the Tutoffel!"
+DIALOGUE_TUTATO_EXPLAIN_MAIN_MENU_QUESTS_1_2_1,"Das Quests-Menü gibt dir eine Übersicht über die Quests, die du im Verlauf des Spiels angenommen hast.",The quests menu gives you an overview of the quests that you accepted during the course of the game.
+DIALOGUE_TUTATO_EXPLAIN_MAIN_MENU_QUESTS_1_3_1,"Jeder Eintrag repräsentiert eine Quest, Sub-Quests können anderen Quests untergeordnet sein.","Each entry represents a quest, sub-quests can be subordinate to other quests."
+DIALOGUE_TUTATO_EXPLAIN_MAIN_MENU_QUESTS_1_4_1,"Wenn du eine Quest auswählst, kannst du auf der rechten Seite mehr Informationen über sie erhalten.","If you select a quest, you can find more information about it on the right-hand side."
+DIALOGUE_TUTATO_EXPLAIN_MAIN_MENU_QUESTS_1_5_1,"Vergiss nicht Quests anzupinnen, um schnelleren Zugriff auf sie zu haben!",Don't forget to pin quests to have quicker access to them!
+DIALOGUE_TUTATO_EXPLAIN_MAIN_MENU_QUESTS_1_6_1,"So, dann wünsche ich dir viel Spaß beim Erkunden!","So, have fun exploring!"
+DIALOGUE_TUTATO_EXPLAIN_MAIN_MENU_OPTIONS_1_1_1,"Hey, ich bins wieder!","Hey, it's me again!"
+DIALOGUE_TUTATO_EXPLAIN_MAIN_MENU_OPTIONS_1_2_1,Im Options-Menü kannst du eine Vielzahl an Einstellungen anpassen um dein Erlebnis zu verbessern.,"In the options menu, you can customize a variety of settings to improve your experience."
+DIALOGUE_TUTATO_EXPLAIN_MAIN_MENU_OPTIONS_1_2_2,"So kannst du zum Beispiel auch einstellen, dass du keine weitere Hilfe von mir benötigst.","For example, you can also specify that you don't need any further help from me."
+DIALOGUE_TUTATO_EXPLAIN_MAIN_MENU_OPTIONS_1_3_1,Ist das nicht{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}. Wunderbar?,Isn't that just{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}. Wonderful?
+DIALOGUE_TUTATO_EXPLAIN_MAIN_MENU_OPTIONS_1_4_1,Viel Spaß beim Einstellen!,Have fun with your settings!
+DIALOGUE_TUTATO_EXPLAIN_ON_MAP_ENCOUNTER_1_1_1,Ich bin es mal wieder!,It's me again!
+DIALOGUE_TUTATO_EXPLAIN_ON_MAP_ENCOUNTER_1_2_1,"Du hast ein Gebiet erreicht, in dem sich Gegner herumtreiben.",You have reached an area where enemies are lurking.
+DIALOGUE_TUTATO_EXPLAIN_ON_MAP_ENCOUNTER_1_3_1,"Wenn du mit ihnen in Berührung kommst, führt dies zum Kampf.","If you come into contact with them, it will lead to battle."
+DIALOGUE_TUTATO_EXPLAIN_ON_MAP_ENCOUNTER_1_4_1,"Sollte der Gegner dich mit seiner Attacke treffen, so ist er im Kampf als Erstes dran.","If the enemy hits you with their attack, they will have the first turn in battle."
+DIALOGUE_TUTATO_EXPLAIN_ON_MAP_ENCOUNTER_1_5_1,"Solltest hingegen du es schaffen auf ihn hinaufzuspringen, darfst du im Kampf die erste Aktion ausführen.","If, on the other hand, you manage to jump onto them, you can perform the first action in battle."
+DIALOGUE_TUTATO_EXPLAIN_ON_MAP_ENCOUNTER_1_6_1,"Ansonsten entscheidet die Geschwindigkeit, wer im Kampf die erste Aktion ausführen darf.","Otherwise, speed determines who is allowed to perform the first action in battle."
+DIALOGUE_TUTATO_EXPLAIN_ON_MAP_ENCOUNTER_1_7_1,Ich hoffe ich konnte dir helfen. Viel Erfolg!,I hope I was able to help you. Good luck!
+DIALOGUE_RIGHT_ON_THE_NUT_ROUND_FINISH_1_1_1,Handvoll geknackter Erdnüsse erhalten!,Handful cracked peanuts received!
+DIALOGUE_SQUIRREL_FISHING_ROUND_FINISH_1_1_1,Handvoll geknackter Erdnüsse verangelt!,Used up handful cracked peanuts to feed squirrels!
+DIALOGUE_DOCTOR_DREAM_1_START_1_1_1,"Oh! Ich wünsche Ihnen einen wunderschönen Tag, Doktor Dr. Nutman!","Oh! It’s great to see you, Doctor Dr. Nutman!"
+DIALOGUE_DOCTOR_DREAM_1_START_1_2_1,Nenn mich bitte einfach Dr. Nutman. Sparen wir uns die Formalitäten.,"Just call me Dr. Nutman, please. Let's save the formalities."
+DIALOGUE_DOCTOR_DREAM_1_START_1_2_2,"Bescheiden wie immer, Dr. Nutman. Ich bin ein großer Bewunderer Ihrer Arbeit - wie Sie hier tagein, tagaus herumdoktoren, einfach klasse.","Humble as always, Dr. Nutman. I'm a great admirer of your work - the way you do your doctoring here day in and day out is just great."
+DIALOGUE_DOCTOR_DREAM_1_START_1_2_3,"Aber du bist doch jeden Tag genauso lange hier wie ich, also bist du auch genau so beeindruckend.","But you've been here every day just as long as I have, so you're just as impressive."
+DIALOGUE_DOCTOR_DREAM_1_START_1_2_4,"Das von Ihnen zu hören, dass lässt mein Herz wirklich höher schlagen.",Hearing that from you really makes my heart beat faster.
+DIALOGUE_DOCTOR_DREAM_1_START_1_2_5,"Aber ich bin doch nur Ihr Helfer, Sie sind derjenige, der mit Expertise am Patienten ist.","But I'm just your helper, you're the one with expertise on the patient."
+DIALOGUE_DOCTOR_DREAM_1_START_1_3_1,"Ich habe hier nur meine drei Spritzen, mit denen ich die Patienten auf Wunsch spritze.",I only have my three syringes here that I use to inject patients on request.
+DIALOGUE_DOCTOR_DREAM_1_START_1_3_2,"Und noch ein paar andere Werkzeuge, mit denen ich Sie unterstütze.",And a few other tools that I support you with.
+DIALOGUE_DOCTOR_DREAM_1_START_1_4_1,"Sie erkennen, was dem Patienten fehlt.",You recognize what the patient is in need of.
+DIALOGUE_DOCTOR_DREAM_1_START_1_4_2,Wir sind ein gutes Team. Ich könnte nicht ohne dich agieren.,We are a good team. I could not operate without you.
+DIALOGUE_DOCTOR_DREAM_1_START_1_4_3,"Also, was steht heute an? ","So, what's on the agenda today?"
+DIALOGUE_DOCTOR_DREAM_1_START_1_4_4,"Ich weiß nur, dass uns die Lehrlinge von Künst DéLère einen Besuch abstatten wollten, um einmal zu sehen, wie wir hier arbeiten.",All I know is that the apprentices from Paint DéLère wanted to pay us a visit to see how we work here.
+DIALOGUE_DOCTOR_DREAM_1_START_1_4_5,"Ich bin mir sicher, wir können ihnen ein positives Bild unserer Arbeit vermitteln.",I am sure we can give them a positive image of our work.
+DIALOGUE_DOCTOR_DREAM_1_START_1_4_6,"Ja, sorgen wir dafür, dass sie diesen Tag nicht vergessen!","Yes, let's make sure they will never forget this day!"
+DIALOGUE_DOCTOR_DREAM_1_START_1_5_1,"Bonjour, meinö Freundö!","Bonjour, my friends!"
+DIALOGUE_DOCTOR_DREAM_1_START_1_6_1,"Na kömm rein, du kleine Fratz.","Come on in, you petit brat."
+DIALOGUE_DOCTOR_DREAM_1_START_1_7_1,"Es gibt keinön Gründ, schüchtörn zu sein! 'Err Nütman ist ein wahrlich freundlichör Gesellö.",There is no reason to be shy! Monsieur Nutman is a truly friendly fellow.
+DIALOGUE_DOCTOR_DREAM_1_START_1_8_1,"Isch versprechö dir, das wird der bestö Arztbesuch deinös Leböns!","I promise you, this will be the best doctors visit of your life!"
+DIALOGUE_DOCTOR_DREAM_1_START_1_9_1,Ist alles in Ordnung?,Is everything alright?
+DIALOGUE_DOCTOR_DREAM_1_START_1_10_1,Diesö kleinö Fratz!,Ce petit brat!
+DIALOGUE_DOCTOR_DREAM_1_START_1_11_1,"Oui, es ist allös wünderbar! Einö meinör Lehrlingö ist nur etwas schüchtörn!","Oui, it's all wonderful! One of my apprentices is just a little shy."
+DIALOGUE_DOCTOR_DREAM_1_START_1_12_1,[font_size={16}]Wie habö isch damals immör meinö Angst überwundön? Gibt ös da einen Trique?,[font_size={16}]'Ow did I always overcome my fear back then? Is there a trique?
+DIALOGUE_DOCTOR_DREAM_1_START_1_12_2,[font_size={16}]Isch 'abe öft an mein Lieblingspinsöl-Set gedacht.{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5} Aber öb diesör Lehrling bereits ein Lieblingspinsöl-Set 'at?,[font_size={16}]I 'ave often thought of my favorite brush set{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5} But does this apprentice already 'ave a favorite brush set?
+DIALOGUE_DOCTOR_DREAM_1_START_1_13_1,"Wenn du nün mit rein kömmst, schenkö isch eusch spätör allö einön Pinsöl!","If you come inside now, I will give you all a brush later on!"
+DIALOGUE_DOCTOR_DREAM_1_START_1_14_1,Sacre Bleu!,Sacre Bleu!
+DIALOGUE_DOCTOR_DREAM_1_START_1_15_1,.{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5},.{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}
+DIALOGUE_DOCTOR_DREAM_1_START_1_16_1,Diesö Schild ist einföch wünderschön!,This sign is simply magnifique!
+DIALOGUE_DOCTOR_DREAM_1_START_1_17_1,Isch kann nischt andörs! Isch muss ihn einfach malön!,I can not help myself! I just have to paint it!
+DIALOGUE_DOCTOR_DREAM_1_START_1_16_2,"Ein grünör Pfeil nach Rechts auf weißöm Hintergründ, so simpöl und döch so vollkömmen!","A green arrow pointing right on a white background, so simple and yet so perfect."
+DIALOGUE_DOCTOR_DREAM_1_START_1_18_1,"Herr Nutman, was ist das da für ein Ding auf dem Bild mit dem grünen Hintergrund?","Mr. Nutman, what is that thing in the picture with the green background?"
+DIALOGUE_DOCTOR_DREAM_1_START_1_19_1,"Das?{Wait Time=0.5} Oh, das ist ein Fibri-Vibri! Es vibriert wenn du Fieber hast, dann weißt du, dass du dich ausruhen solltest.","This?{Wait Time=0.5} Oh, it's is a Fev-Perceiv! It vibrates when you have a fever, then you know that you should rest."
+DIALOGUE_DOCTOR_DREAM_1_START_1_19_2,"Vibration ist cool! Und was passiert, wenn ich kein Fieber habe?",Vibration is cool! And what happens if I don't have a fever?
+DIALOGUE_DOCTOR_DREAM_1_START_1_19_3,Dann vibriert das Fibri-Vibri nicht.,Then the Fev-Perceiv does not vibrate.
+DIALOGUE_DOCTOR_DREAM_1_START_1_19_4,Ich will Fieber haben!,I want to have a fever!
+DIALOGUE_DOCTOR_DREAM_1_START_1_19_5,Ich will auch Fieber haben!,I also want to have a fever!
+DIALOGUE_DOCTOR_DREAM_1_START_1_19_6,"Ich will den Pinsel, den Künst DéLère mir versprochen hat!",I want the brush that Paint DéLère promised me!
+DIALOGUE_DOCTOR_DREAM_1_START_1_19_7,".{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5} Also schön, dann lasst uns mal gucken, ob irgendjemandem von euch etwas fehlt.",".{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5} Well then, let's see if you're all nice and healthy."
+DIALOGUE_DOCTOR_DREAM_1_START_1_20_1,Was ist eigentlich mit Künst DéLère?,What happened to Paint DéLère?
+DIALOGUE_DOCTOR_DREAM_1_START_1_21_1,"[wave amp=25 freq=2]Aaaaaah!  [/wave][img]res://Global_Scenes/Dialogue_System/Sprites/Icons/Note_1.png[/img] Isch freuö misch immör, wenn isch wiedör ein Bild malön darf. [img]res://Global_Scenes/Dialogue_System/Sprites/Icons/Note_1.png[/img]",[wave amp=25 freq=2]Aaaaaah!  [/wave][img]res://Global_Scenes/Dialogue_System/Sprites/Icons/Note_1.png[/img] I am always 'appy when I get to paint another picture. [img]res://Global_Scenes/Dialogue_System/Sprites/Icons/Note_1.png[/img]
+DIALOGUE_DOCTOR_DREAM_1_START_1_21_2,"Die Klassik, die Förm, die Ausstrahlüng diesös wünderbaren Pfeils, sie 'at misch in ihrön Bann gezogön.","The classic, the shape, the charisma of this wonderful arrow, it captivated me."
+DIALOGUE_DOCTOR_DREAM_1_START_1_21_3,"Das erinnört misch an den Tag, an dem isch mit meinö Familie in Ürlaub fahrön wolltö!",This reminds me of the day I wanted to go on vacation with my family!
+DIALOGUE_DOCTOR_DREAM_1_START_1_21_4,Jedö kleinö Sachö auf döm Weg züm Flüghafön habö isch in einem Gemäldö festgehaltön.,I captured every little thing on the way to the airport in a painting.
+DIALOGUE_DOCTOR_DREAM_1_START_1_21_5,Isch 'abe sogar die Madame am Tickötschaltör gemalt!,I even painted the madame at the ticket counter!
+DIALOGUE_DOCTOR_DREAM_1_START_1_21_6,"Doch dann erfuhr isch, dass isch meinö 30 Gemäldö gar nischt mit an Bord nehmen darf...",But then I was informed that I'm not even allowed to take my 30 paintings on board...
+DIALOGUE_DOCTOR_DREAM_1_START_1_21_7,"Isch hättö misch niemals von einöm Gemäldö trennön könnön, deswegen fiel der Ürlaub für misch leidör flach.","I would never have been able to part with a painting, so unfortunately the vacation fell flat for me."
+DIALOGUE_DOCTOR_DREAM_1_START_1_21_8,Manchmal müss man ebön Prioritätön setzön!,Sometimes you just have to set priorities!
+DIALOGUE_DOCTOR_DREAM_1_START_1_22_1,"Also gut, dir fehlt schonmal nichts.","All right, you seem to be fine."
+DIALOGUE_DOCTOR_DREAM_1_START_1_23_1,"Na, welche Spritze möchtest du haben? Rot, Grün oder Blau?","So, which syringe would you like to have? Red, green or blue?"
+DIALOGUE_DOCTOR_DREAM_1_START_1_22_2,Menno.,Darn.
+DIALOGUE_DOCTOR_DREAM_1_START_1_23_2,"Hmmm.{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5} Ich möchte gerne die blaue Spritze haben, bitte.","Hmmm.{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5} I would like to have the blue syringe, please."
+DIALOGUE_DOCTOR_DREAM_1_START_1_23_3,"Eine gute Wahl! Einmal Blau direkt in die Teigmischung, kommt sofort!","A good choice! A one time blue delivery directly into the dough mixture, coming up!"
+DIALOGUE_DOCTOR_DREAM_1_START_1_24_1,"So, jetzt ist deine Welt wieder ein Stück bunter geworden.","So, now your world has become a bit more colorful again."
+DIALOGUE_DOCTOR_DREAM_1_START_1_24_2,"Wie beim Malen, cool!","Like when you paint, cool!"
+DIALOGUE_DOCTOR_DREAM_1_START_1_24_3,"Ja, in jedem Beruf wird man auf eine ganz eigene Art zum Künstler.","Yes, in every profession you become an artist in a very unique way."
+DIALOGUE_DOCTOR_DREAM_1_START_1_25_1,Dir geht es auch einfach nur klasse.,You are also doing just great.
+DIALOGUE_DOCTOR_DREAM_1_START_1_25_2,Kein Fieber?,No fever?
+DIALOGUE_DOCTOR_DREAM_1_START_1_25_3,Kein Fieber.,No fever.
+DIALOGUE_DOCTOR_DREAM_1_START_1_26_1,"Ganz toll, Herr Künst DéLère!","Way to go, Mr. Paint DéLère!"
+DIALOGUE_DOCTOR_DREAM_1_START_1_26_2,"Merci, isch gebö mir wirklisch viel Mühö, die Natür des Pfeilös einzufangön!","Merci, I really try hard to capture the nature of the arrow!"
+DIALOGUE_DOCTOR_DREAM_1_START_1_26_3,Cool.,Cool.
+DIALOGUE_DOCTOR_DREAM_1_START_1_27_1,Und welche Spritze möchtest du haben?,And which syringe do you want?
+DIALOGUE_DOCTOR_DREAM_1_START_1_27_2,Ich finde Rot ganz toll!,I think red is really great!
+DIALOGUE_DOCTOR_DREAM_1_START_1_27_3,Dann sollst du auch eine rote Spritze bekommen. Einen Moment.,Then you should also get a red shot. One moment.
+DIALOGUE_DOCTOR_DREAM_1_START_1_28_1,Viel Spaß!,Enjoy!
+DIALOGUE_DOCTOR_DREAM_1_START_1_28_2,Danke?,Thanks?
+DIALOGUE_DOCTOR_DREAM_1_START_1_29_1,"Du bist auch äußerst gesund, Kleiner.","You are also extremely healthy, little one."
+DIALOGUE_DOCTOR_DREAM_1_START_1_29_2,Yippie! Krieg ich jetzt meinen Pinsel?,Yippee! Can I have my brush now?
+DIALOGUE_DOCTOR_DREAM_1_START_1_29_3,"Das musst du mit Künst DéLère besprechen, aber gesundheitlich bist du dazu in der Lage, einen zu erhalten.","You will have to discuss that with Paint DéLère, but health-wise you are able to get one."
+DIALOGUE_DOCTOR_DREAM_1_START_1_30_1,Ist das ein Pfeil?,Is that an arrow?
+DIALOGUE_DOCTOR_DREAM_1_START_1_30_2,"Oui, ör ist grün und zeigt nach röchts.","Oui, it is green and points to the right."
+DIALOGUE_DOCTOR_DREAM_1_START_1_30_3,Tatsächlich.,Indeed.
+DIALOGUE_DOCTOR_DREAM_1_START_1_31_1,Und welche Farbe möchtest du haben?,And what color do you want?
+DIALOGUE_DOCTOR_DREAM_1_START_1_31_2,"Grün, ich habe nämlich Hoffnung, noch einen Pinsel zu erhalten.","Green, because I still have hope to get a brush."
+DIALOGUE_DOCTOR_DREAM_1_START_1_31_3,Sei bereit für die Injektion deines Lebens!,Be ready for the injection of a lifetime!
+DIALOGUE_DOCTOR_DREAM_1_START_1_32_1,Das wars.,That's it.
+DIALOGUE_DOCTOR_DREAM_1_START_1_32_2,Danke.,Thanks.
+DIALOGUE_DOCTOR_DREAM_1_START_1_33_1,"Was ist mit dir? Komm her, dann kann ich gucken, ob dir etwas fehlt.","What's up with you? Come here, so I can check if you're alright."
+DIALOGUE_DOCTOR_DREAM_1_START_1_33_2,[font_size={16}][shake rate=3 level=15]Ich weiß nicht so recht...,[font_size={16}][shake rate=3 level=15]I don't really know...
+DIALOGUE_DOCTOR_DREAM_1_START_1_34_1,"Also, gucken wir doch mal.{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5} Du stehst bestimmt auch mitten im Leben.","So, let's take a look.{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5} You are probably also doing great."
+DIALOGUE_DOCTOR_DREAM_1_START_1_35_1,Das kann doch nicht sein!,This can't be!
+DIALOGUE_DOCTOR_DREAM_1_START_1_36_1,"Assistent, dieser Lehrling hat tatsächlich Fieber!","Assistant, this apprentice actually has a fever!"
+DIALOGUE_DOCTOR_DREAM_1_START_1_37_1,Das hatten wir ja noch nie!,We've never had that before!
+DIALOGUE_DOCTOR_DREAM_1_START_1_38_1,"Schnell, wir müssen das Fieber mit allen Mitteln bekämpfen. Auf gehts!","Quick, we must fight the fever with all means. Let's go!"
+DIALOGUE_DOCTOR_DREAM_1_START_1_39_1,Das hätten wir erledigt{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}. Du darfst wieder zu den anderen zurück.,That's done{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}. You may go back to the others.
+DIALOGUE_DOCTOR_DREAM_1_START_1_39_2,"Danke, bis dann.","Thanks, see you."
+DIALOGUE_DOCTOR_DREAM_1_START_1_40_1,Lasst misch noch ebön diesö Gemäldö fertischstellön{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.,Let me just finish this painting{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.
+DIALOGUE_DOCTOR_DREAM_1_START_1_41_1,"Comme ça! Nün, wir sölltön wiedör zurück gehön!","Comme ça! Well, we should 'ead back again!"
+DIALOGUE_DOCTOR_DREAM_1_START_1_41_2,Vielön Dank 'Err Dr. Nutman und Assistönt. Isch denkö wir sehön uns bald mal wiedör!,Thank you Mr. Dr. Nutman and assistant. I think we will see each other again soon.
+DIALOGUE_DOCTOR_DREAM_1_START_1_42_1,Alors!,Alors!
+DIALOGUE_DOCTOR_DREAM_1_START_1_43_1,"Mist! Ich habe vergessen, dem Lehrling, welcher Fieber hatte, eine Spritze zu geben{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.",Crap! I forgot to give a shot to the apprentice who had a fever{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.
+DIALOGUE_DOCTOR_DREAM_1_START_1_44_1,"Das ist schon okay, er hätte sich ja deswegen auch melden können.","That's okay, he could have contacted you about it too."
+DIALOGUE_DOCTOR_DREAM_1_START_1_44_2,"Apropos, wussten Sie, Herr Dr. Nutman, dass man mit diesen Spritzen ganz wunderbare Farben produzieren kann?","Speaking of which, did you know, Mr. Dr. Nutman, that you can produce quite wonderful colors with these syringes?"
+DIALOGUE_DOCTOR_DREAM_1_START_1_44_3,"Es würde mich freuen, wenn Sie es einmal ausprobieren würden{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.",I would be happy if you gave it a try{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.
+DIALOGUE_DOCTOR_DREAM_1_START_1_44_4,"Lassen Sie mich nur kurz ein Gefäß mit Wasser vorbereiten, dann können Sie ihre Lieblingsfarbe herstellen.","Just let me prepare a container of water for a moment, then you can produce your favorite color."
+DIALOGUE_DOCTOR_DREAM_1_START_1_45_1,"Guter Wurf, Assistent!","Good throw, assistant!"
+DIALOGUE_DOCTOR_DREAM_1_START_1_45_2,Ich danke Ihnen!,Thank you!
+DIALOGUE_DOCTOR_DREAM_1_START_1_46_1,"Nun gut, dann lasst uns mit der Farbherstellung beginnen!","Well then, let's get started with the paint making!"
+DIALOGUE_DOCTOR_DREAM_1_COLOR_SELECTION_1_1_1,Ich werde nun von oben abwechselnd Farbe in den Trichter spritzen! ,I will now alternate spraying paint into the hopper from the top!
+DIALOGUE_DOCTOR_DREAM_1_COLOR_SELECTION_1_1_2,"Oben rechts können Sie, Herr Dr. Nutman, sehen, welche Farbe ich momentan in meiner Spritze habe.","In the upper right, Dr. Nutman, you can see what color I currently have in my syringe."
+DIALOGUE_DOCTOR_DREAM_1_COLOR_SELECTION_1_1_3,Viel Erfolg!,Good luck!
+DIALOGUE_DOCTOR_DREAM_1_START_2_1_1,"Da haben Sie wirklich eine wunderbare Farbe zusammengemischt, Herr Doktor Dr. Nutman!","You have really mixed a wonderful color together, Mr. Dr. Doctor Nutman!"
+DIALOGUE_DOCTOR_DREAM_1_START_2_1_2,Ich hoffe Ihnen hat dieses kleine Farbmischexperiment gefallen.,I hope you enjoyed this little color mixing experiment.
+DIALOGUE_DOCTOR_DREAM_1_START_2_2_1,"Ja, danke{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}. Deine Farben haben mich zum Mischen überzeugt.","Yes, thank you{Wait Time=0.5}.{Wait Time=0.5}. Your colors have convinced me to mix."
+DIALOGUE_DOCTOR_DREAM_1_START_2_3_1,"Alles klar, dann war es das auch schon wieder für heute.","All right, that's it for today."
+DIALOGUE_DOCTOR_DREAM_1_START_2_4_1,Ich wünsche Ihnen noch einen schönen Tag!,Have a great day!
+DIALOGUE_SP_SICK_APPRENTICE_1_EXPLAIN_ATTACK_1_1_1,"Nach alter Arzt-Manier muss ich dem Lehrling jetzt richtig eine reinhauen! Am besten ins Gesicht, da dort ja auch das Fieber sitzt.","In old doctor's manner, I have to punch the apprentice now! Preferably in the face, since that's where the fever is."
+DIALOGUE_SP_SICK_APPRENTICE_1_EXPLAIN_ATTACK_1_2_1,"Dr. Nutman! Sind Sie sicher, dass man Fieber so behandelt?",Dr. Nutman! Are you sure this is proper fever treatment?
+DIALOGUE_SP_SICK_APPRENTICE_1_EXPLAIN_ATTACK_1_3_1,"Wir behandeln Fieber nicht, wir bekämpfen es!","We don't treat fever, we fight it!"
+DIALOGUE_SP_SICK_APPRENTICE_1_EXPLAIN_ATTACK_1_3_2,.{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5} Ich vertraue auf Ihre Expertise.,.{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5} I trust in your expertise.
+DIALOGUE_SP_SICK_APPRENTICE_1_EXPLAIN_ATTACK_1_4_1,Für meinen Angriff muss ich auf das richtige Timing achten!,For my attack I have to pay attention to the right timing!
+DIALOGUE_SP_SICK_APPRENTICE_1_FLEE_ATTEMPT_1_1_1,Herr Dr. Nutman! Sie wollen doch nicht etwa gerade flüchten?,"Mr. Dr. Nutman! You're not planning to flee, are you?"
+DIALOGUE_SP_SICK_APPRENTICE_1_FLEE_ATTEMPT_1_1_2,Dieser fiebrige Lehrling braucht wirklich Ihre Hilfe!,This feverish apprentice really needs your help!
+DIALOGUE_SP_SICK_APPRENTICE_1_FLEE_ATTEMPT_1_2_1,Du hast ja recht{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.,You're right{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.
+DIALOGUE_SP_SICK_APPRENTICE_1_BUFFIN_ASSISTANT_HELP_1_1_1,"Ich, als Ihr Assistent, werde Ihnen nun helfen, Herr Dr. Nutman.","I, as your assistant, will now help you, Mr. Dr. Nutman."
+DIALOGUE_SP_SICK_APPRENTICE_1_BUFFIN_ASSISTANT_HELP_1_1_2,"Dafür habe ich extra einen Beutel vorbereitet, in den ich ein paar Dinge hineingelegt habe.","For this, I specially prepared a bag in which I put a few things."
+DIALOGUE_SP_SICK_APPRENTICE_1_BUFFIN_ASSISTANT_HELP_1_1_3,Die werden bestimmt nützlich sein!,They will definitely come in handy!
+DIALOGUE_SP_SICK_APPRENTICE_1_BUFFIN_ASSISTANT_HELP_1_2_1,"Hervorragende Arbeit, Assistent! Vorhin meintest du noch, du wärst ""nur"" der Assistent, und jetzt lieferst du hier so eine tolle Leistung ab! Top!","Excellent work assistant! Earlier you said you're ""just"" the assistant, and now you deliver such a great performance here! Top!"
+DIALOGUE_SP_SICK_APPRENTICE_1_BUFFIN_ASSISTANT_HELP_1_2_2,"Aber Herr Dr. Nutman, ich weiß doch, wie sehr Sie sich auf mich verlassen.","But Mr. Dr. Nutman, I know how much you rely on me."
+DIALOGUE_SP_SICK_APPRENTICE_1_BUFFIN_ASSISTANT_HELP_1_2_3,Ich kann Sie doch nicht enttäuschen.,I can't disappoint you after all.
+DIALOGUE_SP_SICK_APPRENTICE_1_BUFFIN_ASSISTANT_HELP_1_2_4,"Also gut, überrasche mich mit dem Inhalt deines Beutels!","Alright, surprise me with the contents of your bag!"
+DIALOGUE_SP_SICK_APPRENTICE_1_BUFFIN_ASSISTANT_HELP_1_3_1,Ein Einmalhandschuh!,A disposable glove!
+DIALOGUE_SP_SICK_APPRENTICE_1_BUFFIN_ASSISTANT_HELP_1_4_1,Wunderbar! Dann kann ich von nun an steril zuschlagen.,Wonderful! I can strike sterile from now on.
+DIALOGUE_SP_SICK_APPRENTICE_1_BUFFIN_ASSISTANT_HELP_1_5_1,"Stimmt, Sie müssen sich nicht einmal mehr die Hände schmutzig machen.","Right, you don't even have to get your hands dirty anymore."
+DIALOGUE_SP_SICK_APPRENTICE_1_BUFFIN_ASSISTANT_HELP_1_5_2,Das Budget war nur leider zu niedrig um zwei zu beschaffen{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.,The budget was just too low to get hold of two{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.
+DIALOGUE_SP_SICK_APPRENTICE_1_BUFFIN_ASSISTANT_HELP_1_5_3,"Aber ich bin mir sicher, dass nur einer Ihnen auch super stehen wird.",But I'm sure that only one will also look great on you.
+DIALOGUE_SP_SICK_APPRENTICE_1_BUFFIN_ASSISTANT_HELP_1_6_1,Ich denke er könnte die Amethysten an Ihrem Körper schmeichelhaft betonen.,I think it could flatteringly emphasise the amethysts on your body.
+DIALOGUE_SP_SICK_APPRENTICE_1_BUFFIN_ASSISTANT_HELP_1_6_2,"Ich würde gerne das Fieber bekämpfen, ich brauche keine modische Beratung.","I would like to fight the fever, I don't need fashion advice."
+DIALOGUE_SP_SICK_APPRENTICE_1_SICK_APRRENTICE_ACTION_1_1_1,[shake rate=3 level=15]Mir geht es nicht so gut{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.,[shake rate=3 level=15]I do not feel so well{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.
+DIALOGUE_SP_SICK_APPRENTICE_1_BUFFIN_ASSISTANT_HELP_2_1_1,"Ich bin gespannt was Sie zu meinem nächsten Gegenstand sagen, Herr Dr. Nutman!","I look forward to hear what you have to say about my next item, Mr. Dr. Nutman!"
+DIALOGUE_SP_SICK_APPRENTICE_1_BUFFIN_ASSISTANT_HELP_2_2_1,"Ah, ein Mundspatel zur Untersuchung der Mundhöhle und des Rachenraums!","Ah, an oral spatula for examining the oral cavity and pharynx!"
+DIALOGUE_SP_SICK_APPRENTICE_1_BUFFIN_ASSISTANT_HELP_2_2_2,"Einwandfrei mitgedacht, es gibt kein besseres Werkzeug, wenn man die Mundhöhle und den Rachenraum untersuchen möchte.","Impeccably thought out, there is no better tool if you want to examine the oral cavity and pharynx."
+DIALOGUE_SP_SICK_APPRENTICE_1_BUFFIN_ASSISTANT_HELP_2_3_1,Vorhin war da aber noch ein Eis dran{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.,But earlier on there was ice cream on it{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.
+DIALOGUE_SP_SICK_APPRENTICE_1_BUFFIN_ASSISTANT_HELP_2_4_1,Ich leg' den Stiel mal zur Seite auf den Tisch.,I'll put the stem aside on the table.
+DIALOGUE_SP_SICK_APPRENTICE_1_BUFFIN_ASSISTANT_HELP_2_4_2,"Perfekt, den Mundspatel können wir vielleicht noch nach der Bekämpfung gebrauchen!","Perfect, we might still be able to use the mouth spatula after the fight!"
+DIALOGUE_SP_SICK_APPRENTICE_1_PAINT_DELERE_PAINT_1_1_1,Da muss isch meinör Kreativitöt freiön Lauf lassön{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.,There I 'ave to give free rein to my creativity{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.
+DIALOGUE_SP_SICK_APPRENTICE_1_SICK_APRRENTICE_ACTION_2_1_1,[shake rate=3 level=15]Mein Kopf fühlt sich wirklich sehr warm an{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.,[shake rate=3 level=15]My head really feels very warm{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.
+DIALOGUE_SP_SICK_APPRENTICE_1_SICK_APRRENTICE_ACTION_2_2_1,Passen Sie auf Dr. Nutman! Der Lehrling plant eine Fieber-Attacke!,Watch out Dr. Nutman! The apprentice is planning a fever attack!
+DIALOGUE_SP_SICK_APPRENTICE_1_SICK_APRRENTICE_ACTION_2_2_2,"Danke für die Warnung! Doch als Doktor weiß ich natürlich, dass man einer Fieber-Attacke mit einem guten Sprung entgehen kann.",Thanks for the warning! But as a doctor you know of course that you can escape a fever attack with a good jump.
+DIALOGUE_SP_SICK_APPRENTICE_1_SICK_APRRENTICE_ACTION_2_3_1,Ich habe eine Menge seltsamer Dinge gesehen{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.,I have seen a lot of strange things{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.
+DIALOGUE_SP_SICK_APPRENTICE_1_SICK_APRRENTICE_ACTION_2_3_2,Ich glaube wir haben das Fieber bald bezwungen!,I think we soon have beaten the fever!
+DIALOGUE_SP_SICK_APPRENTICE_1_BUFFIN_ASSISTANT_HELP_3_1_1,"So, eine Sache müsste ich noch in meinem Beutel haben{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.","So, there's one more thing I should have in my bag{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}."
+DIALOGUE_SP_SICK_APPRENTICE_1_BUFFIN_ASSISTANT_HELP_3_2_1,Eine Kopfschmerztablette!,A headache pill!
+DIALOGUE_SP_SICK_APPRENTICE_1_BUFFIN_ASSISTANT_HELP_3_2_2,[font_size={16}]Die ist durch das Eis jetzt natürlich ziemlich nass geworden{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.,"[font_size={16}]Of course, the ice has made it quite wet now{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}."
+DIALOGUE_SP_SICK_APPRENTICE_1_BUFFIN_ASSISTANT_HELP_3_3_1,Eine Kopfschmerztablette?{Wait Time=0.5} Die könnte bei Kopfschmerzen natürlich helfen.,"A headache pill?{Wait Time=0.5} That could help with a headache, of course."
+DIALOGUE_SP_SICK_APPRENTICE_1_BUFFIN_ASSISTANT_HELP_3_3_2,"Meinen Sie also, Herr Dr. Nutman, wir sollten die Tablette sofort einwerfen?","So, Mr. Dr. Nutman, do you think we should put the pill in right away?"
+DIALOGUE_SP_SICK_APPRENTICE_1_BUFFIN_ASSISTANT_HELP_3_3_3,Einen Versuch ist es zumindest wert{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.,It is at least worth a try{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.
+DIALOGUE_SP_SICK_APPRENTICE_1_BUFFIN_ASSISTANT_HELP_3_4_1,"Lecker, schmeckt nach Erdbeere!","Yum, tastes like strawberry!"
+DIALOGUE_SP_SICK_APPRENTICE_1_BUFFIN_ASSISTANT_HELP_3_5_1,"Aber isch 'abe bereits ein Schokoladöneis gemalt, und kein Erdböreis{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.","But I 'ave already painted chocolate ice cream, and not strawberry ice cream{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}."
+DIALOGUE_SP_SICK_APPRENTICE_1_BUFFIN_ASSISTANT_HELP_3_6_1,{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.,{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.
+DIALOGUE_SP_SICK_APPRENTICE_1_BUFFIN_ASSISTANT_HELP_3_7_1,"Oh, dieser Schokoladengeschmack in meinem Mund{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}. der ist super.","Oh, that chocolate taste in my mouth{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}. just great."
+DIALOGUE_SP_SICK_APPRENTICE_1_BUFFIN_ASSISTANT_HELP_4_1_1,"Außer geschmolzenes Erdbeer{Wait Time=0.5}- Ich meine Schokoladeneis, habe ich leider nichts mehr in meinem Beutel.","Except melted straw{Wait Time=0.5}- I mean chocolate ice cream, I have nothing left in my bag unfortunately."
+DIALOGUE_SP_SICK_APPRENTICE_1_BUFFIN_ASSISTANT_HELP_4_1_2,Sie müssen die Bekämpfung wohl ohne meine Hilfe weiter bestreiten.,I guess you'll have to continue the fight without my help.
+DIALOGUE_SP_SICK_APPRENTICE_1_SICK_APRRENTICE_ACTION_3_1_1,Mir geht es schon wieder viel besser! Vielen Dank Herr Dr. Nutman und Herr Assistent!,I feel much better already! Thank you Mr. Dr. Nutman and Mr. Assistant!
+DIALOGUE_SP_SICK_APPRENTICE_1_SICK_APRRENTICE_ACTION_3_1_2,Exzellent! Dann können wir die Bekämpfung ja beenden!,Excellent! That means we can end the fight.
+DIALOGUE_SP_SICK_APPRENTICE_1_SICK_APRRENTICE_ACTION_3_2_1,"Sehr gute Arbeit, Assistent. Auch, dass du in so einer Notsituation die Ruhe bewahrt hast!","Very good job, assistant. Also that you kept calm in such an emergency situation!"
+DIALOGUE_SP_SICK_APPRENTICE_1_SICK_APRRENTICE_ACTION_3_2_2,"Ihr Lob ehrt mich zutiefst, Herr Dr. Nutman.","I am deeply honored by your praise, Mr. Dr. Nutman."
+DIALOGUE_SP_SICK_APPRENTICE_1_BUFFIN_ASSISTANT_HELP_5_1_1,"Sie schaffen das, Herr Doktor Dr. Nutman!","You can do this, Mr. Doctor Dr. Nutman!"
+DIALOGUE_DOCTOR_DREAM_1_BUFFIN_ASSISTANT_1_1_1,"Es macht wirklich immer wieder Spaß mit Ihnen zu arbeiten, Herr Doktor Dr. Nutman!","It's really always a pleasure working with you, Mr. Doctor Dr. Nutman!"
+DIALOGUE_DOCTOR_DREAM_1_BUFFIN_ASSISTANT_1_1_2,Ich hoffe Sie haben noch einen wunderbaren Tag.,Hope you have another wonderful day.
+DIALOGUE_DOCTOR_DREAM_1_THERMOMETER_2_1_1,Man muss es einfach lieben.,You simply have to love it.
+DIALOGUE_DOCTOR_DREAM_1_THERMOMETER_3_1_1,{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.,{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.
+DIALOGUE_DOCTOR_DREAM_1_STETHOSCOPE_1_1_1,"Eine effektive Methode, um herauszufinden, ob dein Gegenüber ein Herz besitzt.",An effective way to find out if your counterpart has a heart.
+DIALOGUE_DOCTOR_DREAM_1_THERMOMETER_SIGN_1_1_1,Ein Schild mit einfach verständlichen Informationen über das Fibri-Vibri.,A sign with easy to understand information about the Fibri-Vibri.
+DIALOGUE_DOCTOR_DREAM_1_THERMOMETER_SIGN_1_1_2,"Extra etwas niedriger aufgehängt, damit vor allem Kinder es gut lesen können.",Hung a little lower so that children in particular can read it easily.
+DIALOGUE_DOCTOR_DREAM_1_GLASS_BOWL_1_1_1,Regungsloses Wasser in einem Glaskrug{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.,Motionless water in a glass jug{Wait Time=0.5}.{Wait Time=0.5}.
+DIALOGUE_DOCTOR_DREAM_1_SINK_1_1_1,"Wovon könnte man mehr träumen, als jederzeit sauberes Wasser zu haben?",What more could you dream of than having clean water at all times?
+DIALOGUE_DOCTOR_DREAM_1_TABLE_3_1_1,Dieser Pflanze wird es wohl noch länger gut gehen.,This plant will probably be fine for a while longer.
+DIALOGUE_DOCTOR_DREAM_1_PIC_ARROW_RIGHT_1_1_1,"Doch, dieses Schild ist wirklich einfach nur beeindruckend.","But, this sign is really just impressive."
+DIALOGUE_DR_NUTMAN_HOME_1_START_1_1_1,Das war vielleicht ein seltsamer Traum{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.,That really was a strange dream{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.
+DIALOGUE_DR_NUTMAN_HOME_1_START_1_2_1,In letzter Zeit träume ich irgendwie öfter davon ein echter Doktor zu sein.,"Lately, somehow, I've been dreaming more often about being a real doctor."
+DIALOGUE_DR_NUTMAN_HOME_1_START_1_3_1,"Naja, ich sollte wohl mal aufstehen.","Well, I should probably get up."
+DIALOGUE_DR_NUTMAN_HOME_1_GEM_POOL_1_1_1,Mein wunderbares Edelstein-Bad! Es hat immer so eine erfrischende Wirkung.,My wonderful Gem Pool! It always has such a refreshing effect.
+DIALOGUE_DR_NUTMAN_HOME_1_GEM_POOL_1_2_1,"Ich denke, ich werde einmal einen Schluck seines Inhalts kosten.",I think I will take a sip of its contents.
+DIALOGUE_DR_NUTMAN_HOME_1_GEM_DONATOR_STICKER_1_1_1,"Diesen Sticker müssen mir wohl die Kids aufgeklebt haben, die mir beim Einrichten meiner Wohnung tragen geholfen haben.",This sticker must have been put on by the kids who helped me carry when I was decorating my house.
+DIALOGUE_DR_NUTMAN_HOME_1_GEM_DONATOR_STICKER_1_1_2,Danke Kids.,Thanks kids.
+DIALOGUE_DR_NUTMAN_HOME_1_GEM_DONATOR_1_1_1,Meine Edelsteinspendenmaschine! Hier kann ich tolle Geschenke als Belohnung für gesammelte Edelsteine erhalten.,My Gem Donator! Here I can get great gifts as a reward for collected gems.
+DIALOGUE_DR_NUTMAN_HOME_1_GEM_POOL_2_1_1,Du hast alle [img]res://Global_Resources/Sprites/Icons/Stats/HP.png[/img] und [img]res://Global_Resources/Sprites/Icons/Stats/SP.png[/img] wiederhergestellt!,You restored all [img]res://Global_Resources/Sprites/Icons/Stats/HP.png[/img] and [img]res://Global_Resources/Sprites/Icons/Stats/SP.png[/img]!
+DIALOGUE_DR_NUTMAN_HOME_1_SETUP_1_1_1,"Mein treuer Computer! Es war ganz schön viel Arbeit, den hierhin zu schleppen.",My loyal computer! It was a lot of work to drag it here.
+DIALOGUE_DR_NUTMAN_HOME_1_SETUP_1_1_2,"Noch ist nicht viel darauf installiert, aber dass kann sich mit der Zeit ja noch ändern.","Not much is installed on it yet, but that can change over time."
+DIALOGUE_DR_NUTMAN_HOME_1_SETUP_1_1_3,Fahren wir das gute Stück mal hoch!,Let's boot that good thing up!
+DIALOGUE_DR_NUTMAN_HOME_1_MOVING_BOX_1_1_1,Die Box steht hier noch vom Umzug.,This box is still here from the move.
+DIALOGUE_BROKO_TOWN_1_START_1_1_1,Herr Dr. Nutman! Haben Sie gut geschlafen?,Mr. Dr. Nutman! Did you sleep well?
+DIALOGUE_BROKO_TOWN_1_START_1_1_2,"Mein Freund Buff und ich, Brokk, möchten Ihnen im Namen des gesamten Dorfes danken.","My friend Buff and I, Brokk, want to thank you on behalf of the whole village."
+DIALOGUE_BROKO_TOWN_1_START_1_2_1,"Wären Sie nicht aufgetaucht, um Mc Rollunosu zu besiegen, wären die meisten der Brokos vermutlich immernoch eingesperrt und unterdrückt.","If you hadn't shown up to defeat Mc Rollunosu, most of the Brokos would probably still be locked up and oppressed."
+DIALOGUE_BROKO_TOWN_1_START_1_3_1,"Mit Ihrer Hilfe waren wir wieder in der Lage die Führung dieses Dorfes, Broko Town, zu erlangen!",With your help we were able to regain our leadership of this village Broko Town!
+DIALOGUE_BROKO_TOWN_1_START_1_3_2,"Ich hoffe, dass wir nun alle wieder in Frieden und Harmonie leben können. Jeder von uns wird alles geben, damit dies möglich bleibt.",I hope that we can all now live in peace and harmony again. Each of us will give everything so that this remains possible.
+DIALOGUE_BROKO_TOWN_1_START_1_3_3,"Als freundliche Geste haben wir alle zusammen ein großes Fest vorbereitet, um diesen Tag zu feiern!","As a friendly gesture, we all prepared a big festival together to celebrate this day!"
+DIALOGUE_BROKO_TOWN_1_START_1_3_4,"Ich hoffe es wird Ihnen viel Freude bereiten, schauen Sie sich unbedingt alles an!","I hope you will enjoy it, be sure to check everything out!"
+DIALOGUE_BROKO_TOWN_1_START_1_4_1,Wir haben auch noch zwei kleine Geschenke für Sie.,We also have two small gifts for you.
+DIALOGUE_BROKO_TOWN_1_START_1_5_1,Aufgabenverzeichnis erhalten!,Task List received!
+DIALOGUE_BROKO_TOWN_1_START_1_6_1,"So können Sie sich einfach notieren, wo Sie bei diesem Fest schon überall waren und was Sie noch zu erkunden haben.",This way you can easily note down where you've been and what you still have to explore on this festival.
+DIALOGUE_BROKO_TOWN_1_START_1_6_2,Ich weiß wie schnell man bei sowas den Überblick verlieren kann{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.,I know how easy it is to lose track of what you're doing{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.
+DIALOGUE_BROKO_TOWN_1_START_1_7_1,"Ah, bevor ich es vergesse! Hier ist noch das zweite Geschenk.","Ah, before I forget! Here comes the second gift."
+DIALOGUE_BROKO_TOWN_1_START_1_8_1,Partyhut erhalten!,Received Party Hat!
+DIALOGUE_BROKO_TOWN_1_START_1_9_1,"Ein echter, eigener Partyhut! Nun kann das Fest wohl beginnen.",A real party hat of your own! I guess the party can begin now.
+DIALOGUE_BROKO_TOWN_1_START_1_10_1,"Vielen Dank an euch alle, ohne euch wäre diese tolle und wichtige Geste nicht zustande gekommen.","Thank you all, without you, this great and important gesture would not have happened."
+DIALOGUE_BROKO_TOWN_1_START_1_10_2,Ich wünsch euch allen viel Spaß und einen schönen Tag.,I wish you all a lot of fun and a nice day.
+DIALOGUE_DOCTOR_DREAM_1_PLANT_1_1_1,Eine außergewöhnliche Pflanze. Man nennt sie hier Ringsar!,An extraordinary plant. They call it Ringsar here!
+DIALOGUE_DR_NUTMAN_HOME_1_Bed_1_1_1,"Mein wunderbar bequemes Bett, in welchem ich schon so manche angenehme Nacht verbracht habe.",My wonderfully comfortable bed in which I have spent many pleasant nights.
+DIALOGUE_DR_NUTMAN_HOME_1_Table_1_1_1_1,"Ein kleiner Tisch, den ich manchmal als Ablage benutze.",A small table on which I occasionally put stuff.
+DIALOGUE_DR_NUTMAN_HOME_1_BOOKSHELF_1_LEFT_1_1_1,Sollte ich dieses Buch über Broko Town lesen?,Should I read this book about Broko Town?
+DIALOGUE_DR_NUTMAN_HOME_1_BOOKSHELF_1_LEFT_1_2_1,"Broko Town ist ein friedliches Dorf, welches sich in einem Wald befindet.",Broko Town is a peaceful village located in a forest.
+DIALOGUE_DR_NUTMAN_HOME_1_BOOKSHELF_1_LEFT_1_2_2,"Brokos, die Ureinwohner dieses Dorfes, leben hier in Einklang mit der Natur, indem sie versuchen den Wald zu respektieren.","Brokos, the original inhabitants of this village, live here in harmony with nature by trying to respect the forest."
+DIALOGUE_DR_NUTMAN_HOME_1_BOOKSHELF_1_LEFT_1_2_3,"Später erreichte eine Gruppe geflüchteter Buffins das Dorf, welche herzlichst aufgenommen wurde.","Later, a group of refugee Buffins arrived in the village and were warmly welcomed."
+DIALOGUE_DR_NUTMAN_HOME_1_BOOKSHELF_1_RIGHT_1_1_1,"Diese Bücher sind nicht so interessant. Ich bin mir unsicher, wieso ich sie noch besitze{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.",Those books are not so interesting. I am unsure why I still own them{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.
+DIALOGUE_DOCTOR_DREAM_1_START_1_47_1,Welche wunderbare Geräuschkullise{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.,What wonderful background noises{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.
+DIALOGUE_SP_SICK_APPRENTICE_1_BUFFIN_ASSISTANT_HELP_3_8_1,[font_size={16}][shake rate=3 level=15]Aber ich habe gar keine Kopfschmerzen{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.,[font_size={16}][shake rate=3 level=15]But I don't even have a headache{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.
+DIALOGUE_DOCTOR_DREAM_1_THERMOMETER_4_1_1,"Herr Doktor Dr. Nutman! Sie sind mir vielleicht einer, hier immer wieder das Fibri-Vibri anzulassen.","Mr. Doctor Dr. Nutman! You just can't turn the Fibri-Vibri off again, can you?"
+DIALOGUE_DOCTOR_DREAM_1_THERMOMETER_5_1_1,{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.Ich nehme es Ihnen nicht übel.,{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.I don't hold it against you.
+DIALOGUE_BROKO_TOWN_1_BROKO_2_START_1_1_1,Hallo Dr. Nutman! Ich hoffe dir gefällt dieses kleine Fest.,Hello Dr. Nutman! I hope you like this little festival.
+DIALOGUE_BROKO_TOWN_1_HIGH_STRIKER_START_1_1_1,Wirkt wie eine Art Nussknackmaschine{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.,Seems like some kind of nutcracking machine{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.
+DIALOGUE_BROKO_TOWN_1_HIGH_STRIKER_START_1_1_2,"Ich sollte auf jeden Fall warten bis mir jemand erklären kann, wie sie funktioniert.",I should definitely wait until someone can explain to me how it works.
+DIALOGUE_BROKO_TOWN_1_HIGH_STRIKER_START_2_1_1,"Ah ja, du möchtest dich also am Nüsseknacken mit dem Voll auf die Nuss probieren!","Ah yes, so you want to try your hand at nut-cracking with the Right on the nut!"
+DIALOGUE_BROKO_TOWN_1_HIGH_STRIKER_START_2_2_1,"Wie ich sehe, hast du auch ein paar ungeknackte Erdnüsse auftreiben können!",I see you managed to find some uncracked peanuts too!
+DIALOGUE_BROKO_TOWN_1_HIGH_STRIKER_START_2_2_2,Dann würde ich sagen: Hammer in die Hand und voll auf die Nuss!,Then I would say: hammer in hand and right on the nut!
+DIALOGUE_BROKO_TOWN_1_HIGH_STRIKER_START_2_3_1,"Oh, du hast aber gar keine ungeknackten Nüsse dabei{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.","Oh, but you haven't got any uncracked nuts with you{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}."
+DIALOGUE_BROKO_TOWN_1_HIGH_STRIKER_START_2_3_2,"Es tut mir leid, aber ich konnte leider vor dem Fest keine mehr finden.","I'm sorry, but I couldn't find any more before the festival."
+DIALOGUE_BROKO_TOWN_1_HIGH_STRIKER_START_2_3_3,"Magst du vielleicht selber einmal, in dem Waldgebiet westlich der Stadt, nach Erdnusssträuchern schauen?",Would you like to look for peanut bushes yourself in the wooded area west of the city?
+DIALOGUE_BROKO_TOWN_1_HIGH_STRIKER_START_2_3_4,"Du brauchst nicht viele, aber bring lieber zu viel mit als zu wenig!","You don't need many, but it's better to bring too many than too few!"
+DIALOGUE_BROKO_TOWN_1_HIGH_STRIKER_START_2_4_1,Scheint als hättest du bereits alle Nüsse verknackt. So schnell kann es gehen.,Seems like you've already busted all the nuts. It can happen that quickly.
+DIALOGUE_BROKO_TOWN_1_HIGH_STRIKER_HAMMER_START_2_1_1,Mit diesem Hammer wird zugehauen!,This hammer is for hitting!
+DIALOGUE_BROKO_TOWN_1_HIGH_STRIKER_HAMMER_START_2_1_2,"Ziemlich heftig das Teil, was?","Pretty heavy that thing, huh?"
+DIALOGUE_BROKO_TOWN_1_BUFFIN_4_START_1_1_1,Hier steht der Voll auf die Nuss! Ein wahnsinnig toller Apparat.,Here is the Right on the nut! An insanely great machine.
+DIALOGUE_BROKO_TOWN_1_BUFFIN_4_START_1_1_2,"Als der Held dieses Dorfes sollte es dir wohl leicht fallen, ein paar Nüsse zu knacken!","As the hero of this village, it should be easy for you to crack a few nuts!"
+DIALOGUE_BROKO_TOWN_1_BUFFIN_5_SQUIRREL_QUEST_1_1_1,Sie kommen gerade rechtzeitig!,You are just in time!
+DIALOGUE_BROKO_TOWN_1_BUFFIN_5_SQUIRREL_QUEST_1_1_2,"Wir sind leidenschaftliche Angler. Allerdings angeln wir keine kleinen Fische, sondern große Hörnchen!","We are passionate anglers. However, we don't fish for small fry, but for big squirrels!"
+DIALOGUE_BROKO_TOWN_1_BUFFIN_5_SQUIRREL_QUEST_1_1_3,"Bei diesem überaus raffinierten Sport befestigt man eine Nuss an eine Schnur, welche wiederum an einem Stock befestigt wird.","In this extremely ingenious sport, you attach a nut to a string, which you again attach to a stick."
+DIALOGUE_BROKO_TOWN_1_BUFFIN_5_SQUIRREL_QUEST_1_1_4,"Danach nähert sich das Hörnchen der Hörnchenangelkonstruktion, bis es die Nuss fest im Griff hat.",The squirrel then approaches the squirrel fishing construction until it has a firm grip on the nut.
+DIALOGUE_BROKO_TOWN_1_BUFFIN_5_SQUIRREL_QUEST_1_1_5,"Der magische Moment ist gekommen! Nun muss man den Stock selber fest im Griff haben, um das Hörnchen vorsichtig in die Luft zu heben.",The magical moment has arrived! Now you have to have a firm grip on the stick yourself to carefully lift the squirrel into the air.
+DIALOGUE_BROKO_TOWN_1_BUFFIN_5_SQUIRREL_QUEST_1_1_6,"Sobald die Füßchen des Hörnchens den Boden verlassen, hat man es geschafft. Danach lässt man das Hörnchen die Nuss lösen und davonrennen.","As soon as the squirrel's feet leave the ground, you've done it. Then let the squirrel release the nut and run away."
+DIALOGUE_BROKO_TOWN_1_BUFFIN_5_SQUIRREL_QUEST_1_2_1,Sie können das Hörnchenangeln gerne einmal probieren!,You are welcome to try out squirrel fishing!
+DIALOGUE_BROKO_TOWN_1_BUFFIN_5_SQUIRREL_QUEST_1_2_2,"Wir haben Angel und Schnur, die Hörnchen Hunger, uns fehlen nur die geknackten Nüsse{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.","We have a fishing pole and string, the squirrels are hungry, all we need are the cracked nuts{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}."
+DIALOGUE_BROKO_TOWN_1_BUFFIN_5_SQUIRREL_QUEST_1_3_1,"Ich werde mal gucken, ob ich meinen Nussbestand nicht etwas aufstocken kann.",I'll see if I can increase my nut stock a little.
+DIALOGUE_BROKO_TOWN_1_BUFFIN_5_SQUIRREL_QUEST_1_4_1,Ich habe tatsächlich schon ein paar geknackte Nüsse dabei.,I actually already have a few cracked nuts with me.
+DIALOGUE_BROKO_TOWN_1_BUFFIN_5_SQUIRREL_QUEST_1_4_2,Wirklich? Sie denken ja an alles.,Really? You think of everything.
+DIALOGUE_BROKO_TOWN_1_BUFFIN_5_SQUIRREL_QUEST_1_4_3,Dann haben wir jetzt alles zusammen. Ich wünsche Ihnen viel Spaß beim Angeln!,Then we have everything together now. I hope you enjoy your fishing!
+DIALOGUE_BROKO_TOWN_1_BUFFIN_5_SQUIRREL_QUEST_2_1_1,"Ich bin beeindruckt. Sie haben beim Hörnchenangeln wirklich wahre Stärke bewiesen, Dr. Nutman.","I'm impressed. While squirrel fishing you have really shown true strength, Dr. Nutman."
+DIALOGUE_BROKO_TOWN_1_BUFFIN_5_SQUIRREL_QUEST_2_1_2,Ich werde es mir zweimal überlegen sie jemals zum Armdrücken herauszufordern.,I will think twice about ever challenging you to an arm wrestling match.
+DIALOGUE_BROKO_TOWN_1_BROKO_CHILD_3_START_1_1_1,Du bist Dr. Nutman. Wie geht es dir?,You are Dr. Nutman. How are you?
+DIALOGUE_BROKO_TOWN_1_BROKO_CHILD_3_START_1_1_2,"Ähm{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}. Mir geht es ganz gut, schätze ich. Und dir?","Umm{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}. I'm doing quite well, I guess. And you?"
+DIALOGUE_BROKO_TOWN_1_BROKO_CHILD_3_START_1_1_3,Mir geht es auch gut. Ich beobachte gerade was die anderen so machen.,I'm doing well too. I'm just watching what the others are doing.
+DIALOGUE_BROKO_TOWN_1_BROKO_CHILD_3_START_1_1_4,Dann wünsche ich dir viel Spaß dabei.,Then I hope you enjoy it.
+DIALOGUE_BROKO_TOWN_1_BROKO_CHILD_3_START_1_1_5,"Danke, Dr. Nutman. Was machst du gerade?","Thank you, Dr. Nutman. What are you doing right now?"
+DIALOGUE_BROKO_TOWN_1_BROKO_CHILD_3_START_1_1_6,Hmmm{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}. Ich weiß noch nicht so recht.,Hmmm{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}. I don't really know yet.
+DIALOGUE_BROKO_TOWN_1_BROKO_CHILD_3_BALLOON_QUEST_1_1_1,Einen Ballon? In meiner Lieblingsfarbe? Wofür?,A balloon? In my favorite color? What for?
+DIALOGUE_BROKO_TOWN_1_BROKO_CHILD_3_BALLOON_QUEST_1_1_2,Ich weiß nicht{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}. Ich dachte er könnte dir vielleicht Freude bereiten.,I don't know{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}. I thought you might enjoy it.
+DIALOGUE_BROKO_TOWN_1_BROKO_CHILD_3_BALLOON_QUEST_1_2_1,"Stimmt, das könnte sein. Dann nehme ich die Farbe {Expr Instance_Key=Broko_Child_3 Comp=Balloon_Quest Expression=get_balloon_color_text() Type=Object}. Danke.","Right, that could be the case. Then I take the color {Expr Instance_Key=Broko_Child_3 Comp=Balloon_Quest Expression=get_balloon_color_text() Type=Object}. Thank you."
+DIALOGUE_BROKO_TOWN_1_BROKO_CHILD_3_BALLOON_QUEST_2_1_1,Du wolltest mir einen Ballon der Farbe {Expr Instance_Key=Broko_Child_3 Comp=Balloon_Quest Expression=get_balloon_color_text() Type=Object} bringen um mir eine Freude zu bereiten.,You wanted to bring me a balloon of the color {Expr Instance_Key=Broko_Child_3 Comp=Balloon_Quest Expression=get_balloon_color_text() Type=Object} to make me happy.
+DIALOGUE_BROKO_TOWN_1_BROKO_CHILD_3_BALLOON_QUEST_3_1_1,"Danke, Dr. Nutman.","Thank you, Dr. Nutman."
+DIALOGUE_BROKO_TOWN_1_BROKO_CHILD_3_BALLOON_QUEST_3_2_1,"Und, konnte ich dir damit eine Freude machen?",And did I make you happy with it?
+DIALOGUE_BROKO_TOWN_1_BROKO_CHILD_3_BALLOON_QUEST_3_2_2,{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}. Ja.,{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}. Yes.
+DIALOGUE_BROKO_TOWN_1_BROKO_CHILD_3_SQUIRREL_QUEST_1_1_1,Diese Methode um Eichhörnchen zu füttern erscheint mir etwas kompliziert.,This method of feeding squirrels seems a bit complicated to me.
+DIALOGUE_BROKO_TOWN_1_BROKO_CHILD_3_SQUIRREL_QUEST_1_1_2,Wieso legt man die Nüsse nicht einfach auf den Boden?,Why don't you just put the nuts on the floor?
+DIALOGUE_BROKO_TOWN_1_BROKO_1_START_1_1_1,Das Leben im Wald ist ziemlich friedlich.,Life in the forest is pretty peaceful.
+DIALOGUE_BROKO_TOWN_1_BROKO_1_START_1_1_2,"Abgesehen vom Wetter gibt es nicht viele Überraschungen, außer dieses Fest natürlich.","Apart from the weather, there are not many surprises, except for this festival of course."
+DIALOGUE_BROKO_TOWN_1_BROKO_1_START_1_1_3,Aber das haben Sie sicherlich auch schon bemerkt. Sie sind ja jetzt schon eine ganze Weile bei uns.,But I'm sure you've already noticed that. You've been with us for quite a while now.
+DIALOGUE_BROKO_TOWN_1_BROKO_1_START_1_1_4,"Ja, aber davor habe ich auch schon in einem wäldlichen Gebiet gewohnt, deswegen bin ich bereits daran gewöhnt.","Yes, but I already lived in a wooded area before, so I'm used to it."
+DIALOGUE_BROKO_TOWN_1_BROKO_1_START_1_1_5,"Dann kann ich nur hoffen, dass Ihnen dieses Leben gefällt.",Then I can only hope you like this life.
+DIALOGUE_BROKO_TOWN_1_BROKO_1_SQUIRREL_QUEST_1_1_1,Mit der richtigen Nuss findet man oft auch das richtige Hörnchen.,"With the right nut, you can often also find the right squirrel."
+DIALOGUE_BROKO_TOWN_1_BROKO_1_SQUIRREL_QUEST_1_1_2,Meistens freut sich das Hörnchen aber über jede Nuss.,"Most of the time, however, the squirrel is happy about every nut."
+DIALOGUE_BROKO_TOWN_1_BROKK_START_1_1_1,Brokk und Ich sind die Anführer von Broko Town und gleichzeitig beste Freunde.,Brokk and I are the leaders of Broko Town and also best friends.
+DIALOGUE_BROKO_TOWN_1_BROKK_START_1_1_2,Das ganze Dorf ist Ihnen zu viel Dank verpflichtet. Ohne Sie wären Ich und die anderen Brokos noch immer unterdrückt.,"The whole village owes you a lot of gratitude. Without you, I and the other Brokos would still be oppressed."
+DIALOGUE_BROKO_TOWN_1_BUFF_START_1_1_1,Wir werden Ihrem Namen alle Ehre machen und das Dorf bestmöglichst weiterführen.,We will live up to your name and continue to run the village in the best possible way.
+DIALOGUE_BROKO_TOWN_1_BUFF_START_1_1_2,Sie können sich auf uns verlassen!,You can count on us!
+DIALOGUE_BROKO_TOWN_1_BUFFIN_3_BALLOON_QUEST_1_1_1,Ich bin so froh Sie zu sehen{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.,I am so glad to see you{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.
+DIALOGUE_BROKO_TOWN_1_BUFFIN_3_BALLOON_QUEST_1_1_2,"Eigentlich wollte ich Sie nicht fragen, aber ich kann meinen Stand nicht einfach so verlassen{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.","I didn't really want to ask you, but I can't just leave my stand like that{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}."
+DIALOGUE_BROKO_TOWN_1_BUFFIN_3_BALLOON_QUEST_1_1_3,"Ich habe heute schon eine ganze Weile auf die Kinder gewartet um ihnen meine Ballons zu verschenken, aber bislang ist niemand gekommen.","I've been waiting quite a while for the children today to give them my balloons, but so far no one has come."
+DIALOGUE_BROKO_TOWN_1_BUFFIN_3_BALLOON_QUEST_1_1_4,Könnten Sie die Kinder vielleicht suchen und ihnen einen Ballon in ihrer Lieblingsfarbe schenken?,Could you perhaps look for the children and give them a balloon in their favorite color?
+DIALOGUE_BROKO_TOWN_1_BUFFIN_3_BALLOON_QUEST_1_1_5,"Ich fürchte nur die Ballons müssen hier bleiben, da sie unhandlich zum Transportieren sind.",I'm just afraid the balloons will have to stay here as they are awkward to transport.
+DIALOGUE_BROKO_TOWN_1_BUFFIN_3_BALLOON_QUEST_2_1_1,Ich habe immernoch Ballons übrig. Können Sie sie bitte an die Kinder verteilen?,I still have some balloons left. Can you please distribute them to the children?
+DIALOGUE_BROKO_TOWN_1_BUFFIN_3_BALLOON_QUEST_BUFFIN_CHILD_1_1_1_1,Ein Buffin-Kind am Zauberstand möchte einen {Expr Instance_Key=Buffin_Child_1 Comp=Balloon_Quest Expression=get_balloon_color_text() Type=Object} Ballon? Wunderbar! Hier bitte.,A Buffin child at the magic stand wants a {Expr Instance_Key=Buffin_Child_1 Comp=Balloon_Quest Expression=get_balloon_color_text() Type=Object} balloon? Wonderful! Here you go.
+DIALOGUE_BROKO_TOWN_1_BUFFIN_3_BALLOON_QUEST_BUFFIN_CHILD_1_1_2_1,{Expr Instance_Key=Buffin_Child_1 Comp=Balloon_Quest Expression=get_balloon_color_text() Type=Object} Ballon erhalten!,{Expr Instance_Key=Buffin_Child_1 Comp=Balloon_Quest Expression=get_balloon_color_text() Type=Object} balloon received!
+DIALOGUE_BROKO_TOWN_1_BUFFIN_3_BALLOON_QUEST_BUFFIN_CHILD_1_1_3_1,Wissen Sie noch welches Kind den Ballon wollte? Es war ein Buffin-Kind am Zauberstand.,Do you remember which child wanted the balloon? It was a Buffin child at the magic stand.
+DIALOGUE_BROKO_TOWN_1_BUFFIN_3_BALLOON_QUEST_BUFFIN_CHILD_2_1_1_1,Einen {Expr Instance_Key=Buffin_Child_2 Comp=Balloon_Quest Expression=get_balloon_color_text() Type=Object} Ballon für ein Buffin-Kind am Voll auf die Nuss? Kommt sofort!,A {Expr Instance_Key=Buffin_Child_2 Comp=Balloon_Quest Expression=get_balloon_color_text() Type=Object} balloon for a Buffin child at the Right on the nut? Coming right up!
+DIALOGUE_BROKO_TOWN_1_BUFFIN_3_BALLOON_QUEST_BUFFIN_CHILD_2_1_2_1,{Expr Instance_Key=Buffin_Child_2 Comp=Balloon_Quest Expression=get_balloon_color_text() Type=Object} Ballon erhalten!,{Expr Instance_Key=Buffin_Child_2 Comp=Balloon_Quest Expression=get_balloon_color_text() Type=Object} balloon received!
+DIALOGUE_BROKO_TOWN_1_BUFFIN_3_BALLOON_QUEST_BUFFIN_CHILD_2_1_3_1,Suchen sie nach dem Kind für den Ballon? Ich meine es steht am Voll auf die Nuss.,Are you looking for the kid for the balloon? I believe it's near the Right on the nut.
+DIALOGUE_BROKO_TOWN_1_BUFFIN_3_BALLOON_QUEST_BUFFIN_CHILD_3_1_1_1,Den wunderbar fliegenden {Expr Instance_Key=Buffin_Child_3 Comp=Balloon_Quest Expression=get_balloon_color_text() Type=Object} Ballon für ein Buffin-Kind an einem Broko-Haus? Nimm!,The wonderfully flying {Expr Instance_Key=Buffin_Child_3 Comp=Balloon_Quest Expression=get_balloon_color_text() Type=Object} balloon for a Buffin child at a Broko house? Take!
+DIALOGUE_BROKO_TOWN_1_BUFFIN_3_BALLOON_QUEST_BUFFIN_CHILD_3_1_2_1,{Expr Instance_Key=Buffin_Child_3 Comp=Balloon_Quest Expression=get_balloon_color_text() Type=Object} Ballon erhalten!,{Expr Instance_Key=Buffin_Child_3 Comp=Balloon_Quest Expression=get_balloon_color_text() Type=Object} balloon received!
+DIALOGUE_BROKO_TOWN_1_BUFFIN_3_BALLOON_QUEST_BUFFIN_CHILD_3_1_3_1,Wohin der Ballon fliegen soll? Mit deiner Hilfe hoffentlich zu einem Buffin-Kind bei einem Broko-Haus.,"Where the balloon should fly to? With your help, hopefully to a Buffin child at a Broko house."
+DIALOGUE_BROKO_TOWN_1_BUFFIN_3_BALLOON_QUEST_BUFFIN_CHILD_4_1_1_1,Im Geisterhaus,-
+DIALOGUE_BROKO_TOWN_1_BUFFIN_3_BALLOON_QUEST_BUFFIN_CHILD_4_1_2_1,{Expr Instance_Key=Buffin_Child_4 Comp=Balloon_Quest Expression=get_balloon_color_text() Type=Object} Ballon erhalten!,{Expr Instance_Key=Buffin_Child_4 Comp=Balloon_Quest Expression=get_balloon_color_text() Type=Object} balloon received!
+DIALOGUE_BROKO_TOWN_1_BUFFIN_3_BALLOON_QUEST_BROKO_CHILD_1_1_1_1,Ein Broko-Kind in der Nähe des Geisterhauses will einen {Expr Instance_Key=Broko_Child_1 Comp=Balloon_Quest Expression=get_balloon_color_text() Type=Object} Ballon? Wunderbar!,A Broko child near the ghost house wants a {Expr Instance_Key=Broko_Child_1 Comp=Balloon_Quest Expression=get_balloon_color_text() Type=Object} balloon? Wonderful!
+DIALOGUE_BROKO_TOWN_1_BUFFIN_3_BALLOON_QUEST_BROKO_CHILD_1_1_2_1,{Expr Instance_Key=Broko_Child_1 Comp=Balloon_Quest Expression=get_balloon_color_text() Type=Object} Ballon erhalten!,{Expr Instance_Key=Broko_Child_1 Comp=Balloon_Quest Expression=get_balloon_color_text() Type=Object} balloon received!
+DIALOGUE_BROKO_TOWN_1_BUFFIN_3_BALLOON_QUEST_BROKO_CHILD_1_1_3_1,Wo dieser Ballon hin soll? Der war doch für ein Broko-Kind in der Nähe des Geisterhauses.,Where this balloon is supposed to go? It was for a Broko child nearby the ghost house.
+DIALOGUE_BROKO_TOWN_1_BUFFIN_3_BALLOON_QUEST_BROKO_CHILD_2_1_1_1,"Das Broko-Kind, das viel zu nah am Feuervulkan steht, möchte einen {Expr Instance_Key=Broko_Child_2 Comp=Balloon_Quest Expression=get_balloon_color_text() Type=Object} Ballon? Genau so einen hab ich da.",The Broko child standing way too close to the fire volcano wants a {Expr Instance_Key=Broko_Child_2 Comp=Balloon_Quest Expression=get_balloon_color_text() Type=Object} balloon? I have one just like that.
+DIALOGUE_BROKO_TOWN_1_BUFFIN_3_BALLOON_QUEST_BROKO_CHILD_2_1_2_1,{Expr Instance_Key=Broko_Child_2 Comp=Balloon_Quest Expression=get_balloon_color_text() Type=Object} Ballon erhalten!,{Expr Instance_Key=Broko_Child_2 Comp=Balloon_Quest Expression=get_balloon_color_text() Type=Object} balloon received!
+DIALOGUE_BROKO_TOWN_1_BUFFIN_3_BALLOON_QUEST_BROKO_CHILD_2_1_3_1,Wohin mit dem Ballon? Am besten zu dem Broko-Kind am Feuervulkan.,Where to take the balloon to? Ideally to the Broko child at the fire volcano.
+DIALOGUE_BROKO_TOWN_1_BUFFIN_3_BALLOON_QUEST_BROKO_CHILD_3_1_1_1,Südlich auf der Wiese steht ein Broko-Kind ohne einen {Expr Instance_Key=Broko_Child_3 Comp=Balloon_Quest Expression=get_balloon_color_text() Type=Object} Ballon? Das müssen wir schnell ändern!,South in the meadow stands a Broko child without a {Expr Instance_Key=Broko_Child_3 Comp=Balloon_Quest Expression=get_balloon_color_text() Type=Object} balloon? We have to change that quickly!
+DIALOGUE_BROKO_TOWN_1_BUFFIN_3_BALLOON_QUEST_BROKO_CHILD_3_1_2_1,{Expr Instance_Key=Broko_Child_3 Comp=Balloon_Quest Expression=get_balloon_color_text() Type=Object} Ballon erhalten!,{Expr Instance_Key=Broko_Child_3 Comp=Balloon_Quest Expression=get_balloon_color_text() Type=Object} balloon received!
+DIALOGUE_BROKO_TOWN_1_BUFFIN_3_BALLOON_QUEST_BROKO_CHILD_3_1_3_1,Der Ballon sollte zu einem Broko-Kind westlich des Dorfes meine ich.,The balloon was supposed to go to a Broko child west of the village I believe.
+DIALOGUE_BROKO_TOWN_1_BUFFIN_CHILD_1_START_1_1_1,Magst du Magie?,Do you like magic?
+DIALOGUE_BROKO_TOWN_1_BUFFIN_CHILD_1_START_1_1_2,Lass mich dir einen Trick vorführen! Ich brauche dafür nur eine Münze{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.,Let me show you a trick! All I need is a coin{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.
+DIALOGUE_BROKO_TOWN_1_BUFFIN_CHILD_1_START_1_1_2_GIVE_COIN,1 Münze geben,Give 1 coin
+DIALOGUE_BROKO_TOWN_1_BUFFIN_CHILD_1_START_1_1_2_SAVE,Sparen,Save
+DIALOGUE_BROKO_TOWN_1_BUFFIN_CHILD_1_START_1_2_1,Du hast nicht einmal eine einzige Münze?,You don't even have a single coin?
+DIALOGUE_BROKO_TOWN_1_BUFFIN_CHILD_1_START_1_3_1,"Oh, das habe ich jetzt irgendwie nicht erwartet.","Oh, I actually did not expect that."
+DIALOGUE_BROKO_TOWN_1_BUFFIN_CHILD_1_START_1_4_1,1 [img]res://Global_Resources/Sprites/Coin/36_Single.png[/img] verloren.,1 [img]res://Global_Resources/Sprites/Coin/36_Single.png[/img] lost.
+DIALOGUE_BROKO_TOWN_1_BUFFIN_CHILD_1_START_1_5_1,Danke. Die Zauberschau beginnt!,Thanks. The magic show begins!
+DIALOGUE_BROKO_TOWN_1_BUFFIN_CHILD_1_START_1_6_1,Siehst du diese Münze?,Do you see this coin?
+DIALOGUE_BROKO_TOWN_1_BUFFIN_CHILD_1_START_1_6_2,"Ich werde mir nun richtig viel Mühe geben, um sie verschwinden zu lassen!",I will try really hard now to make it disappear!
+DIALOGUE_BROKO_TOWN_1_BUFFIN_CHILD_1_START_1_6_3,Sie werden die Münze nie wieder sehen.,You will never see this coin again.
+DIALOGUE_BROKO_TOWN_1_BUFFIN_CHILD_1_START_1_6_4,Das verspreche ich Ihnen.,I can promise you that.
+DIALOGUE_BROKO_TOWN_1_BUFFIN_CHILD_1_START_1_7_1,Nicht mehr lange!,Not much longer!
+DIALOGUE_BROKO_TOWN_1_BUFFIN_CHILD_1_START_1_7_2,"Gleich ist sie weg, ich spür es schon!","It's almost gone, I can feel it already!"
+DIALOGUE_BROKO_TOWN_1_BUFFIN_CHILD_1_START_1_8_1,Mir kribbelt es schon in den Teighänden{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.,My dough hands are already tingling{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.
+DIALOGUE_BROKO_TOWN_1_BUFFIN_CHILD_1_START_1_9_1,Das war total magisch!,That was absolutely magical!
+DIALOGUE_BROKO_TOWN_1_BUFFIN_CHILD_1_BALLOON_QUEST_1_1_1,Du magst mir einen Ballon in meiner Lieblingsfarbe bringen? Toll!,You would like to bring me a balloon in my favorite color? Great!
+DIALOGUE_BROKO_TOWN_1_BUFFIN_CHILD_1_BALLOON_QUEST_1_1_2,Ich liebe Magie! Ich frag mal meine Zauberkugel welche Farbe ich nehme{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.,I love magic! I'll ask my magic ball what color I want{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.
+DIALOGUE_BROKO_TOWN_1_BUFFIN_CHILD_1_BALLOON_QUEST_1_2_1,{Expr Instance_Key=Buffin_Child_1 Comp=Balloon_Quest Expression=get_balloon_color_text() Type=Object}! Wie{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.magisch!,{Expr Instance_Key=Buffin_Child_1 Comp=Balloon_Quest Expression=get_balloon_color_text() Type=Object}! How{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.magical!
+DIALOGUE_BROKO_TOWN_1_BUFFIN_CHILD_1_BALLOON_QUEST_2_1_1,Ich hätte gerne einen Ballon der Farbe {Expr Instance_Key=Buffin_Child_1 Comp=Balloon_Quest Expression=get_balloon_color_text() Type=Object}!,I would like to have a balloon of the color {Expr Instance_Key=Buffin_Child_1 Comp=Balloon_Quest Expression=get_balloon_color_text() Type=Object}!
+DIALOGUE_BROKO_TOWN_1_BUFFIN_CHILD_1_BALLOON_QUEST_3_1_1,"Ist das mein Ballon? Toll! Vielen Dank, Herr Nutman.","Is that my balloon? Great! Thank you very much, Mr. Nutman."
+DIALOGUE_BROKO_TOWN_1_BUFFIN_CHILD_2_START_1_1_1,Dieser Nussknacker ist total cool!,This nutcracker is totally cool!
+DIALOGUE_BROKO_TOWN_1_BUFFIN_CHILD_2_START_1_1_2,"Aber meine Eltern sagen, dass ich zu klein bin um selber eine Nuss knacken zu lassen{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.",But my parents say that I'm too small to crack a nut myself{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.
+DIALOGUE_BROKO_TOWN_1_BUFFIN_CHILD_2_START_1_1_3,Wenn ich groß bin werde ich es versuchen! Es macht ja auch schon Spaß nur zuzugucken.,When I grow up I will try it! It's already fun just to watch.
+DIALOGUE_BROKO_TOWN_1_BUFFIN_CHILD_2_BALLOON_QUEST_1_1_1,Es gibt quietschbunte Ballons?,There are brightly colored balloons?
+DIALOGUE_BROKO_TOWN_1_BUFFIN_CHILD_2_BALLOON_QUEST_1_1_2,Dann mag ich gerne einen in der Farbe {Expr Instance_Key=Buffin_Child_2 Comp=Balloon_Quest Expression=get_balloon_color_text() Type=Object}! Danke.,Then I would like one in the color {Expr Instance_Key=Buffin_Child_2 Comp=Balloon_Quest Expression=get_balloon_color_text() Type=Object}! Thank you.
+DIALOGUE_BROKO_TOWN_1_BUFFIN_CHILD_2_BALLOON_QUEST_2_1_1,Bitte ein Ballon der Farbe {Expr Instance_Key=Buffin_Child_2 Comp=Balloon_Quest Expression=get_balloon_color_text() Type=Object}.,Please a balloon of the color {Expr Instance_Key=Buffin_Child_2 Comp=Balloon_Quest Expression=get_balloon_color_text() Type=Object}.
+DIALOGUE_BROKO_TOWN_1_BUFFIN_CHILD_2_BALLOON_QUEST_3_1_1,Der ist ja fast so toll wie der Nussknacker hier! Vielen Dank!,It's almost as great as the nutcracker here! Thank you very much!
+DIALOGUE_BROKO_TOWN_1_BUFFIN_CHILD_3_START_1_1_1,Das Schloss ist so groß!,The castle is so big!
+DIALOGUE_BROKO_TOWN_1_BUFFIN_CHILD_3_START_1_1_2,"Immer wenn ich durch das Schloss laufe, um zum Unterricht von Künst DéLère zu kommen, fühle ich mich wie etwas ganz besonderes!","Whenever I walk through the castle to get to Künst DéLère's lessons, I feel very special!"
+DIALOGUE_BROKO_TOWN_1_BUFFIN_CHILD_3_BALLOON_QUEST_1_1_1,Einen Ballon? Ich liebe {Expr Instance_Key=Buffin_Child_3 Comp=Balloon_Quest Expression=get_balloon_color_text() Type=Object}! So einen will ich bitte.,A balloon? I love {Expr Instance_Key=Buffin_Child_3 Comp=Balloon_Quest Expression=get_balloon_color_text() Type=Object}! I want one like that please.
+DIALOGUE_BROKO_TOWN_1_BUFFIN_CHILD_3_BALLOON_QUEST_2_1_1,"Ich liebe die Farbe {Expr Instance_Key=Buffin_Child_3 Comp=Balloon_Quest Expression=get_balloon_color_text() Type=Object}! Wenn du mir einen Ballon bringen magst, dann bitte so einen.","I love the color {Expr Instance_Key=Buffin_Child_3 Comp=Balloon_Quest Expression=get_balloon_color_text() Type=Object}! If you want to bring me a balloon, please bring me one like this."
+DIALOGUE_BROKO_TOWN_1_BUFFIN_CHILD_3_BALLOON_QUEST_3_1_1,Danke! Vielleicht kann ich den mal durch das Schloss fliegen lassen!,Thank you! Maybe I can let it fly through the castle!
+DIALOGUE_BROKO_TOWN_1_BROKO_CHILD_1_START_1_1_1,Du bist ein echter Held Dr. Nutman! Das sagen mir meine Eltern andauernd.,"You are a real hero, Dr. Nutman! My parents tell me that all the time."
+DIALOGUE_BROKO_TOWN_1_BROKO_CHILD_1_START_1_1_2,Eines Tages werde ich die Welt auch zu einem besseren Ort machen.,One day I will make the world a better place too.
+DIALOGUE_BROKO_TOWN_1_BROKO_CHILD_1_BALLOON_QUEST_1_1_1,Du willst mir persönlich einen Ballon bringen?,You want to personally bring me a balloon?
+DIALOGUE_BROKO_TOWN_1_BROKO_CHILD_1_BALLOON_QUEST_1_1_2,Wie aufregend! Welche Farbe nehm ich bloß{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}. Ich habs! {Expr Instance_Key=Broko_Child_1 Comp=Balloon_Quest Expression=get_balloon_color_text() Type=Object}!,How exciting! What color do I take{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}. I've got it! {Expr Instance_Key=Broko_Child_1 Comp=Balloon_Quest Expression=get_balloon_color_text() Type=Object}!
+DIALOGUE_BROKO_TOWN_1_BROKO_CHILD_1_BALLOON_QUEST_2_1_1,Welchen Ballon ich mag? {Expr Instance_Key=Broko_Child_1 Comp=Balloon_Quest Expression=get_balloon_color_text() Type=Object}! Dankeschön.,Which balloon I like? {Expr Instance_Key=Broko_Child_1 Comp=Balloon_Quest Expression=get_balloon_color_text() Type=Object}! Thank you.
+DIALOGUE_BROKO_TOWN_1_BROKO_CHILD_1_BALLOON_QUEST_3_1_1,Voll toll von dir. Ich werde auf ihn aufpassen.,That's so great of you. I will treasure it.
+DIALOGUE_BROKO_TOWN_1_BROKO_CHILD_2_START_1_1_1,Dieser Feuervulkan speit immerzu in vielen bunten Farben.,This fire volcano constantly spits in many bright colors.
+DIALOGUE_BROKO_TOWN_1_BROKO_CHILD_2_START_1_1_2,Ich kann mich gar nicht richtig entscheiden welchen Funken ich am meisten mag.,I can't really decide which spark I like the most.
+DIALOGUE_BROKO_TOWN_1_BROKO_CHILD_2_BALLOON_QUEST_1_1_1,Einen Ballon in meiner Lieblingsfarbe?,A balloon in my favorite color?
+DIALOGUE_BROKO_TOWN_1_BROKO_CHILD_2_BALLOON_QUEST_1_2_1,"Ich weiß gar nicht so recht, ob ich überhaupt eine Lieblingsfarbe habe{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.",I don't really know if I even have a favorite color{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.
+DIALOGUE_BROKO_TOWN_1_BROKO_CHILD_2_BALLOON_QUEST_1_3_1,Was ist denn noch da? {Expr Instance_Key=Broko_Child_2 Comp=Balloon_Quest Expression=get_balloon_color_text() Type=Object}? Dann nehm ich den.,What else is left? {Expr Instance_Key=Broko_Child_2 Comp=Balloon_Quest Expression=get_balloon_color_text() Type=Object}? Then I'll take that one.
+DIALOGUE_BROKO_TOWN_1_BROKO_CHILD_2_BALLOON_QUEST_2_1_1,Was ist? Achso. Ich glaube ich wollte einen Ballon der Farbe {Expr Instance_Key=Broko_Child_2 Comp=Balloon_Quest Expression=get_balloon_color_text() Type=Object}.,What is it? I see. I think I wanted a balloon of the color {Expr Instance_Key=Broko_Child_2 Comp=Balloon_Quest Expression=get_balloon_color_text() Type=Object}.
+DIALOGUE_BROKO_TOWN_1_BROKO_CHILD_2_BALLOON_QUEST_3_1_1,Danke. Jetzt können wir den Feuervulkan zusammen beobachten.,Thank you. Now we can watch the fire volcano together.
+DIALOGUE_BUFFIN_HOUSE_3_CUP_1_1_1_1,"Eine gewöhnliche Tasse aus Keramik.","An ordinary cup made of ceramic."
+DIALOGUE_BUFFIN_HOUSE_3_BOOK_1_1_1_1,"Hier liegt ein Buch über Geister. Sollte ich es lesen?","Here is a book about ghosts. Should I read it?"
+DIALOGUE_BUFFIN_HOUSE_3_BOOK_1_1_2_1,"Geister sind in der Lage sich durch Objekte hindurchzubewegen.","Ghosts are able to move through objects."
+DIALOGUE_BUFFIN_HOUSE_3_BOOK_1_1_2_2,"Zusätzlich können sie sich fast komplett geräuschlos fortbewegen.","They can also move almost completely silently."
+DIALOGUE_BUFFIN_HOUSE_3_BOOK_1_1_2_3,"Diese Eigenschaften machen Geister zu überraschenden Gesellen.","These characteristics make ghosts surprising companions."
+DIALOGUE_BUFFIN_HOUSE_3_BOWL_1_1_1_1,"Eine hübsche kleine grüne Schale.","A lovely little green bowl."
+DIALOGUE_BUFFIN_HOUSE_3_CHEST_1_1_1_1,"Nichts. Die Kiste ist komplett leer.","Nothing. The chest is completely empty."
+DIALOGUE_BUFFIN_HOUSE_3_CANDLE_1_1_1_1,"Ich kenne mich zwar mit Sicherheitsvorkehrungen nicht so aus{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.","I am not very familiar with safety precautions{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}."
+DIALOGUE_BUFFIN_HOUSE_3_CANDLE_1_1_1_2,"Aber sicher kann das hier nicht sein.","But this can't be safe."
+DIALOGUE_BUFFIN_HOUSE_3_PLANT_1_1_1_1,"Diese Pflanze bekommt sicher nicht genug Sonnenlicht.","This plant is certainly not getting enough sunlight."
+DIALOGUE_BUFFIN_HOUSE_3_SHELF_1_LEFT_1_1_1,"Ein paar Stapel Teller. Nichts Ungewöhnliches.","A few piles of plates. Nothing unusual."
+DIALOGUE_BUFFIN_HOUSE_3_SHELF_1_RIGHT_1_1_1,"Größtenteils Bücher{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}. Es ist schwer zu lesen.","Mostly books{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}. It is difficult to read."
+DIALOGUE_BUFFIN_HOUSE_3_START_1_1_1,"Hier ist es aber ganz schön unheimlich{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.","It's pretty spooky here{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}."
+DIALOGUE_BUFFIN_HOUSE_3_START_1_1_2,"Woher weiß ich, dass das hier noch zum Fest gehört?","How do I know that this is still part of the festival?"
+DIALOGUE_BUFFIN_HOUSE_3_BOOK_FALL_1_1_1,"Nanu?","Huh?"
+DIALOGUE_BUFFIN_HOUSE_3_BOOK_FALL_1_2_1,"Warst du das, Tizian?","Was that you, Titian?"
+DIALOGUE_BUFFIN_HOUSE_3_BOOK_FALL_1_3_1,"Nein! Ich warte hier ganz ruhig bis Dr. Nutman kommt.","No! I'm waiting here quietly until Dr. Nutman arrives."
+DIALOGUE_BUFFIN_HOUSE_3_BOOK_FALL_1_3_2,"Magst du mir nicht beim Saubermachen helfen?","Won't you help me clean up?"
+DIALOGUE_BUFFIN_HOUSE_3_BOOK_FALL_1_3_3,"Ich will mit dem Aufräumen fertig sein bevor die große Zeremonie startet!","I want to finish cleaning up before the big ceremony starts!"
+DIALOGUE_BUFFIN_HOUSE_3_BOOK_FALL_1_3_4,"Aber Henry! Das ist extra alles so für das Grusel-Feeling!","But Henry! That's all for the creepy feeling!"
+DIALOGUE_BUFFIN_HOUSE_3_BOOK_FALL_1_3_5,"Das Feeling habe ich hier schon lange! Bei diesem Saustall!","I've had that feeling here for a long time! With this mess!"
+DIALOGUE_BUFFIN_HOUSE_3_PAINT_DELERE_1_1_1_1,"Ah! Monsieur Nutman!","Ah! Monsieur Nutman!"
+DIALOGUE_BUFFIN_HOUSE_3_PAINT_DELERE_1_1_2_1,"Isch bin wirklisch froh sie zu seh'ön!","I am really glad to see you!"
+DIALOGUE_BUFFIN_HOUSE_3_PAINT_DELERE_1_1_3_1,"Isch suche nämlich nach meinöm Brudör Elektrik DéLère.","I am looking for my brother Electric DéLère."
+DIALOGUE_BUFFIN_HOUSE_3_PAINT_DELERE_1_1_3_2,"Er meintö er wollö 'ier ein paar Batteriön holen für das Fest.","He said he wanted to get some batteries here for the party."
+DIALOGUE_BUFFIN_HOUSE_3_PAINT_DELERE_1_1_3_3,"{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}. Allördings war das vor Stundön!","{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}. But that was hours ago!"
+DIALOGUE_BUFFIN_HOUSE_3_PAINT_DELERE_1_1_4_1,"Und nün verspörrt mir dieses Tör den Weg und ich kommö nischt weitör!","And now this door is blocking my way and I can't get any further!"
+DIALOGUE_BUFFIN_HOUSE_3_PAINT_DELERE_1_1_5_1,"Isch wäre Ihnön wirklisch sehr verbundön wenn Sie 'ierfür eine Lösung findön könntön!","I would really appreciate it if you could find a solution for this!"
+DIALOGUE_BUFFIN_HOUSE_3_PAINT_DELERE_1_1_6_1,"Unabhängig davön{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}. Möschtön Sie einmal meine neustö Kreation erblickön?","Regardless of this{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}. Would you like to see my newest creation?"
+DIALOGUE_BUFFIN_HOUSE_3_PAINT_DELERE_1_1_7_1,"Isch nennö es ""Der Grusel in Dir""{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}. Nischt besönders geistreich.","I call it ""The horror in You""{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}. Not particularly ingenious."
+DIALOGUE_BUFFIN_HOUSE_3_PAINT_DELERE_1_2_1_1,"'Aben Sie schon einö Idee, wie wir hier weiterkömmen?","Do you have any idea yet how we can proceed?"
+DIALOGUE_BUFFIN_HOUSE_3_PUZZLE_1_SOLVED_1_1_1,"Oh la la! Sie 'aben es geschafft!","Oh la la! You've made it!"
+DIALOGUE_BUFFIN_HOUSE_3_PUZZLE_1_SOLVED_1_2_1,"Nün könnön wir endlisch weitörsuchön.","Now we can finally keep on searching."
+DIALOGUE_BUFFIN_HOUSE_3_PUZZLE_2_START_1_1_1,"Mais oui! Das nennö isch wahre Künst!","Mais oui! That's what I call true art!"
+DIALOGUE_BUFFIN_HOUSE_3_PUZZLE_2_START_1_1_2,"So simpöl und doch ist die Nachrischt klar: Man möschte üns zum Laufön animierön!","So simple and yet the message is clear: Someone wants us to take a run!"
+DIALOGUE_BUFFIN_HOUSE_3_PUZZLE_2_START_1_1_3,"'ätte le Künstlör noch eine einzigö Elöment 'inzugöfügt, wärö die Intentiön vermutlisch verflogen.","If the artist had added just a single element, the intention would presumably have evaporated."
+DIALOGUE_BUFFIN_HOUSE_3_PUZZLE_2_START_1_1_4,"Und nün die Irönie: Diesör Schriftzüg projiziert auf das Tör, das üns den Weg verspörrt!","And here is the irony: This writing is projected onto the door that is blocking our way!"
+DIALOGUE_BUFFIN_HOUSE_3_PUZZLE_2_START_1_1_5,"'ier 'at der Künstlör wirklisch mit allön Mittöln gearbeitöt!","The artist has really worked with all kinds of means!"
+DIALOGUE_BUFFIN_HOUSE_3_PUZZLE_2_START_1_1_6,"Entschuldigön sie misch bittö, 'err Nutman.","Please excuse me, Mr. Nutman."
+DIALOGUE_BUFFIN_HOUSE_3_PUZZLE_2_START_1_1_7,"Isch muss diesön Moment einfach festhaltön.","I just have to capture this moment."
+DIALOGUE_BUFFIN_HOUSE_3_PUZZLE_2_PROJECTOR_START_1_1_1,"Es scheint als könnte ich diesen Beamer drehen{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.","It seems that I can rotate this projector{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}."
+DIALOGUE_BUFFIN_HOUSE_3_PUZZLE_2_COMMENT_1_1_1,"Monsieur Nutman! Sie verdeckön die ganzö Künst!","Monsieur Nutman! Mr. Nutman! You're covering up all the art!"
+DIALOGUE_BUFFIN_HOUSE_3_PUZZLE_2_COMMENT_1_2_1,"Nanü? Ebön war die Künst noch da!","Why, the art was just there!"
+DIALOGUE_BUFFIN_HOUSE_3_PUZZLE_2_COMMENT_1_3_1,"Das Bild ist fört. Bittö lassön sie misch weitörmalön!","The picture is gone. Please let me continue painting!"
+DIALOGUE_BUFFIN_HOUSE_3_PUZZLE_2_COMMENT_1_4_1,"Wenn Sie einö Portrait von sisch möschten, solltön Sie das vor'ör anmeldön!","If you would like a portrait of yourself, you should register in advance!"
+DIALOGUE_BUFFIN_HOUSE_3_PUZZLE_2_COMMENT_2_1_1,"Ohh! Sie mögen es wohl mir ins Gesischt zu leuschtön!","Ohh! It seems like you like to shine in my face!"
+DIALOGUE_BUFFIN_HOUSE_3_PUZZLE_2_COMMENT_2_2_1,"Isch kann das Referenzbild gar nischt mehr sehön!","I can't see the reference picture anymore!"
+DIALOGUE_BUFFIN_HOUSE_3_PUZZLE_2_COMMENT_2_3_1,"Ein eschtör Künstlör, wie Isch, genießt ös auch manschmal im Rampönlischt zu ste'ön!","A real artist like me enjoys being in the spotlight sometimes!"
+DIALOGUE_BUFFIN_HOUSE_3_PUZZLE_2_COMMENT_2_4_1,"Isch 'abe bereits einö strahlönde Persönlischkeit, Sie müssön misch nischt auch noch anleuchtön!","I already have a radiant personality, you don't have to shine a light on me!"
+DIALOGUE_BUFFIN_HOUSE_3_VACUUM_CLEANER_1_1_1_1,"Musst du jetzt unbedingt anfangen zu saugen?","Do you really need to start vacuuming now?"
+DIALOGUE_BUFFIN_HOUSE_3_VACUUM_CLEANER_1_1_1_2,"Es ist nicht mehr lange hin bis zur großen Zeremonie.","It's not long now until the big ceremony."
+DIALOGUE_BUFFIN_HOUSE_3_VACUUM_CLEANER_1_1_1_3,"Ich will auch irgendwann Feierabend haben!","I want to call it a day at some point too!"
+DIALOGUE_BUFFIN_HOUSE_3_VACUUM_CLEANER_1_1_1_4,"Zudem ist das Haus in einem fürchterlichen Zustand{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.","Moreover, the house is in terrible condition{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}."
+DIALOGUE_BUFFIN_HOUSE_3_VACUUM_CLEANER_1_1_1_5,"Guck' dir allein mal die ganzen Spinnenweben an!","Just look at all those spider webs!"
+DIALOGUE_BROKO_FOREST_1_PEANUT_BUSH_UNKNOWN_1_1_1,Was ist das denn für eine Pflanze?,What kind of plant is that?
+DIALOGUE_BROKO_FOREST_1_PEANUT_BUSH_UNKNOWN_1_1_2,"Naja, ich stecke ihre Früchte einfach mal ein{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.","Well, I'll just pocket their fruit{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}."
+DIALOGUE_BROKO_FOREST_1_PEANUT_BUSH_GAIN_1_1_1,Handvoll ungeknackter Erdnüsse erhalten!,Received Handful uncracked peanuts!
+DIALOGUE_BROKO_FOREST_1_PEANUT_BUSH_FIND_1_1_1,Ein weiterer Erdnussstrauch!,Another peanut bush!
+DIALOGUE_BROKO_FOREST_1_PEANUT_BUSH_QUEST_1_1_1,Ist das so ein Erdnussstrauch?,Is that a peanut bush?
+DIALOGUE_BROKO_FOREST_1_PEANUT_BUSH_QUEST_1_1_2,Dann ernte ich mal ein paar Erdnüsse.,I'll harvest a few peanuts then.
+DIALOGUE_BROKO_FOREST_1_STAY_NEAR_FESTIVAL_1_1_1,Das Fest in Broko Town ist in vollem Gange.,The festival in Broko Town is in full swing.
+DIALOGUE_BROKO_FOREST_1_STAY_NEAR_FESTIVAL_1_1_2,Ich denke es wäre besser in der Nähe zu bleiben.,I think it would be better to stay close by.
+DIALOGUE_GAME_OVER_QUOTE_DR_NUTMAN_1_1_1_1,Ich wollte doch noch so viel erleben{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.,I still wanted to experience so much{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.
+DIALOGUE_GAME_OVER_QUOTE_DR_NUTMAN_2_1_1_1,Ich dachte immer der Tod holt einen persönlich ab{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.,I always thought death would come for you in person{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.
+DIALOGUE_GAME_OVER_QUOTE_DR_NUTMAN_3_1_1_1,Ich hoffe die anderen können diesen Verlust ertragen.,I hope the others can bear this loss.
+DIALOGUE_GAME_OVER_QUOTE_DR_NUTMAN_4_1_1_1,Ob es auch nach dem Tod noch Edelsteine gibt?,Will there still be gemstones after death?
+DIALOGUE_GAME_OVER_QUOTE_DR_NUTMAN_5_1_1_1,Wie konnte das nur passieren?,How could this happen?
+DIALOGUE_DEBUG_2D_TEST_1_1_1,Ein Sample Text um zu überprüfen ob der beste Coder Deutschlands alles im Griff hat,A sample text to check if germanys best coder has got it.

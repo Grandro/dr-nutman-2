@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://ff33i620lkpe"]
+
+[ext_resource type="PackedScene" uid="uid://ct1aowjqmhk1c" path="res://Global_Resources/Mapping/3D/Plane/Plane_Tile_Collision.tscn" id="1_63vrg"]
+[ext_resource type="Texture2D" uid="uid://ig6wvy5wwp2g" path="res://Global_Resources/Mapping/Sprites/Below/Broko_Town/Doctor_Dream_1/Floor_Tile_1.png" id="2_27gi1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lhf0y"]
+albedo_texture = ExtResource("2_27gi1")
+uv1_offset = Vector3(0, 0, 1)
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_4ilas"]
+material = SubResource("StandardMaterial3D_lhf0y")
+size = Vector2(1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_o3hh8"]
+resource_local_to_scene = true
+size = Vector3(1, 0.2, 1)
+
+[node name="Floor_Tile_1" groups=["NavMesh_Main"] instance=ExtResource("1_63vrg")]
+mesh = SubResource("PlaneMesh_4ilas")
+
+[node name="Collision" parent="Static" index="0"]
+shape = SubResource("BoxShape3D_o3hh8")

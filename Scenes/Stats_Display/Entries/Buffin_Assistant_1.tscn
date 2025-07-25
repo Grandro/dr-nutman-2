@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://h0270tllaxqe"]
+
+[ext_resource type="PackedScene" uid="uid://bjgxkux1hih3y" path="res://Scenes/Stats_Display/Entries/Base.tscn" id="1"]
+[ext_resource type="Texture2D" uid="uid://dteo2ddfuqqta" path="res://Global_Resources/Sprites/Mini_Busts/Buffin_Base/Default.png" id="2"]
+
+[node name="Buffin_Assistant_1" instance=ExtResource("1")]
+offset_bottom = 428.0
+
+[node name="Bust" parent="VBox" index="0"]
+texture = ExtResource("2")

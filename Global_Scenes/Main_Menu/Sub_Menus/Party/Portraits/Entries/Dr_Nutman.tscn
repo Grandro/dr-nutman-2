@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://blyx83gmtikq8"]
+
+[ext_resource type="PackedScene" uid="uid://0wglwyv7m4dh" path="res://Global_Scenes/Main_Menu/Sub_Menus/Party/Portraits/Entries/Entry_Base.tscn" id="1"]
+
+[node name="Dr_Nutman" instance=ExtResource("1")]
+light_mask = 8
+visibility_layer = 8
+_e_key = "Dr_Nutman"

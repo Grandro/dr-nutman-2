@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://qu4jccama8g3"]
+
+[ext_resource type="PackedScene" uid="uid://dtgwrqkblfr6c" path="res://Scenes/NutOS/Content/Desktop/Apps/Settings/Menus/Background/Background_Entry/Background_Entry.tscn" id="1"]
+[ext_resource type="Texture2D" uid="uid://b3oyh23o28g7h" path="res://Scenes/NutOS/Content/Desktop/Sprites/Nut_1.png" id="2"]
+
+[node name="Nut_1" instance=ExtResource("1")]
+
+[node name="Image" parent="." index="0"]
+texture = ExtResource("2")

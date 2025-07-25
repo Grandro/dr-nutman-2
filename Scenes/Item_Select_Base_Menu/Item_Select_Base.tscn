@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dabeoloqhc72h"]
+[gd_scene load_steps=7 format=3 uid="uid://dabeoloqhc72h"]
 
 [ext_resource type="PackedScene" uid="uid://bjaemay65pyhl" path="res://Scenes/Item_Select_Base_Menu/Info.tscn" id="1"]
+[ext_resource type="Theme" uid="uid://budcfl16xj2tt" path="res://Global_Resources/Themes/Default/Default.tres" id="1_me22p"]
 [ext_resource type="PackedScene" uid="uid://b2hso273s8kxl" path="res://Scenes/Sort_By/Sort_By.tscn" id="3_gbfai"]
 [ext_resource type="PackedScene" uid="uid://brwnr7v5wrvx" path="res://Scenes/Search/Search.tscn" id="3_vwy3s"]
 [ext_resource type="Script" uid="uid://bjwgqpo7mekd1" path="res://Scenes/Item_Select_Base_Menu/Scripts/Item_Select_Base.gd" id="4"]
@@ -20,6 +21,7 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
+theme = ExtResource("1_me22p")
 script = ExtResource("4")
 
 [node name="Grid" type="GridContainer" parent="."]

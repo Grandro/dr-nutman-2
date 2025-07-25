@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://b0dkmoflc3ojv"]
+
+[ext_resource type="Script" uid="uid://dr0l8ta3homqo" path="res://Global_Scenes/Battle_System/Battle_ABS/Enemies/Scripts/Enemy_Battle.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://fhm322qbafxa" path="res://Global_Scenes/Battle_System/Battle_ABS/Character_Battle.tscn" id="2"]
+[ext_resource type="Theme" uid="uid://budcfl16xj2tt" path="res://Global_Resources/Themes/Default/Default.tres" id="4_pa6rq"]
+[ext_resource type="StyleBox" path="res://Global_Scenes/Battle_System/Battle_ABS/Tres/HP_FG.tres" id="5_ow152"]
+[ext_resource type="StyleBox" path="res://Global_Scenes/Battle_System/Battle_ABS/Tres/SP_FG.tres" id="6_d36xl"]
+
+[node name="Enemy_Battle" instance=ExtResource("2")]
+collision_layer = 72
+collision_mask = 8
+script = ExtResource("1")
+
+[node name="HUD" type="Node3D" parent="." index="4"]
+
+[node name="VBox" type="VBoxContainer" parent="HUD" index="0"]
+light_mask = 8
+visibility_layer = 8
+offset_right = 40.0
+offset_bottom = 22.0
+mouse_filter = 2
+theme = ExtResource("4_pa6rq")
+theme_override_constants/separation = 2
+
+[node name="HP" type="ProgressBar" parent="HUD/VBox" index="0"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+size_flags_vertical = 1
+mouse_filter = 2
+theme_override_font_sizes/font_size = 26
+theme_override_styles/fill = ExtResource("5_ow152")
+step = 1.0
+show_percentage = false
+
+[node name="SP" type="ProgressBar" parent="HUD/VBox" index="1"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+size_flags_vertical = 1
+mouse_filter = 2
+theme_override_font_sizes/font_size = 26
+theme_override_styles/fill = ExtResource("6_d36xl")
+show_percentage = false

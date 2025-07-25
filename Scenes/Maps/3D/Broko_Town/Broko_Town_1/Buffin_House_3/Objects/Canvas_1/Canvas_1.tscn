@@ -1,0 +1,295 @@
+[gd_scene load_steps=23 format=3 uid="uid://ba3qqkp7ajqtq"]
+
+[ext_resource type="Script" uid="uid://ddrwpxb58mt2u" path="res://Scenes/Object/Scripts/RigidBody3D_Object.gd" id="1_rw2yi"]
+[ext_resource type="PackedScene" uid="uid://bblmb8yfchyxr" path="res://Scenes/Object/Comps/3D/Display.tscn" id="2_d42sm"]
+[ext_resource type="Texture2D" uid="uid://b8eo7ufha4lwf" path="res://Scenes/NPC/3D/Buffins/Paint_DeLere/Canvases/Sprites/1_Spritesheet.png" id="3_8w8vl"]
+[ext_resource type="Script" uid="uid://4ye4k48gmqht" path="res://Scenes/NPC/3D/Buffins/Paint_DeLere/Canvases/Comps/Scripts/Display.gd" id="4_7ij2a"]
+[ext_resource type="Shader" uid="uid://bjkm3rjfq72ba" path="res://Global_Resources/Materials/3D/Shaders/HFade.gdshader" id="5_d42sm"]
+[ext_resource type="Texture2D" uid="uid://xxtfhenal443" path="res://Scenes/NPC/3D/Buffins/Paint_DeLere/Canvases/Sprites/Pictures/Arrow_Right.png" id="6_2epgw"]
+[ext_resource type="Texture2D" uid="uid://hn78dsv0pjwx" path="res://Scenes/Maps/3D/Broko_Town/Doctor_Dream_1/Objects/Pic_Arrow_Right/Sprites/Spritesheet.png" id="6_xfm4c"]
+[ext_resource type="PackedScene" uid="uid://dsp0njc065uev" path="res://Scenes/Object/Comps/3D/Collision_Shape.tscn" id="7_akrdg"]
+[ext_resource type="PackedScene" uid="uid://boh1rwcj5rgwf" path="res://Scenes/Object/Comps/States.tscn" id="9_2epgw"]
+[ext_resource type="PackedScene" uid="uid://dhm6aai8dt4md" path="res://Scenes/Object/Comps/3D/Movement/Movement_Rigid.tscn" id="9_xfm4c"]
+[ext_resource type="PackedScene" uid="uid://drpp26gth4snn" path="res://Scenes/Object/Comps/Reference.tscn" id="10_akrdg"]
+[ext_resource type="PackedScene" uid="uid://de2jy2ixhp2mw" path="res://Scenes/Object/Comps/Save.tscn" id="11_akrdg"]
+[ext_resource type="PackedScene" uid="uid://b4dvlhw3jh0go" path="res://Scenes/Object/Comps/Cutscene.tscn" id="11_vgvbk"]
+[ext_resource type="PackedScene" uid="uid://b1q143fixhaj5" path="res://Scenes/Object/Comps/Anims.tscn" id="11_xfm4c"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_n3hbt"]
+friction = 0.9
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7ij2a"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("5_d42sm")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("6_2epgw")
+shader_parameter/progress = 1.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rw2yi"]
+size = Vector3(1.08, 1.38, 0.3)
+
+[sub_resource type="Animation" id="Animation_akrdg"]
+resource_name = "Stop_Down"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Display:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Display/Picture:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0.02)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Display/Picture:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Display/Picture:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_oj0gx"]
+resource_name = "Stop_Left"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Display:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Display/Picture:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.07, 0.1, 0.02)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Display/Picture:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.2, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Display/Picture:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_8w8vl"]
+resource_name = "Stop_Right"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Display:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Display/Picture:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.07, 0.1, 0.02)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Display/Picture:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.2, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Display/Picture:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_xfm4c"]
+resource_name = "Stop_Up"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Display:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Display/Picture:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0.02)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Display/Picture:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Display/Picture:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mdeqi"]
+_data = {
+&"Stop_Down": SubResource("Animation_akrdg"),
+&"Stop_Left": SubResource("Animation_oj0gx"),
+&"Stop_Right": SubResource("Animation_8w8vl"),
+&"Stop_Up": SubResource("Animation_xfm4c")
+}
+
+[node name="Canvas_1" type="RigidBody3D" groups=["Object"]]
+collision_layer = 8
+collision_mask = 9
+axis_lock_angular_y = true
+mass = 0.3
+physics_material_override = SubResource("PhysicsMaterial_n3hbt")
+script = ExtResource("1_rw2yi")
+metadata/_custom_type_script = "uid://ddrwpxb58mt2u"
+
+[node name="Display" parent="." instance=ExtResource("2_d42sm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.92, 0)
+double_sided = true
+alpha_cut = 3
+render_priority = -1
+texture = ExtResource("3_8w8vl")
+hframes = 4
+script = ExtResource("4_7ij2a")
+
+[node name="Picture" type="Sprite3D" parent="Display"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.02)
+layers = 4
+material_override = SubResource("ShaderMaterial_7ij2a")
+pixel_size = 0.02
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("6_xfm4c")
+
+[node name="Collision" parent="." instance=ExtResource("7_akrdg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.49012e-08, 0.69, 0)
+shape = SubResource("BoxShape3D_rw2yi")
+
+[node name="Movement" parent="." instance=ExtResource("9_xfm4c")]
+
+[node name="Cutscene" parent="." instance=ExtResource("11_vgvbk")]
+
+[node name="States" parent="." instance=ExtResource("9_2epgw")]
+_e_states = Array[String](["Stop"])
+_e_state = "Stop"
+
+[node name="Save" parent="." instance=ExtResource("11_akrdg")]
+
+[node name="Reference" parent="." instance=ExtResource("10_akrdg")]
+
+[node name="Anims" parent="." instance=ExtResource("11_xfm4c")]
+libraries = {
+&"": SubResource("AnimationLibrary_mdeqi")
+}

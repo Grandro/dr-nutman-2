@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://i73al5vd2yhx"]
+
+[ext_resource type="Script" uid="uid://cgx4qljo5ouln" path="res://Global_Resources/Databases/Maps/Map_Data.gd" id="1"]
+[ext_resource type="Resource" uid="uid://c7jabtrfnl2r7" path="res://Global_Resources/Databases/Maps/3D/Doctor_Dream_1/Destinations/Start.tres" id="1_kl2tx"]
+
+[resource]
+script = ExtResource("1")
+_e_path = "res://Scenes/Maps/3D/Broko_Town/Doctor_Dream_1/Doctor_Dream_1.tscn"
+_e_destinations = {
+"Start": ExtResource("1_kl2tx")
+}

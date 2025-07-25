@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://csvkdn1akcx0a"]
+
+[ext_resource type="Script" uid="uid://u2h51f0r2vch" path="res://Scenes/Object/Scripts/Static3D_Object.gd" id="1_kyi2k"]
+[ext_resource type="PackedScene" uid="uid://dimmyjls7d5l5" path="res://Scenes/Objects/3D/Tables/Dark_Brown_1/Models/Dark_Brown_1.glb" id="2_crgiq"]
+[ext_resource type="PackedScene" uid="uid://fnej1f64wfc2" path="res://Scenes/Object/Comps/3D/Nav_Obstacle.tscn" id="4_hyw8e"]
+[ext_resource type="PackedScene" uid="uid://dsp0njc065uev" path="res://Scenes/Object/Comps/3D/Collision_Shape.tscn" id="4_ucj0d"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_egyjl"]
+size = Vector3(2.5, 0.625, 1)
+
+[node name="Dark_Brown_1" type="StaticBody3D" groups=["Object"]]
+collision_layer = 8
+collision_mask = 8
+script = ExtResource("1_kyi2k")
+
+[node name="Model" parent="." instance=ExtResource("2_crgiq")]
+
+[node name="Collision" parent="." instance=ExtResource("4_ucj0d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.313, 0)
+shape = SubResource("BoxShape3D_egyjl")
+
+[node name="Nav_Obstacle" parent="." groups=["NavMesh_Main"] instance=ExtResource("4_hyw8e")]
+height = 0.8
+vertices = PackedVector3Array(1.35, 0, -0.6, 1.35, 0, 0.6, -1.35, 0, 0.6, -1.35, 0, -0.6)
+affect_navigation_mesh = true
+avoidance_enabled = false

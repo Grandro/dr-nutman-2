@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://bf3wkp4coaxh5"]
+
+[ext_resource type="Script" uid="uid://ckbk2i4wb1yhq" path="res://Scenes/Object/Scripts/Node3D_Object.gd" id="1_he44p"]
+[ext_resource type="PackedScene" uid="uid://bblmb8yfchyxr" path="res://Scenes/Object/Comps/3D/Display.tscn" id="2_hlbaa"]
+[ext_resource type="Texture2D" uid="uid://bwodgrhc5yfuv" path="res://Scenes/Objects/3D/Paintings/Sprites/6_Spritesheet.png" id="3_xt4f8"]
+
+[node name="Painting_1" type="Node3D"]
+script = ExtResource("1_he44p")
+
+[node name="Display" parent="." instance=ExtResource("2_hlbaa")]
+texture = ExtResource("3_xt4f8")

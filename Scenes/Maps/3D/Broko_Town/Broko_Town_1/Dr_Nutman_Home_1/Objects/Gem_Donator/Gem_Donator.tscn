@@ -1,0 +1,64 @@
+[gd_scene load_steps=12 format=3 uid="uid://cf46nwcy1x0ay"]
+
+[ext_resource type="Script" uid="uid://dplnq2w0oh2au" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Dr_Nutman_Home_1/Objects/Gem_Donator/Scripts/Gem_Donator.gd" id="1_dceg3"]
+[ext_resource type="PackedScene" uid="uid://bblmb8yfchyxr" path="res://Scenes/Object/Comps/3D/Display.tscn" id="2_wayd1"]
+[ext_resource type="Texture2D" uid="uid://dff4biy2a1kq7" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Dr_Nutman_Home_1/Objects/Gem_Donator/Sprites/Spritesheet.png" id="3_r4j3w"]
+[ext_resource type="PackedScene" uid="uid://dsp0njc065uev" path="res://Scenes/Object/Comps/3D/Collision_Shape.tscn" id="4_tp4by"]
+[ext_resource type="PackedScene" uid="uid://nr4813v0r2dg" path="res://Scenes/Object/Comps/3D/Interactions/Interactions.tscn" id="5_s8agy"]
+[ext_resource type="PackedScene" uid="uid://bl63t3p1cx6kk" path="res://Scenes/Object/Comps/3D/Interactions/Interaction.tscn" id="6_f55n6"]
+[ext_resource type="PackedScene" uid="uid://omsbdulg45pv" path="res://Scenes/Object/Comps/3D/Popup.tscn" id="7_iirdx"]
+[ext_resource type="PackedScene" uid="uid://fnej1f64wfc2" path="res://Scenes/Object/Comps/3D/Nav_Obstacle.tscn" id="8_1ify1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xxt7p"]
+size = Vector3(1.8, 1.8, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f2sb6"]
+size = Vector3(3, 0.75, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3l1cp"]
+size = Vector3(1, 0.75, 0.75)
+
+[node name="Gem_Donator" type="StaticBody3D" groups=["Object"]]
+collision_layer = 8
+collision_mask = 8
+script = ExtResource("1_dceg3")
+
+[node name="Display" parent="." instance=ExtResource("2_wayd1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.21, 0)
+texture = ExtResource("3_r4j3w")
+
+[node name="Collision" parent="." instance=ExtResource("4_tp4by")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.075, 0.9, -0.2)
+shape = SubResource("BoxShape3D_xxt7p")
+
+[node name="Interactions" parent="." instance=ExtResource("5_s8agy")]
+
+[node name="1" parent="Interactions" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.375, 0)
+_e_popup_pos = Vector3(0.2, 2.2, 0.01)
+_e_speech_bubble_pos = Vector3(0.28, 4.15, 0.01)
+
+[node name="Collision" parent="Interactions/1" index="0"]
+shape = SubResource("BoxShape3D_f2sb6")
+
+[node name="2" parent="Interactions" instance=ExtResource("6_f55n6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 0.375, 0.375)
+_e_popup_pos = Vector3(-0.22, 1.41, 0.01)
+_e_speech_bubble_pos = Vector3(-0.33, 2.8, 0.01)
+
+[node name="Collision" parent="Interactions/2" index="0"]
+shape = SubResource("BoxShape3D_3l1cp")
+
+[node name="Popup" parent="." instance=ExtResource("7_iirdx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 2.2, 0.01)
+
+[node name="Nav_Obstacle" parent="." groups=["NavMesh_Main"] instance=ExtResource("8_1ify1")]
+height = 1.5
+vertices = PackedVector3Array(1.2, 0, -0.9, 1.2, 0, 0.5, -1, 0, 0.5, -1, 0, -0.9)
+affect_navigation_mesh = true
+avoidance_enabled = false
+
+[editable path="Interactions"]
+[editable path="Interactions/1"]
+[editable path="Interactions/2"]
+[editable path="Popup"]

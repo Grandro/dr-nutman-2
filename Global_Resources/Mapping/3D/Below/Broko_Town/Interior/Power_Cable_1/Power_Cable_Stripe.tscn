@@ -1,0 +1,21 @@
+[gd_scene load_steps=6 format=3 uid="uid://66v385vh2vqh"]
+
+[ext_resource type="PackedScene" uid="uid://dbxigq53qnnvo" path="res://Global_Resources/Mapping/3D/Plane/Plane_Tile.tscn" id="1_x3xmi"]
+[ext_resource type="Material" uid="uid://5jcn0ur1h1og" path="res://Global_Resources/Materials/3D/VTint_Down_To_Up.tres" id="2_xi5vj"]
+[ext_resource type="Script" uid="uid://b86ox4qmvgek2" path="res://Global_Resources/Mapping/3D/Below/Broko_Town/Interior/Power_Cable_1/Scripts/Power_Cable_Stripe.gd" id="3_jrwvd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nek7c"]
+resource_local_to_scene = true
+next_pass = ExtResource("2_xi5vj")
+transparency = 1
+albedo_color = Color(1, 1, 1, 0)
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_jrwvd"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_nek7c")
+size = Vector2(0.1, 0.5)
+
+[node name="Power_Cable_Stripe" instance=ExtResource("1_x3xmi")]
+mesh = SubResource("PlaneMesh_jrwvd")
+script = ExtResource("3_jrwvd")

@@ -1,0 +1,53 @@
+[gd_scene load_steps=12 format=3 uid="uid://ce0l60jblpo4x"]
+
+[ext_resource type="PackedScene" uid="uid://c7l6gl3pndhn7" path="res://Global_Resources/Mapping/3D/Plane/Plane_Base.tscn" id="1_ttqfx"]
+[ext_resource type="Texture2D" uid="uid://470jne17l3t6" path="res://Global_Resources/Mapping/Sprites/Same_As/Broko_Forest/Hill_1/Main_Side_Center_Left.png" id="2_0tqrk"]
+[ext_resource type="Texture2D" uid="uid://ewf7vk6s1dms" path="res://Global_Resources/Mapping/Sprites/Same_As/Broko_Forest/Hill_1/Single_Side_Center_Center.png" id="3_mexvq"]
+[ext_resource type="Texture2D" uid="uid://di76vkfly27io" path="res://Global_Resources/Mapping/Sprites/Same_As/Broko_Forest/Hill_1/Main_Side_Center_Right.png" id="4_ttqfx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tpfgp"]
+albedo_texture = ExtResource("2_0tqrk")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_wknwi"]
+material = SubResource("StandardMaterial3D_tpfgp")
+size = Vector2(1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hk41v"]
+albedo_texture = ExtResource("3_mexvq")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_crifu"]
+material = SubResource("StandardMaterial3D_hk41v")
+size = Vector2(1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ombvx"]
+albedo_texture = ExtResource("4_ttqfx")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_hpvxk"]
+material = SubResource("StandardMaterial3D_ombvx")
+size = Vector2(1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nrpdl"]
+
+[node name="Single_1" type="Node3D"]
+
+[node name="Front" parent="." instance=ExtResource("1_ttqfx")]
+transform = Transform3D(1, -1.06581e-14, 4.02341e-21, 0, -4.37114e-08, -1, 1.06581e-14, 1, -4.37114e-08, 0, 0.5, 0.5)
+mesh = SubResource("PlaneMesh_wknwi")
+
+[node name="Left" parent="." instance=ExtResource("1_ttqfx")]
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, -0.5, 0.5, 0)
+mesh = SubResource("PlaneMesh_crifu")
+
+[node name="Back" parent="." instance=ExtResource("1_ttqfx")]
+transform = Transform3D(-1, -8.74228e-08, 3.82137e-15, 0, -4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, 0, 0.5, -0.5)
+mesh = SubResource("PlaneMesh_hpvxk")
+
+[node name="Static" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+collision_mask = 0
+
+[node name="Collision" type="CollisionShape3D" parent="Static"]
+shape = SubResource("BoxShape3D_nrpdl")

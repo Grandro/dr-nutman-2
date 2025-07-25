@@ -1,10 +1,140 @@
-[gd_scene load_steps=4 format=3 uid="uid://bso2guo5mw3sl"]
+[gd_scene load_steps=54 format=3 uid="uid://bso2guo5mw3sl"]
 
 [ext_resource type="Script" uid="uid://fd0pxgtteut4" path="res://Scenes/Equipable/2D/Scripts/Equipable.gd" id="1_genel"]
+[ext_resource type="Animation" uid="uid://dhb6lyteo5eqm" path="res://Scenes/Equipable/Anims/Global/Celebrate_Down.res" id="2_amx5b"]
+[ext_resource type="Animation" uid="uid://ru71oahnblad" path="res://Scenes/Equipable/Anims/Global/Fall_Down.res" id="3_sbvv5"]
+[ext_resource type="Animation" uid="uid://catujfkwplvvj" path="res://Scenes/Equipable/Anims/Global/Fall_Left.res" id="4_w71lu"]
+[ext_resource type="Animation" uid="uid://vmr2xady2sqx" path="res://Scenes/Equipable/Anims/Global/Fall_Right.res" id="5_cf86h"]
+[ext_resource type="Animation" uid="uid://bxv06jw8hwsly" path="res://Scenes/Equipable/Anims/Global/Fall_Up.res" id="6_imlxg"]
+[ext_resource type="Animation" uid="uid://bxacvy0o13mn2" path="res://Scenes/Equipable/Anims/Global/Idle_Down.tres" id="7_gmiab"]
+[ext_resource type="Animation" uid="uid://3g15pedkt7p8" path="res://Scenes/Equipable/Anims/Global/Idle_Left.tres" id="8_tsnra"]
+[ext_resource type="Animation" uid="uid://b6niko6arjm7f" path="res://Scenes/Equipable/Anims/Global/Idle_Right.tres" id="9_wdmmu"]
+[ext_resource type="Animation" uid="uid://ectimjaq5xhu" path="res://Scenes/Equipable/Anims/Global/Idle_Up.tres" id="10_cdavi"]
+[ext_resource type="Animation" uid="uid://dhj553yj484ur" path="res://Scenes/Equipable/Anims/Global/Jump_Down.tres" id="11_ah1r6"]
+[ext_resource type="Animation" uid="uid://b37d145d3f2vr" path="res://Scenes/Equipable/Anims/Global/Jump_Left.tres" id="12_7mdts"]
+[ext_resource type="Animation" uid="uid://cvae6lb71juuh" path="res://Scenes/Equipable/Anims/Global/Jump_Right.tres" id="13_k73ma"]
+[ext_resource type="Animation" uid="uid://6al30rxbml6p" path="res://Scenes/Equipable/Anims/Global/Jump_Up.tres" id="14_xq14k"]
+[ext_resource type="Animation" uid="uid://c3dx6lbmr3e3c" path="res://Scenes/Equipable/Anims/Global/Place_Down.tres" id="15_46s38"]
+[ext_resource type="Animation" uid="uid://bvtbxm3a0iy0b" path="res://Scenes/Equipable/Anims/Global/Place_Left.tres" id="16_6sn6b"]
+[ext_resource type="Animation" uid="uid://ba4dxkmwls5hv" path="res://Scenes/Equipable/Anims/Global/Place_Right.tres" id="17_2s72d"]
+[ext_resource type="Animation" uid="uid://bddlfgi26ypde" path="res://Scenes/Equipable/Anims/Global/Place_Up.tres" id="18_aol63"]
+[ext_resource type="Animation" uid="uid://4m8vfc4pgt3f" path="res://Scenes/Equipable/Anims/Global/Run_Down.tres" id="19_c5mdf"]
+[ext_resource type="Animation" uid="uid://cy3saqhbimojd" path="res://Scenes/Equipable/Anims/Global/Run_Left.tres" id="20_u5qat"]
+[ext_resource type="Animation" uid="uid://ckn6l4xrshlll" path="res://Scenes/Equipable/Anims/Global/Run_Right.tres" id="21_buwud"]
+[ext_resource type="Animation" uid="uid://luwvmyhhg2rj" path="res://Scenes/Equipable/Anims/Global/Run_Up.tres" id="22_7opjs"]
+[ext_resource type="Animation" uid="uid://bwlef1eb56pbi" path="res://Scenes/Equipable/Anims/Global/Stop_Down.tres" id="23_liq7n"]
+[ext_resource type="Animation" uid="uid://bh7dnxaimivqa" path="res://Scenes/Equipable/Anims/Global/Stop_Left.tres" id="24_62mbq"]
+[ext_resource type="Animation" uid="uid://culfly5nevhfx" path="res://Scenes/Equipable/Anims/Global/Stop_Right.tres" id="25_l7gp4"]
+[ext_resource type="Animation" uid="uid://613u7c25venk" path="res://Scenes/Equipable/Anims/Global/Stop_Up.tres" id="26_w1ek4"]
+[ext_resource type="Animation" uid="uid://cx6cfi5wptdbp" path="res://Scenes/Equipable/Anims/Global/Walk_Down.tres" id="27_noxik"]
+[ext_resource type="Animation" uid="uid://ufe04ooo2n7r" path="res://Scenes/Equipable/Anims/Global/Walk_Left.tres" id="28_s34rr"]
+[ext_resource type="Animation" uid="uid://c8dow4yw3ofbo" path="res://Scenes/Equipable/Anims/Global/Walk_Right.tres" id="29_jfbd2"]
+[ext_resource type="Animation" uid="uid://cne4odfj04m4v" path="res://Scenes/Equipable/Anims/Global/Walk_Up.tres" id="30_t8nn1"]
+[ext_resource type="Animation" uid="uid://bs4t5t6yxolb5" path="res://Scenes/Equipable/Anims/SV/Attack_ATK_Charge_Right.res" id="31_6yihn"]
+[ext_resource type="Animation" uid="uid://bfvpnqf5hqlk7" path="res://Scenes/Equipable/Anims/SV/Attack_ATK_Fall_Right.res" id="32_326b8"]
+[ext_resource type="Animation" uid="uid://co363xvmdehoh" path="res://Scenes/Equipable/Anims/SV/Attack_ATK_Hit_Right.res" id="33_c2giv"]
+[ext_resource type="Animation" uid="uid://bmfavndn830wy" path="res://Scenes/Equipable/Anims/SV/Attack_ATK_Recover_Right.res" id="34_6qiyh"]
+[ext_resource type="Animation" uid="uid://51t5scav33y7" path="res://Scenes/Equipable/Anims/SV/Attack_ATK_Tumble_Right.res" id="35_6n6f3"]
+[ext_resource type="Animation" uid="uid://dlaq4tm6yw28x" path="res://Scenes/Equipable/Anims/SV/Defend_DEF_Right.res" id="36_v3vcd"]
+[ext_resource type="Animation" uid="uid://b08jy4xkohb3q" path="res://Scenes/Equipable/Anims/SV/Duck_Right.res" id="37_p24gm"]
+[ext_resource type="Animation" uid="uid://deqydqeicc60x" path="res://Scenes/Equipable/Anims/SV/Idle_Down.tres" id="38_1fssg"]
+[ext_resource type="Animation" uid="uid://cq8xyj8af35k" path="res://Scenes/Equipable/Anims/SV/Idle_Left.tres" id="39_0sfgd"]
+[ext_resource type="Animation" uid="uid://cdu0nh08m07h1" path="res://Scenes/Equipable/Anims/SV/Idle_Right.tres" id="40_wa8f4"]
+[ext_resource type="Animation" uid="uid://bj3xid3amenla" path="res://Scenes/Equipable/Anims/SV/Idle_Up.tres" id="41_2lncu"]
+[ext_resource type="Animation" uid="uid://bnedco7rg4dw8" path="res://Scenes/Equipable/Anims/SV/Jump_Right.res" id="42_dwlpj"]
+[ext_resource type="Animation" uid="uid://b5dtkko32lh1w" path="res://Scenes/Equipable/Anims/SV/Stop_Down.res" id="43_s8wwn"]
+[ext_resource type="Animation" uid="uid://dyxcvjbb4vy40" path="res://Scenes/Equipable/Anims/SV/Stop_Left.res" id="44_eo11k"]
+[ext_resource type="Animation" uid="uid://gg500ls4kgla" path="res://Scenes/Equipable/Anims/SV/Stop_Right.res" id="45_e7gi4"]
+[ext_resource type="Animation" uid="uid://5nqjkf7ftvah" path="res://Scenes/Equipable/Anims/SV/Stop_Up.res" id="46_1ihlb"]
+[ext_resource type="Animation" uid="uid://bh7fy0iftlnnc" path="res://Scenes/Equipable/Anims/SV/Walk_Down.res" id="47_xl0r7"]
+[ext_resource type="Animation" uid="uid://bxvl6b4mi0rx" path="res://Scenes/Equipable/Anims/SV/Walk_Left.res" id="48_5y3xy"]
+[ext_resource type="Animation" uid="uid://catk2yv760fa2" path="res://Scenes/Equipable/Anims/SV/Walk_Right.res" id="49_igcmg"]
+[ext_resource type="Animation" uid="uid://bx1lsjvfdw8wb" path="res://Scenes/Equipable/Anims/SV/Walk_Up.res" id="50_y1etn"]
+
+[sub_resource type="Animation" id="Animation_xv250"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [62]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../../Anims")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_608ht"]
+_data = {
+&"Celebrate_Down": ExtResource("2_amx5b"),
+&"Fall_Down": ExtResource("3_sbvv5"),
+&"Fall_Left": ExtResource("4_w71lu"),
+&"Fall_Right": ExtResource("5_cf86h"),
+&"Fall_Up": ExtResource("6_imlxg"),
+&"Idle_Down": ExtResource("7_gmiab"),
+&"Idle_Left": ExtResource("8_tsnra"),
+&"Idle_Right": ExtResource("9_wdmmu"),
+&"Idle_Up": ExtResource("10_cdavi"),
+&"Jump_Down": ExtResource("11_ah1r6"),
+&"Jump_Left": ExtResource("12_7mdts"),
+&"Jump_Right": ExtResource("13_k73ma"),
+&"Jump_Up": ExtResource("14_xq14k"),
+&"Place_Down": ExtResource("15_46s38"),
+&"Place_Left": ExtResource("16_6sn6b"),
+&"Place_Right": ExtResource("17_2s72d"),
+&"Place_Up": ExtResource("18_aol63"),
+&"RESET": SubResource("Animation_xv250"),
+&"Run_Down": ExtResource("19_c5mdf"),
+&"Run_Left": ExtResource("20_u5qat"),
+&"Run_Right": ExtResource("21_buwud"),
+&"Run_Up": ExtResource("22_7opjs"),
+&"Stop_Down": ExtResource("23_liq7n"),
+&"Stop_Left": ExtResource("24_62mbq"),
+&"Stop_Right": ExtResource("25_l7gp4"),
+&"Stop_Up": ExtResource("26_w1ek4"),
+&"Walk_Down": ExtResource("27_noxik"),
+&"Walk_Left": ExtResource("28_s34rr"),
+&"Walk_Right": ExtResource("29_jfbd2"),
+&"Walk_Up": ExtResource("30_t8nn1")
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1acn7"]
+_data = {
+&"Attack_ATK_Charge_Right": ExtResource("31_6yihn"),
+&"Attack_ATK_Fall_Right": ExtResource("32_326b8"),
+&"Attack_ATK_Hit_Right": ExtResource("33_c2giv"),
+&"Attack_ATK_Recover_Right": ExtResource("34_6qiyh"),
+&"Attack_ATK_Tumble_Right": ExtResource("35_6n6f3"),
+&"Defend_DEF_Right": ExtResource("36_v3vcd"),
+&"Duck_Right": ExtResource("37_p24gm"),
+&"Idle_Down": ExtResource("38_1fssg"),
+&"Idle_Left": ExtResource("39_0sfgd"),
+&"Idle_Right": ExtResource("40_wa8f4"),
+&"Idle_Up": ExtResource("41_2lncu"),
+&"Jump_Right": ExtResource("42_dwlpj"),
+&"Stop_Down": ExtResource("43_s8wwn"),
+&"Stop_Left": ExtResource("44_eo11k"),
+&"Stop_Right": ExtResource("45_e7gi4"),
+&"Stop_Up": ExtResource("46_1ihlb"),
+&"Walk_Down": ExtResource("47_xl0r7"),
+&"Walk_Left": ExtResource("48_5y3xy"),
+&"Walk_Right": ExtResource("49_igcmg"),
+&"Walk_Up": ExtResource("50_y1etn")
+}
 
 [node name="Equipable" type="Sprite2D"]
 light_mask = 4

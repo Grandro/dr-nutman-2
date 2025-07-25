@@ -1,0 +1,138 @@
+[gd_scene load_steps=13 format=3 uid="uid://bhpnbebhb03uc"]
+
+[ext_resource type="Script" uid="uid://u2h51f0r2vch" path="res://Scenes/Object/Scripts/Static3D_Object.gd" id="1_aue54"]
+[ext_resource type="PackedScene" uid="uid://bblmb8yfchyxr" path="res://Scenes/Object/Comps/3D/Display.tscn" id="1_ty2of"]
+[ext_resource type="Texture2D" uid="uid://hlqdxta34ncm" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Buffin_House_3/Objects/Candles/Sprites/1_Spritesheet.png" id="2_bbg7r"]
+[ext_resource type="AudioStream" uid="uid://c78v1t13bsolx" path="res://Global_Resources/Audio/BGS/Candle_1.ogg" id="3_gkrg0"]
+[ext_resource type="PackedScene" uid="uid://dsp0njc065uev" path="res://Scenes/Object/Comps/3D/Collision_Shape.tscn" id="3_pjeth"]
+[ext_resource type="PackedScene" uid="uid://cfdwl620axohy" path="res://Scenes/Object/Comps/3D/Audio.tscn" id="4_fex1m"]
+[ext_resource type="PackedScene" uid="uid://dllj5lbxwqy17" path="res://Scenes/Pausable_Audio/3D/Pausable_Audio.tscn" id="6_11gfe"]
+[ext_resource type="PackedScene" uid="uid://b1q143fixhaj5" path="res://Scenes/Object/Comps/Anims.tscn" id="6_cxm8x"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wg8rh"]
+size = Vector3(0.5, 0.4, 0.5)
+
+[sub_resource type="Animation" id="Animation_rcuoa"]
+resource_name = "Burn"
+length = 3.2
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Display:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8, 1.6, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Light:light_energy")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.8, 1.6, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [2.0, 1.5, 2.0, 1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Light:omni_range")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.8, 1.6, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [2.0, 1.8, 1.86667, 1.9]
+}
+
+[sub_resource type="Animation" id="Animation_aue54"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Display:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Light:light_energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Light:omni_range")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_11gfe"]
+_data = {
+&"Burn": SubResource("Animation_rcuoa"),
+&"RESET": SubResource("Animation_aue54")
+}
+
+[node name="Candle_1" type="StaticBody3D"]
+collision_layer = 8
+collision_mask = 8
+script = ExtResource("1_aue54")
+
+[node name="Display" parent="." instance=ExtResource("1_ty2of")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.39, 0)
+shaded = false
+texture = ExtResource("2_bbg7r")
+hframes = 4
+
+[node name="Collision" parent="." instance=ExtResource("3_pjeth")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
+shape = SubResource("BoxShape3D_wg8rh")
+
+[node name="Light" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.82, 0)
+layers = 4
+light_color = Color(1, 0.805114, 0.453964, 1)
+light_energy = 2.0
+shadow_enabled = true
+omni_range = 2.0
+
+[node name="Audio" parent="." instance=ExtResource("4_fex1m")]
+
+[node name="Burn" parent="Audio" instance=ExtResource("6_11gfe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+stream = ExtResource("3_gkrg0")
+autoplay = true
+max_distance = 5.0
+bus = &"BGS"
+
+[node name="Anims" parent="." instance=ExtResource("6_cxm8x")]
+libraries = {
+&"": SubResource("AnimationLibrary_11gfe")
+}
+autoplay = "Burn"

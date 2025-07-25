@@ -1,0 +1,75 @@
+[gd_scene load_steps=14 format=3 uid="uid://ca7yveyncy8xq"]
+
+[ext_resource type="Script" uid="uid://u2h51f0r2vch" path="res://Scenes/Object/Scripts/Static3D_Object.gd" id="1_ggwl7"]
+[ext_resource type="PackedScene" uid="uid://bka2e83laof7v" path="res://Scenes/Objects/3D/Bookshelves/Models/Base.glb" id="2_13vus"]
+[ext_resource type="PackedScene" uid="uid://dsp0njc065uev" path="res://Scenes/Object/Comps/3D/Collision_Shape.tscn" id="4_3qqse"]
+[ext_resource type="PackedScene" uid="uid://nr4813v0r2dg" path="res://Scenes/Object/Comps/3D/Interactions/Interactions.tscn" id="5_kp2dh"]
+[ext_resource type="Script" uid="uid://buw1xvygh8le6" path="res://Scenes/Objects/3D/Bookshelves/Comps/Interactions/Scripts/Shared.gd" id="6_4cnhh"]
+[ext_resource type="PackedScene" uid="uid://bl63t3p1cx6kk" path="res://Scenes/Object/Comps/3D/Interactions/Interaction.tscn" id="6_gtwip"]
+[ext_resource type="PackedScene" uid="uid://omsbdulg45pv" path="res://Scenes/Object/Comps/3D/Popup.tscn" id="7_1yoyd"]
+[ext_resource type="PackedScene" uid="uid://cjr0l2h3yj5lh" path="res://Scenes/Object/Comps/3D/Speech_Bubble.tscn" id="8_0gxse"]
+[ext_resource type="PackedScene" uid="uid://fnej1f64wfc2" path="res://Scenes/Object/Comps/3D/Nav_Obstacle.tscn" id="9_6ruc6"]
+[ext_resource type="PackedScene" uid="uid://drpp26gth4snn" path="res://Scenes/Object/Comps/Reference.tscn" id="9_ivnrj"]
+[ext_resource type="PackedScene" uid="uid://de2jy2ixhp2mw" path="res://Scenes/Object/Comps/Save.tscn" id="10_bfuyn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ax261"]
+size = Vector3(2.5, 2.5, 0.625)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sa5bt"]
+size = Vector3(1.3, 0.5, 0.75)
+
+[node name="Base" type="StaticBody3D" groups=["Object"]]
+collision_layer = 8
+collision_mask = 8
+script = ExtResource("1_ggwl7")
+
+[node name="Base" parent="." instance=ExtResource("2_13vus")]
+
+[node name="Collision" parent="." instance=ExtResource("4_3qqse")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
+shape = SubResource("BoxShape3D_ax261")
+
+[node name="Interactions" parent="." instance=ExtResource("5_kp2dh")]
+_e_shared = ExtResource("6_4cnhh")
+
+[node name="1" parent="Interactions" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.65, 0.25, 0.375)
+_e_dirs = Array[String](["Up"])
+_e_match_dir = false
+_e_popup_pos = Vector3(0.6, 3.3, 0.01)
+_e_speech_bubble_pos = Vector3(0.625, 5, 0.03)
+
+[node name="Collision" parent="Interactions/1" index="0"]
+shape = SubResource("BoxShape3D_sa5bt")
+
+[node name="2" parent="Interactions" instance=ExtResource("6_gtwip")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.65, 0.25, 0.375)
+_e_dirs = Array[String](["Up"])
+_e_match_dir = false
+_e_popup_pos = Vector3(-0.6, 3.3, 0.01)
+_e_speech_bubble_pos = Vector3(-0.625, 5, 0.03)
+
+[node name="Collision" parent="Interactions/2" index="0"]
+shape = SubResource("BoxShape3D_sa5bt")
+
+[node name="Popup" parent="." instance=ExtResource("7_1yoyd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 3.3, 0.01)
+
+[node name="Speech_Bubble" parent="." instance=ExtResource("8_0gxse")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.625, 5, 0.03)
+visible = false
+
+[node name="Nav_Obstacle" parent="." groups=["NavMesh_Main"] instance=ExtResource("9_6ruc6")]
+height = 2.8
+vertices = PackedVector3Array(1.5, 0, -1, 1.5, 0, 1, -1.5, 0, 1, -1.5, 0, -1)
+affect_navigation_mesh = true
+avoidance_enabled = false
+
+[node name="Reference" parent="." instance=ExtResource("9_ivnrj")]
+
+[node name="Save" parent="." instance=ExtResource("10_bfuyn")]
+
+[editable path="Interactions"]
+[editable path="Interactions/1"]
+[editable path="Interactions/2"]
+[editable path="Popup"]

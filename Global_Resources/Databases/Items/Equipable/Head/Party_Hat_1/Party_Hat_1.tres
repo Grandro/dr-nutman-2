@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://d3csd847y8m6o"]
+
+[ext_resource type="Resource" uid="uid://bjqaei8wi7jvp" path="res://Global_Resources/Databases/Items/Equipable/Head/Party_Hat_1/Stats.tres" id="1"]
+[ext_resource type="Script" uid="uid://cbffif5a10ikr" path="res://Global_Resources/Databases/Items/Equipable_Data.gd" id="2"]
+
+[resource]
+script = ExtResource("2")
+_e_stats = ExtResource("1")
+_e_key = "Party_Hat_1"
+_e_type = "Equipment"
+_e_group = "Head"
+_e_category_type = "Equipable"
+_e_stack = 99

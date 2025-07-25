@@ -1,0 +1,257 @@
+[gd_scene load_steps=22 format=3 uid="uid://dvb15d6yvwwni"]
+
+[ext_resource type="Script" uid="uid://g4yv3yy7v26y" path="res://Scenes/NutOS/Content/Start_Menu/Scripts/Start_Menu.gd" id="1_f31rw"]
+[ext_resource type="Script" uid="uid://yxh6mshvsywl" path="res://Scenes/NutOS/Content/Start_Menu/Scripts/Icons.gd" id="2_anhpt"]
+[ext_resource type="Texture2D" uid="uid://de3tt70n1dwjf" path="res://Scenes/NutOS/Content/Sprites/Icons/Expand.png" id="3_mmt1f"]
+[ext_resource type="Texture2D" uid="uid://bpa4wwr35yuav" path="res://Scenes/NutOS/Content/Sprites/Icons/Settings.png" id="4_ht4x0"]
+[ext_resource type="Texture2D" uid="uid://cobm41mfrfh68" path="res://Scenes/NutOS/Content/Sprites/Icons/Power.png" id="5_51c3t"]
+[ext_resource type="PackedScene" uid="uid://bdm8bdyt8jrh" path="res://Scenes/Context_Menu/Context_Menu.tscn" id="6_017wa"]
+[ext_resource type="Resource" uid="uid://j15ay0mpeta5" path="res://Scenes/NutOS/Content/Start_Menu/Power_Options/Shutdown_Or_Leave.tres" id="8_pjcha"]
+[ext_resource type="Theme" uid="uid://cphubdfp0kld2" path="res://Global_Resources/Themes/NutOS/NutOS.tres" id="8_v2k5b"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tk3iy"]
+content_margin_right = 16.0
+bg_color = Color(0.105882, 0.105882, 0.105882, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mqxol"]
+bg_color = Color(0.105882, 0.105882, 0.105882, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_558nt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0ck7n"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7hprg"]
+bg_color = Color(0.313726, 0.313726, 0.313726, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y7rqf"]
+bg_color = Color(0.313726, 0.313726, 0.313726, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bfywu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_12nr6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_01mt7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c88jo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pk5xu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_22ube"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ksdo3"]
+
+[node name="Start_Menu" type="PanelContainer"]
+light_mask = 8
+visibility_layer = 8
+offset_top = 193.0
+offset_right = 390.0
+offset_bottom = 681.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_tk3iy")
+script = ExtResource("1_f31rw")
+
+[node name="HBox" type="HBoxContainer" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+
+[node name="Icons" type="PanelContainer" parent="HBox"]
+light_mask = 8
+visibility_layer = 8
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_mqxol")
+script = ExtResource("2_anhpt")
+
+[node name="VBox" type="VBoxContainer" parent="HBox/Icons"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 0
+alignment = 2
+
+[node name="Expand" type="MarginContainer" parent="HBox/Icons/VBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_vertical = 2
+mouse_filter = 2
+
+[node name="Select" type="Button" parent="HBox/Icons/VBox/Expand"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_558nt")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_0ck7n")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7hprg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_y7rqf")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_bfywu")
+
+[node name="HBox" type="HBoxContainer" parent="HBox/Icons/VBox/Expand"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 8
+
+[node name="Padding" type="Control" parent="HBox/Icons/VBox/Expand/HBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Image" type="TextureRect" parent="HBox/Icons/VBox/Expand/HBox"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_vertical = 6
+mouse_filter = 2
+texture = ExtResource("3_mmt1f")
+stretch_mode = 5
+
+[node name="Settings" type="MarginContainer" parent="HBox/Icons/VBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Select" type="Button" parent="HBox/Icons/VBox/Settings"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_12nr6")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_01mt7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7hprg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7hprg")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_c88jo")
+
+[node name="HBox" type="HBoxContainer" parent="HBox/Icons/VBox/Settings"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 8
+
+[node name="Padding" type="Control" parent="HBox/Icons/VBox/Settings/HBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Image" type="TextureRect" parent="HBox/Icons/VBox/Settings/HBox"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_vertical = 6
+mouse_filter = 2
+texture = ExtResource("4_ht4x0")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Desc" type="Label" parent="HBox/Icons/VBox/Settings/HBox"]
+visible = false
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+text = "NUTOS_APP_SETTINGS"
+vertical_alignment = 1
+
+[node name="Power" type="MarginContainer" parent="HBox/Icons/VBox"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Select" type="Button" parent="HBox/Icons/VBox/Power"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pk5xu")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_22ube")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7hprg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7hprg")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ksdo3")
+button_mask = 3
+
+[node name="HBox" type="HBoxContainer" parent="HBox/Icons/VBox/Power"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 8
+
+[node name="Padding" type="Control" parent="HBox/Icons/VBox/Power/HBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Image" type="TextureRect" parent="HBox/Icons/VBox/Power/HBox"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_vertical = 6
+mouse_filter = 2
+texture = ExtResource("5_51c3t")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Desc" type="Label" parent="HBox/Icons/VBox/Power/HBox"]
+visible = false
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+text = "NUTOS_ON_OFF"
+
+[node name="Power_Options" parent="HBox/Icons" instance=ExtResource("6_017wa")]
+visible = false
+_e_options = {
+"Shutdown_Or_Leave": ExtResource("8_pjcha")
+}
+_e_options_order = Array[String](["Shutdown_Or_Leave"])
+
+[node name="Content" parent="HBox/Icons/Power_Options" index="0"]
+theme = ExtResource("8_v2k5b")
+
+[node name="App_List" type="VBoxContainer" parent="HBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Heading" type="HBoxContainer" parent="HBox/App_List"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Padding" type="Control" parent="HBox/App_List/Heading"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+
+[node name="Text" type="Label" parent="HBox/App_List/Heading"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+text = "NUTOS_ADDED_LASTLY"
+vertical_alignment = 1
+
+[node name="VBox" type="VBoxContainer" parent="HBox/App_List"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+
+[editable path="HBox/Icons/Power_Options"]

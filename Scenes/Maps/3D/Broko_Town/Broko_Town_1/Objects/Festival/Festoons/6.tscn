@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8do2u55s3lq7"]
+
+[ext_resource type="Script" uid="uid://ckbk2i4wb1yhq" path="res://Scenes/Object/Scripts/Node3D_Object.gd" id="1_i5p4o"]
+[ext_resource type="PackedScene" uid="uid://bblmb8yfchyxr" path="res://Scenes/Object/Comps/3D/Display.tscn" id="1_rb08x"]
+[ext_resource type="Texture2D" uid="uid://drxtb3g20nrk1" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Objects/Festival/Festoons/Sprites/6_Spritesheet.png" id="2_5o7pw"]
+
+[node name="6" type="Node3D"]
+script = ExtResource("1_i5p4o")
+
+[node name="Display" parent="." instance=ExtResource("1_rb08x")]
+texture = ExtResource("2_5o7pw")

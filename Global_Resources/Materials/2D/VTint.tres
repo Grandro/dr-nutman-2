@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://dtcmrg1uodyue"]
+
+[ext_resource type="Shader" uid="uid://cjf25d4mxujp8" path="res://Global_Resources/Materials/2D/Shaders/VTint.tres" id="1"]
+
+[resource]
+resource_local_to_scene = true
+shader = ExtResource("1")
+shader_parameter/progress = 0.0
+shader_parameter/color = Vector3(0.13, 0.91, 0.06)

@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://bcjk3by26y10b"]
+
+[ext_resource type="PackedScene" uid="uid://cahxe34atpwlg" path="res://Global_Scenes/Main_Menu/Sub_Menus/Journal/File_Entry/Mini_Busts/Base.tscn" id="1"]
+[ext_resource type="Texture2D" uid="uid://03g345bov4bh" path="res://Global_Resources/Sprites/Mini_Busts/Dr_Nutman/Default.png" id="2"]
+
+[node name="Dr_Nutman" instance=ExtResource("1")]
+texture = ExtResource("2")

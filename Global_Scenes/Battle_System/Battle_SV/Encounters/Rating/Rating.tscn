@@ -1,9 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://culespvwy38kj"]
+[gd_scene load_steps=12 format=3 uid="uid://culespvwy38kj"]
 
 [ext_resource type="Script" uid="uid://qhsf153tgnr0" path="res://Global_Scenes/Battle_System/Battle_SV/Encounters/Rating/Scripts/Rating.gd" id="1_plqnu"]
 [ext_resource type="PackedScene" uid="uid://nt5gfdybdx7v" path="res://Scenes/VP_Container/VP.tscn" id="2_jejy6"]
+[ext_resource type="FontFile" uid="uid://bc3cxhu6w0ljt" path="res://Global_Resources/Fonts/ProFont.ttf" id="3_12b37"]
 
 [sub_resource type="FontVariation" id="FontVariation_t56kx"]
+base_font = ExtResource("3_12b37")
 spacing_glyph = 2
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_py3r6"]
@@ -104,6 +106,7 @@ size = Vector2i(1280, 720)
 size_2d_override = Vector2i(256, 256)
 _e_sub_world = false
 _e_game_world = false
+_e_resize = false
 _e_activate_physics = false
 
 [node name="Text" type="RichTextLabel" parent="VP"]
@@ -143,7 +146,7 @@ mesh = SubResource("QuadMesh_sssmx")
 [node name="Anims" type="AnimationPlayer" parent="."]
 callback_mode_method = 1
 libraries = {
-&"": SubResource("AnimationLibrary_47sen")
+"": SubResource("AnimationLibrary_47sen")
 }
 
 [node name="Delay" type="Timer" parent="."]

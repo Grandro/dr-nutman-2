@@ -1,0 +1,137 @@
+[gd_scene load_steps=54 format=3 uid="uid://b12q0fkjaqxux"]
+
+[ext_resource type="PackedScene" uid="uid://bur1664yc8pn8" path="res://Scenes/Equipable/3D/Equipable.tscn" id="1_3ni7f"]
+[ext_resource type="Animation" uid="uid://bwj6gnywpmuyw" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/Global/Idle_Down.tres" id="2_tjfwi"]
+[ext_resource type="Animation" uid="uid://drs2otww8uid1" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/Global/Idle_Left.tres" id="3_ajefp"]
+[ext_resource type="Animation" uid="uid://j4x0awvcwcrn" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/Global/Idle_Right.tres" id="4_mn0oy"]
+[ext_resource type="Animation" uid="uid://sufwggq6m5c3" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/Global/Idle_Up.tres" id="5_5iluv"]
+[ext_resource type="Animation" uid="uid://p5kf4xd8tppw" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/Global/Jump_Down.tres" id="6_rnpry"]
+[ext_resource type="Animation" uid="uid://d3aj153yko0n3" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/Global/Jump_Left.tres" id="7_4cs64"]
+[ext_resource type="Animation" uid="uid://b6nyj2dfmijc2" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/Global/Jump_Right.tres" id="8_o5olr"]
+[ext_resource type="Animation" uid="uid://dvcbfoa63thyd" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/Global/Jump_Up.tres" id="9_7ysxg"]
+[ext_resource type="Animation" uid="uid://bh1di0rmlgh3e" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/Global/Place_Down.tres" id="10_743i5"]
+[ext_resource type="Animation" uid="uid://ch02wdu455qf6" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/Global/Place_Left.tres" id="11_icty6"]
+[ext_resource type="Animation" uid="uid://cxmlcfmijo6hw" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/Global/Place_Right.tres" id="12_psarc"]
+[ext_resource type="Animation" uid="uid://d0eepee1jc3ba" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/Global/Place_Up.tres" id="13_sfupo"]
+[ext_resource type="Animation" uid="uid://bex7bnnhyncyi" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/Global/Run_Down.tres" id="14_k15ss"]
+[ext_resource type="Animation" uid="uid://c0vvtqm2jy6et" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/Global/Run_Left.tres" id="15_h6xn3"]
+[ext_resource type="Animation" uid="uid://bp1j4qd18bh67" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/Global/Run_Right.tres" id="16_20sre"]
+[ext_resource type="Animation" uid="uid://jx1b7omndnib" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/Global/Run_Up.tres" id="17_hrdrk"]
+[ext_resource type="Animation" uid="uid://buf67trw344gi" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/SV/Idle_Down.tres" id="18_xjw0n"]
+[ext_resource type="Animation" uid="uid://rhy4w84a2bh6" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/SV/Idle_Left.tres" id="19_0jw22"]
+[ext_resource type="Animation" uid="uid://cwcuoskdn5l6a" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/SV/Idle_Right.tres" id="20_nrm3q"]
+[ext_resource type="Animation" uid="uid://cs6ddsdunxa6h" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/SV/Idle_Up.tres" id="21_ud803"]
+[ext_resource type="Animation" uid="uid://bqyqijdpb4405" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/Global/Stop_Down.tres" id="22_cu7bo"]
+[ext_resource type="Animation" uid="uid://dlrxvhrl0bpsf" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/Global/Stop_Left.tres" id="23_n0v75"]
+[ext_resource type="Animation" uid="uid://bwvrg2qepo22l" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/Global/Stop_Right.tres" id="24_g7p70"]
+[ext_resource type="Animation" uid="uid://gxcyx7t1vc5e" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/Global/Stop_Up.tres" id="25_fy3cp"]
+[ext_resource type="Animation" uid="uid://b4ih0oataocy2" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/Global/Walk_Down.tres" id="26_wf0ow"]
+[ext_resource type="Animation" uid="uid://bvrwvy7ovhc1u" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/Global/Walk_Left.tres" id="27_xxbsj"]
+[ext_resource type="Animation" uid="uid://b6pccakvrp87q" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/Global/Walk_Right.tres" id="28_s0f0g"]
+[ext_resource type="Animation" uid="uid://bbk21bikiltvm" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/Global/Walk_Up.tres" id="29_1c3j8"]
+[ext_resource type="Animation" uid="uid://dt2acypufrx84" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/Global/Fall_Down.res" id="30_1tw1j"]
+[ext_resource type="Animation" uid="uid://j7ue1w0obnun" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/Global/Fall_Left.res" id="31_02weh"]
+[ext_resource type="Animation" uid="uid://bk80anauecw04" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/Global/Fall_Right.res" id="32_e45ao"]
+[ext_resource type="Animation" uid="uid://cr206a30y5cl8" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/Global/Fall_Up.res" id="33_xvoum"]
+[ext_resource type="Animation" uid="uid://bgjfrn6e3rmns" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/Global/Celebrate_Down.res" id="34_g65d8"]
+[ext_resource type="Animation" uid="uid://bick6qt0ao3sc" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/SV/Attack_ATK_Charge_Right.res" id="35_2pfwp"]
+[ext_resource type="Animation" uid="uid://dymh3e25yq1m6" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/SV/Attack_ATK_Fall_Right.res" id="36_u4lu6"]
+[ext_resource type="Animation" uid="uid://du05x7e5jva55" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/SV/Attack_ATK_Hit_Right.res" id="37_lxpin"]
+[ext_resource type="Animation" uid="uid://c0yqgijagkmjh" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/SV/Attack_ATK_Recover_Right.res" id="38_ia2pg"]
+[ext_resource type="Animation" uid="uid://mp4kj54cw5v" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/SV/Attack_ATK_Tumble_Right.res" id="39_mn0d8"]
+[ext_resource type="Animation" uid="uid://b4dd64ec2yu31" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/SV/Defend_Right.res" id="40_weqcr"]
+[ext_resource type="Animation" uid="uid://dxc03jjleeu08" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/SV/Duck_Right.res" id="41_vm4ox"]
+[ext_resource type="Animation" uid="uid://1qmy6jftd074" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/SV/Jump_Right.res" id="42_3kpd5"]
+[ext_resource type="Animation" uid="uid://c5pia3mmshnki" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/SV/Stop_Down.res" id="43_jbxk1"]
+[ext_resource type="Animation" uid="uid://e65jdh4i1sqr" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/SV/Stop_Left.res" id="44_mduri"]
+[ext_resource type="Animation" uid="uid://cjh5kuwsmymah" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/SV/Stop_Right.res" id="45_mf5mw"]
+[ext_resource type="Animation" uid="uid://lutrsnfew24v" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/SV/Stop_Up.res" id="46_dej1l"]
+[ext_resource type="Animation" uid="uid://buk2wbtcp0ihd" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/SV/Walk_Down.res" id="47_myv36"]
+[ext_resource type="Animation" uid="uid://bs4hx4yq2e8f2" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/SV/Walk_Left.res" id="48_6b5iy"]
+[ext_resource type="Animation" uid="uid://yvkfla4vkrfb" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/SV/Walk_Right.res" id="49_pvkm8"]
+[ext_resource type="Animation" uid="uid://cqpwqwxo6vppk" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/SV/Walk_Up.res" id="50_0v7sg"]
+
+[sub_resource type="Animation" id="Animation_35hrd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.03, 3.03046, 0.01)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6yhyd"]
+_data = {
+&"Celebrate_Down": ExtResource("34_g65d8"),
+&"Fall_Down": ExtResource("30_1tw1j"),
+&"Fall_Left": ExtResource("31_02weh"),
+&"Fall_Right": ExtResource("32_e45ao"),
+&"Fall_Up": ExtResource("33_xvoum"),
+&"Idle_Down": ExtResource("2_tjfwi"),
+&"Idle_Left": ExtResource("3_ajefp"),
+&"Idle_Right": ExtResource("4_mn0oy"),
+&"Idle_Up": ExtResource("5_5iluv"),
+&"Jump_Down": ExtResource("6_rnpry"),
+&"Jump_Left": ExtResource("7_4cs64"),
+&"Jump_Right": ExtResource("8_o5olr"),
+&"Jump_Up": ExtResource("9_7ysxg"),
+&"Place_Down": ExtResource("10_743i5"),
+&"Place_Left": ExtResource("11_icty6"),
+&"Place_Right": ExtResource("12_psarc"),
+&"Place_Up": ExtResource("13_sfupo"),
+&"RESET": SubResource("Animation_35hrd"),
+&"Run_Down": ExtResource("14_k15ss"),
+&"Run_Left": ExtResource("15_h6xn3"),
+&"Run_Right": ExtResource("16_20sre"),
+&"Run_Up": ExtResource("17_hrdrk"),
+&"Stop_Down": ExtResource("22_cu7bo"),
+&"Stop_Left": ExtResource("23_n0v75"),
+&"Stop_Right": ExtResource("24_g7p70"),
+&"Stop_Up": ExtResource("25_fy3cp"),
+&"Walk_Down": ExtResource("26_wf0ow"),
+&"Walk_Left": ExtResource("27_xxbsj"),
+&"Walk_Right": ExtResource("28_s0f0g"),
+&"Walk_Up": ExtResource("29_1c3j8")
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3508v"]
+_data = {
+&"Attack_ATK_Charge_Right": ExtResource("35_2pfwp"),
+&"Attack_ATK_Fall_Right": ExtResource("36_u4lu6"),
+&"Attack_ATK_Hit_Right": ExtResource("37_lxpin"),
+&"Attack_ATK_Recover_Right": ExtResource("38_ia2pg"),
+&"Attack_ATK_Tumble_Right": ExtResource("39_mn0d8"),
+&"Defend_Right": ExtResource("40_weqcr"),
+&"Duck_Right": ExtResource("41_vm4ox"),
+&"Idle_Down": ExtResource("18_xjw0n"),
+&"Idle_Left": ExtResource("19_0jw22"),
+&"Idle_Right": ExtResource("20_nrm3q"),
+&"Idle_Up": ExtResource("21_ud803"),
+&"Jump_Right": ExtResource("42_3kpd5"),
+&"Stop_Down": ExtResource("43_jbxk1"),
+&"Stop_Left": ExtResource("44_mduri"),
+&"Stop_Right": ExtResource("45_mf5mw"),
+&"Stop_Up": ExtResource("46_dej1l"),
+&"Walk_Down": ExtResource("47_myv36"),
+&"Walk_Left": ExtResource("48_6b5iy"),
+&"Walk_Right": ExtResource("49_pvkm8"),
+&"Walk_Up": ExtResource("50_0v7sg")
+}
+
+[node name="Party_Hat" instance=ExtResource("1_3ni7f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03, 3.03046, 0.01)
+hframes = 1
+vframes = 1
+frame = 0
+
+[node name="Anims" parent="." index="0"]
+libraries = {
+"": SubResource("AnimationLibrary_6yhyd"),
+"SV": SubResource("AnimationLibrary_3508v")
+}

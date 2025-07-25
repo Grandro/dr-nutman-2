@@ -10,7 +10,4 @@ script = ExtResource("1_lx78s")
 offset_top = -116.0
 offset_bottom = -20.0
 
-[node name="Choices_Box" parent="Speech_Bubble_UI/VBox" index="1"]
-theme = null
-
 [editable path="Speech_Bubble_UI"]

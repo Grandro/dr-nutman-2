@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://o05vnkmxfbau"]
+
+[ext_resource type="Resource" uid="uid://w2b8u7n7kpl2" path="res://Global_Resources/Databases/Items/Equipable/Weapon/Disposable_Glove/Stats.tres" id="1_tqtfb"]
+[ext_resource type="Script" uid="uid://cbffif5a10ikr" path="res://Global_Resources/Databases/Items/Equipable_Data.gd" id="2_oxk1i"]
+
+[resource]
+script = ExtResource("2_oxk1i")
+_e_stats = ExtResource("1_tqtfb")
+_e_key = "Disposable_Glove"
+_e_type = "Equipment"
+_e_group = "Weapon"
+_e_category_type = "Equipable"
+_e_stack = 99

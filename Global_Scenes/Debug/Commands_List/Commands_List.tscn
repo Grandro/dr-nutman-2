@@ -23,9 +23,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2")
 
-[node name="Close" parent="Window/Bar/HBox" index="2"]
-texture_normal = null
-
 [node name="Margin" type="MarginContainer" parent="Window/Contents" index="0"]
 layout_mode = 2
 theme_override_constants/margin_left = 8

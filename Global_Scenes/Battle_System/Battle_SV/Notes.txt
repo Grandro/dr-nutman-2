@@ -1,0 +1,5 @@
+NOTHING: Not pressed
+OK: 0.0 - 0.3
+GOOD: 0.3 - 0.7
+GREAT: 0.7 - 1.0
+EXCELLENT: 1.0 - 1.3

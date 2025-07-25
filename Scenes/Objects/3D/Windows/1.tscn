@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnnyooye4nxtp"]
+
+[ext_resource type="PackedScene" uid="uid://dfiyh1n1fnsr4" path="res://Scenes/Objects/3D/Windows/Base.tscn" id="1_hakcs"]
+[ext_resource type="Texture2D" uid="uid://b5i72ckuhcd0d" path="res://Scenes/Objects/3D/Windows/Sprites/1_Spritesheet.png" id="2_d54kw"]
+
+[node name="Window_1" instance=ExtResource("1_hakcs")]
+
+[node name="Display" parent="." index="0"]
+texture = ExtResource("2_d54kw")
+metadata/_edit_pinned_properties_ = [&"texture"]
+
+[node name="Light" parent="." index="1"]
+layers = 4

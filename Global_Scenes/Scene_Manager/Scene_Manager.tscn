@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dgt7ssfbrip2g"]
+[gd_scene load_steps=7 format=3 uid="uid://dgt7ssfbrip2g"]
 
 [ext_resource type="Script" uid="uid://csu1acxppkyb6" path="res://Global_Scenes/Scene_Manager/Scripts/Scene_Manager.gd" id="1"]
+[ext_resource type="Theme" uid="uid://budcfl16xj2tt" path="res://Global_Resources/Themes/Default/Default.tres" id="2"]
 [ext_resource type="Script" uid="uid://c3871jekedsru" path="res://Global_Scenes/Scene_Manager/Scripts/Loading_Screen.gd" id="3"]
+[ext_resource type="Texture2D" uid="uid://wrg2potji1vm" path="res://Global_Resources/Sprites/Backgrounds/1_Spritesheet.png" id="5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6is47"]
 bg_color = Color(0, 0, 0, 0)
@@ -43,6 +45,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2")
 script = ExtResource("3")
 
 [node name="Background" type="TextureRect" parent="Loading_Screen"]
@@ -52,6 +55,7 @@ visibility_layer = 8
 layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
+texture = ExtResource("5")
 stretch_mode = 1
 
 [node name="Center" type="CenterContainer" parent="Loading_Screen"]

@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://b4tb57rptkdno"]
+
+[ext_resource type="PackedScene" uid="uid://beh8at1nng54m" path="res://Scenes/Objects/3D/Shelves/Base.tscn" id="1_u7as6"]
+[ext_resource type="PackedScene" uid="uid://c56m0msaxm8vy" path="res://Scenes/Objects/3D/Plates/1_Stack_1.tscn" id="2_ih8gw"]
+[ext_resource type="PackedScene" uid="uid://c7xy0ew1wlw06" path="res://Scenes/Objects/3D/Glasses/1.tscn" id="3_573mc"]
+[ext_resource type="PackedScene" uid="uid://gm23y8ewyv63" path="res://Scenes/Objects/3D/Flower_Pots/1.tscn" id="4_tqxgy"]
+[ext_resource type="PackedScene" uid="uid://bnnv1bt8kuaa5" path="res://Scenes/Objects/3D/Books/3.tscn" id="5_fmvjd"]
+[ext_resource type="PackedScene" uid="uid://cj2a7m212viwk" path="res://Scenes/Objects/3D/Cups/1.tscn" id="6_37808"]
+
+[node name="Shelf_1" instance=ExtResource("1_u7as6")]
+
+[node name="Items" type="Node3D" parent="." index="1"]
+
+[node name="Plate_1" parent="Items" index="0" instance=ExtResource("2_ih8gw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 1.301, 0)
+
+[node name="Plate_2" parent="Items" index="1" instance=ExtResource("2_ih8gw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 1.901, 0)
+
+[node name="Glass_1" parent="Items" index="2" instance=ExtResource("3_573mc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 1.9, -7.45058e-09)
+
+[node name="Glass_2" parent="Items" index="3" instance=ExtResource("3_573mc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 1.9, -7.45058e-09)
+
+[node name="Glass_3" parent="Items" index="4" instance=ExtResource("3_573mc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 1.9, -7.45058e-09)
+
+[node name="Glass_4" parent="Items" index="5" instance=ExtResource("3_573mc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, 1.9, 0.2)
+
+[node name="Glass_5" parent="Items" index="6" instance=ExtResource("3_573mc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1.9, 0.2)
+
+[node name="Flower_Pot_1" parent="Items" index="7" instance=ExtResource("4_tqxgy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 2.5, 0)
+
+[node name="Book_1" parent="Items" index="8" instance=ExtResource("5_fmvjd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 1.301, 0)
+
+[node name="Cup_1" parent="Items" index="9" instance=ExtResource("6_37808")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, 0.85, 0.2)
+
+[editable path="Interactions"]
+[editable path="Interactions/1"]
+[editable path="Interactions/2"]
+[editable path="Popup"]

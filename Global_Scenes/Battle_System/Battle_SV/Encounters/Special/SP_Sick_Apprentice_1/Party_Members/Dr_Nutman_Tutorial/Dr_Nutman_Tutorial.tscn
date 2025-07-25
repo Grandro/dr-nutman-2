@@ -1,0 +1,124 @@
+[gd_scene load_steps=33 format=3 uid="uid://mp23fryjb2qh"]
+
+[ext_resource type="PackedScene" uid="uid://bdr4m3xj7c1yn" path="res://Global_Scenes/Battle_System/Battle_SV/Party_Members/Dr_Nutman/Dr_Nutman.tscn" id="1_tave3"]
+[ext_resource type="Script" uid="uid://bnndw0ft272c0" path="res://Global_Scenes/Battle_System/Battle_SV/Encounters/Special/SP_Sick_Apprentice_1/Party_Members/Dr_Nutman_Tutorial/Scripts/Dr_Nutman_Tutorial.gd" id="2_njqit"]
+[ext_resource type="PackedScene" uid="uid://b4dvlhw3jh0go" path="res://Scenes/Object/Comps/Cutscene.tscn" id="3_1t4ip"]
+[ext_resource type="Texture2D" uid="uid://dti8yjdd8swkr" path="res://Global_Resources/Sprites/Joy/Letters_Color/Button_A.png" id="3_xjfu8"]
+[ext_resource type="Animation" uid="uid://5k34dtpehxsf" path="res://Global_Scenes/Battle_System/Battle_SV/Party_Members/Dr_Nutman/Anims/Attack_ATK_Charge_Right.tres" id="11_orkbe"]
+[ext_resource type="Animation" uid="uid://dawy7f0uh35aa" path="res://Global_Scenes/Battle_System/Battle_SV/Party_Members/Dr_Nutman/Anims/Jump_Down.tres" id="17_w86tk"]
+[ext_resource type="Animation" uid="uid://bq55o1qequ8pa" path="res://Global_Scenes/Battle_System/Battle_SV/Party_Members/Dr_Nutman/Anims/Jump_Left.tres" id="18_x0ma1"]
+[ext_resource type="Animation" uid="uid://bo4sq60hun4mg" path="res://Global_Scenes/Battle_System/Battle_SV/Party_Members/Dr_Nutman/Anims/Jump_Right.tres" id="19_1nm0w"]
+[ext_resource type="Animation" uid="uid://q4lbrc883r6c" path="res://Global_Scenes/Battle_System/Battle_SV/Party_Members/Dr_Nutman/Anims/Idle_Left.tres" id="19_homgr"]
+[ext_resource type="Animation" uid="uid://i5ho0ds1djlx" path="res://Global_Scenes/Battle_System/Battle_SV/Party_Members/Dr_Nutman/Anims/Jump_Up.tres" id="20_5lsub"]
+[ext_resource type="Animation" uid="uid://ef5ueaowv2p1" path="res://Global_Scenes/Battle_System/Battle_SV/Party_Members/Dr_Nutman/Anims/Idle_Right.tres" id="20_jqjmr"]
+[ext_resource type="Animation" uid="uid://diq7niafj24ec" path="res://Global_Scenes/Battle_System/Battle_SV/Party_Members/Dr_Nutman/Anims/Idle_Up.tres" id="21_eenye"]
+[ext_resource type="Animation" uid="uid://c8ronxtbf0yqm" path="res://Global_Scenes/Battle_System/Battle_SV/Party_Members/Dr_Nutman/Anims/Stop_Down.tres" id="21_j5kfu"]
+[ext_resource type="Animation" uid="uid://cs0fyku688efl" path="res://Global_Scenes/Battle_System/Battle_SV/Party_Members/Dr_Nutman/Anims/Stop_Left.tres" id="22_swcc4"]
+[ext_resource type="Animation" uid="uid://b0pl4sdyfdckf" path="res://Global_Scenes/Battle_System/Battle_SV/Party_Members/Dr_Nutman/Anims/Stop_Right.tres" id="23_mt7he"]
+[ext_resource type="Animation" uid="uid://enf2ktu1d4gy" path="res://Global_Scenes/Battle_System/Battle_SV/Party_Members/Dr_Nutman/Anims/Stop_Up.tres" id="24_fxkaj"]
+[ext_resource type="Animation" uid="uid://o14v7ltkvoqk" path="res://Global_Scenes/Battle_System/Battle_SV/Party_Members/Dr_Nutman/Anims/Attack_ATK_Recover_Right.res" id="24_gcb8q"]
+[ext_resource type="Animation" uid="uid://vt81vpuytliw" path="res://Global_Scenes/Battle_System/Battle_SV/Party_Members/Dr_Nutman/Anims/Walk_Down.tres" id="25_mqeb7"]
+[ext_resource type="Animation" uid="uid://ba3x82kp28lvo" path="res://Global_Scenes/Battle_System/Battle_SV/Party_Members/Dr_Nutman/Anims/Defend_DEF_Right.res" id="25_vve3o"]
+[ext_resource type="Animation" uid="uid://c0rhpwp7mrb0v" path="res://Global_Scenes/Battle_System/Battle_SV/Party_Members/Dr_Nutman/Anims/Walk_Left.tres" id="26_cwwo2"]
+[ext_resource type="Animation" uid="uid://b0f7lbydgnr8f" path="res://Global_Scenes/Battle_System/Battle_SV/Party_Members/Dr_Nutman/Anims/Duck_Right.res" id="26_ydt8h"]
+[ext_resource type="Animation" uid="uid://obx5i31dewyb" path="res://Global_Scenes/Battle_System/Battle_SV/Party_Members/Dr_Nutman/Anims/Fall_Right.res" id="27_adi2h"]
+[ext_resource type="Animation" uid="uid://dpgbep2wapfo2" path="res://Global_Scenes/Battle_System/Battle_SV/Party_Members/Dr_Nutman/Anims/Walk_Right.tres" id="27_p8fc6"]
+[ext_resource type="Animation" uid="uid://y78wu4air3l0" path="res://Global_Scenes/Battle_System/Battle_SV/Party_Members/Dr_Nutman/Anims/Idle_Down.tres" id="28_1qewu"]
+[ext_resource type="Animation" uid="uid://b62umynepikfr" path="res://Global_Scenes/Battle_System/Battle_SV/Party_Members/Dr_Nutman/Anims/Walk_Up.tres" id="28_q6xh6"]
+[ext_resource type="Animation" uid="uid://c1jgjf28fept4" path="res://Global_Scenes/Battle_System/Battle_SV/Party_Members/Dr_Nutman/Anims/Attack_ATK_Fall_Right.res" id="34_k5lll"]
+[ext_resource type="Animation" uid="uid://co07tfodhe52q" path="res://Global_Scenes/Battle_System/Battle_SV/Party_Members/Dr_Nutman/Anims/Attack_ATK_Hit_Right.res" id="35_cuife"]
+[ext_resource type="Animation" uid="uid://dixp7iuq35cr1" path="res://Global_Scenes/Battle_System/Battle_SV/Party_Members/Dr_Nutman/Anims/Attack_ATK_Tumble_Right.res" id="36_1psso"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ea3cw"]
+radius = 0.4
+height = 1.8
+
+[sub_resource type="Animation" id="Animation_vobpk"]
+resource_name = "Blink"
+length = 0.5
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(0.8, 0.8, 0.8)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pmggi"]
+_data = {
+&"Blink": SubResource("Animation_vobpk")
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t4cf7"]
+_data = {
+&"Attack_ATK_Charge_Right": ExtResource("11_orkbe"),
+&"Attack_ATK_Fall_Right": ExtResource("34_k5lll"),
+&"Attack_ATK_Hit_Right": ExtResource("35_cuife"),
+&"Attack_ATK_Recover_Right": ExtResource("24_gcb8q"),
+&"Attack_ATK_Tumble_Right": ExtResource("36_1psso"),
+&"Defend_DEF_Right": ExtResource("25_vve3o"),
+&"Duck_Right": ExtResource("26_ydt8h"),
+&"Fall_Right": ExtResource("27_adi2h"),
+&"Idle_Down": ExtResource("28_1qewu"),
+&"Idle_Left": ExtResource("19_homgr"),
+&"Idle_Right": ExtResource("20_jqjmr"),
+&"Idle_Up": ExtResource("21_eenye"),
+&"Jump_Down": ExtResource("17_w86tk"),
+&"Jump_Left": ExtResource("18_x0ma1"),
+&"Jump_Right": ExtResource("19_1nm0w"),
+&"Jump_Up": ExtResource("20_5lsub"),
+&"Stop_Down": ExtResource("21_j5kfu"),
+&"Stop_Left": ExtResource("22_swcc4"),
+&"Stop_Right": ExtResource("23_mt7he"),
+&"Stop_Up": ExtResource("24_fxkaj"),
+&"Walk_Down": ExtResource("25_mqeb7"),
+&"Walk_Left": ExtResource("26_cwwo2"),
+&"Walk_Right": ExtResource("27_p8fc6"),
+&"Walk_Up": ExtResource("28_q6xh6")
+}
+
+[node name="Dr_Nutman_Tutorial" instance=ExtResource("1_tave3")]
+script = ExtResource("2_njqit")
+
+[node name="Collision" parent="." index="1"]
+shape = SubResource("CapsuleShape3D_ea3cw")
+
+[node name="Action_Button" type="Sprite3D" parent="." index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.66, 0)
+layers = 4
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("3_xjfu8")
+
+[node name="Anims" type="AnimationPlayer" parent="Action_Button" index="0"]
+libraries = {
+&"": SubResource("AnimationLibrary_pmggi")
+}
+
+[node name="Equipment" parent="." index="6"]
+_e_shaded = true
+
+[node name="Cutscene" parent="." index="7" instance=ExtResource("3_1t4ip")]
+
+[node name="Audio" parent="." index="8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="States" parent="." index="9"]
+_e_states = Array[String](["Stop", "Idle", "Walk", "Attack", "Dodge", "Explain_Attack", "Explain_Attacked"])
+
+[node name="Anims" parent="." index="13"]
+libraries = {
+&"SV": SubResource("AnimationLibrary_t4cf7")
+}
+
+[editable path="Popup"]
+[editable path="Movement/Terrain"]
+[editable path="Movement/Terrain/Areas/Left_Foot"]
+[editable path="Movement/Terrain/Areas/Right_Foot"]

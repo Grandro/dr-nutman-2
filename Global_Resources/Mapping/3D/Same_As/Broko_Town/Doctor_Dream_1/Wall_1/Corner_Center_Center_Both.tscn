@@ -1,0 +1,40 @@
+[gd_scene load_steps=9 format=3 uid="uid://b45j4nfu4uojl"]
+
+[ext_resource type="PackedScene" uid="uid://c7l6gl3pndhn7" path="res://Global_Resources/Mapping/3D/Plane/Plane_Base.tscn" id="1_8g0yo"]
+[ext_resource type="Texture2D" uid="uid://csfjgg5s5vpfw" path="res://Global_Resources/Mapping/Sprites/Same_As/Broko_Town/Doctor_Dream_1/Wall_1/Top_Corner_Down_Center_Both.png" id="2_tp0vi"]
+[ext_resource type="Texture2D" uid="uid://7862bxmi215m" path="res://Global_Resources/Mapping/Sprites/Same_As/Broko_Town/Doctor_Dream_1/Wall_1/Main_Side_Center_Center.png" id="3_owok8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kpo8c"]
+albedo_texture = ExtResource("2_tp0vi")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_o2u1j"]
+material = SubResource("StandardMaterial3D_kpo8c")
+size = Vector2(1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vw2mn"]
+albedo_texture = ExtResource("3_owok8")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_kmihh"]
+material = SubResource("StandardMaterial3D_vw2mn")
+size = Vector2(1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ohcg7"]
+
+[node name="Corner_1" type="Node3D"]
+
+[node name="Top" parent="." instance=ExtResource("1_8g0yo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("PlaneMesh_o2u1j")
+
+[node name="Front" parent="." instance=ExtResource("1_8g0yo")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.5, 0.5)
+mesh = SubResource("PlaneMesh_kmihh")
+
+[node name="Static" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+collision_mask = 0
+
+[node name="Collision" type="CollisionShape3D" parent="Static"]
+shape = SubResource("BoxShape3D_ohcg7")

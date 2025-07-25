@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://nt5gfdybdx7v" path="res://Scenes/VP_Container/VP.tscn" id="2_410e2"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_vunfy"]
-viewport_path = NodePath("VP")
+viewport_path = NodePath(".")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ri7na"]
 resource_local_to_scene = true

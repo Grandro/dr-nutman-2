@@ -1,0 +1,30 @@
+[gd_scene load_steps=7 format=3 uid="uid://curt8g322ali0"]
+
+[ext_resource type="Shader" uid="uid://c5qli6h5oflag" path="res://Global_Resources/Materials/3D/Shaders/VTint_Down_To_Up.tres" id="2_qx45g"]
+[ext_resource type="PackedScene" uid="uid://66v385vh2vqh" path="res://Global_Resources/Mapping/3D/Below/Broko_Town/Interior/Power_Cable_1/Power_Cable_Stripe.tscn" id="2_xi5vj"]
+[ext_resource type="Texture2D" uid="uid://bdrcnd6nmkbd2" path="res://Global_Resources/Mapping/Sprites/Below/Broko_Town/Interior/Power_Cable_1/Down_To_Up.png" id="3_qx45g"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qx45g"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("2_qx45g")
+shader_parameter/sprite_texture = ExtResource("3_qx45g")
+shader_parameter/progress = 0.0
+shader_parameter/color = Vector3(0.13, 0.91, 0.06)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qx45g"]
+resource_local_to_scene = true
+next_pass = SubResource("ShaderMaterial_qx45g")
+transparency = 1
+albedo_color = Color(1, 1, 1, 0)
+uv1_scale = Vector3(0.999999, 7, 1)
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_t44mk"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_qx45g")
+size = Vector2(0.0999997, 3.5)
+
+[node name="Power_Cable_1" instance=ExtResource("2_xi5vj")]
+mesh = SubResource("PlaneMesh_t44mk")
+_e_base_size = Vector3(0.1, 1, 0.5)

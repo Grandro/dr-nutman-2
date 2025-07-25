@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://ckv5bp6bflwfw"]
+[gd_scene load_steps=4 format=3 uid="uid://ckv5bp6bflwfw"]
 
 [ext_resource type="Script" uid="uid://d2gut5ap0v5ux" path="res://Global_Scenes/FPS_Display/Scripts/FPS_Display.gd" id="1"]
+[ext_resource type="Theme" uid="uid://budcfl16xj2tt" path="res://Global_Resources/Themes/Default/Default.tres" id="2_1gapi"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8j11d"]
 bg_color = Color(0.14902, 0.172549, 0.231373, 1)
@@ -27,6 +28,7 @@ anchor_right = 1.0
 offset_left = -72.0
 offset_bottom = 36.0
 mouse_filter = 2
+theme = ExtResource("2_1gapi")
 theme_override_constants/margin_left = 4
 theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4

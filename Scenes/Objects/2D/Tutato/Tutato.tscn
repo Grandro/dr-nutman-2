@@ -1,0 +1,318 @@
+[gd_scene load_steps=23 format=3 uid="uid://dji60t8dq6ubf"]
+
+[ext_resource type="Script" uid="uid://uxmbik5bhd5w" path="res://Scenes/Object/Scripts/Node2D_Object.gd" id="1_iljwx"]
+[ext_resource type="PackedScene" uid="uid://bkih1khneqk6f" path="res://Scenes/Object/Comps/2D/Display.tscn" id="2_o3xin"]
+[ext_resource type="Texture2D" uid="uid://u1yg30f1ktl7" path="res://Scenes/Objects/2D/Tutato/Sprites/Spritesheet.png" id="3_y1ggt"]
+[ext_resource type="PackedScene" uid="uid://biq4rxen0mdkv" path="res://Scenes/Object/Comps/2D/Speech_Bubble.tscn" id="4_a35qh"]
+[ext_resource type="PackedScene" uid="uid://b1q143fixhaj5" path="res://Scenes/Object/Comps/Anims.tscn" id="5_n0m2k"]
+[ext_resource type="PackedScene" uid="uid://csu6abhhga573" path="res://Scenes/Objects/2D/Tutato/Comps/Explain/Explain_Intro.tscn" id="5_y1ggt"]
+[ext_resource type="PackedScene" uid="uid://nejpwwkbci35" path="res://Scenes/Objects/2D/Tutato/Comps/Explain/Explain_First_Battle.tscn" id="6_a35qh"]
+[ext_resource type="PackedScene" uid="uid://b4dvlhw3jh0go" path="res://Scenes/Object/Comps/Cutscene.tscn" id="6_jyo7a"]
+[ext_resource type="PackedScene" uid="uid://dspho4lit4jlk" path="res://Scenes/Objects/2D/Tutato/Comps/Explain/Explain_Main_Menu_Inventory.tscn" id="7_a35qh"]
+[ext_resource type="PackedScene" uid="uid://drpp26gth4snn" path="res://Scenes/Object/Comps/Reference.tscn" id="7_n3546"]
+[ext_resource type="PackedScene" uid="uid://dwswdtw2tffoh" path="res://Scenes/Objects/2D/Tutato/Comps/Explain/Explain_Main_Menu_Journal.tscn" id="8_n0m2k"]
+[ext_resource type="PackedScene" uid="uid://on1c36yf757q" path="res://Scenes/Objects/2D/Tutato/Comps/Explain/Explain_Main_Menu_Party.tscn" id="9_jyo7a"]
+[ext_resource type="PackedScene" uid="uid://cls5m6jxso1v0" path="res://Scenes/Objects/2D/Tutato/Comps/Explain/Explain_Main_Menu_Quests.tscn" id="10_n3546"]
+[ext_resource type="PackedScene" uid="uid://djqftg4csfexs" path="res://Scenes/Objects/2D/Tutato/Comps/Explain/Explain_Main_Menu_Options.tscn" id="11_x1xu0"]
+[ext_resource type="PackedScene" uid="uid://bnnna5jxvlkb" path="res://Scenes/Objects/2D/Tutato/Comps/Explain/Explain_On_Map_Encounter.tscn" id="12_smc0f"]
+
+[sub_resource type="Animation" id="Animation_y4en2"]
+resource_name = "Lower_Arm"
+length = 0.1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Display:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.6, 0.6)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Display:frame")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [9]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Text:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_4dxyt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Display:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.6, 0.6)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Display:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Text:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_sleud"]
+resource_name = "Raise_Arm"
+length = 0.1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Display:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.6, 0.6)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Display:frame")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [10]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Text:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_ogpta"]
+resource_name = "Roll_In"
+length = 0.45
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Display:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0.6, 0.6)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Display:frame")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [1, 2, 3, 4, 5, 6, 7, 8, 10]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Text:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_y1ggt"]
+resource_name = "Roll_Out"
+length = 0.4
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Display:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.35),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.6, 0.6), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Display:frame")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [8, 7, 6, 5, 4, 3, 2, 1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Text:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_jte5e"]
+resource_name = "Rolled_Out"
+length = 0.1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Display:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Text:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3mgdj"]
+_data = {
+&"Lower_Arm": SubResource("Animation_y4en2"),
+&"RESET": SubResource("Animation_4dxyt"),
+&"Raise_Arm": SubResource("Animation_sleud"),
+&"Roll_In": SubResource("Animation_ogpta"),
+&"Roll_Out": SubResource("Animation_y1ggt"),
+&"Rolled_Out": SubResource("Animation_jte5e")
+}
+
+[node name="Tutato" type="Node2D" groups=["Object"]]
+process_mode = 3
+script = ExtResource("1_iljwx")
+
+[node name="Display" parent="." instance=ExtResource("2_o3xin")]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_y1ggt")
+hframes = 8
+vframes = 2
+
+[node name="Speech_Bubble" parent="." instance=ExtResource("4_a35qh")]
+position = Vector2(0, -150)
+scale = Vector2(2, 2)
+
+[node name="Text" type="Label" parent="."]
+light_mask = 8
+visibility_layer = 8
+offset_left = 208.0
+offset_top = -208.0
+offset_right = 573.0
+offset_bottom = -115.0
+theme_override_constants/outline_size = 18
+theme_override_font_sizes/font_size = 68
+text = "TUTATO_HI"
+vertical_alignment = 1
+
+[node name="Explain_Intro" parent="." instance=ExtResource("5_y1ggt")]
+visible = false
+
+[node name="Explain_First_Battle" parent="." instance=ExtResource("6_a35qh")]
+visible = false
+
+[node name="Explain_Main_Menu_Inventory" parent="." instance=ExtResource("7_a35qh")]
+visible = false
+
+[node name="Explain_Main_Menu_Journal" parent="." instance=ExtResource("8_n0m2k")]
+visible = false
+
+[node name="Explain_Main_Menu_Party" parent="." instance=ExtResource("9_jyo7a")]
+visible = false
+
+[node name="Explain_Main_Menu_Quests" parent="." instance=ExtResource("10_n3546")]
+visible = false
+
+[node name="Explain_Main_Menu_Options" parent="." instance=ExtResource("11_x1xu0")]
+visible = false
+
+[node name="Explain_On_Map_Encounter" parent="." instance=ExtResource("12_smc0f")]
+visible = false
+
+[node name="Anims" parent="." instance=ExtResource("5_n0m2k")]
+libraries = {
+&"": SubResource("AnimationLibrary_3mgdj")
+}
+
+[node name="Cutscene" parent="." instance=ExtResource("6_jyo7a")]
+
+[node name="Reference" parent="." instance=ExtResource("7_n3546")]

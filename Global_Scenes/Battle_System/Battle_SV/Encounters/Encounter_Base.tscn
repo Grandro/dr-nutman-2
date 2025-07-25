@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://rwpfs10v6p2a"]
+[gd_scene load_steps=16 format=3 uid="uid://rwpfs10v6p2a"]
 
 [ext_resource type="PackedScene" uid="uid://cngj2ughe8rfn" path="res://Scenes/Maps/Map_Base/3D/Free_Camera/Free_Camera.tscn" id="1_0fgjv"]
 [ext_resource type="Script" uid="uid://cwi43e7jyitj7" path="res://Global_Scenes/Battle_System/Battle_SV/Encounters/Scripts/Encounter_Base.gd" id="1_nep7y"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://0iwgi3bid3ay" path="res://Global_Scenes/Battle_System/Battle_SV/Encounters/Indicators/Indicators.tscn" id="6_3vyu0"]
 [ext_resource type="PackedScene" uid="uid://rjec7v7j244o" path="res://Global_Scenes/Battle_System/Battle_SV/Encounters/Enemy_Select/Enemy_Select.tscn" id="6_tqicl"]
 [ext_resource type="PackedScene" uid="uid://culespvwy38kj" path="res://Global_Scenes/Battle_System/Battle_SV/Encounters/Rating/Rating.tscn" id="6_x7hxv"]
+[ext_resource type="Material" uid="uid://bsv5f0qyfd8tk" path="res://Global_Resources/Materials/2D/Speedlines.tres" id="9_okdsx"]
 [ext_resource type="PackedScene" uid="uid://cc15wpmb3jn3l" path="res://Global_Scenes/Battle_System/Battle_SV/Encounters/Specials_Menu/Specials_Menu.tscn" id="10_hdarf"]
 [ext_resource type="PackedScene" uid="uid://bmljsmgx2wmsn" path="res://Scenes/Stats_Display/Stats_Display_Battle.tscn" id="11_cwhu6"]
 
@@ -119,6 +120,18 @@ environment = SubResource("Environment_wu6vb")
 [node name="Enemy_Select" parent="." instance=ExtResource("6_tqicl")]
 
 [node name="Canvas" type="CanvasLayer" parent="."]
+
+[node name="Speedlines" type="ColorRect" parent="Canvas"]
+light_mask = 8
+visibility_layer = 8
+material = ExtResource("9_okdsx")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_lock_ = true
 
 [node name="Specials_Menu" parent="Canvas" instance=ExtResource("10_hdarf")]
 metadata/_edit_lock_ = true

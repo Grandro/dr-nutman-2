@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://djalrkpixnata"]
+
+[ext_resource type="PackedScene" uid="uid://docx5eayticqo" path="res://Scenes/Equipable/3D/Objects/Buffins/Paint_DeLere/Head/Party_Hats/Party_Hat.tscn" id="1"]
+
+[node name="1" instance=ExtResource("1")]

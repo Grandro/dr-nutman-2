@@ -1,0 +1,20 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://c3f62u3cx0odw"]
+
+[ext_resource type="Script" uid="uid://cwhdo8m6jpg5n" path="res://Global_Resources/Databases/Battle_System/Enemies/Enemy_Stats_Data.gd" id="1_oheqv"]
+
+[resource]
+script = ExtResource("1_oheqv")
+_e_EXP = 2
+_e_loot = {
+"$Coins": {
+1: 1,
+2: 1
+}
+}
+_e_HP = 999
+_e_SP = 3
+_e_ATK = 2
+_e_MAG = 0
+_e_DEF = 0
+_e_SPEED = 0
+_e_LUCK = 0

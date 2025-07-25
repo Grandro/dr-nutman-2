@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://b5kdrokimg8qk"]
+[gd_scene load_steps=5 format=3 uid="uid://b5kdrokimg8qk"]
 
+[ext_resource type="PackedScene" uid="uid://flbccdv3vysu" path="res://Global_Scenes/Main_Menu/Sub_Menus/Party/Selection/Dr_Nutman.tscn" id="1"]
 [ext_resource type="Script" uid="uid://bse6pkmxpuncg" path="res://Global_Scenes/Main_Menu/Sub_Menus/Party/Selection/Scripts/Selection.gd" id="2"]
+[ext_resource type="Theme" uid="uid://budcfl16xj2tt" path="res://Global_Resources/Themes/Default/Default.tres" id="3"]
 [ext_resource type="PackedScene" uid="uid://beoei6o2vrvx" path="res://Scenes/Indicator/Back_Button.tscn" id="4"]
 
 [node name="Selection" type="Control"]
@@ -13,6 +15,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+theme = ExtResource("3")
 script = ExtResource("2")
 
 [node name="Back" parent="." instance=ExtResource("4")]
@@ -46,3 +49,19 @@ layout_mode = 2
 size_flags_vertical = 0
 theme_override_constants/separation = 8
 alignment = 1
+
+[node name="Dr_Nutman" parent="Margin/VBox/HBox" instance=ExtResource("1")]
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+
+[node name="Dr_Nutman2" parent="Margin/VBox/HBox" instance=ExtResource("1")]
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+
+[node name="Dr_Nutman3" parent="Margin/VBox/HBox" instance=ExtResource("1")]
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+
+[node name="Dr_Nutman4" parent="Margin/VBox/HBox" instance=ExtResource("1")]
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2

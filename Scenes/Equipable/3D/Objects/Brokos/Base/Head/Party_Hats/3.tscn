@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://yu4iaamnym5w"]
+
+[ext_resource type="PackedScene" uid="uid://cpnjyss62105" path="res://Scenes/Equipable/3D/Objects/Brokos/Base/Head/Party_Hats/Party_Hat.tscn" id="1_tyclg"]
+[ext_resource type="Texture2D" uid="uid://s7v47mcacx3m" path="res://Global_Resources/Sprites/Objects/Brokos/Base/Equipables/Head/Party_Hats/3_Spritesheet.png" id="2_jrgep"]
+
+[node name="3" instance=ExtResource("1_tyclg")]
+texture = ExtResource("2_jrgep")

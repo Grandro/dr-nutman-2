@@ -1,0 +1,37 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://bvhlcqj4llgds"
+path="res://.godot/imported/Model_Image_2.png-20c5e2790dd427ae1c65e3a04ce1b312.ctex"
+metadata={
+"vram_texture": false
+}
+generator_parameters={
+"md5": "2c6a5aac896044f6f2eda620062dcda5"
+}
+
+[deps]
+
+source_file="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Buffin_House_3/Objects/Projector_1/Models/Model_Image_2.png"
+dest_files=["res://.godot/imported/Model_Image_2.png-20c5e2790dd427ae1c65e3a04ce1b312.ctex"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

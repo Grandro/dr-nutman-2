@@ -1,0 +1,65 @@
+[gd_scene load_steps=8 format=3 uid="uid://dv3visb3j5wak"]
+
+[ext_resource type="PackedScene" uid="uid://xuy0gyipng5m" path="res://Scenes/Mini_Games/Mini_Game_Base/Game_Base.tscn" id="1_hnka3"]
+[ext_resource type="Texture2D" uid="uid://m7c34r1havgg" path="res://Scenes/Mini_Games/Squirrel_Fishing/Game/Sprites/Background_Spritesheet.png" id="2_ecjk4"]
+[ext_resource type="Texture2D" uid="uid://c312g7v5g2e32" path="res://Scenes/Mini_Games/Squirrel_Fishing/Game/Sprites/Dr_Nutman_Hand_Spritesheet.png" id="3_03e6u"]
+[ext_resource type="Texture2D" uid="uid://brs1tmti8tdaw" path="res://Scenes/Mini_Games/Squirrel_Fishing/Game/Sprites/Squirrel_Body_Spritesheet.png" id="3_cfyuc"]
+[ext_resource type="Texture2D" uid="uid://c37lhpgnjetm" path="res://Scenes/Mini_Games/Squirrel_Fishing/Game/Sprites/Peanut_Spritesheet.png" id="4_jfk8n"]
+[ext_resource type="Texture2D" uid="uid://3qrplwffxkpi" path="res://Scenes/Mini_Games/Squirrel_Fishing/Game/Sprites/Fishing_Rod_Spritesheet.png" id="4_st3ly"]
+[ext_resource type="Texture2D" uid="uid://ddjdjho7m1tgi" path="res://Scenes/Mini_Games/Squirrel_Fishing/Game/Sprites/Squirrel_Hands_Spritesheet.png" id="5_22ulr"]
+
+[node name="Game_Base" instance=ExtResource("1_hnka3")]
+
+[node name="Background" type="Sprite2D" parent="." index="2"]
+light_mask = 4
+visibility_layer = 4
+z_index = -1
+texture = ExtResource("2_ecjk4")
+centered = false
+
+[node name="Squirrel" type="Node2D" parent="." index="3"]
+light_mask = 4
+visibility_layer = 4
+position = Vector2(456, 388)
+
+[node name="Body" type="Sprite2D" parent="Squirrel" index="0"]
+light_mask = 4
+visibility_layer = 4
+texture = ExtResource("3_cfyuc")
+hframes = 8
+vframes = 2
+
+[node name="Hands" type="Sprite2D" parent="Squirrel" index="1"]
+light_mask = 4
+visibility_layer = 4
+z_index = 1
+position = Vector2(24, -157)
+texture = ExtResource("5_22ulr")
+hframes = 8
+vframes = 2
+
+[node name="Peanut" type="Sprite2D" parent="." index="4"]
+light_mask = 4
+visibility_layer = 4
+position = Vector2(503, 257)
+texture = ExtResource("4_jfk8n")
+
+[node name="Fishing_Rod" type="Sprite2D" parent="." index="5"]
+light_mask = 4
+visibility_layer = 4
+position = Vector2(457, -3)
+texture = ExtResource("4_st3ly")
+centered = false
+hframes = 3
+
+[node name="Dr_Nutman_Hand" type="Sprite2D" parent="." index="6"]
+light_mask = 4
+visibility_layer = 4
+position = Vector2(840, 539)
+texture = ExtResource("3_03e6u")
+centered = false
+
+[node name="Camera" type="Camera2D" parent="." index="7"]
+light_mask = 4
+visibility_layer = 4
+position = Vector2(640, 360)

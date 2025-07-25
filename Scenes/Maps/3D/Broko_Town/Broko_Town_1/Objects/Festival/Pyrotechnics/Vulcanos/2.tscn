@@ -1,0 +1,143 @@
+[gd_scene load_steps=13 format=3 uid="uid://bdeb2hwnkri3d"]
+
+[ext_resource type="PackedScene" uid="uid://biqgl7lbdr53y" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Objects/Festival/Pyrotechnics/Vulcanos/Base.tscn" id="1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kftwv"]
+size = Vector3(0.75, 0.5, 0.75)
+
+[sub_resource type="Curve" id="Curve_uq1g4"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.750636, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.268182), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_76677"]
+curve = SubResource("Curve_uq1g4")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5j7wj"]
+lifetime_randomness = 0.2
+particle_flag_align_y = true
+angle_max = 360.0
+direction = Vector3(0, 1, 0)
+spread = 15.0
+initial_velocity_min = 8.0
+initial_velocity_max = 8.0
+angular_velocity_min = 1.5
+angular_velocity_max = 1.5
+damping_min = 1.5
+damping_max = 1.5
+scale_curve = SubResource("CurveTexture_76677")
+color = Color(0.784314, 0, 1, 1)
+hue_variation_max = 1.0
+collision_mode = 1
+collision_friction = 0.0
+collision_bounce = 0.24
+collision_use_scale = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cdted"]
+vertex_color_use_as_albedo = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_tr5re"]
+material = SubResource("StandardMaterial3D_cdted")
+size = Vector3(0.15, 0.25, 0.15)
+
+[sub_resource type="Animation" id="Animation_s5iuw"]
+resource_name = "Fade_In"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_krupy"]
+resource_name = "Fade_Out"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_dtbbj"]
+resource_name = "Faded_In"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_7geaf"]
+resource_name = "Faded_Out"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0ixdc"]
+_data = {
+&"Fade_In": SubResource("Animation_s5iuw"),
+&"Fade_Out": SubResource("Animation_krupy"),
+&"Faded_In": SubResource("Animation_dtbbj"),
+&"Faded_Out": SubResource("Animation_7geaf")
+}
+
+[node name="Vulcano_1" instance=ExtResource("1")]
+
+[node name="Collision" parent="." index="1"]
+shape = SubResource("BoxShape3D_kftwv")
+
+[node name="Particles" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+lifetime = 5.0
+explosiveness = 0.5
+visibility_aabb = AABB(-4, -2, -4, 8, 4, 8)
+process_material = SubResource("ParticleProcessMaterial_5j7wj")
+draw_pass_1 = SubResource("BoxMesh_tr5re")
+
+[node name="Popup" parent="." index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Anims" parent="Popup" index="0"]
+libraries = {
+&"": SubResource("AnimationLibrary_0ixdc")
+}
+
+[node name="Particles_Collision" type="GPUParticlesCollisionBox3D" parent="." index="6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+layers = 4
+cull_mask = 4293918724
+size = Vector3(30, 2, 30)
+
+[editable path="Interactions"]
+[editable path="Interactions/1"]
+[editable path="Popup"]

@@ -64,6 +64,9 @@ func instantiate_entry(p_name = ""):
 		instance.set_name_.call_deferred(p_name)
 		instance.name_changed.connect.call_deferred(_on_Entry_name_changed)
 		_a_entries[p_name] = instance
+		
+		if p_name.begins_with("Das große"):
+			pass
 	
 	return instance
 

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://h6tsvraiqbax"]
+
+[ext_resource type="PackedScene" uid="uid://cl2vhhqvmf6i2" path="res://Scenes/Maps/Map_Base/3D/Map_Base.tscn" id="1_ffw6d"]
+
+[node name="Weapon_Armor_Shop_1" instance=ExtResource("1_ffw6d")]
+_e_can_jump = false

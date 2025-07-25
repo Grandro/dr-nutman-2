@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://ij4ke77usihk"]
+
+[ext_resource type="PackedScene" uid="uid://b3al4v74v66vv" path="res://Global_Scenes/Progress/Quests/Objective_Item.tscn" id="1_h5fn7"]
+[ext_resource type="Resource" uid="uid://bfix4r67oyj2c" path="res://Global_Resources/Databases/Quests/Broko_Town/Main/Right_On_The_Nut/Objective_Crack_Nuts.tres" id="2_uknc8"]
+
+[node name="Crack_Nuts" instance=ExtResource("1_h5fn7")]
+_e_item_key = "Handful_Peanuts_Cracked"
+_e_data = ExtResource("2_uknc8")

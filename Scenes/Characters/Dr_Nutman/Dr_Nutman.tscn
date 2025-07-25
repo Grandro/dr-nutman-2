@@ -1,0 +1,73 @@
+[gd_scene load_steps=12 format=3 uid="uid://bp3l5j3x50mlt"]
+
+[ext_resource type="PackedScene" uid="uid://b5ggg7dxi64kw" path="res://Scenes/Characters/Character_Base.tscn" id="1_g736a"]
+[ext_resource type="PackedScene" uid="uid://xgr0cw1har28" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/1.tscn" id="2_22g65"]
+[ext_resource type="PackedScene" uid="uid://cwgru3f45ef2f" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/2.tscn" id="3_exavu"]
+[ext_resource type="PackedScene" uid="uid://oukfsmrxqsny" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/3.tscn" id="4_t1dm8"]
+[ext_resource type="Animation" uid="uid://b0y7484ej2q62" path="res://Scenes/Characters/Dr_Nutman/Anims/Idle_Down.tres" id="5_1ekeg"]
+[ext_resource type="PackedScene" uid="uid://bw5bnvbnifjs" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Weapon/Disposable_Glove.tscn" id="5_o3j1u"]
+[ext_resource type="Animation" uid="uid://mtf6ie3yt15f" path="res://Scenes/Characters/Dr_Nutman/Anims/Idle_Left.tres" id="6_muy2x"]
+[ext_resource type="Animation" uid="uid://ca5k8cwab14x3" path="res://Scenes/Characters/Dr_Nutman/Anims/Idle_Right.tres" id="7_s0kvn"]
+[ext_resource type="Animation" uid="uid://dkm6uitv2slk5" path="res://Scenes/Characters/Dr_Nutman/Anims/Idle_Up.tres" id="8_pipa0"]
+
+[sub_resource type="Animation" id="Animation_fe7oi"]
+resource_name = "Celebrate_Down"
+length = 1.2
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Display:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [84, 85, 86, 87]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ssdlm"]
+_data = {
+&"Celebrate_Down": SubResource("Animation_fe7oi"),
+&"Idle_Down": ExtResource("5_1ekeg"),
+&"Idle_Left": ExtResource("6_muy2x"),
+&"Idle_Right": ExtResource("7_s0kvn"),
+&"Idle_Up": ExtResource("8_pipa0")
+}
+
+[node name="Dr_Nutman" instance=ExtResource("1_g736a")]
+
+[node name="Display" parent="." index="0"]
+vframes = 19
+frame = 84
+
+[node name="Equipment" parent="." index="1"]
+_e_scenes = {
+"Feet": {},
+"Head": {
+"Party_Hat_1": ExtResource("2_22g65"),
+"Party_Hat_2": ExtResource("3_exavu"),
+"Party_Hat_3": ExtResource("4_t1dm8")
+},
+"Legs": {},
+"Shield": {},
+"Torso": {},
+"Weapon": {
+"Disposable_Glove": ExtResource("5_o3j1u")
+}
+}
+
+[node name="1" parent="Equipment/Head" index="0" instance=ExtResource("2_22g65")]
+
+[node name="Anims" parent="." index="4"]
+libraries = {
+"": SubResource("AnimationLibrary_ssdlm")
+}
+
+[node name="Party_Member" parent="." index="5"]
+_e_pm_key = "Dr_Nutman"
+
+[editable path="Equipment"]
+[editable path="Equipment/Head/1"]

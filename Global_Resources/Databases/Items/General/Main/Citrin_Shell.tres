@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dubekgmtca5p3"]
+
+[ext_resource type="Script" uid="uid://cytubor452swf" path="res://Global_Resources/Databases/Items/Item_Data.gd" id="1_fe5ws"]
+
+[resource]
+script = ExtResource("1_fe5ws")
+_e_key = "Citrin_Shell"
+_e_type = "General"
+_e_group = "Main"
+_e_category_type = "Static"
+_e_stack = 99

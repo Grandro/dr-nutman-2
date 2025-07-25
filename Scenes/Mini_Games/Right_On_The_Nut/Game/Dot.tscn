@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://dc61tj5s4jm3j"]
+
+[ext_resource type="Script" uid="uid://dtd0p6ibeud6a" path="res://Scenes/Mini_Games/Right_On_The_Nut/Game/Scripts/Dot.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://rc354mevfaoj" path="res://Scenes/Mini_Games/Right_On_The_Nut/Game/Sprites/Dot_Inner.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://063qhkrp0odb" path="res://Scenes/Mini_Games/Right_On_The_Nut/Game/Sprites/Dot_Outer.png" id="3"]
+[ext_resource type="Material" uid="uid://dtcmrg1uodyue" path="res://Global_Resources/Materials/2D/VTint.tres" id="4"]
+
+[node name="Dot" type="Node2D"]
+light_mask = 4
+visibility_layer = 4
+script = ExtResource("1")
+
+[node name="Inner" type="Sprite2D" parent="."]
+light_mask = 4
+visibility_layer = 4
+material = ExtResource("4")
+texture = ExtResource("2")
+
+[node name="Outer" type="Sprite2D" parent="."]
+light_mask = 4
+visibility_layer = 4
+texture = ExtResource("3")

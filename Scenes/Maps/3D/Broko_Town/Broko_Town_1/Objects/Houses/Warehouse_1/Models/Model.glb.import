@@ -1,0 +1,85 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://bttf2t6ri8xbr"
+path="res://.godot/imported/Model.glb-2ad877aa42b0ce4280a999cd8e2546f5.scn"
+
+[deps]
+
+source_file="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Objects/Houses/Warehouse_1/Models/Model.glb"
+dest_files=["res://.godot/imported/Model.glb-2ad877aa42b0ce4280a999cd8e2546f5.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+_subresources={
+"nodes": {
+"PATH:Brick_656": {
+"mesh_instance/layers": 4
+},
+"PATH:Chimney_004": {
+"mesh_instance/layers": 4
+},
+"PATH:Door_005": {
+"mesh_instance/layers": 4
+},
+"PATH:Door_005/Knob_004": {
+"mesh_instance/layers": 4
+},
+"PATH:Door_006": {
+"mesh_instance/layers": 4
+},
+"PATH:Door_006/Knob_005": {
+"mesh_instance/layers": 4
+},
+"PATH:House_004": {
+"mesh_instance/layers": 4
+},
+"PATH:Window_Right_Left_004": {
+"mesh_instance/layers": 4
+},
+"PATH:Window_Right_Left_004/Window_Panel_Right_Left_004": {
+"mesh_instance/layers": 4
+},
+"PATH:Window_Right_Left_005": {
+"mesh_instance/layers": 4
+},
+"PATH:Window_Right_Left_005/Window_Panel_Right_Left_005": {
+"mesh_instance/layers": 4
+},
+"PATH:Window_Right_Left_006": {
+"mesh_instance/layers": 4
+},
+"PATH:Window_Right_Left_006/Window_Panel_Right_Left_006": {
+"mesh_instance/layers": 4
+},
+"PATH:Window_Right_Left_007": {
+"mesh_instance/layers": 4
+},
+"PATH:Window_Right_Left_007/Window_Panel_Right_Left_007": {
+"mesh_instance/layers": 4
+}
+}
+}
+gltf/naming_version=1
+gltf/embedded_image_handling=3

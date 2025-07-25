@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cjrw5luh13vlq"]
+[gd_scene load_steps=4 format=3 uid="uid://cjrw5luh13vlq"]
 
 [ext_resource type="Texture2D" uid="uid://boxmgf0temvst" path="res://Global_Resources/Sprites/Icons/Stats/HP.png" id="1"]
 [ext_resource type="Script" uid="uid://dklbg27r2yqpd" path="res://Scenes/Stats_Display/Entries/Scripts/Stat_Entry.gd" id="3"]
+[ext_resource type="FontFile" uid="uid://bc3cxhu6w0ljt" path="res://Global_Resources/Fonts/ProFont.ttf" id="3_4u7td"]
 
 [node name="Stat_Entry" type="HBoxContainer"]
 light_mask = 8
@@ -29,6 +30,7 @@ visibility_layer = 8
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("3_4u7td")
 theme_override_font_sizes/font_size = 28
 text = "-1"
 horizontal_alignment = 1

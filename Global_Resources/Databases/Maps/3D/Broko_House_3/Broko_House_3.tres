@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://xodx3blsd6kx"]
+
+[ext_resource type="Resource" uid="uid://c1f8scb3j6waf" path="res://Global_Resources/Databases/Maps/3D/Broko_House_3/Destinations/Door.tres" id="1_dt1k7"]
+[ext_resource type="Script" uid="uid://cgx4qljo5ouln" path="res://Global_Resources/Databases/Maps/Map_Data.gd" id="1_i5nah"]
+
+[resource]
+script = ExtResource("1_i5nah")
+_e_path = "res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Broko_House_3/Broko_House_3.tscn"
+_e_destinations = {
+"Door": ExtResource("1_dt1k7")
+}

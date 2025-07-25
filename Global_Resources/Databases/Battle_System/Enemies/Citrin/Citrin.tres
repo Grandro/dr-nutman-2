@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://c70vwbp3nmphm"]
+
+[ext_resource type="Resource" uid="uid://du8b1s5ieoold" path="res://Global_Resources/Databases/Battle_System/Enemies/Citrin/Stats.tres" id="1_lkuyq"]
+[ext_resource type="Script" uid="uid://cno1hrwjlms2y" path="res://Global_Resources/Databases/Battle_System/Enemies/Enemy_Data.gd" id="2_ptyhi"]
+
+[resource]
+script = ExtResource("2_ptyhi")
+_e_key = "Citrin"
+_e_stats = ExtResource("1_lkuyq")
+_e_actions = {
+"Commands": ["Attack_ATK"],
+"Specials": ["Citrin_Ball_Spew"]
+}

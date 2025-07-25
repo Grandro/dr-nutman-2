@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjo42fv8xtk3y"]
+
+[ext_resource type="PackedScene" uid="uid://y0ims6itmqkn" path="res://Global_Scenes/Progress/Objects/Object_Base.tscn" id="1_x1dpt"]
+[ext_resource type="Script" uid="uid://dvtd3y4nch4nf" path="res://Global_Scenes/Progress/Objects/Peanut_Bushes_1/Scripts/Peanut_Bushes_1.gd" id="2_utqu1"]
+
+[node name="Peanut_Bushes_1" instance=ExtResource("1_x1dpt")]
+script = ExtResource("2_utqu1")

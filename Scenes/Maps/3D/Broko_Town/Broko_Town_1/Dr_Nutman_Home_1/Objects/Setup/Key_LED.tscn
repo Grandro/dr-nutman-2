@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://2hv3s3idmek8"]
+
+[ext_resource type="Script" uid="uid://bpajg85m33bvv" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Dr_Nutman_Home_1/Objects/Setup/Scripts/Key_LED.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://dijioikvadccj" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Dr_Nutman_Home_1/Objects/Setup/Sprites/Keyboard/Key_LED.png" id="2"]
+
+[node name="Key_LED" type="Sprite3D"]
+layers = 4
+sorting_offset = 2.0
+pixel_size = 0.02
+double_sided = false
+texture_filter = 0
+texture = ExtResource("2")
+script = ExtResource("1")

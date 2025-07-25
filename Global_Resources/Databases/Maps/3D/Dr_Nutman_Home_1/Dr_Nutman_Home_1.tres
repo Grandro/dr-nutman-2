@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://dj0go6sih8qt8"]
+
+[ext_resource type="Script" uid="uid://cgx4qljo5ouln" path="res://Global_Resources/Databases/Maps/Map_Data.gd" id="1"]
+[ext_resource type="Resource" uid="uid://coj6akd3k307u" path="res://Global_Resources/Databases/Maps/3D/Dr_Nutman_Home_1/Destinations/Door.tres" id="1_vomqj"]
+[ext_resource type="Resource" uid="uid://de6osk63wm3by" path="res://Global_Resources/Databases/Maps/3D/Dr_Nutman_Home_1/Destinations/Start.tres" id="2_ry1hn"]
+
+[resource]
+script = ExtResource("1")
+_e_path = "res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Dr_Nutman_Home_1/Dr_Nutman_Home_1.tscn"
+_e_destinations = {
+"Door": ExtResource("1_vomqj"),
+"Start": ExtResource("2_ry1hn")
+}

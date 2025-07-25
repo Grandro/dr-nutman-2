@@ -1,0 +1,17 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://dpj40b7eofpn"]
+
+[ext_resource type="Texture2D" uid="uid://cod8mkqx8wdyp" path="res://Global_Resources/Sprites/Objects/Dr_Nutman/Spritesheet.png" id="1_dhrjp"]
+[ext_resource type="Shader" uid="uid://jyu6bfhnf5w6" path="res://Global_Resources/Materials/3D/Shaders/Occlusion.gdshader" id="2_fwa0r"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_35jmw"]
+transparency = 1
+no_depth_test = true
+albedo_color = Color(1, 1, 1, 0.313726)
+albedo_texture = ExtResource("1_dhrjp")
+
+[resource]
+render_priority = 1
+next_pass = SubResource("StandardMaterial3D_35jmw")
+shader = ExtResource("2_fwa0r")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("1_dhrjp")

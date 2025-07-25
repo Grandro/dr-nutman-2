@@ -1,0 +1,249 @@
+[gd_scene load_steps=59 format=3 uid="uid://lxowjfoc30h8"]
+
+[ext_resource type="PackedScene" uid="uid://osrm8oliivfv" path="res://Scenes/Objects/3D/Enemies/Enemy_Base.tscn" id="1_v73b1"]
+[ext_resource type="Texture2D" uid="uid://qpm43sckowjd" path="res://Global_Resources/Sprites/Objects/Enemies/Citrin/Spritesheet.png" id="2_xhpnv"]
+[ext_resource type="PackedScene" uid="uid://cfdwl620axohy" path="res://Scenes/Object/Comps/3D/Audio.tscn" id="3_13aw5"]
+[ext_resource type="PackedScene" uid="uid://b028hrfen5mpa" path="res://Scenes/Object/Comps/3D/Movement/Comps/Terrain/Area.tscn" id="3_d2vk4"]
+[ext_resource type="PackedScene" uid="uid://boh1rwcj5rgwf" path="res://Scenes/Object/Comps/States.tscn" id="3_spdvv"]
+[ext_resource type="PackedScene" uid="uid://dllj5lbxwqy17" path="res://Scenes/Pausable_Audio/3D/Pausable_Audio.tscn" id="4_3jwx5"]
+[ext_resource type="Animation" uid="uid://bdnrrb0h88vgs" path="res://Scenes/Objects/3D/Enemies/Citrin/Anims/Terrain/Global/Cry_Down.res" id="4_d2vk4"]
+[ext_resource type="Script" uid="uid://b2nlmpmy8cij3" path="res://Scenes/Objects/3D/Enemies/Comps/Scripts/Behaviour.gd" id="4_uljfe"]
+[ext_resource type="Animation" uid="uid://f67bdriogdr5" path="res://Scenes/Objects/3D/Enemies/Citrin/Anims/Terrain/Global/Cry_Left.res" id="5_lv2oi"]
+[ext_resource type="Animation" uid="uid://bdlxspr8wh735" path="res://Scenes/Objects/3D/Enemies/Citrin/Anims/Terrain/Global/Cry_Right.res" id="6_pnn3q"]
+[ext_resource type="Animation" uid="uid://c0lksrw7mm8db" path="res://Scenes/Objects/3D/Enemies/Citrin/Anims/Terrain/Global/Cry_Up.res" id="7_5khfw"]
+[ext_resource type="PackedScene" uid="uid://drpp26gth4snn" path="res://Scenes/Object/Comps/Reference.tscn" id="8_fphre"]
+[ext_resource type="Animation" uid="uid://boevdlh8yytx5" path="res://Scenes/Objects/3D/Enemies/Citrin/Anims/Terrain/Global/Idle_Down.res" id="8_h5rmx"]
+[ext_resource type="Animation" uid="uid://dwfugi7iewhx3" path="res://Scenes/Objects/3D/Enemies/Citrin/Anims/Terrain/Global/Idle_Left.res" id="9_cgy6o"]
+[ext_resource type="Animation" uid="uid://ylf8f5i636bm" path="res://Scenes/Objects/3D/Enemies/Citrin/Anims/Terrain/Global/Idle_Right.res" id="10_7lgpu"]
+[ext_resource type="Animation" uid="uid://dabhs3ndrpy5i" path="res://Scenes/Objects/3D/Enemies/Citrin/Anims/Terrain/Global/Idle_Up.res" id="11_faceo"]
+[ext_resource type="Animation" uid="uid://b6tmp12g5in4" path="res://Scenes/Objects/3D/Enemies/Citrin/Anims/Terrain/Global/Shoot_Down.res" id="12_w20mh"]
+[ext_resource type="Animation" uid="uid://lt7jrk681qpr" path="res://Scenes/Objects/3D/Enemies/Citrin/Anims/Terrain/Global/Shoot_Left.res" id="13_ngo4d"]
+[ext_resource type="Animation" uid="uid://dirrioddt2ah" path="res://Scenes/Objects/3D/Enemies/Citrin/Anims/Terrain/Global/Shoot_Right.res" id="14_bfqgd"]
+[ext_resource type="Animation" uid="uid://cwv5776dhq4yj" path="res://Scenes/Objects/3D/Enemies/Citrin/Anims/Terrain/Global/Shoot_Up.res" id="15_ja4lk"]
+[ext_resource type="Animation" uid="uid://bf5imq51m8345" path="res://Scenes/Objects/3D/Enemies/Citrin/Anims/Terrain/Global/Stop_Down.res" id="16_53005"]
+[ext_resource type="Animation" uid="uid://cr7nybox71asc" path="res://Scenes/Objects/3D/Enemies/Citrin/Anims/Terrain/Global/Stop_Left.res" id="17_hg0ic"]
+[ext_resource type="Animation" uid="uid://cu6vdxunow56" path="res://Scenes/Objects/3D/Enemies/Citrin/Anims/Terrain/Global/Stop_Right.res" id="18_11v6i"]
+[ext_resource type="Animation" uid="uid://lyk670nc5nvp" path="res://Scenes/Objects/3D/Enemies/Citrin/Anims/Terrain/Global/Stop_Up.res" id="19_d5cbe"]
+[ext_resource type="Animation" uid="uid://6ta72wwn8lyk" path="res://Scenes/Objects/3D/Enemies/Citrin/Anims/Terrain/Global/Walk_Down.res" id="20_qotcq"]
+[ext_resource type="Animation" uid="uid://c30o787w38c7w" path="res://Scenes/Objects/3D/Enemies/Citrin/Anims/Terrain/Global/Walk_Left.res" id="21_67dcy"]
+[ext_resource type="Animation" uid="uid://bjp62omrrrhce" path="res://Scenes/Objects/3D/Enemies/Citrin/Anims/Terrain/Global/Walk_Right.res" id="22_b80xq"]
+[ext_resource type="Animation" uid="uid://p73sefm8dxrk" path="res://Scenes/Objects/3D/Enemies/Citrin/Anims/Terrain/Global/Walk_Up.res" id="23_8173w"]
+[ext_resource type="PackedScene" uid="uid://b7h012x035k2o" path="res://Scenes/Objects/3D/Enemies/Comps/Battle_Starter/Battle_Starter.tscn" id="27_ncnct"]
+[ext_resource type="PackedScene" uid="uid://bqd5wag3i55mk" path="res://Scenes/Objects/3D/Enemies/Comps/Battle_Starter/Area.tscn" id="28_devj6"]
+[ext_resource type="Animation" uid="uid://cumvv4j0ntb8a" path="res://Scenes/Objects/3D/Enemies/Citrin/Anims/Cry_Down.res" id="31_3jwx5"]
+[ext_resource type="Animation" uid="uid://cqyebasdlatmn" path="res://Scenes/Objects/3D/Enemies/Citrin/Anims/Cry_Left.res" id="32_d2vk4"]
+[ext_resource type="Animation" uid="uid://bx3smigei8ayw" path="res://Scenes/Objects/3D/Enemies/Citrin/Anims/Cry_Right.res" id="33_lv2oi"]
+[ext_resource type="Animation" uid="uid://ci76xank2co04" path="res://Scenes/Objects/3D/Enemies/Citrin/Anims/Cry_Up.res" id="34_pnn3q"]
+[ext_resource type="Animation" uid="uid://bwkitrlvxirwo" path="res://Scenes/Objects/3D/Enemies/Citrin/Anims/Idle_Down.res" id="35_5khfw"]
+[ext_resource type="Animation" uid="uid://csodg1rgwany" path="res://Scenes/Objects/3D/Enemies/Citrin/Anims/Idle_Left.res" id="36_h5rmx"]
+[ext_resource type="Animation" uid="uid://4552q0m78nch" path="res://Scenes/Objects/3D/Enemies/Citrin/Anims/Idle_Right.res" id="37_cgy6o"]
+[ext_resource type="Animation" uid="uid://djxnh63o5ucwv" path="res://Scenes/Objects/3D/Enemies/Citrin/Anims/Idle_Up.res" id="38_7lgpu"]
+[ext_resource type="Animation" uid="uid://rnl5miou7ghf" path="res://Scenes/Objects/3D/Enemies/Citrin/Anims/Shoot_Down.res" id="39_faceo"]
+[ext_resource type="Animation" uid="uid://434kqaqqfgg5" path="res://Scenes/Objects/3D/Enemies/Citrin/Anims/Shoot_Left.res" id="40_w20mh"]
+[ext_resource type="Animation" uid="uid://01o1ty11jqsr" path="res://Scenes/Objects/3D/Enemies/Citrin/Anims/Shoot_Right.res" id="41_ngo4d"]
+[ext_resource type="Animation" uid="uid://1gml61px50c1" path="res://Scenes/Objects/3D/Enemies/Citrin/Anims/Shoot_Up.res" id="42_bfqgd"]
+[ext_resource type="Animation" uid="uid://ccrgf1o84gxej" path="res://Scenes/Objects/3D/Enemies/Citrin/Anims/Stop_Down.res" id="43_ja4lk"]
+[ext_resource type="Animation" uid="uid://ds62m1pklv55k" path="res://Scenes/Objects/3D/Enemies/Citrin/Anims/Stop_Left.res" id="44_53005"]
+[ext_resource type="Animation" uid="uid://b0k27umlomuf" path="res://Scenes/Objects/3D/Enemies/Citrin/Anims/Stop_Right.res" id="45_hg0ic"]
+[ext_resource type="Animation" uid="uid://u6vyjqclrbts" path="res://Scenes/Objects/3D/Enemies/Citrin/Anims/Stop_Up.res" id="46_11v6i"]
+[ext_resource type="Animation" uid="uid://tv2mitr4g4lu" path="res://Scenes/Objects/3D/Enemies/Citrin/Anims/Walk_Down.res" id="47_d5cbe"]
+[ext_resource type="Animation" uid="uid://dokcy6hjxhrv1" path="res://Scenes/Objects/3D/Enemies/Citrin/Anims/Walk_Left.res" id="48_qotcq"]
+[ext_resource type="Animation" uid="uid://c5oyn35hckcgu" path="res://Scenes/Objects/3D/Enemies/Citrin/Anims/Walk_Right.res" id="49_67dcy"]
+[ext_resource type="Animation" uid="uid://bje1eko4bp1w6" path="res://Scenes/Objects/3D/Enemies/Citrin/Anims/Walk_Up.res" id="50_b80xq"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_d2vk4"]
+radius = 0.4
+height = 1.6
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hwgs3"]
+size = Vector3(7, 2.5, 7)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iqsdt"]
+size = Vector3(5, 2.5, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_prsmk"]
+size = Vector3(1.5, 1, 1.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wd6gt"]
+size = Vector3(1.5, 0.5, 1.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v5xqh"]
+size = Vector3(0.15, 0.1, 0.15)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_denst"]
+_data = {
+&"Cry_Down": ExtResource("4_d2vk4"),
+&"Cry_Left": ExtResource("5_lv2oi"),
+&"Cry_Right": ExtResource("6_pnn3q"),
+&"Cry_Up": ExtResource("7_5khfw"),
+&"Idle_Down": ExtResource("8_h5rmx"),
+&"Idle_Left": ExtResource("9_cgy6o"),
+&"Idle_Right": ExtResource("10_7lgpu"),
+&"Idle_Up": ExtResource("11_faceo"),
+&"Shoot_Down": ExtResource("12_w20mh"),
+&"Shoot_Left": ExtResource("13_ngo4d"),
+&"Shoot_Right": ExtResource("14_bfqgd"),
+&"Shoot_Up": ExtResource("15_ja4lk"),
+&"Stop_Down": ExtResource("16_53005"),
+&"Stop_Left": ExtResource("17_hg0ic"),
+&"Stop_Right": ExtResource("18_11v6i"),
+&"Stop_Up": ExtResource("19_d5cbe"),
+&"Walk_Down": ExtResource("20_qotcq"),
+&"Walk_Left": ExtResource("21_67dcy"),
+&"Walk_Right": ExtResource("22_b80xq"),
+&"Walk_Up": ExtResource("23_8173w")
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8173w"]
+_data = {
+&"Cry_Down": ExtResource("31_3jwx5"),
+&"Cry_Left": ExtResource("32_d2vk4"),
+&"Cry_Right": ExtResource("33_lv2oi"),
+&"Cry_Up": ExtResource("34_pnn3q"),
+&"Idle_Down": ExtResource("35_5khfw"),
+&"Idle_Left": ExtResource("36_h5rmx"),
+&"Idle_Right": ExtResource("37_cgy6o"),
+&"Idle_Up": ExtResource("38_7lgpu"),
+&"Shoot_Down": ExtResource("39_faceo"),
+&"Shoot_Left": ExtResource("40_w20mh"),
+&"Shoot_Right": ExtResource("41_ngo4d"),
+&"Shoot_Up": ExtResource("42_bfqgd"),
+&"Stop_Down": ExtResource("43_ja4lk"),
+&"Stop_Left": ExtResource("44_53005"),
+&"Stop_Right": ExtResource("45_hg0ic"),
+&"Stop_Up": ExtResource("46_11v6i"),
+&"Walk_Down": ExtResource("47_d5cbe"),
+&"Walk_Left": ExtResource("48_qotcq"),
+&"Walk_Right": ExtResource("49_67dcy"),
+&"Walk_Up": ExtResource("50_b80xq")
+}
+
+[node name="Citrin" instance=ExtResource("1_v73b1")]
+
+[node name="Display" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.14, 0)
+texture = ExtResource("2_xhpnv")
+hframes = 8
+vframes = 9
+frame = 36
+
+[node name="Collision" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("CapsuleShape3D_d2vk4")
+
+[node name="Audio" parent="." index="2" instance=ExtResource("3_13aw5")]
+
+[node name="Cry" parent="Audio" index="0" instance=ExtResource("4_3jwx5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+bus = &"SFX"
+
+[node name="Shoot" parent="Audio" index="2" instance=ExtResource("4_3jwx5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+bus = &"SFX"
+
+[node name="Behaviour" type="Node3D" parent="." index="3" groups=["Comp"]]
+script = ExtResource("4_uljfe")
+
+[node name="Debug_State" type="Label3D" parent="Behaviour" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+visible = false
+layers = 4
+font_size = 72
+
+[node name="Debug_Persist" type="Label3D" parent="Behaviour" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3, 0)
+visible = false
+layers = 4
+font_size = 72
+
+[node name="Action_CD" type="Timer" parent="Behaviour" index="2"]
+
+[node name="Idle_CD" type="Timer" parent="Behaviour" index="3"]
+one_shot = true
+
+[node name="Citrin_Ball_CD" type="Timer" parent="Behaviour" index="4"]
+one_shot = true
+
+[node name="Target_Range" type="Area3D" parent="Behaviour" index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
+collision_layer = 0
+collision_mask = 4
+monitoring = false
+monitorable = false
+metadata/_edit_group_ = true
+
+[node name="Collision" type="CollisionShape3D" parent="Behaviour/Target_Range" index="0"]
+shape = SubResource("BoxShape3D_hwgs3")
+
+[node name="Enemy_Range" type="Area3D" parent="Behaviour" index="6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
+collision_layer = 0
+collision_mask = 64
+monitoring = false
+monitorable = false
+metadata/_edit_group_ = true
+
+[node name="Collision" type="CollisionShape3D" parent="Behaviour/Enemy_Range" index="0"]
+shape = SubResource("BoxShape3D_iqsdt")
+
+[node name="Citrin_Balls" type="Node3D" parent="Behaviour" index="7"]
+
+[node name="Pos" type="Marker3D" parent="Behaviour/Citrin_Balls" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01, 0.36, 0.01)
+
+[node name="Battle_Starter" parent="." index="4" instance=ExtResource("27_ncnct")]
+_e_enc_key = "Citrin_Main"
+_e_amount = {
+1: 1,
+2: 0,
+3: 0,
+4: 0
+}
+
+[node name="Neutral" parent="Battle_Starter" index="0" instance=ExtResource("28_devj6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="Collision" parent="Battle_Starter/Neutral" index="0"]
+shape = SubResource("BoxShape3D_prsmk")
+
+[node name="Party_Member" parent="Battle_Starter" index="1" instance=ExtResource("28_devj6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.45, 0)
+collision_mask = 16
+_e_res = 0
+
+[node name="Collision" parent="Battle_Starter/Party_Member" index="0"]
+shape = SubResource("BoxShape3D_wd6gt")
+
+[node name="Left_Foot" parent="Movement/Terrain/Areas" index="0" instance=ExtResource("3_d2vk4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17, 0, 0)
+
+[node name="Collision" parent="Movement/Terrain/Areas/Left_Foot" index="1"]
+shape = SubResource("BoxShape3D_v5xqh")
+
+[node name="Right_Foot" parent="Movement/Terrain/Areas" index="1" instance=ExtResource("3_d2vk4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, 0)
+
+[node name="Collision" parent="Movement/Terrain/Areas/Right_Foot" index="1"]
+shape = SubResource("BoxShape3D_v5xqh")
+
+[node name="Anims" parent="Movement/Terrain" index="1"]
+libraries = {
+&"": SubResource("AnimationLibrary_denst")
+}
+
+[node name="States" parent="." index="7" instance=ExtResource("3_spdvv")]
+_e_states = Array[String](["Stop", "Idle", "Walk", "Shoot", "Cry"])
+_e_state = "Idle"
+
+[node name="Reference" parent="." index="8" instance=ExtResource("8_fphre")]
+
+[node name="Anims" parent="." index="9"]
+libraries = {
+&"": SubResource("AnimationLibrary_8173w")
+}
+
+[editable path="Battle_Starter/Neutral"]
+[editable path="Battle_Starter/Party_Member"]
+[editable path="Movement/Terrain"]
+[editable path="Movement/Terrain/Areas/Left_Foot"]
+[editable path="Movement/Terrain/Areas/Right_Foot"]

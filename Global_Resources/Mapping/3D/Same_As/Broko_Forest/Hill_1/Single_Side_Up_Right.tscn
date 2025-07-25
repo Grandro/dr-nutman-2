@@ -1,0 +1,66 @@
+[gd_scene load_steps=15 format=3 uid="uid://w01mtildjrxm"]
+
+[ext_resource type="PackedScene" uid="uid://c7l6gl3pndhn7" path="res://Global_Resources/Mapping/3D/Plane/Plane_Base.tscn" id="1_85ka6"]
+[ext_resource type="Texture2D" uid="uid://dn2ytw22lib4u" path="res://Global_Resources/Mapping/Sprites/Same_As/Broko_Forest/Hill_1/Single_Up_Top_Up.png" id="2_qmu78"]
+[ext_resource type="Texture2D" uid="uid://ewf7vk6s1dms" path="res://Global_Resources/Mapping/Sprites/Same_As/Broko_Forest/Hill_1/Single_Side_Center_Center.png" id="3_qmu78"]
+[ext_resource type="Texture2D" uid="uid://di76vkfly27io" path="res://Global_Resources/Mapping/Sprites/Same_As/Broko_Forest/Hill_1/Main_Side_Center_Right.png" id="4_qmu78"]
+[ext_resource type="Texture2D" uid="uid://470jne17l3t6" path="res://Global_Resources/Mapping/Sprites/Same_As/Broko_Forest/Hill_1/Main_Side_Center_Left.png" id="5_qmu78"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2y2bn"]
+albedo_texture = ExtResource("2_qmu78")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_mpvq1"]
+material = SubResource("StandardMaterial3D_2y2bn")
+size = Vector2(1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3gws7"]
+albedo_texture = ExtResource("3_qmu78")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ray5p"]
+material = SubResource("StandardMaterial3D_3gws7")
+size = Vector2(1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k1qh3"]
+albedo_texture = ExtResource("4_qmu78")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_cwofl"]
+material = SubResource("StandardMaterial3D_k1qh3")
+size = Vector2(1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ymyvf"]
+albedo_texture = ExtResource("5_qmu78")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_8extt"]
+material = SubResource("StandardMaterial3D_ymyvf")
+size = Vector2(1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nhsq6"]
+
+[node name="Single_1" type="Node3D"]
+
+[node name="Top" parent="." groups=["NavMesh_Main"] instance=ExtResource("1_85ka6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("PlaneMesh_mpvq1")
+
+[node name="Right" parent="." instance=ExtResource("1_85ka6")]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91068e-15, 0.5, 0.5, 0)
+mesh = SubResource("PlaneMesh_ray5p")
+
+[node name="Front" parent="." instance=ExtResource("1_85ka6")]
+transform = Transform3D(1, 1.06581e-14, 5.92923e-21, 0, -4.37114e-08, -1, -1.06581e-14, 1, -4.37114e-08, 0, 0.5, 0.5)
+mesh = SubResource("PlaneMesh_cwofl")
+
+[node name="Back" parent="." instance=ExtResource("1_85ka6")]
+transform = Transform3D(-1, 8.74228e-08, -3.82138e-15, 0, -4.37114e-08, -1, -8.74228e-08, -1, 4.37114e-08, 0, 0.5, -0.5)
+mesh = SubResource("PlaneMesh_8extt")
+
+[node name="Static" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+collision_mask = 0
+
+[node name="Collision" type="CollisionShape3D" parent="Static"]
+shape = SubResource("BoxShape3D_nhsq6")

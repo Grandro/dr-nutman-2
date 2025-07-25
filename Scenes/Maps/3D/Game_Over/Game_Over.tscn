@@ -1,8 +1,17 @@
-[gd_scene load_steps=7 format=3 uid="uid://tnphnasgxf20"]
+[gd_scene load_steps=17 format=3 uid="uid://tnphnasgxf20"]
 
 [ext_resource type="PackedScene" uid="uid://cl2vhhqvmf6i2" path="res://Scenes/Maps/Map_Base/3D/Map_Base.tscn" id="1_alevk"]
 [ext_resource type="Script" uid="uid://dok0arl2xsuss" path="res://Scenes/Maps/3D/Game_Over/Scripts/Game_Over.gd" id="2_t2cey"]
 [ext_resource type="PackedScene" uid="uid://d3rnjkhvcxxr0" path="res://Scenes/Player/3D/Player.tscn" id="3_6pleh"]
+[ext_resource type="PackedScene" uid="uid://oy3y3olgmgqo" path="res://Scenes/Maps/3D/Game_Over/Amethyst_1/Models/Amethyst_1.glb" id="5_16d34"]
+[ext_resource type="Theme" uid="uid://budcfl16xj2tt" path="res://Global_Resources/Themes/Default/Default.tres" id="6_50xkk"]
+[ext_resource type="Script" uid="uid://ckbk2i4wb1yhq" path="res://Scenes/Object/Scripts/Node3D_Object.gd" id="6_iatyl"]
+[ext_resource type="PackedScene" uid="uid://drpp26gth4snn" path="res://Scenes/Object/Comps/Reference.tscn" id="7_xh5jw"]
+[ext_resource type="PackedScene" uid="uid://du0jobeb0veao" path="res://Scenes/Object/Comps/Stater.tscn" id="8_miifj"]
+[ext_resource type="PackedScene" uid="uid://de2jy2ixhp2mw" path="res://Scenes/Object/Comps/Save.tscn" id="9_108v5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s7410"]
+size = Vector3(3, 1, 1)
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ldx6g"]
 
@@ -28,18 +37,159 @@ volumetric_fog_length = 52.2
 adjustment_enabled = true
 adjustment_saturation = 0.6
 
+[sub_resource type="Animation" id="Animation_yk2q5"]
+resource_name = "Fall"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Objects/Player:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.785398, 0, 0), Vector3(0.785398, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Canvas/Heading:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Objects/Player:position:z")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [9.25, 11.0]
+}
+
+[sub_resource type="Animation" id="Animation_ndl2y"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Objects/Player:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Objects/Player:position:z")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [9.25]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Canvas/Heading:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wwcwy"]
+_data = {
+&"Fall": SubResource("Animation_yk2q5"),
+&"RESET": SubResource("Animation_ndl2y")
+}
+
 [node name="Game_Over" instance=ExtResource("1_alevk")]
 script = ExtResource("2_t2cey")
+_e_quotes_amount = {
+"Dr_Nutman": 5
+}
+
+[node name="Amethyst_1" type="StaticBody3D" parent="Terrain/Same_As" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 2, 9)
+collision_layer = 8
+collision_mask = 8
+
+[node name="Model" parent="Terrain/Same_As/Amethyst_1" index="0" instance=ExtResource("5_16d34")]
+
+[node name="Collision" type="CollisionShape3D" parent="Terrain/Same_As/Amethyst_1" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.835, 0)
+shape = SubResource("BoxShape3D_s7410")
+
+[node name="Light_1" type="OmniLight3D" parent="Terrain/Same_As/Amethyst_1" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 4)
+light_energy = 2.0
+light_specular = 4.0
+light_cull_mask = 4293918724
+
+[node name="Light_2" type="OmniLight3D" parent="Terrain/Same_As/Amethyst_1" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+light_energy = 0.5
+light_specular = 16.0
+light_cull_mask = 4293918726
+
+[node name="Light_3" type="SpotLight3D" parent="Terrain/Same_As/Amethyst_1" index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 4)
+light_color = Color(0.227451, 0.121569, 0.368627, 1)
+light_energy = 16.0
+light_specular = 8.0
+light_cull_mask = 4293918724
+
+[node name="Light_4" type="SpotLight3D" parent="Terrain/Same_As/Amethyst_1" index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 4)
+light_color = Color(0.227451, 0.121569, 0.368627, 1)
+light_energy = 16.0
+light_specular = 8.0
+light_cull_mask = 4293918724
 
 [node name="Player" parent="Objects" index="2" instance=ExtResource("3_6pleh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 3.34, 9.25)
 
-[node name="Env" parent="." index="4"]
+[node name="Cutscene_Start" type="Node3D" parent="Cutscenes" index="0" groups=["Object"]]
+script = ExtResource("6_iatyl")
+
+[node name="Reference" parent="Cutscenes/Cutscene_Start" index="0" instance=ExtResource("7_xh5jw")]
+
+[node name="Stater" parent="Cutscenes/Cutscene_Start" index="1" instance=ExtResource("8_miifj")]
+
+[node name="Save" parent="Cutscenes/Cutscene_Start" index="2" instance=ExtResource("9_108v5")]
+
+[node name="Light_1" type="SpotLight3D" parent="." index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 4.5, 14)
+light_energy = 2.0
+light_cull_mask = 4293918722
+spot_range = 12.0
+
+[node name="Env" parent="." index="5"]
 environment = SubResource("Environment_eccmf")
 
-[node name="Canvas" type="CanvasLayer" parent="." index="5"]
+[node name="Canvas" type="CanvasLayer" parent="." index="6"]
 
 [node name="Heading" type="Label" parent="Canvas" index="0"]
+self_modulate = Color(1, 1, 1, 0)
 light_mask = 8
 visibility_layer = 8
 anchors_preset = 15
@@ -47,9 +197,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("6_50xkk")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 24
 theme_override_font_sizes/font_size = 72
 text = "GAME OVER"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Anims" type="AnimationPlayer" parent="." index="7"]
+libraries = {
+&"": SubResource("AnimationLibrary_wwcwy")
+}

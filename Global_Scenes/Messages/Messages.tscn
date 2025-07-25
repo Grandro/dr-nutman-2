@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://oar53dtuvjd1"]
+[gd_scene load_steps=6 format=3 uid="uid://oar53dtuvjd1"]
 
 [ext_resource type="Script" uid="uid://ye3htrffcnfr" path="res://Global_Scenes/Messages/Scripts/Messages.gd" id="1"]
-[ext_resource type="Texture2D" uid="uid://b0fnnqoau01k1" path="res://Global_Resources/Sprites/Box.png" id="3"]
+[ext_resource type="Theme" uid="uid://budcfl16xj2tt" path="res://Global_Resources/Themes/Default/Default.tres" id="2"]
+[ext_resource type="Texture2D" uid="uid://6olwyl3e1msa" path="res://Global_Resources/Sprites/Box.png" id="3"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vuvap"]
 
@@ -21,6 +22,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2")
 
 [node name="Background" type="Panel" parent="Control"]
 modulate = Color(1, 1, 1, 0.588235)

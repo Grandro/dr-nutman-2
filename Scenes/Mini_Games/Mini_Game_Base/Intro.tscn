@@ -1,10 +1,14 @@
-[gd_scene load_steps=11 format=3 uid="uid://cmjmyox67k3lp"]
+[gd_scene load_steps=14 format=3 uid="uid://cmjmyox67k3lp"]
 
+[ext_resource type="Theme" uid="uid://budcfl16xj2tt" path="res://Global_Resources/Themes/Default/Default.tres" id="1_dayo0"]
 [ext_resource type="Script" uid="uid://cwvpitkvngp42" path="res://Scenes/Mini_Games/Mini_Game_Base/Scripts/Intro.gd" id="2_53423"]
+[ext_resource type="Texture2D" uid="uid://wrg2potji1vm" path="res://Global_Resources/Sprites/Backgrounds/1_Spritesheet.png" id="3_5hfm5"]
+[ext_resource type="FontFile" uid="uid://bc3cxhu6w0ljt" path="res://Global_Resources/Fonts/ProFont.ttf" id="3_l8klw"]
 [ext_resource type="PackedScene" uid="uid://ba34eyav3ir6j" path="res://Scenes/VP_Container/VP_Container.tscn" id="4_gamai"]
 [ext_resource type="Texture2D" uid="uid://dti8yjdd8swkr" path="res://Global_Resources/Sprites/Joy/Letters_Color/Button_A.png" id="6_hbbo5"]
 
 [sub_resource type="FontVariation" id="FontVariation_qi6lu"]
+base_font = ExtResource("3_l8klw")
 spacing_glyph = -4
 
 [sub_resource type="Animation" id="3"]
@@ -89,12 +93,14 @@ visibility_layer = 8
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+theme = ExtResource("1_dayo0")
 script = ExtResource("2_53423")
 
 [node name="Background" type="TextureRect" parent="."]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
+texture = ExtResource("3_5hfm5")
 stretch_mode = 1
 
 [node name="Margin" type="MarginContainer" parent="."]
@@ -154,7 +160,7 @@ size_flags_horizontal = 3
 
 [node name="VP" parent="Margin/VBox/HBox/Left/HBox/VP" index="0"]
 audio_listener_enable_2d = true
-size = Vector2i(468, 441)
+size = Vector2i(592, 540)
 _e_sub_world = false
 _e_game_world = false
 

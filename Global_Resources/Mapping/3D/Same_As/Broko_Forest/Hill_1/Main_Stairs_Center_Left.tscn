@@ -1,0 +1,43 @@
+[gd_scene load_steps=9 format=3 uid="uid://bn6pbhwib5p6o"]
+
+[ext_resource type="PackedScene" uid="uid://dbxigq53qnnvo" path="res://Global_Resources/Mapping/3D/Plane/Plane_Tile.tscn" id="1_iugml"]
+[ext_resource type="Texture2D" uid="uid://bix7w4di3faby" path="res://Global_Resources/Mapping/Sprites/Same_As/Broko_Forest/Hill_1/Main_Stairs_Top_Center_Left.png" id="3_ib88g"]
+[ext_resource type="Texture2D" uid="uid://joxakqxendj1" path="res://Global_Resources/Mapping/Sprites/Same_As/Broko_Forest/Hill_1/Main_Stairs_Side_Center_Left.png" id="4_ib88g"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iugml"]
+albedo_texture = ExtResource("3_ib88g")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ib88g"]
+material = SubResource("StandardMaterial3D_iugml")
+size = Vector2(1, 1.415)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e2ewd"]
+transparency = 1
+albedo_texture = ExtResource("4_ib88g")
+uv1_scale = Vector3(1, 1, 1)
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_nb6xa"]
+material = SubResource("StandardMaterial3D_e2ewd")
+size = Vector2(1, 1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_7civm"]
+points = PackedVector3Array(-0.5, 0, 0.5, -0.5, 0, -0.5, -0.5, 1, -0.5, 0.5, 0, 0.5, 0.5, 0, -0.5, 0.5, 1, -0.5)
+
+[node name="Main_1" type="Node3D"]
+
+[node name="Top" parent="." groups=["NavMesh_Main"] instance=ExtResource("1_iugml")]
+transform = Transform3D(1, 0, 0, 0, 0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 0.5, 0)
+mesh = SubResource("PlaneMesh_ib88g")
+_e_base_size = Vector3(1, 1.415, 1)
+
+[node name="Left" parent="." instance=ExtResource("1_iugml")]
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, -0.5, 0.5, 0)
+mesh = SubResource("PlaneMesh_nb6xa")
+
+[node name="Static" type="StaticBody3D" parent="."]
+collision_mask = 0
+
+[node name="Collision" type="CollisionShape3D" parent="Static"]
+shape = SubResource("ConvexPolygonShape3D_7civm")

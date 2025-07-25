@@ -2,7 +2,7 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dshc6jkbx647e"
+uid="uid://c5t15y1opc4r0"
 path="res://.godot/imported/Box_Inner.png-48d26ee9e9556177aa39edb7792d9f9c.ctex"
 metadata={
 "vram_texture": false
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

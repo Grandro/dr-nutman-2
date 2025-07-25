@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="QuestData" load_steps=5 format=3 uid="uid://2f1nifdhykn7"]
+
+[ext_resource type="Script" uid="uid://d0ns7im888qf3" path="res://Global_Resources/Databases/Quests/Objective_Base_Data.gd" id="1_elugo"]
+[ext_resource type="Resource" uid="uid://c7ptpdc846d73" path="res://Global_Resources/Databases/Quests/Broko_Town/Main/An_Uplifting_Nut/Objective_Crack_Nuts.tres" id="2_gu6mf"]
+[ext_resource type="Script" uid="uid://ccmwte4egncue" path="res://Global_Resources/Databases/Quests/Quest_Data.gd" id="3_f6faj"]
+[ext_resource type="Resource" uid="uid://c6l8oxbxmm1yn" path="res://Global_Resources/Databases/Quests/Broko_Town/Main/An_Uplifting_Nut/Objective_Lift_Squirrels.tres" id="3_ouey4"]
+
+[resource]
+script = ExtResource("3_f6faj")
+_e_key = "An_Uplifting_Nut"
+_e_type = "Main_Sub"
+_e_location = "Broko_Town_1"
+_e_name = "PROGRESS_QUESTS_BROKO_TOWN_1_MAIN_AN_UPLIFTING_NUT_NAME"
+_e_desc = "PROGRESS_QUESTS_BROKO_TOWN_1_MAIN_AN_UPLIFTING_NUT_DESC"
+_e_objectives = Array[ExtResource("1_elugo")]([ExtResource("2_gu6mf"), ExtResource("3_ouey4")])
+_e_rewards = {}

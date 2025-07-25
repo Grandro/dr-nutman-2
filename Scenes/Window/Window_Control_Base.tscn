@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://djhpux4n30xgb"]
+[gd_scene load_steps=7 format=3 uid="uid://djhpux4n30xgb"]
 
+[ext_resource type="Theme" uid="uid://budcfl16xj2tt" path="res://Global_Resources/Themes/Default/Default.tres" id="1_3o5h1"]
 [ext_resource type="Script" uid="uid://du4fgrsxovi58" path="res://Scenes/Window/Scripts/Window_Control_Base.gd" id="2_qncgu"]
 [ext_resource type="Texture2D" uid="uid://dfuhlj2mlxms5" path="res://Global_Resources/Sprites/UI/Arrow_Left_Normal.png" id="3_w1hrs"]
+[ext_resource type="Texture2D" uid="uid://djhoqjvjbjf43" path="res://Global_Resources/Themes/Sprites/Window_Dialog/Close.png" id="4_6yxod"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_om2em"]
 bg_color = Color(0.87451, 0.866667, 0.898039, 1)
@@ -20,6 +22,7 @@ light_mask = 8
 visibility_layer = 8
 offset_right = 221.0
 offset_bottom = 156.0
+theme = ExtResource("1_3o5h1")
 theme_override_constants/separation = 0
 script = ExtResource("2_qncgu")
 _e_resizable = true
@@ -62,6 +65,7 @@ visibility_layer = 8
 custom_minimum_size = Vector2(26, 16)
 layout_mode = 2
 size_flags_horizontal = 8
+texture_normal = ExtResource("4_6yxod")
 stretch_mode = 3
 
 [node name="Contents" type="PanelContainer" parent="."]

@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://cudnbihdge7e1"]
+
+[ext_resource type="PackedScene" uid="uid://b3al4v74v66vv" path="res://Global_Scenes/Progress/Quests/Objective_Item.tscn" id="1_dfp8p"]
+[ext_resource type="Resource" uid="uid://c3ryonjymvjlk" path="res://Global_Resources/Databases/Quests/Broko_Town/Main/Right_On_The_Nut/Objective_Find_Nuts.tres" id="2_47ts3"]
+
+[node name="Find_Nuts" instance=ExtResource("1_dfp8p")]
+_e_item_key = "Handful_Peanuts_Uncracked"
+_e_data = ExtResource("2_47ts3")

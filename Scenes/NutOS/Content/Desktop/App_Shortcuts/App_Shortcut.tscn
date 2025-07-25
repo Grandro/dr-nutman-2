@@ -1,0 +1,57 @@
+[gd_scene load_steps=7 format=3 uid="uid://bcc063ppvohhg"]
+
+[ext_resource type="Theme" uid="uid://cphubdfp0kld2" path="res://Global_Resources/Themes/NutOS/NutOS.tres" id="1_gmfgc"]
+[ext_resource type="Texture2D" uid="uid://cv3d1k0if8bge" path="res://Scenes/NutOS/Content/Desktop/Apps/Sprites/Installed/Color_Selection.png" id="3"]
+[ext_resource type="StyleBox" uid="uid://bdjmty0dlicg1" path="res://Scenes/NutOS/Content/Desktop/App_Shortcuts/Styles/Focus.tres" id="3_8vnop"]
+[ext_resource type="Script" uid="uid://cxy44i5ter867" path="res://Scenes/NutOS/Content/Desktop/App_Shortcuts/Scripts/App_Shortcut.gd" id="4"]
+[ext_resource type="StyleBox" uid="uid://dfhyf4va8n5c2" path="res://Scenes/NutOS/Content/Desktop/App_Shortcuts/Styles/Normal.tres" id="4_5t4gt"]
+
+[sub_resource type="FontVariation" id="FontVariation_oy0ry"]
+spacing_top = -4
+
+[node name="App_Shortcut" type="MarginContainer"]
+light_mask = 8
+visibility_layer = 8
+offset_right = 64.0
+offset_bottom = 62.0
+theme = ExtResource("1_gmfgc")
+script = ExtResource("4")
+
+[node name="Select" type="Button" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_styles/focus = ExtResource("3_8vnop")
+theme_override_styles/disabled = ExtResource("4_5t4gt")
+theme_override_styles/hover = ExtResource("3_8vnop")
+theme_override_styles/pressed = ExtResource("3_8vnop")
+theme_override_styles/normal = ExtResource("4_5t4gt")
+
+[node name="VBox" type="VBoxContainer" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = -1
+alignment = 1
+
+[node name="Icon" type="TextureRect" parent="VBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 2
+texture = ExtResource("3")
+
+[node name="Text" type="Label" parent="VBox"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_oy0ry")
+theme_override_font_sizes/font_size = 12
+text = "NUTOS_APP_COLOR_SELECTION"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+max_lines_visible = 2

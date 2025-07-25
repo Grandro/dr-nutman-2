@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://p1br5wo0d1l3"]
 
-[ext_resource type="Shader" uid="uid://dmnfo5v6dnjhn" path="res://Global_Resources/Materials/2D/Shaders/Trans.gdshader" id="1_01swk"]
+[ext_resource type="Shader" uid="uid://dudcf02nj0xvb" path="res://Global_Resources/Materials/2D/Shaders/Trans.gdshader" id="1_01swk"]
 [ext_resource type="Texture2D" uid="uid://ceeypafnvuiw7" path="res://Global_Resources/Sprites/Overlays/Trans/Mask_1.png" id="2_uam47"]
 
 [resource]

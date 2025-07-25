@@ -1,0 +1,25 @@
+[gd_resource type="Resource" load_steps=10 format=3 uid="uid://b36f7481vo4y3"]
+
+[ext_resource type="Script" uid="uid://cgx4qljo5ouln" path="res://Global_Resources/Databases/Maps/Map_Data.gd" id="1"]
+[ext_resource type="Resource" uid="uid://bo4pfi3exuqrc" path="res://Global_Resources/Databases/Maps/3D/Broko_Town_1/Destinations/Broko_House_1.tres" id="1_uwq74"]
+[ext_resource type="Resource" uid="uid://cf0h863wbkkw4" path="res://Global_Resources/Databases/Maps/3D/Broko_Town_1/Destinations/Down_Left.tres" id="2_18ebe"]
+[ext_resource type="Resource" uid="uid://d36x4s5d1qpw6" path="res://Global_Resources/Databases/Maps/3D/Broko_Town_1/Destinations/Dr_Nutman_House.tres" id="3_deux1"]
+[ext_resource type="Resource" uid="uid://dh815icoo50wi" path="res://Global_Resources/Databases/Maps/3D/Broko_Town_1/Destinations/Broko_House_2.tres" id="4_xwqvb"]
+[ext_resource type="Resource" uid="uid://tbpldr5u30s5" path="res://Global_Resources/Databases/Maps/3D/Broko_Town_1/Destinations/Broko_House_3.tres" id="5_6kh7t"]
+[ext_resource type="Resource" uid="uid://s57wlkefntsr" path="res://Global_Resources/Databases/Maps/3D/Broko_Town_1/Destinations/Buffin_House_1.tres" id="6_wi22g"]
+[ext_resource type="Resource" uid="uid://cmr6lhsitwfxv" path="res://Global_Resources/Databases/Maps/3D/Broko_Town_1/Destinations/Buffin_House_2.tres" id="7_tpnmn"]
+[ext_resource type="Resource" uid="uid://d3bsqxhmtyj05" path="res://Global_Resources/Databases/Maps/3D/Broko_Town_1/Destinations/Buffin_House_3.tres" id="8_0gx5q"]
+
+[resource]
+script = ExtResource("1")
+_e_path = "res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Broko_Town_1.tscn"
+_e_destinations = {
+"Broko_House_1": ExtResource("1_uwq74"),
+"Broko_House_2": ExtResource("4_xwqvb"),
+"Broko_House_3": ExtResource("5_6kh7t"),
+"Buffin_House_1": ExtResource("6_wi22g"),
+"Buffin_House_2": ExtResource("7_tpnmn"),
+"Buffin_House_3": ExtResource("8_0gx5q"),
+"Down_Left": ExtResource("2_18ebe"),
+"Dr_Nutman_House": ExtResource("3_deux1")
+}

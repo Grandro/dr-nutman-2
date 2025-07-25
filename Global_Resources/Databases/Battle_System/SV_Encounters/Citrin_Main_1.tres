@@ -1,0 +1,7 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dogby7riyo8v1"]
+
+[ext_resource type="Script" uid="uid://cn2wadtidvilj" path="res://Global_Resources/Databases/Battle_System/SV_Encounters/SV_Encounter_Data.gd" id="1_4fdhl"]
+
+[resource]
+script = ExtResource("1_4fdhl")
+_e_path = "res://Global_Scenes/Battle_System/Battle_SV/Encounters/Citrin_Main_1.tscn"

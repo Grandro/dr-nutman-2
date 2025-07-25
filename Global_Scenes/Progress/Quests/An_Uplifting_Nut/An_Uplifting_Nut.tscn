@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://btp5pnsg34wnv"]
+
+[ext_resource type="PackedScene" uid="uid://dw83gpfjqfylp" path="res://Global_Scenes/Progress/Quests/Quest_Base.tscn" id="1_2cocq"]
+[ext_resource type="PackedScene" uid="uid://dacuhid51qn5d" path="res://Global_Scenes/Progress/Quests/An_Uplifting_Nut/Objectives/Crack_Nuts.tscn" id="2_c871y"]
+[ext_resource type="PackedScene" uid="uid://0bubr3pxi52c" path="res://Global_Scenes/Progress/Quests/An_Uplifting_Nut/Objectives/Lift_Squirrels.tscn" id="3_07va3"]
+
+[node name="An_Uplifting_Nut" instance=ExtResource("1_2cocq")]
+
+[node name="Crack_Nuts" parent="Objectives" index="0" instance=ExtResource("2_c871y")]
+
+[node name="Lift_Squirrels" parent="Objectives" index="1" instance=ExtResource("3_07va3")]

@@ -31,6 +31,8 @@ func open_(p_pm_key, p_args):
 	
 	_update_item_amounts.call_deferred(p_args["Equipables"])
 	
+	_tutato_explain()
+	
 	open()
 
 func _close():
@@ -57,6 +59,21 @@ func _drop_item_revert(p_item_key):
 	var group = _a_inventory.get_curr_group()
 	match _a_item_drag_type:
 		"Slot": _a_item_drag_instance.insert_(p_item_key, _a_pm_key, group, true)
+
+func _tutato_explain():
+	var progress_si = Global.get_singleton(self, "Progress")
+	var show_tutato_explain = Global_Data.get_options_gameplay_show_tutato_explain()
+	var explain_party = progress_si.call_object("Tutato", "get_explain_party")
+	if show_tutato_explain && explain_party:
+		var cutscene_system_si = Global.get_singleton(self, "Cutscene_System")
+		var key = "Tutato_Explain"
+		var entry_key = "Main_Menu_Party"
+		cutscene_system_si.cutscene(key, entry_key, "Main", "Global")
+		cutscene_system_si.set_cutscene_completed_cb(key, entry_key, _CB_cutscene_completed)
+		cutscene_system_si.set_cutscene_process_mode(key, entry_key, ProcessMode.PROCESS_MODE_ALWAYS)
+		progress_si.call_object("Tutato", "set_explain_party", [false])
+		
+		_a_Back.set_select_diabled(true)
 
 func _can_equip_slot_drop():
 	var valid = false
@@ -89,3 +106,10 @@ func _on_Inventory_group_changed(p_group):
 		_a_inventory.close_info_equipped()
 	else:
 		_a_inventory.display_info_equipped(item_key)
+
+func _CB_cutscene_completed(_p_process_type, p_key, p_entry_key):
+	match p_key:
+		"Tutato_Explain":
+			match p_entry_key:
+				"Main_Menu_Party":
+					_a_Back.set_select_diabled(false)

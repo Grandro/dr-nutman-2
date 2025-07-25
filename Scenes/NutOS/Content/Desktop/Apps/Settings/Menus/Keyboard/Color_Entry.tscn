@@ -1,0 +1,66 @@
+[gd_scene load_steps=9 format=3 uid="uid://dugb61kqlth16"]
+
+[ext_resource type="Texture2D" uid="uid://bsq72p2inh7ef" path="res://Scenes/NutOS/Content/Desktop/Apps/Settings/Menus/Keyboard/Sprites/Color_Border.png" id="1"]
+[ext_resource type="Script" uid="uid://v8hnexgb4kp4" path="res://Scenes/NutOS/Content/Desktop/Apps/Settings/Menus/Keyboard/Scripts/Color_Entry.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://dc3hbxm77uphg" path="res://Scenes/NutOS/Content/Desktop/Apps/Settings/Menus/Keyboard/Sprites/Fav.png" id="3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4ddvd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kyghj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k3gb3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_30vq3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_casnf"]
+
+[node name="Color_Entry" type="MarginContainer"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(36, 36)
+offset_right = 36.0
+offset_bottom = 36.0
+mouse_filter = 2
+script = ExtResource("2")
+
+[node name="Color" type="ColorRect" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+color = Color(0.329412, 0.768627, 0.32549, 1)
+
+[node name="Select" type="Button" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4ddvd")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_kyghj")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_k3gb3")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_30vq3")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_casnf")
+
+[node name="Border" type="TextureRect" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+texture = ExtResource("1")
+
+[node name="Fav" type="CenterContainer" parent="."]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+mouse_filter = 2
+
+[node name="Image" type="TextureRect" parent="Fav"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+mouse_filter = 2
+texture = ExtResource("3")
+stretch_mode = 5

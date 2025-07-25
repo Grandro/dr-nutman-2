@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://bpgx3mwps474c"]
+
+[ext_resource type="PackedScene" uid="uid://dbxigq53qnnvo" path="res://Global_Resources/Mapping/3D/Plane/Plane_Tile.tscn" id="1_405mm"]
+[ext_resource type="Texture2D" uid="uid://uaw2cnuromyt" path="res://Global_Resources/Mapping/Sprites/Below/Broko_Town/Exterior/Grass_1/Center_Center.png" id="2_4t50b"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d0w65"]
+resource_local_to_scene = true
+transparency = 1
+albedo_texture = ExtResource("2_4t50b")
+uv1_offset = Vector3(0, 0, 1)
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_dyqjt"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_d0w65")
+size = Vector2(1, 1)
+
+[node name="Grass_1" instance=ExtResource("1_405mm")]
+mesh = SubResource("PlaneMesh_dyqjt")

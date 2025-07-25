@@ -1,0 +1,69 @@
+[gd_scene load_steps=28 format=3 uid="uid://cpnjyss62105"]
+
+[ext_resource type="PackedScene" uid="uid://bur1664yc8pn8" path="res://Scenes/Equipable/3D/Equipable.tscn" id="1"]
+[ext_resource type="Texture2D" uid="uid://ddw4g6qg0f62p" path="res://Global_Resources/Sprites/Objects/Brokos/Base/Equipables/Head/Party_Hats/1_Spritesheet.png" id="2"]
+[ext_resource type="Animation" uid="uid://b7h6oxvg1ntgd" path="res://Scenes/Equipable/3D/Objects/Brokos/Base/Head/Party_Hats/Anims/Idle_Down.tres" id="3_cqlup"]
+[ext_resource type="Animation" uid="uid://dbj5e40tcpnhx" path="res://Scenes/Equipable/3D/Objects/Brokos/Base/Head/Party_Hats/Anims/Idle_Left.tres" id="4_pirs8"]
+[ext_resource type="Animation" uid="uid://bjc3stojmonqx" path="res://Scenes/Equipable/3D/Objects/Brokos/Base/Head/Party_Hats/Anims/Idle_Right.tres" id="5_dapv2"]
+[ext_resource type="Animation" uid="uid://ca15vxgakbdmg" path="res://Scenes/Equipable/3D/Objects/Brokos/Base/Head/Party_Hats/Anims/Idle_Up.tres" id="6_r07ei"]
+[ext_resource type="Animation" uid="uid://dqw37bwlf4oyy" path="res://Scenes/Equipable/3D/Objects/Brokos/Base/Head/Party_Hats/Anims/Jump_Down.tres" id="7_xvuhy"]
+[ext_resource type="Animation" uid="uid://bhfopgit4b2k6" path="res://Scenes/Equipable/3D/Objects/Brokos/Base/Head/Party_Hats/Anims/Jump_Left.tres" id="8_wtked"]
+[ext_resource type="Animation" uid="uid://b5wjcs8mti5do" path="res://Scenes/Equipable/3D/Objects/Brokos/Base/Head/Party_Hats/Anims/Jump_Right.tres" id="9_d1m8u"]
+[ext_resource type="Animation" uid="uid://bfucej423bc86" path="res://Scenes/Equipable/3D/Objects/Brokos/Base/Head/Party_Hats/Anims/Jump_Up.tres" id="10_ks1bf"]
+[ext_resource type="Animation" uid="uid://cv6iy4ysv7713" path="res://Scenes/Equipable/3D/Objects/Brokos/Base/Head/Party_Hats/Anims/Place_Down.tres" id="11_xs74e"]
+[ext_resource type="Animation" uid="uid://pss8wc41pusf" path="res://Scenes/Equipable/3D/Objects/Brokos/Base/Head/Party_Hats/Anims/Place_Left.tres" id="12_j5oqf"]
+[ext_resource type="Animation" uid="uid://bsbu5fs5cs8e1" path="res://Scenes/Equipable/3D/Objects/Brokos/Base/Head/Party_Hats/Anims/Place_Right.tres" id="13_xxo35"]
+[ext_resource type="Animation" uid="uid://dsgwj1pouf8v2" path="res://Scenes/Equipable/3D/Objects/Brokos/Base/Head/Party_Hats/Anims/Place_Up.tres" id="14_5jrn4"]
+[ext_resource type="Animation" uid="uid://mu1dufebi8xr" path="res://Scenes/Equipable/3D/Objects/Brokos/Base/Head/Party_Hats/Anims/Stop_Down.tres" id="15_3bvgn"]
+[ext_resource type="Animation" uid="uid://ilh7cdjr40ql" path="res://Scenes/Equipable/3D/Objects/Brokos/Base/Head/Party_Hats/Anims/Stop_Left.tres" id="16_faxsy"]
+[ext_resource type="Animation" uid="uid://dxmg0tg5qwhqb" path="res://Scenes/Equipable/3D/Objects/Brokos/Base/Head/Party_Hats/Anims/Stop_Right.tres" id="17_et0l5"]
+[ext_resource type="Animation" uid="uid://c1gdsd6mt2nud" path="res://Scenes/Equipable/3D/Objects/Brokos/Base/Head/Party_Hats/Anims/Stop_Up.tres" id="18_4sos8"]
+[ext_resource type="Animation" uid="uid://i4kcs7itg2o8" path="res://Scenes/Equipable/3D/Objects/Brokos/Base/Head/Party_Hats/Anims/Think_Down.tres" id="19_qg32o"]
+[ext_resource type="Animation" uid="uid://bhjwkes31hvtx" path="res://Scenes/Equipable/3D/Objects/Brokos/Base/Head/Party_Hats/Anims/Think_Left.tres" id="20_0ltqd"]
+[ext_resource type="Animation" uid="uid://0m5liyytb462" path="res://Scenes/Equipable/3D/Objects/Brokos/Base/Head/Party_Hats/Anims/Think_Right.tres" id="21_samwt"]
+[ext_resource type="Animation" uid="uid://rj8bf2ar4i38" path="res://Scenes/Equipable/3D/Objects/Brokos/Base/Head/Party_Hats/Anims/Think_Up.tres" id="22_lc40f"]
+[ext_resource type="Animation" uid="uid://bn0pwk0b5hkpe" path="res://Scenes/Equipable/3D/Objects/Brokos/Base/Head/Party_Hats/Anims/Walk_Down.tres" id="23_1cvh6"]
+[ext_resource type="Animation" uid="uid://c51o76wuf084b" path="res://Scenes/Equipable/3D/Objects/Brokos/Base/Head/Party_Hats/Anims/Walk_Left.tres" id="24_g0g6w"]
+[ext_resource type="Animation" uid="uid://ekkr0pqnaa5q" path="res://Scenes/Equipable/3D/Objects/Brokos/Base/Head/Party_Hats/Anims/Walk_Right.tres" id="25_4lvxq"]
+[ext_resource type="Animation" uid="uid://dhrhqoaia8k1o" path="res://Scenes/Equipable/3D/Objects/Brokos/Base/Head/Party_Hats/Anims/Walk_Up.tres" id="26_yjc0k"]
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_snt0e"]
+_data = {
+&"Idle_Down": ExtResource("3_cqlup"),
+&"Idle_Left": ExtResource("4_pirs8"),
+&"Idle_Right": ExtResource("5_dapv2"),
+&"Idle_Up": ExtResource("6_r07ei"),
+&"Jump_Down": ExtResource("7_xvuhy"),
+&"Jump_Left": ExtResource("8_wtked"),
+&"Jump_Right": ExtResource("9_d1m8u"),
+&"Jump_Up": ExtResource("10_ks1bf"),
+&"Place_Down": ExtResource("11_xs74e"),
+&"Place_Left": ExtResource("12_j5oqf"),
+&"Place_Right": ExtResource("13_xxo35"),
+&"Place_Up": ExtResource("14_5jrn4"),
+&"Stop_Down": ExtResource("15_3bvgn"),
+&"Stop_Left": ExtResource("16_faxsy"),
+&"Stop_Right": ExtResource("17_et0l5"),
+&"Stop_Up": ExtResource("18_4sos8"),
+&"Think_Down": ExtResource("19_qg32o"),
+&"Think_Left": ExtResource("20_0ltqd"),
+&"Think_Right": ExtResource("21_samwt"),
+&"Think_Up": ExtResource("22_lc40f"),
+&"Walk_Down": ExtResource("23_1cvh6"),
+&"Walk_Left": ExtResource("24_g0g6w"),
+&"Walk_Right": ExtResource("25_4lvxq"),
+&"Walk_Up": ExtResource("26_yjc0k")
+}
+
+[node name="Party_Hat" instance=ExtResource("1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.26, 0.01)
+layers = 4
+texture = ExtResource("2")
+hframes = 5
+vframes = 1
+frame = 0
+
+[node name="Anims" parent="." index="0"]
+libraries = {
+"": SubResource("AnimationLibrary_snt0e")
+}

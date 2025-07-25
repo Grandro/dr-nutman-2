@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dbpu5bl4b3mv7"]
+
+[ext_resource type="Script" uid="uid://ckoiqo71b2wtu" path="res://Global_Resources/Mapping/3D/Below/Broko_Town/Interior/Power_Cable_1/Scripts/Power_Cable.gd" id="1_avkdi"]
+
+[node name="Power_Cable_1" type="Node3D" groups=["Object"]]
+script = ExtResource("1_avkdi")
+_e_area_per_s = 0.01
+
+[node name="Parts" type="Node3D" parent="."]

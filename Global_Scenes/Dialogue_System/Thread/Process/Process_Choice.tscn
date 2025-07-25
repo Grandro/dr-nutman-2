@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://crohm4h37hd7v"]
+[gd_scene load_steps=10 format=3 uid="uid://crohm4h37hd7v"]
 
 [ext_resource type="PackedScene" uid="uid://duj1q7mhu6mlg" path="res://Global_Scenes/Dialogue_System/Thread/Process/Process_Base.tscn" id="1"]
 [ext_resource type="Script" uid="uid://dy2u5lnmnryt5" path="res://Global_Scenes/Dialogue_System/Thread/Process/Scripts/Process_Choice.gd" id="2"]
+[ext_resource type="Theme" uid="uid://budcfl16xj2tt" path="res://Global_Resources/Themes/Default/Default.tres" id="3_vfs4v"]
 [ext_resource type="Texture2D" uid="uid://cc5yoyg4s0ec4" path="res://Global_Scenes/Dialogue_System/Sprites/Text_Box.png" id="6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ylgi"]
@@ -85,6 +86,7 @@ grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(640, 360)
 mouse_filter = 2
+theme = ExtResource("3_vfs4v")
 
 [node name="Choice" type="NinePatchRect" parent="Control" index="0"]
 light_mask = 8

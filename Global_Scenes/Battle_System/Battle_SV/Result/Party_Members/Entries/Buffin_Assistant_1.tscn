@@ -1,0 +1,70 @@
+[gd_scene load_steps=8 format=3 uid="uid://crf4fgr31vb6f"]
+
+[ext_resource type="PackedScene" uid="uid://bsanced2ffcm2" path="res://Global_Scenes/Battle_System/Battle_SV/Result/Party_Members/Entries/Entry_Base.tscn" id="1_g883g"]
+[ext_resource type="PackedScene" uid="uid://cixboakksfinr" path="res://Scenes/Characters/Buffin_Assistant_1/Buffin_Assistant_1.tscn" id="2_jrs53"]
+[ext_resource type="Texture2D" uid="uid://duuniytp741cp" path="res://Global_Resources/Sprites/Progress_Bars/3_Spritesheet.png" id="3_sftv6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kboq7"]
+content_margin_left = 16.0
+content_margin_top = 16.0
+content_margin_right = 16.0
+content_margin_bottom = 16.0
+bg_color = Color(0.64, 0.50944, 0.2048, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_s2lrp"]
+viewport_path = NodePath("Panel/VBox/Character/VP")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_shgiy"]
+resource_local_to_scene = true
+atlas = SubResource("ViewportTexture_s2lrp")
+region = Rect2(552, 192, 176, 184)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2cv71"]
+texture = ExtResource("3_sftv6")
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="Buffin_Assistant_1" instance=ExtResource("1_g883g")]
+offset_right = 273.0
+
+[node name="Name" parent="." index="0"]
+text = "NAME_ASSISTANT"
+
+[node name="Panel" parent="." index="1"]
+theme_override_styles/panel = SubResource("StyleBoxFlat_kboq7")
+
+[node name="VBox" parent="Panel" index="0"]
+size_flags_vertical = 1
+
+[node name="Lvl" parent="Panel/VBox" index="0"]
+size_flags_vertical = 3
+
+[node name="Desc" parent="Panel/VBox/Lvl" index="0"]
+size_flags_vertical = 0
+
+[node name="Value" parent="Panel/VBox/Lvl" index="1"]
+size_flags_vertical = 0
+
+[node name="Display" parent="Panel/VBox/Character" index="0"]
+texture = SubResource("AtlasTexture_shgiy")
+
+[node name="Buffin_Assistant_1" parent="Panel/VBox/Character/VP" index="0" instance=ExtResource("2_jrs53")]
+
+[node name="Plus" parent="Panel/VBox/Exp/Text/HBox" index="0"]
+theme_override_colors/font_color = Color(0.639216, 0.509804, 0.203922, 1)
+
+[node name="Value" parent="Panel/VBox/Exp/Text/HBox" index="1"]
+theme_override_colors/font_color = Color(0.639216, 0.509804, 0.203922, 1)
+
+[node name="Progress" parent="Panel/VBox/Exp" index="1"]
+theme_override_styles/fill = SubResource("StyleBoxTexture_2cv71")
+
+[editable path="Panel/VBox/Character/VP/Buffin_Assistant_1"]

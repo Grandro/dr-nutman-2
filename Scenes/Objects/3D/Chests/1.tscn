@@ -1,0 +1,87 @@
+[gd_scene load_steps=11 format=3 uid="uid://w0par4w2lu7x"]
+
+[ext_resource type="PackedScene" uid="uid://v4e27aml1vi3" path="res://Scenes/Objects/3D/Chests/Base.tscn" id="1_pxm60"]
+[ext_resource type="PackedScene" uid="uid://cfdwl620axohy" path="res://Scenes/Object/Comps/3D/Audio.tscn" id="2_b58ny"]
+[ext_resource type="PackedScene" uid="uid://fnej1f64wfc2" path="res://Scenes/Object/Comps/3D/Nav_Obstacle.tscn" id="2_umq6o"]
+[ext_resource type="PackedScene" uid="uid://de2jy2ixhp2mw" path="res://Scenes/Object/Comps/Save.tscn" id="3_gfkha"]
+[ext_resource type="AudioStream" uid="uid://qqqo2o6ux8xb" path="res://Global_Resources/Audio/SFX/Chest_Open_1.wav" id="3_ibfjk"]
+[ext_resource type="PackedScene" uid="uid://dllj5lbxwqy17" path="res://Scenes/Pausable_Audio/3D/Pausable_Audio.tscn" id="3_mxblm"]
+[ext_resource type="PackedScene" uid="uid://drpp26gth4snn" path="res://Scenes/Object/Comps/Reference.tscn" id="4_woh7m"]
+
+[sub_resource type="Animation" id="Animation_28hcp"]
+resource_name = "Open"
+length = 0.8
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Display:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Audio/Open")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_ibfjk")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
+
+[sub_resource type="Animation" id="Animation_le68f"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Display:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3ruqm"]
+_data = {
+&"Open": SubResource("Animation_28hcp"),
+&"RESET": SubResource("Animation_le68f")
+}
+
+[node name="Chest_1" instance=ExtResource("1_pxm60")]
+
+[node name="Audio" parent="." index="4" instance=ExtResource("2_b58ny")]
+
+[node name="Open" parent="Audio" index="0" instance=ExtResource("3_mxblm")]
+bus = &"SFX"
+
+[node name="Nav_Obstacle" parent="." index="5" groups=["NavMesh_Main"] instance=ExtResource("2_umq6o")]
+vertices = PackedVector3Array(0.6, 0, -0.5, -0.6, 0, -0.5, -0.6, 0, 0.6, 0.6, 0, 0.6)
+affect_navigation_mesh = true
+avoidance_enabled = false
+
+[node name="Anims" parent="." index="6"]
+libraries = {
+&"": SubResource("AnimationLibrary_3ruqm")
+}
+
+[node name="Save" parent="." index="7" instance=ExtResource("3_gfkha")]
+
+[node name="Reference" parent="." index="8" instance=ExtResource("4_woh7m")]
+
+[editable path="Interactions"]
+[editable path="Interactions/1"]
+[editable path="Popup"]

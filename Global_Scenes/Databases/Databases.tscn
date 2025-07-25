@@ -1,33 +1,65 @@
-[gd_scene load_steps=21 format=3 uid="uid://ctwo1tyq87pp6"]
+[gd_scene load_steps=61 format=3 uid="uid://ctwo1tyq87pp6"]
 
 [ext_resource type="Script" uid="uid://b0vn6f1426n8k" path="res://Global_Scenes/Databases/Scripts/Databases.gd" id="1"]
+[ext_resource type="Resource" uid="uid://i73al5vd2yhx" path="res://Global_Resources/Databases/Maps/3D/Doctor_Dream_1/Doctor_Dream_1.tres" id="2"]
 [ext_resource type="Resource" uid="uid://cdsogy3mi43o" path="res://Global_Resources/Databases/Keyboard_Layouts/Dvorak.tres" id="3"]
+[ext_resource type="Resource" uid="uid://c70vwbp3nmphm" path="res://Global_Resources/Databases/Battle_System/Enemies/Citrin/Citrin.tres" id="3_fwdp6"]
+[ext_resource type="Resource" uid="uid://dj0go6sih8qt8" path="res://Global_Resources/Databases/Maps/3D/Dr_Nutman_Home_1/Dr_Nutman_Home_1.tres" id="4"]
+[ext_resource type="Resource" uid="uid://dtn88be3emgww" path="res://Global_Resources/Databases/Items/General/Main/Cookie.tres" id="5"]
+[ext_resource type="Resource" uid="uid://r4ypmhfmxla6" path="res://Global_Resources/Databases/Battle_System/Enemies/Sick_Apprentice_1/Sick_Apprentice_1.tres" id="6"]
 [ext_resource type="Resource" uid="uid://bq1glosbfgx77" path="res://Global_Resources/Databases/Keyboard_Layouts/AZERTY.tres" id="7"]
 [ext_resource type="Resource" uid="uid://nswdca58b3o3" path="res://Global_Resources/Databases/Keyboard_Layouts/Colemak.tres" id="8"]
+[ext_resource type="Resource" uid="uid://borwyqlk7ubsf" path="res://Global_Resources/Databases/Items/Key/Main/Balloon_Dark_Blue.tres" id="9_v8ckt"]
 [ext_resource type="Resource" uid="uid://4dncx81ar5qi" path="res://Global_Resources/Databases/Keyboard_Layouts/QWERTY.tres" id="11"]
+[ext_resource type="Resource" uid="uid://dmlwlmjiyja77" path="res://Global_Resources/Databases/Items/Key/Main/Balloon_Green.tres" id="11_p26lr"]
+[ext_resource type="Resource" uid="uid://d1rx1tyflhekw" path="res://Global_Resources/Databases/Items/Key/Main/Balloon_Light_Blue.tres" id="12_5s1na"]
+[ext_resource type="Resource" uid="uid://d3kisxesd85dt" path="res://Global_Resources/Databases/Items/Key/Main/Amethyst.tres" id="13"]
+[ext_resource type="Resource" uid="uid://bvwgv07y4d13y" path="res://Global_Resources/Databases/Items/Key/Main/Balloon_Orange.tres" id="13_ryb2c"]
 [ext_resource type="Resource" uid="uid://d1ombcialff7i" path="res://Global_Resources/Databases/Keyboard_Layouts/QWERTZ.tres" id="14"]
+[ext_resource type="Resource" uid="uid://dvydj8144vi13" path="res://Global_Resources/Databases/Items/Key/Main/Balloon_Pink.tres" id="14_a2uy7"]
+[ext_resource type="Resource" uid="uid://b5qq7h4w1s3j8" path="res://Global_Resources/Databases/Battle_System/Party_Members/Buffin_Assistant_1/Buffin_Assistant_1.tres" id="15"]
+[ext_resource type="Resource" uid="uid://cholaengfqiee" path="res://Global_Resources/Databases/Items/Key/Main/Balloon_Purple.tres" id="15_nqtfu"]
+[ext_resource type="Resource" uid="uid://dfdhojrxov6u6" path="res://Global_Resources/Databases/Battle_System/Party_Members/Dr_Nutman/Dr_Nutman.tres" id="16"]
+[ext_resource type="Resource" uid="uid://cbee7mlvbyxr0" path="res://Global_Resources/Databases/Items/Key/Main/Balloon_Red.tres" id="16_ysnyp"]
+[ext_resource type="Resource" uid="uid://7b5pqy2lua5h" path="res://Global_Resources/Databases/Battle_System/SV_Encounters/SP_Sick_Apprentice_1.tres" id="17"]
+[ext_resource type="Resource" uid="uid://dubekgmtca5p3" path="res://Global_Resources/Databases/Items/General/Main/Citrin_Shell.tres" id="17_ap1x8"]
+[ext_resource type="Resource" uid="uid://o05vnkmxfbau" path="res://Global_Resources/Databases/Items/Equipable/Weapon/Disposable_Glove/Disposable_Glove.tres" id="17_esjlu"]
+[ext_resource type="Resource" uid="uid://b36f7481vo4y3" path="res://Global_Resources/Databases/Maps/3D/Broko_Town_1/Broko_Town_1.tres" id="18"]
+[ext_resource type="Resource" uid="uid://dmkvhq5ft4at4" path="res://Global_Resources/Databases/Items/Equipable/Shield/Citrin_Shield/Citrin_Shield.tres" id="18_0gs2q"]
+[ext_resource type="Resource" uid="uid://bvopw5cgu07si" path="res://Global_Resources/Databases/Items/Key/Main/Disk_Color_Selection.tres" id="19_irogi"]
 [ext_resource type="Resource" uid="uid://feuegl0w0af3" path="res://Global_Resources/Databases/Maps/3D/Debug_3D/Debug_3D.tres" id="22"]
 [ext_resource type="Resource" uid="uid://cuglsp1gpsi7p" path="res://Global_Resources/Databases/Main_Menu/Sub_Menus/Journal.tres" id="25"]
 [ext_resource type="Resource" uid="uid://cix2dc0yh34lj" path="res://Global_Resources/Databases/Main_Menu/Sub_Menus/Options.tres" id="26"]
 [ext_resource type="Resource" uid="uid://dywjv5vqipjgy" path="res://Global_Resources/Databases/Main_Menu/Sub_Menus/Inventory.tres" id="27"]
 [ext_resource type="Resource" uid="uid://bamxvlht07gd5" path="res://Global_Resources/Databases/Main_Menu/Sub_Menus/Journal_Write.tres" id="28"]
 [ext_resource type="Resource" uid="uid://bhetib7eiaiap" path="res://Global_Resources/Databases/Main_Menu/Sub_Menus/Journal_Read.tres" id="29"]
+[ext_resource type="Resource" uid="uid://soe543nu8fdu" path="res://Global_Resources/Databases/Quests/Broko_Town/Main/Great_Broko_Town_Festival/Great_Broko_Town_Festival.tres" id="29_dgflp"]
 [ext_resource type="Resource" uid="uid://cch0tn24ywpgi" path="res://Global_Resources/Databases/Main_Menu/Sub_Menus/Party.tres" id="30"]
+[ext_resource type="Resource" uid="uid://byeid03r2knxj" path="res://Global_Resources/Databases/Quests/Broko_Town/Main/A_Child_For_A_Balloon/A_Child_For_A_Balloon.tres" id="30_hw8d3"]
+[ext_resource type="Resource" uid="uid://d3csd847y8m6o" path="res://Global_Resources/Databases/Items/Equipable/Head/Party_Hat_1/Party_Hat_1.tres" id="31"]
 [ext_resource type="Resource" uid="uid://ybkmuxkeepiw" path="res://Global_Resources/Databases/Main_Menu/Sub_Menus/Quests.tres" id="32"]
+[ext_resource type="Resource" uid="uid://11yqdq2mebuy" path="res://Global_Resources/Databases/Items/General/Main/Handful_Peanuts_Cracked.tres" id="33"]
+[ext_resource type="Resource" uid="uid://3i4ruhpul0ne" path="res://Global_Resources/Databases/Quests/Broko_Town/Main/Right_On_The_Nut/Right_On_The_Nut.tres" id="33_01ydk"]
+[ext_resource type="Resource" uid="uid://dogby7riyo8v1" path="res://Global_Resources/Databases/Battle_System/SV_Encounters/Citrin_Main_1.tres" id="33_anbds"]
+[ext_resource type="Resource" uid="uid://nph6dbvmj8yu" path="res://Global_Resources/Databases/Items/General/Main/Handful_Peanuts_Uncracked.tres" id="34"]
+[ext_resource type="Resource" uid="uid://sei28c0c5ei0" path="res://Global_Resources/Databases/Maps/3D/Broko_House_1/Broko_House_1.tres" id="35_pm13d"]
+[ext_resource type="Resource" uid="uid://cew68cvh1ml07" path="res://Global_Resources/Databases/Maps/3D/Broko_Forest_1/Broko_Forest_1.tres" id="36"]
 [ext_resource type="Resource" uid="uid://ch46el64hngho" path="res://Global_Resources/Databases/Maps/3D/Game_Over/Game_Over.tres" id="36_10vt8"]
+[ext_resource type="Resource" uid="uid://dypeaumd8uhkf" path="res://Global_Resources/Databases/Maps/3D/Buffin_House_3/Buffin_House_3.tres" id="38_0oiip"]
+[ext_resource type="Resource" uid="uid://bqm3d2v6i1ipx" path="res://Global_Resources/Databases/Maps/3D/Broko_House_2/Broko_House_2.tres" id="39_l5kqu"]
+[ext_resource type="Resource" uid="uid://cevvdyuo5krud" path="res://Global_Resources/Databases/Maps/3D/Buffin_House_1/Buffin_House_1.tres" id="40_idtyp"]
 [ext_resource type="Resource" uid="uid://xaxrro82k2dj" path="res://Global_Resources/Databases/Maps/2D/Debug_2D/Debug_2D.tres" id="40_wvujn"]
-
-[sub_resource type="Resource" id="Resource_skkow"]
-metadata/__load_path__ = "res://Global_Resources/Databases/Battle_System/Actions/Commands/Attack_ATK.tres"
-
-[sub_resource type="Resource" id="Resource_1l3sv"]
-metadata/__load_path__ = "res://Global_Resources/Databases/Battle_System/Actions/Commands/Defense_DEF.tres"
-
-[sub_resource type="Resource" id="Resource_lp8tp"]
-metadata/__load_path__ = "res://Global_Resources/Databases/Battle_System/Actions/Commands/Flee.tres"
-
-[sub_resource type="Resource" id="Resource_tfcd2"]
-metadata/__load_path__ = "res://Global_Resources/Databases/Battle_System/Actions/Commands/Special.tres"
+[ext_resource type="Resource" uid="uid://28u6cgjg4ue8" path="res://Global_Resources/Databases/Maps/3D/Buffin_House_2/Buffin_House_2.tres" id="41_a5w27"]
+[ext_resource type="Resource" uid="uid://xodx3blsd6kx" path="res://Global_Resources/Databases/Maps/3D/Broko_House_3/Broko_House_3.tres" id="42_gqu5g"]
+[ext_resource type="Resource" uid="uid://2f1nifdhykn7" path="res://Global_Resources/Databases/Quests/Broko_Town/Main/An_Uplifting_Nut/An_Uplifting_Nut.tres" id="44_6vn4u"]
+[ext_resource type="Resource" uid="uid://biqm2o5t7yvnt" path="res://Global_Resources/Databases/Battle_System/Actions/Commands/Attack_ATK.tres" id="44_8ux57"]
+[ext_resource type="Resource" uid="uid://bujvq36ubvad2" path="res://Global_Resources/Databases/Battle_System/Actions/Commands/Defense_DEF.tres" id="45_3r1mj"]
+[ext_resource type="Resource" uid="uid://bup3rws125bkp" path="res://Global_Resources/Databases/Battle_System/Actions/Commands/Flee.tres" id="46_hidgb"]
+[ext_resource type="Resource" uid="uid://brf1mu6d4ee5d" path="res://Global_Resources/Databases/Battle_System/Actions/Commands/Help.tres" id="47_6sosu"]
+[ext_resource type="Resource" uid="uid://cj566jai4eeyb" path="res://Global_Resources/Databases/Battle_System/Actions/Commands/Special.tres" id="48_52hep"]
+[ext_resource type="Resource" uid="uid://bbb3q07jktrjn" path="res://Global_Resources/Databases/Battle_System/Status/Empowered_Attack/Empowered_Attack.tres" id="54_axkks"]
+[ext_resource type="Resource" uid="uid://c6c84gh6e2k4x" path="res://Global_Resources/Databases/Battle_System/Actions/Specials/Citrin_Ball_Spew.tres" id="55_xg21b"]
+[ext_resource type="Resource" uid="uid://cv467pxunohwk" path="res://Global_Resources/Databases/Battle_System/Actions/Specials/Nut_Munch_Punch.tres" id="56_lj2og"]
 
 [node name="Databases" type="Node"]
 script = ExtResource("1")
@@ -37,10 +69,30 @@ _e_data = {
 "Path": "res://Data/Debug.dat"
 },
 "Enemies": {
-"Data": {}
+"Data": {
+"Citrin": ExtResource("3_fwdp6"),
+"Sick_Apprentice_1": ExtResource("6")
+}
 },
 "Items": {
-"Data": {}
+"Data": {
+"Amethyst": ExtResource("13"),
+"Balloon_Dark_Blue": ExtResource("9_v8ckt"),
+"Balloon_Green": ExtResource("11_p26lr"),
+"Balloon_Light_Blue": ExtResource("12_5s1na"),
+"Balloon_Orange": ExtResource("13_ryb2c"),
+"Balloon_Pink": ExtResource("14_a2uy7"),
+"Balloon_Purple": ExtResource("15_nqtfu"),
+"Balloon_Red": ExtResource("16_ysnyp"),
+"Citrin_Shell": ExtResource("17_ap1x8"),
+"Citrin_Shield": ExtResource("18_0gs2q"),
+"Cookie": ExtResource("5"),
+"Disk_Color_Selection": ExtResource("19_irogi"),
+"Disposable_Glove": ExtResource("17_esjlu"),
+"Handful_Peanuts_Cracked": ExtResource("33"),
+"Handful_Peanuts_Uncracked": ExtResource("34"),
+"Party_Hat_1": ExtResource("31")
+}
 },
 "Keyboard_Layouts": {
 "Data": {
@@ -66,33 +118,60 @@ _e_data = {
 },
 "Maps": {
 "Data": {
+"Broko_Forest_1": ExtResource("36"),
+"Broko_House_1": ExtResource("35_pm13d"),
+"Broko_House_2": ExtResource("39_l5kqu"),
+"Broko_House_3": ExtResource("42_gqu5g"),
+"Broko_Town_1": ExtResource("18"),
+"Buffin_House_1": ExtResource("40_idtyp"),
+"Buffin_House_2": ExtResource("41_a5w27"),
+"Buffin_House_3": ExtResource("38_0oiip"),
 "Debug_2D": ExtResource("40_wvujn"),
 "Debug_3D": ExtResource("22"),
+"Doctor_Dream_1": ExtResource("2"),
+"Dr_Nutman_Home_1": ExtResource("4"),
 "Game_Over": ExtResource("36_10vt8")
 }
 },
 "Party_Members": {
-"Data": {}
+"Data": {
+"Buffin_Assistant_1": ExtResource("15"),
+"Dr_Nutman": ExtResource("16")
+}
 },
 "Quests": {
-"Data": {}
+"Data": {
+"A_Child_For_A_Balloon": ExtResource("30_hw8d3"),
+"An_Uplifting_Nut": ExtResource("44_6vn4u"),
+"Great_Broko_Town_Festival": ExtResource("29_dgflp"),
+"Right_On_The_Nut": ExtResource("33_01ydk")
+}
 },
 "SV_Actions": {
 "Data": {
 "Commands": {
-"Attack_ATK": SubResource("Resource_skkow"),
-"Defense_DEF": SubResource("Resource_1l3sv"),
-"Flee": SubResource("Resource_lp8tp"),
-"Special": SubResource("Resource_tfcd2")
+"Attack_ATK": ExtResource("44_8ux57"),
+"Defense_DEF": ExtResource("45_3r1mj"),
+"Flee": ExtResource("46_hidgb"),
+"Help": ExtResource("47_6sosu"),
+"Special": ExtResource("48_52hep")
 },
-"Specials": {}
+"Specials": {
+"Citrin_Ball_Spew": ExtResource("55_xg21b"),
+"Nut_Munch_Punch": ExtResource("56_lj2og")
+}
 }
 },
 "SV_Encounters": {
-"Data": {}
+"Data": {
+"Citrin_Main_1": ExtResource("33_anbds"),
+"SP_Sick_Apprentice_1": ExtResource("17")
+}
 },
 "Status": {
-"Data": {}
+"Data": {
+"Empowered_Attack": ExtResource("54_axkks")
+}
 },
 "Vox": {
 "Data": {}

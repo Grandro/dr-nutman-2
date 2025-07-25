@@ -1,0 +1,74 @@
+[gd_scene load_steps=15 format=3 uid="uid://cdkpwulxenjro"]
+
+[ext_resource type="Script" uid="uid://deh5pflwbops1" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Objects/Lamps/Scripts/1.gd" id="1_ekasl"]
+[ext_resource type="PackedScene" uid="uid://bblmb8yfchyxr" path="res://Scenes/Object/Comps/3D/Display.tscn" id="2_cnbv4"]
+[ext_resource type="Texture2D" uid="uid://dfqibjn7r5cpe" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Objects/Lamps/Sprites/1_Spritesheet.png" id="3_gt5ty"]
+[ext_resource type="PackedScene" uid="uid://dsp0njc065uev" path="res://Scenes/Object/Comps/3D/Collision_Shape.tscn" id="4_wbkod"]
+[ext_resource type="PackedScene" uid="uid://nr4813v0r2dg" path="res://Scenes/Object/Comps/3D/Interactions/Interactions.tscn" id="5_dld87"]
+[ext_resource type="PackedScene" uid="uid://cfdwl620axohy" path="res://Scenes/Object/Comps/3D/Audio.tscn" id="5_mk2sh"]
+[ext_resource type="PackedScene" uid="uid://dllj5lbxwqy17" path="res://Scenes/Pausable_Audio/3D/Pausable_Audio.tscn" id="6_2scdf"]
+[ext_resource type="AudioStream" uid="uid://diuaf0jy1844w" path="res://Global_Resources/Audio/SFX/Switches/Button_Small_1.wav" id="6_iu1nt"]
+[ext_resource type="PackedScene" uid="uid://omsbdulg45pv" path="res://Scenes/Object/Comps/3D/Popup.tscn" id="6_sb73u"]
+[ext_resource type="PackedScene" uid="uid://de2jy2ixhp2mw" path="res://Scenes/Object/Comps/Save.tscn" id="7_mr5bm"]
+[ext_resource type="PackedScene" uid="uid://fnej1f64wfc2" path="res://Scenes/Object/Comps/3D/Nav_Obstacle.tscn" id="9_f5qej"]
+[ext_resource type="PackedScene" uid="uid://drpp26gth4snn" path="res://Scenes/Object/Comps/Reference.tscn" id="10_jt5py"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cjfgy"]
+size = Vector3(0.75, 3, 0.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dq3ns"]
+size = Vector3(1.5, 0.3, 1.5)
+
+[node name="Lamp_1" type="StaticBody3D" groups=["Object"]]
+collision_layer = 8
+collision_mask = 8
+script = ExtResource("1_ekasl")
+
+[node name="Display" parent="." instance=ExtResource("2_cnbv4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.212, 1.24, 0)
+texture = ExtResource("3_gt5ty")
+
+[node name="Collision" parent="." instance=ExtResource("4_wbkod")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+shape = SubResource("BoxShape3D_cjfgy")
+
+[node name="Audio" parent="." instance=ExtResource("5_mk2sh")]
+
+[node name="Power_Switch" parent="Audio" instance=ExtResource("6_2scdf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+stream = ExtResource("6_iu1nt")
+bus = &"SFX"
+
+[node name="Interactions" parent="." instance=ExtResource("5_dld87")]
+
+[node name="1" parent="Interactions" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+_e_popup_pos = Vector3(0, 3, 0.01)
+
+[node name="Collision" parent="Interactions/1" index="0"]
+shape = SubResource("BoxShape3D_dq3ns")
+
+[node name="Popup" parent="." instance=ExtResource("6_sb73u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0.01)
+
+[node name="Light" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.53, 2.26, 0.01)
+layers = 4
+light_color = Color(1, 0.823529, 0.54902, 1)
+light_energy = 3.0
+shadow_enabled = true
+omni_range = 8.0
+
+[node name="Nav_Obstacle" parent="." groups=["NavMesh_Main"] instance=ExtResource("9_f5qej")]
+height = 2.5
+vertices = PackedVector3Array(0.5, 0, 0.3, 0.5, 0, -0.3, -0.5, 0, -0.3, -0.5, 0, 0.3)
+affect_navigation_mesh = true
+avoidance_enabled = false
+
+[node name="Save" parent="." instance=ExtResource("7_mr5bm")]
+
+[node name="Reference" parent="." instance=ExtResource("10_jt5py")]
+
+[editable path="Interactions"]
+[editable path="Interactions/1"]
+[editable path="Popup"]

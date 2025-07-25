@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dyfuiqqq4r4qm"]
+
+[ext_resource type="Script" uid="uid://ciliqhoe8jun5" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Dr_Nutman_Home_1/Objects/Setup/Scripts/Keys_LEDs.gd" id="1"]
+
+[node name="Keys_LEDs" type="Node3D"]
+script = ExtResource("1")

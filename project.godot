@@ -10,10 +10,12 @@ config_version=5
 
 [application]
 
-config/name="RPG Framework"
-config/version="1.0.0"
-run/main_scene="uid://dv7xgla30k3pa"
+config/name="Dr. Nutman"
+run/main_scene="res://Scenes/Title_Screen/Title_Screen.tscn"
+config/use_custom_user_dir=true
+config/custom_user_dir_name="Dr_Nutman"
 config/features=PackedStringArray("4.4")
+config/icon="res://Global_Resources/Sprites/Items/Amethyst.png"
 
 [autoload]
 
@@ -40,10 +42,17 @@ gdscript/warnings/return_value_discarded=false
 
 [display]
 
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/size/resizable=false
 window/subwindows/embed_subwindows=false
+window/stretch/mode="canvas_items"
+window/vsync/vsync_mode=0
+mouse_cursor/custom_image="res://Global_Resources/Sprites/Cursors/Default.png"
 
 [editor]
 
+movie_writer/movie_file="D:/Godot Engine/Movie_Maker/Output.avi"
 naming/scene_name_casing=0
 
 [editor_plugins]
@@ -741,6 +750,16 @@ locale/translations=PackedStringArray("res://Localization/Localization.de.transl
 3d_physics/layer_7="Enemy"
 3d_physics/layer_8="Enemy_Stay_Area"
 3d_physics/layer_9="Party_Member"
+2d_physics/layer_17="Temp_1"
+2d_physics/layer_18="Temp_2"
+2d_physics/layer_19="Temp_3"
+2d_physics/layer_20="Temp_4"
+2d_physics/layer_21="Temp_5"
+
+[locale]
+
+translations=PackedStringArray("res://Localization/Localization.de.translation", "res://Localization/Localization.en.translation")
+translation_remaps={}
 
 [navigation]
 
@@ -750,4 +769,6 @@ locale/translations=PackedStringArray("res://Localization/Localization.de.transl
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+environment/defaults/default_environment="res://default_env.tres"
+2d/snapping/use_gpu_pixel_snap=true
 qulity=false

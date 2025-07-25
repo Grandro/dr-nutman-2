@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bw8tfwckcp2mu"]
+
+[ext_resource type="PackedScene" uid="uid://hofcbsbl4q6e" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Objects/Comps/Balloons/Container_Base.tscn" id="1_fedqq"]
+[ext_resource type="Script" uid="uid://c1mdpgrm1vd4a" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Objects/Comps/Balloons/Scripts/Container_Carry.gd" id="2_jmuom"]
+
+[node name="Container_Carry" instance=ExtResource("1_fedqq")]
+script = ExtResource("2_jmuom")
+
+[editable path="Balloon"]

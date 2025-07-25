@@ -1,0 +1,14 @@
+[gd_scene load_steps=5 format=3 uid="uid://cl2dymixggqys"]
+
+[ext_resource type="PackedScene" uid="uid://dw83gpfjqfylp" path="res://Global_Scenes/Progress/Quests/Quest_Base.tscn" id="1_g5oxs"]
+[ext_resource type="PackedScene" uid="uid://dasvljj72alod" path="res://Global_Scenes/Progress/Quests/Great_Broko_Town_Festival/Objectives/A_Child_For_A_Balloon.tscn" id="2_8p1mp"]
+[ext_resource type="PackedScene" uid="uid://ckgoi0d3lyv7h" path="res://Global_Scenes/Progress/Quests/Great_Broko_Town_Festival/Objectives/Right_On_The_Nut.tscn" id="3_yxruc"]
+[ext_resource type="PackedScene" uid="uid://xs8awggn1xig" path="res://Global_Scenes/Progress/Quests/Great_Broko_Town_Festival/Objectives/An_Uplifting_Nut.tscn" id="4_qi0v2"]
+
+[node name="Great_Broko_Town_Festival" instance=ExtResource("1_g5oxs")]
+
+[node name="A_Child_For_A_Balloon" parent="Objectives" index="0" instance=ExtResource("2_8p1mp")]
+
+[node name="Right_On_The_Nut" parent="Objectives" index="1" instance=ExtResource("3_yxruc")]
+
+[node name="An_Uplifting_Nut" parent="Objectives" index="2" instance=ExtResource("4_qi0v2")]

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dinpgnabtn0u5"]
+
+[ext_resource type="PackedScene" uid="uid://bjgxkux1hih3y" path="res://Scenes/Stats_Display/Entries/Base.tscn" id="1"]
+[ext_resource type="Texture2D" uid="uid://03g345bov4bh" path="res://Global_Resources/Sprites/Mini_Busts/Dr_Nutman/Default.png" id="2"]
+
+[node name="Dr_Nutman" instance=ExtResource("1")]
+offset_top = 593.0
+offset_bottom = 883.0
+mouse_filter = 2
+
+[node name="VBox" parent="." index="0"]
+mouse_filter = 0
+
+[node name="Bust" parent="VBox" index="0"]
+texture = ExtResource("2")

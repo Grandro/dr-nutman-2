@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://s8wxe328f33y"]
+
+[ext_resource type="PackedScene" uid="uid://bsanced2ffcm2" path="res://Global_Scenes/Battle_System/Battle_SV/Result/Party_Members/Entries/Entry_Base.tscn" id="1_epqnx"]
+[ext_resource type="PackedScene" uid="uid://bp3l5j3x50mlt" path="res://Scenes/Characters/Dr_Nutman/Dr_Nutman.tscn" id="2_1gyfl"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_hdnpy"]
+viewport_path = NodePath("Panel/VBox/Character/VP")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mrh4w"]
+resource_local_to_scene = true
+atlas = SubResource("ViewportTexture_hdnpy")
+region = Rect2(528, 96, 224, 280)
+
+[node name="Dr_Nutman" instance=ExtResource("1_epqnx")]
+
+[node name="Name" parent="." index="0"]
+text = "NAME_DR_NUTMAN"
+
+[node name="Display" parent="Panel/VBox/Character" index="0"]
+texture = SubResource("AtlasTexture_mrh4w")
+
+[node name="Dr_Nutman" parent="Panel/VBox/Character/VP" index="0" instance=ExtResource("2_1gyfl")]
+
+[node name="Weapon" type="Node3D" parent="Panel/VBox/Character/VP/Dr_Nutman/Equipment" index="4"]
+
+[node name="Shield" type="Node3D" parent="Panel/VBox/Character/VP/Dr_Nutman/Equipment" index="5"]
+
+[node name="States" parent="Panel/VBox/Character/VP/Dr_Nutman" index="6"]
+_e_states = Array[String](["Idle", "Celebrate"])
+_e_state = "Celebrate"
+
+[editable path="Panel/VBox/Character/VP/Dr_Nutman"]
+[editable path="Panel/VBox/Character/VP/Dr_Nutman/Equipment"]
+[editable path="Panel/VBox/Character/VP/Dr_Nutman/Equipment/Head/1"]

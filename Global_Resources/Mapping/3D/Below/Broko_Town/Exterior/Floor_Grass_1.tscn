@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://c5kj4jbhn02f7"]
+
+[ext_resource type="PackedScene" uid="uid://ct1aowjqmhk1c" path="res://Global_Resources/Mapping/3D/Plane/Plane_Tile_Collision.tscn" id="1_uwii5"]
+[ext_resource type="Texture2D" uid="uid://cawheuvr0fjw5" path="res://Global_Resources/Mapping/Sprites/Below/Broko_Town/Exterior/Floor_Grass_1.png" id="2_y4ikh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1epkg"]
+resource_local_to_scene = true
+albedo_texture = ExtResource("2_y4ikh")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_rl4hn"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_1epkg")
+size = Vector2(1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mxu81"]
+resource_local_to_scene = true
+size = Vector3(1, 0.2, 1)
+
+[node name="Floor_Grass_1" groups=["NavMesh_Main"] instance=ExtResource("1_uwii5")]
+mesh = SubResource("PlaneMesh_rl4hn")
+
+[node name="Collision" parent="Static" index="0"]
+shape = SubResource("BoxShape3D_mxu81")

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://flbccdv3vysu"]
+
+[ext_resource type="PackedScene" uid="uid://bc8yplosqfyv3" path="res://Global_Scenes/Main_Menu/Sub_Menus/Party/Selection/Entry.tscn" id="1"]
+
+[node name="Dr_Nutman" instance=ExtResource("1")]
+
+[node name="Name" parent="Anchor" index="1"]
+text = "NAME_DR_NUTMAN"

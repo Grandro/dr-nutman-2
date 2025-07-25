@@ -9,9 +9,6 @@
 script = ExtResource("12")
 _e_key = "Cutscenes"
 
-[node name="Keys_Types" parent="HBox/VBox" index="0"]
-theme = null
-
 [node name="Parts" parent="VBox/HBox" index="0"]
 custom_minimum_size = Vector2(200, 0)
 _e_types = Array[String](["Default"])

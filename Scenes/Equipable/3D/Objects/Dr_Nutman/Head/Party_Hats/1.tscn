@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://xgr0cw1har28"]
+
+[ext_resource type="PackedScene" uid="uid://b12q0fkjaqxux" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Party_Hat.tscn" id="1_82wo0"]
+[ext_resource type="Texture2D" uid="uid://c8atsygcfkk7f" path="res://Global_Resources/Sprites/Objects/Dr_Nutman/Equipables/Head/Party_Hats/1_Spritesheet.png" id="2_nosg0"]
+
+[node name="1" instance=ExtResource("1_82wo0")]
+texture = ExtResource("2_nosg0")

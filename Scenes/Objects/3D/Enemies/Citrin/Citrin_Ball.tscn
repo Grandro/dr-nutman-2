@@ -1,0 +1,101 @@
+[gd_scene load_steps=15 format=3 uid="uid://d33vq0wfnluph"]
+
+[ext_resource type="PackedScene" uid="uid://bblmb8yfchyxr" path="res://Scenes/Object/Comps/3D/Display.tscn" id="1_pxllh"]
+[ext_resource type="Script" uid="uid://c8yjr04c7dekf" path="res://Scenes/Objects/3D/Enemies/Citrin/Scripts/Citrin_Ball.gd" id="1_vm4vp"]
+[ext_resource type="Texture2D" uid="uid://tvoa2vh57v8o" path="res://Global_Resources/Sprites/Objects/Enemies/Citrin/Citrin_Ball_Spritesheet.png" id="2_ki32i"]
+[ext_resource type="PackedScene" uid="uid://dsp0njc065uev" path="res://Scenes/Object/Comps/3D/Collision_Shape.tscn" id="3_jj4b5"]
+[ext_resource type="PackedScene" uid="uid://dhm6aai8dt4md" path="res://Scenes/Object/Comps/3D/Movement/Movement_Rigid.tscn" id="5_a3vs5"]
+[ext_resource type="PackedScene" uid="uid://b1q143fixhaj5" path="res://Scenes/Object/Comps/Anims.tscn" id="5_p2xeb"]
+[ext_resource type="PackedScene" uid="uid://bybab63s04t0p" path="res://Scenes/Object/Comps/3D/Movement/Comps/Terrain/Terrain_Rigid.tscn" id="6_cbqog"]
+[ext_resource type="PackedScene" uid="uid://b028hrfen5mpa" path="res://Scenes/Object/Comps/3D/Movement/Comps/Terrain/Area.tscn" id="7_a3vs5"]
+[ext_resource type="Texture2D" uid="uid://bpoffym7j5b66" path="res://Global_Resources/Sprites/Terrain_Veils/Grass_1.png" id="8_fwh08"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_huvnj"]
+friction = 0.7
+bounce = 0.8
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_nane2"]
+radius = 0.13
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_cbqog"]
+radius = 0.14
+
+[sub_resource type="Animation" id="Animation_f3xt6"]
+resource_name = "Despawn_Down"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Display:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("./Display:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_im31m"]
+_data = {
+&"Despawn": SubResource("Animation_f3xt6")
+}
+
+[node name="Citrin_Ball" type="RigidBody3D"]
+top_level = true
+collision_layer = 8
+collision_mask = 9
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+mass = 0.05
+physics_material_override = SubResource("PhysicsMaterial_huvnj")
+max_contacts_reported = 1
+script = ExtResource("1_vm4vp")
+
+[node name="Display" parent="." instance=ExtResource("1_pxllh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.13, 0)
+texture = ExtResource("2_ki32i")
+hframes = 2
+
+[node name="Collision" parent="." instance=ExtResource("3_jj4b5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.13, 0)
+shape = SubResource("SphereShape3D_nane2")
+
+[node name="Movement" parent="." instance=ExtResource("5_a3vs5")]
+
+[node name="Terrain" parent="Movement" instance=ExtResource("6_cbqog")]
+
+[node name="1" parent="Movement/Terrain/Areas" index="0" instance=ExtResource("7_a3vs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.13, 0)
+
+[node name="Collision" parent="Movement/Terrain/Areas/1" index="1"]
+shape = SubResource("SphereShape3D_cbqog")
+
+[node name="Veil" parent="Movement/Terrain/Areas/1" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.06, 0.01)
+texture = ExtResource("8_fwh08")
+
+[node name="Anims" parent="." instance=ExtResource("5_p2xeb")]
+libraries = {
+&"": SubResource("AnimationLibrary_im31m")
+}
+
+[node name="Despawn" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[editable path="Movement/Terrain"]
+[editable path="Movement/Terrain/Areas/1"]

@@ -1,0 +1,77 @@
+[gd_scene load_steps=9 format=3 uid="uid://18ymogmt1iqx"]
+
+[ext_resource type="Texture2D" uid="uid://dpnmykr0njwlx" path="res://Global_Resources/Sprites/White_Square.png" id="1"]
+[ext_resource type="Theme" uid="uid://budcfl16xj2tt" path="res://Global_Resources/Themes/Default/Default.tres" id="2"]
+[ext_resource type="Texture2D" uid="uid://df65or4arp1io" path="res://Global_Resources/Sprites/UI/Delete_Normal.png" id="4"]
+[ext_resource type="FontFile" uid="uid://bc3cxhu6w0ljt" path="res://Global_Resources/Fonts/ProFont.ttf" id="4_m2p31"]
+[ext_resource type="Texture2D" uid="uid://hijmuyifb08f" path="res://Global_Resources/Sprites/UI/Delete_Hover.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://yf4umopl6kpb" path="res://Global_Resources/Sprites/UI/Delete_Disabled.png" id="6"]
+[ext_resource type="Script" uid="uid://75c5ydb28p2c" path="res://Scenes/Mini_Games/Color_Selection/Game/Scripts/Prev_Color_Entry.gd" id="7"]
+
+[sub_resource type="FontVariation" id="FontVariation_ek48h"]
+base_font = ExtResource("4_m2p31")
+spacing_glyph = 1
+spacing_top = 2
+
+[node name="Prev_Color_Entry" type="Control" groups=["Translated"]]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 48.0
+offset_bottom = 48.0
+theme = ExtResource("2")
+script = ExtResource("7")
+
+[node name="Color" type="TextureButton" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 0
+offset_right = 48.0
+offset_bottom = 48.0
+mouse_filter = 1
+texture_normal = ExtResource("1")
+
+[node name="New" type="RichTextLabel" parent="."]
+light_mask = 8
+visibility_layer = 8
+clip_contents = false
+layout_mode = 0
+offset_left = -12.0
+offset_top = -10.0
+offset_right = 48.0
+offset_bottom = 12.0
+size_flags_vertical = 0
+mouse_filter = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/normal_font = SubResource("FontVariation_ek48h")
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "[rainbow freq=0.5 sat=4 val=20][wave amp=20 freq=1]NEW"
+fit_content = true
+scroll_active = false
+
+[node name="Delete" type="MarginContainer" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="Image" type="TextureButton" parent="Delete"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(12, 12)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+mouse_filter = 1
+texture_normal = ExtResource("4")
+texture_hover = ExtResource("5")
+texture_disabled = ExtResource("6")
+stretch_mode = 5

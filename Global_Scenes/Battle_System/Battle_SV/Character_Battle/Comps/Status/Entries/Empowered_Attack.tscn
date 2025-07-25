@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://ffjr6iyteqf8"]
+
+[ext_resource type="PackedScene" uid="uid://bu4wmd3ejnsdf" path="res://Global_Scenes/Battle_System/Battle_SV/Character_Battle/Comps/Status/Entries/Entry_Base.tscn" id="1_l41gj"]
+[ext_resource type="Texture2D" uid="uid://uxvvn4qjsow0" path="res://Global_Resources/Sprites/Icons/Status/Empowered_Attack.png" id="2_v826f"]
+
+[node name="Empowered_Attack" instance=ExtResource("1_l41gj")]
+light_mask = 8
+visibility_layer = 8
+
+[node name="Texture" parent="." index="0"]
+light_mask = 8
+visibility_layer = 8
+texture = ExtResource("2_v826f")
+
+[node name="Amount" parent="." index="1"]
+light_mask = 8
+visibility_layer = 8

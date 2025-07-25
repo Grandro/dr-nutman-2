@@ -1,0 +1,69 @@
+[gd_scene load_steps=3 format=3 uid="uid://covsjmk4634cq"]
+
+[ext_resource type="PackedScene" uid="uid://yul8j2y77c24" path="res://Scenes/NutOS/Content/Desktop/Apps/Settings/Menus/Menu_Base.tscn" id="1_5qx1c"]
+[ext_resource type="Script" uid="uid://ckl4yp5cixj0j" path="res://Scenes/NutOS/Content/Desktop/Apps/Settings/Menus/Background/Scripts/Background.gd" id="2"]
+
+[node name="Background" instance=ExtResource("1_5qx1c")]
+script = ExtResource("2")
+_e_bg_data = Array[Dictionary]([{
+"Key": "Nut_1",
+"Unlocked": true
+}, {
+"Key": "Nut_2",
+"Unlocked": true
+}, {
+"Key": "Nut_3",
+"Unlocked": true
+}])
+
+[node name="VBox" type="VBoxContainer" parent="VBox" index="1"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Type" type="VBoxContainer" parent="VBox/VBox" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Heading" type="Label" parent="VBox/VBox/Type" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "SELECT_TYPE"
+vertical_alignment = 1
+
+[node name="Options" type="OptionButton" parent="VBox/VBox/Type" index="1"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Static" type="VBoxContainer" parent="VBox/VBox" index="1"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Available" type="VBoxContainer" parent="VBox/VBox/Static" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+
+[node name="Heading" type="Label" parent="VBox/VBox/Static/Available" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "AVAILABLE"
+vertical_alignment = 1
+
+[node name="HFlow" type="HFlowContainer" parent="VBox/VBox/Static/Available" index="1"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 12

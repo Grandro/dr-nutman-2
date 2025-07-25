@@ -1,6 +1,7 @@
 extends Node
 
 signal keyboard_layout_changed(p_keyboard_layout)
+signal fav_color_changed(p_fav_color)
 
 const _a_SAVE_PATH = "user://Saves/Global.save"
 
@@ -63,9 +64,13 @@ func apply_options_controls_keyboard_layout(p_keyboard_layout):
 func apply_locale(p_locale):
 	TranslationServer.set_locale(p_locale)
 
+func apply_fav_color(p_fav_color):
+	fav_color_changed.emit(p_fav_color)
+
 func _apply():
 	_apply_options(_a_data["Options"])
 	apply_locale(_a_data["Locale"])
+	apply_fav_color(_a_data["Fav_Color"])
 
 func _apply_options(p_data):
 	_apply_options_audio(p_data["Audio"])
@@ -110,6 +115,7 @@ func _get_init_data():
 	var data = {}
 	data["Options"] = _get_init_data_options()
 	data["Locale"] = _get_init_data_locale()
+	data["Fav_Color"] = _get_init_data_fav_color()
 	data["Version"] = Global.get_version()
 	data["Save_File_Idx"] = -1
 	
@@ -156,6 +162,8 @@ func _get_init_data_options_video():
 
 func _get_init_data_options_gameplay():
 	var data = {}
+	data["Show_Tutato_Explain"] = {}
+	data["Show_Tutato_Explain"]["Value"] = true
 	
 	return data
 
@@ -178,6 +186,13 @@ func _get_init_data_locale():
 		locale = "en"
 	
 	return locale
+
+func _get_init_data_fav_color():
+	var data = {}
+	data["Selected"] = Color8(138, 60, 246)
+	data["Prev"] = [Color8(138, 60, 246)]
+	
+	return data
 
 func set_entry_data(p_key, p_data):
 	_a_data[p_key] = p_data
@@ -213,6 +228,12 @@ func set_options_video_window_mode(p_window_mode):
 	_a_data["Options"]["Video"]["Window_Mode"]["Value"] = p_window_mode
 	apply_options_video_window_mode(p_window_mode)
 
+func set_options_gameplay_show_tutato_explain(p_show_tutato_explain):
+	_a_data["Options"]["Gameplay"]["Show_Tutato_Explain"]["Value"] = p_show_tutato_explain
+
+func get_options_gameplay_show_tutato_explain():
+	return _a_data["Options"]["Gameplay"]["Show_Tutato_Explain"]["Value"]
+
 func set_options_controls_keyboard_layout(p_keyboard_layout):
 	_a_data["Options"]["Controls"]["Keyboard_Layout"]["Value"] = p_keyboard_layout
 	apply_options_controls_keyboard_layout(p_keyboard_layout)
@@ -226,6 +247,13 @@ func set_locale(p_locale):
 
 func get_locale():
 	return _a_data["Locale"]
+
+func set_fav_color(p_fav_color):
+	_a_data["Fav_Color"]["Selected"] = p_fav_color
+	apply_fav_color(p_fav_color)
+
+func get_fav_color():
+	return _a_data["Fav_Color"]["Selected"]
 
 func set_save_file_idx(p_save_file_idx):
 	_a_data["Save_File_Idx"] = p_save_file_idx

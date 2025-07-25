@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bg1dwd808lwq4"]
+
+[ext_resource type="PackedScene" uid="uid://bvmfdxernfsth" path="res://Scenes/NutOS/Content/Start_Menu/Apps/App.tscn" id="1"]
+[ext_resource type="Texture2D" uid="uid://cv3d1k0if8bge" path="res://Scenes/NutOS/Content/Desktop/Apps/Sprites/Installed/Color_Selection.png" id="2"]
+
+[node name="Color_Selection" instance=ExtResource("1")]
+
+[node name="Texture" parent="HBox" index="1"]
+texture = ExtResource("2")
+
+[node name="Name" parent="HBox" index="2"]
+text = "NUTOS_APP_COLOR_SELECTION"

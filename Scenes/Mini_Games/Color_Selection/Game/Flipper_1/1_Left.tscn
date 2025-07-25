@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://duu2hgywidjq3"]
+
+[ext_resource type="PackedScene" uid="uid://chegy2mbe2to4" path="res://Scenes/Mini_Games/Color_Selection/Game/Flipper_1/1_Base.tscn" id="1"]
+[ext_resource type="Script" uid="uid://bk45nyhvss0cx" path="res://Scenes/Mini_Games/Color_Selection/Game/Flipper_1/Scripts/1_Left.gd" id="2"]
+
+[node name="1_Left" instance=ExtResource("1")]
+rotation = 0.523599
+script = ExtResource("2")

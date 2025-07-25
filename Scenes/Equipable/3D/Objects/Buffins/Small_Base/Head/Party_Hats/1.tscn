@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://xwh3xagds0sk"]
+
+[ext_resource type="PackedScene" uid="uid://bdjps6stk52fq" path="res://Scenes/Equipable/3D/Objects/Buffins/Small_Base/Head/Party_Hats/Party_Hat.tscn" id="1"]
+
+[node name="1" instance=ExtResource("1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.37, 0.01)
+frame = 0

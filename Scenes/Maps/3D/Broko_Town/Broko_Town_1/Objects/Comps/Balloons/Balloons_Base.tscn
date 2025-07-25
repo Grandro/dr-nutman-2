@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://ghkcsy8pm7pn"]
+
+[ext_resource type="Script" uid="uid://xhqr3k78ei8v" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Objects/Comps/Balloons/Scripts/Balloons_Base.gd" id="1_so5j7"]
+
+[node name="Balloons_Base" type="Node3D" groups=["Comp"]]
+script = ExtResource("1_so5j7")
+
+[node name="Origin" type="StaticBody3D" parent="."]
+collision_layer = 0
+collision_mask = 0
+
+[node name="Containers" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
+
+[node name="Lines" type="MeshInstance3D" parent="."]
+layers = 4
+skeleton = NodePath("../..")

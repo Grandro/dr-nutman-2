@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://dmy71gp2i7sc1"]
+[gd_scene load_steps=9 format=3 uid="uid://dmy71gp2i7sc1"]
 
 [ext_resource type="Script" uid="uid://cgf27o8ct11p8" path="res://Global_Scenes/Battle_System/Battle_SV/Encounters/Indicators/Scripts/Command_Circle.gd" id="1_3nu1r"]
 [ext_resource type="Texture2D" uid="uid://bpaiyjrw8yrv4" path="res://Global_Resources/Sprites/SV/A_Button_Spritesheet.png" id="2_swliw"]
+[ext_resource type="Texture2D" uid="uid://d2e0ep0amdg4s" path="res://Global_Resources/Sprites/Borders/Sprites/1_Spritesheet.png" id="3_0pql6"]
+[ext_resource type="FontFile" uid="uid://bc3cxhu6w0ljt" path="res://Global_Resources/Fonts/ProFont.ttf" id="4_xipjn"]
 
 [sub_resource type="Animation" id="Animation_8f0rx"]
 resource_name = "Blink"
@@ -80,6 +82,7 @@ grow_horizontal = 0
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
+texture = ExtResource("3_0pql6")
 flip_h = true
 
 [node name="Margin" type="MarginContainer" parent="Canvas/Command"]
@@ -95,6 +98,7 @@ visibility_layer = 8
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("4_xipjn")
 theme_override_font_sizes/font_size = 32
 text = "Attack"
 vertical_alignment = 1

@@ -1,0 +1,68 @@
+[gd_scene load_steps=28 format=3 uid="uid://bdjps6stk52fq"]
+
+[ext_resource type="PackedScene" uid="uid://bur1664yc8pn8" path="res://Scenes/Equipable/3D/Equipable.tscn" id="1"]
+[ext_resource type="Texture2D" uid="uid://q88yiaftm2h7" path="res://Global_Resources/Sprites/Objects/Buffins/Small_Base/Equipables/Head/Party_Hats/1_Spritesheet.png" id="2"]
+[ext_resource type="Animation" uid="uid://j5rwmejotf5e" path="res://Scenes/Equipable/3D/Objects/Buffins/Small_Base/Head/Party_Hats/Anims/Idle_Down.tres" id="3_07x1q"]
+[ext_resource type="Animation" uid="uid://yyyahy5s2xsw" path="res://Scenes/Equipable/3D/Objects/Buffins/Small_Base/Head/Party_Hats/Anims/Idle_Left.tres" id="4_t4xam"]
+[ext_resource type="Animation" uid="uid://cnnv2p3ol7ceb" path="res://Scenes/Equipable/3D/Objects/Buffins/Small_Base/Head/Party_Hats/Anims/Idle_Right.tres" id="5_m8u2c"]
+[ext_resource type="Animation" uid="uid://fy0sdsjbu1gu" path="res://Scenes/Equipable/3D/Objects/Buffins/Small_Base/Head/Party_Hats/Anims/Idle_Up.tres" id="6_l1i6y"]
+[ext_resource type="Animation" uid="uid://dqhbfqclp6epo" path="res://Scenes/Equipable/3D/Objects/Buffins/Small_Base/Head/Party_Hats/Anims/Jump_Down.tres" id="7_lt5xu"]
+[ext_resource type="Animation" uid="uid://c2lkrfpkgfokg" path="res://Scenes/Equipable/3D/Objects/Buffins/Small_Base/Head/Party_Hats/Anims/Jump_Left.tres" id="8_crw5g"]
+[ext_resource type="Animation" uid="uid://yk54l8np2pso" path="res://Scenes/Equipable/3D/Objects/Buffins/Small_Base/Head/Party_Hats/Anims/Jump_Right.tres" id="9_ipwht"]
+[ext_resource type="Animation" uid="uid://cvmkrithq43j7" path="res://Scenes/Equipable/3D/Objects/Buffins/Small_Base/Head/Party_Hats/Anims/Jump_Up.tres" id="10_or71k"]
+[ext_resource type="Animation" uid="uid://1xerw8qe10v2" path="res://Scenes/Equipable/3D/Objects/Buffins/Small_Base/Head/Party_Hats/Anims/Place_Down.tres" id="11_o1044"]
+[ext_resource type="Animation" uid="uid://idfdiocpobnu" path="res://Scenes/Equipable/3D/Objects/Buffins/Small_Base/Head/Party_Hats/Anims/Place_Left.tres" id="12_5fttt"]
+[ext_resource type="Animation" uid="uid://5t0har5pcuy6" path="res://Scenes/Equipable/3D/Objects/Buffins/Small_Base/Head/Party_Hats/Anims/Place_Right.tres" id="13_am4ny"]
+[ext_resource type="Animation" uid="uid://wdtmlcn372f4" path="res://Scenes/Equipable/3D/Objects/Buffins/Small_Base/Head/Party_Hats/Anims/Place_Up.tres" id="14_88vqd"]
+[ext_resource type="Animation" uid="uid://geiyaguwg6sw" path="res://Scenes/Equipable/3D/Objects/Buffins/Small_Base/Head/Party_Hats/Anims/Stop_Down.tres" id="15_4soda"]
+[ext_resource type="Animation" uid="uid://dbpkfojhbmv5t" path="res://Scenes/Equipable/3D/Objects/Buffins/Small_Base/Head/Party_Hats/Anims/Stop_Left.tres" id="16_b21w8"]
+[ext_resource type="Animation" uid="uid://clunaacydqt07" path="res://Scenes/Equipable/3D/Objects/Buffins/Small_Base/Head/Party_Hats/Anims/Stop_Right.tres" id="17_buekp"]
+[ext_resource type="Animation" uid="uid://c76bidfy18enu" path="res://Scenes/Equipable/3D/Objects/Buffins/Small_Base/Head/Party_Hats/Anims/Stop_Up.tres" id="18_lymy4"]
+[ext_resource type="Animation" uid="uid://c0w072skr5gtn" path="res://Scenes/Equipable/3D/Objects/Buffins/Small_Base/Head/Party_Hats/Anims/Think_Down.tres" id="19_bf68l"]
+[ext_resource type="Animation" uid="uid://cl8e4x2fych18" path="res://Scenes/Equipable/3D/Objects/Buffins/Small_Base/Head/Party_Hats/Anims/Think_Left.tres" id="20_qslf8"]
+[ext_resource type="Animation" uid="uid://q3nqsdx087wo" path="res://Scenes/Equipable/3D/Objects/Buffins/Small_Base/Head/Party_Hats/Anims/Think_Right.tres" id="21_3ypjc"]
+[ext_resource type="Animation" uid="uid://bjd152i1ihvpk" path="res://Scenes/Equipable/3D/Objects/Buffins/Small_Base/Head/Party_Hats/Anims/Think_Up.tres" id="22_c3m1t"]
+[ext_resource type="Animation" uid="uid://bjmot5flv2qfx" path="res://Scenes/Equipable/3D/Objects/Buffins/Small_Base/Head/Party_Hats/Anims/Walk_Down.tres" id="23_cixh7"]
+[ext_resource type="Animation" uid="uid://buvpld6f23b5n" path="res://Scenes/Equipable/3D/Objects/Buffins/Small_Base/Head/Party_Hats/Anims/Walk_Left.tres" id="24_rlocf"]
+[ext_resource type="Animation" uid="uid://bk1461mxqryyg" path="res://Scenes/Equipable/3D/Objects/Buffins/Small_Base/Head/Party_Hats/Anims/Walk_Right.tres" id="25_wnqo4"]
+[ext_resource type="Animation" uid="uid://cddyyjt7o7f0v" path="res://Scenes/Equipable/3D/Objects/Buffins/Small_Base/Head/Party_Hats/Anims/Walk_Up.tres" id="26_uatq7"]
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2xwgw"]
+_data = {
+&"Idle_Down": ExtResource("3_07x1q"),
+&"Idle_Left": ExtResource("4_t4xam"),
+&"Idle_Right": ExtResource("5_m8u2c"),
+&"Idle_Up": ExtResource("6_l1i6y"),
+&"Jump_Down": ExtResource("7_lt5xu"),
+&"Jump_Left": ExtResource("8_crw5g"),
+&"Jump_Right": ExtResource("9_ipwht"),
+&"Jump_Up": ExtResource("10_or71k"),
+&"Place_Down": ExtResource("11_o1044"),
+&"Place_Left": ExtResource("12_5fttt"),
+&"Place_Right": ExtResource("13_am4ny"),
+&"Place_Up": ExtResource("14_88vqd"),
+&"Stop_Down": ExtResource("15_4soda"),
+&"Stop_Left": ExtResource("16_b21w8"),
+&"Stop_Right": ExtResource("17_buekp"),
+&"Stop_Up": ExtResource("18_lymy4"),
+&"Think_Down": ExtResource("19_bf68l"),
+&"Think_Left": ExtResource("20_qslf8"),
+&"Think_Right": ExtResource("21_3ypjc"),
+&"Think_Up": ExtResource("22_c3m1t"),
+&"Walk_Down": ExtResource("23_cixh7"),
+&"Walk_Left": ExtResource("24_rlocf"),
+&"Walk_Right": ExtResource("25_wnqo4"),
+&"Walk_Up": ExtResource("26_uatq7")
+}
+
+[node name="Party_Hat" instance=ExtResource("1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.58, 0.01)
+texture = ExtResource("2")
+hframes = 1
+vframes = 1
+frame = 0
+
+[node name="Anims" parent="." index="0"]
+libraries = {
+"": SubResource("AnimationLibrary_2xwgw")
+}

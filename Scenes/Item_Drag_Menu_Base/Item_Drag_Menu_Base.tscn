@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://fyofiebgtifb"]
+[gd_scene load_steps=4 format=3 uid="uid://fyofiebgtifb"]
 
 [ext_resource type="PackedScene" uid="uid://beoei6o2vrvx" path="res://Scenes/Indicator/Back_Button.tscn" id="1_56sds"]
+[ext_resource type="Theme" uid="uid://budcfl16xj2tt" path="res://Global_Resources/Themes/Default/Default.tres" id="1_nk002"]
 [ext_resource type="Script" uid="uid://c2uoe47d3kyxi" path="res://Scenes/Item_Drag_Menu_Base/Scripts/Item_Drag_Menu_Base.gd" id="2_23tvb"]
 
 [node name="Item_Drag_Menu_Base" type="Control"]
@@ -11,6 +12,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+theme = ExtResource("1_nk002")
 script = ExtResource("2_23tvb")
 
 [node name="Back" parent="." instance=ExtResource("1_56sds")]

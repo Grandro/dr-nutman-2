@@ -1,8 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://c7rf1kiek0pcb"]
+[gd_scene load_steps=13 format=3 uid="uid://c7rf1kiek0pcb"]
 
 [ext_resource type="Script" uid="uid://kqvha3ioex05" path="res://Scenes/Object/Comps/Speech_Bubble/Scripts/Speech_Bubble_UI.gd" id="1_8hwnq"]
 [ext_resource type="Texture2D" uid="uid://cc5yoyg4s0ec4" path="res://Global_Scenes/Dialogue_System/Sprites/Text_Box.png" id="2_g267h"]
+[ext_resource type="FontFile" uid="uid://b8s7soe0mlbl7" path="res://Global_Resources/Fonts/Quikhand.otf" id="3_xdc4l"]
 [ext_resource type="Texture2D" uid="uid://c0d6my4fuig56" path="res://Global_Scenes/Dialogue_System/Sprites/Proceed_Dot/Spritesheet.png" id="4_gnd6h"]
+[ext_resource type="Theme" uid="uid://budcfl16xj2tt" path="res://Global_Resources/Themes/Default/Default.tres" id="5_y8fcp"]
 [ext_resource type="Script" uid="uid://rnt4ambgryrh" path="res://Scenes/Object/Comps/Speech_Bubble/Scripts/Choices_Box.gd" id="6_s2h0b"]
 [ext_resource type="Texture2D" uid="uid://vodl3m6qp16b" path="res://Global_Scenes/Dialogue_System/Sprites/Choices_Box.png" id="7_vw0r6"]
 [ext_resource type="Texture2D" uid="uid://bvxryxg2rgtiq" path="res://Global_Scenes/Dialogue_System/Sprites/Arrow.png" id="8_hsop2"]
@@ -99,6 +101,7 @@ layout_mode = 2
 size_flags_vertical = 4
 mouse_filter = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_xdc4l")
 theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 scroll_active = false
@@ -130,6 +133,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
 mouse_filter = 2
+theme = ExtResource("5_y8fcp")
 script = ExtResource("6_s2h0b")
 metadata/_edit_group_ = true
 

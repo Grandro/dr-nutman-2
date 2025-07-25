@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cq30tkfdtots8"]
+
+[ext_resource type="PackedScene" uid="uid://hofcbsbl4q6e" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Objects/Comps/Balloons/Container_Base.tscn" id="1_ts6h5"]
+[ext_resource type="Script" uid="uid://cx35cbr88ierh" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Objects/Comps/Balloons/Scripts/Container_Static.gd" id="2_56f2c"]
+
+[node name="Container_Static" instance=ExtResource("1_ts6h5")]
+script = ExtResource("2_56f2c")
+
+[node name="Timer" type="Timer" parent="." index="2"]
+
+[editable path="Balloon"]

@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://djqftg4csfexs"]
+
+[ext_resource type="PackedScene" uid="uid://dpi6g3dw4wg50" path="res://Scenes/Objects/2D/Tutato/Comps/Explain/Explain_Base.tscn" id="1_r3lbo"]
+
+[node name="Explain_Main_Menu_Options" instance=ExtResource("1_r3lbo")]

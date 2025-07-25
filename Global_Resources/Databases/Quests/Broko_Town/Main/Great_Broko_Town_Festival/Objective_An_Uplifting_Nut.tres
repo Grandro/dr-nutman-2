@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://by7s63vdxm3oy"]
+
+[ext_resource type="Resource" uid="uid://2f1nifdhykn7" path="res://Global_Resources/Databases/Quests/Broko_Town/Main/An_Uplifting_Nut/An_Uplifting_Nut.tres" id="1_tk4us"]
+[ext_resource type="Script" uid="uid://gxo7txpgnyj8" path="res://Global_Resources/Databases/Quests/Objective_Sub_Quest_Data.gd" id="2_fyep3"]
+
+[resource]
+script = ExtResource("2_fyep3")
+_e_sub_quest = ExtResource("1_tk4us")
+_e_type = "Sub_Quest"
+_e_desc = "PROGRESS_QUESTS_BROKO_TOWN_1_MAIN_AN_UPLIFTING_NUT_NAME"

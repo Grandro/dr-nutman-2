@@ -1,0 +1,77 @@
+[gd_scene load_steps=10 format=3 uid="uid://chwvwspoox5ko"]
+
+[ext_resource type="Script" uid="uid://cqajbgpipxq0i" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Buffin_House_3/Objects/Projector_1/Scripts/Projector_1.gd" id="1_j5nuf"]
+[ext_resource type="PackedScene" uid="uid://d0074qkueogek" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Buffin_House_3/Objects/Projector_1/Models/Model.glb" id="2_dp3da"]
+[ext_resource type="Script" uid="uid://cyc2qqh3b8a5v" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Buffin_House_3/Objects/Projector_1/Scripts/Model.gd" id="3_3gcqk"]
+[ext_resource type="PackedScene" uid="uid://blot4hpw1al18" path="res://Scenes/Object/Comps/3D/Camera.tscn" id="3_ioa40"]
+[ext_resource type="PackedScene" uid="uid://nr4813v0r2dg" path="res://Scenes/Object/Comps/3D/Interactions/Interactions.tscn" id="3_j5nuf"]
+[ext_resource type="PackedScene" uid="uid://omsbdulg45pv" path="res://Scenes/Object/Comps/3D/Popup.tscn" id="4_gtfb2"]
+[ext_resource type="PackedScene" uid="uid://iq05yb53nqa2" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Buffin_House_3/Objects/Projector_1/Rotate_Menu.tscn" id="6_07b4x"]
+[ext_resource type="FontFile" uid="uid://cteq46xuda7rc" path="res://Global_Resources/Fonts/Super Rugged.ttf" id="7_xtmoc"]
+[ext_resource type="PackedScene" uid="uid://de2jy2ixhp2mw" path="res://Scenes/Object/Comps/Save.tscn" id="7_yrbxc"]
+
+[node name="Projector_1" type="Node3D" groups=["Object"]]
+script = ExtResource("1_j5nuf")
+metadata/_custom_type_script = "uid://ckbk2i4wb1yhq"
+
+[node name="Model" parent="." instance=ExtResource("2_dp3da")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+script = ExtResource("3_3gcqk")
+
+[node name="Light" type="SpotLight3D" parent="Model"]
+transform = Transform3D(1, 0, 0, 0, 0.996195, -0.0871557, 0, 0.0871557, 0.996195, 0, 0, -0.3)
+light_color = Color(1, 0.805114, 0.453964, 1)
+light_energy = 64.0
+light_volumetric_fog_energy = 16.0
+shadow_enabled = true
+spot_range = 9.0
+spot_attenuation = 0.5
+spot_angle = 8.0
+
+[node name="Camera" parent="Model" instance=ExtResource("3_ioa40")]
+transform = Transform3D(1, 0, 0, 0, 0.996195, -0.0871558, 0, 0.0871558, 0.996195, 0, 1.5, 0)
+keep_aspect = 1
+projection = 0
+current = true
+size = 3.066
+
+[node name="Ray" type="RayCast3D" parent="Model"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.3)
+enabled = false
+exclude_parent = false
+target_position = Vector3(0, 0, -9)
+collision_mask = 13
+
+[node name="Interactions" parent="." instance=ExtResource("3_j5nuf")]
+
+[node name="1" parent="Interactions" index="0"]
+_e_popup_pos = Vector3(0, 0.7, 0)
+
+[node name="Popup" parent="." instance=ExtResource("4_gtfb2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+
+[node name="Save" parent="." instance=ExtResource("7_yrbxc")]
+
+[node name="VP" type="SubViewport" parent="."]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(140, 64)
+render_target_update_mode = 1
+
+[node name="Text" type="Label" parent="VP"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_xtmoc")
+theme_override_font_sizes/font_size = 48
+text = "LAUF!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Rotate_Menu" parent="." instance=ExtResource("6_07b4x")]
+
+[editable path="Interactions"]
+[editable path="Interactions/1"]

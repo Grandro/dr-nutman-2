@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxdgdvxed2iid"]
+
+[ext_resource type="Script" uid="uid://ckbk2i4wb1yhq" path="res://Scenes/Object/Scripts/Node3D_Object.gd" id="1_gpvel"]
+[ext_resource type="PackedScene" uid="uid://bp8mtp0ku0lvt" path="res://Scenes/Objects/3D/Books/Models/1_Model.glb" id="2_bcr4j"]
+
+[node name="Book_1" type="Node3D"]
+script = ExtResource("1_gpvel")
+
+[node name="Model" parent="." instance=ExtResource("2_bcr4j")]

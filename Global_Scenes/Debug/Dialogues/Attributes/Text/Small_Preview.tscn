@@ -1,6 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://bcmeit6hbj55l"]
+[gd_scene load_steps=10 format=3 uid="uid://bcmeit6hbj55l"]
 
+[ext_resource type="Theme" uid="uid://budcfl16xj2tt" path="res://Global_Resources/Themes/Default/Default.tres" id="1"]
 [ext_resource type="Texture2D" uid="uid://cc5yoyg4s0ec4" path="res://Global_Scenes/Dialogue_System/Sprites/Text_Box.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://dteo2ddfuqqta" path="res://Global_Resources/Sprites/Mini_Busts/Buffin_Base/Default.png" id="4"]
 [ext_resource type="Texture2D" uid="uid://vodl3m6qp16b" path="res://Global_Scenes/Dialogue_System/Sprites/Choices_Box.png" id="5"]
 [ext_resource type="Texture2D" uid="uid://c0d6my4fuig56" path="res://Global_Scenes/Dialogue_System/Sprites/Proceed_Dot/Spritesheet.png" id="6"]
 [ext_resource type="Script" uid="uid://cmxvowaxnf2ov" path="res://Global_Scenes/Debug/Dialogues/Attributes/Text/Scripts/Small_Preview.gd" id="7"]
@@ -94,6 +96,7 @@ light_mask = 8
 visibility_layer = 8
 layout_mode = 2
 mouse_filter = 2
+theme = ExtResource("1")
 
 [node name="Rect" type="NinePatchRect" parent="VBox/Text_Box/Dialogue"]
 light_mask = 8
@@ -128,6 +131,7 @@ custom_minimum_size = Vector2(11, 7)
 layout_mode = 2
 size_flags_vertical = 10
 mouse_filter = 2
+texture = ExtResource("4")
 expand_mode = 1
 stretch_mode = 5
 

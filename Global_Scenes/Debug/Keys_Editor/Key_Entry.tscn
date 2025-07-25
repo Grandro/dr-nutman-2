@@ -4,11 +4,11 @@
 [ext_resource type="Script" uid="uid://d4dec72p7hkwu" path="res://Global_Scenes/Debug/Keys_Editor/Scripts/Key_Entry.gd" id="2"]
 [ext_resource type="Texture2D" uid="uid://df65or4arp1io" path="res://Global_Resources/Sprites/UI/Delete_Normal.png" id="3"]
 [ext_resource type="Texture2D" uid="uid://hijmuyifb08f" path="res://Global_Resources/Sprites/UI/Delete_Hover.png" id="4"]
-[ext_resource type="Texture2D" uid="uid://8saxg126x36f" path="res://Global_Resources/Sprites/Box_Outer.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://ko7fp446lqab" path="res://Global_Resources/Sprites/Box_Outer.png" id="5"]
 [ext_resource type="Texture2D" uid="uid://bk3bwkj1uo8oh" path="res://Global_Resources/Sprites/UI/Copy.png" id="5_6qscl"]
 [ext_resource type="Theme" uid="uid://pr4yljlh62sp" path="res://Global_Resources/Themes/Debug/Debug.tres" id="6"]
 [ext_resource type="Texture2D" uid="uid://ch3j0jol4lpm7" path="res://Global_Resources/Sprites/UI/Duplicate.png" id="6_5dod3"]
-[ext_resource type="Texture2D" uid="uid://dshc6jkbx647e" path="res://Global_Resources/Sprites/Box_Inner.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://c5t15y1opc4r0" path="res://Global_Resources/Sprites/Box_Inner.png" id="7"]
 
 [node name="Key_Entry" type="MarginContainer"]
 light_mask = 8

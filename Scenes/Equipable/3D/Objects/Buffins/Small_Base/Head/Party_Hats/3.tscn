@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6h88kccn881c"]
+
+[ext_resource type="PackedScene" uid="uid://bdjps6stk52fq" path="res://Scenes/Equipable/3D/Objects/Buffins/Small_Base/Head/Party_Hats/Party_Hat.tscn" id="1"]
+[ext_resource type="Texture2D" uid="uid://ctwa44lp1yj3p" path="res://Global_Resources/Sprites/Objects/Buffins/Small_Base/Equipables/Head/Party_Hats/3_Spritesheet.png" id="2"]
+
+[node name="3" instance=ExtResource("1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+texture = ExtResource("2")
+frame = 0

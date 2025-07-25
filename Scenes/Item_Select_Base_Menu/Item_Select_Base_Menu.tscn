@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://tw8jq5isd0qp"]
+[gd_scene load_steps=5 format=3 uid="uid://tw8jq5isd0qp"]
 
 [ext_resource type="Script" uid="uid://gnjjej51xs6c" path="res://Scenes/Item_Select_Base_Menu/Scripts/Item_Select_Base_Menu.gd" id="1"]
+[ext_resource type="Theme" uid="uid://budcfl16xj2tt" path="res://Global_Resources/Themes/Default/Default.tres" id="1_6i4p1"]
+[ext_resource type="Texture2D" uid="uid://wrg2potji1vm" path="res://Global_Resources/Sprites/Backgrounds/1_Spritesheet.png" id="5"]
 [ext_resource type="PackedScene" uid="uid://beoei6o2vrvx" path="res://Scenes/Indicator/Back_Button.tscn" id="6"]
 
 [node name="Item_Select_Base_Menu" type="Control" groups=["Translated"]]
@@ -13,6 +15,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+theme = ExtResource("1_6i4p1")
 script = ExtResource("1")
 
 [node name="Background" type="TextureRect" parent="."]
@@ -22,6 +25,7 @@ layout_mode = 0
 offset_right = 1280.0
 offset_bottom = 720.0
 mouse_filter = 2
+texture = ExtResource("5")
 stretch_mode = 1
 
 [node name="Back" parent="." instance=ExtResource("6")]

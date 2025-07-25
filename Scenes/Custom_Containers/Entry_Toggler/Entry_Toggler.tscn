@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://6f6pfaiy11ck"]
+[gd_scene load_steps=3 format=3 uid="uid://6f6pfaiy11ck"]
 
+[ext_resource type="Theme" uid="uid://budcfl16xj2tt" path="res://Global_Resources/Themes/Default/Default.tres" id="1_33dhv"]
 [ext_resource type="Script" uid="uid://diovn84fyty0p" path="res://Scenes/Custom_Containers/Entry_Toggler/Scripts/Entry_Toggler.gd" id="2_i52n1"]
 
 [node name="Entry_Toggler" type="BoxContainer"]
@@ -7,5 +8,6 @@ light_mask = 8
 visibility_layer = 8
 offset_right = 40.0
 offset_bottom = 40.0
+theme = ExtResource("1_33dhv")
 theme_override_constants/separation = 0
 script = ExtResource("2_i52n1")

@@ -18,6 +18,8 @@ func _ready():
 		child.load_data(data[key])
 
 func open(_p_data = {}):
+	_tutato_explain()
+	
 	show()
 
 func _close():
@@ -38,5 +40,30 @@ func update_trans():
 		var text = tr("OPTIONS_%s" % key.to_upper())
 		_a_Tabs.set_tab_title(i, text)
 
+func _tutato_explain():
+	if _e_context != "Main_Menu":
+		return
+	
+	var progress_si = Global.get_singleton(self, "Progress")
+	var show_tutato_explain = Global_Data.get_options_gameplay_show_tutato_explain()
+	var explain_options = progress_si.call_object("Tutato", "get_explain_options")
+	if show_tutato_explain && explain_options:
+		var cutscene_system_si = Global.get_singleton(self, "Cutscene_System")
+		var key = "Tutato_Explain"
+		var entry_key = "Main_Menu_Options"
+		cutscene_system_si.cutscene(key, entry_key, "Main", "Global")
+		cutscene_system_si.set_cutscene_completed_cb(key, entry_key, _CB_cutscene_completed)
+		cutscene_system_si.set_cutscene_process_mode(key, entry_key, ProcessMode.PROCESS_MODE_ALWAYS)
+		progress_si.call_object("Tutato", "set_explain_options", [false])
+		
+		_a_Back.set_select_diabled(true)
+
 func _on_Back_select_pressed():
 	_close()
+
+func _CB_cutscene_completed(_p_process_type, p_key, p_entry_key):
+	match p_key:
+		"Tutato_Explain":
+			match p_entry_key:
+				"Main_Menu_Options":
+					_a_Back.set_select_diabled(false)

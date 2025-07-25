@@ -1,0 +1,325 @@
+[gd_scene load_steps=21 format=3 uid="uid://civld6ek2xe45"]
+
+[ext_resource type="PackedScene" uid="uid://ca7yveyncy8xq" path="res://Scenes/Objects/3D/Bookshelves/Base.tscn" id="1_1damu"]
+[ext_resource type="PackedScene" uid="uid://bp8mtp0ku0lvt" path="res://Scenes/Objects/3D/Books/Models/1_Model.glb" id="2_yq8n8"]
+[ext_resource type="PackedScene" uid="uid://fnubtago6oj6" path="res://Scenes/Objects/3D/Books/Models/2_Model.glb" id="3_tj3yk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fm7b0"]
+albedo_color = Color(0, 0.75188, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gcrgc"]
+albedo_color = Color(1, 0.840672, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j27kb"]
+albedo_color = Color(1, 0, 0.481924, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_krd5q"]
+albedo_color = Color(0.466057, 0.466057, 0.466057, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ku75d"]
+albedo_color = Color(1, 0.546036, 0.978691, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ey2eq"]
+albedo_color = Color(0.7, 0.175, 0.21, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vx2a3"]
+albedo_color = Color(0.2698, 0.71, 0.299147, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kr1lm"]
+albedo_color = Color(0.2698, 0.71, 0.482829, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_du085"]
+albedo_color = Color(0.57, 0.4, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xg2tr"]
+albedo_color = Color(0.27, 0.291, 0.9, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fsde8"]
+albedo_color = Color(0.9, 0.585, 0.27, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ionwo"]
+albedo_color = Color(0.9, 0.27, 0.706771, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0umgm"]
+albedo_color = Color(1, 0.977049, 0.513153, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s7xd1"]
+albedo_color = Color(0.741905, 1, 0.730178, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w8xah"]
+albedo_color = Color(0.880486, 0.730178, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7jq5h"]
+albedo_color = Color(0.730178, 1, 0.986179, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2o6jc"]
+albedo_color = Color(1, 0.847, 0.46, 1)
+
+[node name="Bookshelf_1" instance=ExtResource("1_1damu")]
+
+[node name="Books" type="Node3D" parent="." index="4"]
+
+[node name="Book_1" parent="Books" index="0" instance=ExtResource("2_yq8n8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1, 1.911, 0.1)
+
+[node name="Book_1" parent="Books/Book_1" index="0"]
+surface_material_override/2 = SubResource("StandardMaterial3D_fm7b0")
+
+[node name="Book_2" parent="Books" index="1" instance=ExtResource("2_yq8n8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.95, 1.911, 0.1)
+
+[node name="Book_1" parent="Books/Book_2" index="0"]
+surface_material_override/2 = SubResource("StandardMaterial3D_gcrgc")
+
+[node name="Book_3" parent="Books" index="2" instance=ExtResource("2_yq8n8")]
+transform = Transform3D(0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 0, 0, 1, -0.8, 1.911, 0.1)
+
+[node name="Book_1" parent="Books/Book_3" index="0"]
+surface_material_override/2 = SubResource("StandardMaterial3D_j27kb")
+
+[node name="Book_4" parent="Books" index="3" instance=ExtResource("2_yq8n8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.575, 1.911, 0.1)
+
+[node name="Book_1" parent="Books/Book_4" index="0"]
+surface_material_override/2 = SubResource("StandardMaterial3D_krd5q")
+
+[node name="Book_5" parent="Books" index="4" instance=ExtResource("2_yq8n8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.425, 1.911, 0.1)
+
+[node name="Book_1" parent="Books/Book_5" index="0"]
+surface_material_override/2 = SubResource("StandardMaterial3D_ku75d")
+
+[node name="Book_6" parent="Books" index="5" instance=ExtResource("3_tj3yk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.125, 1.911, 0.1)
+
+[node name="Book_7" parent="Books" index="6" instance=ExtResource("2_yq8n8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.325, 1.911, 0.1)
+
+[node name="Book_1" parent="Books/Book_7" index="0"]
+surface_material_override/2 = SubResource("StandardMaterial3D_ey2eq")
+
+[node name="Book_8" parent="Books" index="7" instance=ExtResource("2_yq8n8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1.911, 0.1)
+
+[node name="Book_1" parent="Books/Book_8" index="0"]
+surface_material_override/2 = SubResource("StandardMaterial3D_fm7b0")
+
+[node name="Book_9" parent="Books" index="8" instance=ExtResource("3_tj3yk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.675, 1.911, 0.1)
+
+[node name="Book_2" parent="Books/Book_9" index="0"]
+surface_material_override/2 = SubResource("StandardMaterial3D_vx2a3")
+
+[node name="Book_10" parent="Books" index="9" instance=ExtResource("3_tj3yk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.875, 1.911, 0.1)
+
+[node name="Book_2" parent="Books/Book_10" index="0"]
+surface_material_override/2 = SubResource("StandardMaterial3D_kr1lm")
+
+[node name="Book_11" parent="Books" index="10" instance=ExtResource("2_yq8n8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.05, 1.911, 0.1)
+
+[node name="Book_1" parent="Books/Book_11" index="0"]
+surface_material_override/2 = SubResource("StandardMaterial3D_fm7b0")
+
+[node name="Book_12" parent="Books" index="11" instance=ExtResource("2_yq8n8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.85, 1.31, 0.1)
+
+[node name="Book_1" parent="Books/Book_12" index="0"]
+surface_material_override/2 = SubResource("StandardMaterial3D_du085")
+
+[node name="Book_13" parent="Books" index="12" instance=ExtResource("3_tj3yk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.675, 1.31, 0.1)
+
+[node name="Book_2" parent="Books/Book_13" index="0"]
+surface_material_override/2 = SubResource("StandardMaterial3D_kr1lm")
+
+[node name="Book_14" parent="Books" index="13" instance=ExtResource("2_yq8n8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1.31, 0.1)
+
+[node name="Book_1" parent="Books/Book_14" index="0"]
+surface_material_override/2 = SubResource("StandardMaterial3D_gcrgc")
+
+[node name="Book_15" parent="Books" index="14" instance=ExtResource("2_yq8n8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35, 1.31, 0.1)
+
+[node name="Book_1" parent="Books/Book_15" index="0"]
+surface_material_override/2 = SubResource("StandardMaterial3D_xg2tr")
+
+[node name="Book_16" parent="Books" index="15" instance=ExtResource("3_tj3yk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.175, 1.31, 0.1)
+
+[node name="Book_2" parent="Books/Book_16" index="0"]
+surface_material_override/2 = SubResource("StandardMaterial3D_fsde8")
+
+[node name="Book_17" parent="Books" index="16" instance=ExtResource("2_yq8n8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.98023e-08, 1.31, 0.1)
+
+[node name="Book_1" parent="Books/Book_17" index="0"]
+surface_material_override/2 = SubResource("StandardMaterial3D_ionwo")
+
+[node name="Book_18" parent="Books" index="17" instance=ExtResource("2_yq8n8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 1.31, 0.1)
+
+[node name="Book_1" parent="Books/Book_18" index="0"]
+surface_material_override/2 = SubResource("StandardMaterial3D_ionwo")
+
+[node name="Book_19" parent="Books" index="18" instance=ExtResource("2_yq8n8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 1.31, 0.1)
+
+[node name="Book_1" parent="Books/Book_19" index="0"]
+surface_material_override/2 = SubResource("StandardMaterial3D_ionwo")
+
+[node name="Book_20" parent="Books" index="19" instance=ExtResource("2_yq8n8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.905, 1.31, 0.1)
+
+[node name="Book_1" parent="Books/Book_20" index="0"]
+surface_material_override/2 = SubResource("StandardMaterial3D_krd5q")
+
+[node name="Book_21" parent="Books" index="20" instance=ExtResource("2_yq8n8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.055, 1.31, 0.1)
+
+[node name="Book_1" parent="Books/Book_21" index="0"]
+surface_material_override/2 = SubResource("StandardMaterial3D_0umgm")
+
+[node name="Book_22" parent="Books" index="21" instance=ExtResource("2_yq8n8")]
+transform = Transform3D(0.866025, -0.5, 0, 0.5, 0.866025, 0, 0, 0, 1, -0.94, 0.75, 0.1)
+
+[node name="Book_1" parent="Books/Book_22" index="0"]
+surface_material_override/2 = SubResource("StandardMaterial3D_ey2eq")
+
+[node name="Book_23" parent="Books" index="22" instance=ExtResource("2_yq8n8")]
+transform = Transform3D(0.866025, -0.5, 0, 0.5, 0.866025, 0, 0, 0, 1, -0.78, 0.75, 0.1)
+
+[node name="Book_1" parent="Books/Book_23" index="0"]
+surface_material_override/2 = SubResource("StandardMaterial3D_s7xd1")
+
+[node name="Book_24" parent="Books" index="23" instance=ExtResource("2_yq8n8")]
+transform = Transform3D(6.5135e-15, -2.18557e-07, -1, -1, -2.98023e-08, 0, -2.98023e-08, 1, -2.18557e-07, -0.53, 0.8, -0.1)
+
+[node name="Book_1" parent="Books/Book_24" index="0"]
+surface_material_override/2 = SubResource("StandardMaterial3D_w8xah")
+
+[node name="Book_25" parent="Books" index="24" instance=ExtResource("3_tj3yk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.075, 0.71, 0.1)
+
+[node name="Book_2" parent="Books/Book_25" index="0"]
+surface_material_override/2 = SubResource("StandardMaterial3D_vx2a3")
+
+[node name="Book_26" parent="Books" index="25" instance=ExtResource("2_yq8n8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.125, 0.71, 0.1)
+
+[node name="Book_1" parent="Books/Book_26" index="0"]
+surface_material_override/2 = SubResource("StandardMaterial3D_0umgm")
+
+[node name="Book_27" parent="Books" index="26" instance=ExtResource("3_tj3yk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.71, 0.1)
+
+[node name="Book_28" parent="Books" index="27" instance=ExtResource("2_yq8n8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.475, 0.71, 0.1)
+
+[node name="Book_1" parent="Books/Book_28" index="0"]
+surface_material_override/2 = SubResource("StandardMaterial3D_ku75d")
+
+[node name="Book_29" parent="Books" index="28" instance=ExtResource("2_yq8n8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.63, 0.71, 0.1)
+
+[node name="Book_1" parent="Books/Book_29" index="0"]
+surface_material_override/2 = SubResource("StandardMaterial3D_xg2tr")
+
+[node name="Book_30" parent="Books" index="29" instance=ExtResource("2_yq8n8")]
+transform = Transform3D(6.5135e-15, -2.18557e-07, -1, -1, -2.98023e-08, 0, -2.98023e-08, 1, -2.18557e-07, 0.92, 0.19, -0.1)
+
+[node name="Book_1" parent="Books/Book_30" index="0"]
+surface_material_override/2 = SubResource("StandardMaterial3D_7jq5h")
+
+[node name="Book_31" parent="Books" index="30" instance=ExtResource("2_yq8n8")]
+transform = Transform3D(6.5135e-15, -2.18557e-07, -1, -1, -2.98023e-08, 0, -2.98023e-08, 1, -2.18557e-07, 0.95, 0.32, -0.12)
+
+[node name="Book_1" parent="Books/Book_31" index="0"]
+surface_material_override/2 = SubResource("StandardMaterial3D_2o6jc")
+
+[node name="Book_32" parent="Books" index="31" instance=ExtResource("3_tj3yk")]
+transform = Transform3D(0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 0, 0, 1, 0.61, 0.14, 0.1)
+
+[node name="Book_33" parent="Books" index="32" instance=ExtResource("2_yq8n8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.375, 0.11, 0.1)
+
+[node name="Book_1" parent="Books/Book_33" index="0"]
+surface_material_override/2 = SubResource("StandardMaterial3D_ey2eq")
+
+[node name="Book_34" parent="Books" index="33" instance=ExtResource("3_tj3yk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.55, 0.11, 0.1)
+
+[node name="Book_2" parent="Books/Book_34" index="0"]
+surface_material_override/2 = SubResource("StandardMaterial3D_fsde8")
+
+[node name="Book_35" parent="Books" index="34" instance=ExtResource("2_yq8n8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.725, 0.11, 0.1)
+
+[node name="Book_1" parent="Books/Book_35" index="0"]
+surface_material_override/2 = SubResource("StandardMaterial3D_krd5q")
+
+[node name="Book_36" parent="Books" index="35" instance=ExtResource("2_yq8n8")]
+transform = Transform3D(1, 1.60936e-07, -4.37114e-08, -1.60936e-07, 1, -2.18557e-07, 4.37114e-08, 2.18557e-07, 1, -0.88, 0.11, 0.1)
+
+[node name="Book_1" parent="Books/Book_36" index="0"]
+surface_material_override/2 = SubResource("StandardMaterial3D_w8xah")
+
+[node name="Book_37" parent="Books" index="36" instance=ExtResource("3_tj3yk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.075, 0.11, 0.1)
+
+[node name="Book_2" parent="Books/Book_37" index="0"]
+surface_material_override/2 = SubResource("StandardMaterial3D_kr1lm")
+
+[node name="Book_38" parent="Books" index="37" instance=ExtResource("2_yq8n8")]
+transform = Transform3D(7.5904e-09, 0.173648, 0.984808, 1, -4.37114e-08, 0, 4.30473e-08, 0.984808, -0.173648, 0.9, 2.565, -0.15)
+
+[node name="Book_1" parent="Books/Book_38" index="0"]
+surface_material_override/2 = SubResource("StandardMaterial3D_gcrgc")
+
+[node name="Nav_Obstacle" parent="." index="6"]
+vertices = PackedVector3Array(1.5, 0, -0.8, 1.5, 0, 0.7, -1.5, 0, 0.7, -1.5, 0, -0.8)
+
+[editable path="Interactions"]
+[editable path="Interactions/1"]
+[editable path="Interactions/2"]
+[editable path="Popup"]
+[editable path="Books/Book_1"]
+[editable path="Books/Book_2"]
+[editable path="Books/Book_3"]
+[editable path="Books/Book_4"]
+[editable path="Books/Book_5"]
+[editable path="Books/Book_6"]
+[editable path="Books/Book_7"]
+[editable path="Books/Book_8"]
+[editable path="Books/Book_9"]
+[editable path="Books/Book_10"]
+[editable path="Books/Book_11"]
+[editable path="Books/Book_12"]
+[editable path="Books/Book_13"]
+[editable path="Books/Book_14"]
+[editable path="Books/Book_15"]
+[editable path="Books/Book_16"]
+[editable path="Books/Book_17"]
+[editable path="Books/Book_18"]
+[editable path="Books/Book_19"]
+[editable path="Books/Book_20"]
+[editable path="Books/Book_21"]
+[editable path="Books/Book_22"]
+[editable path="Books/Book_23"]
+[editable path="Books/Book_24"]
+[editable path="Books/Book_25"]
+[editable path="Books/Book_26"]
+[editable path="Books/Book_27"]
+[editable path="Books/Book_28"]
+[editable path="Books/Book_29"]
+[editable path="Books/Book_30"]
+[editable path="Books/Book_31"]
+[editable path="Books/Book_32"]
+[editable path="Books/Book_33"]
+[editable path="Books/Book_34"]
+[editable path="Books/Book_35"]
+[editable path="Books/Book_36"]
+[editable path="Books/Book_37"]
+[editable path="Books/Book_38"]

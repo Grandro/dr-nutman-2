@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://c41rk18ubb0th"]
+[gd_scene load_steps=3 format=3 uid="uid://c41rk18ubb0th"]
 
+[ext_resource type="Theme" uid="uid://budcfl16xj2tt" path="res://Global_Resources/Themes/Default/Default.tres" id="1_6vk31"]
 [ext_resource type="Script" uid="uid://dr2nm7skrkfpv" path="res://Global_Scenes/Main_Menu/Sub_Menus/Options/Scripts/Option_Tab.gd" id="2_p8ocx"]
 
 [node name="Option_Tab" type="MarginContainer"]
@@ -10,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_6vk31")
 theme_override_constants/margin_left = 24
 theme_override_constants/margin_top = 24
 theme_override_constants/margin_right = 24

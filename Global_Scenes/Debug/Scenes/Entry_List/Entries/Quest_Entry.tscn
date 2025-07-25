@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dy7u1ocv26url"]
+[gd_scene load_steps=6 format=3 uid="uid://dy7u1ocv26url"]
 
 [ext_resource type="PackedScene" uid="uid://ek1x7if6akb8" path="res://Global_Scenes/Debug/Scenes/Entry_List/Entries/Entry.tscn" id="1_g7k0u"]
+[ext_resource type="Theme" uid="uid://budcfl16xj2tt" path="res://Global_Resources/Themes/Default/Default.tres" id="2_hfmvb"]
 [ext_resource type="Script" uid="uid://cfu2huauych7v" path="res://Global_Scenes/Debug/Scenes/Entry_List/Entries/Scripts/Quest_Entry.gd" id="2_q4jxx"]
 [ext_resource type="Texture2D" uid="uid://bmqhddrlwm888" path="res://Global_Resources/Sprites/UI/Check.png" id="4_50icu"]
 [ext_resource type="PackedScene" uid="uid://clbcurkhls2yb" path="res://Global_Scenes/Debug/Scenes/Entry_List/Quest_Entry_List.tscn" id="5_c7xrq"]
@@ -8,6 +9,7 @@
 [node name="Quest_Entry" instance=ExtResource("1_g7k0u")]
 offset_right = 190.0
 offset_bottom = 148.0
+theme = ExtResource("2_hfmvb")
 script = ExtResource("2_q4jxx")
 
 [node name="VBox" parent="HBox" index="1"]

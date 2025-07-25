@@ -1,0 +1,24 @@
+[gd_resource type="Shader" format=3 uid="uid://bcwgukhc6uvti"]
+
+[resource]
+code = "shader_type spatial;
+
+uniform vec4 eyes : source_color; // Color of the eyes
+uniform vec4 wrapping : source_color; // Color of wrapping
+
+uniform sampler2D texture_albedo : source_color, filter_nearest;
+uniform vec4 color_A : source_color; // Start color
+uniform vec4 color_B : source_color; // End color
+uniform float progress : hint_range(0.0, 1.0) = 0.0;
+
+void fragment() {
+	vec4 albedo_tex = texture(texture_albedo, UV);
+	ALBEDO = albedo_tex.rgb;
+	ALPHA = albedo_tex.a;
+	if (albedo_tex.rgb != vec3(1.) && albedo_tex.rgb != vec3(0.)) {
+		// Do not modify eyes/wrapping
+		if (distance(albedo_tex, eyes) > 0.1 && distance(albedo_tex, wrapping) > 0.1) {
+			ALBEDO += smoothstep(0.0, 1.0, progress) * (color_B - color_A).rgb;
+		}
+	}
+}"

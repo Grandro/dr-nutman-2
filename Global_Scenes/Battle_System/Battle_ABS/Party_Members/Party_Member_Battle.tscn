@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://keucpldccm1l"]
+
+[ext_resource type="PackedScene" uid="uid://fhm322qbafxa" path="res://Global_Scenes/Battle_System/Battle_ABS/Character_Battle.tscn" id="1_mi7on"]
+[ext_resource type="Script" uid="uid://cq6vbx3wlgy7o" path="res://Global_Scenes/Battle_System/Battle_ABS/Party_Members/Scripts/Party_Member_Battle.gd" id="2_7sgbf"]
+
+[node name="Party_Member_Battle" instance=ExtResource("1_mi7on")]
+collision_layer = 264
+collision_mask = 8
+script = ExtResource("2_7sgbf")

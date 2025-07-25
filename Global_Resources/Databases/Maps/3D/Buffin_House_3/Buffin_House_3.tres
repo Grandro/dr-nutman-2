@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=5 format=3 uid="uid://dypeaumd8uhkf"]
+
+[ext_resource type="Resource" uid="uid://bb3b1vkt0wrnk" path="res://Global_Resources/Databases/Maps/3D/Buffin_House_3/Destinations/Door.tres" id="1_g8ltk"]
+[ext_resource type="Script" uid="uid://cgx4qljo5ouln" path="res://Global_Resources/Databases/Maps/Map_Data.gd" id="2_p3yav"]
+[ext_resource type="Resource" uid="uid://cq6ldtbn4frno" path="res://Global_Resources/Databases/Maps/3D/Buffin_House_3/Destinations/Stairway_1.tres" id="2_w62kl"]
+[ext_resource type="Resource" uid="uid://dkhkpyhdm754e" path="res://Global_Resources/Databases/Maps/3D/Buffin_House_3/Destinations/Stairway_2.tres" id="3_my52t"]
+
+[resource]
+script = ExtResource("2_p3yav")
+_e_path = "res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Buffin_House_3/Buffin_House_3.tscn"
+_e_destinations = {
+"Door": ExtResource("1_g8ltk"),
+"Stairway_1": ExtResource("2_w62kl"),
+"Stairway_2": ExtResource("3_my52t")
+}

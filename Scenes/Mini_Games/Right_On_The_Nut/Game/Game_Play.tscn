@@ -1,0 +1,127 @@
+[gd_scene load_steps=13 format=3 uid="uid://ce87q22isrsm1"]
+
+[ext_resource type="PackedScene" uid="uid://0fiuqormgykw" path="res://Scenes/Mini_Games/Right_On_The_Nut/Game/Game_Base.tscn" id="1_ctyog"]
+[ext_resource type="Script" uid="uid://em8d5ar8crw1" path="res://Scenes/Mini_Games/Right_On_The_Nut/Game/Scripts/Game_Play.gd" id="2_20yed"]
+[ext_resource type="Theme" uid="uid://budcfl16xj2tt" path="res://Global_Resources/Themes/Default/Default.tres" id="3_2sqag"]
+[ext_resource type="PackedScene" uid="uid://beoei6o2vrvx" path="res://Scenes/Indicator/Back_Button.tscn" id="4_vcatg"]
+[ext_resource type="Texture2D" uid="uid://nisjlp4pic74" path="res://Global_Resources/Sprites/Items/Handful_Peanuts_Uncracked.png" id="4_xvikn"]
+[ext_resource type="PackedScene" uid="uid://dcvpnmql3yedt" path="res://Scenes/Item_Amount_Display/Item_Amount_Display.tscn" id="5_4enli"]
+[ext_resource type="AudioStream" uid="uid://beqxl3dm5rueb" path="res://Global_Resources/Audio/SFX/Fun_Up_1.wav" id="5_m073b"]
+[ext_resource type="AudioStream" uid="uid://1b66bvqkiy1g" path="res://Global_Resources/Audio/SFX/Nutcracker_Bite_1.wav" id="6_yea0v"]
+
+[sub_resource type="Animation" id="2"]
+resource_name = "Move_Down"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -64), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="1"]
+resource_name = "Move_Up"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -64)]
+}
+
+[sub_resource type="Animation" id="Animation_27gdc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vxtjl"]
+_data = {
+&"Move_Down": SubResource("2"),
+&"Move_Up": SubResource("1"),
+&"RESET": SubResource("Animation_27gdc")
+}
+
+[node name="Game_Play" instance=ExtResource("1_ctyog")]
+script = ExtResource("2_20yed")
+_e_launches_per_round = 3
+_e_targets_per_launch = 5
+_e_fragments_per_crack = 6
+
+[node name="Margin" type="MarginContainer" parent="Canvas_2" index="0"]
+light_mask = 8
+visibility_layer = 8
+offset_right = 1280.0
+offset_bottom = 84.0
+mouse_filter = 2
+theme = ExtResource("3_2sqag")
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="Back_Button" parent="Canvas_2/Margin" index="0" instance=ExtResource("4_vcatg")]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Uncracked_Peanut_Amount" parent="Canvas_2/Margin" index="1" instance=ExtResource("5_4enli")]
+layout_mode = 2
+size_flags_horizontal = 8
+_e_key = "Handful_Peanuts_Uncracked"
+
+[node name="Image" parent="Canvas_2/Margin/Uncracked_Peanut_Amount" index="0"]
+texture = ExtResource("4_xvikn")
+
+[node name="Nutcracker_Jaw" parent="Node2D" index="3"]
+offset = Vector2(0, 0)
+
+[node name="Delay" type="Timer" parent="Node2D/Nutcracker_Jaw" index="0"]
+wait_time = 0.2
+one_shot = true
+
+[node name="Anims" type="AnimationPlayer" parent="Node2D/Nutcracker_Jaw" index="1"]
+libraries = {
+"": SubResource("AnimationLibrary_vxtjl")
+}
+
+[node name="Peanut_Fragments" type="Node2D" parent="Node2D" index="5"]
+light_mask = 4
+visibility_layer = 4
+position = Vector2(644, 524)
+
+[node name="Crack_Delay" type="Timer" parent="Node2D" index="6"]
+wait_time = 2.0
+one_shot = true
+
+[node name="Audio" type="Node" parent="Node2D" index="7"]
+
+[node name="Launch_Nut" type="AudioStreamPlayer" parent="Node2D/Audio" index="0"]
+stream = ExtResource("5_m073b")
+bus = &"SFX"
+
+[node name="Nutcracker_Bite" type="AudioStreamPlayer" parent="Node2D/Audio" index="1"]
+stream = ExtResource("6_yea0v")
+bus = &"SFX"
+
+[editable path="Canvas_2/Margin/Uncracked_Peanut_Amount"]

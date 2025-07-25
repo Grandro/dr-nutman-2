@@ -1,0 +1,121 @@
+[gd_scene load_steps=9 format=3 uid="uid://b03qwopfbkw5f"]
+
+[ext_resource type="Script" uid="uid://c0n5npi27i7gm" path="res://Scenes/NutOS/Content/Taskbar/Scripts/Taskbar.gd" id="1_ut3gl"]
+[ext_resource type="Texture2D" uid="uid://qd8s4q1hkmbc" path="res://Scenes/NutOS/Content/Sprites/Start_Icon.png" id="2_8hhau"]
+[ext_resource type="PackedScene" uid="uid://bdm8bdyt8jrh" path="res://Scenes/Context_Menu/Context_Menu.tscn" id="3_up13f"]
+[ext_resource type="Resource" uid="uid://bx1v5eqaabbbt" path="res://Scenes/NutOS/Content/Taskbar/Options/Shutdown_Or_Leave.tres" id="5_algkf"]
+[ext_resource type="Theme" uid="uid://cphubdfp0kld2" path="res://Global_Resources/Themes/NutOS/NutOS.tres" id="5_x7l4a"]
+[ext_resource type="PackedScene" uid="uid://brwnr7v5wrvx" path="res://Scenes/Search/Search.tscn" id="6_8cdlf"]
+[ext_resource type="Script" uid="uid://nu443r21ifkm" path="res://Scenes/NutOS/Content/Taskbar/Scripts/Time_Date.gd" id="8_gptwm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o7t2i"]
+bg_color = Color(0.282353, 0.282353, 0.282353, 0.784314)
+
+[node name="Taskbar" type="MarginContainer"]
+light_mask = 8
+visibility_layer = 8
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -640.0
+offset_top = -40.0
+offset_right = 640.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("1_ut3gl")
+
+[node name="Background" type="Panel" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_o7t2i")
+
+[node name="Tools" type="HBoxContainer" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Left" type="HBoxContainer" parent="Tools"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Start" type="MarginContainer" parent="Tools/Left"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+
+[node name="Select" type="TextureButton" parent="Tools/Left/Start"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+tooltip_text = "Start"
+texture_normal = ExtResource("2_8hhau")
+stretch_mode = 5
+
+[node name="Options" parent="Tools/Left/Start" instance=ExtResource("3_up13f")]
+visible = false
+_e_options = {
+"Shutdown_Or_Leave": ExtResource("5_algkf")
+}
+_e_options_order = Array[String](["Shutdown_Or_Leave"])
+
+[node name="Content" parent="Tools/Left/Start/Options" index="0"]
+theme = ExtResource("5_x7l4a")
+
+[node name="Search" parent="Tools/Left" instance=ExtResource("6_8cdlf")]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+
+[node name="Right" type="HBoxContainer" parent="Tools"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Apps" type="HBoxContainer" parent="Tools/Right"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Time_Date" type="MarginContainer" parent="Tools/Right"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/margin_right = 8
+script = ExtResource("8_gptwm")
+
+[node name="VBox" type="VBoxContainer" parent="Tools/Right/Time_Date"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = -8
+
+[node name="Time" type="Label" parent="Tools/Right/Time_Date/VBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 16
+text = "10:00"
+horizontal_alignment = 1
+
+[node name="Date" type="Label" parent="Tools/Right/Time_Date/VBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "20.08.20"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[editable path="Tools/Left/Start/Options"]

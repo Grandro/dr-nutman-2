@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://xs8awggn1xig"]
+
+[ext_resource type="PackedScene" uid="uid://r41nl45w54n2" path="res://Global_Scenes/Progress/Quests/Objective_Sub_Quest.tscn" id="1_eikni"]
+[ext_resource type="Resource" uid="uid://by7s63vdxm3oy" path="res://Global_Resources/Databases/Quests/Broko_Town/Main/Great_Broko_Town_Festival/Objective_An_Uplifting_Nut.tres" id="2_ox5ms"]
+
+[node name="An_Uplifting_Nut" instance=ExtResource("1_eikni")]
+_e_data = ExtResource("2_ox5ms")

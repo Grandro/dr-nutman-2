@@ -1,0 +1,770 @@
+[gd_scene load_steps=22 format=3 uid="uid://due8xbyuvrdca"]
+
+[ext_resource type="Script" uid="uid://chwkpbwn3qm2y" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Objects/NPCs/Buffin_Child_1/Comps/Magic_Trick/Scripts/Magic_Trick.gd" id="1_16irm"]
+[ext_resource type="Texture2D" uid="uid://ofqhd88fi5s7" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Objects/NPCs/Buffin_Child_1/Comps/Magic_Trick/Sprites/Floor/Spritesheet.png" id="3_uw1qk"]
+[ext_resource type="Texture2D" uid="uid://pbe0vyanyil7" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Objects/NPCs/Buffin_Child_1/Comps/Magic_Trick/Sprites/Legs/Spritesheet.png" id="5_ean02"]
+[ext_resource type="Texture2D" uid="uid://cqnehybmu60fa" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Objects/NPCs/Buffin_Child_1/Comps/Magic_Trick/Sprites/Turf/Spritesheet.png" id="7_l4g5q"]
+[ext_resource type="Texture2D" uid="uid://c3j0u70t355a6" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Objects/NPCs/Buffin_Child_1/Comps/Magic_Trick/Sprites/Ref.png" id="9_cabwr"]
+[ext_resource type="Texture2D" uid="uid://bdttfuim36whm" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Objects/NPCs/Buffin_Child_1/Comps/Magic_Trick/Sprites/Body/Spritesheet.png" id="9_g7w56"]
+[ext_resource type="AudioStream" uid="uid://ne3gu8fcoayh" path="res://Global_Resources/Audio/BGS/Sparkle_1.ogg" id="10_6hx6s"]
+[ext_resource type="AudioStream" uid="uid://bm5j3vaqx0jlw" path="res://Global_Resources/Audio/SFX/Terrain/Grass_1.wav" id="10_fg7d7"]
+[ext_resource type="AudioStream" uid="uid://oiblfy7edi8p" path="res://Global_Resources/Audio/SFX/Thump_1.wav" id="11_c8web"]
+[ext_resource type="Texture2D" uid="uid://detrfx7pvny4j" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Objects/NPCs/Buffin_Child_1/Comps/Magic_Trick/Sprites/Arms/Spritesheet.png" id="11_u4ixx"]
+[ext_resource type="Texture2D" uid="uid://bsaw3bso62pws" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Objects/NPCs/Buffin_Child_1/Comps/Magic_Trick/Sprites/Party_Hat/Spritesheet.png" id="13_5qou2"]
+[ext_resource type="AudioStream" uid="uid://bf7011q66rg6f" path="res://Global_Resources/Audio/SFX/Terrain/Grass_2.wav" id="13_gbv1h"]
+[ext_resource type="AudioStream" uid="uid://beqxl3dm5rueb" path="res://Global_Resources/Audio/SFX/Fun_Up_1.wav" id="14_q3k7o"]
+[ext_resource type="AudioStream" uid="uid://cngj16qpr244a" path="res://Global_Resources/Audio/SFX/Win_Stinger_1.wav" id="15_c7bh3"]
+[ext_resource type="Texture2D" uid="uid://d0m14evmmak6j" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Objects/NPCs/Buffin_Child_1/Comps/Magic_Trick/Sprites/Coin/Spritesheet.png" id="15_eqxqj"]
+[ext_resource type="Texture2D" uid="uid://c2ykkg5bodr3e" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Objects/NPCs/Buffin_Child_1/Comps/Magic_Trick/Sprites/Stars/Spritesheet.png" id="17_wg70e"]
+
+[sub_resource type="Animation" id="Animation_d5g4h"]
+resource_name = "Hold"
+length = 0.1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Stars:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Coin:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Coin:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Party_Hat:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Party_Hat:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Arms:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Arms:frame")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Body:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Body:frame")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_mcii2"]
+resource_name = "Juggle"
+length = 0.6
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Stars:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Coin:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Coin:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.2, 0.3, 0.35, 0.45, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Party_Hat:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Party_Hat:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Arms:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Arms:frame")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Body:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Body:frame")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+tracks/9/type = "audio"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../Audio/Thump")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"clips": [{
+"end_offset": 0.346526,
+"start_offset": 0.0,
+"stream": ExtResource("11_c8web")
+}, {
+"end_offset": 0.372109,
+"start_offset": 0.0,
+"stream": ExtResource("11_c8web")
+}],
+"times": PackedFloat32Array(0, 0.2)
+}
+tracks/9/use_blend = true
+tracks/10/type = "audio"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("../Audio/Grass")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"clips": [{
+"end_offset": 0.61191,
+"start_offset": 0.0770313,
+"stream": ExtResource("10_fg7d7")
+}],
+"times": PackedFloat32Array(0.3)
+}
+tracks/10/use_blend = true
+
+[sub_resource type="Animation" id="Animation_2n8tl"]
+resource_name = "Sparkle"
+length = 4.0
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Stars:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Coin:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Coin:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [29]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Party_Hat:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Party_Hat:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Arms:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Arms:frame")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Body:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Body:frame")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Stars:frame")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2, 2.25, 2.5, 2.75, 3, 3.25, 3.5, 3.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1]
+}
+tracks/10/type = "audio"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("../Audio/Sparkle")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("10_6hx6s")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/10/use_blend = true
+
+[sub_resource type="Animation" id="Animation_p82rw"]
+resource_name = "Swallow"
+length = 4.95
+step = 0.025
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Stars:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.95),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Coin:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Coin:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.2, 0.25, 0.3, 0.35, 0.45, 0.55, 0.65, 0.75, 0.85, 0.95, 1.2, 1.45),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 21, 25, 29]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Party_Hat:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Party_Hat:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Arms:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Arms:frame")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 3]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Body:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Body:frame")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.55, 0.65, 0.75, 0.95, 2.15, 2.45, 2.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Stars:frame")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.95, 1.2, 1.45, 1.7, 1.95, 2.2, 2.45, 2.7, 2.95, 3.2, 3.45, 3.7, 3.95, 4.2, 4.45, 4.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1]
+}
+tracks/10/type = "audio"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("../Audio/Thump")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"clips": [{
+"end_offset": 0.363457,
+"start_offset": 0.0,
+"stream": ExtResource("11_c8web")
+}, {
+"end_offset": 0.363457,
+"start_offset": 0.0,
+"stream": ExtResource("11_c8web")
+}],
+"times": PackedFloat32Array(0, 0.2)
+}
+tracks/10/use_blend = true
+tracks/11/type = "audio"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("../Audio/Sparkle")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("10_6hx6s")
+}],
+"times": PackedFloat32Array(0.95)
+}
+tracks/11/use_blend = true
+tracks/12/type = "audio"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("../Audio/Grass")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("13_gbv1h")
+}],
+"times": PackedFloat32Array(0.3)
+}
+tracks/12/use_blend = true
+tracks/13/type = "audio"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("../Audio/Fun_Up")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("14_q3k7o")
+}],
+"times": PackedFloat32Array(0.05)
+}
+tracks/13/use_blend = true
+tracks/14/type = "audio"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("../Audio/Win_Stinger")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("15_c7bh3")
+}],
+"times": PackedFloat32Array(0.775)
+}
+tracks/14/use_blend = true
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0i6n2"]
+_data = {
+&"Hold": SubResource("Animation_d5g4h"),
+&"Juggle": SubResource("Animation_mcii2"),
+&"Sparkle": SubResource("Animation_2n8tl"),
+&"Swallow": SubResource("Animation_p82rw")
+}
+
+[node name="Magic_Trick" type="CanvasLayer" groups=["Comp"]]
+script = ExtResource("1_16irm")
+
+[node name="Control" type="Control" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Background" type="ColorRect" parent="Control"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.498039)
+
+[node name="Anim" type="Control" parent="Control"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -3.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+mouse_filter = 2
+metadata/_edit_group_ = true
+
+[node name="Floor" type="Sprite2D" parent="Control/Anim"]
+light_mask = 8
+visibility_layer = 8
+position = Vector2(8, 328)
+texture = ExtResource("3_uw1qk")
+
+[node name="Legs" type="Sprite2D" parent="Control/Anim"]
+light_mask = 8
+visibility_layer = 8
+position = Vector2(11, 294)
+texture = ExtResource("5_ean02")
+
+[node name="Turf" type="Sprite2D" parent="Control/Anim"]
+light_mask = 8
+visibility_layer = 8
+position = Vector2(15, 354)
+texture = ExtResource("7_l4g5q")
+
+[node name="Body" type="Sprite2D" parent="Control/Anim"]
+light_mask = 8
+visibility_layer = 8
+position = Vector2(2, 11)
+texture = ExtResource("9_g7w56")
+hframes = 8
+vframes = 2
+
+[node name="Arms" type="Sprite2D" parent="Control/Anim"]
+light_mask = 8
+visibility_layer = 8
+position = Vector2(0, 127)
+texture = ExtResource("11_u4ixx")
+hframes = 4
+
+[node name="Party_Hat" type="Sprite2D" parent="Control/Anim"]
+light_mask = 8
+visibility_layer = 8
+position = Vector2(2, -330)
+texture = ExtResource("13_5qou2")
+hframes = 2
+
+[node name="Coin" type="Sprite2D" parent="Control/Anim"]
+light_mask = 8
+visibility_layer = 8
+position = Vector2(6, -30)
+texture = ExtResource("15_eqxqj")
+hframes = 8
+vframes = 3
+frame = 7
+
+[node name="Stars" type="Sprite2D" parent="Control/Anim"]
+visible = false
+light_mask = 8
+visibility_layer = 8
+position = Vector2(-16, -152)
+texture = ExtResource("17_wg70e")
+hframes = 2
+frame = 1
+
+[node name="Anims" type="AnimationPlayer" parent="Control/Anim"]
+libraries = {
+"": SubResource("AnimationLibrary_0i6n2")
+}
+
+[node name="Audio" type="Node" parent="Control"]
+
+[node name="Thump" type="AudioStreamPlayer" parent="Control/Audio"]
+volume_db = -8.0
+bus = &"SFX"
+
+[node name="Sparkle" type="AudioStreamPlayer" parent="Control/Audio"]
+volume_db = -16.0
+bus = &"SFX"
+
+[node name="Grass" type="AudioStreamPlayer" parent="Control/Audio"]
+volume_db = -25.0
+bus = &"SFX"
+
+[node name="Fun_Up" type="AudioStreamPlayer" parent="Control/Audio"]
+volume_db = -6.0
+bus = &"SFX"
+
+[node name="Win_Stinger" type="AudioStreamPlayer" parent="Control/Audio"]
+volume_db = -12.0
+bus = &"SFX"
+
+[node name="Ref" type="TextureRect" parent="Control"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 0
+offset_left = -350.0
+offset_top = 747.0
+offset_right = 1584.0
+offset_bottom = 1116.0
+texture = ExtResource("9_cabwr")

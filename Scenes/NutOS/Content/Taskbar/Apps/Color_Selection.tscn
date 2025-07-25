@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://n6f6iy7fvrxb"]
+
+[ext_resource type="PackedScene" uid="uid://cxwjhxqe7mjn1" path="res://Scenes/NutOS/Content/Taskbar/Apps/App.tscn" id="1"]
+[ext_resource type="Texture2D" uid="uid://cv3d1k0if8bge" path="res://Scenes/NutOS/Content/Desktop/Apps/Sprites/Installed/Color_Selection.png" id="2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xt58h"]
+resource_local_to_scene = true
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="Color_Selection" instance=ExtResource("1")]
+theme_override_styles/panel = SubResource("StyleBoxFlat_xt58h")
+
+[node name="Image" parent="." index="1"]
+texture = ExtResource("2")

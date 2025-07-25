@@ -1,0 +1,138 @@
+[gd_scene load_steps=11 format=3 uid="uid://ck7mdrpnunkt8"]
+
+[ext_resource type="PackedScene" uid="uid://bblmb8yfchyxr" path="res://Scenes/Object/Comps/3D/Display.tscn" id="1_4yto0"]
+[ext_resource type="Script" uid="uid://u2h51f0r2vch" path="res://Scenes/Object/Scripts/Static3D_Object.gd" id="1_7y0bm"]
+[ext_resource type="Texture2D" uid="uid://bktuok8p4fom" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Objects/Festival/Balloon_Cart_1/Sprites/Balloon_Cart_Spritesheet.png" id="2_l8j64"]
+[ext_resource type="PackedScene" uid="uid://dsp0njc065uev" path="res://Scenes/Object/Comps/3D/Collision_Shape.tscn" id="3_m588c"]
+[ext_resource type="PackedScene" uid="uid://bwqkxub7a1m1c" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Objects/Comps/Balloons/Balloons_Static.tscn" id="5_h0bkx"]
+[ext_resource type="PackedScene" uid="uid://cq30tkfdtots8" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Objects/Comps/Balloons/Container_Static.tscn" id="6_0uxan"]
+[ext_resource type="PackedScene" uid="uid://drpp26gth4snn" path="res://Scenes/Object/Comps/Reference.tscn" id="6_dwyte"]
+[ext_resource type="PackedScene" uid="uid://de2jy2ixhp2mw" path="res://Scenes/Object/Comps/Save.tscn" id="6_f2sa3"]
+[ext_resource type="PackedScene" uid="uid://fnej1f64wfc2" path="res://Scenes/Object/Comps/3D/Nav_Obstacle.tscn" id="7_aydcd"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iowc4"]
+size = Vector3(2.3, 0.8, 0.9)
+
+[node name="Balloon_Cart_1" type="StaticBody3D" groups=["Object"]]
+collision_layer = 8
+collision_mask = 8
+script = ExtResource("1_7y0bm")
+
+[node name="Display" parent="." instance=ExtResource("1_4yto0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03, 0)
+texture = ExtResource("2_l8j64")
+
+[node name="Collision" parent="." instance=ExtResource("3_m588c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, -0.2)
+shape = SubResource("BoxShape3D_iowc4")
+
+[node name="Balloons" parent="." instance=ExtResource("5_h0bkx")]
+
+[node name="Origin" parent="Balloons" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.81, 1.133, 0)
+
+[node name="Containers" parent="Balloons" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.817, 1.136, 0)
+
+[node name="Red" parent="Balloons/Containers" index="0" instance=ExtResource("6_0uxan")]
+
+[node name="Joint" parent="Balloons/Containers/Red" index="0"]
+node_a = NodePath("../../../Origin")
+
+[node name="Balloon" parent="Balloons/Containers/Red" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -0.4)
+
+[node name="Sprite" parent="Balloons/Containers/Red/Balloon" index="0"]
+modulate = Color(0.921569, 0.184314, 0.184314, 1)
+
+[node name="Green" parent="Balloons/Containers" index="1" instance=ExtResource("6_0uxan")]
+
+[node name="Joint" parent="Balloons/Containers/Green" index="0"]
+node_a = NodePath("../../../Origin")
+
+[node name="Balloon" parent="Balloons/Containers/Green" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 2.8, -0.2)
+
+[node name="Sprite" parent="Balloons/Containers/Green/Balloon" index="0"]
+modulate = Color(0.184314, 0.921569, 0.184314, 1)
+
+[node name="Dark_Blue" parent="Balloons/Containers" index="2" instance=ExtResource("6_0uxan")]
+
+[node name="Joint" parent="Balloons/Containers/Dark_Blue" index="0"]
+node_a = NodePath("../../../Origin")
+
+[node name="Balloon" parent="Balloons/Containers/Dark_Blue" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 3.2, 0)
+
+[node name="Sprite" parent="Balloons/Containers/Dark_Blue/Balloon" index="0"]
+modulate = Color(0.184314, 0.184314, 0.921569, 1)
+
+[node name="Orange" parent="Balloons/Containers" index="3" instance=ExtResource("6_0uxan")]
+
+[node name="Joint" parent="Balloons/Containers/Orange" index="0"]
+node_a = NodePath("../../../Origin")
+
+[node name="Balloon" parent="Balloons/Containers/Orange" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 2.8, -0.2)
+
+[node name="Sprite" parent="Balloons/Containers/Orange/Balloon" index="0"]
+modulate = Color(0.921569, 0.619608, 0.101961, 1)
+
+[node name="Purple" parent="Balloons/Containers" index="4" instance=ExtResource("6_0uxan")]
+
+[node name="Joint" parent="Balloons/Containers/Purple" index="0"]
+node_a = NodePath("../../../Origin")
+
+[node name="Balloon" parent="Balloons/Containers/Purple" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 3.1, 0.1)
+
+[node name="Sprite" parent="Balloons/Containers/Purple/Balloon" index="0"]
+modulate = Color(0.372549, 0.188235, 0.631373, 1)
+
+[node name="Light_Blue" parent="Balloons/Containers" index="5" instance=ExtResource("6_0uxan")]
+
+[node name="Joint" parent="Balloons/Containers/Light_Blue" index="0"]
+node_a = NodePath("../../../Origin")
+
+[node name="Balloon" parent="Balloons/Containers/Light_Blue" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 2.7, 0.3)
+
+[node name="Sprite" parent="Balloons/Containers/Light_Blue/Balloon" index="0"]
+modulate = Color(0.678431, 0.847059, 0.901961, 1)
+
+[node name="Pink" parent="Balloons/Containers" index="6" instance=ExtResource("6_0uxan")]
+
+[node name="Joint" parent="Balloons/Containers/Pink" index="0"]
+node_a = NodePath("../../../Origin")
+
+[node name="Balloon" parent="Balloons/Containers/Pink" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0.3)
+
+[node name="Sprite" parent="Balloons/Containers/Pink/Balloon" index="0"]
+modulate = Color(1, 0.752941, 0.796078, 1)
+
+[node name="Nav_Obstacle" parent="." groups=["NavMesh_Main"] instance=ExtResource("7_aydcd")]
+height = 1.5
+vertices = PackedVector3Array(1.2, 0, 0.3, 1.2, 0, -0.7, -1.2, 0, -0.7, -1.2, 0, 0.3)
+affect_navigation_mesh = true
+avoidance_enabled = false
+
+[node name="Reference" parent="." instance=ExtResource("6_dwyte")]
+
+[node name="Save" parent="." instance=ExtResource("6_f2sa3")]
+
+[editable path="Balloons"]
+[editable path="Balloons/Containers/Red"]
+[editable path="Balloons/Containers/Red/Balloon"]
+[editable path="Balloons/Containers/Green"]
+[editable path="Balloons/Containers/Green/Balloon"]
+[editable path="Balloons/Containers/Dark_Blue"]
+[editable path="Balloons/Containers/Dark_Blue/Balloon"]
+[editable path="Balloons/Containers/Orange"]
+[editable path="Balloons/Containers/Orange/Balloon"]
+[editable path="Balloons/Containers/Purple"]
+[editable path="Balloons/Containers/Purple/Balloon"]
+[editable path="Balloons/Containers/Light_Blue"]
+[editable path="Balloons/Containers/Light_Blue/Balloon"]
+[editable path="Balloons/Containers/Pink"]
+[editable path="Balloons/Containers/Pink/Balloon"]

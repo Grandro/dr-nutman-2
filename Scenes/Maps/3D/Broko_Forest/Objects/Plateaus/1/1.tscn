@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://1i7cmasqbho"]
+
+[ext_resource type="Script" uid="uid://u2h51f0r2vch" path="res://Scenes/Object/Scripts/Static3D_Object.gd" id="1_4csnx"]
+[ext_resource type="PackedScene" uid="uid://dsp0njc065uev" path="res://Scenes/Object/Comps/3D/Collision_Shape.tscn" id="2_al7bp"]
+[ext_resource type="PackedScene" uid="uid://2y02pftaywri" path="res://Scenes/Maps/3D/Broko_Forest/Objects/Plateaus/1/Models/Model.glb" id="3_kbwn5"]
+[ext_resource type="PackedScene" uid="uid://bevsfn8gnppb1" path="res://Scenes/Maps/Map_Base/3D/Terrain_Area/Shape.tscn" id="4_6fvx1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7ambv"]
+size = Vector3(3, 1, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p2sx0"]
+size = Vector3(3, 1, 4)
+
+[node name="1" type="StaticBody3D" groups=["NavMesh_Main"]]
+collision_layer = 8
+collision_mask = 8
+script = ExtResource("1_4csnx")
+
+[node name="Model" parent="." instance=ExtResource("3_kbwn5")]
+
+[node name="Cube" parent="Model" index="0" groups=["NavMesh_Main"]]
+
+[node name="Collision" parent="." instance=ExtResource("2_al7bp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_7ambv")
+
+[node name="Terrain_Areas" type="Node3D" parent="."]
+
+[node name="Dirt" parent="Terrain_Areas" instance=ExtResource("4_6fvx1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+_e_audio_keys = Array[String](["Dirt_1", "Dirt_2"])
+
+[node name="Collision" parent="Terrain_Areas/Dirt" index="0"]
+shape = SubResource("BoxShape3D_p2sx0")
+
+[editable path="Model"]
+[editable path="Terrain_Areas/Dirt"]

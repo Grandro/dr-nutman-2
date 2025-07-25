@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://c7jabtrfnl2r7"]
+
+[ext_resource type="Script" uid="uid://dd8g42vshsje" path="res://Global_Resources/Databases/Maps/3D/Destination_Data.gd" id="1_24qqo"]
+
+[resource]
+script = ExtResource("1_24qqo")
+_e_pos = Vector3(7.5, 0, 11.5)
+_e_camera_limit = Dictionary[int, float]({
+0: -1.0,
+1: -5.0,
+2: 16.0,
+3: 13.0
+})
+_e_dir = "Up"
+_e_camera_limit_active = true

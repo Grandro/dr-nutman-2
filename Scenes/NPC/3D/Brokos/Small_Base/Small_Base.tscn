@@ -1,0 +1,143 @@
+[gd_scene load_steps=35 format=3 uid="uid://crkofp4xbx8sp"]
+
+[ext_resource type="PackedScene" uid="uid://w5cxcgsk2pyw" path="res://Scenes/NPC/3D/NPC.tscn" id="1"]
+[ext_resource type="Texture2D" uid="uid://cca2rk0mdm2xp" path="res://Global_Resources/Sprites/Objects/Brokos/Small_Base/Spritesheet.png" id="2"]
+[ext_resource type="PackedScene" uid="uid://b028hrfen5mpa" path="res://Scenes/Object/Comps/3D/Movement/Comps/Terrain/Area.tscn" id="7_at3tn"]
+[ext_resource type="Animation" uid="uid://ob1ieqrkl4t0" path="res://Scenes/NPC/3D/Brokos/Small_Base/Anims/Terrain/Global/Idle_Down.tres" id="7_ysoco"]
+[ext_resource type="Animation" uid="uid://bnnqy1p4v375m" path="res://Scenes/NPC/3D/Brokos/Small_Base/Anims/Terrain/Global/Idle_Left.tres" id="8_h68vl"]
+[ext_resource type="Animation" uid="uid://dsdugc708l3cl" path="res://Scenes/NPC/3D/Brokos/Small_Base/Anims/Terrain/Global/Idle_Right.tres" id="9_at3tn"]
+[ext_resource type="Animation" uid="uid://bjknn125yan8y" path="res://Scenes/NPC/3D/Brokos/Small_Base/Anims/Terrain/Global/Idle_Up.tres" id="10_vyw0k"]
+[ext_resource type="Animation" uid="uid://u0h5xj46oc31" path="res://Scenes/NPC/3D/Brokos/Small_Base/Anims/Terrain/Global/Jump_Down.tres" id="11_kblr1"]
+[ext_resource type="Animation" uid="uid://cls3ebj6ljflx" path="res://Scenes/NPC/3D/Brokos/Small_Base/Anims/Terrain/Global/Jump_Left.tres" id="12_1xq4y"]
+[ext_resource type="Animation" uid="uid://ddvgb67y388uu" path="res://Scenes/NPC/3D/Brokos/Small_Base/Anims/Terrain/Global/Jump_Right.tres" id="13_03wdb"]
+[ext_resource type="Animation" uid="uid://b20diw1pytagr" path="res://Scenes/NPC/3D/Brokos/Small_Base/Anims/Terrain/Global/Jump_Up.tres" id="14_kr2yq"]
+[ext_resource type="Animation" uid="uid://6na7x4g70n5" path="res://Scenes/NPC/3D/Brokos/Small_Base/Anims/Terrain/Global/Place_Down.tres" id="15_6i35g"]
+[ext_resource type="Animation" uid="uid://bgdcldmfqpnlr" path="res://Scenes/NPC/3D/Brokos/Small_Base/Anims/Terrain/Global/Place_Left.tres" id="16_cu2gc"]
+[ext_resource type="Animation" uid="uid://dr0xukre4s1ld" path="res://Scenes/NPC/3D/Brokos/Small_Base/Anims/Terrain/Global/Place_Right.tres" id="17_58m0b"]
+[ext_resource type="Animation" uid="uid://dx3bdl0hwh462" path="res://Scenes/NPC/3D/Brokos/Small_Base/Anims/Terrain/Global/Place_Up.tres" id="18_nokf7"]
+[ext_resource type="Animation" uid="uid://ca85el32gj22h" path="res://Scenes/NPC/3D/Brokos/Small_Base/Anims/Terrain/Global/Stop_Down.tres" id="19_30arv"]
+[ext_resource type="Animation" uid="uid://brel2psneiuv3" path="res://Scenes/NPC/3D/Brokos/Small_Base/Anims/Terrain/Global/Stop_Left.tres" id="20_5y0pa"]
+[ext_resource type="Animation" uid="uid://yx8t1mexrqpb" path="res://Scenes/NPC/3D/Brokos/Small_Base/Anims/Terrain/Global/Stop_Right.tres" id="21_cuuol"]
+[ext_resource type="Animation" uid="uid://xlvhd0fxci3n" path="res://Scenes/NPC/3D/Brokos/Small_Base/Anims/Terrain/Global/Stop_Up.tres" id="22_344om"]
+[ext_resource type="Animation" uid="uid://c0p8c67mdqspm" path="res://Scenes/NPC/3D/Brokos/Small_Base/Anims/Terrain/Global/Think_Down.tres" id="23_kwesn"]
+[ext_resource type="Animation" uid="uid://c8dqanlvambkm" path="res://Scenes/NPC/3D/Brokos/Small_Base/Anims/Terrain/Global/Think_Left.tres" id="24_7stah"]
+[ext_resource type="Animation" uid="uid://bgdawphxn07qq" path="res://Scenes/NPC/3D/Brokos/Small_Base/Anims/Terrain/Global/Think_Right.tres" id="25_4s6w7"]
+[ext_resource type="Animation" uid="uid://c1kep7fpgw41b" path="res://Scenes/NPC/3D/Brokos/Small_Base/Anims/Terrain/Global/Think_Up.tres" id="26_ggvvi"]
+[ext_resource type="Animation" uid="uid://d2ihixrlefepe" path="res://Scenes/NPC/3D/Brokos/Small_Base/Anims/Terrain/Global/Walk_Down.tres" id="27_yvphr"]
+[ext_resource type="PackedScene" uid="uid://me7fn1bm6yjn" path="res://Scenes/Equipable/3D/Objects/Brokos/Small_Base/Head/Party_Hats/1.tscn" id="28"]
+[ext_resource type="Animation" uid="uid://mvhym31ekhvj" path="res://Scenes/NPC/3D/Brokos/Small_Base/Anims/Terrain/Global/Walk_Left.tres" id="28_e7sts"]
+[ext_resource type="PackedScene" uid="uid://d0yjfe2v7edb2" path="res://Scenes/Equipable/3D/Objects/Brokos/Small_Base/Head/Party_Hats/3.tscn" id="29"]
+[ext_resource type="Animation" uid="uid://crba3datxiqir" path="res://Scenes/NPC/3D/Brokos/Small_Base/Anims/Terrain/Global/Walk_Right.tres" id="29_ihhbg"]
+[ext_resource type="PackedScene" uid="uid://mi7ays8auh2v" path="res://Scenes/Equipable/3D/Objects/Brokos/Small_Base/Head/Party_Hats/2.tscn" id="30"]
+[ext_resource type="Animation" uid="uid://sdgk1amsu38w" path="res://Scenes/NPC/3D/Brokos/Small_Base/Anims/Terrain/Global/Walk_Up.tres" id="30_en4s3"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_i014o"]
+radius = 0.38
+height = 1.8
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0khca"]
+size = Vector3(1.5, 0.5, 1.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vyw0k"]
+size = Vector3(0.2, 0.1, 0.15)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yhqnj"]
+_data = {
+&"Idle_Down": ExtResource("7_ysoco"),
+&"Idle_Left": ExtResource("8_h68vl"),
+&"Idle_Right": ExtResource("9_at3tn"),
+&"Idle_Up": ExtResource("10_vyw0k"),
+&"Jump_Down": ExtResource("11_kblr1"),
+&"Jump_Left": ExtResource("12_1xq4y"),
+&"Jump_Right": ExtResource("13_03wdb"),
+&"Jump_Up": ExtResource("14_kr2yq"),
+&"Place_Down": ExtResource("15_6i35g"),
+&"Place_Left": ExtResource("16_cu2gc"),
+&"Place_Right": ExtResource("17_58m0b"),
+&"Place_Up": ExtResource("18_nokf7"),
+&"Stop_Down": ExtResource("19_30arv"),
+&"Stop_Left": ExtResource("20_5y0pa"),
+&"Stop_Right": ExtResource("21_cuuol"),
+&"Stop_Up": ExtResource("22_344om"),
+&"Think_Down": ExtResource("23_kwesn"),
+&"Think_Left": ExtResource("24_7stah"),
+&"Think_Right": ExtResource("25_4s6w7"),
+&"Think_Up": ExtResource("26_ggvvi"),
+&"Walk_Down": ExtResource("27_yvphr"),
+&"Walk_Left": ExtResource("28_e7sts"),
+&"Walk_Right": ExtResource("29_ihhbg"),
+&"Walk_Up": ExtResource("30_en4s3")
+}
+
+[node name="Small_Base" instance=ExtResource("1")]
+
+[node name="Display" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.12, 0)
+texture = ExtResource("2")
+hframes = 8
+vframes = 13
+
+[node name="Collision" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("CapsuleShape3D_i014o")
+
+[node name="Equipment" parent="." index="2"]
+_e_scenes = {
+"Feet": {},
+"Head": {
+"Party_Hat_1": ExtResource("28"),
+"Party_Hat_2": ExtResource("30"),
+"Party_Hat_3": ExtResource("29")
+},
+"Legs": {},
+"Shield": {},
+"Torso": {},
+"Weapon": {}
+}
+
+[node name="1" parent="Interactions" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+_e_popup_pos = Vector3(0, 2.3, 0.02)
+_e_speech_bubble_pos = Vector3(0, 4.5, 0.03)
+
+[node name="Collision" parent="Interactions/1" index="0"]
+shape = SubResource("BoxShape3D_0khca")
+
+[node name="Left_Foot" parent="Movement/Terrain/Areas" index="0" instance=ExtResource("7_at3tn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.16, 0, 0)
+
+[node name="Collision" parent="Movement/Terrain/Areas/Left_Foot" index="1"]
+shape = SubResource("BoxShape3D_vyw0k")
+
+[node name="Right_Foot" parent="Movement/Terrain/Areas" index="1" instance=ExtResource("7_at3tn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.16, 0, 0)
+
+[node name="Collision" parent="Movement/Terrain/Areas/Right_Foot" index="1"]
+shape = SubResource("BoxShape3D_vyw0k")
+
+[node name="Anims" parent="Movement/Terrain" index="1"]
+libraries = {
+&"": SubResource("AnimationLibrary_yhqnj")
+}
+
+[node name="Listener" parent="." index="6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0)
+
+[node name="Speech_Bubble" parent="." index="8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, 0.03)
+
+[node name="Popup" parent="." index="9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3, 0.02)
+
+[node name="States" parent="." index="14"]
+_e_states = Array[String](["Stop", "Idle", "Walk", "Jump", "Place", "Think"])
+
+[node name="Debug" parent="." index="17"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4, 0)
+
+[editable path="Interactions"]
+[editable path="Interactions/1"]
+[editable path="Movement/Terrain"]
+[editable path="Movement/Terrain/Areas/Left_Foot"]
+[editable path="Movement/Terrain/Areas/Right_Foot"]
+[editable path="Popup"]

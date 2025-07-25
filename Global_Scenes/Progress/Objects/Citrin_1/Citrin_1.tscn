@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1grtsyehl4uu"]
+
+[ext_resource type="PackedScene" uid="uid://b1rufa43a5m0l" path="res://Global_Scenes/Progress/Objects/Enemy_Base.tscn" id="1_7gkoc"]
+
+[node name="Citrin_1" instance=ExtResource("1_7gkoc")]

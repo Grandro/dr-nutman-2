@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://ca63i2lfbxptr"]
+
+[ext_resource type="PackedScene" uid="uid://dbxigq53qnnvo" path="res://Global_Resources/Mapping/3D/Plane/Plane_Tile.tscn" id="2_aepx2"]
+[ext_resource type="Texture2D" uid="uid://cnwsfi3g4y7hc" path="res://Global_Resources/Mapping/Sprites/Same_As/Broko_Forest/Hill_1/Main_Stairs_Top_Down_Center.png" id="3_i5lia"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_316uf"]
+albedo_texture = ExtResource("3_i5lia")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_0ydr8"]
+material = SubResource("StandardMaterial3D_316uf")
+size = Vector2(1, 1.415)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_7civm"]
+points = PackedVector3Array(-0.5, 0, 0.5, -0.5, 0, -0.5, -0.5, 1, -0.5, 0.5, 0, 0.5, 0.5, 0, -0.5, 0.5, 1, -0.5)
+
+[node name="Main_1" type="Node3D"]
+
+[node name="Top" parent="." groups=["NavMesh_Main"] instance=ExtResource("2_aepx2")]
+transform = Transform3D(1, 0, 0, 0, 0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 0.5, 0)
+mesh = SubResource("PlaneMesh_0ydr8")
+_e_base_size = Vector3(1, 1.415, 1)
+
+[node name="Static" type="StaticBody3D" parent="."]
+collision_mask = 0
+
+[node name="Collision" type="CollisionShape3D" parent="Static"]
+shape = SubResource("ConvexPolygonShape3D_7civm")

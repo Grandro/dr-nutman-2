@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://chegy2mbe2to4"]
+
+[ext_resource type="Texture2D" uid="uid://r3gnfiekh51y" path="res://Scenes/Mini_Games/Color_Selection/Game/Sprites/Flipper_1.png" id="1"]
+[ext_resource type="Script" uid="uid://b5fy6cnsh7xhx" path="res://Scenes/Mini_Games/Color_Selection/Game/Flipper_1/Scripts/1_Base.gd" id="2"]
+[ext_resource type="AudioStream" uid="uid://bwmrpdx8ekhk7" path="res://Global_Resources/Audio/SFX/Jump_Up_Short_3.wav" id="3"]
+
+[node name="1_Base" type="CharacterBody2D"]
+light_mask = 4
+visibility_layer = 4
+collision_layer = 65536
+collision_mask = 65536
+script = ExtResource("2")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+light_mask = 4
+visibility_layer = 4
+position = Vector2(20, 0)
+texture = ExtResource("1")
+
+[node name="Collision" type="CollisionPolygon2D" parent="."]
+light_mask = 4
+visibility_layer = 4
+polygon = PackedVector2Array(-16, 2, -15, -6, -10, -12, -4, -15, 6, -14, 43, -1, 56, 4, 55, 9, 32, 12, 6, 15, -4, 15, -10, 12, -13, 8)
+
+[node name="Audio_Flip" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3")
+volume_db = -12.0
+bus = &"SFX"

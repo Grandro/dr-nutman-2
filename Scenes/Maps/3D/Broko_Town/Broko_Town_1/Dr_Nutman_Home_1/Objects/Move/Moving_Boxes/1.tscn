@@ -1,0 +1,51 @@
+[gd_scene load_steps=10 format=3 uid="uid://b5u4nxj3ct177"]
+
+[ext_resource type="Script" uid="uid://u2h51f0r2vch" path="res://Scenes/Object/Scripts/Static3D_Object.gd" id="1_lbi2g"]
+[ext_resource type="PackedScene" uid="uid://bblmb8yfchyxr" path="res://Scenes/Object/Comps/3D/Display.tscn" id="1_srp6a"]
+[ext_resource type="Texture2D" uid="uid://6dsixoh5xqpy" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Dr_Nutman_Home_1/Objects/Move/Moving_Boxes/Sprites/1_Spritesheet.png" id="2_n2iti"]
+[ext_resource type="PackedScene" uid="uid://dsp0njc065uev" path="res://Scenes/Object/Comps/3D/Collision_Shape.tscn" id="3_hto31"]
+[ext_resource type="PackedScene" uid="uid://nr4813v0r2dg" path="res://Scenes/Object/Comps/3D/Interactions/Interactions.tscn" id="4_aoo26"]
+[ext_resource type="PackedScene" uid="uid://omsbdulg45pv" path="res://Scenes/Object/Comps/3D/Popup.tscn" id="5_0ltye"]
+[ext_resource type="PackedScene" uid="uid://fnej1f64wfc2" path="res://Scenes/Object/Comps/3D/Nav_Obstacle.tscn" id="7_obifv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t2gr1"]
+size = Vector3(1, 0.75, 0.4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_75qxd"]
+size = Vector3(1.5, 0.5, 1)
+
+[node name="1" type="StaticBody3D" groups=["Object"]]
+collision_layer = 8
+collision_mask = 8
+script = ExtResource("1_lbi2g")
+
+[node name="Display" parent="." instance=ExtResource("1_srp6a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
+texture = ExtResource("2_n2iti")
+
+[node name="Collision" parent="." instance=ExtResource("3_hto31")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.375, -0.1)
+shape = SubResource("BoxShape3D_t2gr1")
+
+[node name="Interactions" parent="." instance=ExtResource("4_aoo26")]
+
+[node name="1" parent="Interactions" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+_e_popup_pos = Vector3(0, 1.08, 0.01)
+_e_dialogue_args = ["Moving_Box_1_1"]
+
+[node name="Collision" parent="Interactions/1" index="0"]
+shape = SubResource("BoxShape3D_75qxd")
+
+[node name="Popup" parent="." instance=ExtResource("5_0ltye")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.08, 0.01)
+
+[node name="Nav_Obstacle" parent="." groups=["NavMesh_Main"] instance=ExtResource("7_obifv")]
+height = 0.7
+vertices = PackedVector3Array(0.6, 0, -0.4, 0.6, 0, 0.2, -0.6, 0, 0.2, -0.6, 0, -0.4)
+affect_navigation_mesh = true
+avoidance_enabled = false
+
+[editable path="Interactions"]
+[editable path="Interactions/1"]
+[editable path="Popup"]

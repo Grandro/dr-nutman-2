@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://csqw80op6ionn"]
+[gd_scene load_steps=14 format=3 uid="uid://csqw80op6ionn"]
 
 [ext_resource type="Script" uid="uid://brcr1030rh7xv" path="res://Global_Scenes/Progress/Scripts/Progress.gd" id="1"]
+[ext_resource type="Theme" uid="uid://budcfl16xj2tt" path="res://Global_Resources/Themes/Default/Default.tres" id="2"]
 [ext_resource type="Texture2D" uid="uid://dnmrmy7cxdpwc" path="res://Global_Scenes/Progress/Pins/Sprites/Arrow.png" id="3"]
 [ext_resource type="Script" uid="uid://cbetjhaq5gpjq" path="res://Global_Scenes/Progress/Pins/Scripts/Pins.gd" id="4"]
 [ext_resource type="PackedScene" uid="uid://clbcurkhls2yb" path="res://Global_Scenes/Debug/Scenes/Entry_List/Quest_Entry_List.tscn" id="4_rk8fc"]
@@ -97,6 +98,7 @@ anchors_preset = 9
 anchor_bottom = 1.0
 offset_right = 491.0
 grow_vertical = 2
+theme = ExtResource("2")
 theme_override_constants/separation = -16
 script = ExtResource("4")
 

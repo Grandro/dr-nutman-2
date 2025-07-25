@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://cew68cvh1ml07"]
+
+[ext_resource type="Resource" uid="uid://b78w3lq38f0in" path="res://Global_Resources/Databases/Maps/3D/Broko_Forest_1/Destinations/Down_Right.tres" id="1_5a5qg"]
+[ext_resource type="Resource" uid="uid://bmicqoiojfg4h" path="res://Global_Resources/Databases/Maps/3D/Broko_Forest_1/Destinations/Test.tres" id="2_w8lbl"]
+[ext_resource type="Script" uid="uid://cgx4qljo5ouln" path="res://Global_Resources/Databases/Maps/Map_Data.gd" id="3_tqdnb"]
+
+[resource]
+script = ExtResource("3_tqdnb")
+_e_path = "res://Scenes/Maps/3D/Broko_Forest/Broko_Forest_1/Broko_Forest_1.tscn"
+_e_destinations = {
+"Down_Right": ExtResource("1_5a5qg"),
+"Test": ExtResource("2_w8lbl")
+}

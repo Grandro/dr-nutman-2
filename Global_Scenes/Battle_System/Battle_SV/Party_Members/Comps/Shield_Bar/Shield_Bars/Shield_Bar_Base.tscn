@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://6r6iqeim8pv6" path="res://Global_Scenes/Battle_System/Battle_SV/Party_Members/Comps/Shield_Bar/Shield_Bars/Scripts/Shield_Bar_Base.gd" id="2_etxx3"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_0i5qj"]
-viewport_path = NodePath("VP")
+viewport_path = NodePath(".")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s884g"]
 resource_local_to_scene = true

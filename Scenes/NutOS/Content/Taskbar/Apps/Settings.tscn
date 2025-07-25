@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0etv45quxuna"]
+
+[ext_resource type="PackedScene" uid="uid://cxwjhxqe7mjn1" path="res://Scenes/NutOS/Content/Taskbar/Apps/App.tscn" id="1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x0gll"]
+resource_local_to_scene = true
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="Settings" instance=ExtResource("1")]
+theme_override_styles/panel = SubResource("StyleBoxFlat_x0gll")

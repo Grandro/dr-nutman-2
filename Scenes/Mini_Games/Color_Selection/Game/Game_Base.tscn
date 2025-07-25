@@ -1,0 +1,150 @@
+[gd_scene load_steps=14 format=3 uid="uid://cvu2fkvx7alpk"]
+
+[ext_resource type="PackedScene" uid="uid://xuy0gyipng5m" path="res://Scenes/Mini_Games/Mini_Game_Base/Game_Base.tscn" id="1_3y642"]
+[ext_resource type="Script" uid="uid://cn4njtkwytto2" path="res://Scenes/Mini_Games/Color_Selection/Game/Scripts/Game_Base.gd" id="2_8oybj"]
+[ext_resource type="Script" uid="uid://c713aoemnclpl" path="res://Scenes/Mini_Games/Color_Selection/Game/Scripts/Next_Color.gd" id="2_w7tqm"]
+[ext_resource type="Theme" uid="uid://budcfl16xj2tt" path="res://Global_Resources/Themes/Default/Default.tres" id="3_e1xkq"]
+[ext_resource type="Texture2D" uid="uid://bbwhgepqriju8" path="res://Scenes/Mini_Games/Color_Selection/Game/Sprites/Paint_Drop_1.png" id="4_cnuhg"]
+[ext_resource type="Texture2D" uid="uid://5cmd8ff220cu" path="res://Scenes/Mini_Games/Color_Selection/Game/Sprites/Flipper_Background.png" id="5_vatoy"]
+[ext_resource type="PackedScene" uid="uid://bs8m1n5rmnwfd" path="res://Scenes/Object/Comps/2D/Camera.tscn" id="7_68761"]
+[ext_resource type="Texture2D" uid="uid://roxxcticnsn4" path="res://Scenes/Mini_Games/Color_Selection/Game/Sprites/Hopper_1.png" id="8_5euv8"]
+[ext_resource type="PackedScene" uid="uid://bbi6cgnt4c4bb" path="res://Scenes/Mini_Games/Color_Selection/Game/Spinner_1.tscn" id="9_qs8mj"]
+[ext_resource type="PackedScene" uid="uid://duu2hgywidjq3" path="res://Scenes/Mini_Games/Color_Selection/Game/Flipper_1/1_Left.tscn" id="10_8y3y4"]
+[ext_resource type="PackedScene" uid="uid://1bka0rv65pa2" path="res://Scenes/Mini_Games/Color_Selection/Game/Flipper_1/1_Right.tscn" id="11_s44lx"]
+[ext_resource type="Texture2D" uid="uid://dx1jwddtqp786" path="res://Scenes/Mini_Games/Color_Selection/Game/Sprites/Glass_Bowl_1_Back.png" id="12_eajkm"]
+[ext_resource type="Texture2D" uid="uid://bujun4ity2u8u" path="res://Scenes/Mini_Games/Color_Selection/Game/Sprites/Glass_Bowl_1_Front.png" id="13_1bew6"]
+
+[node name="Game_Base" instance=ExtResource("1_3y642")]
+script = ExtResource("2_8oybj")
+_e_camera_start_pos = Vector2(640, 464)
+_e_camera_end_pos = Vector2(640, 1224)
+
+[node name="Next_Color" type="MarginContainer" parent="Canvas_2" index="0" groups=["Translated"]]
+light_mask = 8
+visibility_layer = 8
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -372.0
+offset_bottom = 64.0
+grow_horizontal = 0
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+script = ExtResource("2_w7tqm")
+
+[node name="HBox" type="HBoxContainer" parent="Canvas_2/Next_Color" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 8
+theme = ExtResource("3_e1xkq")
+theme_override_constants/separation = 8
+alignment = 2
+
+[node name="Desc" type="Label" parent="Canvas_2/Next_Color/HBox" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "MINIGAMES_COLOR_SELECTION_NEXT_COLOR"
+vertical_alignment = 1
+
+[node name="Paint" type="TextureRect" parent="Canvas_2/Next_Color/HBox" index="1"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("4_cnuhg")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Node2D" type="Node2D" parent="." index="2"]
+light_mask = 4
+visibility_layer = 4
+
+[node name="Background" type="Sprite2D" parent="Node2D" index="0"]
+self_modulate = Color(0.8, 0.8, 0.8, 1)
+light_mask = 4
+visibility_layer = 4
+z_index = -1
+position = Vector2(641, 1017)
+texture = ExtResource("5_vatoy")
+
+[node name="Camera" parent="Node2D" index="1" instance=ExtResource("7_68761")]
+position_smoothing_enabled = true
+
+[node name="Hopper" type="Node2D" parent="Node2D" index="2"]
+light_mask = 4
+visibility_layer = 4
+position = Vector2(0, 144)
+
+[node name="Sprite" type="Sprite2D" parent="Node2D/Hopper" index="0"]
+light_mask = 4
+visibility_layer = 4
+position = Vector2(640, 281)
+texture = ExtResource("8_5euv8")
+
+[node name="Spinners" type="Node2D" parent="Node2D" index="3"]
+light_mask = 4
+visibility_layer = 4
+position = Vector2(0, 144)
+
+[node name="Spinner_1" parent="Node2D/Spinners" index="0" instance=ExtResource("9_qs8mj")]
+position = Vector2(640, 528)
+
+[node name="Spinner_2" parent="Node2D/Spinners" index="1" instance=ExtResource("9_qs8mj")]
+position = Vector2(512, 576)
+
+[node name="Spinner_3" parent="Node2D/Spinners" index="2" instance=ExtResource("9_qs8mj")]
+position = Vector2(768, 576)
+
+[node name="Spinner_4" parent="Node2D/Spinners" index="3" instance=ExtResource("9_qs8mj")]
+position = Vector2(512, 896)
+
+[node name="Spinner_5" parent="Node2D/Spinners" index="4" instance=ExtResource("9_qs8mj")]
+position = Vector2(640, 768)
+
+[node name="Spinner_6" parent="Node2D/Spinners" index="5" instance=ExtResource("9_qs8mj")]
+position = Vector2(640, 1024)
+
+[node name="Spinner_7" parent="Node2D/Spinners" index="6" instance=ExtResource("9_qs8mj")]
+position = Vector2(768, 896)
+
+[node name="Flippers" type="Node2D" parent="Node2D" index="4"]
+light_mask = 4
+visibility_layer = 4
+position = Vector2(0, 144)
+
+[node name="Flipper_1" parent="Node2D/Flippers" index="0" instance=ExtResource("10_8y3y4")]
+position = Vector2(342, 724)
+
+[node name="Flipper_2" parent="Node2D/Flippers" index="1" instance=ExtResource("11_s44lx")]
+position = Vector2(939, 724)
+
+[node name="Flipper_3" parent="Node2D/Flippers" index="2" instance=ExtResource("10_8y3y4")]
+position = Vector2(568, 1217)
+
+[node name="Flipper_4" parent="Node2D/Flippers" index="3" instance=ExtResource("11_s44lx")]
+position = Vector2(712, 1217)
+
+[node name="Glass_Bowl" type="StaticBody2D" parent="Node2D" index="5"]
+light_mask = 4
+visibility_layer = 4
+position = Vector2(0, 144)
+collision_layer = 0
+collision_mask = 0
+
+[node name="Back" type="Sprite2D" parent="Node2D/Glass_Bowl" index="0"]
+light_mask = 4
+visibility_layer = 4
+z_index = -1
+position = Vector2(640, 1260)
+texture = ExtResource("12_eajkm")
+
+[node name="Front" type="Sprite2D" parent="Node2D/Glass_Bowl" index="1"]
+light_mask = 4
+visibility_layer = 4
+z_index = 1
+position = Vector2(640, 1260)
+texture = ExtResource("13_1bew6")

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dcvpnmql3yedt"]
+[gd_scene load_steps=3 format=3 uid="uid://dcvpnmql3yedt"]
 
 [ext_resource type="Script" uid="uid://ccrt6r72lmjvn" path="res://Scenes/Item_Amount_Display/Scripts/Item_Amount_Display.gd" id="1_4wk2a"]
+[ext_resource type="Texture2D" uid="uid://cw3flvkg2y3yp" path="res://Global_Resources/Sprites/Items/Handful_Peanuts_Cracked.png" id="1_a0uvh"]
 
 [node name="Item_Amount_Display" type="HBoxContainer"]
 light_mask = 8
@@ -14,6 +15,7 @@ script = ExtResource("1_4wk2a")
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
+texture = ExtResource("1_a0uvh")
 stretch_mode = 5
 
 [node name="Text" type="Label" parent="."]

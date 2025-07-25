@@ -1,0 +1,15 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://7wwi3hyl3fjb"]
+
+[ext_resource type="Shader" uid="uid://bcwgukhc6uvti" path="res://Global_Resources/Materials/3D/Shaders/Buffin_Tint.tres" id="1_oibd4"]
+[ext_resource type="Texture2D" uid="uid://ch5jchjsb56q4" path="res://Global_Resources/Sprites/Objects/Buffins/Paint_Apprentice/Spritesheet.png" id="2_7tb26"]
+
+[resource]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("1_oibd4")
+shader_parameter/eyes = Color(0.247059, 0.247059, 0.454902, 1)
+shader_parameter/wrapping = Color(0.560784, 0.45098, 0.2, 1)
+shader_parameter/texture_albedo = ExtResource("2_7tb26")
+shader_parameter/color_A = Color(0.796078, 0.631373, 0.25098, 1)
+shader_parameter/color_B = Color(0.45098, 0.45098, 0.901961, 1)
+shader_parameter/progress = 0.0

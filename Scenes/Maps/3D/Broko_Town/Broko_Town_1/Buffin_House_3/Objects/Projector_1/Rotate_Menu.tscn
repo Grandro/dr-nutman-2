@@ -1,0 +1,70 @@
+[gd_scene load_steps=13 format=3 uid="uid://iq05yb53nqa2"]
+
+[ext_resource type="Script" uid="uid://cvct4fcphx70h" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Buffin_House_3/Objects/Projector_1/Scripts/Rotate_Menu.gd" id="1_h1yg5"]
+[ext_resource type="Theme" uid="uid://budcfl16xj2tt" path="res://Global_Resources/Themes/Default/Default.tres" id="2_dkh88"]
+[ext_resource type="PackedScene" uid="uid://cva7lt6ccapbi" path="res://Scenes/Indicator/Indicator.tscn" id="3_n7cqr"]
+[ext_resource type="Texture2D" uid="uid://ccnusbvvq2arw" path="res://Global_Resources/Sprites/Keys/8592.png" id="4_cdl8b"]
+[ext_resource type="Texture2D" uid="uid://b6ao8eaw4h6ju" path="res://Global_Resources/Sprites/Joy/Letters_Color/Stick_L_Left.png" id="5_eml6q"]
+[ext_resource type="Texture2D" uid="uid://bpga7g57eycm0" path="res://Global_Resources/Sprites/Joy/Letters_Neutral/Stick_Left.png" id="6_rx2jv"]
+[ext_resource type="Texture2D" uid="uid://derdfqlc07lpx" path="res://Global_Resources/Sprites/Joy/Shapes_Color/Stick_L_Left.png" id="7_k6twv"]
+[ext_resource type="Texture2D" uid="uid://cq0n33iab7d4s" path="res://Global_Resources/Sprites/Keys/8594.png" id="8_3esr0"]
+[ext_resource type="Texture2D" uid="uid://hi18840g3vm3" path="res://Global_Resources/Sprites/Joy/Letters_Color/Stick_L_Right.png" id="9_f25yk"]
+[ext_resource type="Texture2D" uid="uid://evoe0cqsm40m" path="res://Global_Resources/Sprites/Joy/Letters_Neutral/Stick_Right.png" id="10_8r7mx"]
+[ext_resource type="Texture2D" uid="uid://bqeixxixdnbt6" path="res://Global_Resources/Sprites/Joy/Shapes_Color/Stick_L_Right.png" id="11_0qg2f"]
+[ext_resource type="PackedScene" uid="uid://beoei6o2vrvx" path="res://Scenes/Indicator/Back_Button.tscn" id="12_qml25"]
+
+[node name="Rotate_Menu" type="CanvasLayer"]
+script = ExtResource("1_h1yg5")
+
+[node name="Margin" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_dkh88")
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Options" type="HBoxContainer" parent="Margin"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_constants/separation = 16
+
+[node name="Rotate_Left" type="VBoxContainer" parent="Margin/Options"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Indicator" parent="Margin/Options/Rotate_Left" instance=ExtResource("3_n7cqr")]
+layout_mode = 2
+size_flags_horizontal = 4
+_e_keyboard_texture = ExtResource("4_cdl8b")
+_e_joy_letters_color_texture = ExtResource("5_eml6q")
+_e_joy_letters_neutral_texture = ExtResource("6_rx2jv")
+_e_joy_shapes_color_texture = ExtResource("7_k6twv")
+
+[node name="Text" type="Label" parent="Margin/Options/Rotate_Left"]
+layout_mode = 2
+text = "ROTATE_LEFT"
+
+[node name="Rotate_Right" type="VBoxContainer" parent="Margin/Options"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Indicator" parent="Margin/Options/Rotate_Right" instance=ExtResource("3_n7cqr")]
+layout_mode = 2
+size_flags_horizontal = 4
+_e_keyboard_texture = ExtResource("8_3esr0")
+_e_joy_letters_color_texture = ExtResource("9_f25yk")
+_e_joy_letters_neutral_texture = ExtResource("10_8r7mx")
+_e_joy_shapes_color_texture = ExtResource("11_0qg2f")
+
+[node name="Text" type="Label" parent="Margin/Options/Rotate_Right"]
+layout_mode = 2
+text = "ROTATE_RIGHT"
+
+[node name="Back" parent="Margin/Options" instance=ExtResource("12_qml25")]
+layout_mode = 2

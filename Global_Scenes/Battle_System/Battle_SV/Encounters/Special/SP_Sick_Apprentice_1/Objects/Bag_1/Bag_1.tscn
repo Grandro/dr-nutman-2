@@ -1,0 +1,21 @@
+[gd_scene load_steps=7 format=3 uid="uid://dxtaacw213udp"]
+
+[ext_resource type="Script" uid="uid://ckbk2i4wb1yhq" path="res://Scenes/Object/Scripts/Node3D_Object.gd" id="1_0v14t"]
+[ext_resource type="PackedScene" uid="uid://bblmb8yfchyxr" path="res://Scenes/Object/Comps/3D/Display.tscn" id="1_dqdf8"]
+[ext_resource type="Texture2D" uid="uid://ch1ybd6ijp8n5" path="res://Global_Scenes/Battle_System/Battle_SV/Encounters/Special/SP_Sick_Apprentice_1/Objects/Bag_1/Sprites/Spritesheet.png" id="2_hjhxk"]
+[ext_resource type="PackedScene" uid="uid://cfdwl620axohy" path="res://Scenes/Object/Comps/3D/Audio.tscn" id="4_8hv4s"]
+[ext_resource type="PackedScene" uid="uid://drpp26gth4snn" path="res://Scenes/Object/Comps/Reference.tscn" id="4_h4832"]
+[ext_resource type="PackedScene" uid="uid://b4dvlhw3jh0go" path="res://Scenes/Object/Comps/Cutscene.tscn" id="4_idock"]
+
+[node name="Bag_1" type="Node3D" groups=["Object"]]
+script = ExtResource("1_0v14t")
+
+[node name="Display" parent="." instance=ExtResource("1_dqdf8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.52, 0)
+texture = ExtResource("2_hjhxk")
+
+[node name="Audio" parent="." instance=ExtResource("4_8hv4s")]
+
+[node name="Cutscene" parent="." instance=ExtResource("4_idock")]
+
+[node name="Reference" parent="." instance=ExtResource("4_h4832")]

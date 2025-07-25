@@ -1,0 +1,15 @@
+[gd_scene load_steps=5 format=3 uid="uid://bywsgk4k5uun7"]
+
+[ext_resource type="Script" uid="uid://ckbk2i4wb1yhq" path="res://Scenes/Object/Scripts/Node3D_Object.gd" id="1_38u7a"]
+[ext_resource type="PackedScene" uid="uid://drpp26gth4snn" path="res://Scenes/Object/Comps/Reference.tscn" id="2_qg6ye"]
+[ext_resource type="PackedScene" uid="uid://du0jobeb0veao" path="res://Scenes/Object/Comps/Stater.tscn" id="3_qiehh"]
+[ext_resource type="PackedScene" uid="uid://de2jy2ixhp2mw" path="res://Scenes/Object/Comps/Save.tscn" id="4_lgyw7"]
+
+[node name="Peanut_Bushes_1" type="Node3D" groups=["Object"]]
+script = ExtResource("1_38u7a")
+
+[node name="Stater" parent="." instance=ExtResource("3_qiehh")]
+
+[node name="Reference" parent="." instance=ExtResource("2_qg6ye")]
+
+[node name="Save" parent="." instance=ExtResource("4_lgyw7")]

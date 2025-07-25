@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://b5qq7h4w1s3j8"]
+
+[ext_resource type="Resource" uid="uid://g544t702fxu2" path="res://Global_Resources/Databases/Battle_System/Party_Members/Buffin_Assistant_1/Stats.tres" id="1"]
+[ext_resource type="Script" uid="uid://cwdon6d8pw778" path="res://Global_Resources/Databases/Battle_System/Party_Members/Party_Member_Data.gd" id="2"]
+
+[resource]
+script = ExtResource("2")
+_e_stats = ExtResource("1")
+_e_actions = {
+"Commands": {
+"Help": true
+},
+"Specials": {}
+}

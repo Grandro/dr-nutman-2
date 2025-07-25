@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=3 uid="uid://bhjuaqtyhogll"]
+
+[ext_resource type="PackedScene" uid="uid://fyofiebgtifb" path="res://Scenes/Item_Drag_Menu_Base/Item_Drag_Menu_Base.tscn" id="1_cnevn"]
+[ext_resource type="Texture2D" uid="uid://wrg2potji1vm" path="res://Global_Resources/Sprites/Backgrounds/1_Spritesheet.png" id="2_rpq7t"]
+[ext_resource type="Script" uid="uid://c47ngbomqpex5" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Dr_Nutman_Home_1/Objects/Setup/Disk_Drive/Scripts/Disk_Drive.gd" id="2_xm7v4"]
+[ext_resource type="PackedScene" uid="uid://b0fds4pdvi1xl" path="res://Scenes/Item_Drag_Menu_Base/Slot.tscn" id="4_qblsb"]
+[ext_resource type="AudioStream" uid="uid://pn8k3gthcjyg" path="res://Global_Resources/Audio/SFX/Switches/Lever_Small_1.wav" id="6_hrptw"]
+[ext_resource type="PackedScene" uid="uid://cq7x4410fjnnc" path="res://Scenes/Item_Select_Base_Menu/Inventory.tscn" id="6_m3i3v"]
+
+[node name="Disk_Drive" instance=ExtResource("1_cnevn")]
+script = ExtResource("2_xm7v4")
+
+[node name="Background" type="TextureRect" parent="." index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_rpq7t")
+stretch_mode = 1
+
+[node name="Heading" type="Label" parent="Margin/VBox" index="0"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 16
+theme_override_font_sizes/font_size = 48
+text = "DISK_DRIVE_HEADING"
+vertical_alignment = 1
+
+[node name="HBox" parent="Margin/VBox" index="1"]
+alignment = 0
+
+[node name="Slot" parent="Margin/VBox/HBox" index="0" instance=ExtResource("4_qblsb")]
+layout_mode = 2
+
+[node name="Inventory" parent="Margin/VBox/HBox" index="1" instance=ExtResource("6_m3i3v")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+_e_tabs = Array[String](["Key"])
+_e_tabs_visible = false
+_e_item_key_prefix = "Disk_"
+
+[node name="Audio" type="Node" parent="." index="3"]
+
+[node name="Slot_Insert" type="AudioStreamPlayer" parent="Audio" index="0"]
+stream = ExtResource("6_hrptw")
+bus = &"SFX"

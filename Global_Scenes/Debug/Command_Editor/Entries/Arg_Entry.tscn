@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dx2jb6i5c6i3t"]
+[gd_scene load_steps=6 format=3 uid="uid://dx2jb6i5c6i3t"]
 
 [ext_resource type="Script" uid="uid://c277q300xars4" path="res://Global_Scenes/Debug/Command_Editor/Entries/Scripts/Arg_Entry.gd" id="1"]
 [ext_resource type="Theme" uid="uid://pr4yljlh62sp" path="res://Global_Resources/Themes/Debug/Debug.tres" id="1_3h72t"]
+[ext_resource type="FontFile" uid="uid://bc3cxhu6w0ljt" path="res://Global_Resources/Fonts/ProFont.ttf" id="3_rl07d"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aaeqa"]
 draw_center = false
@@ -12,6 +13,7 @@ border_width_bottom = 3
 border_color = Color(0.113725, 0.486275, 0.65098, 0.54902)
 
 [sub_resource type="FontVariation" id="FontVariation_8scxt"]
+base_font = ExtResource("3_rl07d")
 spacing_top = -5
 spacing_bottom = -5
 

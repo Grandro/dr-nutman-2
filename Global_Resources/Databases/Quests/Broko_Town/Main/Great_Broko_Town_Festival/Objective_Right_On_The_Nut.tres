@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://csxsmncyym3hy"]
+
+[ext_resource type="Resource" uid="uid://3i4ruhpul0ne" path="res://Global_Resources/Databases/Quests/Broko_Town/Main/Right_On_The_Nut/Right_On_The_Nut.tres" id="1_0gs7n"]
+[ext_resource type="Script" uid="uid://gxo7txpgnyj8" path="res://Global_Resources/Databases/Quests/Objective_Sub_Quest_Data.gd" id="2_lm5rx"]
+
+[resource]
+script = ExtResource("2_lm5rx")
+_e_sub_quest = ExtResource("1_0gs7n")
+_e_type = "Sub_Quest"
+_e_desc = "PROGRESS_QUESTS_BROKO_TOWN_1_MAIN_RIGHT_ON_THE_NUT_NAME"

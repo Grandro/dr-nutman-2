@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://dasvljj72alod"]
+
+[ext_resource type="PackedScene" uid="uid://r41nl45w54n2" path="res://Global_Scenes/Progress/Quests/Objective_Sub_Quest.tscn" id="1_2jajv"]
+[ext_resource type="Resource" uid="uid://d22a63jd5eylg" path="res://Global_Resources/Databases/Quests/Broko_Town/Main/Great_Broko_Town_Festival/Objective_A_Child_For_A_Balloon.tres" id="2_le3i5"]
+
+[node name="A_Child_For_A_Balloon" instance=ExtResource("1_2jajv")]
+_e_data = ExtResource("2_le3i5")

@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://fxk5prqetirt"]
+
+[ext_resource type="Script" uid="uid://bejvi0uoqiapu" path="res://Scenes/Objects/3D/Building_Base/Scripts/Building_Base.gd" id="1_yff7e"]
+[ext_resource type="PackedScene" uid="uid://nr4813v0r2dg" path="res://Scenes/Object/Comps/3D/Interactions/Interactions.tscn" id="3_o5gxw"]
+[ext_resource type="Script" uid="uid://caiiakqe35ld7" path="res://Scenes/Objects/3D/Building_Base/Comps/Interactions/Scripts/Interactions.gd" id="4_2yert"]
+[ext_resource type="Script" uid="uid://te3q0q7jp0nl" path="res://Scenes/Objects/3D/Building_Base/Comps/Interactions/Scripts/Shared.gd" id="5_ruyho"]
+[ext_resource type="PackedScene" uid="uid://fnej1f64wfc2" path="res://Scenes/Object/Comps/3D/Nav_Obstacle.tscn" id="6_34en8"]
+
+[node name="Building_Base" type="StaticBody3D" groups=["Object"]]
+collision_layer = 8
+collision_mask = 8
+script = ExtResource("1_yff7e")
+
+[node name="Interactions" parent="." instance=ExtResource("3_o5gxw")]
+script = ExtResource("4_2yert")
+_e_shared = ExtResource("5_ruyho")
+
+[node name="1" parent="Interactions" index="0"]
+_e_match_dir = false
+
+[node name="Nav_Obstacle" parent="." groups=["NavMesh_Main"] instance=ExtResource("6_34en8")]
+affect_navigation_mesh = true
+avoidance_enabled = false
+
+[editable path="Interactions"]
+[editable path="Interactions/1"]

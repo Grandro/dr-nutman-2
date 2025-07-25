@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://0bubr3pxi52c"]
+
+[ext_resource type="PackedScene" uid="uid://cnwen4duxwc58" path="res://Global_Scenes/Progress/Quests/Objective_Int.tscn" id="1_njx2l"]
+[ext_resource type="Resource" uid="uid://c6l8oxbxmm1yn" path="res://Global_Resources/Databases/Quests/Broko_Town/Main/An_Uplifting_Nut/Objective_Lift_Squirrels.tres" id="2_n6j18"]
+
+[node name="Lift_Squirrels" instance=ExtResource("1_njx2l")]
+_e_data = ExtResource("2_n6j18")

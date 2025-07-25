@@ -1,6 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://d2y0hy0td774l"]
+[gd_scene load_steps=11 format=3 uid="uid://d2y0hy0td774l"]
 
+[ext_resource type="Theme" uid="uid://budcfl16xj2tt" path="res://Global_Resources/Themes/Default/Default.tres" id="1_hsfjn"]
 [ext_resource type="Script" uid="uid://dq210ql8dc01a" path="res://Global_Scenes/Battle_System/Battle_SV/Party_Members/Comps/Shield_Bar/Shield_Bars/Scripts/Shield_Bar_UI_Base.gd" id="2_wvvvg"]
+[ext_resource type="Texture2D" uid="uid://dmiyk52b7nvj3" path="res://Global_Resources/Sprites/Progress_Bars/4_Spritesheet.png" id="3_nqoa1"]
 [ext_resource type="Texture2D" uid="uid://hdqirk3nj743" path="res://Global_Resources/Sprites/Icons/Item_Types/Equipment/Shield.png" id="4_yf1wi"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f7u6s"]
@@ -19,6 +21,7 @@ expand_margin_right = 2.0
 expand_margin_bottom = 2.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xv0ky"]
+texture = ExtResource("3_nqoa1")
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 
@@ -165,6 +168,7 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.8, 0.8)
 pivot_offset = Vector2(64, 20)
+theme = ExtResource("1_hsfjn")
 script = ExtResource("2_wvvvg")
 
 [node name="Progress" type="ProgressBar" parent="."]
@@ -209,5 +213,5 @@ stretch_mode = 5
 
 [node name="Anims" type="AnimationPlayer" parent="."]
 libraries = {
-&"": SubResource("AnimationLibrary_sddsv")
+"": SubResource("AnimationLibrary_sddsv")
 }

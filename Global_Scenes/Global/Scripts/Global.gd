@@ -26,6 +26,7 @@ const _a_LAYOUTS = ["Top_Left", "Top_Right", "Bottom_Right", "Bottom_Left",
 @onready var _a_Play_Time = get_node("Play_Time")
 @onready var _a_Trans = get_node("Overlays/Trans")
 @onready var _a_Trans_Anims = get_node("Overlays/Trans/Anims")
+@onready var _a_Tutato = get_node("Canvas/Tutato")
 
 var _a_saved_data = {} # Save Data
 
@@ -116,6 +117,20 @@ func start_game():
 	_init_inventory()
 	_init_for_loop_idxs()
 	_init_saved_data()
+	
+	# GAIN ITEMS
+	#change_item_amount("Cookie", 67)
+	#change_item_amount("Handful_Peanuts_Cracked", 18)
+	#change_item_amount("Handful_Peanuts_Uncracked", 18)
+	#change_item_amount("Party_Hat_1", 18)
+	#change_item_amount("Disposable_Glove", 1)
+	#change_item_amount("Citrin_Shield", 1)
+	# ---------------
+	
+	# ACTIVATE PARTY MEMBERS
+	activate_party_member("Dr_Nutman")
+	#activate_party_member("Buffin_Assistant_1")
+	# ----------------------
 	
 	_a_Play_Time.start()
 
@@ -850,6 +865,9 @@ func get_date_text(p_year, p_month, p_day):
 	var date_text = "%s.%s.%s" % [day_text, month_text, year_text]
 	
 	return date_text
+
+func get_tutato_explain(p_key):
+	return _a_Tutato.comph().get_comp(p_key)
 
 func has_trans_anim(p_name):
 	return _a_Trans_Anims.has_animation(p_name)

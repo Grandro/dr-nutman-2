@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://sxlsvex1027f"]
+[gd_scene load_steps=10 format=3 uid="uid://sxlsvex1027f"]
 
 [ext_resource type="Texture2D" uid="uid://vp4ug55mwf67" path="res://Global_Resources/Sprites/Popups/Speech.png" id="1_ku0gk"]
 [ext_resource type="Script" uid="uid://b6i1b174e3atx" path="res://Scenes/Object/Comps/2D/Scripts/Popup.gd" id="2_sleci"]
+[ext_resource type="AudioStream" uid="uid://fi1qadjk35w5" path="res://Global_Resources/Audio/SFX/UI/Ok_2.wav" id="2_w350d"]
 
 [sub_resource type="Animation" id="Animation_b4npk"]
 resource_name = "Fade_In"
@@ -102,6 +103,7 @@ libraries = {
 }
 
 [node name="Audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_w350d")
 bus = &"SFX"
 
 [node name="Timer" type="Timer" parent="."]

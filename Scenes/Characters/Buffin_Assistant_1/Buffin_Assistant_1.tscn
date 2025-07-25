@@ -1,0 +1,48 @@
+[gd_scene load_steps=11 format=3 uid="uid://cixboakksfinr"]
+
+[ext_resource type="PackedScene" uid="uid://b5ggg7dxi64kw" path="res://Scenes/Characters/Character_Base.tscn" id="1_tj8ab"]
+[ext_resource type="Texture2D" uid="uid://ifemohnwxekh" path="res://Global_Resources/Sprites/Objects/Buffins/Base/Spritesheet.png" id="2_tqqfc"]
+[ext_resource type="PackedScene" uid="uid://ch3av55p41vl6" path="res://Scenes/Equipable/3D/Objects/Buffins/Base/Head/Party_Hats/1.tscn" id="3_eov1h"]
+[ext_resource type="PackedScene" uid="uid://cbajhv6odykij" path="res://Scenes/Equipable/3D/Objects/Buffins/Base/Head/Party_Hats/2.tscn" id="4_bquk0"]
+[ext_resource type="PackedScene" uid="uid://bat640gfh8xie" path="res://Scenes/Equipable/3D/Objects/Buffins/Base/Head/Party_Hats/3.tscn" id="5_qnjag"]
+[ext_resource type="Animation" uid="uid://y21c3wcb6i56" path="res://Scenes/Characters/Buffin_Assistant_1/Anims/Idle_Down.tres" id="6_7smvo"]
+[ext_resource type="Animation" uid="uid://m2o13plk4qea" path="res://Scenes/Characters/Buffin_Assistant_1/Anims/Idle_Left.tres" id="7_sk3al"]
+[ext_resource type="Animation" uid="uid://crofl8r3yr30x" path="res://Scenes/Characters/Buffin_Assistant_1/Anims/Idle_Right.tres" id="8_yc0cr"]
+[ext_resource type="Animation" uid="uid://cldiajc5qtwch" path="res://Scenes/Characters/Buffin_Assistant_1/Anims/Idle_Up.tres" id="9_u1keb"]
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_p7h2p"]
+_data = {
+&"Idle_Down": ExtResource("6_7smvo"),
+&"Idle_Left": ExtResource("7_sk3al"),
+&"Idle_Right": ExtResource("8_yc0cr"),
+&"Idle_Up": ExtResource("9_u1keb")
+}
+
+[node name="Buffin_Assistant_1" instance=ExtResource("1_tj8ab")]
+
+[node name="Display" parent="." index="0"]
+texture = ExtResource("2_tqqfc")
+vframes = 13
+frame = 32
+
+[node name="Equipment" parent="." index="1"]
+_e_scenes = {
+"Feet": {},
+"Head": {
+"Party_Hat_1": ExtResource("3_eov1h"),
+"Party_Hat_2": ExtResource("4_bquk0"),
+"Party_Hat_3": ExtResource("5_qnjag")
+},
+"Legs": {},
+"Shield": {},
+"Torso": {},
+"Weapon": {}
+}
+
+[node name="Anims" parent="." index="4"]
+libraries = {
+"": SubResource("AnimationLibrary_p7h2p")
+}
+
+[node name="Party_Member" parent="." index="5"]
+_e_pm_key = "Buffin_Assistant_1"

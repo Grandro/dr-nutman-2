@@ -1,0 +1,12 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://cxbs7qh8py8j1"]
+
+[ext_resource type="Shader" uid="uid://bjkm3rjfq72ba" path="res://Global_Resources/Materials/3D/Shaders/HFade.gdshader" id="1_r44mw"]
+[ext_resource type="Texture2D" uid="uid://xxtfhenal443" path="res://Scenes/NPC/3D/Buffins/Paint_DeLere/Canvases/Sprites/Pictures/Arrow_Right.png" id="2_5vcel"]
+
+[resource]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("1_r44mw")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("2_5vcel")
+shader_parameter/progress = 0.0

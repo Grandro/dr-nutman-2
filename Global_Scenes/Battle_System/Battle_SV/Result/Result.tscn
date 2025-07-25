@@ -1,13 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://xts4jxlx4dgp"]
+[gd_scene load_steps=12 format=3 uid="uid://xts4jxlx4dgp"]
 
 [ext_resource type="Script" uid="uid://cdm8b33dw05ww" path="res://Global_Scenes/Battle_System/Battle_SV/Scripts/Result.gd" id="1_gto08"]
+[ext_resource type="Theme" uid="uid://budcfl16xj2tt" path="res://Global_Resources/Themes/Default/Default.tres" id="2_2ocq6"]
+[ext_resource type="Texture2D" uid="uid://wrg2potji1vm" path="res://Global_Resources/Sprites/Backgrounds/1_Spritesheet.png" id="3_vcclb"]
 [ext_resource type="PackedScene" uid="uid://xmfga7dl3slw" path="res://Scenes/Loot/Rewards/Rewards_Result.tscn" id="4_bd05d"]
 [ext_resource type="PackedScene" uid="uid://ctmdtgtdjkp8y" path="res://Global_Scenes/Battle_System/Battle_SV/Result/Party_Members/Party_Members.tscn" id="5_7g636"]
 [ext_resource type="PackedScene" uid="uid://c6ug0m0m4daq4" path="res://Scenes/Loot/Coins/Coins.tscn" id="6_rc286"]
+[ext_resource type="AudioStream" uid="uid://nnd1xyhmesj7" path="res://Global_Resources/Audio/SFX/Win_1.wav" id="12_6qfwm"]
 [ext_resource type="PackedScene" uid="uid://6jwys27w5uwp" path="res://Scenes/Indicator/Proceed_Button.tscn" id="13_ce7pm"]
-
-[sub_resource type="Resource" id="Resource_b0m7g"]
-metadata/__load_path__ = "res://Global_Resources/Audio/SFX/Win_1.wav"
 
 [sub_resource type="Animation" id="Animation_3tpal"]
 resource_name = "Fade_In"
@@ -35,7 +35,7 @@ tracks/1/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": SubResource("Resource_b0m7g")
+"stream": ExtResource("12_6qfwm")
 }],
 "times": PackedFloat32Array(0)
 }
@@ -75,6 +75,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_2ocq6")
 
 [node name="Background" type="TextureRect" parent="Control"]
 light_mask = 8
@@ -85,6 +86,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("3_vcclb")
 stretch_mode = 1
 metadata/_edit_lock_ = true
 

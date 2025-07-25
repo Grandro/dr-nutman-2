@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://ymgp5stlhd2v"]
+
+[ext_resource type="PackedScene" uid="uid://daiyshvpekgh7" path="res://Global_Resources/Mapping/3D/Mesh_Tile_Group_Collision_Box.tscn" id="1_j2wmm"]
+[ext_resource type="Texture2D" uid="uid://cb6of75ttdmn4" path="res://Global_Resources/Mapping/Sprites/Same_As/Broko_Town/Interior/Wall_1/Main_Top_Center_Center.png" id="2_7mlq0"]
+[ext_resource type="PackedScene" uid="uid://dbxigq53qnnvo" path="res://Global_Resources/Mapping/3D/Plane/Plane_Tile.tscn" id="2_8cv7r"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j2wmm"]
+albedo_texture = ExtResource("2_7mlq0")
+uv1_offset = Vector3(0, 0, 1)
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_8cv7r"]
+material = SubResource("StandardMaterial3D_j2wmm")
+size = Vector2(1, 1)
+
+[node name="Main_1" instance=ExtResource("1_j2wmm")]
+
+[node name="Top" parent="Tiles" index="0" instance=ExtResource("2_8cv7r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("PlaneMesh_8cv7r")
+
+[node name="Static" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1.31134e-07, -1, 0, 1, 1.31134e-07, 0, 0.5, 0)

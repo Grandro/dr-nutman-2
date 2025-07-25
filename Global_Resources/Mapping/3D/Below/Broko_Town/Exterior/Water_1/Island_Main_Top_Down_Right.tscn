@@ -1,0 +1,52 @@
+[gd_scene load_steps=12 format=3 uid="uid://dckuujjp56kvy"]
+
+[ext_resource type="PackedScene" uid="uid://c7l6gl3pndhn7" path="res://Global_Resources/Mapping/3D/Plane/Plane_Base.tscn" id="1_ly6lf"]
+[ext_resource type="Texture2D" uid="uid://b7q0y7m2axneq" path="res://Global_Resources/Mapping/Sprites/Below/Broko_Town/Exterior/Water_1/Island_Main_Top_Down_Right.png" id="2_4pob0"]
+[ext_resource type="Texture2D" uid="uid://dw47mrnno8xbs" path="res://Global_Resources/Mapping/Sprites/Below/Broko_Town/Exterior/Water_1/Side_Down_Right.png" id="3_yjcfi"]
+[ext_resource type="Texture2D" uid="uid://bic7yi17yg6ju" path="res://Global_Resources/Mapping/Sprites/Below/Broko_Town/Exterior/Water_1/Side_Down_Left.png" id="4_mlp5o"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3rmll"]
+albedo_texture = ExtResource("2_4pob0")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_udrkl"]
+material = SubResource("StandardMaterial3D_3rmll")
+size = Vector2(1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g5v6h"]
+albedo_texture = ExtResource("3_yjcfi")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_kplcc"]
+material = SubResource("StandardMaterial3D_g5v6h")
+size = Vector2(1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bs87u"]
+albedo_texture = ExtResource("4_mlp5o")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ft0gc"]
+material = SubResource("StandardMaterial3D_bs87u")
+size = Vector2(1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_feewg"]
+
+[node name="Island_1" type="Node3D"]
+
+[node name="Top" parent="." groups=["NavMesh_Main"] instance=ExtResource("1_ly6lf")]
+mesh = SubResource("PlaneMesh_udrkl")
+
+[node name="Front" parent="." instance=ExtResource("1_ly6lf")]
+transform = Transform3D(1, 1.06581e-14, 8.74228e-08, 8.74228e-08, 4.37114e-08, -1, -1.06581e-14, 1, 4.37114e-08, 0, -0.5, 0.5)
+mesh = SubResource("PlaneMesh_kplcc")
+
+[node name="Right" parent="." instance=ExtResource("1_ly6lf")]
+transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 8.74228e-08, 4.37114e-08, -1, -1, -4.37114e-08, -8.74228e-08, 0.5, -0.5, 0)
+mesh = SubResource("PlaneMesh_ft0gc")
+
+[node name="Static" type="StaticBody3D" parent="."]
+collision_mask = 0
+
+[node name="Collision" type="CollisionShape3D" parent="Static"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_feewg")

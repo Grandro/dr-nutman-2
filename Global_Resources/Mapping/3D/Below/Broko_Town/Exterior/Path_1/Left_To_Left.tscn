@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://ccc7u78vectbo"]
+
+[ext_resource type="PackedScene" uid="uid://c7l6gl3pndhn7" path="res://Global_Resources/Mapping/3D/Plane/Plane_Base.tscn" id="1_3b7ic"]
+[ext_resource type="Texture2D" uid="uid://de1s8lvn0weja" path="res://Global_Resources/Mapping/Sprites/Below/Broko_Town/Exterior/Path_1/Left_To_Left.png" id="2_4aknv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vb8c7"]
+transparency = 1
+albedo_texture = ExtResource("2_4aknv")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_74wdm"]
+material = SubResource("StandardMaterial3D_vb8c7")
+size = Vector2(1, 1)
+
+[node name="Path_1" instance=ExtResource("1_3b7ic")]
+mesh = SubResource("PlaneMesh_74wdm")

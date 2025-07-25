@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://cc15wpmb3jn3l"]
+[gd_scene load_steps=5 format=3 uid="uid://cc15wpmb3jn3l"]
 
+[ext_resource type="Theme" uid="uid://budcfl16xj2tt" path="res://Global_Resources/Themes/Default/Default.tres" id="1_o4nrj"]
 [ext_resource type="Script" uid="uid://bi8srw2efwwp1" path="res://Global_Scenes/Battle_System/Battle_SV/Encounters/Specials_Menu/Scripts/Specials_Menu.gd" id="2_vf8o6"]
+[ext_resource type="AudioStream" uid="uid://dkma2f2bd2c8n" path="res://Global_Resources/Audio/SFX/UI/Ok_1.wav" id="3_bo73m"]
+[ext_resource type="AudioStream" uid="uid://c7uqxd6tigh2j" path="res://Global_Resources/Audio/SFX/UI/Back_1.wav" id="4_bqe68"]
 
 [node name="Specials_Menu" type="MarginContainer"]
 light_mask = 8
@@ -15,6 +18,7 @@ offset_top = -360.0
 offset_bottom = 360.0
 grow_horizontal = 0
 grow_vertical = 2
+theme = ExtResource("1_o4nrj")
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
@@ -36,7 +40,7 @@ visibility_layer = 8
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 22
 bbcode_enabled = true
-text = "[center]"
+text = "[center]Der Anwender wirft seine Mütze wie ein absoluter Weltmeister und bewirkt damit rein gar nichts. Es ist dennoch besser, als das Handtuch zu werfen."
 fit_content = true
 
 [node name="HSep" type="HSeparator" parent="Panel/VBox"]
@@ -54,7 +58,9 @@ theme_override_constants/separation = 8
 [node name="Audio" type="Node" parent="."]
 
 [node name="OK" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("3_bo73m")
 bus = &"SFX"
 
 [node name="Cancel" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("4_bqe68")
 bus = &"SFX"

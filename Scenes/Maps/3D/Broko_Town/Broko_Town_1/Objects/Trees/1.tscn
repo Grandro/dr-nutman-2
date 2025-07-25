@@ -1,0 +1,60 @@
+[gd_scene load_steps=10 format=3 uid="uid://b5oco5df5fpk5"]
+
+[ext_resource type="Script" uid="uid://u2h51f0r2vch" path="res://Scenes/Object/Scripts/Static3D_Object.gd" id="1_5hr5r"]
+[ext_resource type="Texture2D" uid="uid://bpi5324hr1w3m" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Objects/Trees/Sprites/1_Spritesheet.png" id="2"]
+[ext_resource type="PackedScene" uid="uid://bblmb8yfchyxr" path="res://Scenes/Object/Comps/3D/Display.tscn" id="2_5eagc"]
+[ext_resource type="PackedScene" uid="uid://dsp0njc065uev" path="res://Scenes/Object/Comps/3D/Collision_Shape.tscn" id="4_l7712"]
+[ext_resource type="PackedScene" uid="uid://fnej1f64wfc2" path="res://Scenes/Object/Comps/3D/Nav_Obstacle.tscn" id="5_oiog1"]
+[ext_resource type="PackedScene" uid="uid://b1q143fixhaj5" path="res://Scenes/Object/Comps/Anims.tscn" id="5_qyva0"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2joe0"]
+radius = 0.7
+height = 5.0
+
+[sub_resource type="Animation" id="Animation_kt4e8"]
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Display:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cwt8q"]
+_data = {
+&"Idle": SubResource("Animation_kt4e8")
+}
+
+[node name="1" type="StaticBody3D"]
+collision_layer = 8
+collision_mask = 8
+script = ExtResource("1_5hr5r")
+
+[node name="Display" parent="." instance=ExtResource("2_5eagc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
+texture = ExtResource("2")
+hframes = 4
+
+[node name="Collision" parent="." instance=ExtResource("4_l7712")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+shape = SubResource("CapsuleShape3D_2joe0")
+
+[node name="Nav_Obstacle" parent="." groups=["NavMesh_Main"] instance=ExtResource("5_oiog1")]
+visible = false
+height = 3.5
+vertices = PackedVector3Array(0.8, 0, 0.8, 0.8, 0, -0.8, -0.8, 0, -0.8, -0.8, 0, 0.8)
+affect_navigation_mesh = true
+avoidance_enabled = false
+
+[node name="Anims" parent="." instance=ExtResource("5_qyva0")]
+libraries = {
+&"": SubResource("AnimationLibrary_cwt8q")
+}
+autoplay = "Idle"

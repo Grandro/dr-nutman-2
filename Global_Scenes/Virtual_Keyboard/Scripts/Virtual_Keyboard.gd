@@ -33,6 +33,7 @@ func _ready():
 	_a_Hold_Down.timeout.connect(_on_Hold_Down_timeout)
 	Databases.data_loaded.connect(_on_Databases_data_loaded)
 	Global_Data.keyboard_layout_changed.connect(_on_Global_Data_keyboard_layout_changed)
+	Global_Data.fav_color_changed.connect(_on_Global_Data_fav_color_changed)
 	
 	_a_Hold_Down.set_wait_time(_e_hold_down)
 	
@@ -232,10 +233,15 @@ func _on_Hold_Down_timeout():
 
 func _on_Databases_data_loaded():
 	var keyboard_layout = Global_Data.get_options_controls_keyboard_layout()
+	_a_focused_color = Global_Data.get_fav_color()
+	
 	_update_key_instances(keyboard_layout)
 
 func _on_Global_Data_keyboard_layout_changed(p_keyboard_layout):
 	_update_key_instances(p_keyboard_layout)
+
+func _on_Global_Data_fav_color_changed(p_fav_color):
+	_a_focused_color = p_fav_color
 
 func _on_Key_button_down(p_instance):
 	_a_SFX_Button_Down.play()

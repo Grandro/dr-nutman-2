@@ -1,0 +1,170 @@
+[gd_scene load_steps=19 format=3 uid="uid://sjquujprcvpl"]
+
+[ext_resource type="Script" uid="uid://cagsy144d5116" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Buffin_House_3/Objects/Pressure_Plate_1/Scripts/Pressure_Plate_1.gd" id="1_2121t"]
+[ext_resource type="PackedScene" uid="uid://bblmb8yfchyxr" path="res://Scenes/Object/Comps/3D/Display.tscn" id="2_2121t"]
+[ext_resource type="Texture2D" uid="uid://cnihtck7jno8p" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Buffin_House_3/Objects/Pressure_Plate_1/Sprites/Spritesheet.png" id="3_2121t"]
+[ext_resource type="PackedScene" uid="uid://b1q143fixhaj5" path="res://Scenes/Object/Comps/Anims.tscn" id="4_1yqaq"]
+[ext_resource type="PackedScene" uid="uid://cfdwl620axohy" path="res://Scenes/Object/Comps/3D/Audio.tscn" id="4_rh72r"]
+[ext_resource type="PackedScene" uid="uid://dllj5lbxwqy17" path="res://Scenes/Pausable_Audio/3D/Pausable_Audio.tscn" id="5_chk81"]
+[ext_resource type="PackedScene" uid="uid://boh1rwcj5rgwf" path="res://Scenes/Object/Comps/States.tscn" id="5_p2e6j"]
+[ext_resource type="PackedScene" uid="uid://de2jy2ixhp2mw" path="res://Scenes/Object/Comps/Save.tscn" id="6_3prdw"]
+[ext_resource type="AudioStream" uid="uid://dcmq84vaiq31" path="res://Global_Resources/Audio/SFX/Switches/Button_1.wav" id="6_cd775"]
+[ext_resource type="PackedScene" uid="uid://drpp26gth4snn" path="res://Scenes/Object/Comps/Reference.tscn" id="7_scwwp"]
+[ext_resource type="AudioStream" uid="uid://bpmakcpoepkg" path="res://Global_Resources/Audio/SFX/Switches/Button_1_Rev.wav" id="7_ym77j"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2121t"]
+size = Vector3(0.75, 0.1, 0.75)
+
+[sub_resource type="Animation" id="Animation_rh72r"]
+resource_name = "Push"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Display:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Audio/Switch")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("6_cd775")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
+
+[sub_resource type="Animation" id="Animation_3prdw"]
+resource_name = "Pushed"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Display:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_cd775"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Display:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_ym77j"]
+resource_name = "Release"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Display:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Audio/Switch")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("7_ym77j")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
+
+[sub_resource type="Animation" id="Animation_scwwp"]
+resource_name = "Released"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Display:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_p2e6j"]
+_data = {
+&"Push": SubResource("Animation_rh72r"),
+&"Pushed": SubResource("Animation_3prdw"),
+&"RESET": SubResource("Animation_cd775"),
+&"Release": SubResource("Animation_ym77j"),
+&"Released": SubResource("Animation_scwwp")
+}
+
+[node name="Pressure_Plate_1" type="Node3D" groups=["Object"]]
+script = ExtResource("1_2121t")
+metadata/_custom_type_script = "uid://ckbk2i4wb1yhq"
+
+[node name="Display" parent="." instance=ExtResource("2_2121t")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+texture = ExtResource("3_2121t")
+hframes = 2
+
+[node name="Audio" parent="." instance=ExtResource("4_rh72r")]
+
+[node name="Switch" parent="Audio" instance=ExtResource("5_chk81")]
+bus = &"SFX"
+
+[node name="Area" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)
+collision_layer = 0
+collision_mask = 12
+monitorable = false
+
+[node name="Collision" type="CollisionShape3D" parent="Area"]
+shape = SubResource("BoxShape3D_2121t")
+
+[node name="States" parent="." instance=ExtResource("5_p2e6j")]
+_e_states = Array[String](["Push", "Pushed", "Release", "Released"])
+_e_state = "Released"
+
+[node name="Save" parent="." instance=ExtResource("6_3prdw")]
+
+[node name="Reference" parent="." instance=ExtResource("7_scwwp")]
+
+[node name="Anims" parent="." instance=ExtResource("4_1yqaq")]
+libraries = {
+&"": SubResource("AnimationLibrary_p2e6j")
+}

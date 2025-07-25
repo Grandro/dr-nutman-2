@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://b0fds4pdvi1xl"]
+[gd_scene load_steps=3 format=3 uid="uid://b0fds4pdvi1xl"]
 
 [ext_resource type="Script" uid="uid://dri6q55453xmb" path="res://Scenes/Item_Drag_Menu_Base/Scripts/Slot.gd" id="1_0s1n4"]
+[ext_resource type="Texture2D" uid="uid://dbgemwcd1ck8y" path="res://Global_Resources/Sprites/Items/Disk_Gray.png" id="2_wx3qi"]
 
 [node name="Slot" type="PanelContainer"]
 light_mask = 8
@@ -15,6 +16,7 @@ self_modulate = Color(1, 1, 1, 0.392157)
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
+texture = ExtResource("2_wx3qi")
 
 [node name="Item_Icon" type="TextureRect" parent="."]
 light_mask = 8

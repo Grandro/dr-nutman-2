@@ -1,0 +1,387 @@
+[gd_scene load_steps=16 format=3 uid="uid://dbe4pe6v0t5y2"]
+
+[ext_resource type="PackedScene" uid="uid://dv3visb3j5wak" path="res://Scenes/Mini_Games/Squirrel_Fishing/Game/Game_Base.tscn" id="1_x5fe8"]
+[ext_resource type="Script" uid="uid://dpamuoparnjm1" path="res://Scenes/Mini_Games/Squirrel_Fishing/Game/Scripts/Game_Play.gd" id="2_k3yno"]
+[ext_resource type="Theme" uid="uid://budcfl16xj2tt" path="res://Global_Resources/Themes/Default/Default.tres" id="3_1hrqs"]
+[ext_resource type="PackedScene" uid="uid://beoei6o2vrvx" path="res://Scenes/Indicator/Back_Button.tscn" id="4_2mtrt"]
+[ext_resource type="PackedScene" uid="uid://dcvpnmql3yedt" path="res://Scenes/Item_Amount_Display/Item_Amount_Display.tscn" id="5_s1fhp"]
+[ext_resource type="Texture2D" uid="uid://brs1tmti8tdaw" path="res://Scenes/Mini_Games/Squirrel_Fishing/Game/Sprites/Squirrel_Body_Spritesheet.png" id="7_holvx"]
+[ext_resource type="Texture2D" uid="uid://ddjdjho7m1tgi" path="res://Scenes/Mini_Games/Squirrel_Fishing/Game/Sprites/Squirrel_Hands_Spritesheet.png" id="8_fgp41"]
+[ext_resource type="Texture2D" uid="uid://c37lhpgnjetm" path="res://Scenes/Mini_Games/Squirrel_Fishing/Game/Sprites/Peanut_Spritesheet.png" id="9_ieceg"]
+[ext_resource type="AudioStream" uid="uid://beqxl3dm5rueb" path="res://Global_Resources/Audio/SFX/Fun_Up_1.wav" id="9_yfpl2"]
+[ext_resource type="AudioStream" uid="uid://b2cbndce0by80" path="res://Global_Resources/Audio/SFX/Squirrel_Laugh_1.wav" id="10_f8dvd"]
+[ext_resource type="AudioStream" uid="uid://b6vbamlf2lxln" path="res://Global_Resources/Audio/SFX/Whoosh_1.wav" id="10_qhhqu"]
+
+[sub_resource type="Animation" id="Animation_g1hrc"]
+resource_name = "Pull_Catch"
+length = 1.98
+step = 0.06
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fishing_Rod:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0588235, 0.12, 1.8, 1.86, 1.92),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 2, 1, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Dr_Nutman_Hand:position")
+tracks/1/interp = 0
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.06, 0.12, 1.8, 1.86, 1.92),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(840, 539), Vector2(855, 629), Vector2(859, 717), Vector2(859, 717), Vector2(855, 629), Vector2(840, 539)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Squirrel:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.96),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Squirrel_Catch:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Squirrel_Catch:position")
+tracks/4/interp = 2
+tracks/4/loop_wrap = false
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.12, 0.66, 0.96, 1.98),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(456, 388), Vector2(456, 388), Vector2(367, 633), Vector2(367, 633), Vector2(367, 1760)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Squirrel_Catch/Body:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = false
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.647059, 0.705882, 0.764706, 0.823529, 0.882353, 0.941177, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 1, 2, 3, 4, 5, 6]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Squirrel_Catch/Hands:frame")
+tracks/6/interp = 1
+tracks/6/loop_wrap = false
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.647059, 0.707494, 0.766318, 0.825141, 0.883965, 0.942789, 1.00161),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 1, 2, 3, 4, 5, 6]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Squirrel_Catch:scale")
+tracks/7/interp = 2
+tracks/7/loop_wrap = false
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.12, 0.66, 0.96),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(3, 3), Vector2(3, 3)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Squirrel_Catch:z_index")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.6, 1.98),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 0]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Peanut_Catch:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.12, 0.66, 0.96, 1.26),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(503, 257), Vector2(503, 257), Vector2(503, 257), Vector2(503, 257), Vector2(503, 960)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Peanut_Catch:scale")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 0.12, 0.66, 0.96, 1.26, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(3, 3), Vector2(4, 4), Vector2(4, 4), Vector2(1, 1)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Peanut_Catch:z_index")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 0.6, 1.26),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 0]
+}
+
+[sub_resource type="Animation" id="Animation_lbmtr"]
+resource_name = "Pull_Fail"
+length = 0.78
+step = 0.06
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fishing_Rod:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0588235, 0.12, 0.6, 0.66, 0.72),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 2, 1, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Dr_Nutman_Hand:position")
+tracks/1/interp = 0
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.06, 0.12, 0.6, 0.66, 0.72),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(840, 539), Vector2(855, 629), Vector2(859, 717), Vector2(859, 717), Vector2(855, 629), Vector2(840, 539)]
+}
+
+[sub_resource type="Animation" id="Animation_6blgy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Squirrel:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Squirrel_Catch:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Dr_Nutman_Hand:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(859, 717)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Fishing_Rod:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Squirrel_Catch:z_index")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Peanut_Catch:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(503, 257)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Peanut_Catch:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Peanut_Catch:z_index")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yrb7m"]
+_data = {
+&"Pull_Catch": SubResource("Animation_g1hrc"),
+&"Pull_Fail": SubResource("Animation_lbmtr"),
+&"RESET": SubResource("Animation_6blgy")
+}
+
+[node name="Game_Play" instance=ExtResource("1_x5fe8")]
+script = ExtResource("2_k3yno")
+_e_squirrels_per_round = 3
+_e_time_per_frame = 0.06
+_e_delay_min = 0.0
+_e_delay_max = 0.2
+
+[node name="Background" parent="Canvas_1" index="0"]
+texture = null
+
+[node name="Margin" type="MarginContainer" parent="Canvas_2" index="0"]
+light_mask = 8
+visibility_layer = 8
+offset_right = 1280.0
+offset_bottom = 84.0
+mouse_filter = 2
+theme = ExtResource("3_1hrqs")
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="Back_Button" parent="Canvas_2/Margin" index="0" instance=ExtResource("4_2mtrt")]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Cracked_Peanut_Amount" parent="Canvas_2/Margin" index="1" instance=ExtResource("5_s1fhp")]
+layout_mode = 2
+size_flags_horizontal = 8
+_e_key = "Handful_Peanuts_Cracked"
+
+[node name="Squirrel_Catch" type="Node2D" parent="." index="4"]
+visible = false
+light_mask = 4
+visibility_layer = 4
+position = Vector2(456, 388)
+
+[node name="Body" type="Sprite2D" parent="Squirrel_Catch" index="0"]
+light_mask = 4
+visibility_layer = 4
+texture = ExtResource("7_holvx")
+hframes = 8
+vframes = 2
+
+[node name="Hands" type="Sprite2D" parent="Squirrel_Catch" index="1"]
+light_mask = 4
+visibility_layer = 4
+z_index = 1
+position = Vector2(24, -157)
+texture = ExtResource("8_fgp41")
+hframes = 8
+vframes = 2
+
+[node name="Peanut_Catch" type="Sprite2D" parent="." index="6"]
+visible = false
+light_mask = 4
+visibility_layer = 4
+position = Vector2(503, 257)
+texture = ExtResource("9_ieceg")
+
+[node name="Fishing_Rod" parent="." index="7"]
+frame = 2
+
+[node name="Dr_Nutman_Hand" parent="." index="8"]
+position = Vector2(859, 717)
+
+[node name="Audio" type="Node" parent="." index="10"]
+
+[node name="Fun_Up" type="AudioStreamPlayer" parent="Audio" index="0"]
+stream = ExtResource("9_yfpl2")
+bus = &"SFX"
+
+[node name="Whoosh" type="AudioStreamPlayer" parent="Audio" index="1"]
+stream = ExtResource("10_qhhqu")
+bus = &"SFX"
+
+[node name="Laugh" type="AudioStreamPlayer" parent="Audio" index="2"]
+stream = ExtResource("10_f8dvd")
+bus = &"SFX"
+
+[node name="Anims" type="AnimationPlayer" parent="." index="11"]
+libraries = {
+"": SubResource("AnimationLibrary_yrb7m")
+}
+
+[node name="Delay" type="Timer" parent="." index="12"]
+one_shot = true
+
+[editable path="Canvas_2/Margin/Cracked_Peanut_Amount"]

@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgoj31dswbdn5"]
+
+[ext_resource type="PackedScene" uid="uid://c2htfha2hys2m" path="res://Global_Resources/Mapping/3D/Below/Broko_Town/Exterior/Water_1/Models/Pit_Single_Down_Top_Down.glb" id="1_8k2bd"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_owugt"]
+size = Vector3(0.25, 1, 1)
+
+[node name="Island_1" type="Node3D"]
+
+[node name="Model" parent="." instance=ExtResource("1_8k2bd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="Water_1_Pit_Single_Down_Top_Down" parent="Model" index="0" groups=["NavMesh_Main"]]
+
+[node name="Static" type="StaticBody3D" parent="."]
+collision_mask = 0
+
+[node name="Collision_1" type="CollisionShape3D" parent="Static"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.375, -0.5, 0)
+shape = SubResource("BoxShape3D_owugt")
+
+[node name="Collision_2" type="CollisionShape3D" parent="Static"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.375, -0.5, 0)
+shape = SubResource("BoxShape3D_owugt")
+
+[editable path="Model"]

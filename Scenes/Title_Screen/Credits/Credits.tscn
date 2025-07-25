@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cx38lvawqxups"]
+[gd_scene load_steps=5 format=3 uid="uid://cx38lvawqxups"]
 
 [ext_resource type="Script" uid="uid://dtl2dawxeo6fw" path="res://Scenes/Title_Screen/Credits/Scripts/Credits.gd" id="1_2y0wn"]
+[ext_resource type="Texture2D" uid="uid://wrg2potji1vm" path="res://Global_Resources/Sprites/Backgrounds/1_Spritesheet.png" id="1_dluhp"]
 [ext_resource type="PackedScene" uid="uid://beoei6o2vrvx" path="res://Scenes/Indicator/Back_Button.tscn" id="2_7sxxe"]
-[ext_resource type="Texture2D" uid="uid://cn133o3nv3ip8" path="res://Icon.svg" id="2_xd8f5"]
+[ext_resource type="LabelSettings" uid="uid://byu4vp5jnyshc" path="res://Global_Resources/LabelSettings/Heading.tres" id="3_8uox8"]
 
 [node name="Credits" type="Control"]
 light_mask = 8
@@ -16,7 +17,6 @@ grow_vertical = 2
 script = ExtResource("1_2y0wn")
 
 [node name="Background" type="TextureRect" parent="."]
-self_modulate = Color(0.2, 0.2, 0.2, 1)
 light_mask = 8
 visibility_layer = 8
 layout_mode = 1
@@ -26,7 +26,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = ExtResource("2_xd8f5")
+texture = ExtResource("1_dluhp")
 stretch_mode = 1
 
 [node name="Back" parent="." instance=ExtResource("2_7sxxe")]
@@ -64,6 +64,7 @@ light_mask = 8
 visibility_layer = 8
 layout_mode = 2
 text = "CREDITS"
+label_settings = ExtResource("3_8uox8")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -103,6 +104,91 @@ visibility_layer = 8
 layout_mode = 2
 horizontal_alignment = 1
 
+[node name="Sound_Effects" type="VBoxContainer" parent="Margin/VBox/Scroll/VBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 8
+
+[node name="Heading" type="RichTextLabel" parent="Margin/VBox/Scroll/VBox/Sound_Effects"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 28
+bbcode_enabled = true
+text = "[u]Sound Effects[/u]"
+fit_content = true
+
+[node name="GameBurp" type="VBoxContainer" parent="Margin/VBox/Scroll/VBox/Sound_Effects"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Heading" type="RichTextLabel" parent="Margin/VBox/Scroll/VBox/Sound_Effects/GameBurp"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[u]GameBurp[/u]"
+fit_content = true
+
+[node name="Link" type="LinkButton" parent="Margin/VBox/Scroll/VBox/Sound_Effects/GameBurp"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "License"
+underline = 1
+uri = "www.gameburp.com/license"
+
+[node name="GameDev_Market" type="VBoxContainer" parent="Margin/VBox/Scroll/VBox/Sound_Effects"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Heading" type="RichTextLabel" parent="Margin/VBox/Scroll/VBox/Sound_Effects/GameDev_Market"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[u]GameDev Market[/u]"
+fit_content = true
+
+[node name="Link" type="LinkButton" parent="Margin/VBox/Scroll/VBox/Sound_Effects/GameDev_Market"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "License"
+underline = 1
+uri = "https://www.gamedevmarket.net/terms-conditions#pro-licence"
+
+[node name="Sonniss" type="VBoxContainer" parent="Margin/VBox/Scroll/VBox/Sound_Effects"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Heading" type="RichTextLabel" parent="Margin/VBox/Scroll/VBox/Sound_Effects/Sonniss"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[u]Sonniss[/u]"
+fit_content = true
+
+[node name="Link" type="LinkButton" parent="Margin/VBox/Scroll/VBox/Sound_Effects/Sonniss"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "License"
+underline = 1
+uri = "https://sonniss.com/license"
+
 [node name="Shaders" type="VBoxContainer" parent="Margin/VBox/Scroll/VBox"]
 light_mask = 8
 visibility_layer = 8
@@ -118,6 +204,73 @@ theme_override_font_sizes/normal_font_size = 28
 bbcode_enabled = true
 text = "[u]Shaders[/u]"
 fit_content = true
+
+[node name="Buffin_Tint" type="VBoxContainer" parent="Margin/VBox/Scroll/VBox/Shaders"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Heading" type="RichTextLabel" parent="Margin/VBox/Scroll/VBox/Shaders/Buffin_Tint"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[u]Buffin Tint[/u]"
+fit_content = true
+
+[node name="Link" type="LinkButton" parent="Margin/VBox/Scroll/VBox/Shaders/Buffin_Tint"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "schatten"
+underline = 1
+
+[node name="PBR_Glass" type="VBoxContainer" parent="Margin/VBox/Scroll/VBox/Shaders"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Heading" type="RichTextLabel" parent="Margin/VBox/Scroll/VBox/Shaders/PBR_Glass"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[u]PBR Glass[/u]"
+fit_content = true
+
+[node name="Link" type="LinkButton" parent="Margin/VBox/Scroll/VBox/Shaders/PBR_Glass"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "aubrey"
+underline = 1
+uri = "https://godotshaders.com/shader/pbr-glass"
+
+[node name="Glitch" type="VBoxContainer" parent="Margin/VBox/Scroll/VBox/Shaders"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Heading" type="RichTextLabel" parent="Margin/VBox/Scroll/VBox/Shaders/Glitch"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[u]Glitch[/u]"
+fit_content = true
+
+[node name="Link" type="LinkButton" parent="Margin/VBox/Scroll/VBox/Shaders/Glitch"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "schatten"
+underline = 1
 
 [node name="2D_Outline" type="VBoxContainer" parent="Margin/VBox/Scroll/VBox/Shaders"]
 light_mask = 8
@@ -196,6 +349,29 @@ text = "axilirate"
 underline = 1
 uri = "https://godotshaders.com/shader/pixel-perfect-outline-shader"
 
+[node name="Speedlines" type="VBoxContainer" parent="Margin/VBox/Scroll/VBox/Shaders"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Heading" type="RichTextLabel" parent="Margin/VBox/Scroll/VBox/Shaders/Speedlines"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[u]Speed Lines Shader for Godot 4[/u]"
+fit_content = true
+
+[node name="Link" type="LinkButton" parent="Margin/VBox/Scroll/VBox/Shaders/Speedlines"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "axilirate"
+underline = 1
+uri = "https://godotshaders.com/shader/speed-lines-shader-for-godot-4"
+
 [node name="Transition" type="VBoxContainer" parent="Margin/VBox/Scroll/VBox/Shaders"]
 light_mask = 8
 visibility_layer = 8
@@ -218,6 +394,128 @@ layout_mode = 2
 text = "GDQuest"
 underline = 1
 uri = "https://github.com/gdquest-demos/godot-shaders"
+
+[node name="Screentone_Scene_Transition" type="VBoxContainer" parent="Margin/VBox/Scroll/VBox/Shaders"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Heading" type="RichTextLabel" parent="Margin/VBox/Scroll/VBox/Shaders/Screentone_Scene_Transition"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[u]Screentone scene transition[/u]"
+fit_content = true
+
+[node name="Link" type="LinkButton" parent="Margin/VBox/Scroll/VBox/Shaders/Screentone_Scene_Transition"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "vanviethieuanh"
+underline = 1
+uri = "https://godotshaders.com/shader/screentone-scene-transition"
+
+[node name="VTint" type="VBoxContainer" parent="Margin/VBox/Scroll/VBox/Shaders"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Heading" type="RichTextLabel" parent="Margin/VBox/Scroll/VBox/Shaders/VTint"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[u]VTint[/u]"
+fit_content = true
+
+[node name="Link" type="LinkButton" parent="Margin/VBox/Scroll/VBox/Shaders/VTint"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "schatten"
+underline = 1
+
+[node name="3D_Flag_Wave" type="VBoxContainer" parent="Margin/VBox/Scroll/VBox/Shaders"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Heading" type="RichTextLabel" parent="Margin/VBox/Scroll/VBox/Shaders/3D_Flag_Wave"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[u]3D Flag Wave[/u]"
+fit_content = true
+
+[node name="Link" type="LinkButton" parent="Margin/VBox/Scroll/VBox/Shaders/3D_Flag_Wave"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "GDQuest"
+underline = 1
+uri = "https://github.com/gdquest-demos/godot-shaders"
+
+[node name="2D_Pixel_Water" type="VBoxContainer" parent="Margin/VBox/Scroll/VBox/Shaders"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Heading" type="RichTextLabel" parent="Margin/VBox/Scroll/VBox/Shaders/2D_Pixel_Water"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[u]2D Pixel Water[/u]"
+fit_content = true
+
+[node name="VBox" type="VBoxContainer" parent="Margin/VBox/Scroll/VBox/Shaders/2D_Pixel_Water"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Link" type="LinkButton" parent="Margin/VBox/Scroll/VBox/Shaders/2D_Pixel_Water/VBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "jess-hammer"
+underline = 1
+uri = "https://github.com/jess-hammer/2d-pixel-water-shader-godot/tree/main"
+
+[node name="Text" type="Label" parent="Margin/VBox/Scroll/VBox/Shaders/2D_Pixel_Water/VBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "Copyright (c) 2024 jess-hammer
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the \"Software\"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE."
+horizontal_alignment = 1
 
 [node name="Textures" type="VBoxContainer" parent="Margin/VBox/Scroll/VBox"]
 light_mask = 8
@@ -257,3 +555,219 @@ layout_mode = 2
 text = "License (CC0)"
 underline = 1
 uri = "https://kenney.nl/assets"
+
+[node name="Pixabay" type="VBoxContainer" parent="Margin/VBox/Scroll/VBox/Textures"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Heading" type="RichTextLabel" parent="Margin/VBox/Scroll/VBox/Textures/Pixabay"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[u]Pixabay[/u]"
+fit_content = true
+
+[node name="Link_1" type="LinkButton" parent="Margin/VBox/Scroll/VBox/Textures/Pixabay"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "Torfi007"
+underline = 1
+uri = "https://pixabay.com/photos/era-gray-macaw-bird-animal-birds-881672"
+
+[node name="Link_2" type="LinkButton" parent="Margin/VBox/Scroll/VBox/Textures/Pixabay"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "Eijaoknga"
+underline = 1
+uri = "https://pixabay.com/photos/crow-bird-animal-peanuts-beak-6380649"
+
+[node name="Link_3" type="LinkButton" parent="Margin/VBox/Scroll/VBox/Textures/Pixabay"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "Hinotoriko"
+underline = 1
+uri = "https://pixabay.com/photos/squirrel-peanut-animal-rodent-5210943"
+
+[node name="Color_Selection_BG" type="VBoxContainer" parent="Margin/VBox/Scroll/VBox/Textures"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Heading" type="RichTextLabel" parent="Margin/VBox/Scroll/VBox/Textures/Color_Selection_BG"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[u]Color Selection Background[/u]"
+fit_content = true
+
+[node name="Link_1" type="LinkButton" parent="Margin/VBox/Scroll/VBox/Textures/Color_Selection_BG"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "vec"
+underline = 1
+
+[node name="Themes" type="VBoxContainer" parent="Margin/VBox/Scroll/VBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 8
+
+[node name="Heading" type="RichTextLabel" parent="Margin/VBox/Scroll/VBox/Themes"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 28
+bbcode_enabled = true
+text = "[u]Themes[/u]"
+fit_content = true
+
+[node name="Windows_10" type="VBoxContainer" parent="Margin/VBox/Scroll/VBox/Themes"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Heading" type="RichTextLabel" parent="Margin/VBox/Scroll/VBox/Themes/Windows_10"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[u]Windows 10 Theme[/u]"
+fit_content = true
+
+[node name="VBox" type="VBoxContainer" parent="Margin/VBox/Scroll/VBox/Themes/Windows_10"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Link" type="LinkButton" parent="Margin/VBox/Scroll/VBox/Themes/Windows_10/VBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "MrBlack"
+underline = 1
+uri = "https://github.com/mr-dreich/Godot-Windows-10-Theme"
+
+[node name="Text" type="Label" parent="Margin/VBox/Scroll/VBox/Themes/Windows_10/VBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "Copyright (c) 2020 MrBlack
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the \"Software\"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE."
+horizontal_alignment = 1
+
+[node name="Fonts" type="VBoxContainer" parent="Margin/VBox/Scroll/VBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 8
+
+[node name="Heading" type="RichTextLabel" parent="Margin/VBox/Scroll/VBox/Fonts"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 28
+bbcode_enabled = true
+text = "[u]Fonts[/u]"
+fit_content = true
+
+[node name="Quikhand" type="VBoxContainer" parent="Margin/VBox/Scroll/VBox/Fonts"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Heading" type="RichTextLabel" parent="Margin/VBox/Scroll/VBox/Fonts/Quikhand"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[u]Quikhand[/u]"
+fit_content = true
+
+[node name="Link" type="LinkButton" parent="Margin/VBox/Scroll/VBox/Fonts/Quikhand"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "Joanne Taylor"
+underline = 1
+uri = "www.1001fonts.com/quikhand-font.html"
+
+[node name="ProFont" type="VBoxContainer" parent="Margin/VBox/Scroll/VBox/Fonts"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Heading" type="RichTextLabel" parent="Margin/VBox/Scroll/VBox/Fonts/ProFont"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[u]ProFont[/u]"
+fit_content = true
+
+[node name="VBox" type="VBoxContainer" parent="Margin/VBox/Scroll/VBox/Fonts/ProFont"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Link" type="LinkButton" parent="Margin/VBox/Scroll/VBox/Fonts/ProFont/VBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "Carl R. Osterwald"
+underline = 1
+
+[node name="Text" type="Label" parent="Margin/VBox/Scroll/VBox/Fonts/ProFont/VBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "“ProFont Distribution” is Copyright © 1997, SQ Software.  The ProFont fonts are Copyright © 1997,
+Carl R. Osterwald.  It is our intention that “ProFont Distribution” get the widest possible distribution.  
+You may redistribute unmodified copies of “ProFont Distriubtion” as long as it is accompanied by an
+unmodified copy of “About ProFont Distribution 2.2” (this file).  You may not charge anyone money for
+the “ProFont Distribution” package itself.  The “ProFont Distribution” package can be distributed for free
+along with products for which you do charge money.  The “ProFont Distribution” package can also be
+distributed for free as part of collections of more than 10 third party products sold as a collection 
+(such as on the Apprentice CD series).  If you do distribute “ProFont Distribution” along with another
+product or as part of a collection, Stephen C. Gilardi and Carl R. Osterwald would appreciate very much
+each receiving a complimentary copy of the whole distribution (e.g., any CD-ROM it appears on), but this is
+not a requirement.  If you have questions about redistribution, please contact Stephen C. Gilardi at 
+squeegee@usa.net."
+horizontal_alignment = 1

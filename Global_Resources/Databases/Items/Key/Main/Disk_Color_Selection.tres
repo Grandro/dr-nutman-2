@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bvopw5cgu07si"]
+
+[ext_resource type="Script" uid="uid://cytubor452swf" path="res://Global_Resources/Databases/Items/Item_Data.gd" id="1_mmdmo"]
+
+[resource]
+script = ExtResource("1_mmdmo")
+_e_key = "Disk_Color_Selection"
+_e_type = "Key"
+_e_group = "Main"
+_e_category_type = "Static"
+_e_stack = 1

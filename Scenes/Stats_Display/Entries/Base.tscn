@@ -170,6 +170,6 @@ layout_mode = 2
 
 [node name="Anims" type="AnimationPlayer" parent="."]
 libraries = {
-&"": SubResource("AnimationLibrary_nihol")
+"": SubResource("AnimationLibrary_nihol")
 }
 autoplay = "Folded"

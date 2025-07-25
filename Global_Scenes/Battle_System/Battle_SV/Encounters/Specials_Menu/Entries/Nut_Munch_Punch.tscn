@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://db3g3svor0m4i"]
+
+[ext_resource type="PackedScene" uid="uid://bxlqkvja8crpv" path="res://Global_Scenes/Battle_System/Battle_SV/Encounters/Specials_Menu/Entries/Entry_Base.tscn" id="1_72sc0"]
+[ext_resource type="Texture2D" uid="uid://dxbor71eoa4ak" path="res://Global_Resources/Sprites/Icons/Actions/Nut_Munch_Punch.png" id="2_kh2ws"]
+
+[node name="Nut_Munch_Punch" instance=ExtResource("1_72sc0")]
+offset_right = 320.0
+offset_bottom = 48.0
+
+[node name="Image" parent="Margin/HBox" index="0"]
+texture = ExtResource("2_kh2ws")

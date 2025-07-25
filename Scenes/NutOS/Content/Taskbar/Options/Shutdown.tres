@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ContextMenuOptionEntryData" load_steps=3 format=3 uid="uid://bnpgsxh0hgvwc"]
+
+[ext_resource type="Texture2D" uid="uid://cobm41mfrfh68" path="res://Scenes/NutOS/Content/Sprites/Icons/Power.png" id="1_eewvh"]
+[ext_resource type="Script" uid="uid://v0jwe56fkhao" path="res://Scenes/Context_Menu/Option_Entry_Data.gd" id="2_jn6j3"]
+
+[resource]
+script = ExtResource("2_jn6j3")
+_e_hsep = false
+_e_icon_texture = ExtResource("1_eewvh")
+_e_show_left = true
+_e_show_right = false
+_e_visible = true
+_e_disabled = false
+_e_options = {}
+_e_options_order = Array[String]([])

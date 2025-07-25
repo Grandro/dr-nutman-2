@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://bjaemay65pyhl"]
+[gd_scene load_steps=5 format=3 uid="uid://bjaemay65pyhl"]
 
 [ext_resource type="Script" uid="uid://biarlx83t1xua" path="res://Scenes/Item_Select_Base_Menu/Scripts/Info.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://cjrw5luh13vlq" path="res://Scenes/Stats_Display/Entries/Stat_Entry.tscn" id="2"]
+[ext_resource type="Texture2D" uid="uid://nu3s04qj8n4q" path="res://Global_Resources/Sprites/Items/Party_Hat_1.png" id="3"]
+[ext_resource type="Theme" uid="uid://budcfl16xj2tt" path="res://Global_Resources/Themes/Default/Default.tres" id="4"]
 
 [node name="Info" type="PanelContainer"]
 light_mask = 8
@@ -10,6 +12,7 @@ offset_right = 638.0
 offset_bottom = 720.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4")
 script = ExtResource("1")
 
 [node name="Margin" type="MarginContainer" parent="."]
@@ -31,7 +34,7 @@ theme_override_constants/separation = 16
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
-text = "Name"
+text = "Blau-Lilaner Party-Hut"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -41,6 +44,7 @@ visibility_layer = 8
 custom_minimum_size = Vector2(48, 48)
 layout_mode = 2
 size_flags_horizontal = 4
+texture = ExtResource("3")
 expand_mode = 1
 stretch_mode = 5
 
@@ -57,7 +61,7 @@ visibility_layer = 8
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
 bbcode_enabled = true
-text = "[center]Desc"
+text = "[center]Ein Party-Hut um einem gegebenen festlichen Anlass einen besonderen Pepp zu verleihen."
 fit_content = true
 scroll_active = false
 

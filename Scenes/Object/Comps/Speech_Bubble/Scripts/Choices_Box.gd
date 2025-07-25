@@ -7,6 +7,8 @@ var _a_Choice_Entry_Scene = preload("res://Global_Scenes/Dialogue_System/Choice_
 @onready var _a_Choices = get_node("Margin/Choices")
 
 func _ready():
+	Global_Data.fav_color_changed.connect(_on_Global_Data_fav_color_changed)
+	
 	hide()
 
 func open(p_args):
@@ -38,7 +40,8 @@ func open(p_args):
 		
 		_a_Choices.add_child(instance)
 	
-	_set_choices_font_color.call_deferred(Color.WHITE)
+	var fav_color = Global_Data.get_fav_color()
+	_set_choices_font_color.call_deferred(fav_color)
 	
 	show()
 
@@ -55,3 +58,6 @@ func _on_Choice_Entry_pressed(p_value):
 	choice_selected.emit(p_value)
 	
 	hide()
+
+func _on_Global_Data_fav_color_changed(p_color):
+	_set_choices_font_color(p_color)

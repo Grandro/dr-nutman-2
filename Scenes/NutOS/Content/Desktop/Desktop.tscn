@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://dsygt7081d2tb"]
+
+[ext_resource type="Theme" uid="uid://cphubdfp0kld2" path="res://Global_Resources/Themes/NutOS/NutOS.tres" id="1_q4j58"]
+[ext_resource type="Script" uid="uid://bdaak4jmunf6i" path="res://Scenes/NutOS/Content/Desktop/Scripts/Desktop.gd" id="2_djlvq"]
+[ext_resource type="PackedScene" uid="uid://bdm8bdyt8jrh" path="res://Scenes/Context_Menu/Context_Menu.tscn" id="3_3j5qv"]
+[ext_resource type="PackedScene" uid="uid://cjiepwap1bwtx" path="res://Scenes/NutOS/Content/Desktop/Selection_Rect/Selection_Rect.tscn" id="3_k2v01"]
+[ext_resource type="Resource" uid="uid://ddhufmydg13jt" path="res://Scenes/NutOS/Content/Desktop/App_Options/Open.tres" id="5_664bj"]
+
+[node name="Desktop" type="Control"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -640.0
+offset_right = 640.0
+offset_bottom = 680.0
+grow_horizontal = 2
+theme = ExtResource("1_q4j58")
+script = ExtResource("2_djlvq")
+
+[node name="Selection_Rect" parent="." instance=ExtResource("3_k2v01")]
+z_index = 1
+layout_mode = 1
+
+[node name="App_Shortcuts" type="Control" parent="."]
+light_mask = 8
+visibility_layer = 8
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Apps" type="Control" parent="."]
+light_mask = 8
+visibility_layer = 8
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="App_Options" parent="." instance=ExtResource("3_3j5qv")]
+visible = false
+_e_options = {
+"Open": ExtResource("5_664bj")
+}
+_e_options_order = Array[String](["Open"])
+
+[node name="Content" parent="App_Options" index="0"]
+theme = ExtResource("1_q4j58")
+
+[editable path="App_Options"]

@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3i1q7ktksrpc"]
+
+[ext_resource type="PackedScene" uid="uid://dqw82gbittu4m" path="res://Global_Resources/Mapping/3D/Below/Broko_Town/Exterior/Water_1/Models/Pit_Corner_Down_Right.glb" id="1_4nvjn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_djprh"]
+size = Vector3(0.25, 1, 0.25)
+
+[node name="Island_1" type="Node3D"]
+
+[node name="Model" parent="." instance=ExtResource("1_4nvjn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="Water_1_Pit_Corner_Down_Right" parent="Model" index="0" groups=["NavMesh_Main"]]
+
+[node name="Static" type="StaticBody3D" parent="."]
+collision_mask = 0
+
+[node name="Collision" type="CollisionShape3D" parent="Static"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.375, -0.5, -0.375)
+shape = SubResource("BoxShape3D_djprh")
+
+[editable path="Model"]

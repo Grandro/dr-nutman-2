@@ -1,0 +1,112 @@
+[gd_scene load_steps=10 format=3 uid="uid://c218f8s0a4f2i"]
+
+[ext_resource type="PackedScene" uid="uid://dlhat5aerwj2v" path="res://Scenes/Mini_Games/Mini_Game_Base/Mini_Game_Base.tscn" id="1_cfg67"]
+[ext_resource type="Script" uid="uid://bvlokblli20dl" path="res://Scenes/Mini_Games/Color_Selection/Scripts/Color_Selection.gd" id="2_fa0lv"]
+[ext_resource type="PackedScene" uid="uid://dp6cr1v2naad2" path="res://Scenes/Mini_Games/Color_Selection/Game/Game_Play.tscn" id="3_nb36x"]
+[ext_resource type="Script" uid="uid://bul7wyoqufr04" path="res://Scenes/Mini_Games/Color_Selection/Scripts/Intro.gd" id="4_l07fn"]
+[ext_resource type="PackedScene" uid="uid://dfekqv4ro4j35" path="res://Scenes/Mini_Games/Color_Selection/Game/Game_Preview.tscn" id="5_0k6f0"]
+[ext_resource type="Texture2D" uid="uid://ccnusbvvq2arw" path="res://Global_Resources/Sprites/Keys/8592.png" id="6_fhypi"]
+[ext_resource type="Texture2D" uid="uid://cq0n33iab7d4s" path="res://Global_Resources/Sprites/Keys/8594.png" id="7_p5teg"]
+[ext_resource type="Texture2D" uid="uid://1l80fi2y58vp" path="res://Global_Resources/Sprites/Keys/8593.png" id="8_06y3b"]
+[ext_resource type="Texture2D" uid="uid://bpxca1k02qaag" path="res://Global_Resources/Sprites/Keys/8595.png" id="9_1hpdk"]
+
+[node name="Color_Selection" instance=ExtResource("1_cfg67")]
+script = ExtResource("2_fa0lv")
+
+[node name="Game_Play" parent="." index="0" instance=ExtResource("3_nb36x")]
+
+[node name="Intro" parent="Canvas" index="0"]
+visible = false
+modulate = Color(1, 1, 1, 1)
+script = ExtResource("4_l07fn")
+_e_camera_start_pos = Vector2(640, 464)
+_e_camera_end_pos = Vector2(640, 1224)
+
+[node name="Heading" parent="Canvas/Intro/Margin/VBox" index="0"]
+text = "MINIGAMES_COLOR_SELECTION_HEADING"
+
+[node name="VP" parent="Canvas/Intro/Margin/VBox/HBox/Left/HBox/VP" index="0"]
+size = Vector2i(2, 2)
+render_target_update_mode = 0
+
+[node name="Game_Preview" parent="Canvas/Intro/Margin/VBox/HBox/Left/HBox/VP/VP" index="0" instance=ExtResource("5_0k6f0")]
+visible = false
+
+[node name="Desc" parent="Canvas/Intro/Margin/VBox/HBox/Right/VBox" index="0"]
+text = "MINIGAMES_COLOR_SELECTION_DESC"
+
+[node name="HBox" type="HBoxContainer" parent="Canvas/Intro/Margin/VBox/HBox/Right/VBox/Controls" index="1"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 64
+alignment = 1
+
+[node name="Left_Right" type="VBoxContainer" parent="Canvas/Intro/Margin/VBox/HBox/Right/VBox/Controls/HBox" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 16
+
+[node name="Desc" type="Label" parent="Canvas/Intro/Margin/VBox/HBox/Right/VBox/Controls/HBox/Left_Right" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "MINIGAMES_COLOR_SELECTION_CONTROL_FLIPPERS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBox" type="HBoxContainer" parent="Canvas/Intro/Margin/VBox/HBox/Right/VBox/Controls/HBox/Left_Right" index="1"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Left" type="TextureRect" parent="Canvas/Intro/Margin/VBox/HBox/Right/VBox/Controls/HBox/Left_Right/HBox" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+texture = ExtResource("6_fhypi")
+
+[node name="Right" type="TextureRect" parent="Canvas/Intro/Margin/VBox/HBox/Right/VBox/Controls/HBox/Left_Right/HBox" index="1"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+texture = ExtResource("7_p5teg")
+
+[node name="Up_Down" type="VBoxContainer" parent="Canvas/Intro/Margin/VBox/HBox/Right/VBox/Controls/HBox" index="1"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 16
+
+[node name="Desc" type="Label" parent="Canvas/Intro/Margin/VBox/HBox/Right/VBox/Controls/HBox/Up_Down" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "MINIGAMES_COLOR_SELECTION_MOVE_CAMERA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBox" type="HBoxContainer" parent="Canvas/Intro/Margin/VBox/HBox/Right/VBox/Controls/HBox/Up_Down" index="1"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Down" type="TextureRect" parent="Canvas/Intro/Margin/VBox/HBox/Right/VBox/Controls/HBox/Up_Down/HBox" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+texture = ExtResource("9_1hpdk")
+
+[node name="Up" type="TextureRect" parent="Canvas/Intro/Margin/VBox/HBox/Right/VBox/Controls/HBox/Up_Down/HBox" index="1"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+texture = ExtResource("8_06y3b")
+
+[editable path="Canvas/Intro"]
+[editable path="Canvas/Intro/Margin/VBox/HBox/Left/HBox/VP"]

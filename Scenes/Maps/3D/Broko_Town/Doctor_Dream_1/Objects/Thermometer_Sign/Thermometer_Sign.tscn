@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://bxoj7ay1iqu54"]
+
+[ext_resource type="Script" uid="uid://ckbk2i4wb1yhq" path="res://Scenes/Object/Scripts/Node3D_Object.gd" id="1_o27yj"]
+[ext_resource type="PackedScene" uid="uid://bblmb8yfchyxr" path="res://Scenes/Object/Comps/3D/Display.tscn" id="2_ms6bp"]
+[ext_resource type="Texture2D" uid="uid://crdkbshwqdy8g" path="res://Scenes/Maps/3D/Broko_Town/Doctor_Dream_1/Objects/Thermometer_Sign/Sprites/Spritesheet.png" id="3_kgj2c"]
+[ext_resource type="PackedScene" uid="uid://nr4813v0r2dg" path="res://Scenes/Object/Comps/3D/Interactions/Interactions.tscn" id="4_ddxj7"]
+[ext_resource type="PackedScene" uid="uid://omsbdulg45pv" path="res://Scenes/Object/Comps/3D/Popup.tscn" id="5_cc0d5"]
+
+[node name="Thermometer_Sign" type="Node3D" groups=["Object"]]
+script = ExtResource("1_o27yj")
+
+[node name="Display" parent="." instance=ExtResource("2_ms6bp")]
+texture = ExtResource("3_kgj2c")
+
+[node name="Interactions" parent="." instance=ExtResource("4_ddxj7")]
+
+[node name="1" parent="Interactions" index="0"]
+_e_popup_pos = Vector3(0, 1.5, 0.01)
+_e_speech_bubble_pos = Vector3(0, 2.175, 0.01)
+
+[node name="Popup" parent="." instance=ExtResource("5_cc0d5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0.01)
+
+[editable path="Interactions"]
+[editable path="Interactions/1"]
+[editable path="Popup"]

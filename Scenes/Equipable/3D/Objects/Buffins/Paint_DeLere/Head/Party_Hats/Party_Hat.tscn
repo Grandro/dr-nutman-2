@@ -1,0 +1,72 @@
+[gd_scene load_steps=32 format=3 uid="uid://docx5eayticqo"]
+
+[ext_resource type="PackedScene" uid="uid://cpmd6ra1vqowo" path="res://Scenes/Equipable/3D/Objects/Buffins/Base/Head/Party_Hats/Party_Hat.tscn" id="1"]
+[ext_resource type="Texture2D" uid="uid://df5usp7qv1roy" path="res://Global_Resources/Sprites/Objects/Buffins/Paint_DeLere/Equipables/Head/Party_Hats/1_Spritesheet.png" id="2"]
+[ext_resource type="Animation" uid="uid://cno2j3rwdbmis" path="res://Scenes/Equipable/3D/Objects/Buffins/Base/Head/Party_Hats/Anims/Idle_Down.tres" id="3_17tgg"]
+[ext_resource type="Animation" uid="uid://b2s8op5ixf3v8" path="res://Scenes/Equipable/3D/Objects/Buffins/Base/Head/Party_Hats/Anims/Idle_Left.tres" id="4_7131c"]
+[ext_resource type="Animation" uid="uid://beiaq0715fnyq" path="res://Scenes/Equipable/3D/Objects/Buffins/Base/Head/Party_Hats/Anims/Idle_Right.tres" id="5_e60hn"]
+[ext_resource type="Animation" uid="uid://bgle7sljv1una" path="res://Scenes/Equipable/3D/Objects/Buffins/Base/Head/Party_Hats/Anims/Idle_Up.tres" id="6_n2w8t"]
+[ext_resource type="Animation" uid="uid://djvskulc1wpys" path="res://Scenes/Equipable/3D/Objects/Buffins/Base/Head/Party_Hats/Anims/Jump_Down.tres" id="7_xke2j"]
+[ext_resource type="Animation" uid="uid://tjn04lkf0uu6" path="res://Scenes/Equipable/3D/Objects/Buffins/Base/Head/Party_Hats/Anims/Jump_Left.tres" id="8_5suqt"]
+[ext_resource type="Animation" uid="uid://bjuf5wd6o72m4" path="res://Scenes/Equipable/3D/Objects/Buffins/Base/Head/Party_Hats/Anims/Jump_Right.tres" id="9_lwq8u"]
+[ext_resource type="Animation" uid="uid://cufdgfwh0ryco" path="res://Scenes/Equipable/3D/Objects/Buffins/Base/Head/Party_Hats/Anims/Jump_Up.tres" id="10_i1mib"]
+[ext_resource type="Animation" uid="uid://cmeqevm6cgl7u" path="res://Scenes/Equipable/3D/Objects/Buffins/Base/Head/Party_Hats/Anims/Place_Down.tres" id="11_8n5k5"]
+[ext_resource type="Animation" uid="uid://bpl4744qd83mq" path="res://Scenes/Equipable/3D/Objects/Buffins/Base/Head/Party_Hats/Anims/Place_Left.tres" id="12_fml8y"]
+[ext_resource type="Animation" uid="uid://dc0nygmio87xg" path="res://Scenes/Equipable/3D/Objects/Buffins/Base/Head/Party_Hats/Anims/Place_Right.tres" id="13_qpnfq"]
+[ext_resource type="Animation" uid="uid://dmgt41jtasb21" path="res://Scenes/Equipable/3D/Objects/Buffins/Base/Head/Party_Hats/Anims/Place_Up.tres" id="14_i2gl1"]
+[ext_resource type="Animation" uid="uid://caggy6whhexsv" path="res://Scenes/Equipable/3D/Objects/Buffins/Base/Head/Party_Hats/Anims/Stop_Down.tres" id="15_rq0jh"]
+[ext_resource type="Animation" uid="uid://b1pfstvgkudnx" path="res://Scenes/Equipable/3D/Objects/Buffins/Base/Head/Party_Hats/Anims/Stop_Left.tres" id="16_3a3ry"]
+[ext_resource type="Animation" uid="uid://ckvi7dysjoajs" path="res://Scenes/Equipable/3D/Objects/Buffins/Base/Head/Party_Hats/Anims/Stop_Right.tres" id="17_6b58x"]
+[ext_resource type="Animation" uid="uid://bjnt0xusah3f8" path="res://Scenes/Equipable/3D/Objects/Buffins/Base/Head/Party_Hats/Anims/Stop_Up.tres" id="18_320xu"]
+[ext_resource type="Animation" uid="uid://c4me2c5ieucsc" path="res://Scenes/Equipable/3D/Objects/Buffins/Base/Head/Party_Hats/Anims/Think_Down.tres" id="19_eh1jb"]
+[ext_resource type="Animation" uid="uid://cwry0q8navrsi" path="res://Scenes/Equipable/3D/Objects/Buffins/Base/Head/Party_Hats/Anims/Think_Left.tres" id="20_f07gh"]
+[ext_resource type="Animation" uid="uid://5uxtgjy5q0ak" path="res://Scenes/Equipable/3D/Objects/Buffins/Base/Head/Party_Hats/Anims/Think_Right.tres" id="21_umok4"]
+[ext_resource type="Animation" uid="uid://lj3njnatkk4o" path="res://Scenes/Equipable/3D/Objects/Buffins/Base/Head/Party_Hats/Anims/Think_Up.tres" id="22_081jg"]
+[ext_resource type="Animation" uid="uid://ca71yiywy3nmw" path="res://Scenes/Equipable/3D/Objects/Buffins/Base/Head/Party_Hats/Anims/Walk_Down.tres" id="23_yd7sh"]
+[ext_resource type="Animation" uid="uid://doawcjt2tr3gm" path="res://Scenes/Equipable/3D/Objects/Buffins/Base/Head/Party_Hats/Anims/Walk_Left.tres" id="24_3i8ou"]
+[ext_resource type="Animation" uid="uid://b381ktpdvfo1f" path="res://Scenes/Equipable/3D/Objects/Buffins/Base/Head/Party_Hats/Anims/Walk_Right.tres" id="25_exbq7"]
+[ext_resource type="Animation" uid="uid://bok5o41bifnbp" path="res://Scenes/Equipable/3D/Objects/Buffins/Base/Head/Party_Hats/Anims/Walk_Up.tres" id="26_d5ta8"]
+[ext_resource type="Animation" uid="uid://dxpc4jvrp1slg" path="res://Scenes/Equipable/3D/Objects/Buffins/Paint_DeLere/Head/Party_Hats/Anims/Paint_Down.tres" id="27_mst78"]
+[ext_resource type="Animation" uid="uid://puqwa6hnk02d" path="res://Scenes/Equipable/3D/Objects/Buffins/Paint_DeLere/Head/Party_Hats/Anims/Paint_Left.tres" id="28_s44y4"]
+[ext_resource type="Animation" uid="uid://b8owbcscavt21" path="res://Scenes/Equipable/3D/Objects/Buffins/Paint_DeLere/Head/Party_Hats/Anims/Paint_Right.tres" id="29_8lfru"]
+[ext_resource type="Animation" uid="uid://ts7wtupn86xk" path="res://Scenes/Equipable/3D/Objects/Buffins/Paint_DeLere/Head/Party_Hats/Anims/Paint_Up.tres" id="30_8fgp8"]
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3hcxr"]
+_data = {
+&"Idle_Down": ExtResource("3_17tgg"),
+&"Idle_Left": ExtResource("4_7131c"),
+&"Idle_Right": ExtResource("5_e60hn"),
+&"Idle_Up": ExtResource("6_n2w8t"),
+&"Jump_Down": ExtResource("7_xke2j"),
+&"Jump_Left": ExtResource("8_5suqt"),
+&"Jump_Right": ExtResource("9_lwq8u"),
+&"Jump_Up": ExtResource("10_i1mib"),
+&"Paint_Down": ExtResource("27_mst78"),
+&"Paint_Left": ExtResource("28_s44y4"),
+&"Paint_Right": ExtResource("29_8lfru"),
+&"Paint_Up": ExtResource("30_8fgp8"),
+&"Place_Down": ExtResource("11_8n5k5"),
+&"Place_Left": ExtResource("12_fml8y"),
+&"Place_Right": ExtResource("13_qpnfq"),
+&"Place_Up": ExtResource("14_i2gl1"),
+&"Stop_Down": ExtResource("15_rq0jh"),
+&"Stop_Left": ExtResource("16_3a3ry"),
+&"Stop_Right": ExtResource("17_6b58x"),
+&"Stop_Up": ExtResource("18_320xu"),
+&"Think_Down": ExtResource("19_eh1jb"),
+&"Think_Left": ExtResource("20_f07gh"),
+&"Think_Right": ExtResource("21_umok4"),
+&"Think_Up": ExtResource("22_081jg"),
+&"Walk_Down": ExtResource("23_yd7sh"),
+&"Walk_Left": ExtResource("24_3i8ou"),
+&"Walk_Right": ExtResource("25_exbq7"),
+&"Walk_Up": ExtResource("26_d5ta8")
+}
+
+[node name="Party_Hat" instance=ExtResource("1")]
+texture = ExtResource("2")
+
+[node name="Anims" parent="." index="0"]
+libraries = {
+"": SubResource("AnimationLibrary_3hcxr")
+}

@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmh0h801kn6ye"]
+
+[ext_resource type="PackedScene" uid="uid://pu7yiomgntci" path="res://Scenes/Window/Window_Base.tscn" id="1_w58ma"]
+[ext_resource type="Theme" uid="uid://cphubdfp0kld2" path="res://Global_Resources/Themes/NutOS/NutOS.tres" id="2_4woae"]
+[ext_resource type="Script" uid="uid://cc307yh82gy85" path="res://Scenes/NutOS/Content/Desktop/Apps/Scripts/App.gd" id="2_8reie"]
+
+[node name="App" instance=ExtResource("1_w58ma")]
+audio_listener_enable_2d = true
+position = Vector2i(160, 54)
+size = Vector2i(960, 540)
+wrap_controls = true
+min_size = Vector2i(320, 180)
+max_size = Vector2i(1280, 720)
+content_scale_size = Vector2i(1280, 720)
+content_scale_mode = 2
+content_scale_aspect = 1
+theme = ExtResource("2_4woae")
+script = ExtResource("2_8reie")
+_e_sub_world = false
+_e_game_world = false

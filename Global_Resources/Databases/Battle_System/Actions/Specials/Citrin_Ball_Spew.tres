@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://c6c84gh6e2k4x"]
+
+[ext_resource type="Script" uid="uid://jld012h8pf8w" path="res://Global_Resources/Databases/Battle_System/Actions/Actions_Data.gd" id="1_vsyhv"]
+
+[resource]
+script = ExtResource("1_vsyhv")
+_e_key = "Citrin_Ball_Spew"
+_e_target_type = "Enemy"
+_e_target_amount = 1
+_e_ATK_scaling = 0.8
+_e_MAG_scaling = 0.0
+_e_SP_cost = -1

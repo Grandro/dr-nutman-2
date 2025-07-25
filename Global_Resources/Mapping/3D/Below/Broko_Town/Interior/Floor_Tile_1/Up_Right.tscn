@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://c3t17b80pnu84"]
+
+[ext_resource type="PackedScene" uid="uid://c7l6gl3pndhn7" path="res://Global_Resources/Mapping/3D/Plane/Plane_Base.tscn" id="1_stlm4"]
+[ext_resource type="Texture2D" uid="uid://domy7iekeby0x" path="res://Global_Resources/Mapping/Sprites/Below/Broko_Town/Interior/Floor_Tile_1/Up_Right.png" id="2_srtwp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uy3ki"]
+albedo_texture = ExtResource("2_srtwp")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_8u4h3"]
+material = SubResource("StandardMaterial3D_uy3ki")
+size = Vector2(1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ui2dp"]
+size = Vector3(1, 0.2, 1)
+
+[node name="Floor_Tile_1" groups=["NavMesh_Main"] instance=ExtResource("1_stlm4")]
+mesh = SubResource("PlaneMesh_8u4h3")
+
+[node name="Static" type="StaticBody3D" parent="." index="0"]
+collision_mask = 0
+
+[node name="Collision" type="CollisionShape3D" parent="Static" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+shape = SubResource("BoxShape3D_ui2dp")

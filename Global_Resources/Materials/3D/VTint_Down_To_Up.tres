@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://5jcn0ur1h1og"]
+
+[ext_resource type="Shader" uid="uid://c5qli6h5oflag" path="res://Global_Resources/Materials/3D/Shaders/VTint_Down_To_Up.tres" id="1_sp13o"]
+
+[resource]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("1_sp13o")
+shader_parameter/progress = 0.5
+shader_parameter/color = Vector3(0.13, 0.91, 0.06)

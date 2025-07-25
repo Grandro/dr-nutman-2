@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://36x78k3cvata"]
+
+[ext_resource type="PackedScene" uid="uid://fxk5prqetirt" path="res://Scenes/Objects/3D/Building_Base/Building_Base.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://dv7lpbrqgr7f1" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Objects/Castle/Models/Model.glb" id="3_5u62s"]
+[ext_resource type="PackedScene" uid="uid://bugouyhnvhxwv" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Objects/Flags/Buffin_1/Buffin_1.tscn" id="3_px8p1"]
+[ext_resource type="PackedScene" uid="uid://cc1is11mtritg" path="res://Scenes/Object/Comps/3D/Collision_Polygon.tscn" id="4_m6kbq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_o1gpb"]
+size = Vector3(4.5, 0.5, 1)
+
+[node name="Castle_1" instance=ExtResource("1")]
+
+[node name="Model" parent="." index="0" instance=ExtResource("3_5u62s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 17)
+
+[node name="Flag" parent="." index="1" instance=ExtResource("3_px8p1")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 12.33, 0)
+
+[node name="Collision" parent="." index="2" instance=ExtResource("4_m6kbq")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.5, 0)
+depth = 7.0
+polygon = PackedVector2Array(-6.34, -26.65, -18.92, -19.37, -26, -7.3, -25.9, 7.45, -18.76, 19.64, -6.48, 26.61, 6.52, 26.61, 18.75, 19.53, 25.93, 7.1, 25.92, -7.21, 18.87, -19.48, 6.47, -26.68, 2.8, -26.7, 2.8, -27.2, -2.8, -27.2, -2.8, -26.7)
+
+[node name="1" parent="Interactions" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 27.7)
+
+[node name="Collision" parent="Interactions/1" index="0"]
+shape = SubResource("BoxShape3D_o1gpb")
+
+[node name="Nav_Obstacle" parent="." index="4"]
+height = 7.0
+vertices = PackedVector3Array(6.5, 0, 26.7, 18.9, 0, 19.5, 26, 0, 7.2, 26, 0, -7.1, 18.8, 0, -19.5, 6.5, 0, -26.6, -6.5, 0, -26.6, -18.8, 0, -19.5, -26, 0, -7.1, -26, 0, 7.2, -18.9, 0, 19.4, -6.3, 0, 26.7, -2.8, 0, 26.7, -2.8, 0, 27.2, 2.8, 0, 27.2, 2.8, 0, 26.7)
+
+[editable path="Interactions"]
+[editable path="Interactions/1"]

@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://by8jegq6wfoxe"]
+
+[ext_resource type="PackedScene" uid="uid://bur1664yc8pn8" path="res://Scenes/Equipable/3D/Equipable.tscn" id="1_v5jim"]
+[ext_resource type="Texture2D" uid="uid://dvu5ombcxo8rt" path="res://Global_Resources/Sprites/Objects/Dr_Nutman/Equipables/Shield/Citrin_Shield_Spritesheet.png" id="2_ew8rw"]
+
+[node name="Citrin_Shield" instance=ExtResource("1_v5jim")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.12, 0)
+texture = ExtResource("2_ew8rw")
+vframes = 19

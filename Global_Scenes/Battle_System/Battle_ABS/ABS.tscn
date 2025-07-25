@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://k8xrj2jw5bsh"]
+
+[ext_resource type="Script" uid="uid://c232y3bwcn0pk" path="res://Global_Scenes/Battle_System/Battle_ABS/Scripts/Battle_ABS.gd" id="1_eofd6"]
+[ext_resource type="Script" uid="uid://b5g0dc2y4yy0i" path="res://Global_Scenes/Battle_System/Battle_ABS/Scripts/Party_Member_HUD.gd" id="2_kxlqm"]
+
+[node name="ABS" type="Node"]
+script = ExtResource("1_eofd6")
+
+[node name="Party_Member_HUD" type="HBoxContainer" parent="."]
+visible = false
+light_mask = 8
+visibility_layer = 8
+anchors_preset = -1
+anchor_top = 0.806
+anchor_right = 1.0
+anchor_bottom = 0.972
+offset_top = -0.320068
+offset_bottom = 0.159973
+theme_override_constants/separation = 30
+alignment = 1
+script = ExtResource("2_kxlqm")

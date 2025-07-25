@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://gm23y8ewyv63"]
+
+[ext_resource type="Script" uid="uid://u2h51f0r2vch" path="res://Scenes/Object/Scripts/Static3D_Object.gd" id="1_voboe"]
+[ext_resource type="PackedScene" uid="uid://bblmb8yfchyxr" path="res://Scenes/Object/Comps/3D/Display.tscn" id="2_4j1yx"]
+[ext_resource type="Texture2D" uid="uid://huy1cto4g3we" path="res://Scenes/Objects/3D/Flower_Pots/Sprites/1_Spritesheet.png" id="3_tfkmm"]
+[ext_resource type="PackedScene" uid="uid://dsp0njc065uev" path="res://Scenes/Object/Comps/3D/Collision_Shape.tscn" id="4_deouf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6dwc8"]
+size = Vector3(0.25, 0.5, 0.2)
+
+[node name="Flower_Pot_1" type="StaticBody3D"]
+collision_layer = 8
+collision_mask = 8
+script = ExtResource("1_voboe")
+
+[node name="Display" parent="." instance=ExtResource("2_4j1yx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.26, 0)
+texture = ExtResource("3_tfkmm")
+
+[node name="Collision" parent="." instance=ExtResource("4_deouf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+shape = SubResource("BoxShape3D_6dwc8")

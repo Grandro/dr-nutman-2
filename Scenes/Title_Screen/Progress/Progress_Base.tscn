@@ -1,7 +1,14 @@
-[gd_scene load_steps=28 format=4 uid="uid://1fosmoy0vdue"]
+[gd_scene load_steps=35 format=4 uid="uid://1fosmoy0vdue"]
 
+[ext_resource type="Texture2D" uid="uid://wrg2potji1vm" path="res://Global_Resources/Sprites/Backgrounds/1_Spritesheet.png" id="1_8jx64"]
 [ext_resource type="Script" uid="uid://cyyd2rw4j1o21" path="res://Scenes/Title_Screen/Progress/Scripts/Progress_Base.gd" id="1_ybby0"]
 [ext_resource type="PackedScene" uid="uid://c5nbgo1iv5xug" path="res://Global_Scenes/Main_Menu/Sub_Menus/Journal/Journal_Read.tscn" id="2_eolbc"]
+[ext_resource type="StyleBox" uid="uid://c00nrdo1pct1v" path="res://Global_Resources/Themes/Default/Button/Styles/Disabled.tres" id="3_ybby0"]
+[ext_resource type="StyleBox" uid="uid://bhd4c43w7mjuv" path="res://Global_Resources/Themes/Default/Button/Styles/Focus.tres" id="4_0j6el"]
+[ext_resource type="StyleBox" uid="uid://dphchvpl0irnw" path="res://Global_Resources/Themes/Default/Button/Styles/Hover.tres" id="5_yjxom"]
+[ext_resource type="StyleBox" uid="uid://c4jg2neho0hcl" path="res://Global_Resources/Themes/Default/Button/Styles/Normal.tres" id="6_4snnb"]
+[ext_resource type="StyleBox" uid="uid://cjnj6rfj4wdmt" path="res://Global_Resources/Themes/Default/Button/Styles/Pressed.tres" id="7_nncba"]
+[ext_resource type="FontFile" uid="uid://bc3cxhu6w0ljt" path="res://Global_Resources/Fonts/ProFont.ttf" id="8_kbflg"]
 [ext_resource type="PackedScene" uid="uid://c6g6rit20vsua" path="res://Global_Scenes/Main_Menu/Sub_Menus/Options/Options.tscn" id="9_yx36b"]
 [ext_resource type="PackedScene" uid="uid://cx38lvawqxups" path="res://Scenes/Title_Screen/Credits/Credits.tscn" id="10_jes7p"]
 
@@ -450,6 +457,7 @@ corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
 [sub_resource type="FontFile" id="36"]
+fallbacks = Array[Font]([ExtResource("8_kbflg")])
 subpixel_positioning = 0
 msdf_pixel_range = 14
 msdf_size = 128
@@ -564,11 +572,11 @@ Button/colors/font_color_focus = Color(0.878431, 0.878431, 0.878431, 1)
 Button/colors/font_color_hover = Color(0.96, 0.96, 0.96, 1)
 Button/colors/font_color_pressed = Color(0.960784, 0.960784, 0.960784, 1)
 Button/fonts/font = SubResource("19")
-Button/styles/disabled = null
-Button/styles/focus = null
-Button/styles/hover = null
-Button/styles/normal = null
-Button/styles/pressed = null
+Button/styles/disabled = ExtResource("3_ybby0")
+Button/styles/focus = ExtResource("4_0j6el")
+Button/styles/hover = ExtResource("5_yjxom")
+Button/styles/normal = ExtResource("6_4snnb")
+Button/styles/pressed = ExtResource("7_nncba")
 CheckBox/styles/disabled = SubResource("23")
 CheckBox/styles/focus = SubResource("24")
 CheckBox/styles/hover = SubResource("25")
@@ -615,6 +623,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("1_8jx64")
 stretch_mode = 1
 
 [node name="Locale" type="OptionButton" parent="."]

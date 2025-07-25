@@ -17,15 +17,7 @@ script = ExtResource("1_wucqe")
 
 [node name="Display" parent="." instance=ExtResource("2_c7url")]
 
-[node name="Hitbox" type="Area3D" parent="."]
-collision_layer = 0
-collision_mask = 0
-monitoring = false
-monitorable = false
-
 [node name="Audio" parent="." instance=ExtResource("4_q2d3w")]
-
-[node name="Status" parent="." instance=ExtResource("9_vbmw5")]
 
 [node name="States" parent="." instance=ExtResource("5_nhvs1")]
 
@@ -35,3 +27,11 @@ monitorable = false
 
 [node name="Anims" parent="." instance=ExtResource("7_djs4b")]
 script = ExtResource("8_bmb2c")
+
+[node name="Hitbox" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 0
+monitoring = false
+monitorable = false
+
+[node name="Status" parent="." instance=ExtResource("9_vbmw5")]

@@ -1,0 +1,19 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://dfdhojrxov6u6"]
+
+[ext_resource type="Resource" uid="uid://dg8remxi2d06n" path="res://Global_Resources/Databases/Battle_System/Party_Members/Dr_Nutman/Stats.tres" id="1"]
+[ext_resource type="Script" uid="uid://cwdon6d8pw778" path="res://Global_Resources/Databases/Battle_System/Party_Members/Party_Member_Data.gd" id="2"]
+
+[resource]
+script = ExtResource("2")
+_e_stats = ExtResource("1")
+_e_actions = {
+"Commands": {
+"Attack_ATK": true,
+"Defense_DEF": false,
+"Flee": true,
+"Special": true
+},
+"Specials": {
+"Nut_Munch_Punch": false
+}
+}

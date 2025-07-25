@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://b80pqnoyo7xit"]
+
+[ext_resource type="Script" uid="uid://ckbk2i4wb1yhq" path="res://Scenes/Object/Scripts/Node3D_Object.gd" id="1_035ow"]
+[ext_resource type="PackedScene" uid="uid://bblmb8yfchyxr" path="res://Scenes/Object/Comps/3D/Display.tscn" id="2_l38sg"]
+[ext_resource type="Texture2D" uid="uid://cfi7dyrfyqj0t" path="res://Scenes/Objects/3D/Bowls/Sprites/1_Spritesheet.png" id="3_afkpd"]
+
+[node name="Bowl_1" type="Node3D"]
+script = ExtResource("1_035ow")
+
+[node name="Display" parent="." instance=ExtResource("2_l38sg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+texture = ExtResource("3_afkpd")

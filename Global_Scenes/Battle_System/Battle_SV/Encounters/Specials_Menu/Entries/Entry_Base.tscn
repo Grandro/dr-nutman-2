@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://bxlqkvja8crpv"]
+[gd_scene load_steps=7 format=3 uid="uid://bxlqkvja8crpv"]
 
+[ext_resource type="Theme" uid="uid://budcfl16xj2tt" path="res://Global_Resources/Themes/Default/Default.tres" id="1_662nf"]
 [ext_resource type="Script" uid="uid://cw4hh0pomndr8" path="res://Global_Scenes/Battle_System/Battle_SV/Encounters/Specials_Menu/Entries/Scripts/Entry_Base.gd" id="2_d4t1p"]
 [ext_resource type="Texture2D" uid="uid://b1ftk52xqfipp" path="res://Global_Resources/Sprites/Icons/Stats/SP.png" id="4_0nqhv"]
 
@@ -17,6 +18,7 @@ custom_minimum_size = Vector2(0, 32)
 offset_right = 256.0
 offset_bottom = 32.0
 mouse_filter = 2
+theme = ExtResource("1_662nf")
 script = ExtResource("2_d4t1p")
 
 [node name="Select" type="Button" parent="."]

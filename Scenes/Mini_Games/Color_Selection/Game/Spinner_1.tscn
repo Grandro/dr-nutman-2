@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbi6cgnt4c4bb"]
+
+[ext_resource type="Texture2D" uid="uid://boqowngp5aius" path="res://Scenes/Mini_Games/Color_Selection/Game/Sprites/Spinner_1.png" id="1"]
+
+[node name="Spinner_1" type="Node2D"]
+process_mode = 3
+light_mask = 4
+visibility_layer = 4
+
+[node name="Point" type="StaticBody2D" parent="."]
+light_mask = 4
+visibility_layer = 4
+collision_layer = 0
+collision_mask = 0
+
+[node name="Rigid" type="RigidBody2D" parent="."]
+light_mask = 4
+visibility_layer = 4
+collision_layer = 65536
+collision_mask = 65536
+mass = 10.0
+
+[node name="Sprite" type="Sprite2D" parent="Rigid"]
+light_mask = 4
+visibility_layer = 4
+texture = ExtResource("1")
+
+[node name="Collision" type="CollisionPolygon2D" parent="Rigid"]
+light_mask = 4
+visibility_layer = 4
+polygon = PackedVector2Array(-22.0001, 3.94016, -26.0001, -0.059845, -22.0001, -4.05984, -8.00006, -4.05984, -4.00006, -8.05984, -4.00006, -22.0598, -6.10352e-05, -26.0598, 3.99994, -22.0598, 3.99994, -8.05984, 7.99994, -4.05984, 21.9999, -4.05984, 25.9999, -0.059845, 21.9999, 3.94016, 7.99994, 3.94016, 3.99994, 7.94016, 3.99994, 21.9402, -6.10352e-05, 25.9402, -4.00006, 21.9402, -4.00006, 7.94016, -8.00006, 3.94016)
+
+[node name="Pin_Joint" type="PinJoint2D" parent="."]
+light_mask = 4
+visibility_layer = 4
+node_a = NodePath("../Point")
+node_b = NodePath("../Rigid")

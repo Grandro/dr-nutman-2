@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dg8remxi2d06n"]
+
+[ext_resource type="Script" uid="uid://qexfrxerawiq" path="res://Global_Resources/Databases/Battle_System/Party_Members/Party_Member_Stats_Data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+_e_max_HP = 10
+_e_max_SP = 3
+_e_HP = 10
+_e_SP = 3
+_e_ATK = 4
+_e_MAG = 0
+_e_DEF = 0
+_e_SPEED = 1
+_e_LUCK = 0

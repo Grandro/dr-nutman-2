@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dmlwlmjiyja77"]
+
+[ext_resource type="Script" uid="uid://cytubor452swf" path="res://Global_Resources/Databases/Items/Item_Data.gd" id="1_rxu4f"]
+
+[resource]
+script = ExtResource("1_rxu4f")
+_e_key = "Balloon_Green"
+_e_type = "Key"
+_e_group = "Main"
+_e_category_type = "Static"
+_e_stack = 1

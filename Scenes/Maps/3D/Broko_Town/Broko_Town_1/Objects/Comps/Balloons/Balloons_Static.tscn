@@ -1,0 +1,9 @@
+[gd_scene load_steps=4 format=3 uid="uid://bwqkxub7a1m1c"]
+
+[ext_resource type="PackedScene" uid="uid://ghkcsy8pm7pn" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Objects/Comps/Balloons/Balloons_Base.tscn" id="1_34le4"]
+[ext_resource type="Script" uid="uid://d326bj3uq106w" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Objects/Comps/Balloons/Scripts/Balloons_Static.gd" id="2_sxtkf"]
+[ext_resource type="PackedScene" uid="uid://cq30tkfdtots8" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Objects/Comps/Balloons/Container_Static.tscn" id="3_yxw3v"]
+
+[node name="Balloons_Static" instance=ExtResource("1_34le4")]
+script = ExtResource("2_sxtkf")
+_e_container_scene = ExtResource("3_yxw3v")

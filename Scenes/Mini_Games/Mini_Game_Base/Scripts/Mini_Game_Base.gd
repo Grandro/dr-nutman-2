@@ -2,7 +2,7 @@ extends Control
 
 signal closed()
 
-@export var _e_BGM : AudioStream = null
+@export var _e_BGM : AudioStream = preload("res://Global_Resources/Audio/BGM/Color_Selection.ogg")
 @export var _e_in_nutOS: bool = false
 
 @onready var _a_Intro = get_node("Canvas/Intro")

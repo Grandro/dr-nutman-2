@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="StatusData" load_steps=3 format=3 uid="uid://bbb3q07jktrjn"]
+
+[ext_resource type="Resource" uid="uid://78w334pmvado" path="res://Global_Resources/Databases/Battle_System/Status/Empowered_Attack/Trigger_Effect.tres" id="1_4xbk6"]
+[ext_resource type="Script" uid="uid://c171e76odsvbj" path="res://Global_Resources/Databases/Battle_System/Status/Status_Data.gd" id="1_wjsd7"]
+
+[resource]
+script = ExtResource("1_wjsd7")
+_e_trigger_activation = "Action_Pre_Event"
+_e_trigger_deactivation = "Action_Post_Event"
+_e_commands = Array[String](["Attack", "Special_Attack"])
+_e_stack = 1
+_e_trigger_effect = ExtResource("1_4xbk6")

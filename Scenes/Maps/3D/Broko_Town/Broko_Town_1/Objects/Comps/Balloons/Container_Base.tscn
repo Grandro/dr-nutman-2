@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://hofcbsbl4q6e"]
+
+[ext_resource type="PackedScene" uid="uid://d1lit3t1beovk" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Objects/Comps/Balloons/Balloon.tscn" id="1_qrmua"]
+[ext_resource type="Script" uid="uid://cmaja6px2x2oh" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Objects/Comps/Balloons/Scripts/Container_Base.gd" id="1_xfsw1"]
+
+[node name="Container_Base" type="Node3D"]
+script = ExtResource("1_xfsw1")
+
+[node name="Joint" type="PinJoint3D" parent="."]
+node_b = NodePath("../Balloon")
+params/bias = 0.05
+params/damping = 0.2
+params/impulse_clamp = 0.1
+
+[node name="Balloon" parent="." instance=ExtResource("1_qrmua")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+axis_lock_angular_z = false
+
+[node name="Mark" type="Marker3D" parent="Balloon"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.42, 0)
+
+[editable path="Balloon"]

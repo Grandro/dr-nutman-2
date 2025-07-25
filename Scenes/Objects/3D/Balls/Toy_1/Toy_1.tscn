@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cm67lkaigp87v"]
+
+[ext_resource type="PackedScene" uid="uid://ct3nulpx6q7t5" path="res://Scenes/Objects/3D/Balls/Toy_1/Models/Model.blend" id="1_q4pdt"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_322uc"]
+friction = 0.4
+bounce = 0.5
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_0j14f"]
+radius = 0.4
+
+[node name="Toy_1" type="RigidBody3D"]
+collision_layer = 8
+collision_mask = 9
+mass = 0.1
+physics_material_override = SubResource("PhysicsMaterial_322uc")
+
+[node name="Model" parent="." instance=ExtResource("1_q4pdt")]
+
+[node name="Collision" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_0j14f")

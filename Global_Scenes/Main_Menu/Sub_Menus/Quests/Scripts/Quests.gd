@@ -27,6 +27,8 @@ func open(p_data):
 		var key = first.get_key()
 		_display_quest_entry_info(key)
 	
+	_tutato_explain()
+	
 	show()
 
 func close():
@@ -39,6 +41,21 @@ func close():
 func _display_quest_entry_info(p_key):
 	_a_Info.display(p_key)
 	_a_key = p_key
+
+func _tutato_explain():
+	var progress_si = Global.get_singleton(self, "Progress")
+	var show_tutato_explain = Global_Data.get_options_gameplay_show_tutato_explain()
+	var explain_quests = progress_si.call_object("Tutato", "get_explain_quests")
+	if show_tutato_explain && explain_quests:
+		var cutscene_system_si = Global.get_singleton(self, "Cutscene_System")
+		var key = "Tutato_Explain"
+		var entry_key = "Main_Menu_Quests"
+		cutscene_system_si.cutscene(key, entry_key, "Main", "Global")
+		cutscene_system_si.set_cutscene_completed_cb(key, entry_key, _CB_cutscene_completed)
+		cutscene_system_si.set_cutscene_process_mode(key, entry_key, ProcessMode.PROCESS_MODE_ALWAYS)
+		progress_si.call_object("Tutato", "set_explain_quests", [false])
+		
+		_a_Back.set_select_diabled(true)
 
 func _on_Back_select_pressed():
 	close()
@@ -53,3 +70,10 @@ func _on_Info_pin_toggled(p_toggled):
 		progress_si.pin_quest(_a_key)
 	else:
 		progress_si.unpin_quest(_a_key)
+
+func _CB_cutscene_completed(_p_process_type, p_key, p_entry_key):
+	match p_key:
+		"Tutato_Explain":
+			match p_entry_key:
+				"Main_Menu_Quests":
+					_a_Back.set_select_diabled(false)

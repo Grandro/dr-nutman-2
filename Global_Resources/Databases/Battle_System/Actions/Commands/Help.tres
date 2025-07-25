@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://brf1mu6d4ee5d"]
+
+[ext_resource type="Script" uid="uid://jld012h8pf8w" path="res://Global_Resources/Databases/Battle_System/Actions/Actions_Data.gd" id="1_dk4yl"]
+
+[resource]
+script = ExtResource("1_dk4yl")
+_e_key = "Help"
+_e_target_type = "None"
+_e_target_amount = 0
+_e_ATK_scaling = 0.0
+_e_MAG_scaling = 0.0
+_e_SP_cost = 0

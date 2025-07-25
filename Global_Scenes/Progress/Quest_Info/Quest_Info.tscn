@@ -1,8 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://budfrkav30oj6"]
+[gd_scene load_steps=16 format=3 uid="uid://budfrkav30oj6"]
 
 [ext_resource type="Script" uid="uid://covdlw87i3amb" path="res://Global_Scenes/Progress/Quest_Info/Scripts/Quest_Info.gd" id="1_cas4q"]
 [ext_resource type="Texture2D" uid="uid://cc5yoyg4s0ec4" path="res://Global_Scenes/Dialogue_System/Sprites/Text_Box.png" id="2_3w2wa"]
 [ext_resource type="Texture2D" uid="uid://c0d6my4fuig56" path="res://Global_Scenes/Dialogue_System/Sprites/Proceed_Dot/Spritesheet.png" id="3_7deol"]
+[ext_resource type="Theme" uid="uid://budcfl16xj2tt" path="res://Global_Resources/Themes/Default/Default.tres" id="4_hrvab"]
+[ext_resource type="AudioStream" uid="uid://nnd1xyhmesj7" path="res://Global_Resources/Audio/SFX/Win_1.wav" id="5_1knsh"]
 [ext_resource type="PackedScene" uid="uid://c5bj8iy5uuq2c" path="res://Scenes/Loot/Rewards/Rewards_Loot.tscn" id="5_nergj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3cml8"]
@@ -188,6 +190,7 @@ theme_override_constants/separation = 48
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
+theme = ExtResource("4_hrvab")
 theme_override_constants/separation = 0
 
 [node name="Chapter" type="HBoxContainer" parent="Info/Margin/VBox/Heading"]
@@ -201,7 +204,7 @@ light_mask = 8
 visibility_layer = 8
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Chapter:"
+text = "Kapitel 1:"
 horizontal_alignment = 1
 
 [node name="Right" type="Label" parent="Info/Margin/VBox/Heading/Chapter"]
@@ -209,7 +212,7 @@ light_mask = 8
 visibility_layer = 8
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Desc"
+text = "Ein Fest für einen Helden"
 
 [node name="Name" type="Label" parent="Info/Margin/VBox/Heading"]
 light_mask = 8
@@ -217,7 +220,7 @@ visibility_layer = 8
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 24
-text = "Name"
+text = "Das durchgenagte Stromkabel"
 horizontal_alignment = 1
 
 [node name="Type" type="Label" parent="Info/Margin/VBox/Heading"]
@@ -225,7 +228,7 @@ light_mask = 8
 visibility_layer = 8
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Type"
+text = "Hauptquest"
 horizontal_alignment = 1
 
 [node name="Rewards" type="VBoxContainer" parent="Info/Margin/VBox"]
@@ -251,7 +254,7 @@ light_mask = 8
 visibility_layer = 8
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Status"
+text = "Abgeschlossen"
 horizontal_alignment = 1
 
 [node name="Anims" type="AnimationPlayer" parent="."]
@@ -262,4 +265,5 @@ libraries = {
 [node name="Audio" type="Node" parent="."]
 
 [node name="Start" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("5_1knsh")
 bus = &"SFX"

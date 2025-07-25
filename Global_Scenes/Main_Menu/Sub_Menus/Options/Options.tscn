@@ -1,7 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://c6g6rit20vsua"]
+[gd_scene load_steps=10 format=3 uid="uid://c6g6rit20vsua"]
 
 [ext_resource type="Script" uid="uid://duj1vptk4gy0b" path="res://Global_Scenes/Main_Menu/Sub_Menus/Options/Scripts/Options.gd" id="1"]
+[ext_resource type="Theme" uid="uid://budcfl16xj2tt" path="res://Global_Resources/Themes/Default/Default.tres" id="2"]
+[ext_resource type="Texture2D" uid="uid://wrg2potji1vm" path="res://Global_Resources/Sprites/Backgrounds/1_Spritesheet.png" id="4"]
 [ext_resource type="PackedScene" uid="uid://beoei6o2vrvx" path="res://Scenes/Indicator/Back_Button.tscn" id="5"]
+[ext_resource type="LabelSettings" uid="uid://byu4vp5jnyshc" path="res://Global_Resources/LabelSettings/Heading.tres" id="5_ojbey"]
 [ext_resource type="PackedScene" uid="uid://b336a3my66r7w" path="res://Global_Scenes/Main_Menu/Sub_Menus/Options/Audio/Audio.tscn" id="6_1dh35"]
 [ext_resource type="PackedScene" uid="uid://du8ubfp3v764j" path="res://Global_Scenes/Main_Menu/Sub_Menus/Options/Video/Video.tscn" id="7_x6opa"]
 [ext_resource type="PackedScene" uid="uid://br3bjwwah3g7r" path="res://Global_Scenes/Main_Menu/Sub_Menus/Options/Controls/Controls.tscn" id="8_3n8rb"]
@@ -16,6 +19,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2")
 script = ExtResource("1")
 
 [node name="Background" type="TextureRect" parent="."]
@@ -25,6 +29,7 @@ layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
+texture = ExtResource("4")
 stretch_mode = 1
 
 [node name="Back" parent="." instance=ExtResource("5")]
@@ -59,6 +64,7 @@ light_mask = 8
 visibility_layer = 8
 layout_mode = 2
 text = "MAIN_MENU_OPTIONS"
+label_settings = ExtResource("5_ojbey")
 horizontal_alignment = 1
 vertical_alignment = 1
 

@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://g72epid2kl6s"]
+
+[ext_resource type="PackedScene" uid="uid://0fiuqormgykw" path="res://Scenes/Mini_Games/Right_On_The_Nut/Game/Game_Base.tscn" id="1_vkbnp"]
+[ext_resource type="Script" uid="uid://44ycvrva3gea" path="res://Scenes/Mini_Games/Right_On_The_Nut/Game/Scripts/Game_Preview.gd" id="2_prbc7"]
+
+[node name="Game_Preview" instance=ExtResource("1_vkbnp")]
+script = ExtResource("2_prbc7")

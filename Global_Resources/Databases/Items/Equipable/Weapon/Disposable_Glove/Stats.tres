@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="StatsData" load_steps=2 format=3 uid="uid://w2b8u7n7kpl2"]
+
+[ext_resource type="Script" uid="uid://dyjxv8meogqqy" path="res://Global_Resources/Databases/Stats_Data.gd" id="1_8s4a1"]
+
+[resource]
+script = ExtResource("1_8s4a1")
+_e_HP = 0
+_e_SP = 0
+_e_ATK = 1
+_e_MAG = 0
+_e_DEF = 0
+_e_SPEED = 0
+_e_LUCK = 0

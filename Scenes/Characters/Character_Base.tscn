@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://b5ggg7dxi64kw"]
+[gd_scene load_steps=10 format=3 uid="uid://b5ggg7dxi64kw"]
 
 [ext_resource type="Script" uid="uid://ckbk2i4wb1yhq" path="res://Scenes/Object/Scripts/Node3D_Object.gd" id="1_4mup3"]
 [ext_resource type="PackedScene" uid="uid://dctpibkwbk8nq" path="res://Scenes/Object/Comps/3D/Equipment.tscn" id="2_uhf5x"]
 [ext_resource type="PackedScene" uid="uid://bblmb8yfchyxr" path="res://Scenes/Object/Comps/3D/Display.tscn" id="2_xj50c"]
+[ext_resource type="Texture2D" uid="uid://cod8mkqx8wdyp" path="res://Global_Resources/Sprites/Objects/Dr_Nutman/Spritesheet.png" id="3"]
 [ext_resource type="PackedScene" uid="uid://b1q143fixhaj5" path="res://Scenes/Object/Comps/Anims.tscn" id="4_nu26h"]
 [ext_resource type="PackedScene" uid="uid://rhxd1ab58jtq" path="res://Scenes/Object/Comps/3D/Movement/Movement_Base.tscn" id="6_u0j8f"]
 [ext_resource type="PackedScene" uid="uid://dsxxput7t3drq" path="res://Scenes/Object/Comps/Party_Member.tscn" id="7_l8uok"]
@@ -15,6 +16,7 @@ script = ExtResource("1_4mup3")
 [node name="Display" parent="." instance=ExtResource("2_xj50c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.12, 0)
 shaded = false
+texture = ExtResource("3")
 hframes = 8
 vframes = 18
 
@@ -30,6 +32,7 @@ size = 12.8
 far = 60.0
 
 [node name="Movement" parent="." instance=ExtResource("6_u0j8f")]
+_e_can_move = false
 
 [node name="Anims" parent="." instance=ExtResource("4_nu26h")]
 

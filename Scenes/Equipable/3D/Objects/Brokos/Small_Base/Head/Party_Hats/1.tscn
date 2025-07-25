@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://me7fn1bm6yjn"]
+
+[ext_resource type="PackedScene" uid="uid://d0m3r21ve655x" path="res://Scenes/Equipable/3D/Objects/Brokos/Small_Base/Head/Party_Hats/Party_Hat.tscn" id="1"]
+
+[node name="1" instance=ExtResource("1")]

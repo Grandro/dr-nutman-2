@@ -1,0 +1,43 @@
+[gd_scene load_steps=12 format=3 uid="uid://dw37kega2vuxv"]
+
+[ext_resource type="Script" uid="uid://ddkmqwyg3a0bk" path="res://Scenes/Maps/3D/Broko_Town/Doctor_Dream_1/Objects/Thermometers/Scripts/1.gd" id="1_xix88"]
+[ext_resource type="PackedScene" uid="uid://bblmb8yfchyxr" path="res://Scenes/Object/Comps/3D/Display.tscn" id="2_8sk24"]
+[ext_resource type="Texture2D" uid="uid://dokhw7qawxr2" path="res://Scenes/Maps/3D/Broko_Town/Doctor_Dream_1/Objects/Thermometers/Sprites/1_Spritesheet.png" id="3_bhadw"]
+[ext_resource type="PackedScene" uid="uid://nr4813v0r2dg" path="res://Scenes/Object/Comps/3D/Interactions/Interactions.tscn" id="4_wj4eu"]
+[ext_resource type="PackedScene" uid="uid://cfdwl620axohy" path="res://Scenes/Object/Comps/3D/Audio.tscn" id="5_4uvap"]
+[ext_resource type="AudioStream" uid="uid://btwk8nctsarch" path="res://Global_Resources/Audio/BGS/Vibrate_1.ogg" id="6_ih1oc"]
+[ext_resource type="PackedScene" uid="uid://omsbdulg45pv" path="res://Scenes/Object/Comps/3D/Popup.tscn" id="6_mbgf1"]
+[ext_resource type="PackedScene" uid="uid://dllj5lbxwqy17" path="res://Scenes/Pausable_Audio/3D/Pausable_Audio.tscn" id="6_ylmm5"]
+[ext_resource type="PackedScene" uid="uid://de2jy2ixhp2mw" path="res://Scenes/Object/Comps/Save.tscn" id="7_hi61q"]
+[ext_resource type="PackedScene" uid="uid://b4dvlhw3jh0go" path="res://Scenes/Object/Comps/Cutscene.tscn" id="8_54lsd"]
+[ext_resource type="PackedScene" uid="uid://drpp26gth4snn" path="res://Scenes/Object/Comps/Reference.tscn" id="9_rsml0"]
+
+[node name="Thermometer_1" type="Node3D" groups=["Object"]]
+script = ExtResource("1_xix88")
+
+[node name="Display" parent="." instance=ExtResource("2_8sk24")]
+texture = ExtResource("3_bhadw")
+
+[node name="Interactions" parent="." instance=ExtResource("4_wj4eu")]
+
+[node name="Audio" parent="." instance=ExtResource("5_4uvap")]
+
+[node name="Vibrate" parent="Audio" instance=ExtResource("6_ylmm5")]
+stream = ExtResource("6_ih1oc")
+max_distance = 12.0
+bus = &"SFX"
+
+[node name="Popup" parent="." instance=ExtResource("6_mbgf1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0.01)
+
+[node name="Cutscene" parent="." instance=ExtResource("8_54lsd")]
+
+[node name="Save" parent="." instance=ExtResource("7_hi61q")]
+
+[node name="Reference" parent="." instance=ExtResource("9_rsml0")]
+
+[node name="Trigger" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[editable path="Popup"]

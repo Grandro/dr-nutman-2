@@ -1,0 +1,67 @@
+[gd_scene load_steps=6 format=3 uid="uid://bwnxquo18ps0m"]
+
+[ext_resource type="PackedScene" uid="uid://yul8j2y77c24" path="res://Scenes/NutOS/Content/Desktop/Apps/Settings/Menus/Menu_Base.tscn" id="1_uw2q6"]
+[ext_resource type="Script" uid="uid://bq6kqi1o5yv2e" path="res://Scenes/NutOS/Content/Desktop/Apps/Settings/Menus/Apps/Scripts/Apps.gd" id="2_5by2w"]
+[ext_resource type="PackedScene" uid="uid://b2hso273s8kxl" path="res://Scenes/Sort_By/Sort_By.tscn" id="3_av6wa"]
+[ext_resource type="PackedScene" uid="uid://brwnr7v5wrvx" path="res://Scenes/Search/Search.tscn" id="4_noq72"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dhuwu"]
+content_margin_left = 36.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.105882, 0.105882, 0.105882, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.537255, 0.537255, 0.537255, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+anti_aliasing = false
+
+[node name="Apps" instance=ExtResource("1_uw2q6")]
+script = ExtResource("2_5by2w")
+
+[node name="VBox" type="VBoxContainer" parent="VBox" index="1"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 16
+
+[node name="Options" type="HBoxContainer" parent="VBox/VBox" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Sort_By" parent="VBox/VBox/Options" index="0" instance=ExtResource("3_av6wa")]
+layout_mode = 2
+_e_sort_args = {
+"Date": "get_unix_time",
+"Name": "get_name_"
+}
+
+[node name="Search" parent="VBox/VBox/Options" index="1" instance=ExtResource("4_noq72")]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+
+[node name="Input" parent="VBox/VBox/Options/Search" index="0"]
+theme_override_styles/normal = SubResource("StyleBoxFlat_dhuwu")
+
+[node name="Scroll" type="ScrollContainer" parent="VBox/VBox" index="1"]
+layout_mode = 2
+size_flags_vertical = 3
+follow_focus = true
+horizontal_scroll_mode = 0
+
+[node name="Entries" type="VBoxContainer" parent="VBox/VBox/Scroll" index="0"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[editable path="VBox/VBox/Options/Search"]

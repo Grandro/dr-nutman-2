@@ -1,0 +1,62 @@
+[gd_scene load_steps=8 format=3 uid="uid://l8vwnjkv4pai"]
+
+[ext_resource type="PackedScene" uid="uid://biqgl7lbdr53y" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Objects/Festival/Pyrotechnics/Vulcanos/Base.tscn" id="1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y8ttq"]
+size = Vector3(0.75, 0.5, 0.75)
+
+[sub_resource type="Curve" id="Curve_uq1g4"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.750636, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.268182), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_76677"]
+curve = SubResource("Curve_uq1g4")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5j7wj"]
+lifetime_randomness = 0.2
+particle_flag_align_y = true
+angle_max = 360.0
+direction = Vector3(0, 1, 0)
+spread = 15.0
+initial_velocity_min = 8.0
+initial_velocity_max = 8.0
+angular_velocity_min = 1.5
+angular_velocity_max = 1.5
+damping_min = 1.5
+damping_max = 1.5
+scale_curve = SubResource("CurveTexture_76677")
+color = Color(0.784314, 0, 1, 1)
+hue_variation_max = 1.0
+collision_mode = 1
+collision_friction = 0.0
+collision_bounce = 0.24
+collision_use_scale = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_52eav"]
+vertex_color_use_as_albedo = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_x5w0i"]
+material = SubResource("StandardMaterial3D_52eav")
+size = Vector3(0.15, 0.15, 0.15)
+
+[node name="Vulcano_1" instance=ExtResource("1")]
+
+[node name="Collision" parent="." index="1"]
+shape = SubResource("BoxShape3D_y8ttq")
+
+[node name="Particles" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+lifetime = 5.0
+visibility_aabb = AABB(-4, -2, -4, 8, 4, 8)
+process_material = SubResource("ParticleProcessMaterial_5j7wj")
+draw_pass_1 = SubResource("BoxMesh_x5w0i")
+
+[node name="Particles_Collision" type="GPUParticlesCollisionBox3D" parent="." index="6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+layers = 4
+cull_mask = 4293918724
+size = Vector3(30, 2, 30)
+
+[editable path="Interactions"]
+[editable path="Interactions/1"]
+[editable path="Popup"]

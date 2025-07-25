@@ -1,0 +1,42 @@
+[gd_scene load_steps=9 format=3 uid="uid://b40m3r4n2mdel"]
+
+[ext_resource type="Texture2D" uid="uid://dwknk1bq21b5w" path="res://Global_Resources/Mapping/Sprites/Same_As/Broko_Forest/Hill_1/Main_Stairs_Top_Down_Right.png" id="1_5q4db"]
+[ext_resource type="PackedScene" uid="uid://dbxigq53qnnvo" path="res://Global_Resources/Mapping/3D/Plane/Plane_Tile.tscn" id="1_64bb5"]
+[ext_resource type="Texture2D" uid="uid://koa0d8am665w" path="res://Global_Resources/Mapping/Sprites/Same_As/Broko_Forest/Hill_1/Main_Stairs_Side_Down_Right.png" id="2_5q4db"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_64bb5"]
+albedo_texture = ExtResource("1_5q4db")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_wvuff"]
+material = SubResource("StandardMaterial3D_64bb5")
+size = Vector2(1, 1.415)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_imnsq"]
+transparency = 1
+albedo_texture = ExtResource("2_5q4db")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_oav3g"]
+material = SubResource("StandardMaterial3D_imnsq")
+size = Vector2(1, 1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_7civm"]
+points = PackedVector3Array(-0.5, 0, 0.5, -0.5, 0, -0.5, -0.5, 1, -0.5, 0.5, 0, 0.5, 0.5, 0, -0.5, 0.5, 1, -0.5)
+
+[node name="Main_1" type="Node3D"]
+
+[node name="Top" parent="." groups=["NavMesh_Main"] instance=ExtResource("1_64bb5")]
+transform = Transform3D(1, 0, 0, 0, 0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 0.5, 0)
+mesh = SubResource("PlaneMesh_wvuff")
+_e_base_size = Vector3(1, 1.415, 1)
+
+[node name="Right" parent="." instance=ExtResource("1_64bb5")]
+transform = Transform3D(1.31134e-07, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, 1.31134e-07, -5.73206e-15, 0.5, 0.5, 0)
+mesh = SubResource("PlaneMesh_oav3g")
+
+[node name="Static" type="StaticBody3D" parent="."]
+collision_mask = 0
+
+[node name="Collision" type="CollisionShape3D" parent="Static"]
+shape = SubResource("ConvexPolygonShape3D_7civm")

@@ -1,12 +1,31 @@
-[gd_scene load_steps=3 format=3 uid="uid://cl525dd882uw0"]
+[gd_scene load_steps=5 format=3 uid="uid://cl525dd882uw0"]
 
 [ext_resource type="PackedScene" uid="uid://1fosmoy0vdue" path="res://Scenes/Title_Screen/Progress/Progress_Base.tscn" id="1_mobqt"]
+[ext_resource type="Theme" uid="uid://budcfl16xj2tt" path="res://Global_Resources/Themes/Default/Default.tres" id="2_5iwxb"]
+[ext_resource type="Texture2D" uid="uid://b0qnc6by6o6d" path="res://Scenes/Title_Screen/Sprites/Logo.png" id="3_2r6ga"]
 [ext_resource type="Script" uid="uid://dt2swbcjk5w8c" path="res://Scenes/Title_Screen/Progress/Scripts/Progress_None.gd" id="3_l62m7"]
 
 [node name="Progress_None" instance=ExtResource("1_mobqt")]
+theme = ExtResource("2_5iwxb")
 script = ExtResource("3_l62m7")
 
-[node name="VBox" type="VBoxContainer" parent="." index="2"]
+[node name="Logo" type="TextureRect" parent="." index="1"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(430, 180)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -215.0
+offset_right = 215.0
+offset_bottom = 256.0
+grow_horizontal = 2
+texture = ExtResource("3_2r6ga")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="VBox" type="VBoxContainer" parent="." index="3"]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 1
@@ -71,7 +90,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 text = "QUIT"
 
-[node name="By" type="Label" parent="." index="3"]
+[node name="By" type="Label" parent="." index="4"]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 1
@@ -86,7 +105,7 @@ grow_vertical = 0
 text = "By Grandro"
 vertical_alignment = 1
 
-[node name="Version" type="Label" parent="." index="4"]
+[node name="Version" type="Label" parent="." index="5"]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 1
@@ -95,10 +114,11 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -64.0
+offset_left = -72.0
 offset_top = -33.0
+offset_right = -12.0
 offset_bottom = -5.0
 grow_horizontal = 0
 grow_vertical = 0
-text = "v1.0.0"
+text = "v0.0.1"
 vertical_alignment = 1

@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dbdbhrfoymjgq" path="res://Global_Scenes/Battle_System/Battle_SV/Party_Members/Comps/Shield_Bar/Shield_Bars/None/None_UI.tscn" id="2_hqqi0"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_0q656"]
-viewport_path = NodePath("VP")
+viewport_path = NodePath(".")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e3c0e"]
 resource_local_to_scene = true

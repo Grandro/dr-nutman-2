@@ -1,0 +1,26 @@
+[gd_scene load_steps=7 format=3 uid="uid://b43uus1j31k2o"]
+
+[ext_resource type="PackedScene" uid="uid://daiyshvpekgh7" path="res://Global_Resources/Mapping/3D/Mesh_Tile_Group_Collision_Box.tscn" id="1_njcay"]
+[ext_resource type="PackedScene" uid="uid://dbxigq53qnnvo" path="res://Global_Resources/Mapping/3D/Plane/Plane_Tile.tscn" id="2_28esm"]
+[ext_resource type="Texture2D" uid="uid://b1oor0wop184v" path="res://Global_Resources/Mapping/Sprites/Same_As/Broko_Town/Doctor_Dream_1/Wall_1/Main_Side_Down_Center.png" id="3_btrbq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_btrbq"]
+albedo_texture = ExtResource("3_btrbq")
+uv1_offset = Vector3(0, 0, 1)
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_25180"]
+material = SubResource("StandardMaterial3D_btrbq")
+size = Vector2(1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1hrhj"]
+resource_local_to_scene = true
+
+[node name="Main_1" instance=ExtResource("1_njcay")]
+
+[node name="Front" parent="Tiles" index="0" instance=ExtResource("2_28esm")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.5, 0.5)
+mesh = SubResource("PlaneMesh_25180")
+
+[node name="Collision" parent="Static" index="0"]
+shape = SubResource("BoxShape3D_1hrhj")

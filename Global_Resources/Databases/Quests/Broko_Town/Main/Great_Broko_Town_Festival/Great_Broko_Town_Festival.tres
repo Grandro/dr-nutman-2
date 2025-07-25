@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="QuestData" load_steps=6 format=3 uid="uid://soe543nu8fdu"]
+
+[ext_resource type="Resource" uid="uid://d22a63jd5eylg" path="res://Global_Resources/Databases/Quests/Broko_Town/Main/Great_Broko_Town_Festival/Objective_A_Child_For_A_Balloon.tres" id="1_32lc5"]
+[ext_resource type="Script" uid="uid://d0ns7im888qf3" path="res://Global_Resources/Databases/Quests/Objective_Base_Data.gd" id="1_hnqas"]
+[ext_resource type="Script" uid="uid://ccmwte4egncue" path="res://Global_Resources/Databases/Quests/Quest_Data.gd" id="2_18pda"]
+[ext_resource type="Resource" uid="uid://csxsmncyym3hy" path="res://Global_Resources/Databases/Quests/Broko_Town/Main/Great_Broko_Town_Festival/Objective_Right_On_The_Nut.tres" id="2_st3si"]
+[ext_resource type="Resource" uid="uid://by7s63vdxm3oy" path="res://Global_Resources/Databases/Quests/Broko_Town/Main/Great_Broko_Town_Festival/Objective_An_Uplifting_Nut.tres" id="4_kbrv7"]
+
+[resource]
+script = ExtResource("2_18pda")
+_e_key = "Great_Broko_Town_Festival"
+_e_type = "Main"
+_e_location = "Broko_Town_1"
+_e_name = "PROGRESS_QUESTS_BROKO_TOWN_1_MAIN_GREAT_FESTIVAL_NAME"
+_e_desc = "PROGRESS_QUESTS_BROKO_TOWN_1_MAIN_GREAT_FESTIVAL_DESC"
+_e_objectives = Array[ExtResource("1_hnqas")]([ExtResource("1_32lc5"), ExtResource("2_st3si"), ExtResource("4_kbrv7")])
+_e_rewards = {}

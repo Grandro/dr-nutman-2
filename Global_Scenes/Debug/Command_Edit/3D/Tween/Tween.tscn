@@ -14,8 +14,8 @@
 
 [node name="Tween" instance=ExtResource("1_p6o20")]
 script = ExtResource("2_6a3p1")
-_e_dimensions = ExtResource("9_bcydn")
 _e_point_scene = ExtResource("3_he23j")
+_e_dimensions = ExtResource("9_bcydn")
 
 [node name="Comp" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="1" instance=ExtResource("2_8ukem")]
 layout_mode = 2

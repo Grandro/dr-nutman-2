@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://dp1yaue4vyhr0"]
+
+[ext_resource type="Shader" uid="uid://bq6bjchxoulww" path="res://Global_Resources/Materials/3D/Shaders/Glitch_2.gdshader" id="1"]
+
+
+[resource]
+shader = ExtResource("1")
+shader_parameter/sanity = 40.0

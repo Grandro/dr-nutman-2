@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://np506t5c03q2"]
+
+[ext_resource type="Shader" uid="uid://cx4x0ffenq187" path="res://Global_Resources/Materials/2D/Shaders/Trans_Dot.gdshader" id="1"]
+
+[resource]
+shader = ExtResource("1")
+shader_parameter/in_color = Color(1, 1, 1, 1)
+shader_parameter/out_color = Color(0.286275, 0.941176, 0.14902, 1)
+shader_parameter/in_out = 0.0
+shader_parameter/position = 0.0
+shader_parameter/size = Vector2(96, 24)

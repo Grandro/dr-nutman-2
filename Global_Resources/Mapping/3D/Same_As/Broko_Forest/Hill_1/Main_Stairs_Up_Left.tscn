@@ -1,0 +1,43 @@
+[gd_scene load_steps=9 format=3 uid="uid://o8j8f3rt2md0"]
+
+[ext_resource type="Texture2D" uid="uid://bix7w4di3faby" path="res://Global_Resources/Mapping/Sprites/Same_As/Broko_Forest/Hill_1/Main_Stairs_Top_Center_Left.png" id="1_p67vm"]
+[ext_resource type="PackedScene" uid="uid://dbxigq53qnnvo" path="res://Global_Resources/Mapping/3D/Plane/Plane_Tile.tscn" id="1_ul6s4"]
+[ext_resource type="Texture2D" uid="uid://b2emr3q0jijj5" path="res://Global_Resources/Mapping/Sprites/Same_As/Broko_Forest/Hill_1/Main_Stairs_Side_Up_Left.png" id="2_p67vm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vj3ol"]
+albedo_texture = ExtResource("1_p67vm")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ul6s4"]
+material = SubResource("StandardMaterial3D_vj3ol")
+size = Vector2(1, 1.415)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7c6kf"]
+transparency = 1
+albedo_texture = ExtResource("2_p67vm")
+uv1_scale = Vector3(1, 1, 1)
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_5b8hp"]
+material = SubResource("StandardMaterial3D_7c6kf")
+size = Vector2(1, 1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_7civm"]
+points = PackedVector3Array(-0.5, 0, 0.5, -0.5, 0, -0.5, -0.5, 1, -0.5, 0.5, 0, 0.5, 0.5, 0, -0.5, 0.5, 1, -0.5)
+
+[node name="Main_1" type="Node3D"]
+
+[node name="Top" parent="." groups=["NavMesh_Main"] instance=ExtResource("1_ul6s4")]
+transform = Transform3D(1, 0, 0, 0, 0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 0.5, 0)
+mesh = SubResource("PlaneMesh_ul6s4")
+_e_base_size = Vector3(1, 1.415, 1)
+
+[node name="Left" parent="." instance=ExtResource("1_ul6s4")]
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, -0.5, 0.5, 0)
+mesh = SubResource("PlaneMesh_5b8hp")
+
+[node name="Static" type="StaticBody3D" parent="."]
+collision_mask = 0
+
+[node name="Collision" type="CollisionShape3D" parent="Static"]
+shape = SubResource("ConvexPolygonShape3D_7civm")

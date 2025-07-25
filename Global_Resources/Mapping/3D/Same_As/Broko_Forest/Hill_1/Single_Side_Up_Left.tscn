@@ -1,0 +1,51 @@
+[gd_scene load_steps=13 format=3 uid="uid://bfbuovhpg0mlc"]
+
+[ext_resource type="PackedScene" uid="uid://daiyshvpekgh7" path="res://Global_Resources/Mapping/3D/Mesh_Tile_Group_Collision_Box.tscn" id="1_6s0j8"]
+[ext_resource type="PackedScene" uid="uid://dbxigq53qnnvo" path="res://Global_Resources/Mapping/3D/Plane/Plane_Tile.tscn" id="2_gsg7b"]
+[ext_resource type="Texture2D" uid="uid://teexcyfi8qgh" path="res://Global_Resources/Mapping/Sprites/Same_As/Broko_Forest/Hill_1/Single_Up_Top_Center.png" id="3_aqldb"]
+[ext_resource type="Texture2D" uid="uid://470jne17l3t6" path="res://Global_Resources/Mapping/Sprites/Same_As/Broko_Forest/Hill_1/Main_Side_Center_Left.png" id="4_8vh6m"]
+[ext_resource type="Texture2D" uid="uid://di76vkfly27io" path="res://Global_Resources/Mapping/Sprites/Same_As/Broko_Forest/Hill_1/Main_Side_Center_Right.png" id="5_aqldb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aqldb"]
+albedo_texture = ExtResource("3_aqldb")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_8vh6m"]
+material = SubResource("StandardMaterial3D_aqldb")
+size = Vector2(1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uvrb3"]
+albedo_texture = ExtResource("4_8vh6m")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_o26ms"]
+material = SubResource("StandardMaterial3D_uvrb3")
+size = Vector2(1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_18un8"]
+albedo_texture = ExtResource("5_aqldb")
+uv1_scale = Vector3(1, 1, 1)
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_mifua"]
+material = SubResource("StandardMaterial3D_18un8")
+size = Vector2(1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u8ng3"]
+
+[node name="Single_1" instance=ExtResource("1_6s0j8")]
+
+[node name="Top" parent="Tiles" index="0" groups=["NavMesh_Main"] instance=ExtResource("2_gsg7b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("PlaneMesh_8vh6m")
+
+[node name="Front" parent="Tiles" index="1" instance=ExtResource("2_gsg7b")]
+transform = Transform3D(1, -1.06581e-14, 4.65882e-22, 0, -4.37114e-08, -1, 1.06581e-14, 1, -4.37114e-08, 0, 0.5, 0.5)
+mesh = SubResource("PlaneMesh_o26ms")
+
+[node name="Back" parent="Tiles" index="2" instance=ExtResource("2_gsg7b")]
+transform = Transform3D(-1, -1.50996e-07, 6.60024e-15, 0, -4.37114e-08, -1, 1.50996e-07, -1, 4.37114e-08, 0, 0.5, -0.5)
+mesh = SubResource("PlaneMesh_mifua")
+
+[node name="Collision" parent="Static" index="0"]
+shape = SubResource("BoxShape3D_u8ng3")

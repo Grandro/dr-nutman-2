@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1lit3t1beovk"]
+
+[ext_resource type="Texture2D" uid="uid://c0euo1a4ehkcm" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Objects/Comps/Balloons/Sprites/Balloon_Spritesheet.png" id="1"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u1mej"]
+radius = 0.221
+height = 0.833
+
+[node name="Balloon_1" type="RigidBody3D"]
+collision_layer = 8
+collision_mask = 9
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+mass = 0.05
+constant_force = Vector3(0, 2, 0)
+
+[node name="Sprite" type="Sprite3D" parent="."]
+layers = 4
+pixel_size = 0.02
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("1")
+
+[node name="Collision" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_u1mej")

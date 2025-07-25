@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://brlh7mvebe26e"]
+
+[node name="Ceiling_Lamp_1" type="OmniLight3D"]
+layers = 4
+light_color = Color(1, 0.805114, 0.453964, 1)
+light_energy = 8.0
+light_cull_mask = 4293918727
+shadow_enabled = true
+omni_range = 8.0
+omni_shadow_mode = 0

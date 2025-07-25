@@ -1,0 +1,180 @@
+[gd_scene load_steps=33 format=3 uid="uid://cttd74b4tu0p1"]
+
+[ext_resource type="PackedScene" uid="uid://dj5d5f0i16w5u" path="res://Global_Scenes/Battle_System/Battle_SV/Enemies/Enemy_Battle.tscn" id="1_odg01"]
+[ext_resource type="Script" uid="uid://dhej4jgv72g3w" path="res://Global_Scenes/Battle_System/Battle_SV/Enemies/Citrin/Scripts/Citrin.gd" id="2_0ul0a"]
+[ext_resource type="Texture2D" uid="uid://qpm43sckowjd" path="res://Global_Resources/Sprites/Objects/Enemies/Citrin/Spritesheet.png" id="2_dtvct"]
+[ext_resource type="AudioStream" uid="uid://ep54nca0xn0i" path="res://Global_Resources/Audio/SFX/Hit_2.wav" id="4_8i3m0"]
+[ext_resource type="PackedScene" uid="uid://d07xolpcrrwob" path="res://Scenes/Object/Comps/Movement/Comps/Knockbacks/Knockbacks.tscn" id="5_cu428"]
+[ext_resource type="PackedScene" uid="uid://birjyb23mdl01" path="res://Scenes/Object/Comps/3D/Movement/Comps/Terrain/Terrain_Base.tscn" id="5_gclvp"]
+[ext_resource type="PackedScene" uid="uid://g11o4ut16cvo" path="res://Global_Scenes/Battle_System/Battle_SV/Character_Battle/Comps/Movement/Movement_Character.tscn" id="5_mxdrm"]
+[ext_resource type="PackedScene" uid="uid://b028hrfen5mpa" path="res://Scenes/Object/Comps/3D/Movement/Comps/Terrain/Area.tscn" id="6_6m6yg"]
+[ext_resource type="Animation" uid="uid://dxlfy3rywvlgs" path="res://Global_Scenes/Battle_System/Battle_SV/Enemies/Citrin/Anims/Terrain/Global/Attack_Left.res" id="7_adrfu"]
+[ext_resource type="Animation" uid="uid://bhqa35esvkh0v" path="res://Global_Scenes/Battle_System/Battle_SV/Enemies/Citrin/Anims/Terrain/Global/Shoot_Left.res" id="8_4qxq6"]
+[ext_resource type="Animation" uid="uid://bfockwuhpa3oy" path="res://Global_Scenes/Battle_System/Battle_SV/Enemies/Citrin/Anims/Attack_Left.res" id="8_ac2ns"]
+[ext_resource type="Animation" uid="uid://f67bdriogdr5" path="res://Scenes/Objects/3D/Enemies/Citrin/Anims/Terrain/Global/Cry_Left.res" id="9_6m6yg"]
+[ext_resource type="Animation" uid="uid://dhtgxh2js7tun" path="res://Global_Scenes/Battle_System/Battle_SV/Enemies/Citrin/Anims/Shoot_Left.res" id="9_7j6px"]
+[ext_resource type="Animation" uid="uid://dwfugi7iewhx3" path="res://Scenes/Objects/3D/Enemies/Citrin/Anims/Terrain/Global/Idle_Left.res" id="10_mxdrm"]
+[ext_resource type="Animation" uid="uid://cr7nybox71asc" path="res://Scenes/Objects/3D/Enemies/Citrin/Anims/Terrain/Global/Stop_Left.res" id="11_rhco1"]
+[ext_resource type="Animation" uid="uid://cu6vdxunow56" path="res://Scenes/Objects/3D/Enemies/Citrin/Anims/Terrain/Global/Stop_Right.res" id="12_p3om7"]
+[ext_resource type="Animation" uid="uid://c30o787w38c7w" path="res://Scenes/Objects/3D/Enemies/Citrin/Anims/Terrain/Global/Walk_Left.res" id="13_b4b03"]
+[ext_resource type="Animation" uid="uid://bjp62omrrrhce" path="res://Scenes/Objects/3D/Enemies/Citrin/Anims/Terrain/Global/Walk_Right.res" id="14_imhxq"]
+[ext_resource type="PackedScene" uid="uid://ks3max245ufk" path="res://Scenes/Object/Comps/3D/Movement/Comps/Nav_Agent.tscn" id="16_b4b03"]
+[ext_resource type="PackedScene" uid="uid://cekkcfeurbewx" path="res://Scenes/Object/Comps/3D/Movement/Comps/States.tscn" id="16_mxdrm"]
+[ext_resource type="Animation" uid="uid://b7a7hr8hsjd8o" path="res://Global_Scenes/Battle_System/Battle_SV/Enemies/Citrin/Anims/Cry_Left.res" id="25_6m6yg"]
+[ext_resource type="Animation" uid="uid://5y81nvna4wef" path="res://Global_Scenes/Battle_System/Battle_SV/Enemies/Citrin/Anims/Walk_Left.res" id="25_b4b03"]
+[ext_resource type="Animation" uid="uid://d0ol1qo40t5ya" path="res://Global_Scenes/Battle_System/Battle_SV/Enemies/Citrin/Anims/Walk_Right.res" id="25_imhxq"]
+[ext_resource type="Animation" uid="uid://e4vcbufvsv7h" path="res://Global_Scenes/Battle_System/Battle_SV/Enemies/Citrin/Anims/Idle_Left.res" id="25_mxdrm"]
+[ext_resource type="Animation" uid="uid://udq28f50abxg" path="res://Global_Scenes/Battle_System/Battle_SV/Enemies/Citrin/Anims/Stop_Right.res" id="25_p3om7"]
+[ext_resource type="Animation" uid="uid://bt2c611jkux0o" path="res://Global_Scenes/Battle_System/Battle_SV/Enemies/Citrin/Anims/Stop_Left.res" id="25_rhco1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mxdrm"]
+size = Vector3(0.15, 0.1, 0.15)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rg3vp"]
+_data = {
+&"Attack_Left": ExtResource("7_adrfu"),
+&"Cry_Left": ExtResource("9_6m6yg"),
+&"Idle_Left": ExtResource("10_mxdrm"),
+&"Shoot_Left": ExtResource("8_4qxq6"),
+&"Stop_Left": ExtResource("11_rhco1"),
+&"Stop_Right": ExtResource("12_p3om7"),
+&"Walk_Left": ExtResource("13_b4b03"),
+&"Walk_Right": ExtResource("14_imhxq")
+}
+
+[sub_resource type="Animation" id="Animation_raej2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hitbox:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.8, 1.3, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Hitbox:monitoring")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jqsqm"]
+_data = {
+&"RESET": SubResource("Animation_raej2")
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kyouj"]
+_data = {
+&"Attack_Left": ExtResource("8_ac2ns"),
+&"Cry_Left": ExtResource("25_6m6yg"),
+&"Idle_Left": ExtResource("25_mxdrm"),
+&"Shoot_Left": ExtResource("9_7j6px"),
+&"Stop_Left": ExtResource("25_rhco1"),
+&"Stop_Right": ExtResource("25_p3om7"),
+&"Walk_Left": ExtResource("25_b4b03"),
+&"Walk_Right": ExtResource("25_imhxq")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8vjim"]
+size = Vector3(0.3, 0.27, 0.3)
+
+[node name="Citrin" instance=ExtResource("1_odg01")]
+collision_mask = 10
+script = ExtResource("2_0ul0a")
+_e_select_offset = Vector3(-0.47, 1.57, 0.01)
+_e_type = "Enemy"
+_e_popup_offset = Vector3(0, 2.1, 0)
+_e_attack_offset = Vector3(-1.33, 0, 0.01)
+_e_rating_offset = Vector3(-3, 4, 0.01)
+
+[node name="Display" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.14, 0)
+texture = ExtResource("2_dtvct")
+hframes = 8
+vframes = 9
+
+[node name="Hit" type="AudioStreamPlayer3D" parent="Audio" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+stream = ExtResource("4_8i3m0")
+bus = &"SFX"
+
+[node name="Cry" type="AudioStreamPlayer3D" parent="Audio" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+bus = &"SFX"
+
+[node name="Shoot" type="AudioStreamPlayer3D" parent="Audio" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+bus = &"SFX"
+
+[node name="States" parent="." index="2"]
+_e_states = Array[String](["Stop", "Idle", "Walk", "Melee", "Shoot", "Cry"])
+_e_state = "Idle"
+
+[node name="Movement" parent="." index="4" instance=ExtResource("5_mxdrm")]
+_e_reset_dir = "Left"
+
+[node name="Terrain" parent="Movement" index="0" instance=ExtResource("5_gclvp")]
+
+[node name="Left_Foot" parent="Movement/Terrain/Areas" index="0" instance=ExtResource("6_6m6yg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, 0)
+
+[node name="Collision" parent="Movement/Terrain/Areas/Left_Foot" index="1"]
+shape = SubResource("BoxShape3D_mxdrm")
+
+[node name="Right_Foot" parent="Movement/Terrain/Areas" index="1" instance=ExtResource("6_6m6yg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, 0)
+
+[node name="Collision" parent="Movement/Terrain/Areas/Right_Foot" index="1"]
+shape = SubResource("BoxShape3D_mxdrm")
+
+[node name="Anims" parent="Movement/Terrain" index="1"]
+libraries = {
+&"SV": SubResource("AnimationLibrary_rg3vp")
+}
+
+[node name="Nav_Agent" parent="Movement" index="1" instance=ExtResource("16_b4b03")]
+
+[node name="States" parent="Movement" index="2" instance=ExtResource("16_mxdrm")]
+_e_speeds = Dictionary[String, float]({
+"Run": 5.0,
+"Stop": 0.0,
+"Walk": 3.0
+})
+
+[node name="Knockbacks" parent="Movement" index="3" instance=ExtResource("5_cu428")]
+
+[node name="Citrin_Balls" type="Node3D" parent="." index="5"]
+
+[node name="Pos" type="Marker3D" parent="Citrin_Balls" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.61, 0.52, 0.01)
+
+[node name="Anims" parent="." index="7"]
+libraries = {
+&"": SubResource("AnimationLibrary_jqsqm"),
+&"SV": SubResource("AnimationLibrary_kyouj")
+}
+
+[node name="Hitbox" parent="." index="8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 1.3, 0)
+metadata/_edit_group_ = true
+
+[node name="Collision" type="CollisionShape3D" parent="Hitbox" index="0"]
+shape = SubResource("BoxShape3D_8vjim")
+
+[node name="Status" parent="." index="9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 1, 0)
+
+[editable path="Movement/Terrain"]
+[editable path="Movement/Terrain/Areas/Left_Foot"]
+[editable path="Movement/Terrain/Areas/Right_Foot"]

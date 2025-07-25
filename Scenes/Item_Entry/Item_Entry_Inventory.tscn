@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://b0vdl1j63jtip"]
+[gd_scene load_steps=7 format=3 uid="uid://b0vdl1j63jtip"]
 
 [ext_resource type="PackedScene" uid="uid://50pueljyh651" path="res://Scenes/Item_Entry/Item_Entry_Base.tscn" id="1_eqv0x"]
 [ext_resource type="Script" uid="uid://dba7j5dwewlwa" path="res://Scenes/Item_Entry/Scripts/Item_Entry_Inventory.gd" id="2_vml2a"]
+[ext_resource type="FontFile" uid="uid://bc3cxhu6w0ljt" path="res://Global_Resources/Fonts/ProFont.ttf" id="2_xcer3"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_lsam1"]
+font = ExtResource("2_xcer3")
 font_size = 30
 outline_size = 8
 outline_color = Color(0, 0, 0, 1)

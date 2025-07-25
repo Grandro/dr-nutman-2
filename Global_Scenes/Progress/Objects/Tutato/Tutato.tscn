@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://4vj18vd0uesu"]
+
+[ext_resource type="PackedScene" uid="uid://y0ims6itmqkn" path="res://Global_Scenes/Progress/Objects/Object_Base.tscn" id="1_hhel3"]
+[ext_resource type="Script" uid="uid://dtn2on76fd774" path="res://Global_Scenes/Progress/Objects/Tutato/Scripts/Tutato.gd" id="2_okde1"]
+
+[node name="Tutato" instance=ExtResource("1_hhel3")]
+script = ExtResource("2_okde1")

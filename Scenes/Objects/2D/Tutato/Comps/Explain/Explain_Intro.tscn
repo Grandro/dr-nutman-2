@@ -1,0 +1,258 @@
+[gd_scene load_steps=35 format=3 uid="uid://csu6abhhga573"]
+
+[ext_resource type="PackedScene" uid="uid://dpi6g3dw4wg50" path="res://Scenes/Objects/2D/Tutato/Comps/Explain/Explain_Base.tscn" id="1_bsqx4"]
+[ext_resource type="Script" uid="uid://b46lracbiyf4k" path="res://Scenes/Objects/2D/Tutato/Comps/Explain/Scripts/Explain_Intro.gd" id="2_3wkb3"]
+[ext_resource type="PackedScene" uid="uid://cva7lt6ccapbi" path="res://Scenes/Indicator/Indicator.tscn" id="3_an16v"]
+[ext_resource type="Texture2D" uid="uid://1l80fi2y58vp" path="res://Global_Resources/Sprites/Keys/8593.png" id="4_338k7"]
+[ext_resource type="Texture2D" uid="uid://2bts6obqr07l" path="res://Global_Resources/Sprites/Joy/Letters_Color/Stick_L_Up.png" id="5_338k7"]
+[ext_resource type="Texture2D" uid="uid://bvjt2r8vlpwvb" path="res://Global_Resources/Sprites/Joy/Letters_Neutral/Stick_Up.png" id="6_l4jna"]
+[ext_resource type="Texture2D" uid="uid://d37n106pey035" path="res://Global_Resources/Sprites/Joy/Shapes_Color/Stick_L_Up.png" id="7_ygbwp"]
+[ext_resource type="Texture2D" uid="uid://ccnusbvvq2arw" path="res://Global_Resources/Sprites/Keys/8592.png" id="8_aymt5"]
+[ext_resource type="Texture2D" uid="uid://b6ao8eaw4h6ju" path="res://Global_Resources/Sprites/Joy/Letters_Color/Stick_L_Left.png" id="9_drdy7"]
+[ext_resource type="Texture2D" uid="uid://bpga7g57eycm0" path="res://Global_Resources/Sprites/Joy/Letters_Neutral/Stick_Left.png" id="10_wyykf"]
+[ext_resource type="Texture2D" uid="uid://derdfqlc07lpx" path="res://Global_Resources/Sprites/Joy/Shapes_Color/Stick_L_Left.png" id="11_v0u8e"]
+[ext_resource type="Texture2D" uid="uid://bpxca1k02qaag" path="res://Global_Resources/Sprites/Keys/8595.png" id="12_c67nm"]
+[ext_resource type="Texture2D" uid="uid://crma73ejbw8x7" path="res://Global_Resources/Sprites/Joy/Letters_Color/Stick_L_Down.png" id="13_o0gm4"]
+[ext_resource type="Texture2D" uid="uid://dibquvhp5yrk4" path="res://Global_Resources/Sprites/Joy/Letters_Neutral/Stick_Down.png" id="14_0ahq5"]
+[ext_resource type="Texture2D" uid="uid://da42d56ivbjo7" path="res://Global_Resources/Sprites/Joy/Shapes_Color/Stick_L_Down.png" id="15_wy1tr"]
+[ext_resource type="Texture2D" uid="uid://cq0n33iab7d4s" path="res://Global_Resources/Sprites/Keys/8594.png" id="16_o0gm4"]
+[ext_resource type="Texture2D" uid="uid://hi18840g3vm3" path="res://Global_Resources/Sprites/Joy/Letters_Color/Stick_L_Right.png" id="17_1xro5"]
+[ext_resource type="Texture2D" uid="uid://evoe0cqsm40m" path="res://Global_Resources/Sprites/Joy/Letters_Neutral/Stick_Right.png" id="18_an16v"]
+[ext_resource type="Texture2D" uid="uid://bqeixxixdnbt6" path="res://Global_Resources/Sprites/Joy/Shapes_Color/Stick_L_Right.png" id="19_rs5d8"]
+[ext_resource type="Texture2D" uid="uid://cxs7h3f7br68k" path="res://Global_Resources/Sprites/Keys/8679.png" id="20_xjgyp"]
+[ext_resource type="Texture2D" uid="uid://bxakb45lklomh" path="res://Global_Resources/Sprites/Joy/Letters_Color/Button_X.png" id="21_xmf7w"]
+[ext_resource type="Texture2D" uid="uid://elnd1dnsjnsh" path="res://Global_Resources/Sprites/Joy/Letters_Neutral/Button_Y.png" id="22_oyqox"]
+[ext_resource type="Texture2D" uid="uid://dk0ryxcw2k78r" path="res://Global_Resources/Sprites/Joy/Shapes_Color/Button_Square.png" id="23_lkgsk"]
+[ext_resource type="Texture2D" uid="uid://pelxbitvttd4" path="res://Global_Resources/Sprites/Keys/32.png" id="24_2b6ym"]
+[ext_resource type="Texture2D" uid="uid://dti8yjdd8swkr" path="res://Global_Resources/Sprites/Joy/Letters_Color/Button_A.png" id="25_04f3q"]
+[ext_resource type="Texture2D" uid="uid://ba6iwa33s7o36" path="res://Global_Resources/Sprites/Joy/Letters_Neutral/Button_B.png" id="26_p5wgs"]
+[ext_resource type="Texture2D" uid="uid://c0cd4qawbxfrb" path="res://Global_Resources/Sprites/Joy/Shapes_Color/Button_Cross.png" id="27_vy7ll"]
+[ext_resource type="Texture2D" uid="uid://dtibx7edryw0s" path="res://Global_Resources/Sprites/Keys/27.png" id="28_p5wgs"]
+[ext_resource type="Texture2D" uid="uid://85li1tcsu6hf" path="res://Global_Resources/Sprites/Joy/Letters_Color/Button_Start.png" id="29_vy7ll"]
+[ext_resource type="Texture2D" uid="uid://pufjlm3qsh3b" path="res://Global_Resources/Sprites/Joy/Letters_Neutral/Button_Plus.png" id="30_vy7ll"]
+[ext_resource type="Texture2D" uid="uid://di4xy85ldfdgt" path="res://Global_Resources/Sprites/Joy/Shapes_Color/Button_Start.png" id="31_pihty"]
+
+[sub_resource type="Animation" id="Animation_pihty"]
+resource_name = "Fade_Out"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/Background:self_modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_74ytm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/Background:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4pits"]
+_data = {
+&"Fade_Out": SubResource("Animation_pihty"),
+&"RESET": SubResource("Animation_74ytm")
+}
+
+[node name="Explain_Intro" instance=ExtResource("1_bsqx4")]
+script = ExtResource("2_3wkb3")
+
+[node name="Background" parent="Control" index="0"]
+color = Color(1, 1, 1, 1)
+
+[node name="Movement" type="VBoxContainer" parent="Control/Parts" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -568.0
+offset_top = -118.0
+offset_right = -460.0
+offset_bottom = -46.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(3, 3)
+theme_override_constants/separation = -4
+alignment = 1
+
+[node name="Up" parent="Control/Parts/Movement" index="0" instance=ExtResource("3_an16v")]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+size_flags_horizontal = 4
+_e_keyboard_texture = ExtResource("4_338k7")
+_e_joy_letters_color_texture = ExtResource("5_338k7")
+_e_joy_letters_neutral_texture = ExtResource("6_l4jna")
+_e_joy_shapes_color_texture = ExtResource("7_ygbwp")
+
+[node name="Input" parent="Control/Parts/Movement/Up/Margin/HBox" index="0"]
+texture = ExtResource("4_338k7")
+
+[node name="HBox" type="HBoxContainer" parent="Control/Parts/Movement" index="1"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = -4
+
+[node name="Left" parent="Control/Parts/Movement/HBox" index="0" instance=ExtResource("3_an16v")]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+_e_keyboard_texture = ExtResource("8_aymt5")
+_e_joy_letters_color_texture = ExtResource("9_drdy7")
+_e_joy_letters_neutral_texture = ExtResource("10_wyykf")
+_e_joy_shapes_color_texture = ExtResource("11_v0u8e")
+
+[node name="Input" parent="Control/Parts/Movement/HBox/Left/Margin/HBox" index="0"]
+texture = ExtResource("8_aymt5")
+
+[node name="Down" parent="Control/Parts/Movement/HBox" index="1" instance=ExtResource("3_an16v")]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+_e_keyboard_texture = ExtResource("12_c67nm")
+_e_joy_letters_color_texture = ExtResource("13_o0gm4")
+_e_joy_letters_neutral_texture = ExtResource("14_0ahq5")
+_e_joy_shapes_color_texture = ExtResource("15_wy1tr")
+
+[node name="Input" parent="Control/Parts/Movement/HBox/Down/Margin/HBox" index="0"]
+texture = ExtResource("12_c67nm")
+
+[node name="Right" parent="Control/Parts/Movement/HBox" index="2" instance=ExtResource("3_an16v")]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+_e_keyboard_texture = ExtResource("16_o0gm4")
+_e_joy_letters_color_texture = ExtResource("17_1xro5")
+_e_joy_letters_neutral_texture = ExtResource("18_an16v")
+_e_joy_shapes_color_texture = ExtResource("19_rs5d8")
+
+[node name="Input" parent="Control/Parts/Movement/HBox/Right/Margin/HBox" index="0"]
+texture = ExtResource("16_o0gm4")
+
+[node name="Run" parent="Control/Parts" index="1" instance=ExtResource("3_an16v")]
+visible = false
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -460.0
+offset_top = -64.0
+offset_right = -424.0
+offset_bottom = -28.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(3, 3)
+size_flags_horizontal = 4
+_e_keyboard_texture = ExtResource("20_xjgyp")
+_e_joy_letters_color_texture = ExtResource("21_xmf7w")
+_e_joy_letters_neutral_texture = ExtResource("22_oyqox")
+_e_joy_shapes_color_texture = ExtResource("23_lkgsk")
+
+[node name="Input" parent="Control/Parts/Run/Margin/HBox" index="0"]
+texture = ExtResource("20_xjgyp")
+
+[node name="Jump" parent="Control/Parts" index="2" instance=ExtResource("3_an16v")]
+visible = false
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -460.0
+offset_top = -64.0
+offset_right = -424.0
+offset_bottom = -28.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(3, 3)
+size_flags_horizontal = 4
+_e_keyboard_texture = ExtResource("24_2b6ym")
+_e_joy_letters_color_texture = ExtResource("25_04f3q")
+_e_joy_letters_neutral_texture = ExtResource("26_p5wgs")
+_e_joy_shapes_color_texture = ExtResource("27_vy7ll")
+
+[node name="Input" parent="Control/Parts/Jump/Margin/HBox" index="0"]
+texture = ExtResource("24_2b6ym")
+
+[node name="Action" parent="Control/Parts" index="3" instance=ExtResource("3_an16v")]
+visible = false
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -460.0
+offset_top = -64.0
+offset_right = -424.0
+offset_bottom = -28.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(3, 3)
+size_flags_horizontal = 4
+_e_keyboard_texture = ExtResource("24_2b6ym")
+_e_joy_letters_color_texture = ExtResource("25_04f3q")
+_e_joy_letters_neutral_texture = ExtResource("26_p5wgs")
+_e_joy_shapes_color_texture = ExtResource("27_vy7ll")
+
+[node name="Input" parent="Control/Parts/Action/Margin/HBox" index="0"]
+texture = ExtResource("24_2b6ym")
+
+[node name="Main_Menu" parent="Control/Parts" index="4" instance=ExtResource("3_an16v")]
+visible = false
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -460.0
+offset_top = -64.0
+offset_right = -424.0
+offset_bottom = -28.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(3, 3)
+size_flags_horizontal = 4
+_e_keyboard_texture = ExtResource("28_p5wgs")
+_e_joy_letters_color_texture = ExtResource("29_vy7ll")
+_e_joy_letters_neutral_texture = ExtResource("30_vy7ll")
+_e_joy_shapes_color_texture = ExtResource("31_pihty")
+
+[node name="Anims" type="AnimationPlayer" parent="." index="1"]
+libraries = {
+&"": SubResource("AnimationLibrary_4pits")
+}
+
+[editable path="Control/Parts/Movement/Up"]
+[editable path="Control/Parts/Movement/HBox/Left"]
+[editable path="Control/Parts/Movement/HBox/Down"]
+[editable path="Control/Parts/Movement/HBox/Right"]
+[editable path="Control/Parts/Run"]
+[editable path="Control/Parts/Jump"]
+[editable path="Control/Parts/Action"]
+[editable path="Control/Parts/Main_Menu"]

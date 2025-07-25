@@ -1,0 +1,570 @@
+[gd_scene load_steps=15 format=3 uid="uid://dp6cr1v2naad2"]
+
+[ext_resource type="PackedScene" uid="uid://cvu2fkvx7alpk" path="res://Scenes/Mini_Games/Color_Selection/Game/Game_Base.tscn" id="1_xvrek"]
+[ext_resource type="Script" uid="uid://c8lecb5x8wal8" path="res://Scenes/Mini_Games/Color_Selection/Game/Scripts/Game_Play.gd" id="2_v1vva"]
+[ext_resource type="Theme" uid="uid://budcfl16xj2tt" path="res://Global_Resources/Themes/Default/Default.tres" id="3_sr8y2"]
+[ext_resource type="Script" uid="uid://7jlpk4351xi5" path="res://Scenes/Mini_Games/Color_Selection/Game/Scripts/Countdown.gd" id="4_cbbe4"]
+[ext_resource type="Script" uid="uid://cp8lhae4yg1r" path="res://Scenes/Mini_Games/Color_Selection/Game/Scripts/Result.gd" id="5_iekab"]
+[ext_resource type="Texture2D" uid="uid://wrg2potji1vm" path="res://Global_Resources/Sprites/Backgrounds/1_Spritesheet.png" id="6_6svan"]
+[ext_resource type="Texture2D" uid="uid://yotiaepu88by" path="res://Global_Resources/Sprites/Mini_Busts/Buffin_Base/Think.png" id="7_3woar"]
+[ext_resource type="Script" uid="uid://cdnbsekov5bmg" path="res://Scenes/Mini_Games/Color_Selection/Game/Scripts/Prev_Colors.gd" id="8_veerd"]
+[ext_resource type="Script" uid="uid://wvouppnd7cfh" path="res://Scenes/Mini_Games/Color_Selection/Game/Scripts/Syringe.gd" id="9_f2dh4"]
+[ext_resource type="Texture2D" uid="uid://cwmpp1s3wtv2a" path="res://Scenes/Mini_Games/Color_Selection/Game/Sprites/Syringe_Red.png" id="10_if3qd"]
+[ext_resource type="Texture2D" uid="uid://tiqua6wgvyeq" path="res://Scenes/Mini_Games/Color_Selection/Game/Sprites/Syringe_Green.png" id="11_y0b2j"]
+[ext_resource type="Texture2D" uid="uid://cxerh2ofh5aiy" path="res://Scenes/Mini_Games/Color_Selection/Game/Sprites/Syringe_Blue.png" id="12_ags2x"]
+
+[sub_resource type="Animation" id="2"]
+resource_name = "Countdown"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Center/Text:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": ["MINIGAMES_COLOR_SELECTION_COUNTDOWN_3", "MINIGAMES_COLOR_SELECTION_COUNTDOWN_2", "MINIGAMES_COLOR_SELECTION_COUNTDOWN_1", "MINIGAMES_COLOR_SELECTION_COUNTDOWN_GO"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pvdfs"]
+_data = {
+&"Countdown": SubResource("2")
+}
+
+[node name="Game_Play" instance=ExtResource("1_xvrek")]
+visible = false
+script = ExtResource("2_v1vva")
+_e_total_spurt = 6
+_e_check_end_time = 2
+_e_force_end_time = 10
+
+[node name="Background" parent="Canvas_1" index="0"]
+visible = false
+
+[node name="Next_Color" parent="Canvas_2" index="0"]
+visible = false
+
+[node name="Countdown" type="Control" parent="Canvas_2" index="1"]
+visible = false
+light_mask = 8
+visibility_layer = 8
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_sr8y2")
+script = ExtResource("4_cbbe4")
+
+[node name="Background" type="ColorRect" parent="Canvas_2/Countdown" index="0"]
+modulate = Color(0, 0, 0, 0.196078)
+light_mask = 8
+visibility_layer = 8
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Center" type="CenterContainer" parent="Canvas_2/Countdown" index="1"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Text" type="Label" parent="Canvas_2/Countdown/Center" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "MINIGAMES_COLOR_SELECTION_COUNTDOWN_3"
+vertical_alignment = 1
+
+[node name="Anims" type="AnimationPlayer" parent="Canvas_2/Countdown" index="2"]
+libraries = {
+&"": SubResource("AnimationLibrary_pvdfs")
+}
+
+[node name="Result" type="Control" parent="Canvas_2" index="2" groups=["Translated"]]
+visible = false
+light_mask = 8
+visibility_layer = 8
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_sr8y2")
+script = ExtResource("5_iekab")
+
+[node name="Background" type="TextureRect" parent="Canvas_2/Result" index="0"]
+self_modulate = Color(1, 1, 1, 0.901961)
+light_mask = 8
+visibility_layer = 8
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource("6_6svan")
+stretch_mode = 1
+
+[node name="HBox" type="HBoxContainer" parent="Canvas_2/Result" index="1"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="VBox" type="VBoxContainer" parent="Canvas_2/Result/HBox" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="Heading" type="Label" parent="Canvas_2/Result/HBox/VBox" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 36
+text = "MINIGAMES_COLOR_SELECTION_RESULT"
+vertical_alignment = 1
+
+[node name="HBox_1" type="HBoxContainer" parent="Canvas_2/Result/HBox/VBox" index="1"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 48
+
+[node name="Bust" type="VBoxContainer" parent="Canvas_2/Result/HBox/VBox/HBox_1" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+
+[node name="Image" type="TextureRect" parent="Canvas_2/Result/HBox/VBox/HBox_1/Bust" index="0"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(114, 72)
+layout_mode = 2
+size_flags_vertical = 10
+mouse_filter = 2
+texture = ExtResource("7_3woar")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Text" type="RichTextLabel" parent="Canvas_2/Result/HBox/VBox/HBox_1/Bust" index="1"]
+light_mask = 8
+visibility_layer = 8
+clip_contents = false
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+bbcode_enabled = true
+text = "[center]Ist [wave amp=20 freq=5]das[/wave] Ihre Lieblingsfarbe?"
+fit_content = true
+scroll_active = false
+
+[node name="Color" type="ColorRect" parent="Canvas_2/Result/HBox/VBox/HBox_1" index="1"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(76, 76)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="HBox_2" type="HBoxContainer" parent="Canvas_2/Result/HBox/VBox" index="2"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 16
+
+[node name="OK" type="Button" parent="Canvas_2/Result/HBox/VBox/HBox_2" index="0"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+text = "YES"
+
+[node name="Play_Again" type="Button" parent="Canvas_2/Result/HBox/VBox/HBox_2" index="1"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+text = "PLAYAGAIN"
+
+[node name="Prev_Colors" type="MarginContainer" parent="Canvas_2/Result/HBox" index="1" groups=["Translated"]]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+script = ExtResource("8_veerd")
+
+[node name="VBox" type="VBoxContainer" parent="Canvas_2/Result/HBox/Prev_Colors" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="Heading" type="Label" parent="Canvas_2/Result/HBox/Prev_Colors/VBox" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "MINIGAMES_COLOR_SELECTION_PREVCOLORS"
+vertical_alignment = 1
+
+[node name="Scroll" type="ScrollContainer" parent="Canvas_2/Result/HBox/Prev_Colors/VBox" index="1"]
+light_mask = 8
+visibility_layer = 8
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="HFlow" type="HFlowContainer" parent="Canvas_2/Result/HBox/Prev_Colors/VBox/Scroll" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 8
+
+[node name="Syringe" type="Node2D" parent="Node2D" index="2"]
+light_mask = 4
+visibility_layer = 4
+position = Vector2(637, -90)
+script = ExtResource("9_f2dh4")
+
+[node name="Sprites" type="Node2D" parent="Node2D/Syringe" index="0"]
+light_mask = 4
+visibility_layer = 4
+
+[node name="Red" type="Sprite2D" parent="Node2D/Syringe/Sprites" index="0"]
+light_mask = 4
+visibility_layer = 4
+texture = ExtResource("10_if3qd")
+
+[node name="Green" type="Sprite2D" parent="Node2D/Syringe/Sprites" index="1"]
+light_mask = 4
+visibility_layer = 4
+texture = ExtResource("11_y0b2j")
+
+[node name="Blue" type="Sprite2D" parent="Node2D/Syringe/Sprites" index="2"]
+light_mask = 4
+visibility_layer = 4
+texture = ExtResource("12_ags2x")
+
+[node name="Paint_Drop_Timer" type="Timer" parent="Node2D/Syringe" index="1"]
+wait_time = 0.3
+
+[node name="Move_Up_Timer" type="Timer" parent="Node2D/Syringe" index="2"]
+wait_time = 5.0
+one_shot = true
+
+[node name="Left" type="StaticBody2D" parent="Node2D/Hopper" index="1"]
+light_mask = 4
+visibility_layer = 4
+z_index = 1
+position = Vector2(640, 281)
+collision_layer = 65536
+collision_mask = 65536
+
+[node name="Collision" type="CollisionPolygon2D" parent="Node2D/Hopper/Left" index="0"]
+light_mask = 4
+visibility_layer = 4
+polygon = PackedVector2Array(-148, -137, -36, 55, -20, 135, -28, 135, -44, 55, -156, -137)
+
+[node name="Right" type="StaticBody2D" parent="Node2D/Hopper" index="2"]
+light_mask = 4
+visibility_layer = 4
+z_index = 1
+position = Vector2(640, 281)
+collision_layer = 65536
+collision_mask = 65536
+
+[node name="Collision" type="CollisionPolygon2D" parent="Node2D/Hopper/Right" index="0"]
+light_mask = 4
+visibility_layer = 4
+polygon = PackedVector2Array(148, -137, 36, 55, 20, 135, 28, 135, 44, 55, 156, -137)
+
+[node name="Walls" type="Node2D" parent="Node2D" index="4"]
+light_mask = 4
+visibility_layer = 4
+position = Vector2(0, 144)
+
+[node name="Wall_1" type="StaticBody2D" parent="Node2D/Walls" index="0"]
+light_mask = 4
+visibility_layer = 4
+collision_layer = 65536
+collision_mask = 65536
+
+[node name="Collision" type="CollisionPolygon2D" parent="Node2D/Walls/Wall_1" index="0"]
+light_mask = 4
+visibility_layer = 4
+polygon = PackedVector2Array(664, 420, 664, 412, 832, 412, 832, 420)
+
+[node name="Wall_2" type="StaticBody2D" parent="Node2D/Walls" index="1"]
+light_mask = 4
+visibility_layer = 4
+collision_layer = 65536
+collision_mask = 65536
+
+[node name="Collision" type="CollisionPolygon2D" parent="Node2D/Walls/Wall_2" index="0"]
+light_mask = 4
+visibility_layer = 4
+polygon = PackedVector2Array(616, 420, 616, 412, 448, 412, 448, 420, 452.069, 420)
+
+[node name="Wall_3" type="StaticBody2D" parent="Node2D/Walls" index="2"]
+light_mask = 4
+visibility_layer = 4
+collision_layer = 65536
+collision_mask = 65536
+
+[node name="Collision" type="CollisionPolygon2D" parent="Node2D/Walls/Wall_3" index="0"]
+light_mask = 4
+visibility_layer = 4
+polygon = PackedVector2Array(944, 496, 956, 496, 956, 1248, 946, 1248)
+
+[node name="Wall_4" type="StaticBody2D" parent="Node2D/Walls" index="3"]
+light_mask = 4
+visibility_layer = 4
+collision_layer = 65536
+collision_mask = 65536
+
+[node name="Collision" type="CollisionPolygon2D" parent="Node2D/Walls/Wall_4" index="0"]
+light_mask = 4
+visibility_layer = 4
+polygon = PackedVector2Array(326, 498, 334, 502, 454, 418, 446, 412)
+
+[node name="Wall_5" type="StaticBody2D" parent="Node2D/Walls" index="4"]
+light_mask = 4
+visibility_layer = 4
+collision_layer = 65536
+collision_mask = 65536
+
+[node name="Collision" type="CollisionPolygon2D" parent="Node2D/Walls/Wall_5" index="0"]
+light_mask = 4
+visibility_layer = 4
+polygon = PackedVector2Array(826, 418, 950, 504, 956, 498, 832, 412)
+
+[node name="Wall_6" type="StaticBody2D" parent="Node2D/Walls" index="5"]
+light_mask = 4
+visibility_layer = 4
+collision_layer = 65536
+collision_mask = 65536
+
+[node name="Collision" type="CollisionPolygon2D" parent="Node2D/Walls/Wall_6" index="0"]
+light_mask = 4
+visibility_layer = 4
+polygon = PackedVector2Array(324, 496, 336, 496, 336, 1248, 324, 1248)
+
+[node name="Wall_7" type="StaticBody2D" parent="Node2D/Walls" index="6"]
+light_mask = 4
+visibility_layer = 4
+collision_layer = 65536
+collision_mask = 65536
+
+[node name="Line" type="Line2D" parent="Node2D/Walls/Wall_7" index="0"]
+light_mask = 4
+visibility_layer = 4
+position = Vector2(-668.167, -2)
+scale = Vector2(1.31497, 1)
+points = PackedVector2Array(946.156, 642, 848.816, 722)
+width = 4.0
+default_color = Color(0, 0, 0, 1)
+
+[node name="Collision" type="CollisionPolygon2D" parent="Node2D/Walls/Wall_7" index="1"]
+light_mask = 4
+visibility_layer = 4
+polygon = PackedVector2Array(574, 637, 579, 642, 449, 723, 444, 718)
+
+[node name="Wall_8" type="StaticBody2D" parent="Node2D/Walls" index="7"]
+light_mask = 4
+visibility_layer = 4
+collision_layer = 65536
+collision_mask = 65536
+
+[node name="Line" type="Line2D" parent="Node2D/Walls/Wall_8" index="0"]
+light_mask = 4
+visibility_layer = 4
+position = Vector2(-668.167, -2)
+scale = Vector2(1.31497, 1)
+points = PackedVector2Array(1043.5, 642, 1140.84, 722)
+width = 4.0
+default_color = Color(0, 0, 0, 1)
+
+[node name="Collision" type="CollisionPolygon2D" parent="Node2D/Walls/Wall_8" index="1"]
+light_mask = 4
+visibility_layer = 4
+polygon = PackedVector2Array(705, 637, 701, 642, 831, 723, 836, 718)
+
+[node name="Wall_9" type="StaticBody2D" parent="Node2D/Walls" index="8"]
+light_mask = 4
+visibility_layer = 4
+position = Vector2(0, 90)
+collision_layer = 65536
+collision_mask = 65536
+
+[node name="Line" type="Line2D" parent="Node2D/Walls/Wall_9" index="0"]
+light_mask = 4
+visibility_layer = 4
+position = Vector2(-668.167, 400)
+scale = Vector2(1.31497, 1)
+points = PackedVector2Array(946, 722, 870.109, 660)
+width = 4.0
+default_color = Color(0, 0, 0, 1)
+
+[node name="Collision" type="CollisionPolygon2D" parent="Node2D/Walls/Wall_9" index="1"]
+light_mask = 4
+visibility_layer = 4
+polygon = PackedVector2Array(478, 1056, 472, 1062, 575, 1126, 581, 1120)
+
+[node name="Wall_10" type="StaticBody2D" parent="Node2D/Walls" index="9"]
+light_mask = 4
+visibility_layer = 4
+position = Vector2(1280, 90)
+rotation = 3.14159
+scale = Vector2(1, -1)
+collision_layer = 65536
+collision_mask = 65536
+
+[node name="Line" type="Line2D" parent="Node2D/Walls/Wall_10" index="0"]
+light_mask = 4
+visibility_layer = 4
+position = Vector2(-668.167, 400)
+scale = Vector2(1.31497, 1)
+points = PackedVector2Array(946, 722, 870.109, 660)
+width = 4.0
+default_color = Color(0, 0, 0, 1)
+
+[node name="Collision" type="CollisionPolygon2D" parent="Node2D/Walls/Wall_10" index="1"]
+light_mask = 4
+visibility_layer = 4
+polygon = PackedVector2Array(478, 1056, 472, 1062, 575, 1126, 581, 1120)
+
+[node name="Wall_11" type="StaticBody2D" parent="Node2D/Walls" index="10"]
+light_mask = 4
+visibility_layer = 4
+position = Vector2(0, 1746)
+scale = Vector2(1, -1)
+collision_layer = 65536
+collision_mask = 65536
+
+[node name="Collision" type="CollisionPolygon2D" parent="Node2D/Walls/Wall_11" index="0"]
+light_mask = 4
+visibility_layer = 4
+polygon = PackedVector2Array(326, 498, 334, 502, 454, 418, 446, 412)
+
+[node name="Wall_12" type="StaticBody2D" parent="Node2D/Walls" index="11"]
+light_mask = 4
+visibility_layer = 4
+position = Vector2(0, 1746)
+scale = Vector2(1, -1)
+collision_layer = 65536
+collision_mask = 65536
+
+[node name="Collision" type="CollisionPolygon2D" parent="Node2D/Walls/Wall_12" index="0"]
+light_mask = 4
+visibility_layer = 4
+polygon = PackedVector2Array(826, 418, 950, 504, 956, 498, 832, 412)
+
+[node name="Wall_13" type="StaticBody2D" parent="Node2D/Walls" index="12"]
+light_mask = 4
+visibility_layer = 4
+position = Vector2(0, 1746)
+scale = Vector2(1, -1)
+collision_layer = 65536
+collision_mask = 65536
+
+[node name="Collision" type="CollisionPolygon2D" parent="Node2D/Walls/Wall_13" index="0"]
+light_mask = 4
+visibility_layer = 4
+polygon = PackedVector2Array(448, 412, 448, 420, 544, 420, 544, 412)
+
+[node name="Wall_14" type="StaticBody2D" parent="Node2D/Walls" index="13"]
+light_mask = 4
+visibility_layer = 4
+position = Vector2(0, 1746)
+scale = Vector2(1, -1)
+collision_layer = 65536
+collision_mask = 65536
+
+[node name="Collision" type="CollisionPolygon2D" parent="Node2D/Walls/Wall_14" index="0"]
+light_mask = 4
+visibility_layer = 4
+polygon = PackedVector2Array(832, 420, 736, 420, 736, 412, 832, 412)
+
+[node name="Paint_Drops" type="Node2D" parent="Node2D" index="7"]
+light_mask = 4
+visibility_layer = 4
+
+[node name="Glass_Bowl" parent="Node2D" index="8"]
+collision_layer = 65536
+collision_mask = 65536
+
+[node name="Collision" type="CollisionPolygon2D" parent="Node2D/Glass_Bowl" index="2"]
+light_mask = 4
+visibility_layer = 4
+polygon = PackedVector2Array(552, 1240, 560, 1256, 536, 1288, 536, 1344, 592, 1400, 688, 1400, 744, 1344, 744, 1288, 720, 1256, 728, 1240, 712, 1232, 696, 1256, 720, 1288, 720, 1336, 688, 1368, 664, 1376, 616, 1376, 592, 1368, 560, 1336, 560, 1288, 584, 1256, 568, 1232)
+
+[node name="Floor_Areas" type="Node2D" parent="Node2D" index="9"]
+light_mask = 4
+visibility_layer = 4
+
+[node name="Left" type="Area2D" parent="Node2D/Floor_Areas" index="0"]
+light_mask = 4
+visibility_layer = 4
+position = Vector2(419, 1326)
+collision_layer = 0
+collision_mask = 131072
+monitorable = false
+
+[node name="Collision" type="CollisionPolygon2D" parent="Node2D/Floor_Areas/Left" index="0"]
+light_mask = 4
+visibility_layer = 4
+polygon = PackedVector2Array(-83.2, -21.6, 60.8, -21.6, 140.8, 26.4, 140.8, 74.4, 124.8, 106.4, 124.8, 146.4, 28.8, 146.4, -82.3653, 61.6598)
+
+[node name="Right" type="Area2D" parent="Node2D/Floor_Areas" index="1"]
+light_mask = 4
+visibility_layer = 4
+position = Vector2(863, 1326)
+collision_layer = 0
+collision_mask = 131072
+monitorable = false
+
+[node name="Collision" type="CollisionPolygon2D" parent="Node2D/Floor_Areas/Right" index="0"]
+light_mask = 4
+visibility_layer = 4
+polygon = PackedVector2Array(81.2, -21.6, -62.8, -21.6, -142.8, 26.4, -142.8, 74.4, -126.8, 106.4, -126.8, 146.4, -30.8, 146.4, 83.4472, 62.2217)
+
+[node name="Glass_Bowl" type="Area2D" parent="Node2D/Floor_Areas" index="2"]
+light_mask = 4
+visibility_layer = 4
+position = Vector2(640, 1415)
+collision_layer = 0
+collision_mask = 131072
+monitorable = false
+
+[node name="Collision" type="CollisionPolygon2D" parent="Node2D/Floor_Areas/Glass_Bowl" index="0"]
+light_mask = 4
+visibility_layer = 4
+z_index = 2
+polygon = PackedVector2Array(-72, -7, -88, 17, -88, 65, -72, 89, -40, 113, 0, 121, 40, 113, 72, 89, 88, 65, 88, 17, 72, -7)
+
+[node name="Check_End_Timer" type="Timer" parent="Node2D" index="10"]
+
+[node name="Force_End_Timer" type="Timer" parent="Node2D" index="11"]
+one_shot = true

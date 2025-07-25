@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://r4ypmhfmxla6"]
+
+[ext_resource type="Resource" uid="uid://c3f62u3cx0odw" path="res://Global_Resources/Databases/Battle_System/Enemies/Sick_Apprentice_1/Stats.tres" id="1_xhht1"]
+[ext_resource type="Script" uid="uid://cno1hrwjlms2y" path="res://Global_Resources/Databases/Battle_System/Enemies/Enemy_Data.gd" id="2"]
+
+[resource]
+script = ExtResource("2")
+_e_key = "Sick_Apprentice_1"
+_e_stats = ExtResource("1_xhht1")
+_e_actions = {
+"Commands": [],
+"Specials": []
+}

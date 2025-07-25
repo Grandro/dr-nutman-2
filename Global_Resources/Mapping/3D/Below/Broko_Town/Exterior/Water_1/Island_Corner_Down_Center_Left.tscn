@@ -1,0 +1,39 @@
+[gd_scene load_steps=9 format=3 uid="uid://dn1px8n02tkd2"]
+
+[ext_resource type="PackedScene" uid="uid://c7l6gl3pndhn7" path="res://Global_Resources/Mapping/3D/Plane/Plane_Base.tscn" id="1_iing1"]
+[ext_resource type="Texture2D" uid="uid://be7jmv8gjllco" path="res://Global_Resources/Mapping/Sprites/Below/Broko_Town/Exterior/Water_1/Island_Top_Corner_Down_Center_Left.png" id="2_ld5sf"]
+[ext_resource type="Texture2D" uid="uid://du1ph3ym3niyp" path="res://Global_Resources/Mapping/Sprites/Below/Broko_Town/Exterior/Water_1/Side_Down_Center.png" id="3_whhtq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yktwu"]
+albedo_texture = ExtResource("2_ld5sf")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_phlgj"]
+material = SubResource("StandardMaterial3D_yktwu")
+size = Vector2(1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6foqj"]
+albedo_texture = ExtResource("3_whhtq")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_px27q"]
+material = SubResource("StandardMaterial3D_6foqj")
+size = Vector2(1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_anrh8"]
+
+[node name="Island_1" type="Node3D"]
+
+[node name="Top" parent="." groups=["NavMesh_Main"] instance=ExtResource("1_iing1")]
+mesh = SubResource("PlaneMesh_phlgj")
+
+[node name="Back" parent="." instance=ExtResource("1_iing1")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -0.5, -0.5)
+mesh = SubResource("PlaneMesh_px27q")
+
+[node name="Static" type="StaticBody3D" parent="."]
+collision_mask = 0
+
+[node name="Collision" type="CollisionShape3D" parent="Static"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_anrh8")

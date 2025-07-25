@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://clntjiacflkh7"]
+
+[ext_resource type="PackedScene" uid="uid://cnofm24wdw2e3" path="res://Global_Scenes/Progress/Objects/NPC_Base.tscn" id="1_ww1b4"]
+
+[node name="Buffin_4" instance=ExtResource("1_ww1b4")]

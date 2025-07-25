@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://rjec7v7j244o"]
+[gd_scene load_steps=4 format=3 uid="uid://rjec7v7j244o"]
 
 [ext_resource type="Script" uid="uid://cnnahinyneu4r" path="res://Global_Scenes/Battle_System/Battle_SV/Encounters/Enemy_Select/Scripts/Enemy_Select.gd" id="1_5jnh5"]
+[ext_resource type="AudioStream" uid="uid://c7uqxd6tigh2j" path="res://Global_Resources/Audio/SFX/UI/Back_1.wav" id="3_v1fup"]
+[ext_resource type="AudioStream" uid="uid://dkma2f2bd2c8n" path="res://Global_Resources/Audio/SFX/UI/Ok_1.wav" id="4_j45s4"]
 
 [node name="Enemy_Select" type="Node"]
 script = ExtResource("1_5jnh5")
@@ -8,7 +10,9 @@ script = ExtResource("1_5jnh5")
 [node name="Audio" type="Node" parent="."]
 
 [node name="OK" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("4_j45s4")
 bus = &"SFX"
 
 [node name="Cancel" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("3_v1fup")
 bus = &"SFX"

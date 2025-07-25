@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://i6fcoygjfmvk"]
 
 [ext_resource type="Script" uid="uid://cjm2l0uvl1o0q" path="res://Global_Scenes/Debug/Scenes/Image_Select/Scripts/Image_Select.gd" id="1_m5iee"]
-[ext_resource type="Texture2D" uid="uid://co1nae4x13f42" path="res://Global_Resources/Sprites/Icons/Background.png" id="2_7ykak"]
+[ext_resource type="Texture2D" uid="uid://hmy41amlx8qx" path="res://Scenes/NutOS/Content/Desktop/Apps/Settings/Sprites/Background.png" id="2_7ykak"]
 [ext_resource type="Texture2D" uid="uid://dahqj21e336wb" path="res://Global_Resources/Sprites/UI/Revert.png" id="3_e2jcq"]
 [ext_resource type="Theme" uid="uid://pr4yljlh62sp" path="res://Global_Resources/Themes/Debug/Debug.tres" id="4_w33k0"]
 
@@ -53,7 +53,7 @@ stretch_mode = 5
 
 [node name="Anims" type="AnimationPlayer" parent="Revert"]
 libraries = {
-&"": SubResource("AnimationLibrary_vyhyy")
+"": SubResource("AnimationLibrary_vyhyy")
 }
 
 [node name="File" type="FileDialog" parent="."]

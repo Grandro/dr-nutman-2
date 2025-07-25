@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfekqv4ro4j35"]
+
+[ext_resource type="PackedScene" uid="uid://cvu2fkvx7alpk" path="res://Scenes/Mini_Games/Color_Selection/Game/Game_Base.tscn" id="1_f34n2"]
+[ext_resource type="Script" uid="uid://d0an4oswkc44x" path="res://Scenes/Mini_Games/Color_Selection/Game/Scripts/Game_Preview.gd" id="2_k1ysx"]
+
+[node name="Game_Preview" instance=ExtResource("1_f34n2")]
+script = ExtResource("2_k1ysx")
+
+[node name="Next_Color" parent="Canvas_2" index="0"]
+offset_left = -392.0
+
+[node name="Paint" parent="Canvas_2/Next_Color/HBox" index="1"]
+visible = false
+
+[node name="Camera" parent="Node2D" index="1"]
+position = Vector2(640, 1224)
+editor_draw_limits = true

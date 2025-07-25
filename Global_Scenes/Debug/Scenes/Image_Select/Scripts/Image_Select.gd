@@ -3,7 +3,7 @@ extends HBoxContainer
 signal file_path_changed(p_file_path)
 
 @export_dir var _e_curr_dir: String = "res://Global_Resources/Sprites/Mini_Busts/"
-@export var _e_texture_none: Texture2D = preload("res://Global_Resources/Sprites/Icons/Background.png")
+@export var _e_texture_none: Texture2D = preload("res://Scenes/NutOS/Content/Desktop/Apps/Settings/Sprites/Background.png")
 
 @onready var _a_Image = get_node("Image")
 @onready var _a_Revert = get_node("Revert")

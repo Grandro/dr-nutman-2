@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://3ijqr30txqh"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lmsjh"]
+
+[node name="Encounter_Base" type="Node3D"]
+
+[node name="Area" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 0
+monitorable = false
+
+[node name="Collision" type="CollisionShape3D" parent="Area"]
+shape = SubResource("BoxShape3D_lmsjh")
+
+[node name="Respawn" type="Timer" parent="."]

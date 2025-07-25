@@ -1,7 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://bc8yplosqfyv3"]
+[gd_scene load_steps=15 format=3 uid="uid://bc8yplosqfyv3"]
 
 [ext_resource type="Script" uid="uid://coc14p7ltonyu" path="res://Global_Scenes/Main_Menu/Sub_Menus/Party/Selection/Scripts/Entry.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://bqlbuk86mwiyw" path="res://Global_Scenes/Main_Menu/Sub_Menus/Party/Selection/Sprites/Frame.png" id="2"]
+[ext_resource type="Theme" uid="uid://budcfl16xj2tt" path="res://Global_Resources/Themes/Default/Default.tres" id="2_n40rh"]
+[ext_resource type="Texture2D" uid="uid://dbo0a6w212p5f" path="res://Global_Scenes/Main_Menu/Sub_Menus/Party/Selection/Sprites/Dr_Nutman.png" id="3"]
+[ext_resource type="FontFile" uid="uid://bc3cxhu6w0ljt" path="res://Global_Resources/Fonts/ProFont.ttf" id="4"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_llddd"]
 
@@ -78,6 +81,7 @@ _data = {
 }
 
 [sub_resource type="LabelSettings" id="LabelSettings_kt4fi"]
+font = ExtResource("4")
 font_size = 46
 
 [node name="Entry" type="MarginContainer"]
@@ -114,11 +118,13 @@ offset_right = 256.0
 offset_bottom = 592.0
 pivot_offset = Vector2(128, 360)
 mouse_filter = 2
+theme = ExtResource("2_n40rh")
+texture = ExtResource("3")
 expand_mode = 1
 
 [node name="Anims" type="AnimationPlayer" parent="Anchor/Image"]
 libraries = {
-&"": SubResource("AnimationLibrary_63nhx")
+"": SubResource("AnimationLibrary_63nhx")
 }
 
 [node name="Frame" type="NinePatchRect" parent="Anchor/Image"]
@@ -141,7 +147,7 @@ offset_top = 460.0
 offset_right = 256.0
 offset_bottom = 592.0
 size_flags_vertical = 10
-text = "Name"
+text = "Dr. Nutman"
 label_settings = SubResource("LabelSettings_kt4fi")
 horizontal_alignment = 1
 vertical_alignment = 1

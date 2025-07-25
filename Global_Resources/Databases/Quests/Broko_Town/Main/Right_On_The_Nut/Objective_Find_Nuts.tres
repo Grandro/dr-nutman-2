@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://c3ryonjymvjlk"]
+
+[ext_resource type="Script" uid="uid://df2f6s4xkip4l" path="res://Global_Resources/Databases/Quests/Objective_Int_Data.gd" id="1_v3jsd"]
+
+[resource]
+script = ExtResource("1_v3jsd")
+_e_target_value = 4
+_e_type = "Int"
+_e_desc = "PROGRESS_QUESTS_BROKO_TOWN_1_MAIN_RIGHT_ON_THE_NUT_OBJECTIVE_FIND_NUTS"

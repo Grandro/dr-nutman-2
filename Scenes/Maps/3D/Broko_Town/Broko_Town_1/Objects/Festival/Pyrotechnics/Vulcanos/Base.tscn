@@ -1,0 +1,51 @@
+[gd_scene load_steps=9 format=3 uid="uid://biqgl7lbdr53y"]
+
+[ext_resource type="Script" uid="uid://u2h51f0r2vch" path="res://Scenes/Object/Scripts/Static3D_Object.gd" id="1_8e8a1"]
+[ext_resource type="PackedScene" uid="uid://bblmb8yfchyxr" path="res://Scenes/Object/Comps/3D/Display.tscn" id="1_uhtt7"]
+[ext_resource type="Texture2D" uid="uid://bajn6wvwabhln" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Objects/Festival/Pyrotechnics/Vulcanos/Sprites/1_Spritesheet.png" id="2_vheuj"]
+[ext_resource type="PackedScene" uid="uid://dsp0njc065uev" path="res://Scenes/Object/Comps/3D/Collision_Shape.tscn" id="3_g1vs5"]
+[ext_resource type="PackedScene" uid="uid://nr4813v0r2dg" path="res://Scenes/Object/Comps/3D/Interactions/Interactions.tscn" id="4_m13wu"]
+[ext_resource type="PackedScene" uid="uid://omsbdulg45pv" path="res://Scenes/Object/Comps/3D/Popup.tscn" id="6_4oix0"]
+[ext_resource type="PackedScene" uid="uid://fnej1f64wfc2" path="res://Scenes/Object/Comps/3D/Nav_Obstacle.tscn" id="7_2ofru"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j2s1f"]
+size = Vector3(0.3, 0.5, 0.3)
+
+[node name="Base" type="StaticBody3D" groups=["Object"]]
+collision_layer = 8
+collision_mask = 8
+script = ExtResource("1_8e8a1")
+
+[node name="Display" parent="." instance=ExtResource("1_uhtt7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+texture = ExtResource("2_vheuj")
+
+[node name="Collision" parent="." instance=ExtResource("3_g1vs5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+shape = SubResource("BoxShape3D_j2s1f")
+
+[node name="Interactions" parent="." instance=ExtResource("4_m13wu")]
+
+[node name="1" parent="Interactions" index="0"]
+_e_popup_pos = Vector3(0, 0.95, 0.02)
+
+[node name="Particles" type="GPUParticles3D" parent="."]
+layers = 4
+amount = 100
+lifetime = 2.5
+explosiveness = 0.8
+visibility_aabb = AABB(-2.5, 0, -2.5, 5, 5, 5)
+local_coords = true
+
+[node name="Popup" parent="." instance=ExtResource("6_4oix0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.95, 0.02)
+
+[node name="Nav_Obstacle" parent="." groups=["NavMesh_Main"] instance=ExtResource("7_2ofru")]
+height = 0.6
+vertices = PackedVector3Array(0.2, 0, -0.2, 0.2, 0, 0.2, -0.2, 0, 0.2, -0.2, 0, -0.2)
+affect_navigation_mesh = true
+avoidance_enabled = false
+
+[editable path="Interactions"]
+[editable path="Interactions/1"]
+[editable path="Popup"]

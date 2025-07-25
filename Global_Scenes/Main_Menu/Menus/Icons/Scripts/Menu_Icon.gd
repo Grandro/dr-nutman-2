@@ -18,7 +18,8 @@ func _ready():
 	_a_Image.focus_entered.connect(_on_Image_focus_entered)
 	_a_Image.focus_exited.connect(_on_Image_focus_exited)
 	
-	_a_Outline_Shader.set_shader_parameter("line_color", Color.WHITE)
+	var fav_color = Global_Data.get_fav_color()
+	_a_Outline_Shader.set_shader_parameter("line_color", fav_color)
 	_a_Outline_Shader.set_shader_parameter("line_thickness", 2)
 	_a_Desc.set_text(tr(_a_BASE_LOC_ID % _e_key.to_upper()))
 

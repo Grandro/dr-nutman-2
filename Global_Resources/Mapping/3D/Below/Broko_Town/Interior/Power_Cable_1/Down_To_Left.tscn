@@ -1,0 +1,62 @@
+[gd_scene load_steps=13 format=3 uid="uid://nhgpn35uqpww"]
+
+[ext_resource type="PackedScene" uid="uid://dbpu5bl4b3mv7" path="res://Global_Resources/Mapping/3D/Below/Broko_Town/Interior/Power_Cable_1/Power_Cable.tscn" id="1_05x6e"]
+[ext_resource type="PackedScene" uid="uid://66v385vh2vqh" path="res://Global_Resources/Mapping/3D/Below/Broko_Town/Interior/Power_Cable_1/Power_Cable_Stripe.tscn" id="2_5le1f"]
+[ext_resource type="Shader" uid="uid://c5qli6h5oflag" path="res://Global_Resources/Materials/3D/Shaders/VTint_Down_To_Up.tres" id="3_qi1pi"]
+[ext_resource type="Texture2D" uid="uid://bp562rnpkmfxg" path="res://Global_Resources/Mapping/Sprites/Below/Broko_Town/Interior/Power_Cable_1/Down_To_Left_1.png" id="4_qi1pi"]
+[ext_resource type="Texture2D" uid="uid://c4ixdqd71x7nd" path="res://Global_Resources/Mapping/Sprites/Below/Broko_Town/Interior/Power_Cable_1/Down_To_Left_2.png" id="5_fl7fq"]
+[ext_resource type="Shader" uid="uid://dnj5prety2pw5" path="res://Global_Resources/Materials/3D/Shaders/HTint_Right_To_Left.tres" id="5_jmoj7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fl7fq"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_qi1pi")
+shader_parameter/sprite_texture = ExtResource("4_qi1pi")
+shader_parameter/progress = 0.0
+shader_parameter/color = Vector3(0.13, 0.91, 0.06)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jmoj7"]
+resource_local_to_scene = true
+next_pass = SubResource("ShaderMaterial_fl7fq")
+transparency = 1
+albedo_color = Color(1, 1, 1, 0)
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_2krmg"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_jmoj7")
+size = Vector2(0.1, 0.3)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jmoj7"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("5_jmoj7")
+shader_parameter/sprite_texture = ExtResource("5_fl7fq")
+shader_parameter/progress = 0.0
+shader_parameter/color = Vector3(0.13, 0.91, 0.06)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2krmg"]
+resource_local_to_scene = true
+next_pass = SubResource("ShaderMaterial_jmoj7")
+transparency = 1
+albedo_color = Color(1, 1, 1, 0)
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_65e6s"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_2krmg")
+size = Vector2(0.22, 0.1)
+
+[node name="Power_Cable_1" instance=ExtResource("1_05x6e")]
+
+[node name="1" parent="Parts" index="0" instance=ExtResource("2_5le1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.1)
+mesh = SubResource("PlaneMesh_2krmg")
+skeleton = NodePath("../..")
+_e_base_size = Vector3(0.1, 1, 0.3)
+
+[node name="2" parent="Parts" index="1" instance=ExtResource("2_5le1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14, 0, -7.45058e-09)
+mesh = SubResource("PlaneMesh_65e6s")
+skeleton = NodePath("../..")
+_e_base_size = Vector3(0.22, 1, 0.1)

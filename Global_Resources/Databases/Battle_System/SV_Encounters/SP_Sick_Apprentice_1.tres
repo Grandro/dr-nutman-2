@@ -1,0 +1,7 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://7b5pqy2lua5h"]
+
+[ext_resource type="Script" uid="uid://cn2wadtidvilj" path="res://Global_Resources/Databases/Battle_System/SV_Encounters/SV_Encounter_Data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+_e_path = "res://Global_Scenes/Battle_System/Battle_SV/Encounters/Special/SP_Sick_Apprentice_1/SP_Sick_Apprentice_1.tscn"

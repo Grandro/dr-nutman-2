@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="StatusEffectStat" load_steps=2 format=3 uid="uid://78w334pmvado"]
+
+[ext_resource type="Script" uid="uid://bqkhu2ds0esfy" path="res://Global_Resources/Databases/Battle_System/Status/Effect/Status_Effect_Stat.gd" id="1_5tiex"]
+
+[resource]
+script = ExtResource("1_5tiex")
+_e_stat = "ATK"
+_e_mult = 2.0
+_e_add = 0.0

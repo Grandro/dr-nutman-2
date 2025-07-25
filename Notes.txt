@@ -1,0 +1,52 @@
+Godot Bugs:
+- Viewport Texture Viewport Path (Pull Request must be reviewed/merged)
+
+Godot Proposals:
+- Add signals for when Camera2D `active` changed / Camera3D `current` changed (Example: Camera_Map.gd)
+
+Schmänn:
+- Option Tabs not being translated
+- Lesen not being translated
+- Fokusierter Tab hellere Farbe als Panel
+- BGM-Lautstärke anpassen
+- Status von Charakteren abgeschnitten je nach Bildschirmgröße
+- Partikel tauchen nochmal auf bei Lehrling reinfliegen
+- Color Selection momentane Farbe anzeigen
+- Status Menü erinnern welcher Charakter offen war beim zurück gehen
+- Größer/Kleiner von Auswahl in Status Menü
+- Dr. Nutman sollte mittig schlafen damit Arm nicht raushängt
+- Licht anmachen huge lag
+- Party-Hut ausrüsten fügt added einen Party-Hut zum Inventar
+- Quest-Menü wird zu groß wenn man Quest anpinnt
+
+
+Problems:
+- Cutscene System keeps focus after being closed
+
+- Saving/Loading crash (While cutscene running ._.)
+- Buffin Assistant no dialogue
+- Plants no purpose
+- Inventory Tab Buttons hover theme broken
+- Broko Town Terrain
+
+
+Battle System:
+	Was macht Spaß?
+	- Fast-paced (Macht Kontern/Ausweichen zu einer Art Quick Time Event)
+	- Special Attacks mit Quick Time Events
+
+	Attack Timing:
+	- Animation beim Ausholen viel langsamer bis final ausgeholt, braucht mehr Frames, mehr wie Bowser Hieb https://youtu.be/HWemchXaWyc?si=BaHFOEu8I4YVArPj&t=165
+	
+	Player Actions:
+	- Springen
+	- Ducken
+	- Schilden (Wenn Schild ausgerüstet)
+
+
+"Geniale" Ideen:
+- Elektrik DéLère im Geisterhaus hat viele Taschenlampen und viele Batterien, mit seinem Ladungsmessgerät entlädt er die Batterien immer ohne es zu merken.
+Spieler kann Batterieren sammeln und sie ihm geben, er sagt dann immer: "Oh nein, iste leider leer."
+- Healitem: Eis am Stiel < Eis an zwei Stielen < Eis an drei Stielen
+- Sauberer-Zauberer
+- Minigame: Film gucken, Augen/Ohren je nach Alter/Trigger zuhalten

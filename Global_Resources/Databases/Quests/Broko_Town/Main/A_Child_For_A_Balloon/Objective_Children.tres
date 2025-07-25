@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://conw7wrmgowak"]
+
+[ext_resource type="Script" uid="uid://df2f6s4xkip4l" path="res://Global_Resources/Databases/Quests/Objective_Int_Data.gd" id="1_ywxyu"]
+
+[resource]
+script = ExtResource("1_ywxyu")
+_e_target_value = 7
+_e_type = "Int"
+_e_desc = "PROGRESS_QUESTS_BROKO_TOWN_1_MAIN_A_CHILD_FOR_A_BALLOON_OBJECTIVE_CHILDREN"

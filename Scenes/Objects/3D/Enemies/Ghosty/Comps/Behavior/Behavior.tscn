@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://cf8qsc1jiuvt8"]
+
+[ext_resource type="PackedScene" uid="uid://c205mm8y7ppc6" path="res://Scenes/Objects/3D/Enemies/Comps/Behavior/Behavior_Base.tscn" id="1_mu55p"]
+[ext_resource type="Script" uid="uid://bt3uk8m0r6d0i" path="res://Scenes/Objects/3D/Enemies/Ghosty/Comps/Behavior/Scripts/Behavior.gd" id="2_2gnph"]
+
+[node name="Behavior" instance=ExtResource("1_mu55p")]
+script = ExtResource("2_2gnph")

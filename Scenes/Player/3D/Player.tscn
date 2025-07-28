@@ -207,7 +207,6 @@ layers = 2
 texture = ExtResource("3_coxvo")
 hframes = 8
 vframes = 19
-frame = 84
 
 [node name="Collision" parent="." instance=ExtResource("8_n8hoy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
@@ -308,6 +307,7 @@ visible = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4, 0.02)
 
 [node name="Nav_Obstacle" parent="." instance=ExtResource("23_ij3ek")]
+visible = false
 radius = 0.5
 
 [node name="Anims" parent="." instance=ExtResource("15_8fhd3")]

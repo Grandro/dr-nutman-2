@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://mnmcs366drxn"]
+
+[ext_resource type="PackedScene" uid="uid://dvcr3pbdmde27" path="res://Scenes/Objects/3D/Enemies/Comps/Behavior/States/State_Base.tscn" id="1_7rb0q"]
+[ext_resource type="Script" uid="uid://chlitx0uxylxn" path="res://Scenes/Objects/3D/Enemies/Citrin/Comps/Behavior/States/Scripts/State_Socialize.gd" id="2_upvyu"]
+
+[node name="Socialize" instance=ExtResource("1_7rb0q")]
+script = ExtResource("2_upvyu")
+_e_CD = 8.0

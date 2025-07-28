@@ -4914,27 +4914,9 @@ libraries = {
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.5, 0, 45)
 metadata/_edit_group_ = true
 
-[node name="Display" parent="Objects/Citrin_1" index="0"]
-frame = 8
-
-[node name="Behaviour" parent="Objects/Citrin_1" index="3" node_paths=PackedStringArray("_e_stay_area")]
-_e_stay_area = NodePath("../../../Enemy_Stay_Areas/Citrins_1")
-
-[node name="Movement" parent="Objects/Citrin_1" index="5"]
-_e_reset_dir = "Down"
-
 [node name="Citrin_2" parent="Objects" index="5" instance=ExtResource("8_kq6ru")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5, 0, 57.5)
 metadata/_edit_group_ = true
-
-[node name="Display" parent="Objects/Citrin_2" index="0"]
-frame = 57
-
-[node name="Behaviour" parent="Objects/Citrin_2" index="3" node_paths=PackedStringArray("_e_stay_area")]
-_e_stay_area = NodePath("../../../Enemy_Stay_Areas/Citrins_2")
-
-[node name="Movement" parent="Objects/Citrin_2" index="5"]
-_e_reset_dir = "Down"
 
 [node name="Chest_1" parent="Objects" index="6" instance=ExtResource("80_drm3x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.5, 7, 23)
@@ -5051,7 +5033,7 @@ transform = Transform3D(0.707107, 0.5, -0.5, 0, 0.707107, 0.707107, 0.707107, -0
 shadow_enabled = true
 shadow_opacity = 0.5
 
-[node name="Env" parent="." index="7"]
+[node name="Env" parent="." index="6"]
 environment = SubResource("Environment_fmsr6")
 
 [editable path="Terrain/Areas/Dirt"]
@@ -5078,18 +5060,6 @@ environment = SubResource("Environment_fmsr6")
 [editable path="Terrain/Areas/Hill_1/4"]
 [editable path="Terrain/Areas/Hill_1/5"]
 [editable path="Objects/Player/Balloons"]
-[editable path="Objects/Citrin_1"]
-[editable path="Objects/Citrin_1/Battle_Starter/Neutral"]
-[editable path="Objects/Citrin_1/Battle_Starter/Party_Member"]
-[editable path="Objects/Citrin_1/Movement/Terrain"]
-[editable path="Objects/Citrin_1/Movement/Terrain/Areas/Left_Foot"]
-[editable path="Objects/Citrin_1/Movement/Terrain/Areas/Right_Foot"]
-[editable path="Objects/Citrin_2"]
-[editable path="Objects/Citrin_2/Battle_Starter/Neutral"]
-[editable path="Objects/Citrin_2/Battle_Starter/Party_Member"]
-[editable path="Objects/Citrin_2/Movement/Terrain"]
-[editable path="Objects/Citrin_2/Movement/Terrain/Areas/Left_Foot"]
-[editable path="Objects/Citrin_2/Movement/Terrain/Areas/Right_Foot"]
 [editable path="Objects/Teleporters/Down_Right"]
 [editable path="Objects/Teleporters/Down_Right/Interactions"]
 [editable path="Objects/Teleporters/Down_Right/Interactions/1"]

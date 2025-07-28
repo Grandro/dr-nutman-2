@@ -16,7 +16,6 @@ func _init_data():
 	
 	var path = _e_data["Debug"]["Path"]
 	_e_data["Debug"]["Data"] = Data_Parser.load_var_data(path)
-	print(_e_data["Debug"]["Data"]["Stater"]["Map"].keys())
 	
 	#_fix_entry_lists_data()
 	#_fix_cutscenes_data()

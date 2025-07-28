@@ -54,7 +54,7 @@ func _on_Stairway_2_teleported():
 		_a_Canvas_1.set_rotation_degrees(Vector3(0.0, 0.0, 0.0))
 	
 	if !_a_puzzle_2_solved:
-		_a_Canvas_2.set_position(Vector3(44.5, 0.0, 17.5))
+		_a_Canvas_2.set_position(Vector3(44.0, 0.0, 17.5))
 		_a_Canvas_2.set_rotation_degrees(Vector3(0.0, 0.0, 0.0))
 
 func _on_Pressure_Plate_pushed(p_power_cable):

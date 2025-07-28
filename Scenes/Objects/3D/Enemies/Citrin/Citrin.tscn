@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://lxowjfoc30h8"]
+[gd_scene load_steps=57 format=3 uid="uid://lxowjfoc30h8"]
 
 [ext_resource type="PackedScene" uid="uid://osrm8oliivfv" path="res://Scenes/Objects/3D/Enemies/Enemy_Base.tscn" id="1_v73b1"]
 [ext_resource type="Texture2D" uid="uid://qpm43sckowjd" path="res://Global_Resources/Sprites/Objects/Enemies/Citrin/Spritesheet.png" id="2_xhpnv"]
@@ -7,7 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://boh1rwcj5rgwf" path="res://Scenes/Object/Comps/States.tscn" id="3_spdvv"]
 [ext_resource type="PackedScene" uid="uid://dllj5lbxwqy17" path="res://Scenes/Pausable_Audio/3D/Pausable_Audio.tscn" id="4_3jwx5"]
 [ext_resource type="Animation" uid="uid://bdnrrb0h88vgs" path="res://Scenes/Objects/3D/Enemies/Citrin/Anims/Terrain/Global/Cry_Down.res" id="4_d2vk4"]
-[ext_resource type="Script" uid="uid://b2nlmpmy8cij3" path="res://Scenes/Objects/3D/Enemies/Comps/Scripts/Behaviour.gd" id="4_uljfe"]
+[ext_resource type="PackedScene" uid="uid://b01cj3ge0u3va" path="res://Scenes/Objects/3D/Enemies/Citrin/Comps/Behavior/Behavior.tscn" id="5_3jwx5"]
+[ext_resource type="PackedScene" uid="uid://dsp0njc065uev" path="res://Scenes/Object/Comps/3D/Collision_Shape.tscn" id="5_d2vk4"]
 [ext_resource type="Animation" uid="uid://f67bdriogdr5" path="res://Scenes/Objects/3D/Enemies/Citrin/Anims/Terrain/Global/Cry_Left.res" id="5_lv2oi"]
 [ext_resource type="Animation" uid="uid://bdlxspr8wh735" path="res://Scenes/Objects/3D/Enemies/Citrin/Anims/Terrain/Global/Cry_Right.res" id="6_pnn3q"]
 [ext_resource type="Animation" uid="uid://c0lksrw7mm8db" path="res://Scenes/Objects/3D/Enemies/Citrin/Anims/Terrain/Global/Cry_Up.res" id="7_5khfw"]
@@ -28,7 +29,6 @@
 [ext_resource type="Animation" uid="uid://c30o787w38c7w" path="res://Scenes/Objects/3D/Enemies/Citrin/Anims/Terrain/Global/Walk_Left.res" id="21_67dcy"]
 [ext_resource type="Animation" uid="uid://bjp62omrrrhce" path="res://Scenes/Objects/3D/Enemies/Citrin/Anims/Terrain/Global/Walk_Right.res" id="22_b80xq"]
 [ext_resource type="Animation" uid="uid://p73sefm8dxrk" path="res://Scenes/Objects/3D/Enemies/Citrin/Anims/Terrain/Global/Walk_Up.res" id="23_8173w"]
-[ext_resource type="PackedScene" uid="uid://b7h012x035k2o" path="res://Scenes/Objects/3D/Enemies/Comps/Battle_Starter/Battle_Starter.tscn" id="27_ncnct"]
 [ext_resource type="PackedScene" uid="uid://bqd5wag3i55mk" path="res://Scenes/Objects/3D/Enemies/Comps/Battle_Starter/Area.tscn" id="28_devj6"]
 [ext_resource type="Animation" uid="uid://cumvv4j0ntb8a" path="res://Scenes/Objects/3D/Enemies/Citrin/Anims/Cry_Down.res" id="31_3jwx5"]
 [ext_resource type="Animation" uid="uid://cqyebasdlatmn" path="res://Scenes/Objects/3D/Enemies/Citrin/Anims/Cry_Left.res" id="32_d2vk4"]
@@ -54,18 +54,6 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_d2vk4"]
 radius = 0.4
 height = 1.6
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_hwgs3"]
-size = Vector3(7, 2.5, 7)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_iqsdt"]
-size = Vector3(5, 2.5, 5)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_prsmk"]
-size = Vector3(1.5, 1, 1.5)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_wd6gt"]
-size = Vector3(1.5, 0.5, 1.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_v5xqh"]
 size = Vector3(0.15, 0.1, 0.15)
@@ -93,6 +81,11 @@ _data = {
 &"Walk_Right": ExtResource("22_b80xq"),
 &"Walk_Up": ExtResource("23_8173w")
 }
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3jwx5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d2vk4"]
+size = Vector3(1, 0.2, 1)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8173w"]
 _data = {
@@ -125,94 +118,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.14, 0)
 texture = ExtResource("2_xhpnv")
 hframes = 8
 vframes = 9
-frame = 36
+frame = 37
 
-[node name="Collision" parent="." index="1"]
+[node name="Collision" parent="." index="1" instance=ExtResource("5_d2vk4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
 shape = SubResource("CapsuleShape3D_d2vk4")
-
-[node name="Audio" parent="." index="2" instance=ExtResource("3_13aw5")]
-
-[node name="Cry" parent="Audio" index="0" instance=ExtResource("4_3jwx5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
-bus = &"SFX"
-
-[node name="Shoot" parent="Audio" index="2" instance=ExtResource("4_3jwx5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
-bus = &"SFX"
-
-[node name="Behaviour" type="Node3D" parent="." index="3" groups=["Comp"]]
-script = ExtResource("4_uljfe")
-
-[node name="Debug_State" type="Label3D" parent="Behaviour" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
-visible = false
-layers = 4
-font_size = 72
-
-[node name="Debug_Persist" type="Label3D" parent="Behaviour" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3, 0)
-visible = false
-layers = 4
-font_size = 72
-
-[node name="Action_CD" type="Timer" parent="Behaviour" index="2"]
-
-[node name="Idle_CD" type="Timer" parent="Behaviour" index="3"]
-one_shot = true
-
-[node name="Citrin_Ball_CD" type="Timer" parent="Behaviour" index="4"]
-one_shot = true
-
-[node name="Target_Range" type="Area3D" parent="Behaviour" index="5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
-collision_layer = 0
-collision_mask = 4
-monitoring = false
-monitorable = false
-metadata/_edit_group_ = true
-
-[node name="Collision" type="CollisionShape3D" parent="Behaviour/Target_Range" index="0"]
-shape = SubResource("BoxShape3D_hwgs3")
-
-[node name="Enemy_Range" type="Area3D" parent="Behaviour" index="6"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
-collision_layer = 0
-collision_mask = 64
-monitoring = false
-monitorable = false
-metadata/_edit_group_ = true
-
-[node name="Collision" type="CollisionShape3D" parent="Behaviour/Enemy_Range" index="0"]
-shape = SubResource("BoxShape3D_iqsdt")
-
-[node name="Citrin_Balls" type="Node3D" parent="Behaviour" index="7"]
-
-[node name="Pos" type="Marker3D" parent="Behaviour/Citrin_Balls" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01, 0.36, 0.01)
-
-[node name="Battle_Starter" parent="." index="4" instance=ExtResource("27_ncnct")]
-_e_enc_key = "Citrin_Main"
-_e_amount = {
-1: 1,
-2: 0,
-3: 0,
-4: 0
-}
-
-[node name="Neutral" parent="Battle_Starter" index="0" instance=ExtResource("28_devj6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-
-[node name="Collision" parent="Battle_Starter/Neutral" index="0"]
-shape = SubResource("BoxShape3D_prsmk")
-
-[node name="Party_Member" parent="Battle_Starter" index="1" instance=ExtResource("28_devj6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.45, 0)
-collision_mask = 16
-_e_res = 0
-
-[node name="Collision" parent="Battle_Starter/Party_Member" index="0"]
-shape = SubResource("BoxShape3D_wd6gt")
 
 [node name="Left_Foot" parent="Movement/Terrain/Areas" index="0" instance=ExtResource("3_d2vk4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17, 0, 0)
@@ -231,19 +141,58 @@ libraries = {
 &"": SubResource("AnimationLibrary_denst")
 }
 
-[node name="States" parent="." index="7" instance=ExtResource("3_spdvv")]
+[node name="Audio" parent="." index="3" instance=ExtResource("3_13aw5")]
+
+[node name="Cry" parent="Audio" index="0" instance=ExtResource("4_3jwx5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+bus = &"SFX"
+
+[node name="Shoot" parent="Audio" index="2" instance=ExtResource("4_3jwx5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+bus = &"SFX"
+
+[node name="Behavior" parent="." index="4" instance=ExtResource("5_3jwx5")]
+
+[node name="State_CD" parent="Behavior" index="6"]
+one_shot = false
+
+[node name="Battle_Starter" parent="." index="5"]
+_e_enc_key = "Citrin_Main"
+_e_amount = {
+1: 1,
+2: 0,
+3: 0,
+4: 0
+}
+
+[node name="Neutral" parent="Battle_Starter" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="Collision" parent="Battle_Starter/Neutral" index="0"]
+shape = SubResource("BoxShape3D_3jwx5")
+
+[node name="Party_Member" parent="Battle_Starter" index="1" instance=ExtResource("28_devj6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
+collision_mask = 16
+_e_res = 0
+
+[node name="Collision" parent="Battle_Starter/Party_Member" index="0"]
+shape = SubResource("BoxShape3D_d2vk4")
+
+[node name="States" parent="." index="6" instance=ExtResource("3_spdvv")]
 _e_states = Array[String](["Stop", "Idle", "Walk", "Shoot", "Cry"])
 _e_state = "Idle"
 
-[node name="Reference" parent="." index="8" instance=ExtResource("8_fphre")]
+[node name="Reference" parent="." index="7" instance=ExtResource("8_fphre")]
 
-[node name="Anims" parent="." index="9"]
+[node name="Anims" parent="." index="8"]
 libraries = {
 &"": SubResource("AnimationLibrary_8173w")
 }
 
-[editable path="Battle_Starter/Neutral"]
-[editable path="Battle_Starter/Party_Member"]
 [editable path="Movement/Terrain"]
 [editable path="Movement/Terrain/Areas/Left_Foot"]
 [editable path="Movement/Terrain/Areas/Right_Foot"]
+[editable path="Behavior"]
+[editable path="Battle_Starter/Neutral"]
+[editable path="Battle_Starter/Party_Member"]

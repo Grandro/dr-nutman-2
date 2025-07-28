@@ -1,19 +1,121 @@
-[gd_scene load_steps=9 format=3 uid="uid://cn4livtidiyqn"]
+[gd_scene load_steps=38 format=3 uid="uid://cn4livtidiyqn"]
 
 [ext_resource type="PackedScene" uid="uid://osrm8oliivfv" path="res://Scenes/Objects/3D/Enemies/Enemy_Base.tscn" id="1_2mua1"]
 [ext_resource type="Texture2D" uid="uid://cnflp2be3lbyg" path="res://Global_Resources/Sprites/Objects/Enemies/Ghosty/Spritesheet.png" id="2_cpnii"]
 [ext_resource type="PackedScene" uid="uid://cfdwl620axohy" path="res://Scenes/Object/Comps/3D/Audio.tscn" id="3_e5on6"]
+[ext_resource type="Animation" uid="uid://cckbw862y3dw4" path="res://Scenes/Objects/3D/Enemies/Ghosty/Anims/Terrain/Stop_Down.res" id="4_jy415"]
+[ext_resource type="Animation" uid="uid://csk6wr6cx2mh2" path="res://Scenes/Objects/3D/Enemies/Ghosty/Anims/Terrain/Stop_Left.res" id="5_au8xa"]
+[ext_resource type="Animation" uid="uid://barpp0sclwak2" path="res://Scenes/Objects/3D/Enemies/Ghosty/Anims/Stop_Down.res" id="5_uplfe"]
+[ext_resource type="Animation" uid="uid://c66o6g42ntqyu" path="res://Scenes/Objects/3D/Enemies/Ghosty/Anims/Terrain/Stop_Right.res" id="6_88jbl"]
+[ext_resource type="Animation" uid="uid://fxxnbxoy8p00" path="res://Scenes/Objects/3D/Enemies/Ghosty/Anims/Stop_Left.res" id="6_nb5pv"]
+[ext_resource type="Animation" uid="uid://b0i38yclsfslw" path="res://Scenes/Objects/3D/Enemies/Ghosty/Anims/Stop_Right.res" id="7_4lyxn"]
+[ext_resource type="Animation" uid="uid://cxrvbkk6j4rrf" path="res://Scenes/Objects/3D/Enemies/Ghosty/Anims/Terrain/Stop_Up.res" id="7_agaga"]
+[ext_resource type="Animation" uid="uid://bh5ns7ki0h3ym" path="res://Scenes/Objects/3D/Enemies/Ghosty/Anims/Stop_Up.res" id="8_5ebne"]
+[ext_resource type="Animation" uid="uid://c68mieavgh5l5" path="res://Scenes/Objects/3D/Enemies/Ghosty/Anims/Terrain/Idle_Down.res" id="8_8y6sd"]
 [ext_resource type="PackedScene" uid="uid://b028hrfen5mpa" path="res://Scenes/Object/Comps/3D/Movement/Comps/Terrain/Area.tscn" id="8_ikul1"]
+[ext_resource type="Animation" uid="uid://bcvtdaa4xomq" path="res://Scenes/Objects/3D/Enemies/Ghosty/Anims/Terrain/Idle_Left.res" id="9_4hwbk"]
+[ext_resource type="Animation" uid="uid://b038r5yd4rlww" path="res://Scenes/Objects/3D/Enemies/Ghosty/Anims/Idle_Down.res" id="9_6v72v"]
+[ext_resource type="Animation" uid="uid://btgsbj4dmho2r" path="res://Scenes/Objects/3D/Enemies/Ghosty/Anims/Idle_Left.res" id="10_erecr"]
+[ext_resource type="Animation" uid="uid://ku148iub2tqw" path="res://Scenes/Objects/3D/Enemies/Ghosty/Anims/Terrain/Idle_Right.res" id="10_sp6sv"]
+[ext_resource type="Animation" uid="uid://cvp8d5yqg8sp2" path="res://Scenes/Objects/3D/Enemies/Ghosty/Anims/Terrain/Idle_Up.res" id="11_3356h"]
+[ext_resource type="Animation" uid="uid://12cgrw70vye1" path="res://Scenes/Objects/3D/Enemies/Ghosty/Anims/Idle_Right.res" id="11_d7kdt"]
+[ext_resource type="Animation" uid="uid://dlpn7cpwa2xe6" path="res://Scenes/Objects/3D/Enemies/Ghosty/Anims/Idle_Up.res" id="12_p8x8d"]
+[ext_resource type="Animation" uid="uid://duycu1ss11ktb" path="res://Scenes/Objects/3D/Enemies/Ghosty/Anims/Terrain/Float_Down.res" id="12_smxit"]
+[ext_resource type="Animation" uid="uid://b7op5sivuj4bd" path="res://Scenes/Objects/3D/Enemies/Ghosty/Anims/Float_Down.res" id="13_ds66a"]
+[ext_resource type="Animation" uid="uid://b0bfpgg86pkow" path="res://Scenes/Objects/3D/Enemies/Ghosty/Anims/Terrain/Float_Left.res" id="13_n0ecf"]
+[ext_resource type="Animation" uid="uid://djbgxkrxc13em" path="res://Scenes/Objects/3D/Enemies/Ghosty/Anims/Float_Left.res" id="14_cfqx7"]
+[ext_resource type="Animation" uid="uid://cp7d64o5mt0cc" path="res://Scenes/Objects/3D/Enemies/Ghosty/Anims/Terrain/Float_Right.res" id="14_r1b0m"]
+[ext_resource type="Animation" uid="uid://b3g6mhkicpd5g" path="res://Scenes/Objects/3D/Enemies/Ghosty/Anims/Terrain/Float_Up.res" id="15_edqxe"]
+[ext_resource type="Animation" uid="uid://bygxkm8jixapf" path="res://Scenes/Objects/3D/Enemies/Ghosty/Anims/Float_Right.res" id="15_thtjc"]
+[ext_resource type="Animation" uid="uid://bp02ycfrdh27o" path="res://Scenes/Objects/3D/Enemies/Ghosty/Anims/Float_Up.res" id="16_lhxvm"]
+[ext_resource type="PackedScene" uid="uid://cf8qsc1jiuvt8" path="res://Scenes/Objects/3D/Enemies/Ghosty/Comps/Behavior/Behavior.tscn" id="17_au8xa"]
 [ext_resource type="PackedScene" uid="uid://boh1rwcj5rgwf" path="res://Scenes/Object/Comps/States.tscn" id="29_4x276"]
 [ext_resource type="PackedScene" uid="uid://drpp26gth4snn" path="res://Scenes/Object/Comps/Reference.tscn" id="30_8yh0i"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_d2vk4"]
-radius = 0.4
-height = 1.0
+[sub_resource type="BoxShape3D" id="BoxShape3D_nb5pv"]
+size = Vector3(0.75, 0.1, 0.5)
+
+[sub_resource type="Animation" id="Animation_nb5pv"]
+length = 0.001
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Areas")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0)
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Areas/Body/Veil:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4lyxn"]
+_data = {
+&"Float_Down": ExtResource("12_smxit"),
+&"Float_Left": ExtResource("13_n0ecf"),
+&"Float_Right": ExtResource("14_r1b0m"),
+&"Float_Up": ExtResource("15_edqxe"),
+&"Idle_Down": ExtResource("8_8y6sd"),
+&"Idle_Left": ExtResource("9_4hwbk"),
+&"Idle_Right": ExtResource("10_sp6sv"),
+&"Idle_Up": ExtResource("11_3356h"),
+&"RESET": SubResource("Animation_nb5pv"),
+&"Stop_Down": ExtResource("4_jy415"),
+&"Stop_Left": ExtResource("5_au8xa"),
+&"Stop_Right": ExtResource("6_88jbl"),
+&"Stop_Up": ExtResource("7_agaga")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uplfe"]
+
+[sub_resource type="Animation" id="Animation_b2i8l"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Display:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Display")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 1.14, 0)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cpnii"]
+_data = {
+&"Float_Down": ExtResource("13_ds66a"),
+&"Float_Left": ExtResource("14_cfqx7"),
+&"Float_Right": ExtResource("15_thtjc"),
+&"Float_Up": ExtResource("16_lhxvm"),
+&"Idle_Down": ExtResource("9_6v72v"),
+&"Idle_Left": ExtResource("10_erecr"),
+&"Idle_Right": ExtResource("11_d7kdt"),
+&"Idle_Up": ExtResource("12_p8x8d"),
+&"RESET": SubResource("Animation_b2i8l"),
+&"Stop_Down": ExtResource("5_uplfe"),
+&"Stop_Left": ExtResource("6_nb5pv"),
+&"Stop_Right": ExtResource("7_4lyxn"),
+&"Stop_Up": ExtResource("8_5ebne")
+}
 
-[node name="Citrin" instance=ExtResource("1_2mua1")]
+[node name="Ghosty" instance=ExtResource("1_2mua1")]
 
 [node name="Display" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.14, 0)
@@ -21,25 +123,51 @@ shaded = false
 texture = ExtResource("2_cpnii")
 hframes = 8
 
-[node name="Collision" parent="." index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.14, 0)
-shape = SubResource("CapsuleShape3D_d2vk4")
+[node name="Body" parent="Movement/Terrain/Areas" index="0" instance=ExtResource("8_ikul1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.73, 0)
+
+[node name="Collision" parent="Movement/Terrain/Areas/Body" index="1"]
+shape = SubResource("BoxShape3D_nb5pv")
+
+[node name="Anims" parent="Movement/Terrain" index="1"]
+libraries = {
+&"": SubResource("AnimationLibrary_4lyxn")
+}
+
+[node name="States" parent="Movement" index="2"]
+_e_speeds = Dictionary[String, float]({
+"Float": 3.0,
+"Stop": 0.0
+})
 
 [node name="Audio" parent="." index="2" instance=ExtResource("3_e5on6")]
 
-[node name="Left_Foot" parent="Movement/Terrain" index="2" instance=ExtResource("8_ikul1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17, 0, 0)
+[node name="Behavior" parent="." index="3" instance=ExtResource("17_au8xa")]
 
-[node name="Right_Foot" parent="Movement/Terrain" index="3" instance=ExtResource("8_ikul1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, 0)
+[node name="Debug_State" parent="Behavior" index="0"]
+visible = true
 
-[node name="States" parent="." index="5" instance=ExtResource("29_4x276")]
-_e_states = Array[String](["Stop", "Idle", "Walk"])
-_e_state = "Idle"
+[node name="Debug_Keep_State" parent="Behavior" index="1"]
+visible = true
 
-[node name="Reference" parent="." index="6" instance=ExtResource("30_8yh0i")]
+[node name="Neutral" parent="Battle_Starter" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0)
 
-[node name="Anims" parent="." index="7"]
+[node name="Collision" parent="Battle_Starter/Neutral" index="0"]
+shape = SubResource("BoxShape3D_uplfe")
+
+[node name="Anims" parent="." index="5"]
 libraries = {
 &"": SubResource("AnimationLibrary_cpnii")
 }
+
+[node name="States" parent="." index="6" instance=ExtResource("29_4x276")]
+_e_states = Array[String](["Stop", "Idle", "Float"])
+_e_state = "Idle"
+
+[node name="Reference" parent="." index="7" instance=ExtResource("30_8yh0i")]
+
+[editable path="Movement/Terrain"]
+[editable path="Movement/Terrain/Areas/Body"]
+[editable path="Behavior"]
+[editable path="Battle_Starter/Neutral"]

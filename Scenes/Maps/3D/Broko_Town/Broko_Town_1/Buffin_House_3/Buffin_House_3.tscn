@@ -1,4 +1,4 @@
-[gd_scene load_steps=191 format=3 uid="uid://bh0y21nccmkbl"]
+[gd_scene load_steps=194 format=3 uid="uid://bh0y21nccmkbl"]
 
 [ext_resource type="PackedScene" uid="uid://cl2vhhqvmf6i2" path="res://Scenes/Maps/Map_Base/3D/Map_Base.tscn" id="1_2n2w5"]
 [ext_resource type="Script" uid="uid://dyiso1y2s7fo7" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Buffin_House_3/Scripts/Buffin_House_3.gd" id="2_g007c"]
@@ -62,6 +62,7 @@
 [ext_resource type="PackedScene" uid="uid://beo8v4vdoxvyk" path="res://Scenes/NPC/3D/Buffins/Paint_DeLere/Paint_DeLere.tscn" id="49_gketk"]
 [ext_resource type="PackedScene" uid="uid://ba3qqkp7ajqtq" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Buffin_House_3/Objects/Canvas_1/Canvas_1.tscn" id="50_431t0"]
 [ext_resource type="PackedScene" uid="uid://cjr0l2h3yj5lh" path="res://Scenes/Object/Comps/3D/Speech_Bubble.tscn" id="51_ccfsj"]
+[ext_resource type="PackedScene" uid="uid://6vs0mx0yax4e" path="res://Scenes/Object/Comps/3D/Vision/Vision.tscn" id="51_covvt"]
 [ext_resource type="Shader" uid="uid://bjkm3rjfq72ba" path="res://Global_Resources/Materials/3D/Shaders/HFade.gdshader" id="51_n3hbt"]
 [ext_resource type="Script" uid="uid://dc7jrc2hmg2at" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Buffin_House_3/Objects/Paint_DeLere/Scripts/Paint_DeLere.gd" id="51_pa6si"]
 [ext_resource type="Texture2D" uid="uid://c31l5lageoj4s" path="res://Scenes/NPC/3D/Buffins/Paint_DeLere/Canvases/Sprites/Pictures/Small_Ghost.png" id="52_j5d6o"]
@@ -90,6 +91,7 @@
 [ext_resource type="PackedScene" uid="uid://chwvwspoox5ko" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Buffin_House_3/Objects/Projector_1/Projector_1.tscn" id="81_gkski"]
 [ext_resource type="Script" uid="uid://ckbk2i4wb1yhq" path="res://Scenes/Object/Scripts/Node3D_Object.gd" id="83_cbqa4"]
 [ext_resource type="PackedScene" uid="uid://cn4livtidiyqn" path="res://Scenes/Objects/3D/Enemies/Ghosty/Ghosty.tscn" id="88_mjcvb"]
+[ext_resource type="PackedScene" uid="uid://botx10vy7odur" path="res://Scenes/Objects/3D/Enemies/Enemy_Stay_Area.tscn" id="92_at4rb"]
 
 [sub_resource type="Resource" id="Resource_le7nk"]
 script = ExtResource("3_le7nk")
@@ -99,105 +101,96 @@ _e_pitch = 1.0
 _e_from = 0.0
 metadata/_custom_type_script = "uid://b3q13t5wk5s2w"
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mjcvb"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c5gso"]
 albedo_texture = ExtResource("3_q1tqs")
 uv1_scale = Vector3(3, 3, 1)
 texture_filter = 0
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_covvt"]
-material = SubResource("StandardMaterial3D_mjcvb")
+[sub_resource type="PlaneMesh" id="PlaneMesh_fvut5"]
+material = SubResource("StandardMaterial3D_c5gso")
 size = Vector2(6, 6)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c5gso"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_at4rb"]
 albedo_texture = ExtResource("3_q1tqs")
 uv1_scale = Vector3(3, 1.5, 1)
 texture_filter = 0
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_fvut5"]
-material = SubResource("StandardMaterial3D_c5gso")
+[sub_resource type="PlaneMesh" id="PlaneMesh_ksvr1"]
+material = SubResource("StandardMaterial3D_at4rb")
 size = Vector2(6, 3)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_at4rb"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8qihv"]
 albedo_texture = ExtResource("3_q1tqs")
 uv1_scale = Vector3(2.5, 2.5, 1)
 uv1_offset = Vector3(0.5, 0.5, 0)
 texture_filter = 0
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_ksvr1"]
-material = SubResource("StandardMaterial3D_at4rb")
+[sub_resource type="PlaneMesh" id="PlaneMesh_k3ag2"]
+material = SubResource("StandardMaterial3D_8qihv")
 size = Vector2(5, 5)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8qihv"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jrs8b"]
 albedo_texture = ExtResource("3_q1tqs")
 uv1_scale = Vector3(1.5, 0.5, 1)
 uv1_offset = Vector3(0.5, 0, 0)
 texture_filter = 0
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_k3ag2"]
-material = SubResource("StandardMaterial3D_8qihv")
+[sub_resource type="PlaneMesh" id="PlaneMesh_42mup"]
+material = SubResource("StandardMaterial3D_jrs8b")
 size = Vector2(3, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jrs8b"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7qxxm"]
 albedo_texture = ExtResource("3_q1tqs")
 uv1_scale = Vector3(3, 3.5, 1)
 uv1_offset = Vector3(0, 0.5, 0)
 texture_filter = 0
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_42mup"]
-material = SubResource("StandardMaterial3D_jrs8b")
+[sub_resource type="PlaneMesh" id="PlaneMesh_6e1u7"]
+material = SubResource("StandardMaterial3D_7qxxm")
 size = Vector2(6, 7)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7qxxm"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5ylf0"]
 albedo_texture = ExtResource("3_q1tqs")
 uv1_scale = Vector3(0.5, 1.5, 1)
 uv1_offset = Vector3(0, 0.5, 0)
 texture_filter = 0
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_6e1u7"]
-material = SubResource("StandardMaterial3D_7qxxm")
+[sub_resource type="PlaneMesh" id="PlaneMesh_ltgkf"]
+material = SubResource("StandardMaterial3D_5ylf0")
 size = Vector2(1, 3)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5ylf0"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m3wo2"]
 albedo_texture = ExtResource("3_q1tqs")
 uv1_scale = Vector3(2.5, 2.5, 1)
 uv1_offset = Vector3(0.5, 0.5, 0)
 texture_filter = 0
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_ltgkf"]
-material = SubResource("StandardMaterial3D_5ylf0")
+[sub_resource type="PlaneMesh" id="PlaneMesh_bag55"]
+material = SubResource("StandardMaterial3D_m3wo2")
 size = Vector2(5, 5)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m3wo2"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g01rh"]
 albedo_texture = ExtResource("3_q1tqs")
 uv1_scale = Vector3(1.5, 1, 1)
 uv1_offset = Vector3(0.5, 0, 0)
 texture_filter = 0
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_bag55"]
-material = SubResource("StandardMaterial3D_m3wo2")
+[sub_resource type="PlaneMesh" id="PlaneMesh_btayh"]
+material = SubResource("StandardMaterial3D_g01rh")
 size = Vector2(3, 2)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g01rh"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jsq24"]
 transparency = 1
 albedo_texture = ExtResource("6_ywekf")
 texture_filter = 0
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_btayh"]
-material = SubResource("StandardMaterial3D_g01rh")
-size = Vector2(1, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jsq24"]
-transparency = 1
-albedo_texture = ExtResource("9_u61pt")
-uv1_scale = Vector3(2, 1, 1)
-texture_filter = 0
-
 [sub_resource type="PlaneMesh" id="PlaneMesh_i1r56"]
 material = SubResource("StandardMaterial3D_jsq24")
-size = Vector2(2, 1)
+size = Vector2(1, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0g6b3"]
-albedo_texture = ExtResource("11_xll03")
+transparency = 1
+albedo_texture = ExtResource("9_u61pt")
 uv1_scale = Vector3(2, 1, 1)
 texture_filter = 0
 
@@ -206,55 +199,54 @@ material = SubResource("StandardMaterial3D_0g6b3")
 size = Vector2(2, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vj2b2"]
-transparency = 1
-albedo_texture = ExtResource("13_0t0bm")
+albedo_texture = ExtResource("11_xll03")
+uv1_scale = Vector3(2, 1, 1)
 texture_filter = 0
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_ajs7a"]
 material = SubResource("StandardMaterial3D_vj2b2")
-size = Vector2(1, 1)
+size = Vector2(2, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_symg4"]
+transparency = 1
+albedo_texture = ExtResource("13_0t0bm")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_fpp2q"]
+material = SubResource("StandardMaterial3D_symg4")
+size = Vector2(1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0i52u"]
 transparency = 1
 albedo_texture = ExtResource("16_g24ji")
 uv1_scale = Vector3(2, 1, 1)
 texture_filter = 0
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_fpp2q"]
-material = SubResource("StandardMaterial3D_symg4")
+[sub_resource type="PlaneMesh" id="PlaneMesh_vouhg"]
+material = SubResource("StandardMaterial3D_0i52u")
 size = Vector2(2, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0i52u"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4wajg"]
 transparency = 1
 albedo_texture = ExtResource("6_ywekf")
 uv1_scale = Vector3(1, 2, 1)
 texture_filter = 0
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_vouhg"]
-material = SubResource("StandardMaterial3D_0i52u")
+[sub_resource type="PlaneMesh" id="PlaneMesh_1bai5"]
+material = SubResource("StandardMaterial3D_4wajg")
 size = Vector2(1, 2)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4wajg"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ap3jd"]
 transparency = 1
 albedo_texture = ExtResource("9_u61pt")
 texture_filter = 0
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_1bai5"]
-material = SubResource("StandardMaterial3D_4wajg")
-size = Vector2(1, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ap3jd"]
-albedo_texture = ExtResource("11_xll03")
-uv1_scale = Vector3(1, 2, 1)
-texture_filter = 0
-
 [sub_resource type="PlaneMesh" id="PlaneMesh_5ti0l"]
 material = SubResource("StandardMaterial3D_ap3jd")
-size = Vector2(1, 2)
+size = Vector2(1, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_awc8h"]
-transparency = 1
-albedo_texture = ExtResource("13_0t0bm")
+albedo_texture = ExtResource("11_xll03")
 uv1_scale = Vector3(1, 2, 1)
 texture_filter = 0
 
@@ -264,99 +256,109 @@ size = Vector2(1, 2)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lna3e"]
 transparency = 1
-albedo_texture = ExtResource("16_g24ji")
+albedo_texture = ExtResource("13_0t0bm")
+uv1_scale = Vector3(1, 2, 1)
 texture_filter = 0
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_r5cb1"]
 material = SubResource("StandardMaterial3D_lna3e")
-size = Vector2(1, 1)
+size = Vector2(1, 2)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m1pen"]
+transparency = 1
+albedo_texture = ExtResource("16_g24ji")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_qq5yo"]
+material = SubResource("StandardMaterial3D_m1pen")
+size = Vector2(1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hk8ur"]
 albedo_texture = ExtResource("3_q1tqs")
 uv1_scale = Vector3(2.5, 4.5, 1)
 uv1_offset = Vector3(0, 0.5, 0)
 texture_filter = 0
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_qq5yo"]
-material = SubResource("StandardMaterial3D_m1pen")
+[sub_resource type="PlaneMesh" id="PlaneMesh_vyqba"]
+material = SubResource("StandardMaterial3D_hk8ur")
 size = Vector2(5, 9)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hk8ur"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oyvbh"]
 albedo_texture = ExtResource("3_q1tqs")
 uv1_scale = Vector3(3, 2.75, 1)
 texture_filter = 0
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_vyqba"]
-material = SubResource("StandardMaterial3D_hk8ur")
+[sub_resource type="PlaneMesh" id="PlaneMesh_1f1a4"]
+material = SubResource("StandardMaterial3D_oyvbh")
 size = Vector2(6, 5.5)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oyvbh"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_odh8k"]
 albedo_texture = ExtResource("3_q1tqs")
 uv1_scale = Vector3(2.5, 0.5, 1)
 uv1_offset = Vector3(0.5, 0.75, 0)
 texture_filter = 0
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_1f1a4"]
-material = SubResource("StandardMaterial3D_oyvbh")
+[sub_resource type="PlaneMesh" id="PlaneMesh_l7k1f"]
+material = SubResource("StandardMaterial3D_odh8k")
 size = Vector2(5, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_odh8k"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ykwip"]
 albedo_texture = ExtResource("3_q1tqs")
 uv1_scale = Vector3(3, 1.25, 1)
 uv1_offset = Vector3(0, 0.25, 0)
 texture_filter = 0
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_l7k1f"]
-material = SubResource("StandardMaterial3D_odh8k")
+[sub_resource type="PlaneMesh" id="PlaneMesh_lt03i"]
+material = SubResource("StandardMaterial3D_ykwip")
 size = Vector2(6, 2.5)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ykwip"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v0gio"]
 albedo_texture = ExtResource("3_q1tqs")
 uv1_scale = Vector3(6, 0.25, 1)
 uv1_offset = Vector3(0.5, 0, 0)
 texture_filter = 0
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_lt03i"]
-material = SubResource("StandardMaterial3D_ykwip")
+[sub_resource type="PlaneMesh" id="PlaneMesh_r56xa"]
+material = SubResource("StandardMaterial3D_v0gio")
 size = Vector2(12, 0.5)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v0gio"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sjky7"]
 albedo_texture = ExtResource("3_q1tqs")
 uv1_scale = Vector3(5, 0.5, 1)
 uv1_offset = Vector3(0.5, 0.25, 0)
 texture_filter = 0
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_r56xa"]
-material = SubResource("StandardMaterial3D_v0gio")
+[sub_resource type="PlaneMesh" id="PlaneMesh_srhl6"]
+material = SubResource("StandardMaterial3D_sjky7")
 size = Vector2(10, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sjky7"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_45feh"]
 albedo_texture = ExtResource("3_q1tqs")
 uv1_scale = Vector3(6, 3.25, 1)
 uv1_offset = Vector3(0.5, 0.75, 0)
 texture_filter = 0
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_srhl6"]
-material = SubResource("StandardMaterial3D_sjky7")
+[sub_resource type="PlaneMesh" id="PlaneMesh_xv2bj"]
+material = SubResource("StandardMaterial3D_45feh")
 size = Vector2(12, 6.5)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_45feh"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oec4x"]
 albedo_texture = ExtResource("3_q1tqs")
 uv1_scale = Vector3(2.5, 0.5, 1)
 texture_filter = 0
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_xv2bj"]
-material = SubResource("StandardMaterial3D_45feh")
+[sub_resource type="PlaneMesh" id="PlaneMesh_isv84"]
+material = SubResource("StandardMaterial3D_oec4x")
 size = Vector2(5, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oec4x"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mhhgi"]
 albedo_texture = ExtResource("3_q1tqs")
 uv1_scale = Vector3(6, 3.25, 1)
 uv1_offset = Vector3(0.5, 0.5, 0)
 texture_filter = 0
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_isv84"]
-material = SubResource("StandardMaterial3D_oec4x")
+[sub_resource type="PlaneMesh" id="PlaneMesh_6wepa"]
+material = SubResource("StandardMaterial3D_mhhgi")
 size = Vector2(12, 6.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_scw38"]
@@ -648,6 +650,9 @@ agent_height = 1.8
 agent_radius = 0.4
 agent_max_climb = 0.2
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ksvr1"]
+size = Vector3(12, 7, 6.5)
+
 [sub_resource type="Environment" id="Environment_hwuxp"]
 background_mode = 2
 ambient_light_color = Color(0.5, 0.5, 0.5, 1)
@@ -679,21 +684,21 @@ _e_can_jump = false
 
 [node name="Floor_Tile_1" parent="Terrain/Below/Floor_0" index="0" instance=ExtResource("2_h71j3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 19)
-mesh = SubResource("PlaneMesh_covvt")
+mesh = SubResource("PlaneMesh_fvut5")
 skeleton = NodePath("../../..")
 _e_size = Vector3(3, 1, 3)
 metadata/_edit_lock_ = true
 
 [node name="Floor_Tile_2" parent="Terrain/Below/Floor_0" index="1" instance=ExtResource("2_h71j3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 17.5)
-mesh = SubResource("PlaneMesh_fvut5")
+mesh = SubResource("PlaneMesh_ksvr1")
 skeleton = NodePath("../../..")
 _e_size = Vector3(3, 1, 1.5)
 metadata/_edit_lock_ = true
 
 [node name="Floor_Tile_3" parent="Terrain/Below/Floor_0" index="2" instance=ExtResource("2_h71j3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.5, 0, 21.5)
-mesh = SubResource("PlaneMesh_ksvr1")
+mesh = SubResource("PlaneMesh_k3ag2")
 skeleton = NodePath("../../..")
 _e_offset = Vector3(0.5, 0, 0.5)
 _e_size = Vector3(2.5, 1, 2.5)
@@ -701,7 +706,7 @@ metadata/_edit_lock_ = true
 
 [node name="Floor_Tile_4" parent="Terrain/Below/Floor_0" index="3" instance=ExtResource("2_h71j3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.5, 0, 22.5)
-mesh = SubResource("PlaneMesh_k3ag2")
+mesh = SubResource("PlaneMesh_42mup")
 skeleton = NodePath("../../..")
 _e_offset = Vector3(0.5, 0, 0)
 _e_size = Vector3(1.5, 1, 0.5)
@@ -709,7 +714,7 @@ metadata/_edit_lock_ = true
 
 [node name="Floor_Tile_5" parent="Terrain/Below/Floor_0" index="4" instance=ExtResource("2_h71j3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 26.5)
-mesh = SubResource("PlaneMesh_42mup")
+mesh = SubResource("PlaneMesh_6e1u7")
 skeleton = NodePath("../../..")
 _e_offset = Vector3(0, 0, 0.5)
 _e_size = Vector3(3, 1, 3.5)
@@ -717,7 +722,7 @@ metadata/_edit_lock_ = true
 
 [node name="Floor_Tile_6" parent="Terrain/Below/Floor_0" index="5" instance=ExtResource("2_h71j3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.5, 0, 28.5)
-mesh = SubResource("PlaneMesh_6e1u7")
+mesh = SubResource("PlaneMesh_ltgkf")
 skeleton = NodePath("../../..")
 _e_offset = Vector3(0, 0, 0.5)
 _e_size = Vector3(0.5, 1, 1.5)
@@ -725,7 +730,7 @@ metadata/_edit_lock_ = true
 
 [node name="Floor_Tile_7" parent="Terrain/Below/Floor_0" index="6" instance=ExtResource("2_h71j3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.5, 0, 27.5)
-mesh = SubResource("PlaneMesh_ltgkf")
+mesh = SubResource("PlaneMesh_bag55")
 skeleton = NodePath("../../..")
 _e_offset = Vector3(0.5, 0, 0.5)
 _e_size = Vector3(2.5, 1, 2.5)
@@ -733,7 +738,7 @@ metadata/_edit_lock_ = true
 
 [node name="Floor_Tile_8" parent="Terrain/Below/Floor_0" index="7" instance=ExtResource("2_h71j3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.5, 0, 31)
-mesh = SubResource("PlaneMesh_bag55")
+mesh = SubResource("PlaneMesh_btayh")
 skeleton = NodePath("../../..")
 _e_offset = Vector3(0.5, 0, 0)
 _e_size = Vector3(1.5, 1, 1)
@@ -748,7 +753,7 @@ skeleton = NodePath("../../..")
 
 [node name="Carpet_3" parent="Terrain/Below/Floor_0/Carpet_1" index="1" instance=ExtResource("5_skla2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 0)
-mesh = SubResource("PlaneMesh_btayh")
+mesh = SubResource("PlaneMesh_i1r56")
 skeleton = NodePath("../../../..")
 
 [node name="Carpet_4" parent="Terrain/Below/Floor_0/Carpet_1" index="2" instance=ExtResource("7_c6dis")]
@@ -757,16 +762,16 @@ skeleton = NodePath("../Carpet_2")
 
 [node name="Carpet_2" parent="Terrain/Below/Floor_0/Carpet_1" index="3" instance=ExtResource("8_eo00w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
-mesh = SubResource("PlaneMesh_i1r56")
+mesh = SubResource("PlaneMesh_e0al7")
 _e_size = Vector3(2, 1, 1)
 
 [node name="Carpet_5" parent="Terrain/Below/Floor_0/Carpet_1" index="4" instance=ExtResource("10_ax3xr")]
-mesh = SubResource("PlaneMesh_e0al7")
+mesh = SubResource("PlaneMesh_ajs7a")
 _e_size = Vector3(2, 1, 1)
 
 [node name="Carpet_6" parent="Terrain/Below/Floor_0/Carpet_1" index="5" instance=ExtResource("12_qeesc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0)
-mesh = SubResource("PlaneMesh_ajs7a")
+mesh = SubResource("PlaneMesh_fpp2q")
 skeleton = NodePath("../Carpet_5")
 
 [node name="Carpet_7" parent="Terrain/Below/Floor_0/Carpet_1" index="6" instance=ExtResource("14_8wri2")]
@@ -774,7 +779,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 1)
 
 [node name="Carpet_8" parent="Terrain/Below/Floor_0/Carpet_1" index="7" instance=ExtResource("15_gqhga")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
-mesh = SubResource("PlaneMesh_fpp2q")
+mesh = SubResource("PlaneMesh_vouhg")
 _e_size = Vector3(2, 1, 1)
 
 [node name="Carpet_9" parent="Terrain/Below/Floor_0/Carpet_1" index="8" instance=ExtResource("17_5vgjg")]
@@ -789,7 +794,7 @@ skeleton = NodePath("../../..")
 
 [node name="Carpet_3" parent="Terrain/Below/Floor_0/Carpet_2" index="1" instance=ExtResource("5_skla2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
-mesh = SubResource("PlaneMesh_vouhg")
+mesh = SubResource("PlaneMesh_1bai5")
 skeleton = NodePath("../../../..")
 _e_size = Vector3(1, 1, 2)
 
@@ -799,15 +804,15 @@ skeleton = NodePath("../Carpet_2")
 
 [node name="Carpet_2" parent="Terrain/Below/Floor_0/Carpet_2" index="3" instance=ExtResource("8_eo00w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.5)
-mesh = SubResource("PlaneMesh_1bai5")
+mesh = SubResource("PlaneMesh_5ti0l")
 
 [node name="Carpet_5" parent="Terrain/Below/Floor_0/Carpet_2" index="4" instance=ExtResource("10_ax3xr")]
-mesh = SubResource("PlaneMesh_5ti0l")
+mesh = SubResource("PlaneMesh_n16sv")
 _e_size = Vector3(1, 1, 2)
 
 [node name="Carpet_6" parent="Terrain/Below/Floor_0/Carpet_2" index="5" instance=ExtResource("12_qeesc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
-mesh = SubResource("PlaneMesh_n16sv")
+mesh = SubResource("PlaneMesh_r5cb1")
 skeleton = NodePath("../Carpet_5")
 _e_size = Vector3(1, 1, 2)
 
@@ -816,7 +821,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1.5)
 
 [node name="Carpet_8" parent="Terrain/Below/Floor_0/Carpet_2" index="7" instance=ExtResource("15_gqhga")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.5)
-mesh = SubResource("PlaneMesh_r5cb1")
+mesh = SubResource("PlaneMesh_qq5yo")
 
 [node name="Carpet_9" parent="Terrain/Below/Floor_0/Carpet_2" index="8" instance=ExtResource("17_5vgjg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 1.5)
@@ -825,61 +830,61 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 1.5)
 
 [node name="Floor_Tile_1" parent="Terrain/Below/Floor_1" index="0" instance=ExtResource("2_h71j3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.5, 0, 20.5)
-mesh = SubResource("PlaneMesh_qq5yo")
+mesh = SubResource("PlaneMesh_vyqba")
 skeleton = NodePath("../../..")
 _e_offset = Vector3(0, 0, 0.5)
 _e_size = Vector3(2.5, 1, 4.5)
 
 [node name="Floor_Tile_2" parent="Terrain/Below/Floor_1" index="1" instance=ExtResource("2_h71j3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44, 0, 18.75)
-mesh = SubResource("PlaneMesh_vyqba")
+mesh = SubResource("PlaneMesh_1f1a4")
 skeleton = NodePath("../../..")
 _e_size = Vector3(3, 1, 2.75)
 
 [node name="Floor_Tile_3" parent="Terrain/Below/Floor_1" index="2" instance=ExtResource("2_h71j3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.5, 0, 22)
-mesh = SubResource("PlaneMesh_1f1a4")
+mesh = SubResource("PlaneMesh_l7k1f")
 skeleton = NodePath("../../..")
 _e_offset = Vector3(0.5, 0, 0.75)
 _e_size = Vector3(2.5, 1, 0.5)
 
 [node name="Floor_Tile_4" parent="Terrain/Below/Floor_1" index="3" instance=ExtResource("2_h71j3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44, 0, 23.75)
-mesh = SubResource("PlaneMesh_l7k1f")
+mesh = SubResource("PlaneMesh_lt03i")
 skeleton = NodePath("../../..")
 _e_offset = Vector3(0, 0, 0.25)
 _e_size = Vector3(3, 1, 1.25)
 
 [node name="Floor_Tile_5" parent="Terrain/Below/Floor_1" index="4" instance=ExtResource("2_h71j3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47, 0, 25.25)
-mesh = SubResource("PlaneMesh_lt03i")
+mesh = SubResource("PlaneMesh_r56xa")
 skeleton = NodePath("../../..")
 _e_offset = Vector3(0.5, 0, 0)
 _e_size = Vector3(6, 1, 0.25)
 
 [node name="Floor_Tile_6" parent="Terrain/Below/Floor_1" index="5" instance=ExtResource("2_h71j3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 26)
-mesh = SubResource("PlaneMesh_r56xa")
+mesh = SubResource("PlaneMesh_srhl6")
 skeleton = NodePath("../../..")
 _e_offset = Vector3(0.5, 0, 0.25)
 _e_size = Vector3(5, 1, 0.5)
 
 [node name="Floor_Tile_7" parent="Terrain/Below/Floor_1" index="6" instance=ExtResource("2_h71j3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47, 0, 29.75)
-mesh = SubResource("PlaneMesh_srhl6")
+mesh = SubResource("PlaneMesh_xv2bj")
 skeleton = NodePath("../../..")
 _e_offset = Vector3(0.5, 0, 0.75)
 _e_size = Vector3(6, 1, 3.25)
 
 [node name="Floor_Tile_8" parent="Terrain/Below/Floor_1" index="7" instance=ExtResource("2_h71j3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.5, 0, 33.5)
-mesh = SubResource("PlaneMesh_xv2bj")
+mesh = SubResource("PlaneMesh_isv84")
 skeleton = NodePath("../../..")
 _e_size = Vector3(2.5, 1, 0.5)
 
 [node name="Floor_Tile_9" parent="Terrain/Below/Floor_1" index="8" instance=ExtResource("2_h71j3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47, 0, 37.25)
-mesh = SubResource("PlaneMesh_isv84")
+mesh = SubResource("PlaneMesh_6wepa")
 skeleton = NodePath("../../..")
 _e_offset = Vector3(0.5, 0, 0.5)
 _e_size = Vector3(6, 1, 3.25)
@@ -1755,6 +1760,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52, 0, 20.5)
 
 [node name="Display" parent="Objects/Player" index="0"]
 shaded = false
+frame = 84
 
 [node name="Equipment" parent="Objects/Player" index="2"]
 _e_shaded = false
@@ -1786,6 +1792,62 @@ shadow_enabled = true
 shadow_caster_mask = 4293918725
 omni_range = 3.0
 omni_attenuation = 0.0
+
+[node name="Vision" parent="Objects/Player" index="22" instance=ExtResource("51_covvt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+
+[node name="Ray_1" type="RayCast3D" parent="Objects/Player/Vision" index="0"]
+target_position = Vector3(0, 0, 1)
+collision_mask = 329
+debug_shape_custom_color = Color(0.829448, 0.0014264, 0.942735, 1)
+
+[node name="Ray_2" type="RayCast3D" parent="Objects/Player/Vision" index="1"]
+transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, 0, 0, 0)
+target_position = Vector3(0, 0, 1)
+collision_mask = 329
+debug_shape_custom_color = Color(0.829448, 0.0014264, 0.942735, 1)
+
+[node name="Ray_3" type="RayCast3D" parent="Objects/Player/Vision" index="2"]
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 0, 0, 0)
+target_position = Vector3(0, 0, 1)
+collision_mask = 329
+debug_shape_custom_color = Color(0.829448, 0.0014264, 0.942735, 1)
+
+[node name="Ray_4" type="RayCast3D" parent="Objects/Player/Vision" index="3"]
+transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 0, 0, 0)
+target_position = Vector3(0, 0, 1)
+collision_mask = 329
+debug_shape_custom_color = Color(0.829448, 0.0014264, 0.942735, 1)
+
+[node name="Ray_5" type="RayCast3D" parent="Objects/Player/Vision" index="4"]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 0, 0, 0)
+target_position = Vector3(0, 0, 1)
+collision_mask = 329
+debug_shape_custom_color = Color(0.829448, 0.0014264, 0.942735, 1)
+
+[node name="Ray_6" type="RayCast3D" parent="Objects/Player/Vision" index="5"]
+transform = Transform3D(0.92388, 0, 0.382683, 0, 1, 0, -0.382683, 0, 0.92388, 0, 0, 0)
+target_position = Vector3(0, 0, 1)
+collision_mask = 329
+debug_shape_custom_color = Color(0.829448, 0.0014264, 0.942735, 1)
+
+[node name="Ray_7" type="RayCast3D" parent="Objects/Player/Vision" index="6"]
+transform = Transform3D(0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, 0)
+target_position = Vector3(0, 0, 1)
+collision_mask = 329
+debug_shape_custom_color = Color(0.829448, 0.0014264, 0.942735, 1)
+
+[node name="Ray_8" type="RayCast3D" parent="Objects/Player/Vision" index="7"]
+transform = Transform3D(0.991445, 0, -0.130526, 0, 1, 0, 0.130526, 0, 0.991445, 0, 0, 0)
+target_position = Vector3(0, 0, 1)
+collision_mask = 329
+debug_shape_custom_color = Color(0.829448, 0.0014264, 0.942735, 1)
+
+[node name="Ray_9" type="RayCast3D" parent="Objects/Player/Vision" index="8"]
+transform = Transform3D(0.92388, 0, -0.382683, 0, 1, 0, 0.382683, 0, 0.92388, 0, 0, 0)
+target_position = Vector3(0, 0, 1)
+collision_mask = 329
+debug_shape_custom_color = Color(0.829448, 0.0014264, 0.942735, 1)
 
 [node name="Paint_DeLere" parent="Objects" index="3" instance=ExtResource("49_gketk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52, 0, 17)
@@ -2141,8 +2203,9 @@ shape = SubResource("BoxShape3D_v0gio")
 
 [node name="Reference" parent="Objects/Floor_1/Projector_1" index="5" instance=ExtResource("60_6a6qm")]
 
-[node name="Citrin" parent="Objects/Floor_1" index="15" instance=ExtResource("88_mjcvb")]
+[node name="Ghosty_1" parent="Objects/Floor_1" index="15" node_paths=PackedStringArray("_e_stay_area") instance=ExtResource("88_mjcvb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.25, 0, 36.25)
+_e_stay_area = NodePath("../../../Bounds/Enemy_Stay_Areas/Ghostys_1")
 
 [node name="Teleporter_Door_1" parent="Objects/Teleporters" index="0" instance=ExtResource("26_uc7kt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.5, 0, 31)
@@ -2160,6 +2223,16 @@ shape = SubResource("BoxShape3D_oxft5")
 
 [node name="Main" parent="Nav_Regions" index="0"]
 navigation_mesh = SubResource("NavigationMesh_3murb")
+
+[node name="Enemy_Stay_Areas" type="Node3D" parent="Bounds" index="0"]
+
+[node name="Floor_1" type="Node3D" parent="Bounds/Enemy_Stay_Areas" index="0"]
+
+[node name="Ghostys_1" parent="Bounds/Enemy_Stay_Areas" index="1" instance=ExtResource("92_at4rb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47, 0, 37.25)
+
+[node name="Collision_1" parent="Bounds/Enemy_Stay_Areas/Ghostys_1" index="0"]
+shape = SubResource("BoxShape3D_ksvr1")
 
 [node name="Sun" type="DirectionalLight3D" parent="." index="4"]
 transform = Transform3D(0.707107, 0.5, -0.5, 0, 0.707107, 0.707107, 0.707107, -0.5, 0.5, 0, 0, 0)
@@ -2352,6 +2425,7 @@ debug_color = Color(1, 0, 0.733334, 0.419608)
 [editable path="Objects/Teleporters/Teleporter_Door_1"]
 [editable path="Objects/Teleporters/Teleporter_Door_1/Interactions"]
 [editable path="Objects/Teleporters/Teleporter_Door_1/Interactions/1"]
+[editable path="Bounds/Enemy_Stay_Areas/Ghostys_1"]
 [editable path="Cutscenes/Cutscene_Start/Interactions"]
 [editable path="Cutscenes/Cutscene_Start/Interactions/1"]
 [editable path="Cutscenes/Cutscene_Paint_DeLere_1/Interactions"]

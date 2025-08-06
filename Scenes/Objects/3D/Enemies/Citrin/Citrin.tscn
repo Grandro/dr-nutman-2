@@ -25,8 +25,7 @@
 [ext_resource type="Animation" uid="uid://cr7nybox71asc" path="res://Scenes/Objects/3D/Enemies/Citrin/Anims/Terrain/Global/Stop_Left.res" id="17_hg0ic"]
 [ext_resource type="Animation" uid="uid://cu6vdxunow56" path="res://Scenes/Objects/3D/Enemies/Citrin/Anims/Terrain/Global/Stop_Right.res" id="18_11v6i"]
 [ext_resource type="Animation" uid="uid://lyk670nc5nvp" path="res://Scenes/Objects/3D/Enemies/Citrin/Anims/Terrain/Global/Stop_Up.res" id="19_d5cbe"]
-[ext_resource type="Animation" uid="uid://6ta72wwn8lyk" path="res://Scenes/Objects/3D/Enemies/Citrin/Anims/Terrain/Global/Walk_Down.res" id="20_qotcq"]
-[ext_resource type="Animation" uid="uid://c30o787w38c7w" path="res://Scenes/Objects/3D/Enemies/Citrin/Anims/Terrain/Global/Walk_Left.res" id="21_67dcy"]
+[ext_resource type="Animation" uid="uid://di1y34inb8uoj" path="res://Scenes/Objects/3D/Enemies/Citrin/Anims/Terrain/Global/Walk_Down.res" id="20_qotcq"]
 [ext_resource type="Animation" uid="uid://bjp62omrrrhce" path="res://Scenes/Objects/3D/Enemies/Citrin/Anims/Terrain/Global/Walk_Right.res" id="22_b80xq"]
 [ext_resource type="Animation" uid="uid://p73sefm8dxrk" path="res://Scenes/Objects/3D/Enemies/Citrin/Anims/Terrain/Global/Walk_Up.res" id="23_8173w"]
 [ext_resource type="PackedScene" uid="uid://bqd5wag3i55mk" path="res://Scenes/Objects/3D/Enemies/Comps/Battle_Starter/Area.tscn" id="28_devj6"]
@@ -58,6 +57,77 @@ height = 1.6
 [sub_resource type="BoxShape3D" id="BoxShape3D_v5xqh"]
 size = Vector3(0.15, 0.1, 0.15)
 
+[sub_resource type="Animation" id="Animation_v5xqh"]
+resource_name = "Idle_Down"
+length = 0.6
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Areas/Left_Foot:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3, 0.45),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector3(0.17, 0, 0), Vector3(0.17, 0.083, 0), Vector3(0.17, 0, 0), Vector3(0.17, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Areas/Right_Foot:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3, 0.45),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector3(-0.15, 0, 0), Vector3(-0.15, 0, 0), Vector3(-0.15, 0, 0), Vector3(-0.15, 0.08, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Areas/Left_Foot/Veil:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Areas/Right_Foot/Veil:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.15, 0.45),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": ["Right_Foot"],
+"method": &"play_audio"
+}, {
+"args": ["Left_Foot"],
+"method": &"play_audio"
+}]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_denst"]
 _data = {
 &"Cry_Down": ExtResource("4_d2vk4"),
@@ -76,8 +146,8 @@ _data = {
 &"Stop_Left": ExtResource("17_hg0ic"),
 &"Stop_Right": ExtResource("18_11v6i"),
 &"Stop_Up": ExtResource("19_d5cbe"),
-&"Walk_Down": ExtResource("20_qotcq"),
-&"Walk_Left": ExtResource("21_67dcy"),
+&"Walk_Down": SubResource("Animation_v5xqh"),
+&"Walk_Left": ExtResource("20_qotcq"),
 &"Walk_Right": ExtResource("22_b80xq"),
 &"Walk_Up": ExtResource("23_8173w")
 }
@@ -117,8 +187,8 @@ _data = {
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.14, 0)
 texture = ExtResource("2_xhpnv")
 hframes = 8
-vframes = 9
-frame = 37
+vframes = 10
+frame = 60
 
 [node name="Collision" parent="." index="1" instance=ExtResource("5_d2vk4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
@@ -141,6 +211,15 @@ libraries = {
 &"": SubResource("AnimationLibrary_denst")
 }
 
+[node name="States" parent="Movement" index="2"]
+_e_speeds = Dictionary[String, float]({
+"Cry": 0.0,
+"Idle": 0.0,
+"Shoot": 0.0,
+"Stop": 0.0,
+"Walk": 1.5
+})
+
 [node name="Audio" parent="." index="3" instance=ExtResource("3_13aw5")]
 
 [node name="Cry" parent="Audio" index="0" instance=ExtResource("4_3jwx5")]
@@ -157,13 +236,11 @@ bus = &"SFX"
 one_shot = false
 
 [node name="Battle_Starter" parent="." index="5"]
-_e_enc_key = "Citrin_Main"
-_e_amount = {
-1: 1,
-2: 0,
-3: 0,
-4: 0
-}
+_e_enc_key = "Broko_Forest_1"
+_e_troops = Dictionary[Array, int]({
+["Citrin"]: 1,
+["Citrin", "Citrin"]: 3
+})
 
 [node name="Neutral" parent="Battle_Starter" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)

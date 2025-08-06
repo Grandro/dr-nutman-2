@@ -218,6 +218,7 @@ DEBUG_CUTSCENES_LAYER,Ebene,Layer
 DEBUG_CUTSCENES_DURATION,Dauer,Duration
 DEBUG_CUTSCENES_TELEPORTATIONS,Teleportationen,Teleportations
 DEBUG_CUTSCENES_DESTINATIONS,Ziele,Destinations
+DEBUG_CUTSCENES_TROOP,Truppe,Troop
 DEBUG_CUTSCENES_HANDLE_LOST_BATTLE,Verlorenen Kampf Behandeln,Handle Lost Battle
 DEBUG_CUTSCENES_BATTLE_WON,Kampf Gewonnen,Battle Won
 DEBUG_CUTSCENES_BATTLE_LOST,Kampf Verloren,Battle Lost
@@ -472,6 +473,8 @@ ENEMY_SICK_APPRENTICE_1_NAME,Fiebriger Lehrling,Feverish Apprentice
 ENEMY_SICK_APPRENTICE_1_DESC,"Noch nie zuvor vorgekommen hat das Fibri-Vibri tatsächlich bei jemandem angeschlagen! Gut, dass die Krankheit bekämpft wurde.",Never before has the Fibri-Vibri actually alarmed someone! Good that the disease was fought off.
 ENEMY_CITRIN_NAME,Zitrine,Citrin
 ENEMY_CITRIN_DESC,Dieser süß-saure Zweibeiner lebt im Wald und scheut sich nicht davor mit Zitronenkugeln zu spucken.,This sweet and sour biped lives in the forest and is not afraid to spit lemon balls.
+ENEMY_GHOSTY_NAME,Geisti,Ghosty
+ENEMY_GHOSTY_DESC,"Dieser süße kleine Geist mag es unsichtbar zu werden um andere zu überraschen.","This cute little ghost likes to become invisible to surprise others."
 COINS_NAME,Münzen,Coins
 ITEMS_GENERAL_COOKIE_NAME,Keks,Cookie
 ITEMS_GENERAL_COOKIE_DESC,"Ein knusprig-leckerer Keks, welcher 7 [img]res://Global_Resources/Sprites/Icons/Stats/HP.png[/img] wiederherstellt.",A crispy and delicious cookie which restores 7 [img]res://Global_Resources/Sprites/Icons/Stats/HP.png[/img].

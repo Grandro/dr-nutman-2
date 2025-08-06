@@ -23,11 +23,11 @@
 [ext_resource type="PackedScene" uid="uid://dsaweqjwudgxu" path="res://Global_Scenes/Battle_System/Battle_SV/Encounters/Special/SP_Sick_Apprentice_1/Objects/Disposable_Glove_1/Disposable_Glove_1.tscn" id="16_p2kgd"]
 [ext_resource type="PackedScene" uid="uid://df7i4l2sejnt8" path="res://Global_Scenes/Battle_System/Battle_SV/Encounters/Special/SP_Sick_Apprentice_1/Objects/Popsicle_Stick_1/Popsicle_Stick_1.tscn" id="17_h1obd"]
 [ext_resource type="PackedScene" uid="uid://mw0nvucjwb54" path="res://Global_Scenes/Battle_System/Battle_SV/Encounters/Special/SP_Sick_Apprentice_1/Objects/Pill_1/Pill_1.tscn" id="18_rolmv"]
-[ext_resource type="PackedScene" uid="uid://mp23fryjb2qh" path="res://Global_Scenes/Battle_System/Battle_SV/Encounters/Special/SP_Sick_Apprentice_1/Party_Members/Dr_Nutman_Tutorial/Dr_Nutman_Tutorial.tscn" id="19_87r8x"]
+[ext_resource type="PackedScene" uid="uid://mp23fryjb2qh" path="res://Global_Scenes/Battle_System/Battle_SV/Party_Members/Dr_Nutman/Tutorial/Dr_Nutman_Tutorial.tscn" id="19_87r8x"]
 [ext_resource type="Texture2D" uid="uid://dpqtsje5t4v5f" path="res://Scenes/NPC/3D/Buffins/Paint_DeLere/Canvases/Sprites/Pictures/Disposable_Glove.png" id="19_gxs0q"]
-[ext_resource type="PackedScene" uid="uid://ccwfqfxxy14ws" path="res://Global_Scenes/Battle_System/Battle_SV/Encounters/Special/SP_Sick_Apprentice_1/Party_Members/Buffin_Assistant_1/Buffin_Assistant_1.tscn" id="20_pveni"]
+[ext_resource type="PackedScene" uid="uid://ccwfqfxxy14ws" path="res://Global_Scenes/Battle_System/Battle_SV/Party_Members/Buffin_Assistant_1/Buffin_Assistant_1.tscn" id="20_pveni"]
 [ext_resource type="Texture2D" uid="uid://dg22tot2xi4w0" path="res://Scenes/NPC/3D/Buffins/Paint_DeLere/Canvases/Sprites/Pictures/Brown_Popsicle.png" id="20_r2hei"]
-[ext_resource type="PackedScene" uid="uid://hxm6bm7ao1mr" path="res://Global_Scenes/Battle_System/Battle_SV/Encounters/Special/SP_Sick_Apprentice_1/Enemies/Sick_Apprentice_1/Sick_Apprentice_1.tscn" id="21_bhy24"]
+[ext_resource type="PackedScene" uid="uid://hxm6bm7ao1mr" path="res://Global_Scenes/Battle_System/Battle_SV/Enemies/Sick_Apprentice_1/Sick_Apprentice_1.tscn" id="21_bhy24"]
 [ext_resource type="PackedScene" uid="uid://bevsfn8gnppb1" path="res://Scenes/Maps/Map_Base/3D/Terrain_Area/Shape.tscn" id="22_o4ji8"]
 [ext_resource type="Shader" uid="uid://d3qm2ur0f8ihk" path="res://Global_Resources/Materials/2D/Shaders/Dream_Noise.gdshader" id="28_r2hei"]
 
@@ -81,7 +81,6 @@ shader_parameter/vignette_radius = 1.0
 [node name="SP_Sick_Apprentice_1" instance=ExtResource("1_7apoy")]
 script = ExtResource("2_snuwg")
 _e_BGM = SubResource("Resource_j1mit")
-_e_special = true
 
 [node name="Background" type="MeshInstance3D" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, -0.01, 20)
@@ -187,13 +186,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, 19)
 
 [node name="Buffin_Assistant_1" parent="Objects/Party_Members/Instances" index="1" instance=ExtResource("20_pveni")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 16.25)
-_e_command_circle_offset = Vector3(0, 3.7, 0)
 
-[node name="Sick_Apprentice_1" parent="Objects/Enemies" index="0" instance=ExtResource("21_bhy24")]
+[node name="Sick_Apprentice_1" parent="Objects/Enemies/Instances" index="0" instance=ExtResource("21_bhy24")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 19)
 
 [node name="Main" parent="Nav_Regions" index="0"]
 navigation_mesh = SubResource("NavigationMesh_r2hei")
+
+[node name="Flee_Pos" parent="." index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 19)
 
 [node name="Sun" type="DirectionalLight3D" parent="." index="9"]
 transform = Transform3D(0.707107, 0.5, -0.5, 0, 0.707107, 0.707107, 0.707107, -0.5, 0.5, 0, 0, 0)

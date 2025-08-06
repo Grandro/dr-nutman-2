@@ -1,13 +1,10 @@
-[gd_scene load_steps=73 format=3 uid="uid://bdr4m3xj7c1yn"]
+[gd_scene load_steps=75 format=3 uid="uid://bdr4m3xj7c1yn"]
 
 [ext_resource type="PackedScene" uid="uid://bq340dbv4ksvc" path="res://Global_Scenes/Battle_System/Battle_SV/Party_Members/Party_Member_Battle.tscn" id="1_0ouge"]
-[ext_resource type="Script" uid="uid://dbah7kvaje7p6" path="res://Global_Scenes/Battle_System/Battle_SV/Party_Members/Dr_Nutman/Scripts/Dr_Nutman.gd" id="2_fv4sd"]
 [ext_resource type="AudioStream" uid="uid://drtkyglm804jx" path="res://Global_Resources/Audio/SFX/Jump_1.wav" id="2_nexqa"]
 [ext_resource type="AudioStream" uid="uid://ep54nca0xn0i" path="res://Global_Resources/Audio/SFX/Hit_2.wav" id="3_6cjcm"]
 [ext_resource type="Texture2D" uid="uid://cod8mkqx8wdyp" path="res://Global_Resources/Sprites/Objects/Dr_Nutman/Spritesheet.png" id="3_b0glm"]
 [ext_resource type="AudioStream" uid="uid://bo43cb43rwn4t" path="res://Global_Resources/Audio/SFX/Charge_1.wav" id="4_aqyfl"]
-[ext_resource type="PackedScene" uid="uid://dsp0njc065uev" path="res://Scenes/Object/Comps/3D/Collision_Shape.tscn" id="4_g5cim"]
-[ext_resource type="PackedScene" uid="uid://birjyb23mdl01" path="res://Scenes/Object/Comps/3D/Movement/Comps/Terrain/Terrain_Base.tscn" id="5_cjvmt"]
 [ext_resource type="PackedScene" uid="uid://b028hrfen5mpa" path="res://Scenes/Object/Comps/3D/Movement/Comps/Terrain/Area.tscn" id="5_kc0g8"]
 [ext_resource type="AudioStream" uid="uid://dwto1bjldkmhg" path="res://Global_Resources/Audio/SFX/Terrain/Tile_1.wav" id="6_p6a5j"]
 [ext_resource type="Animation" uid="uid://wlb72qagatfp" path="res://Global_Scenes/Battle_System/Battle_SV/Party_Members/Dr_Nutman/Anims/Terrain/Global/Attack_ATK_Charge_Right.tres" id="7_fahhh"]
@@ -19,7 +16,6 @@
 [ext_resource type="Animation" uid="uid://c5gmaavililer" path="res://Global_Scenes/Battle_System/Battle_SV/Party_Members/Dr_Nutman/Anims/Terrain/Global/Attack_ATK_Tumble_Right.res" id="11_66tfv"]
 [ext_resource type="Animation" uid="uid://dbffyt3iu25od" path="res://Global_Scenes/Battle_System/Battle_SV/Party_Members/Dr_Nutman/Anims/Terrain/Global/Defend_DEF_Right.res" id="12_1bkri"]
 [ext_resource type="PackedScene" uid="uid://by8jegq6wfoxe" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Shield/Citrin_Shield.tscn" id="12_ueqoc"]
-[ext_resource type="PackedScene" uid="uid://d07xolpcrrwob" path="res://Scenes/Object/Comps/Movement/Comps/Knockbacks/Knockbacks.tscn" id="13_6n32r"]
 [ext_resource type="Animation" uid="uid://cu0w08u3nua6j" path="res://Global_Scenes/Battle_System/Battle_SV/Party_Members/Dr_Nutman/Anims/Terrain/Global/Duck_Right.res" id="13_rqbfq"]
 [ext_resource type="Animation" uid="uid://5k34dtpehxsf" path="res://Global_Scenes/Battle_System/Battle_SV/Party_Members/Dr_Nutman/Anims/Attack_ATK_Charge_Right.tres" id="14_104l6"]
 [ext_resource type="PackedScene" uid="uid://xgr0cw1har28" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/1.tscn" id="14_c6wsi"]
@@ -63,13 +59,19 @@
 [ext_resource type="Animation" uid="uid://c8ronxtbf0yqm" path="res://Global_Scenes/Battle_System/Battle_SV/Party_Members/Dr_Nutman/Anims/Stop_Down.tres" id="34_xcrvo"]
 [ext_resource type="Animation" uid="uid://enf2ktu1d4gy" path="res://Global_Scenes/Battle_System/Battle_SV/Party_Members/Dr_Nutman/Anims/Stop_Up.tres" id="37_3ot6h"]
 [ext_resource type="Animation" uid="uid://vt81vpuytliw" path="res://Global_Scenes/Battle_System/Battle_SV/Party_Members/Dr_Nutman/Anims/Walk_Down.tres" id="38_xbodc"]
+[ext_resource type="PackedScene" uid="uid://d1m8wwsegslr7" path="res://Global_Scenes/Battle_System/Battle_SV/Party_Members/Comps/Actions/Commands/Flee.tscn" id="40_kc0g8"]
 [ext_resource type="Animation" uid="uid://b62umynepikfr" path="res://Global_Scenes/Battle_System/Battle_SV/Party_Members/Dr_Nutman/Anims/Walk_Up.tres" id="41_g22ay"]
+[ext_resource type="PackedScene" uid="uid://b30bm35jd2ovk" path="res://Global_Scenes/Battle_System/Battle_SV/Party_Members/Dr_Nutman/Comps/Actions/Commands/Attack_ATK.tscn" id="41_per0l"]
 [ext_resource type="Animation" uid="uid://obx5i31dewyb" path="res://Global_Scenes/Battle_System/Battle_SV/Party_Members/Dr_Nutman/Anims/Fall_Right.res" id="42_16gc8"]
+[ext_resource type="PackedScene" uid="uid://bs7ghw4eswihf" path="res://Global_Scenes/Battle_System/Battle_SV/Character_Battle/Comps/Actions/Commands/Defense_DEF.tscn" id="42_kc0g8"]
 [ext_resource type="Animation" uid="uid://ba3x82kp28lvo" path="res://Global_Scenes/Battle_System/Battle_SV/Party_Members/Dr_Nutman/Anims/Defend_DEF_Right.res" id="68_1nqb1"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ea3cw"]
 radius = 0.4
 height = 1.8
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kc0g8"]
+size = Vector3(0.3, 0.27, 0.3)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fahhh"]
 size = Vector3(0.15, 0.1, 0.15)
@@ -158,6 +160,62 @@ _data = {
 &"Walk_Up": ExtResource("30_lq66e")
 }
 
+[sub_resource type="Animation" id="Animation_qa5kl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Collision:shape")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("CapsuleShape3D_ea3cw")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Hitbox/Collision:shape")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("BoxShape3D_kc0g8")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Hitbox:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.8, 0.8, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Hitbox:monitoring")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pn76j"]
+_data = {
+&"RESET": SubResource("Animation_qa5kl")
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gxi8e"]
 _data = {
 &"Attack_ATK_Charge_Right": ExtResource("14_104l6"),
@@ -187,7 +245,6 @@ _data = {
 }
 
 [node name="Dr_Nutman" instance=ExtResource("1_0ouge")]
-script = ExtResource("2_fv4sd")
 _e_command_circle_offset = Vector3(0, 3.8, 0)
 _e_reactions = {
 "$Default": {
@@ -210,18 +267,59 @@ hframes = 8
 vframes = 19
 frame = 113
 
-[node name="Collision" parent="." index="1" instance=ExtResource("4_g5cim")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
-shape = SubResource("CapsuleShape3D_ea3cw")
-
-[node name="Speech_Bubble" parent="." index="2" instance=ExtResource("9_l73wi")]
+[node name="Speech_Bubble" parent="." index="1" instance=ExtResource("9_l73wi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02, 4.5, 0.03)
 visible = false
 
-[node name="Popup" parent="." index="3" instance=ExtResource("10_eaoym")]
+[node name="Popup" parent="." index="2" instance=ExtResource("10_eaoym")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.373, 0.01)
 
-[node name="Terrain" parent="Movement" index="0" instance=ExtResource("5_cjvmt")]
+[node name="Equipment" parent="." index="3"]
+_e_scenes = {
+"Feet": {},
+"Head": {
+"Party_Hat_1": ExtResource("14_c6wsi"),
+"Party_Hat_2": ExtResource("15_vhafu"),
+"Party_Hat_3": ExtResource("16_hfsx0")
+},
+"Legs": {},
+"Shield": {
+"Citrin_Shield": ExtResource("12_ueqoc")
+},
+"Torso": {},
+"Weapon": {
+"Disposable_Glove": ExtResource("17_qtcm6")
+}
+}
+
+[node name="Collision" parent="." index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("CapsuleShape3D_ea3cw")
+
+[node name="Audio" parent="." index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+
+[node name="Jump" type="AudioStreamPlayer" parent="Audio" index="3"]
+stream = ExtResource("2_nexqa")
+bus = &"SFX"
+
+[node name="Hit" type="AudioStreamPlayer" parent="Audio" index="4"]
+stream = ExtResource("3_6cjcm")
+bus = &"SFX"
+
+[node name="Charge" type="AudioStreamPlayer" parent="Audio" index="5"]
+stream = ExtResource("4_aqyfl")
+bus = &"SFX"
+
+[node name="Footsteps" type="AudioStreamPlayer3D" parent="Audio" index="6"]
+stream = ExtResource("6_p6a5j")
+bus = &"SFX"
+
+[node name="Hitbox" parent="." index="6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0.8, 0)
+
+[node name="Collision" type="CollisionShape3D" parent="Hitbox" index="0"]
+shape = SubResource("BoxShape3D_kc0g8")
 
 [node name="Left_Foot" parent="Movement/Terrain/Areas" index="0" instance=ExtResource("5_kc0g8")]
 
@@ -246,59 +344,28 @@ _e_speeds = Dictionary[String, float]({
 "Walk": 6.0
 })
 
-[node name="Knockbacks" parent="Movement" index="4" instance=ExtResource("13_6n32r")]
+[node name="Status" parent="." index="9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.75, 1, 0)
 
-[node name="Equipment" parent="." index="5"]
-_e_scenes = {
-"Feet": {},
-"Head": {
-"Party_Hat_1": ExtResource("14_c6wsi"),
-"Party_Hat_2": ExtResource("15_vhafu"),
-"Party_Hat_3": ExtResource("16_hfsx0")
-},
-"Legs": {},
-"Shield": {
-"Citrin_Shield": ExtResource("12_ueqoc")
-},
-"Torso": {},
-"Weapon": {
-"Disposable_Glove": ExtResource("17_qtcm6")
-}
-}
+[node name="Actions" parent="." index="10"]
+_e_commands = Dictionary[String, PackedScene]({
+"Attack_ATK": ExtResource("41_per0l"),
+"Defense_DEF": ExtResource("42_kc0g8"),
+"Flee": ExtResource("40_kc0g8")
+})
 
-[node name="Audio" parent="." index="6"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
-
-[node name="Jump" type="AudioStreamPlayer" parent="Audio" index="3"]
-stream = ExtResource("2_nexqa")
-bus = &"SFX"
-
-[node name="Hit" type="AudioStreamPlayer" parent="Audio" index="4"]
-stream = ExtResource("3_6cjcm")
-bus = &"SFX"
-
-[node name="Charge" type="AudioStreamPlayer" parent="Audio" index="5"]
-stream = ExtResource("4_aqyfl")
-bus = &"SFX"
-
-[node name="Footsteps" type="AudioStreamPlayer3D" parent="Audio" index="6"]
-stream = ExtResource("6_p6a5j")
-bus = &"SFX"
-
-[node name="States" parent="." index="7"]
+[node name="States" parent="." index="11"]
 _e_states = Array[String](["Stop", "Idle", "Walk", "Jump", "Duck", "Fall", "Attack_ATK_Charge", "Attack_ATK_Fall", "Attack_ATK_Hit", "Attack_ATK_Recover", "Attack_ATK_Tumble", "Defend_DEF"])
 _e_state = "Idle"
 
-[node name="Party_Member" parent="." index="10"]
+[node name="Party_Member" parent="." index="13"]
 _e_pm_key = "Dr_Nutman"
 
-[node name="Anims" parent="." index="11"]
+[node name="Anims" parent="." index="14"]
 libraries = {
+&"": SubResource("AnimationLibrary_pn76j"),
 &"SV": SubResource("AnimationLibrary_gxi8e")
 }
-
-[node name="Status" parent="." index="14"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.75, 1, 0)
 
 [editable path="Popup"]
 [editable path="Movement/Terrain"]

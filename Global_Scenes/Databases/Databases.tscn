@@ -1,10 +1,11 @@
-[gd_scene load_steps=61 format=3 uid="uid://ctwo1tyq87pp6"]
+[gd_scene load_steps=62 format=3 uid="uid://ctwo1tyq87pp6"]
 
 [ext_resource type="Script" uid="uid://b0vn6f1426n8k" path="res://Global_Scenes/Databases/Scripts/Databases.gd" id="1"]
 [ext_resource type="Resource" uid="uid://i73al5vd2yhx" path="res://Global_Resources/Databases/Maps/3D/Doctor_Dream_1/Doctor_Dream_1.tres" id="2"]
 [ext_resource type="Resource" uid="uid://cdsogy3mi43o" path="res://Global_Resources/Databases/Keyboard_Layouts/Dvorak.tres" id="3"]
 [ext_resource type="Resource" uid="uid://c70vwbp3nmphm" path="res://Global_Resources/Databases/Battle_System/Enemies/Citrin/Citrin.tres" id="3_fwdp6"]
 [ext_resource type="Resource" uid="uid://dj0go6sih8qt8" path="res://Global_Resources/Databases/Maps/3D/Dr_Nutman_Home_1/Dr_Nutman_Home_1.tres" id="4"]
+[ext_resource type="Resource" uid="uid://b5kqeo71gg2ok" path="res://Global_Resources/Databases/Battle_System/Enemies/Ghosty/Ghosty.tres" id="4_cu0rr"]
 [ext_resource type="Resource" uid="uid://dtn88be3emgww" path="res://Global_Resources/Databases/Items/General/Main/Cookie.tres" id="5"]
 [ext_resource type="Resource" uid="uid://r4ypmhfmxla6" path="res://Global_Resources/Databases/Battle_System/Enemies/Sick_Apprentice_1/Sick_Apprentice_1.tres" id="6"]
 [ext_resource type="Resource" uid="uid://bq1glosbfgx77" path="res://Global_Resources/Databases/Keyboard_Layouts/AZERTY.tres" id="7"]
@@ -40,7 +41,7 @@
 [ext_resource type="Resource" uid="uid://ybkmuxkeepiw" path="res://Global_Resources/Databases/Main_Menu/Sub_Menus/Quests.tres" id="32"]
 [ext_resource type="Resource" uid="uid://11yqdq2mebuy" path="res://Global_Resources/Databases/Items/General/Main/Handful_Peanuts_Cracked.tres" id="33"]
 [ext_resource type="Resource" uid="uid://3i4ruhpul0ne" path="res://Global_Resources/Databases/Quests/Broko_Town/Main/Right_On_The_Nut/Right_On_The_Nut.tres" id="33_01ydk"]
-[ext_resource type="Resource" uid="uid://dogby7riyo8v1" path="res://Global_Resources/Databases/Battle_System/SV_Encounters/Citrin_Main_1.tres" id="33_anbds"]
+[ext_resource type="Resource" uid="uid://dogby7riyo8v1" path="res://Global_Resources/Databases/Battle_System/SV_Encounters/Broko_Forest_1.tres" id="33_anbds"]
 [ext_resource type="Resource" uid="uid://nph6dbvmj8yu" path="res://Global_Resources/Databases/Items/General/Main/Handful_Peanuts_Uncracked.tres" id="34"]
 [ext_resource type="Resource" uid="uid://sei28c0c5ei0" path="res://Global_Resources/Databases/Maps/3D/Broko_House_1/Broko_House_1.tres" id="35_pm13d"]
 [ext_resource type="Resource" uid="uid://cew68cvh1ml07" path="res://Global_Resources/Databases/Maps/3D/Broko_Forest_1/Broko_Forest_1.tres" id="36"]
@@ -71,6 +72,7 @@ _e_data = {
 "Enemies": {
 "Data": {
 "Citrin": ExtResource("3_fwdp6"),
+"Ghosty": ExtResource("4_cu0rr"),
 "Sick_Apprentice_1": ExtResource("6")
 }
 },
@@ -164,7 +166,7 @@ _e_data = {
 },
 "SV_Encounters": {
 "Data": {
-"Citrin_Main_1": ExtResource("33_anbds"),
+"Broko_Forest_1": ExtResource("33_anbds"),
 "SP_Sick_Apprentice_1": ExtResource("17")
 }
 },

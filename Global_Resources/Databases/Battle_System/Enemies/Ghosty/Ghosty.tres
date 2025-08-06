@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://b5kqeo71gg2ok"]
+
+[ext_resource type="Resource" uid="uid://dc00wf8wnin3b" path="res://Global_Resources/Databases/Battle_System/Enemies/Ghosty/Stats.tres" id="1_ee41o"]
+[ext_resource type="Script" uid="uid://cno1hrwjlms2y" path="res://Global_Resources/Databases/Battle_System/Enemies/Enemy_Data.gd" id="2_m4kfa"]
+
+[resource]
+script = ExtResource("2_m4kfa")
+_e_key = "Ghosty"
+_e_stats = ExtResource("1_ee41o")
+_e_actions = {
+"Commands": ["Attack_ATK"],
+"Specials": []
+}

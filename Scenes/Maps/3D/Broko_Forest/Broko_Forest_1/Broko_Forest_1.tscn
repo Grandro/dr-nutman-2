@@ -4910,12 +4910,14 @@ libraries = {
 &"": ExtResource("13_q342n")
 }
 
-[node name="Citrin_1" parent="Objects" index="4" instance=ExtResource("8_kq6ru")]
+[node name="Citrin_1" parent="Objects" index="4" node_paths=PackedStringArray("_e_stay_area") instance=ExtResource("8_kq6ru")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.5, 0, 45)
+_e_stay_area = NodePath("../../Enemy_Stay_Areas/Citrins_1")
 metadata/_edit_group_ = true
 
-[node name="Citrin_2" parent="Objects" index="5" instance=ExtResource("8_kq6ru")]
+[node name="Citrin_2" parent="Objects" index="5" node_paths=PackedStringArray("_e_stay_area") instance=ExtResource("8_kq6ru")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5, 0, 57.5)
+_e_stay_area = NodePath("../../Enemy_Stay_Areas/Citrins_2")
 metadata/_edit_group_ = true
 
 [node name="Chest_1" parent="Objects" index="6" instance=ExtResource("80_drm3x")]

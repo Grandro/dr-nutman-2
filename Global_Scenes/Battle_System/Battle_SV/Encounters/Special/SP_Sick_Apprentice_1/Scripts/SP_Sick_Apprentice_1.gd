@@ -12,8 +12,7 @@ func _ready():
 	_a_Disposable_Glove.hide()
 	_a_Popsicle_Stick.hide()
 	_a_Pill.hide()
-
-func load_data_init():
+	
 	var show_tutato_explain = Global_Data.get_options_gameplay_show_tutato_explain()
 	if show_tutato_explain:
 		var global_si = Global.get_singleton(self, "Global")

@@ -1,15 +1,5 @@
 extends MapBase3D
 
-@onready var _a_Citrin_1 = get_node("Objects/Citrin_1")
-@onready var _a_Citrin_2 = get_node("Objects/Citrin_2")
-@onready var _a_Enemy_Stay_Area_Citrins_1 = get_node("Enemy_Stay_Areas/Citrins_1")
-@onready var _a_Enemy_Stay_Area_Citrins_2 = get_node("Enemy_Stay_Areas/Citrins_2")
-
-func _ready():
-	super()
-	_a_Citrin_1.comph().call_comp("Behavior", "set_stay_area", [_a_Enemy_Stay_Area_Citrins_1])
-	_a_Citrin_2.comph().call_comp("Behavior", "set_stay_area", [_a_Enemy_Stay_Area_Citrins_2])
-
 func load_data_init():
 	super()
 	

@@ -1,7 +1,8 @@
-[gd_scene load_steps=38 format=3 uid="uid://cn4livtidiyqn"]
+[gd_scene load_steps=42 format=3 uid="uid://cn4livtidiyqn"]
 
 [ext_resource type="PackedScene" uid="uid://osrm8oliivfv" path="res://Scenes/Objects/3D/Enemies/Enemy_Base.tscn" id="1_2mua1"]
 [ext_resource type="Texture2D" uid="uid://cnflp2be3lbyg" path="res://Global_Resources/Sprites/Objects/Enemies/Ghosty/Spritesheet.png" id="2_cpnii"]
+[ext_resource type="PackedScene" uid="uid://dsp0njc065uev" path="res://Scenes/Object/Comps/3D/Collision_Shape.tscn" id="3_88jbl"]
 [ext_resource type="PackedScene" uid="uid://cfdwl620axohy" path="res://Scenes/Object/Comps/3D/Audio.tscn" id="3_e5on6"]
 [ext_resource type="Animation" uid="uid://cckbw862y3dw4" path="res://Scenes/Objects/3D/Enemies/Ghosty/Anims/Terrain/Stop_Down.res" id="4_jy415"]
 [ext_resource type="Animation" uid="uid://csk6wr6cx2mh2" path="res://Scenes/Objects/3D/Enemies/Ghosty/Anims/Terrain/Stop_Left.res" id="5_au8xa"]
@@ -32,25 +33,22 @@
 [ext_resource type="PackedScene" uid="uid://boh1rwcj5rgwf" path="res://Scenes/Object/Comps/States.tscn" id="29_4x276"]
 [ext_resource type="PackedScene" uid="uid://drpp26gth4snn" path="res://Scenes/Object/Comps/Reference.tscn" id="30_8yh0i"]
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_agaga"]
+radius = 0.4
+height = 1.0
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_nb5pv"]
 size = Vector3(0.75, 0.1, 0.5)
 
 [sub_resource type="Animation" id="Animation_nb5pv"]
 length = 0.001
-tracks/0/type = "position_3d"
+tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Areas")
+tracks/0/path = NodePath("Areas/Body/Veil:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0)
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Areas/Body/Veil:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
+tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -90,13 +88,6 @@ tracks/0/keys = {
 "update": 1,
 "values": [0]
 }
-tracks/1/type = "position_3d"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Display")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, 0, 1.14, 0)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cpnii"]
 _data = {
@@ -115,13 +106,42 @@ _data = {
 &"Stop_Up": ExtResource("8_5ebne")
 }
 
+[sub_resource type="Animation" id="Animation_au8xa"]
+resource_name = "Floating"
+length = 1.6
+loop_mode = 1
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Display")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 1.14, 0, 0.4, 1, 0, 1.04, 0, 0.8, 1, 0, 1.14, 0, 1.2, 1, 0, 1.24, 0)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Movement/Terrain/Areas")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.4, 1, 0, -0.1, 0, 0.8, 1, 0, 0, 0, 1.2, 1, 0, 0.1, 0)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_88jbl"]
+_data = {
+&"Floating": SubResource("Animation_au8xa")
+}
+
 [node name="Ghosty" instance=ExtResource("1_2mua1")]
+collision_mask = 0
 
 [node name="Display" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.14, 0)
 shaded = false
 texture = ExtResource("2_cpnii")
 hframes = 8
+
+[node name="Collision" parent="." index="1" instance=ExtResource("3_88jbl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.15, 0)
+shape = SubResource("CapsuleShape3D_agaga")
 
 [node name="Body" parent="Movement/Terrain/Areas" index="0" instance=ExtResource("8_ikul1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.73, 0)
@@ -136,19 +156,13 @@ libraries = {
 
 [node name="States" parent="Movement" index="2"]
 _e_speeds = Dictionary[String, float]({
-"Float": 3.0,
+"Float": 1.0,
 "Stop": 0.0
 })
 
-[node name="Audio" parent="." index="2" instance=ExtResource("3_e5on6")]
+[node name="Audio" parent="." index="3" instance=ExtResource("3_e5on6")]
 
-[node name="Behavior" parent="." index="3" instance=ExtResource("17_au8xa")]
-
-[node name="Debug_State" parent="Behavior" index="0"]
-visible = true
-
-[node name="Debug_Keep_State" parent="Behavior" index="1"]
-visible = true
+[node name="Behavior" parent="." index="4" instance=ExtResource("17_au8xa")]
 
 [node name="Neutral" parent="Battle_Starter" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0)
@@ -156,16 +170,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0)
 [node name="Collision" parent="Battle_Starter/Neutral" index="0"]
 shape = SubResource("BoxShape3D_uplfe")
 
-[node name="Anims" parent="." index="5"]
+[node name="Anims" parent="." index="6"]
 libraries = {
 &"": SubResource("AnimationLibrary_cpnii")
 }
 
-[node name="States" parent="." index="6" instance=ExtResource("29_4x276")]
+[node name="Floating" type="AnimationPlayer" parent="." index="7"]
+libraries = {
+&"": SubResource("AnimationLibrary_88jbl")
+}
+autoplay = "Floating"
+
+[node name="States" parent="." index="8" instance=ExtResource("29_4x276")]
 _e_states = Array[String](["Stop", "Idle", "Float"])
 _e_state = "Idle"
 
-[node name="Reference" parent="." index="7" instance=ExtResource("30_8yh0i")]
+[node name="Reference" parent="." index="9" instance=ExtResource("30_8yh0i")]
 
 [editable path="Movement/Terrain"]
 [editable path="Movement/Terrain/Areas/Body"]

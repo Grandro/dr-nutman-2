@@ -39,6 +39,7 @@ func _on_Locale_item_selected(p_idx):
 
 func _on_Start_pressed():
 	var global_si = Global.get_singleton(self, "Global")
+	global_si.start_game()
 	
 	#var dest = ["Doctor_Dream_1", "Start"]
 	#var dest = ["Dr_Nutman_Home_1", "Start"]
@@ -49,23 +50,25 @@ func _on_Start_pressed():
 	#var dest = ["Buffin_House_1", "Door"]
 	#var dest = ["Buffin_House_2", "Door"]
 	#var dest = ["Buffin_House_3", "Door"]
-	var dest = ["Buffin_House_3", "Stairway_2"]
+	#var dest = ["Buffin_House_3", "Stairway_2"]
 	#var dest = ["Broko_Forest_1", "Test"]
 	#var dest = ["Debug_3D", "Start"]
 	#var dest = ["Debug_2D", "Start"]
 	#var dest = ["Game_Over", "Start"]
 	
-	var scene_manager_si = Global.get_singleton(self, "Scene_Manager")
-	global_si.start_game()
-	scene_manager_si.change_scene_dest(dest)
+	#var scene_manager_si = Global.get_singleton(self, "Scene_Manager")
+	#scene_manager_si.change_scene_dest(dest)
 	
 	#var enc_key = "SP_Sick_Apprentice_1"
-	#var enc_key = "Citrin_Main_1"
+	var enc_key = "Broko_Forest_1"
+	#var troop = []
+	#var troop = ["Citrin"]
+	#var troop = ["Citrin", "Citrin"]
+	var troop = ["Ghosty"]
 	#
-	#var battle_system_si = Global.get_singleton(self, "Battle_System")
-	#var battle_sv = battle_system_si.get_battle_sv()
-	#global_si.start_game()
-	#battle_sv.battle(enc_key, BattleSV.MAP_RES.ENEMY)
+	var battle_system_si = Global.get_singleton(self, "Battle_System")
+	var battle_sv = battle_system_si.get_battle_sv()
+	battle_sv.battle(enc_key, BattleSV.MAP_RES.NEUTRAL, troop)
 
 func _on_Load_pressed():
 	_a_Menu_Journal.open()

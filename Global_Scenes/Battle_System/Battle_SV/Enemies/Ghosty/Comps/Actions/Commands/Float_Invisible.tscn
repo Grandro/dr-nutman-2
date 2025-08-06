@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dx6kvsr6bkbdi"]
+
+[ext_resource type="PackedScene" uid="uid://dqgrkgkqa4kt3" path="res://Global_Scenes/Battle_System/Battle_SV/Enemies/Ghosty/Comps/Actions/Commands/Attack_ATK.tscn" id="1_3ppbv"]
+[ext_resource type="Script" uid="uid://dvlf3kp7ln04u" path="res://Global_Scenes/Battle_System/Battle_SV/Enemies/Ghosty/Comps/Actions/Commands/Scripts/Float_Invisible.gd" id="2_r0gyl"]
+
+[node name="Float_Invisible" instance=ExtResource("1_3ppbv")]
+script = ExtResource("2_r0gyl")
+_e_move_state = null
+_e_offset = null
+
+[node name="Delay" type="Timer" parent="." index="0"]

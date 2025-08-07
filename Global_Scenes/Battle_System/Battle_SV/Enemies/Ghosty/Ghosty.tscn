@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://qxfiekavfsbt"]
+[gd_scene load_steps=40 format=3 uid="uid://qxfiekavfsbt"]
 
 [ext_resource type="PackedScene" uid="uid://dj5d5f0i16w5u" path="res://Global_Scenes/Battle_System/Battle_SV/Enemies/Enemy_Battle.tscn" id="1_ebq7w"]
 [ext_resource type="Texture2D" uid="uid://cnflp2be3lbyg" path="res://Global_Resources/Sprites/Objects/Enemies/Ghosty/Spritesheet.png" id="2_57uh2"]
@@ -22,6 +22,7 @@
 [ext_resource type="Animation" uid="uid://c66o6g42ntqyu" path="res://Scenes/Objects/3D/Enemies/Ghosty/Anims/Terrain/Stop_Right.res" id="14_nmb2e"]
 [ext_resource type="Animation" uid="uid://cxrvbkk6j4rrf" path="res://Scenes/Objects/3D/Enemies/Ghosty/Anims/Terrain/Stop_Up.res" id="15_y6h1l"]
 [ext_resource type="PackedScene" uid="uid://dqgrkgkqa4kt3" path="res://Global_Scenes/Battle_System/Battle_SV/Enemies/Ghosty/Comps/Actions/Commands/Attack_ATK.tscn" id="17_gao7a"]
+[ext_resource type="PackedScene" uid="uid://dx6kvsr6bkbdi" path="res://Global_Scenes/Battle_System/Battle_SV/Enemies/Ghosty/Comps/Actions/Commands/Float_Invisible.tscn" id="19_0yvio"]
 [ext_resource type="Animation" uid="uid://dy0oyqhlhfgai" path="res://Global_Scenes/Battle_System/Battle_SV/Enemies/Ghosty/Anims/Idle_Down.res" id="20_5vd71"]
 [ext_resource type="Animation" uid="uid://mja7twpesmw0" path="res://Global_Scenes/Battle_System/Battle_SV/Enemies/Ghosty/Anims/Idle_Left.res" id="21_7yr68"]
 [ext_resource type="Animation" uid="uid://njikstotg3ny" path="res://Global_Scenes/Battle_System/Battle_SV/Enemies/Ghosty/Anims/Idle_Right.res" id="22_iaolc"]
@@ -125,7 +126,7 @@ _e_attack_offset = Vector3(-1.1, 0, 0)
 _e_rating_offset = Vector3(-2, 4, 0.01)
 
 [node name="Display" parent="." index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.17896, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.14, 0)
 shaded = false
 texture = ExtResource("2_57uh2")
 hframes = 8
@@ -145,9 +146,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.01, 1.15, 0)
 [node name="Collision" type="CollisionShape3D" parent="Hitbox" index="0"]
 shape = SubResource("BoxShape3D_ebq7w")
 debug_color = Color(0.873097, 0.00045705, 0.841883, 0.42)
-
-[node name="Areas" parent="Movement/Terrain" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0389621, 0)
 
 [node name="Body" parent="Movement/Terrain/Areas" index="0" instance=ExtResource("3_s7olx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.73, 0)
@@ -171,7 +169,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1.1, 0)
 
 [node name="Actions" parent="." index="6"]
 _e_commands = Dictionary[String, PackedScene]({
-"Attack_ATK": ExtResource("17_gao7a")
+"Attack_ATK": ExtResource("17_gao7a"),
+"Float_Invisible": ExtResource("19_0yvio")
 })
 
 [node name="States" parent="." index="7"]

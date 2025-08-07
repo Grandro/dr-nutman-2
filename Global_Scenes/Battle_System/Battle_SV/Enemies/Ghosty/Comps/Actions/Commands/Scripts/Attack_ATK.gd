@@ -18,13 +18,15 @@ func _moved_to_target():
 	_a_Collision.set_disabled(false)
 	_a_Hitbox.set_monitoring(false)
 	
-	var tween = create_tween()
-	tween.finished.connect(_on_Tween_finished)
-	tween.set_trans(Tween.TRANS_CUBIC)
-	tween.tween_property(_a_Display, "modulate", Color.WHITE, 0.5).from(Color.TRANSPARENT)
+	var tween = _tween_display_modulate(Color.WHITE, Color.TRANSPARENT)
+	tween.finished.connect(_moved_to_org_pos)
 	
 	var org_pos = _a_Movement.get_org_pos()
 	_a_entity.set_global_position(org_pos)
 
-func _on_Tween_finished():
-	_moved_to_org_pos()
+func _tween_display_modulate(p_from, p_to):
+	var tween = create_tween()
+	tween.set_trans(Tween.TRANS_CUBIC)
+	tween.tween_property(_a_Display, "modulate", p_from, 0.5).from(p_to)
+	
+	return tween

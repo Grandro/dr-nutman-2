@@ -6,7 +6,10 @@ func process_action_start():
 	# 2) "Float_Invisible": Float through + Invisible: 0.3
 	var SP = _a_Stats.get_curr_stat("SP")
 	var rndm = randi() % 10
-	if rndm <= 4 || SP < 2 || true:
+	_process_float_invisible()
+	return
+	
+	if rndm <= 4 || SP < 2:
 		# Meele attack
 		_process_attack_ATK()
 	else:

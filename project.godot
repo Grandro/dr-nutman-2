@@ -75,6 +75,10 @@ folder_colors={
 "res://addons/": "gray"
 }
 
+[filesystem]
+
+import/blender/enabled=false
+
 [global_group]
 
 Translated=""

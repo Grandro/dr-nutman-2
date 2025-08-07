@@ -5,7 +5,9 @@
 
 [node name="Float_Invisible" instance=ExtResource("1_3ppbv")]
 script = ExtResource("2_r0gyl")
-_e_move_state = null
-_e_offset = null
+_e_visible_min = 0.5
+_e_visible_max = 2.0
+_e_invisible_min = 0.5
+_e_invisible_max = 2.0
 
-[node name="Delay" type="Timer" parent="." index="0"]
+[node name="Timer" type="Timer" parent="." index="0"]

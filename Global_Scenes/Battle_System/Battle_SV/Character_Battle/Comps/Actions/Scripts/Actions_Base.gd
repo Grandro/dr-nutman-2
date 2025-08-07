@@ -16,9 +16,9 @@ func init(p_entity):
 
 func process(p_scene):
 	var instance = _instantiate_action(p_scene)
-	instance.process()
-	
 	add_child(instance)
+	
+	instance.process()
 
 func update_args(p_args, p_data):
 	for key in p_args:

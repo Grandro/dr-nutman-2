@@ -138,6 +138,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.14, 0)
 shaded = false
 texture = ExtResource("2_cpnii")
 hframes = 8
+vframes = 2
 
 [node name="Collision" parent="." index="1" instance=ExtResource("3_88jbl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.15, 0)
@@ -163,6 +164,13 @@ _e_speeds = Dictionary[String, float]({
 [node name="Audio" parent="." index="3" instance=ExtResource("3_e5on6")]
 
 [node name="Behavior" parent="." index="4" instance=ExtResource("17_au8xa")]
+
+[node name="Battle_Starter" parent="." index="5"]
+_e_enc_key = "Ghost_House_1"
+_e_troops = Dictionary[Array, int]({
+["Ghosty"]: 2,
+["Ghosty", "Ghosty"]: 1
+})
 
 [node name="Neutral" parent="Battle_Starter" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0)

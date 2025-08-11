@@ -6,6 +6,7 @@ signal battle_ended(p_location, p_res)
 
 @export var _e_BGM : AudioPlayback = null
 @export var _e_BGS : Array[AudioPlayback] = []
+@export var _e_pm_comps : Array[PackedScene] = []
 
 const _a_PARTY_MEMBER_SCENE_PATH = "res://Global_Scenes/Battle_System/Battle_SV/Party_Members/%s/%s.tscn"
 const _a_ENEMY_SCENE_PATH = "res://Global_Scenes/Battle_System/Battle_SV/Enemies/%s/%s.tscn"
@@ -187,6 +188,10 @@ func _instantiate_party_members():
 		var pos = place_pos[i]
 		instance.set_position(pos)
 		_a_Party_Members_Instances.add_child(instance)
+		
+		for comp_scene in _e_pm_comps:
+			var comp_instance = comp_scene.instantiate()
+			instance.comph().add_comp(comp_instance)
 
 func _instantiate_enemies():
 	var amount = _a_troop.size()

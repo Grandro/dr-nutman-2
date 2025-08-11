@@ -1,9 +1,9 @@
 extends "res://Global_Scenes/Battle_System/Battle_SV/Enemies/Ghosty/Comps/Actions/Commands/Scripts/Attack_ATK.gd"
 
-@export var _e_visible_min : float = 0.5
-@export var _e_visible_max : float = 2.0
-@export var _e_invisible_min : float = 0.5
-@export var _e_invisible_max : float = 2.0
+@export var _e_visible_min : float = 0.0
+@export var _e_visible_max : float = 0.8
+@export var _e_invisible_min : float = 0.1
+@export var _e_invisible_max : float = 1.0
 
 @onready var _a_Timer = get_node("Timer")
 

@@ -75,10 +75,6 @@ folder_colors={
 "res://addons/": "gray"
 }
 
-[filesystem]
-
-import/blender/enabled=false
-
 [global_group]
 
 Translated=""
@@ -745,6 +741,7 @@ locale/translations=PackedStringArray("res://Localization/Localization.de.transl
 2d_render/layer_3="Object"
 3d_render/layer_3="Object"
 2d_render/layer_4="UI"
+3d_render/layer_4="Party_Member"
 3d_physics/layer_1="Terrain"
 3d_physics/layer_2="Terrain_Sounds"
 3d_physics/layer_3="Player"

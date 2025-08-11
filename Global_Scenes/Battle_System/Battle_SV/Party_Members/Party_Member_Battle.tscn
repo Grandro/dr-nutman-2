@@ -16,6 +16,9 @@ script = ExtResource("2_ihvmg")
 _e_command_circle_offset = Vector3(0, 5, 0)
 _e_reactions = {}
 
+[node name="Display" parent="." index="0"]
+layers = 12
+
 [node name="Equipment" parent="." index="1" instance=ExtResource("3_ynp27")]
 _e_scenes = {
 "Feet": {},

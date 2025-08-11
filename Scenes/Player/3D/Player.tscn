@@ -203,7 +203,7 @@ script = ExtResource("1_3wd3h")
 
 [node name="Display" parent="." instance=ExtResource("2_v3x3e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.12, 0)
-layers = 2
+layers = 10
 texture = ExtResource("3_coxvo")
 hframes = 8
 vframes = 19

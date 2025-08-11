@@ -5,9 +5,10 @@
 
 [node name="Float_Invisible" instance=ExtResource("1_3ppbv")]
 script = ExtResource("2_r0gyl")
-_e_visible_min = 0.5
-_e_visible_max = 2.0
-_e_invisible_min = 0.5
-_e_invisible_max = 2.0
+_e_visible_min = 0.0
+_e_visible_max = 0.8
+_e_invisible_min = 0.1
+_e_invisible_max = 1.0
 
 [node name="Timer" type="Timer" parent="." index="0"]
+one_shot = true

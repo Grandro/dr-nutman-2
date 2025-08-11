@@ -51,6 +51,9 @@ func _shoot_citrin_ball():
 	
 	_a_Citrin_Ball_CD.start(_e_citrin_ball_cd_time)
 
+func get_socialize_instance():
+	return _a_socialize_instance
+
 func _set_keep_state(p_keep_state):
 	super(p_keep_state)
 	_a_Enemy_Range.set_monitoring(!p_keep_state)

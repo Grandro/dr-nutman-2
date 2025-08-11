@@ -261,7 +261,7 @@ _e_rating_offset = Vector3(-3, 4, 0.01)
 
 [node name="Display" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.12, 0)
-layers = 2
+layers = 14
 texture = ExtResource("3_b0glm")
 hframes = 8
 vframes = 19

@@ -238,8 +238,8 @@ one_shot = false
 [node name="Battle_Starter" parent="." index="5"]
 _e_enc_key = "Broko_Forest_1"
 _e_troops = Dictionary[Array, int]({
-["Citrin"]: 1,
-["Citrin", "Citrin"]: 3
+["Citrin"]: 4,
+["Citrin", "Citrin"]: 1
 })
 
 [node name="Neutral" parent="Battle_Starter" index="0"]

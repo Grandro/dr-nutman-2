@@ -11,9 +11,6 @@ script = ExtResource("2_2gnph")
 _e_visibility_CD_min = 3.0
 _e_visibility_CD_max = 10.0
 
-[node name="Debug_State" parent="." index="0"]
-visible = true
-
 [node name="Rndm" parent="States" index="0" instance=ExtResource("3_d8xwo")]
 
 [node name="Change_Dir" parent="States/Rndm" index="0" instance=ExtResource("4_dnwak")]

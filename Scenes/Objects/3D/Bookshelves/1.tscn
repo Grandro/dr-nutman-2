@@ -279,6 +279,7 @@ transform = Transform3D(7.5904e-09, 0.173648, 0.984808, 1, -4.37114e-08, 0, 4.30
 surface_material_override/2 = SubResource("StandardMaterial3D_gcrgc")
 
 [node name="Nav_Obstacle" parent="." index="6"]
+visible = false
 vertices = PackedVector3Array(1.5, 0, -0.8, 1.5, 0, 0.7, -1.5, 0, 0.7, -1.5, 0, -0.8)
 
 [editable path="Interactions"]

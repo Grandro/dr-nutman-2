@@ -179,7 +179,7 @@ texture = ExtResource("6_rbjql")
 
 [node name="Anims" type="AnimationPlayer" parent="Canvas_2/QT_Bar" index="4"]
 libraries = {
-"": SubResource("AnimationLibrary_1ilq6")
+&"": SubResource("AnimationLibrary_1ilq6")
 }
 
 [node name="Audio" type="Node" parent="Canvas_2/QT_Bar" index="5"]
@@ -259,6 +259,7 @@ position = Vector2(640, 1856)
 texture = ExtResource("6_gjgoq")
 
 [node name="Camera" parent="Node2D/Uncracked_Peanut" index="0" instance=ExtResource("7_0w6mx")]
+zoom = Vector2(1, 1)
 limit_top = 0
 limit_bottom = 2000
 limit_smoothed = true
@@ -266,6 +267,6 @@ position_smoothing_enabled = true
 
 [node name="Anims" type="AnimationPlayer" parent="Node2D/Uncracked_Peanut" index="1"]
 libraries = {
-"": SubResource("AnimationLibrary_6rss1")
+&"": SubResource("AnimationLibrary_6rss1")
 }
 autoplay = "Spin"

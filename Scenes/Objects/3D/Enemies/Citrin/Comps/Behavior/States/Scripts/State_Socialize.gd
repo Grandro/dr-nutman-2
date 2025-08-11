@@ -7,7 +7,7 @@ func init(p_behavior, p_entity, p_entity_comph):
 	_a_nav_agent_comp = p_entity_comph.get_subcomp("Movement", "Nav_Agent")
 
 func process_start():
-	var anims_comp = _a_nav_agent_comp.get_comp("Anims")
+	var anims_comp = _a_entity_comph.get_comp("Anims")
 	anims_comp.animation_finished.connect(_on_Anims_anim_finished, CONNECT_ONE_SHOT)
 	_a_nav_agent_comp.set_path([])
 	

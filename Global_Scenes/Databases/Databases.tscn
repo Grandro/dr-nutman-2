@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://ctwo1tyq87pp6"]
+[gd_scene load_steps=63 format=3 uid="uid://ctwo1tyq87pp6"]
 
 [ext_resource type="Script" uid="uid://b0vn6f1426n8k" path="res://Global_Scenes/Databases/Scripts/Databases.gd" id="1"]
 [ext_resource type="Resource" uid="uid://i73al5vd2yhx" path="res://Global_Resources/Databases/Maps/3D/Doctor_Dream_1/Doctor_Dream_1.tres" id="2"]
@@ -61,6 +61,7 @@
 [ext_resource type="Resource" uid="uid://bbb3q07jktrjn" path="res://Global_Resources/Databases/Battle_System/Status/Empowered_Attack/Empowered_Attack.tres" id="54_axkks"]
 [ext_resource type="Resource" uid="uid://c6c84gh6e2k4x" path="res://Global_Resources/Databases/Battle_System/Actions/Specials/Citrin_Ball_Spew.tres" id="55_xg21b"]
 [ext_resource type="Resource" uid="uid://cv467pxunohwk" path="res://Global_Resources/Databases/Battle_System/Actions/Specials/Nut_Munch_Punch.tres" id="56_lj2og"]
+[ext_resource type="Resource" uid="uid://dydbo3j3hkk0s" path="res://Global_Resources/Databases/Battle_System/SV_Encounters/Ghost_House_1.tres" id="61_tvg6a"]
 
 [node name="Databases" type="Node"]
 script = ExtResource("1")
@@ -167,6 +168,7 @@ _e_data = {
 "SV_Encounters": {
 "Data": {
 "Broko_Forest_1": ExtResource("33_anbds"),
+"Ghost_House_1": ExtResource("61_tvg6a"),
 "SP_Sick_Apprentice_1": ExtResource("17")
 }
 },

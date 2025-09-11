@@ -9,7 +9,7 @@ var _a_nav_agent_comp = null
 
 func init(p_behavior, p_entity, p_entity_comph):
 	super(p_behavior, p_entity, p_entity_comph)
-	_a_nav_agent_comp = p_entity_comph.get_subcomp("Movement", "Nav_Agent")
+	_a_nav_agent_comp = p_entity_comph.get_comp("Movement/Nav_Agent")
 
 func process_start():
 	match _e_type:

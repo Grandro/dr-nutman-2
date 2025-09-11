@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="QuestData" load_steps=4 format=3 uid="uid://cb70b14xd8plq"]
+
+[ext_resource type="Script" uid="uid://d0ns7im888qf3" path="res://Global_Resources/Databases/Quests/Objective_Base_Data.gd" id="1_ur8py"]
+[ext_resource type="Resource" uid="uid://dg0rd8d17d2sm" path="res://Global_Resources/Databases/Quests/Broko_Town/Main/Groping_In_The_Dark/Objective_Find_Batteries.tres" id="2_j4jop"]
+[ext_resource type="Script" uid="uid://ccmwte4egncue" path="res://Global_Resources/Databases/Quests/Quest_Data.gd" id="4_jmyad"]
+
+[resource]
+script = ExtResource("4_jmyad")
+_e_key = "Groping_In_The_Dark"
+_e_type = "Main_Sub"
+_e_location = "Broko_Town_1"
+_e_name = "PROGRESS_QUESTS_BROKO_TOWN_1_MAIN_GROPING_IN_THE_DARK_NAME"
+_e_desc = "PROGRESS_QUESTS_BROKO_TOWN_1_MAIN_GROPING_IN_THE_DARK_DESC"
+_e_objectives = Array[ExtResource("1_ur8py")]([ExtResource("2_j4jop")])
+_e_rewards = {}

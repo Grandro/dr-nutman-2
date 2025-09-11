@@ -10,9 +10,6 @@
 [node name="Set_Move_Route" instance=ExtResource("1_gqoyd")]
 script = ExtResource("2_v8tui")
 
-[node name="VP" parent="Window/Contents/Margin/HBox/Left/Preview" index="0"]
-size = Vector2i(2, 2)
-
 [node name="Object" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="0"]
 _e_needed_comps = Array[String](["Reference", "Movement", "States"])
 _e_allowed_classes = Array[String](["Node2D"])

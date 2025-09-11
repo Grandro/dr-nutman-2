@@ -1,0 +1,99 @@
+[gd_scene load_steps=15 format=3 uid="uid://b2fuxruvkw2th"]
+
+[ext_resource type="Script" uid="uid://d0sbu30endb56" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Buffin_House_3/Objects/Rails_Engine_1/Scripts/Rails_Engine_1.gd" id="1_koncb"]
+[ext_resource type="PackedScene" uid="uid://bblmb8yfchyxr" path="res://Scenes/Object/Comps/3D/Display.tscn" id="2_givn3"]
+[ext_resource type="PackedScene" uid="uid://hhbrqw0yivn6" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Buffin_House_3/Objects/Pressure_Plates/Arrow_Left_1.tscn" id="2_n2p7q"]
+[ext_resource type="Texture2D" uid="uid://cd43k6djsy3vr" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Buffin_House_3/Objects/Rails_Engine_1/Sprites/Spritesheet.png" id="3_47fxi"]
+[ext_resource type="PackedScene" uid="uid://bi1osipdrngwn" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Buffin_House_3/Objects/Pressure_Plates/Arrow_Right_1.tscn" id="3_81bc2"]
+[ext_resource type="PackedScene" uid="uid://dsp0njc065uev" path="res://Scenes/Object/Comps/3D/Collision_Shape.tscn" id="4_adbhe"]
+[ext_resource type="PackedScene" uid="uid://cfdwl620axohy" path="res://Scenes/Object/Comps/3D/Audio.tscn" id="5_6eumq"]
+[ext_resource type="PackedScene" uid="uid://b1q143fixhaj5" path="res://Scenes/Object/Comps/Anims.tscn" id="6_47fxi"]
+[ext_resource type="PackedScene" uid="uid://dllj5lbxwqy17" path="res://Scenes/Pausable_Audio/3D/Pausable_Audio.tscn" id="6_emelb"]
+[ext_resource type="AudioStream" uid="uid://bk6rek2rqilg1" path="res://Global_Resources/Audio/BGS/Engine_Generator_1.ogg" id="7_emelb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0vp67"]
+
+[sub_resource type="Animation" id="Animation_adbhe"]
+resource_name = "Operate"
+length = 0.8
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Display:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Audio/Operate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_0vp67"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Display:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6eumq"]
+_data = {
+&"Operate": SubResource("Animation_adbhe"),
+&"RESET": SubResource("Animation_0vp67")
+}
+
+[node name="Rails_Engine_1" type="StaticBody3D"]
+script = ExtResource("1_koncb")
+metadata/_custom_type_script = "uid://u2h51f0r2vch"
+
+[node name="Display" parent="." instance=ExtResource("2_givn3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0.5)
+texture = ExtResource("3_47fxi")
+hframes = 8
+
+[node name="Collision" parent="." instance=ExtResource("4_adbhe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_0vp67")
+
+[node name="Audio" parent="." instance=ExtResource("5_6eumq")]
+
+[node name="Operate" parent="Audio" instance=ExtResource("6_emelb")]
+stream = ExtResource("7_emelb")
+max_distance = 8.0
+bus = &"BGS"
+
+[node name="Left" parent="." instance=ExtResource("2_n2p7q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="Right" parent="." instance=ExtResource("3_81bc2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+
+[node name="Anims" parent="." instance=ExtResource("6_47fxi")]
+libraries = {
+&"": SubResource("AnimationLibrary_6eumq")
+}
+autoplay = "Operate"

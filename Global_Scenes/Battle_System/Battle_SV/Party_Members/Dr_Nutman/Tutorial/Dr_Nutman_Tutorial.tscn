@@ -30,6 +30,7 @@
 [ext_resource type="Animation" uid="uid://dpgbep2wapfo2" path="res://Global_Scenes/Battle_System/Battle_SV/Party_Members/Dr_Nutman/Anims/Walk_Right.tres" id="28_1cys2"]
 [ext_resource type="Animation" uid="uid://b62umynepikfr" path="res://Global_Scenes/Battle_System/Battle_SV/Party_Members/Dr_Nutman/Anims/Walk_Up.tres" id="29_xxbcd"]
 
+
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ea3cw"]
 radius = 0.4
 height = 1.8

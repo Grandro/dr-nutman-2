@@ -1,0 +1,29 @@
+[gd_scene load_steps=7 format=3 uid="uid://5lycfv085rm0"]
+
+[ext_resource type="PackedScene" uid="uid://cnhxgpnwjp871" path="res://Global_Resources/Mapping/3D/Below/Broko_Town/Interior/Rails_1/Rail_Cars/Rail_Car_Base.tscn" id="1_3pwiv"]
+[ext_resource type="PackedScene" uid="uid://dhuoft05xgqnx" path="res://Global_Resources/Mapping/3D/Below/Broko_Town/Interior/Rails_1/Rail_Cars/Models/Rail_Car_1/Model.glb" id="2_rp0ir"]
+[ext_resource type="Script" uid="uid://bej5p4agl5s5n" path="res://Global_Resources/Mapping/3D/Below/Broko_Town/Interior/Rails_1/Rail_Cars/Scripts/Rail_Car_Projector.gd" id="2_uvaqx"]
+[ext_resource type="PackedScene" uid="uid://bsnr67e47vgyk" path="res://Scenes/Objects/3D/Tables/Dark_Brown_Small_1/Models/Dark_Brown_Small_1.glb" id="3_qs2yd"]
+[ext_resource type="PackedScene" uid="uid://b0lxwc1p7mnol" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Buffin_House_3/Objects/Projectors/Projector_2.tscn" id="4_uvaqx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2qp4h"]
+size = Vector3(1.5, 1.45, 1.2)
+
+[node name="Rail_Car_1" instance=ExtResource("1_3pwiv")]
+script = ExtResource("2_uvaqx")
+
+[node name="Model" parent="." index="0" instance=ExtResource("2_rp0ir")]
+
+[node name="Collision" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.725, 0)
+shape = SubResource("BoxShape3D_2qp4h")
+
+[node name="Table" parent="." index="2" instance=ExtResource("3_qs2yd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="Projector" parent="." index="3" instance=ExtResource("4_uvaqx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
+
+[node name="Nav_Obstacle" parent="." index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+radius = 1.0

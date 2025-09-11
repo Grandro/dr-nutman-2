@@ -12,6 +12,7 @@ func start_tween_picture_progress(p_from, p_to, p_percent_duration):
 	_a_to = p_to
 	_a_percent_duration = p_percent_duration
 	
+	stop_tween_picture_progress()
 	var mat = _a_Picture.get_material_override()
 	var duration = (p_to - p_from) * 100.0 * p_percent_duration
 	_a_tween = create_tween()

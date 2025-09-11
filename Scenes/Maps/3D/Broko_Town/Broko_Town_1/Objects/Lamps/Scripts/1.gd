@@ -8,17 +8,20 @@ func _ready():
 	super()
 	_a_Interactions.interacted.connect(_on_Interactions_interacted)
 
+func set_power(p_power):
+	_a_Audio.play("Power_Switch")
+	_a_Light.set_visible(p_power)
+
 func get_save_data():
 	var data = super()
-	data["Light_Enabled"] = _a_Light.is_visible()
+	data["Power"] = _a_Light.is_visible()
 	
 	return data
 
 func load_data(p_data):
 	super(p_data)
-	_a_Light.set_visible(p_data["Light_Enabled"])
+	_a_Light.set_visible(p_data["Power"])
 
 func _on_Interactions_interacted():
-	_a_Audio.play("Power_Switch")
-	var is_active = _a_Light.is_visible()
-	_a_Light.set_visible(!is_active)
+	var power = _a_Light.is_visible()
+	set_power(!power)

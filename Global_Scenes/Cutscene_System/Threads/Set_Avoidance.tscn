@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwg1vya6potvu"]
+
+[ext_resource type="PackedScene" uid="uid://lsv022k5m6ud" path="res://Global_Scenes/Cutscene_System/Threads/Thread_Base.tscn" id="1_q3thg"]
+[ext_resource type="Script" uid="uid://c5c5aay8s0rae" path="res://Global_Scenes/Cutscene_System/Threads/Scripts/Set_Avoidance.gd" id="2_q3thg"]
+
+[node name="Set_Avoidance" instance=ExtResource("1_q3thg")]
+script = ExtResource("2_q3thg")

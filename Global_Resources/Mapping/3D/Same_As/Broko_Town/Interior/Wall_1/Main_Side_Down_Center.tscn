@@ -4,23 +4,22 @@
 [ext_resource type="PackedScene" uid="uid://dbxigq53qnnvo" path="res://Global_Resources/Mapping/3D/Plane/Plane_Tile.tscn" id="2_a6106"]
 [ext_resource type="Texture2D" uid="uid://d2qnxtn4newle" path="res://Global_Resources/Mapping/Sprites/Same_As/Broko_Town/Interior/Wall_1/Main_Side_Down_Center.png" id="2_jsipg"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dwjr8"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_noyp5"]
 albedo_texture = ExtResource("2_jsipg")
-uv1_offset = Vector3(0, 0, 1)
 texture_filter = 0
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_a6106"]
-material = SubResource("StandardMaterial3D_dwjr8")
+[sub_resource type="PlaneMesh" id="PlaneMesh_irm5v"]
+material = SubResource("StandardMaterial3D_noyp5")
 size = Vector2(1, 1)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_x787u"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_1so7q"]
 resource_local_to_scene = true
 
 [node name="Main_1" instance=ExtResource("1_dwjr8")]
 
 [node name="Front" parent="Tiles" index="0" instance=ExtResource("2_a6106")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.5, 0.5)
-mesh = SubResource("PlaneMesh_a6106")
+mesh = SubResource("PlaneMesh_irm5v")
 
 [node name="Collision" parent="Static" index="0"]
-shape = SubResource("BoxShape3D_x787u")
+shape = SubResource("BoxShape3D_1so7q")

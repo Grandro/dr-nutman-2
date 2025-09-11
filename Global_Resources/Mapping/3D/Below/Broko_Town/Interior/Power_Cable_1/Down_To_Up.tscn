@@ -17,13 +17,12 @@ resource_local_to_scene = true
 next_pass = SubResource("ShaderMaterial_qx45g")
 transparency = 1
 albedo_color = Color(1, 1, 1, 0)
-uv1_scale = Vector3(0.999999, 7, 1)
 texture_filter = 0
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_t44mk"]
 resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_qx45g")
-size = Vector2(0.0999997, 3.5)
+size = Vector2(0.1, 0.5)
 
 [node name="Power_Cable_1" instance=ExtResource("2_xi5vj")]
 mesh = SubResource("PlaneMesh_t44mk")

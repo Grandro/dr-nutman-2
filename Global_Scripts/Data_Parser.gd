@@ -122,7 +122,9 @@ func _parse_ref_counted(p_object, p_data):
 func _parse_resource(p_resource, p_data):
 	p_data["Path"] = p_resource.get_path()
 	
-	if p_resource is Texture:
+	if p_resource is Image:
+		p_data = _parse_image(p_resource, p_data)
+	elif p_resource is Texture:
 		p_data = _parse_texture(p_resource, p_data)
 	elif p_resource is Material:
 		p_data = _parse_material(p_resource, p_data)
@@ -133,9 +135,30 @@ func _parse_resource(p_resource, p_data):
 	
 	return p_data
 
+func _parse_image(p_image, p_data):
+	p_data["Width"] = p_image.get_width()
+	p_data["Height"] = p_image.get_height()
+	p_data["Mipmaps"] = p_image.has_mipmaps()
+	p_data["Format"] = p_image.get_format()
+	p_data["Data"] = p_image.get_data()
+	
+	return p_data
+
 func _parse_texture(p_texture, p_data):
+	if p_texture is Texture2D:
+		p_data = _parse_texture_2D(p_texture, p_data)
+	
+	return p_data
+
+func _parse_texture_2D(p_texture, p_data):
+	if p_data["Path"].is_empty():
+		var image = p_texture.get_image()
+		p_data["Image"] = parse_object(image)
+	
 	if p_texture is CompressedTexture2D:
 		p_data = _parse_compressed_texture_2D(p_texture, p_data)
+	elif p_texture is ImageTexture:
+		pass
 	else:
 		push_warning("Parsing not implemented for ", p_texture.get_class())
 	
@@ -217,16 +240,26 @@ func unparse_object(p_data):
 	var class_ = p_data["Class"]
 	match class_:
 		"CompressedTexture2D": object = unparse_compressed_texture_2D(p_data)
+		"ImageTexture": object = unparse_image_texture(p_data)
 		"ShaderMaterial": object = unparse_shader_material(p_data)
 		"BoxShape3D": object = unparse_box_shape_3D(p_data)
 		"CapsuleShape3D": object = unparse_capsule_shape_3D(p_data)
-		_: push_warning("Unparsing not implemented for ", class_)
+		_: push_error("Unparsing not implemented for ", class_)
 	
 	return object
 
 func unparse_compressed_texture_2D(p_data):
-	var texture = _unparse_resource(p_data)
+	var texture = _unparse_texture(p_data)
 	texture.load(p_data["Load_Path"])
+	
+	return texture
+
+func unparse_image_texture(p_data):
+	var texture = _unparse_texture(p_data)
+	var path = texture.get_path()
+	if path.is_empty():
+		var image = _unparse_image(p_data["Image"])
+		texture.set_image(image)
 	
 	return texture
 
@@ -263,6 +296,32 @@ func unparse_capsule_shape_3D(p_data):
 	
 	return shape
 
+func _unparse_image(p_data):
+	var image = _unparse_resource(p_data)
+	var width = p_data["Width"]
+	var height = p_data["Height"]
+	var mipmaps = p_data["Mipmaps"]
+	var format = p_data["Format"]
+	var data = p_data["Data"]
+	image.set_data(width, height, mipmaps, format, data)
+	
+	return image
+
+func _unparse_texture(p_data):
+	var texture = _unparse_resource(p_data)
+	
+	return texture
+
+func _unparse_resource(p_data):
+	var path = p_data["Path"]
+	var resource = null
+	if path.is_empty():
+		resource = ClassDB.instantiate(p_data["Class"])
+	if !path.is_empty():
+		resource = load(p_data["Path"])
+	
+	return resource
+
 func _load_data_material(p_material, p_data):
 	var next_pass = unparse_object(p_data["Next_Pass"])
 	p_material.set_next_pass(next_pass)
@@ -271,14 +330,3 @@ func _load_data_material(p_material, p_data):
 func _load_data_shape(p_shape, p_data):
 	p_shape.set_custom_solver_bias(p_data["Custom_Solver_Bias"])
 	p_shape.set_margin(p_data["Margin"])
-
-func _unparse_resource(p_data):
-	var path = p_data["Path"]
-	var resource = null
-	if path.is_empty():
-		var class_ = p_data["Class"]
-		resource = ClassDB.instantiate(class_)
-	if !path.is_empty():
-		resource = load(p_data["Path"])
-	
-	return resource

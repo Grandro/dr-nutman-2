@@ -7,11 +7,16 @@ signal interaction_deactivated()
 var _a_Default_Interaction = null
 
 var _a_entity_entity = null
+var _a_entity_entity_comph : CompHandler = null
 
-var _a_interaction_allowed = true
+var _a_allowed = false
+var _a_needs_look_at = false
+var _a_look_at_update = false
+var _a_look_at_activate = false
 
 func init(p_entity_entity):
 	_a_entity_entity = p_entity_entity
+	_a_entity_entity_comph = p_entity_entity.comph()
 	
 	p_entity_entity.visibility_changed.connect(_on_Entity_Entity_visibility_changed)
 
@@ -30,11 +35,18 @@ func interaction(p_area):
 	p_area.increase_interaction_count()
 	interacted.emit()
 
-func interaction_activate(p_area, _p_dir):
+func interaction_update(p_dir):
+	if _a_look_at_update:
+		_look_at_dir(p_dir)
+
+func interaction_activate(p_area, p_dir):
 	var popup_type = p_area.get_popup_type()
 	if popup_type != "None":
 		p_area.set_active(true)
 		interaction_activated.emit(p_area)
+	
+	if _a_look_at_activate:
+		_look_at_dir(p_dir)
 
 func interaction_deactivate(p_area):
 	var popup_type = p_area.get_popup_type()
@@ -77,6 +89,10 @@ func _interaction_dialogue(p_area, p_args):
 	dialogue_system_si.set_dialogue_completed_cb(key, _a_entity.CB_dialogue_completed)
 	dialogue_system_si.set_dialogue_choice_selected_cb(key, _a_entity.CB_dialogue_choice_selected)
 
+func _look_at_dir(p_dir):
+	_a_entity_entity_comph.call_comp("Movement", "set_dir", [p_dir])
+	_a_entity_entity_comph.call_comp("Anims", "update_anim")
+
 func set_interaction_cutscene_args_idx(p_idx, p_args_idx):
 	var instance = _a_entity.get_child(p_idx)
 	instance.set_cutscene_args_idx(p_args_idx)
@@ -85,11 +101,29 @@ func set_interaction_dialogue_args_idx(p_idx, p_args_idx):
 	var instance = _a_entity.get_child(p_idx)
 	instance.set_dialogue_args_idx(p_args_idx)
 
-func set_interaction_allowed(p_interaction_allowed):
-	_a_interaction_allowed = p_interaction_allowed
+func set_allowed(p_allowed):
+	_a_allowed = p_allowed
 
-func get_interaction_allowed():
-	return _a_interaction_allowed
+func get_allowed():
+	return _a_allowed
+
+func set_needs_look_at(p_needs_look_at):
+	_a_needs_look_at = p_needs_look_at
+
+func get_needs_look_at():
+	return _a_needs_look_at
+
+func set_look_at_update(p_look_at_update):
+	_a_look_at_update = p_look_at_update
+
+func get_look_at_update():
+	return _a_look_at_update
+
+func set_look_at_activate(p_look_at_activate):
+	_a_look_at_activate = p_look_at_activate
+
+func get_look_at_activate():
+	return _a_look_at_activate
 
 func set_interaction_cutscene_args(p_idx, p_args):
 	var instance = _a_entity.get_child(p_idx)
@@ -118,7 +152,8 @@ func get_save_data():
 		var args = {}
 		args["Type"] = child.get_type()
 		args["Dirs"] = child.get_dirs()
-		args["Match_Dir"] = child.get_match_dir()
+		args["Use_Dir"] = child.get_use_dir()
+		args["Use_Transform"] = child.get_use_transform()
 		args["Popup_Type"] = child.get_popup_type()
 		args["Cutscene_Args"] = child.get_cutscene_args()
 		args["Cutscene_Args_Idx"] = child.get_cutscene_args_idx()
@@ -128,8 +163,10 @@ func get_save_data():
 		
 		data["Interactions"].push_back(args)
 	
-	data["Interaction"] = {}
-	data["Interaction"]["Allowed"] = get_interaction_allowed()
+	data["Allowed"] = get_allowed()
+	data["Needs_Look_At"] = get_needs_look_at()
+	data["Look_At_Update"] = get_look_at_update()
+	data["Look_At_Activate"] = get_look_at_activate()
 	
 	return data
 
@@ -139,7 +176,8 @@ func load_data(p_data):
 		var args = p_data["Interactions"][i]
 		child.set_type(args["Type"])
 		child.set_dirs(args["Dirs"])
-		child.set_match_dir(args["Match_Dir"])
+		child.set_use_dir(args["Use_Dir"])
+		child.set_use_transform(args["Use_Transform"])
 		child.set_popup_type(args["Popup_Type"])
 		child.set_cutscene_args(args["Cutscene_Args"])
 		child.set_cutscene_args_idx(args["Cutscene_Args_Idx"])
@@ -147,7 +185,10 @@ func load_data(p_data):
 		child.set_dialogue_args_idx(args["Dialogue_Args_Idx"])
 		child.set_interaction_count(args["Interaction_Count"])
 	
-	_a_interaction_allowed = p_data["Interaction"]["Allowed"]
+	_a_allowed = p_data["Allowed"]
+	_a_needs_look_at = p_data["Needs_Look_At"]
+	_a_look_at_update = p_data["Look_At_Update"]
+	_a_look_at_activate = p_data["Look_At_Activate"]
 
 func CB_cutscene_completed(_p_type, _p_key, _p_entry_key):
 	pass

@@ -52,7 +52,7 @@ func _process(_p_delta):
 	if _a_jump_queued && !_a_commands_moving:
 		_a_jumping = true
 		_a_can_move_commands = false
-		_a_instance.comph().call_subcomp("Movement", "Jump", "jump", [8.5])
+		_a_instance.comph().call_comp("Movement/Jump", "jump", [8.5])
 		_a_Jump_Delay.start()
 		
 		_a_jump_queued = false
@@ -70,7 +70,7 @@ func _process(_p_delta):
 func open(p_instance):
 	_a_instance = p_instance
 	
-	var movement_jump_comp = _a_instance.comph().get_subcomp("Movement", "Jump")
+	var movement_jump_comp = _a_instance.comph().get_comp("Movement/Jump")
 	movement_jump_comp.jumped.connect(_on_Character_jumped)
 	
 	var pos = p_instance.get_global_position()
@@ -108,7 +108,7 @@ func open(p_instance):
 	show()
 
 func close():
-	var movement_jump_comp = _a_instance.comph().get_subcomp("Movement", "Jump")
+	var movement_jump_comp = _a_instance.comph().get_comp("Movement/Jump")
 	movement_jump_comp.jumped.disconnect(_on_Character_jumped)
 	
 	_a_angle = 90.0

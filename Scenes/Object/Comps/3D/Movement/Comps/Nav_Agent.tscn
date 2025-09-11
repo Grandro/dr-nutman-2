@@ -7,5 +7,6 @@ path_desired_distance = 0.2
 target_desired_distance = 0.2
 path_height_offset = 0.4
 simplify_path = true
+radius = 0.75
 max_speed = 2.0
 script = ExtResource("1_cx2to")

@@ -61,8 +61,8 @@ func get_speed():
 	return 0.0
 
 func _on_Entity_Entity_Comph_comps_registered():
-	if _a_entity_entity_comph.has_comp_subcomp("Movement", "Jump"):
-		var jump_comp = _a_entity_entity_comph.get_subcomp("Movement", "Jump")
+	if _a_entity_entity_comph.has_comp("Movement/Jump"):
+		var jump_comp = _a_entity_entity_comph.get_comp("Movement/Jump")
 		jump_comp.jumped.connect(_on_Movement_Jump_jumped)
 
 func _on_Movement_Jump_jumped():

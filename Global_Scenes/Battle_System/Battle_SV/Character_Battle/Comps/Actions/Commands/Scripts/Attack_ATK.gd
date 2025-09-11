@@ -15,7 +15,7 @@ func init(p_commands, p_entity):
 	_a_Audio = p_entity.comph().get_comp("Audio")
 	_a_Hitbox = p_entity.comph().get_comp("Hitbox")
 	_a_Movement = p_entity.comph().get_comp("Movement")
-	_a_Movement_Nav_Agent = p_entity.comph().get_subcomp("Movement", "Nav_Agent")
+	_a_Movement_Nav_Agent = p_entity.comph().get_comp("Movement/Nav_Agent")
 	_a_States = p_entity.comph().get_comp("States")
 	_a_Anims = p_entity.comph().get_comp("Anims")
 	

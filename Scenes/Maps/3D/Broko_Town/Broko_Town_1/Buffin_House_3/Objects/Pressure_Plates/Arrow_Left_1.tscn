@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://hhbrqw0yivn6"]
+
+[ext_resource type="PackedScene" uid="uid://sjquujprcvpl" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Buffin_House_3/Objects/Pressure_Plates/Base.tscn" id="1_o0adr"]
+[ext_resource type="Texture2D" uid="uid://c8aee33qoogbw" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Buffin_House_3/Objects/Pressure_Plates/Sprites/Arrow_Left_1_Spritesheet.png" id="2_dpbh4"]
+
+[node name="Pressure_Plate_1" instance=ExtResource("1_o0adr")]
+
+[node name="Display" parent="." index="0"]
+texture = ExtResource("2_dpbh4")

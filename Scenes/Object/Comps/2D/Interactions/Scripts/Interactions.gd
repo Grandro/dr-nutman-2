@@ -4,7 +4,10 @@ signal interacted()
 signal interaction_activated(p_area)
 signal interaction_deactivated()
 
-@export var _e_interaction_allowed: bool = true
+@export var _e_allowed: bool = true
+@export var _e_needs_look_at : bool = false
+@export var _e_look_at_update : bool = false
+@export var _e_look_at_activate: bool = false
 
 var _a_Shared = preload("res://Scenes/Object/Comps/Interactions/Scripts/Shared.gd")
 
@@ -15,7 +18,10 @@ func _ready():
 	_a_shared.interacted.connect(_on_Shared_interacted)
 	_a_shared.interaction_activated.connect(_on_Shared_interaction_activated)
 	_a_shared.interaction_deactivated.connect(_on_Shared_interaction_deactivated)
-	_a_shared.set_interaction_allowed(_e_interaction_allowed)
+	_a_shared.set_allowed(_e_allowed)
+	_a_shared.set_needs_look_at(_e_needs_look_at)
+	_a_shared.set_look_at_update(_e_look_at_update)
+	_a_shared.set_look_at_activate(_e_look_at_activate)
 	
 	_a_shared.ready()
 
@@ -24,6 +30,9 @@ func init(p_entity):
 
 func interaction(p_area):
 	_a_shared.interaction(p_area)
+
+func interaction_update(p_dir):
+	_a_shared.interaction_update(p_dir)
 
 func interaction_activate(p_area, p_dir):
 	_a_shared.interaction_activate(p_area, p_dir)
@@ -43,12 +52,21 @@ func set_interaction_cutscene_args_idx(p_idx, p_args_idx):
 func set_interaction_dialogue_args_idx(p_idx, p_args_idx):
 	_a_shared.set_interaction_dialogue_args_idx(p_idx, p_args_idx)
 
-func set_interaction_allowed(p_interaction_allowed):
-	_e_interaction_allowed = p_interaction_allowed
-	_a_shared.set_interaction_allowed(p_interaction_allowed)
+func set_allowed(p_allowed):
+	_e_allowed = p_allowed
+	_a_shared.set_allowed(p_allowed)
 
-func get_interaction_allowed():
-	return _a_shared.get_interaction_allowed()
+func get_allowed():
+	return _a_shared.get_allowed()
+
+func get_needs_look_at():
+	return _a_shared.get_needs_look_at()
+
+func set_look_at_update(p_look_at_update):
+	_a_shared.set_look_at_update(p_look_at_update)
+
+func set_look_at_activate(p_look_at_activate):
+	_a_shared.set_look_at_activate(p_look_at_activate)
 
 func set_interaction_cutscene_args(p_idx, p_args):
 	_a_shared.set_interaction_cutscene_args(p_idx, p_args)
@@ -66,7 +84,10 @@ func get_save_data():
 	return _a_shared.get_save_data()
 
 func load_data(p_data):
-	_e_interaction_allowed = p_data["Interaction"]["Allowed"]
+	_e_allowed = p_data["Allowed"]
+	_e_needs_look_at = p_data["Needs_Look_At"]
+	_e_look_at_update = p_data["Look_At_Update"]
+	_e_look_at_activate = p_data["Look_At_Activate"]
 	_a_shared.load_data(p_data)
 
 func load_data_init():

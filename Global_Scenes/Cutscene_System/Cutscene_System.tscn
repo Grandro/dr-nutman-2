@@ -85,6 +85,10 @@ _e_thread_paths = Dictionary[String, Dictionary]({
 "2D": "res://Global_Scenes/Cutscene_System/Threads/Script.tscn",
 "3D": "res://Global_Scenes/Cutscene_System/Threads/Script.tscn"
 },
+"Set_Avoidance": {
+"2D": "res://Global_Scenes/Cutscene_System/Threads/Set_Avoidance.tscn",
+"3D": "res://Global_Scenes/Cutscene_System/Threads/Set_Avoidance.tscn"
+},
 "Set_Move_Route": {
 "2D": "res://Global_Scenes/Cutscene_System/Threads/2D/Set_Move_Route.tscn",
 "3D": "res://Global_Scenes/Cutscene_System/Threads/3D/Set_Move_Route.tscn"

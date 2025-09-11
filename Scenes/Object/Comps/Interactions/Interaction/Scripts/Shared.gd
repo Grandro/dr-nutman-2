@@ -2,7 +2,8 @@ extends "res://Scripts/Extension_Base.gd"
 
 var _a_type = ""
 var _a_dirs = []
-var _a_match_dir = true
+var _a_use_dir = false
+var _a_use_transform = false
 var _a_popup_type = ""
 var _a_popup_pos = null # Vector
 var _a_speech_bubble_pos = null # Vector
@@ -43,11 +44,17 @@ func set_dirs(p_dirs):
 func get_dirs():
 	return _a_dirs
 
-func set_match_dir(p_match_dir):
-	_a_match_dir = p_match_dir
+func set_use_dir(p_use_dir):
+	_a_use_dir = p_use_dir
 
-func get_match_dir():
-	return _a_match_dir
+func get_use_dir():
+	return _a_use_dir
+
+func set_use_transform(p_use_transform):
+	_a_use_transform = p_use_transform
+
+func get_use_transform():
+	return _a_use_transform
 
 func set_popup_type(p_popup_type):
 	_a_popup_type = p_popup_type

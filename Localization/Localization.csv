@@ -64,6 +64,7 @@ DEBUG_CUTSCENES_COMMANDS_LIST_ITEMS,Items,Items
 DEBUG_CUTSCENES_COMMANDS_LIST_AUDIO,Audio,Audio
 DEBUG_CUTSCENES_COMMANDS_LIST_MISC,Sonstiges,Misc
 DEBUG_CUTSCENES_COMMANDS_SET_MOVE_ROUTE,Bewegungsroute Setzen,Set Move Route
+DEBUG_CUTSCENES_COMMANDS_SET_AVOIDANCE,Vermeidung Setzen,Set Avoidance
 DEBUG_CUTSCENES_COMMANDS_CHANGE_DIR,Richtung Ändern,Change Direction
 DEBUG_CUTSCENES_COMMANDS_TWEEN,Tween,Tween
 DEBUG_CUTSCENES_COMMANDS_PLAY_ANIM,Animation Abspielen,Play Animation
@@ -237,6 +238,7 @@ DEBUG_CUTSCENES_ENABLE,Aktivieren,Enable
 DEBUG_CUTSCENES_CLEAR,Löschen,Clear
 DEBUG_CUTSCENES_ITEM_KEY,Item-Schlüssel,Item Key
 DEBUG_CUTSCENES_TIME,Zeit,Time
+DEBUG_CUTSCENES_AVOIDANCE,Vermeidung,Avoidance
 DEBUG_UPPER_LEFT,Oben links,Upper left
 DEBUG_UPPER_RIGHT,Oben rechts,Upper right
 DEBUG_LOWER_LEFT,Unten links,Lower left
@@ -268,6 +270,9 @@ PROGRESS_QUESTS_BROKO_TOWN_1_MAIN_AN_UPLIFTING_NUT_NAME,Eine erhebende Nuss,An u
 PROGRESS_QUESTS_BROKO_TOWN_1_MAIN_AN_UPLIFTING_NUT_DESC,"Auf der südlichen Wiese in Broko Town treiben sich ein paar raffinierte Hörnchen herum. Sie lassen sich in die Luft heben, wenn man ihnen dafür eine Nuss gibt...",There are a few sneaky squirrels hanging around on the southern meadow in Broko Town. They can be lifted into the air if you give them a nut in return...
 PROGRESS_QUESTS_BROKO_TOWN_1_MAIN_AN_UPLIFTING_NUT_OBJECTIVE_CRACK_NUTS,Nüsse geknackt,Nuts cracked
 PROGRESS_QUESTS_BROKO_TOWN_1_MAIN_AN_UPLIFTING_NUT_OBJECTIVE_LIFT_SQUIRRELS,Hörnchen gehoben,Squirrels lifted
+PROGRESS_QUESTS_BROKO_TOWN_1_MAIN_GROPING_IN_THE_DARK_NAME,Im Dunkeln tappen,Groping in the dark
+PROGRESS_QUESTS_BROKO_TOWN_1_MAIN_GROPING_IN_THE_DARK_DESC,"Südlich vom Schloss in Broko Town wurde der Ort des alltäglichen Wohnens in eine wunderbar schaurige Gruselattraktion verwandelt.","South of the castle in Broko Town, the residence of everyday life has been transformed into a wonderfully spooky horror attraction."
+PROGRESS_QUESTS_BROKO_TOWN_1_MAIN_GROPING_IN_THE_DARK_OBJECTIVE_FIND_BATTERIES,"Batterien gefunden","Batteries found"
 LOCALE_DE,Deutsch,Deutsch
 LOCALE_EN,English,English
 MINIGAMES_CONTROLS,Steuerung,Controls
@@ -346,6 +351,8 @@ INSTALL,Installieren,Install
 UNINSTALL,Deinstallieren,Uninstall
 ROTATE_LEFT,Links Drehen,Rotate Left
 ROTATE_RIGHT,Rechts Drehen,Rotate Right
+TURN_ON,Einschalten,Turn On
+TURN_OFF,Ausschalten,Turn Off
 COLOR_RED,Rot,Red
 COLOR_GREEN,Grün,Green
 COLOR_DARK_BLUE,Dunkelblau,Dark Blue
@@ -969,6 +976,18 @@ DIALOGUE_BUFFIN_HOUSE_3_PUZZLE_2_COMMENT_2_1_1,"Ohh! Sie mögen es wohl mir ins 
 DIALOGUE_BUFFIN_HOUSE_3_PUZZLE_2_COMMENT_2_2_1,"Isch kann das Referenzbild gar nischt mehr sehön!","I can't see the reference picture anymore!"
 DIALOGUE_BUFFIN_HOUSE_3_PUZZLE_2_COMMENT_2_3_1,"Ein eschtör Künstlör, wie Isch, genießt ös auch manschmal im Rampönlischt zu ste'ön!","A real artist like me enjoys being in the spotlight sometimes!"
 DIALOGUE_BUFFIN_HOUSE_3_PUZZLE_2_COMMENT_2_4_1,"Isch 'abe bereits einö strahlönde Persönlischkeit, Sie müssön misch nischt auch noch anleuchtön!","I already have a radiant personality, you don't have to shine a light on me!"
+DIALOGUE_BUFFIN_HOUSE_3_PUZZLE_2_SOLVED_1_1_1,"Unglaublisch!","Unbelievable!"
+DIALOGUE_BUFFIN_HOUSE_3_PUZZLE_2_SOLVED_1_1_2,"Isch wolltö es ihnön nicht sagön, aber isch dachtö dieses Rätsöl wäre unmöglisch!","I didn't want to tell you, but I thought this puzzle was impossible!"
+DIALOGUE_BUFFIN_HOUSE_3_PUZZLE_2_SOLVED_1_2_1,"{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}. Alors! Elektrik DéLère kann nischt mehr weit entförnt sein!","{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}. Alors! Electric DéLère can't be too far away now!"
+DIALOGUE_BUFFIN_HOUSE_3_PUZZLE_3_START_1_1_1,"Oh la la! Wie kommön dönn Schienön in diesö 'Aus?","Oh la la! How did rails end up in this house?"
+DIALOGUE_BUFFIN_HOUSE_3_ELECTRIC_DELERE_1_1_1_1,"Elektrik DéLère! Endlisch 'abön wir disch gefundön!","Electrical DéLère! Finally, we found you!"
+DIALOGUE_BUFFIN_HOUSE_3_ELECTRIC_DELERE_1_1_2_1,"KÜNST!","PAINT!"
+DIALOGUE_BUFFIN_HOUSE_3_ELECTRIC_DELERE_1_1_3_1,"Wir 'abön uns ewisch nischt mehr gese'ön.","We haven't seen each other for ages."
+DIALOGUE_BUFFIN_HOUSE_3_ELECTRIC_DELERE_1_1_4_1,"Ich habe leider generell ewig nichts mehr gesehen.","Unfortunately, I haven't seen anything in ages overall."
+DIALOGUE_BUFFIN_HOUSE_3_ELECTRIC_DELERE_1_1_4_2,"Ich habe versprochen für das Fest ein paar Batterien zu organisieren{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.","I promised to get some batteries for the festival{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}."
+DIALOGUE_BUFFIN_HOUSE_3_ELECTRIC_DELERE_1_1_4_3,"Das Haus hier soll wohl ein Batterien Hotspot sein, allerdings finde ich in der Dunkelheit rein gar nichts.","This house is supposed to be a battery hotspot, but I can't find anything in the dark."
+DIALOGUE_BUFFIN_HOUSE_3_ELECTRIC_DELERE_1_1_4_4,"Ich brauche 6 Batterien, dann kann ich endlich zurück zum Fest.","I need 6 batteries, then I can finally go back to the festival."
+DIALOGUE_BUFFIN_HOUSE_3_ELECTRIC_DELERE_1_1_5_1,"Sacre Bleu!","Sacre Bleu!"
 DIALOGUE_BUFFIN_HOUSE_3_VACUUM_CLEANER_1_1_1_1,"Musst du jetzt unbedingt anfangen zu saugen?","Do you really need to start vacuuming now?"
 DIALOGUE_BUFFIN_HOUSE_3_VACUUM_CLEANER_1_1_1_2,"Es ist nicht mehr lange hin bis zur großen Zeremonie.","It's not long now until the big ceremony."
 DIALOGUE_BUFFIN_HOUSE_3_VACUUM_CLEANER_1_1_1_3,"Ich will auch irgendwann Feierabend haben!","I want to call it a day at some point too!"

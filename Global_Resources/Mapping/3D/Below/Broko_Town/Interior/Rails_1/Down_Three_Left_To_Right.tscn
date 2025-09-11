@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://hlt5xsxwrglt"]
+
+[ext_resource type="PackedScene" uid="uid://m064wf80xii3" path="res://Global_Resources/Mapping/3D/Below/Broko_Town/Interior/Rails_1/Rails_Base.tscn" id="1_socb0"]
+[ext_resource type="Texture2D" uid="uid://ttqvleyp61dn" path="res://Global_Resources/Mapping/Sprites/Below/Broko_Town/Interior/Rails_1/Down_Three_Left_To_Right.png" id="2_socb0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_socb0"]
+transparency = 1
+albedo_texture = ExtResource("2_socb0")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_8sllj"]
+material = SubResource("StandardMaterial3D_socb0")
+size = Vector2(1.16, 1.16)
+
+[sub_resource type="Curve3D" id="Curve3D_pgfso"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, -9.18455e-17, 0, 0, 0, 0, 0, 0, 1, 0, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[node name="Rails_1" instance=ExtResource("1_socb0")]
+mesh = SubResource("PlaneMesh_8sllj")
+_e_base_size = Vector3(1.16, 1, 1.16)
+
+[node name="Path" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0)
+curve = SubResource("Curve3D_pgfso")

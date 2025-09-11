@@ -22,7 +22,6 @@ bg_color = Color(0.113725, 0.133333, 0.160784, 1)
 [node name="Debug" type="Node"]
 process_mode = 3
 script = ExtResource("1")
-_e_enabled = false
 
 [node name="Teleport_Map" parent="." instance=ExtResource("2_5ypah")]
 

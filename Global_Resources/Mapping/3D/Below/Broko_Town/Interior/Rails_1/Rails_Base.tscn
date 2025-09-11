@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://m064wf80xii3"]
+
+[ext_resource type="PackedScene" uid="uid://dbxigq53qnnvo" path="res://Global_Resources/Mapping/3D/Plane/Plane_Tile.tscn" id="1_ewk4v"]
+[ext_resource type="Script" uid="uid://bk80yiunmvlkh" path="res://Global_Resources/Mapping/3D/Below/Broko_Town/Interior/Rails_1/Scripts/Rails_Base.gd" id="2_bhwx4"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_bhwx4"]
+resource_local_to_scene = true
+size = Vector2(1, 1)
+
+[node name="Rails_Base" instance=ExtResource("1_ewk4v")]
+mesh = SubResource("PlaneMesh_bhwx4")
+script = ExtResource("2_bhwx4")
+
+[node name="Path" type="Path3D" parent="." index="0"]

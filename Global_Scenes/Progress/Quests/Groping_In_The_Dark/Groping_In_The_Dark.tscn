@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://cn74gnyun8arl"]
+
+[ext_resource type="PackedScene" uid="uid://dw83gpfjqfylp" path="res://Global_Scenes/Progress/Quests/Quest_Base.tscn" id="1_ippcc"]
+[ext_resource type="PackedScene" uid="uid://bgn52nelgb1f" path="res://Global_Scenes/Progress/Quests/Groping_In_The_Dark/Objectives/Find_Batteries.tscn" id="2_gmju0"]
+
+[node name="Groping_In_The_Dark" instance=ExtResource("1_ippcc")]
+
+[node name="Find_Batteries" parent="Objectives" index="0" instance=ExtResource("2_gmju0")]

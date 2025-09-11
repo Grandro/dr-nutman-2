@@ -27,22 +27,42 @@ func _start_invisible_CD():
 	var invisible_CD = randf_range(_e_visibility_CD_min, _e_visibility_CD_max)
 	_a_Invisible_CD.start(invisible_CD)
 
+func _set_state(p_state, p_process = true):
+	super(p_state, p_process)
+	match p_state:
+		"In_Battle":
+			_a_Target_Range.set_monitoring(false)
+			_a_check_vision = false
+		"Respawn":
+			_a_Target_Range.set_monitoring(false)
+			_a_check_vision = false
+		_:
+			_a_Target_Range.set_monitoring(true)
+
+func get_save_data():
+	var data = super()
+	data["Check_Vision"] = _a_check_vision
+	
+	return data
+
 func load_data(p_data):
 	await _a_entity_comph.comps_registered
 	super(p_data)
+	if p_data["Check_Vision"]:
+		_a_target.comph().call_comp("Vision", "disable")
 
 func load_data_init():
 	await _a_entity_comph.comps_registered
 	
 	_set_state("Rndm")
 
-func _on_Target_Range_body_entered(p_body):
+func _on_Target_Range_body_entered(_p_body):
 	_a_check_vision = true
-	p_body.comph().call_comp("Vision", "enable")
+	_a_target.comph().call_comp("Vision", "enable")
 
-func _on_Target_Range_body_exited(p_body):
+func _on_Target_Range_body_exited(_p_body):
 	_a_check_vision = false
-	p_body.comph().call_comp("Vision", "disable")
+	_a_target.comph().call_comp("Vision", "disable")
 	_set_queued_state("Rndm")
 
 func _on_Invisible_CD_timeout():

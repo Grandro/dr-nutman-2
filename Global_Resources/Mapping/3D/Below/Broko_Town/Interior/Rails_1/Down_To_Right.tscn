@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://bdpak2qcfw7er"]
+
+[ext_resource type="PackedScene" uid="uid://m064wf80xii3" path="res://Global_Resources/Mapping/3D/Below/Broko_Town/Interior/Rails_1/Rails_Base.tscn" id="1_mjox0"]
+[ext_resource type="Texture2D" uid="uid://jic3407maoqc" path="res://Global_Resources/Mapping/Sprites/Below/Broko_Town/Interior/Rails_1/Down_To_Right.png" id="2_kwnf5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kwnf5"]
+transparency = 1
+albedo_texture = ExtResource("2_kwnf5")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_d3ybi"]
+material = SubResource("StandardMaterial3D_kwnf5")
+size = Vector2(1.16, 1.16)
+
+[sub_resource type="Curve3D" id="Curve3D_kwnf5"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0, 0, 0, 0, 0, 0, 0.002, 0, 0.451, 0, 0, 0, 0, 0, 0, 0.01, 0, 0.402, 0, 0, 0, 0, 0, 0, 0.022, 0, 0.355, 0, 0, 0, 0, 0, 0, 0.038, 0, 0.309, 0, 0, 0, 0, 0, 0, 0.059, 0, 0.264, 0, 0, 0, 0, 0, 0, 0.084, 0, 0.222, 0, 0, 0, 0, 0, 0, 0.113, 0, 0.183, 0, 0, 0, 0, 0, 0, 0.146, 0, 0.146, 0, 0, 0, 0, 0, 0, 0.183, 0, 0.113, 0, 0, 0, 0, 0, 0, 0.222, 0, 0.084, 0, 0, 0, 0, 0, 0, 0.264, 0, 0.059, 0, 0, 0, 0, 0, 0, 0.309, 0, 0.038, 0, 0, 0, 0, 0, 0, 0.355, 0, 0.022, 0, 0, 0, 0, 0, 0, 0.402, 0, 0.01, 0, 0, 0, 0, 0, 0, 0.451, 0, 0.002, 0, 0, 0, 0, 0, 0, 0.5, 0, 0),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 17
+
+[node name="Rails_1" instance=ExtResource("1_mjox0")]
+mesh = SubResource("PlaneMesh_d3ybi")
+_e_base_size = Vector3(1.16, 1, 1.16)
+
+[node name="Path" parent="." index="0"]
+curve = SubResource("Curve3D_kwnf5")

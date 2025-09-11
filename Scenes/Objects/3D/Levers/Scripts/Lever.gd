@@ -8,12 +8,12 @@ var _a_disabled = false
 func flip_on():
 	set_state("Flip_On")
 	update_anim()
-	set_interaction_allowed(false)
+	set_allowed(false)
 
 func flip_off():
 	set_state("Flip_Off")
 	update_anim()
-	set_interaction_allowed(false)
+	set_allowed(false)
 
 func interaction(_p_area):
 	if _a_disabled:
@@ -38,7 +38,7 @@ func _on_anim_finished(p_name):
 		super(p_name)
 		return
 	
-	set_interaction_allowed(true)
+	set_allowed(true)
 	flipped.emit()
 	
 	super(p_name)

@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://b0lxwc1p7mnol"]
+
+[ext_resource type="PackedScene" uid="uid://chwvwspoox5ko" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Buffin_House_3/Objects/Projectors/Projector_Base.tscn" id="1_b20ak"]
+[ext_resource type="Texture2D" uid="uid://cwp07yg806gwd" path="res://Global_Resources/Mapping/Sprites/Below/Broko_Town/Interior/Rails_1/Down_To_Up.png" id="2_v0tm2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v0gio"]
+size = Vector3(0.5, 0.5, 0.5)
+
+[node name="Projector_1" instance=ExtResource("1_b20ak")]
+
+[node name="1" parent="Interactions" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0.75)
+_e_dirs = Array[String](["Up"])
+_e_use_transform = true
+
+[node name="Collision" parent="Interactions/1" index="0"]
+shape = SubResource("BoxShape3D_v0gio")
+
+[node name="VP" parent="." index="5"]
+size = Vector2i(54, 54)
+
+[node name="Image" type="TextureRect" parent="VP" index="0"]
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 56.0
+offset_bottom = 56.0
+texture = ExtResource("2_v0tm2")
+
+[editable path="Interactions"]
+[editable path="Interactions/1"]

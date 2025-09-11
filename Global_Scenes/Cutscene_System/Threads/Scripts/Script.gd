@@ -25,7 +25,7 @@ func _process_command():
 	
 	var expr = Expression.new()
 	var error = expr.parse(expression)
-	if error == OK: 
+	if error == OK:
 		expr.execute([], instance, true)
 	else:
 		print(expr.get_error_text())

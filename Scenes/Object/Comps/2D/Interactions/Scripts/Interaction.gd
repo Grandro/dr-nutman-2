@@ -2,7 +2,6 @@ extends Area2D
 
 @export_enum("Walk_In", "Press_Key") var _e_type = "Press_Key"
 @export var _e_dirs: Array[String] = ["Down", "Up", "Left", "Right"]
-@export var _e_match_dir: bool = true # Does Player have to match dir to interact?
 @export_enum("Exclamation", "Question", "Speech", "None") var _e_popup_type = "Speech"
 @export var _e_popup_pos: Vector2 = Vector2.ZERO
 @export var _e_speech_bubble_pos: Vector2 = Vector2.ZERO
@@ -19,7 +18,6 @@ func _ready():
 	_a_shared = _a_Shared.new(self)
 	_a_shared.set_type(_e_type)
 	_a_shared.set_dirs(_e_dirs)
-	_a_shared.set_match_dir(_e_match_dir)
 	_a_shared.set_popup_type(_e_popup_type)
 	_a_shared.set_popup_pos(_e_popup_pos)
 	_a_shared.set_speech_bubble_pos(_e_speech_bubble_pos)
@@ -51,12 +49,6 @@ func set_dirs(p_dirs):
 
 func get_dirs():
 	return _a_shared.get_dirs()
-
-func set_match_dir(p_match_dir):
-	_a_shared.set_match_dir(p_match_dir)
-
-func get_match_dir():
-	return _a_shared.get_match_dir()
 
 func set_popup_type(p_popup_type):
 	_a_shared.set_popup_type(p_popup_type)

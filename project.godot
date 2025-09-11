@@ -767,6 +767,10 @@ translation_remaps={}
 3d/default_cell_size=0.2
 3d/default_cell_height=0.2
 
+[physics]
+
+3d/solver/contact_max_allowed_penetration=0.001
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0

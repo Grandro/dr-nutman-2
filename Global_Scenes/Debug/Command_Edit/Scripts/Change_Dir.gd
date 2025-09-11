@@ -127,6 +127,14 @@ func _selected_object_changed():
 	
 	_a_object = _a_Object.get_selected_value()
 	_update_object_dir()
+	
+	var old_allowed_classes = _a_Look_Object.get_allowed_classes()
+	var allowed_classes = ["Node"]
+	if _a_object is Node2D: allowed_classes = ["Node2D"]
+	elif _a_object is Node3D: allowed_classes = ["Node3D"]
+	if allowed_classes != old_allowed_classes:
+		_a_Look_Object.set_allowed_classes(allowed_classes)
+		_a_Look_Object.update_options()
 
 func _selected_type_changed():
 	if _a_type_box != null:

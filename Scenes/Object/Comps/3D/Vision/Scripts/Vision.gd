@@ -16,14 +16,14 @@ func init(p_entity):
 		child.set_target_position(target_pos)
 
 func enable():
-	_a_enabled += 1
-	if _a_enabled == 1:
+	if _a_enabled == 0:
 		_set_enabled(true)
+	_a_enabled += 1
 
 func disable():
-	_a_enabled -= 1
-	if _a_enabled == 0:
+	if _a_enabled == 1:
 		_set_enabled(false)
+	_a_enabled -= 1
 
 func _update_rotation_deg(p_dir):
 	var dir_rotation_deg = Global.get_dir_rotation_deg(p_dir)
@@ -46,19 +46,22 @@ func can_see_instance(p_instance):
 	return false
 
 func _set_enabled(p_enabled):
+	for child in get_children():
+		child.set_enabled(p_enabled)
+	
+	if p_enabled:
+		var dir = _a_entity_comph.call_comp("Movement", "get_dir")
+		_update_rotation_deg(dir)
+	
+	if p_enabled == (_a_enabled > 0):
+		return
+	
 	if _a_entity_comph.has_comp("Movement"):
 		var movement_comp = _a_entity_comph.get_comp("Movement")
 		if p_enabled:
 			movement_comp.dir_changed.connect(_on_Movement_dir_changed)
 		else:
 			movement_comp.dir_changed.disconnect(_on_Movement_dir_changed)
-	
-	if p_enabled:
-		var dir = _a_entity_comph.call_comp("Movement", "get_dir")
-		_update_rotation_deg(dir)
-	
-	for child in get_children():
-		child.set_enabled(p_enabled)
 
 func get_save_data():
 	var data = {}
@@ -71,15 +74,13 @@ func load_data(p_data):
 	await _a_entity_comph.comps_registered
 	
 	_e_range = p_data["Range"]
+	_set_enabled(p_data["Enabled"] > 0)
 	_a_enabled = p_data["Enabled"]
-	for child in get_children():
-		child.set_enabled(_a_enabled > 0)
 
 func load_data_init():
 	await _a_entity_comph.comps_registered
 	
-	for child in get_children():
-		child.set_enabled(false)
+	_set_enabled(false)
 
 func _on_Movement_dir_changed(p_dir):
 	_update_rotation_deg(p_dir)

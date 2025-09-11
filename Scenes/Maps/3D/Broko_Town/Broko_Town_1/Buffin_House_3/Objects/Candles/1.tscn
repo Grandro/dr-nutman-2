@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bhpnbebhb03uc"]
+[gd_scene load_steps=14 format=3 uid="uid://bhpnbebhb03uc"]
 
 [ext_resource type="Script" uid="uid://u2h51f0r2vch" path="res://Scenes/Object/Scripts/Static3D_Object.gd" id="1_aue54"]
 [ext_resource type="PackedScene" uid="uid://bblmb8yfchyxr" path="res://Scenes/Object/Comps/3D/Display.tscn" id="1_ty2of"]
@@ -8,9 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://cfdwl620axohy" path="res://Scenes/Object/Comps/3D/Audio.tscn" id="4_fex1m"]
 [ext_resource type="PackedScene" uid="uid://dllj5lbxwqy17" path="res://Scenes/Pausable_Audio/3D/Pausable_Audio.tscn" id="6_11gfe"]
 [ext_resource type="PackedScene" uid="uid://b1q143fixhaj5" path="res://Scenes/Object/Comps/Anims.tscn" id="6_cxm8x"]
+[ext_resource type="PackedScene" uid="uid://fnej1f64wfc2" path="res://Scenes/Object/Comps/3D/Nav_Obstacle.tscn" id="8_mw8mp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wg8rh"]
-size = Vector3(0.5, 0.4, 0.5)
+size = Vector3(0.5, 0.6, 0.5)
 
 [sub_resource type="Animation" id="Animation_rcuoa"]
 resource_name = "Burn"
@@ -111,7 +112,7 @@ texture = ExtResource("2_bbg7r")
 hframes = 4
 
 [node name="Collision" parent="." instance=ExtResource("3_pjeth")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
 shape = SubResource("BoxShape3D_wg8rh")
 
 [node name="Light" type="OmniLight3D" parent="."]
@@ -130,6 +131,10 @@ stream = ExtResource("3_gkrg0")
 autoplay = true
 max_distance = 5.0
 bus = &"BGS"
+
+[node name="Nav_Obstacle" parent="." groups=["NavMesh_Main"] instance=ExtResource("8_mw8mp")]
+vertices = PackedVector3Array(0.25, 0, -0.25, -0.25, 0, -0.25, -0.25, 0, 0.25, 0.25, 0, 0.25)
+affect_navigation_mesh = true
 
 [node name="Anims" parent="." instance=ExtResource("6_cxm8x")]
 libraries = {

@@ -334,7 +334,7 @@ func _game_over():
 
 func _knockback(p_instance, p_dmg, p_dir_vec):
 	var velocity = p_dir_vec * p_dmg * 1.5
-	p_instance.comph().call_subcomp("Movement", "Knockbacks", "knockback", [velocity])
+	p_instance.comph().call_comp("Movement/Knockbacks", "knockback", [velocity])
 
 func set_map_res(p_map_res):
 	_a_map_res = p_map_res

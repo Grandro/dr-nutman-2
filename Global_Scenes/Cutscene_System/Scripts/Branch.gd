@@ -607,6 +607,9 @@ func _on_Branch_tree_exited():
 				queue_free()
 
 func _on_Branch_completed(p_command):
+	if _a_completed:
+		return
+	
 	match p_command:
 		"Sub_Process":
 			_sub_process_completed(_a_id)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://w5cxcgsk2pyw"]
+[gd_scene load_steps=51 format=3 uid="uid://w5cxcgsk2pyw"]
 
 [ext_resource type="Script" uid="uid://dieeavfoc4v2w" path="res://Scenes/Object/Scripts/Character3D_Object.gd" id="1_ukin1"]
 [ext_resource type="PackedScene" uid="uid://bblmb8yfchyxr" path="res://Scenes/Object/Comps/3D/Display.tscn" id="2_ryrbi"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://dsp0njc065uev" path="res://Scenes/Object/Comps/3D/Collision_Shape.tscn" id="4_dlpb3"]
 [ext_resource type="PackedScene" uid="uid://nr4813v0r2dg" path="res://Scenes/Object/Comps/3D/Interactions/Interactions.tscn" id="5_eks4x"]
 [ext_resource type="PackedScene" uid="uid://birjyb23mdl01" path="res://Scenes/Object/Comps/3D/Movement/Comps/Terrain/Terrain_Base.tscn" id="6_2ja8q"]
-[ext_resource type="Script" uid="uid://evthfvvkbtpq" path="res://Scenes/NPC/3D/Comps/Scripts/Interactions.gd" id="6_q2llq"]
 [ext_resource type="PackedScene" uid="uid://blot4hpw1al18" path="res://Scenes/Object/Comps/3D/Camera.tscn" id="7_2582d"]
 [ext_resource type="PackedScene" uid="uid://br3fs6efh03rn" path="res://Scenes/Object/Comps/3D/Movement/Movement_Character.tscn" id="7_wtjq5"]
 [ext_resource type="PackedScene" uid="uid://catcx04rfio11" path="res://Scenes/Object/Comps/3D/Listener.tscn" id="8_4homa"]
@@ -93,8 +92,8 @@ script = ExtResource("1_ukin1")
 [node name="Equipment" parent="." instance=ExtResource("3_5662g")]
 
 [node name="Interactions" parent="." instance=ExtResource("5_eks4x")]
-script = ExtResource("6_q2llq")
-_e_look_at_player = true
+_e_needs_look_at = true
+_e_look_at_update = true
 
 [node name="Movement" parent="." instance=ExtResource("7_wtjq5")]
 

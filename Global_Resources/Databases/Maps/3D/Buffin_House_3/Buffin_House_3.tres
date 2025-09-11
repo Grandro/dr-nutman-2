@@ -1,9 +1,13 @@
-[gd_resource type="Resource" load_steps=5 format=3 uid="uid://dypeaumd8uhkf"]
+[gd_resource type="Resource" load_steps=9 format=3 uid="uid://dypeaumd8uhkf"]
 
 [ext_resource type="Resource" uid="uid://bb3b1vkt0wrnk" path="res://Global_Resources/Databases/Maps/3D/Buffin_House_3/Destinations/Door.tres" id="1_g8ltk"]
 [ext_resource type="Script" uid="uid://cgx4qljo5ouln" path="res://Global_Resources/Databases/Maps/Map_Data.gd" id="2_p3yav"]
 [ext_resource type="Resource" uid="uid://cq6ldtbn4frno" path="res://Global_Resources/Databases/Maps/3D/Buffin_House_3/Destinations/Stairway_1.tres" id="2_w62kl"]
 [ext_resource type="Resource" uid="uid://dkhkpyhdm754e" path="res://Global_Resources/Databases/Maps/3D/Buffin_House_3/Destinations/Stairway_2.tres" id="3_my52t"]
+[ext_resource type="Resource" uid="uid://rqpgtjkjddfh" path="res://Global_Resources/Databases/Maps/3D/Buffin_House_3/Destinations/Stairway_3.tres" id="4_cq222"]
+[ext_resource type="Resource" uid="uid://dppm6cl4awhb" path="res://Global_Resources/Databases/Maps/3D/Buffin_House_3/Destinations/Stairway_4.tres" id="5_saxya"]
+[ext_resource type="Resource" uid="uid://gup1adx8t235" path="res://Global_Resources/Databases/Maps/3D/Buffin_House_3/Destinations/Stairway_5.tres" id="6_4dppt"]
+[ext_resource type="Resource" uid="uid://cy7utff7plva2" path="res://Global_Resources/Databases/Maps/3D/Buffin_House_3/Destinations/Stairway_6.tres" id="7_k72j8"]
 
 [resource]
 script = ExtResource("2_p3yav")
@@ -11,5 +15,9 @@ _e_path = "res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Buffin_House_3/Buffin_Ho
 _e_destinations = {
 "Door": ExtResource("1_g8ltk"),
 "Stairway_1": ExtResource("2_w62kl"),
-"Stairway_2": ExtResource("3_my52t")
+"Stairway_2": ExtResource("3_my52t"),
+"Stairway_3": ExtResource("4_cq222"),
+"Stairway_4": ExtResource("5_saxya"),
+"Stairway_5": ExtResource("6_4dppt"),
+"Stairway_6": ExtResource("7_k72j8")
 }

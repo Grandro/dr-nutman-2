@@ -41,6 +41,16 @@ func set_area(p_area):
 	var next_pass = mesh.material.next_pass
 	next_pass.set("shader_parameter/progress", progress)
 
+func set_completed(p_power):
+	_a_power = p_power
+	if _a_tween != null:
+		_a_tween.kill()
+	match p_power:
+		true: set_area(_a_total_area)
+		false: set_area(0.0)
+	
+	completed.emit()
+
 func get_save_data():
 	var data = {}
 	data["Area"] = _a_area

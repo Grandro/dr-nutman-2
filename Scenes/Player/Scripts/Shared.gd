@@ -31,19 +31,19 @@ func ready():
 func input(p_event):
 	if p_event.is_action_pressed("Open_Main_Menu"):
 		if Main_Menu.is_openable():
-			Main_Menu.open()
-			
 			var vp = _a_entity.get_viewport()
 			vp.set_input_as_handled()
+			
+			Main_Menu.open()
 	
 	elif p_event.is_action_pressed("OK"):
 		var body = _a_Interaction_System.get_body()
 		if body != null:
-			var area = _a_Interaction_System.get_area()
-			body.comph().call_comp("Interactions", "interaction", [area])
-			
 			var vp = _a_entity.get_viewport()
 			vp.set_input_as_handled()
+			
+			var area = _a_Interaction_System.get_area()
+			body.comph().call_comp("Interactions", "interaction", [area])
 
 func _on_Operate_to_disabled():
 	_a_entity.set_process_input(false)

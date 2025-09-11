@@ -1,5 +1,7 @@
 extends Node3D
 
+signal projector_power_changed(p_projector, p_power)
+
 @onready var _a_Stairway_2 = get_node("Stairway_2")
 @onready var _a_Pressure_Plate_1 = get_node("Pressure_Plate_1")
 @onready var _a_Pressure_Plate_2 = get_node("Pressure_Plate_2")
@@ -13,11 +15,14 @@ extends Node3D
 @onready var _a_Gate_2 = get_node("Gate_2")
 @onready var _a_Gate_3 = get_node("Gate_3")
 @onready var _a_Projector_1 = get_node("Projector_1")
+@onready var _a_Ghosty_1 = get_node("Ghosty_1")
 
 var _a_puzzle_1_solved = false
 var _a_puzzle_2_solved = false
 
 func _ready():
+	var global_si = Global.get_singleton(self, "Global")
+	global_si.curr_camera_changed.connect(_on_Global_curr_camera_changed)
 	_a_Stairway_2.teleported.connect(_on_Stairway_2_teleported)
 	_a_Pressure_Plate_1.pushed.connect(_on_Pressure_Plate_pushed.bind(_a_Power_Cable_1))
 	_a_Pressure_Plate_1.released.connect(_on_Pressure_Plate_released.bind(_a_Power_Cable_1))
@@ -33,9 +38,7 @@ func _ready():
 	_a_Power_Cable_3.completed.connect(_on_Power_Cable_completed.bind(_a_Power_Cable_3, _a_Gate_3))
 	_a_Gate_1.opened.connect(_on_Gate_1_opened)
 	_a_Gate_3.opened.connect(_on_Gate_3_opened)
-
-func set_paint_delere_paint_from_projector(p_paint_from_projector, p_paint_delere):
-	p_paint_delere.set_paint_from_projector(p_paint_from_projector, _a_Projector_1)
+	_a_Projector_1.power_changed.connect(_on_Projector_1_power_changed)
 
 func get_save_data():
 	var data = {}
@@ -47,6 +50,14 @@ func get_save_data():
 func load_data(p_data):
 	_a_puzzle_1_solved = p_data["Puzzle_1_Solved"]
 	_a_puzzle_2_solved = p_data["Puzzle_2_Solved"]
+
+func _on_Global_curr_camera_changed(p_curr_camera):
+	var projection = p_curr_camera.get_projection()
+	match projection:
+		Camera3D.ProjectionType.PROJECTION_PERSPECTIVE:
+			_a_Ghosty_1.comph().call_comp("Display", "set_billboard", [true])
+		Camera3D.ProjectionType.PROJECTION_ORTHOGONAL:
+			_a_Ghosty_1.comph().call_comp("Display", "set_billboard", [false])
 
 func _on_Stairway_2_teleported():
 	if !_a_puzzle_1_solved:
@@ -81,9 +92,10 @@ func _on_Gate_1_opened():
 	
 	_a_Pressure_Plate_1.set_locked(true)
 	_a_Canvas_1.set_freeze_enabled(true)
+	_a_puzzle_1_solved = true
+	
 	var cutscene_system_si = Global.get_singleton(self, "Cutscene_System")
 	cutscene_system_si.cutscene("Puzzle_1", "Solved")
-	_a_puzzle_1_solved = true
 
 func _on_Gate_3_opened():
 	if !_a_Pressure_Plate_3.has_instance(_a_Canvas_2):
@@ -92,5 +104,11 @@ func _on_Gate_3_opened():
 	_a_Pressure_Plate_2.set_locked(true)
 	_a_Pressure_Plate_3.set_locked(true)
 	_a_Canvas_2.set_freeze_enabled(true)
-	_a_Projector_1.activate_model_ray(false)
 	_a_puzzle_2_solved = true
+	
+	var cutscene_system_si = Global.get_singleton(self, "Cutscene_System")
+	cutscene_system_si.cutscene("Puzzle_2", "Solved")
+
+func _on_Projector_1_power_changed(p_power):
+	if !_a_puzzle_2_solved:
+		projector_power_changed.emit(_a_Projector_1, p_power)

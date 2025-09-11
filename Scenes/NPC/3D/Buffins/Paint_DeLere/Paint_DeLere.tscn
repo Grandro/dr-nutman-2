@@ -163,6 +163,7 @@ libraries = {
 
 [node name="Speech_Bubble" parent="." index="8"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.4, 0.03)
+visible = false
 
 [node name="States" parent="." index="14"]
 _e_states = Array[String](["Stop", "Idle", "Walk", "Jump", "Place", "Think", "Paint"])

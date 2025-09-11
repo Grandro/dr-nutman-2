@@ -26,6 +26,12 @@ func update_options():
 		_a_Value.set_item_metadata(i, key)
 		i += 1
 
+func set_allowed_classes(p_allowed_classes):
+	_e_allowed_classes.assign(p_allowed_classes)
+
+func get_allowed_classes():
+	return _e_allowed_classes
+
 func set_viewport(p_viewport):
 	_a_viewport = p_viewport
 

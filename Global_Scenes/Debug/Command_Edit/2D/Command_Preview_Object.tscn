@@ -7,9 +7,6 @@
 [node name="Command_Preview_Object" instance=ExtResource("1_hnpds")]
 script = ExtResource("2_7ukfy")
 
-[node name="VP" parent="Window/Contents/Margin/HBox/Left/Preview" index="0"]
-size = Vector2i(2, 2)
-
 [node name="Object" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="0" instance=ExtResource("3_mommg")]
 layout_mode = 2
 

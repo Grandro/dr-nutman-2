@@ -12,6 +12,15 @@ func _ready():
 	_a_Interactions.interacted.connect(_on_Interactions_interacted)
 	_a_Anims.animation_finished.connect(_on_Anims_anim_finished)
 
+func _opened():
+	_a_opened = true
+	_a_Interactions.set_allowed(false)
+	
+	var progress_si = Global.get_singleton(self, "Progress")
+	var rolled_loot = Global.roll_loot(_e_loot)
+	if !rolled_loot.is_empty():
+		progress_si.open_loot_info(rolled_loot)
+
 func get_save_data():
 	var data = super()
 	data["Opened"] = _a_opened
@@ -29,9 +38,4 @@ func _on_Interactions_interacted():
 func _on_Anims_anim_finished(p_name):
 	match p_name:
 		"Open":
-			_a_opened = true
-			_a_Interactions.set_interaction_allowed(false)
-			
-			var progress_si = Global.get_singleton(self, "Progress")
-			var rolled_loot = Global.roll_loot(_e_loot)
-			progress_si.open_loot_info(rolled_loot)
+			_opened()

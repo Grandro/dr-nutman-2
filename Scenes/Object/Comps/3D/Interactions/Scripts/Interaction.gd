@@ -2,7 +2,8 @@ extends Area3D
 
 @export_enum("Walk_In", "Press_Key") var _e_type = "Press_Key"
 @export var _e_dirs: Array[String] = ["Down", "Up", "Left", "Right"]
-@export var _e_match_dir: bool = true # Does Player have to match dir to interact?
+@export var _e_use_dir : bool = false
+@export var _e_use_transform : bool = false
 @export_enum("Exclamation", "Question", "Speech", "None") var _e_popup_type = "Speech"
 @export var _e_popup_pos: Vector3 = Vector3.ZERO
 @export var _e_speech_bubble_pos: Vector3 = Vector3.ZERO
@@ -26,7 +27,8 @@ func _ready():
 	_a_shared = _a_Shared.new(self)
 	_a_shared.set_type(_e_type)
 	_a_shared.set_dirs(_e_dirs)
-	_a_shared.set_match_dir(_e_match_dir)
+	_a_shared.set_use_dir(_e_use_dir)
+	_a_shared.set_use_transform(_e_use_transform)
 	_a_shared.set_popup_type(_e_popup_type)
 	_a_shared.set_popup_pos(_e_popup_pos)
 	_a_shared.set_speech_bubble_pos(_e_speech_bubble_pos)
@@ -66,11 +68,17 @@ func set_dirs(p_dirs):
 func get_dirs():
 	return _a_shared.get_dirs()
 
-func set_match_dir(p_match_dir):
-	_a_shared.set_match_dir(p_match_dir)
+func set_use_dir(p_use_dir):
+	_a_shared.set_use_dir(p_use_dir)
 
-func get_match_dir():
-	return _a_shared.get_match_dir()
+func get_use_dir():
+	return _a_shared.get_use_dir()
+
+func set_use_transform(p_use_transform):
+	_a_shared.set_use_transform(p_use_transform)
+
+func get_use_transform():
+	return _a_shared.get_use_transform()
 
 func set_popup_type(p_popup_type):
 	_a_shared.set_popup_type(p_popup_type)

@@ -41,7 +41,7 @@ func _on_Start_pressed():
 	var global_si = Global.get_singleton(self, "Global")
 	global_si.start_game()
 	
-	var dest = ["Doctor_Dream_1", "Start"]
+	#var dest = ["Doctor_Dream_1", "Start"]
 	#var dest = ["Dr_Nutman_Home_1", "Start"]
 	#var dest = ["Broko_Town_1", "Dr_Nutman_House"]
 	#var dest = ["Broko_House_1", "Door"]
@@ -51,7 +51,9 @@ func _on_Start_pressed():
 	#var dest = ["Buffin_House_2", "Door"]
 	#var dest = ["Buffin_House_3", "Door"]
 	#var dest = ["Buffin_House_3", "Stairway_2"]
-	#var dest = ["Broko_Forest_1", "Test"]
+	#var dest = ["Buffin_House_3", "Stairway_4"]
+	#var dest = ["Buffin_House_3", "Stairway_5"]
+	var dest = ["Broko_Forest_1", "Test"]
 	#var dest = ["Debug_3D", "Start"]
 	#var dest = ["Debug_2D", "Start"]
 	#var dest = ["Game_Over", "Start"]

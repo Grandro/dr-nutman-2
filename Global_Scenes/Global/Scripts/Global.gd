@@ -722,7 +722,7 @@ func get_opposite_dir(p_dir):
 func get_dir_rotated(p_dir, p_degrees):
 	var dirs = ["Up", "Right", "Down", "Left"]
 	var dir_idx = dirs.find(p_dir)
-	var offset = int(p_degrees / 90)
+	var offset = int(snappedf(p_degrees, 45.0) / 90.0)
 	var new_idx = (dir_idx + offset) % 4
 	var dir = dirs[new_idx]
 	

@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ba34eyav3ir6j" path="res://Scenes/VP_Container/VP_Container.tscn" id="4_gamai"]
 [ext_resource type="Texture2D" uid="uid://dti8yjdd8swkr" path="res://Global_Resources/Sprites/Joy/Letters_Color/Button_A.png" id="6_hbbo5"]
 
+
 [sub_resource type="FontVariation" id="FontVariation_qi6lu"]
 base_font = ExtResource("3_l8klw")
 spacing_glyph = -4

@@ -19,7 +19,7 @@ func init(p_specials, p_entity):
 	super(p_specials, p_entity)
 	_a_Entity_Audio = p_entity.comph().get_comp("Audio")
 	_a_Entity_Movement = p_entity.comph().get_comp("Movement")
-	_a_Entity_Movement_Nav_Agent = p_entity.comph().get_subcomp("Movement", "Nav_Agent")
+	_a_Entity_Movement_Nav_Agent = p_entity.comph().get_comp("Movement/Nav_Agent")
 	_a_Entity_States = p_entity.comph().get_comp("States")
 	_a_Entity_Stats = p_entity.comph().get_comp("Stats")
 	_a_Entity_Anims = p_entity.comph().get_comp("Anims")

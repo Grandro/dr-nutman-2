@@ -33,15 +33,6 @@ func call_comp(p_key, p_method_name, p_args = []):
 	
 	return method.callv(p_args)
 
-func call_subcomp(p_key, p_sub_key, p_method_name, p_args = []):
-	var subcomp = get_subcomp(p_key, p_sub_key)
-	if !subcomp.has_method(p_method_name):
-		push_error("Method ", p_method_name, " not implemented in ", subcomp)
-		return
-	var method = Callable(subcomp, p_method_name)
-	
-	return method.callv(p_args)
-
 func add_comp(p_instance):
 	var key = p_instance.get_name()
 	_a_comps[key] = p_instance
@@ -53,32 +44,35 @@ func remove_comp(p_key):
 	comp.queue_free()
 
 func get_comp(p_key):
-	if !has_comp(p_key):
+	var comp = p_key.get_slice("/", 0)
+	if !_has_comp(comp):
 		push_error("Comp ", p_key, " not implemented in ", _a_entity)
-		return
+		return null
 	
-	return _a_comps[p_key]
-
-func get_subcomp(p_key, p_sub_key):
-	var comp = get_comp(p_key)
-	if !comp.comph().has_comp(p_sub_key):
-		push_error("Subcomp ", p_sub_key, " not implemented in ", p_key)
-	var subcomp = comp.comph().get_comp(p_sub_key)
-	
-	return subcomp
+	var instance = _a_comps[comp]
+	if comp.length() == p_key.length():
+		return instance
+	else:
+		p_key = p_key.erase(0, comp.length() + 1)
+		return instance.comph().get_comp(p_key)
 
 func get_comps():
 	return _a_comps
 
 func has_comp(p_key):
-	return _a_comps.has(p_key)
-
-func has_comp_subcomp(p_key, p_sub_key):
-	if has_comp(p_key):
-		var comp = _a_comps[p_key]
-		return comp.comph().has_comp(p_sub_key)
+	var comp = p_key.get_slice("/", 0)
+	if !_has_comp(comp):
+		return false
 	
-	return false
+	var instance = _a_comps[comp]
+	if comp.length() == p_key.length():
+		return true
+	else:
+		p_key = p_key.erase(0, comp.length() + 1)
+		return instance.comph().has_comp(p_key)
 
 func get_entity():
 	return _a_entity
+
+func _has_comp(p_key):
+	return _a_comps.has(p_key)

@@ -54,7 +54,7 @@ func _process_command():
 	
 	_jump_object_to_pos()
 	
-	var movement_jump_comp = _a_object.comph().get_subcomp("Movement", "Jump")
+	var movement_jump_comp = _a_object.comph().get_comp("Movement/Jump")
 	movement_jump_comp.jumped.connect(_on_Object_jumped)
 	if !_a_wait_finish && !_a_skip && !_a_loads_data:
 		_emit_completed()
@@ -70,7 +70,7 @@ func _jump_object_to_pos():
 			var start_pos = _a_object.get_global_position()
 			dir = Global.get_dir_to_pos(start_pos, _a_pos)
 		_a_object.comph().call_comp("Movement", "set_dir", [dir])
-		_a_object.comph().call_subcomp("Movement", "Jump", "jump")
+		_a_object.comph().call_comp("Movement/Jump", "jump")
 	
 	_tween_object_to_pos(0.5)
 

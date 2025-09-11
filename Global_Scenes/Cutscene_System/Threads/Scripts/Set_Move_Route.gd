@@ -27,7 +27,7 @@ func _ready():
 
 func skip():
 	super()
-	var nav_agent_comp = _a_object.comph().get_subcomp("Movement", "Nav_Agent")
+	var nav_agent_comp = _a_object.comph().get_comp("Movement/Nav_Agent")
 	nav_agent_comp.path_finished.disconnect(_on_Nav_Agent_path_finished)
 	
 	if !_a_path_pos.is_empty():
@@ -40,7 +40,7 @@ func skip():
 		var dir = Global.get_dir_to_pos(prev_pos, new_pos)
 		
 		_a_object.set_global_position(new_pos)
-		_a_object.comph().call_subcomp("Movement", "Nav_Agent", "set_path", [[]])
+		_a_object.comph().call_comp("Movement/Nav_Agent", "set_path", [[]])
 		_a_object.comph().call_comp("States", "set_state_tmp", ["Stop"])
 		_a_object.comph().call_comp("Movement", "set_dir", [dir])
 		_a_object.comph().call_comp("Anims", "update_anim")
@@ -53,7 +53,7 @@ func _process_command():
 	_a_object = global_si.get_object(_a_object_key)
 	_a_object.comph().call_comp("Cutscene", "increase_in_cutscene")
 	
-	var nav_agent_comp = _a_object.comph().get_subcomp("Movement", "Nav_Agent")
+	var nav_agent_comp = _a_object.comph().get_comp("Movement/Nav_Agent")
 	nav_agent_comp.path_finished.connect(_on_Nav_Agent_path_finished)
 	
 	if !_a_path_pos.is_empty():
@@ -69,7 +69,7 @@ func _move_object_to_pos(p_pos):
 	var base_speed = Cutscene_System.get_movement_base_speed(_e_dim, _a_speed_key)
 	_a_object.comph().call_comp("States", "set_state_tmp", [_a_state_key])
 	_a_object.comph().call_comp("Movement", "set_base_speed", [base_speed])
-	_a_object.comph().call_subcomp("Movement", "Nav_Agent", "set_path", [[p_pos]])
+	_a_object.comph().call_comp("Movement/Nav_Agent", "set_path", [[p_pos]])
 	_a_object.comph().call_comp("Anims", "update_anim")
 
 func get_save_data():

@@ -40,7 +40,7 @@ func change_scene_dest(p_dest, p_scene_ready_cb = Callable()):
 		_change_scene("Dest")
 
 func change_scene_tp(p_tp, p_scene_ready_cb = Callable(), p_load_file_data = false):
-	_a_dest.clear()
+	_a_dest = []
 	_a_tp = p_tp
 	_a_path = ""
 	_a_scene_ready_cb = p_scene_ready_cb
@@ -48,7 +48,7 @@ func change_scene_tp(p_tp, p_scene_ready_cb = Callable(), p_load_file_data = fal
 	_change_scene("Tp")
 
 func change_scene_path(p_path, p_scene_ready_cb = Callable()):
-	_a_dest.clear()
+	_a_dest = []
 	_a_tp = ""
 	_a_path = p_path
 	_a_scene_ready_cb = p_scene_ready_cb
@@ -91,7 +91,7 @@ func _scene_changed():
 		if _a_curr_scene_instance is MapBase3D:
 			var can_jump = _a_curr_scene_instance.get_can_jump()
 			var player = global_si.get_player()
-			player.comph().call_subcomp("Movement", "Controller", "set_can_jump", [can_jump])
+			player.comph().call_comp("Movement/Controller", "set_can_jump", [can_jump])
 		
 		var map_data = global_si.get_saved_map_data()
 		if map_data.is_empty():

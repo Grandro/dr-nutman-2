@@ -51,6 +51,11 @@ func set_power(p_power):
 func get_power():
 	return _a_power
 
+func set_completed(p_power):
+	_a_power = p_power
+	for child in _a_Parts.get_children():
+		child.set_completed(p_power)
+
 func get_save_data():
 	var data = super()
 	data["Parts"] = []

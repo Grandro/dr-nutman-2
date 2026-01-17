@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://chwvwspoox5ko"]
 
 [ext_resource type="Script" uid="uid://cqajbgpipxq0i" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Buffin_House_3/Objects/Projectors/Scripts/Projector_Base.gd" id="1_j5nuf"]
-[ext_resource type="PackedScene" uid="uid://d0074qkueogek" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Buffin_House_3/Objects/Projectors/Models/Model.glb" id="2_dp3da"]
+[ext_resource type="PackedScene" uid="uid://d0074qkueogek" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Buffin_House_3/Objects/Projectors/Models/1.glb" id="2_dp3da"]
 [ext_resource type="Script" uid="uid://cyc2qqh3b8a5v" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Buffin_House_3/Objects/Projectors/Scripts/Model.gd" id="3_3gcqk"]
 [ext_resource type="PackedScene" uid="uid://blot4hpw1al18" path="res://Scenes/Object/Comps/3D/Camera.tscn" id="3_ioa40"]
 [ext_resource type="PackedScene" uid="uid://nr4813v0r2dg" path="res://Scenes/Object/Comps/3D/Interactions/Interactions.tscn" id="3_j5nuf"]

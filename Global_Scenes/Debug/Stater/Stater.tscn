@@ -25,11 +25,17 @@ bg_color = Color(0.145098, 0.172549, 0.231373, 1)
 
 [node name="Stater" instance=ExtResource("1_ndmaw")]
 script = ExtResource("2_epf0f")
-_e_key = "Stater"
+_e_key = &"Stater"
+
+[node name="Sort_By" parent="HBox/VBox/Options" index="0"]
+_e_sort_args = Dictionary[StringName, StringName]({
+&"Created": &"get_time_created",
+&"Key": &"get_key"
+})
 
 [node name="Parts" parent="VBox/HBox" index="0"]
 custom_minimum_size = Vector2(200, 0)
-_e_types = Array[String](["General", "One_Time"])
+_e_types = Array[StringName]([&"General", &"One_Time"])
 
 [node name="VSep" type="VSeparator" parent="VBox/HBox" index="1"]
 light_mask = 8
@@ -76,7 +82,7 @@ _e_delete_loc_id = "CONFIRM_DELETE_CONDITION"
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-_e_delete_loc_id = "CONFIRM_DELETE_ACTION"
+_e_delete_loc_id = &"CONFIRM_DELETE_ACTION"
 
 [node name="Preview" parent="VBox/HBox/VBox/Panel/Scroll/Attributes" index="3" instance=ExtResource("8_xwm8e")]
 

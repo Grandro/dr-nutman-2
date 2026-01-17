@@ -9,17 +9,6 @@
 script = ExtResource("2_5xfrt")
 _e_draw_grid_scene = null
 
-[node name="Preview" parent="Window/Contents/Margin/HBox/Left" index="0"]
-size_flags_vertical = 3
-
-[node name="VP" parent="Window/Contents/Margin/HBox/Left/Preview" index="0"]
-audio_listener_enable_2d = true
-audio_listener_enable_3d = true
-_e_sub_world = false
-_e_game_world = false
-_e_resize = false
-_e_activate_physics = false
-
 [node name="Visible" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="1" instance=ExtResource("3_g1f37")]
 layout_mode = 2
 _e_heading_loc_id = "DEBUG_CUTSCENES_VISIBLE"

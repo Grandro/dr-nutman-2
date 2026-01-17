@@ -1,18 +1,22 @@
-extends "res://Global_Scenes/Debug/Scenes/Entry_List/Entries/Scripts/Entry.gd"
+extends DebugEntryListEntry
+class_name DebugEntryListValueEditEntry
 
-@onready var _a_Value = get_node("HBox/VBox/Options/Value")
+@onready var _a_Value: DebugValueEdit = get_node("HBox/VBox/Options/Value")
 
-func set_value(p_value):
+func set_value(p_value: Variant) -> void:
 	_a_Value.set_value(p_value)
 
-func get_value():
+func get_value() -> Variant:
 	return _a_Value.get_value()
 
-func set_value_editable(p_editable):
-	_a_Value.set_editable(p_editable)
+func set_type_editable(p_type_editable: bool) -> void:
+	_a_Value.set_type_editable(p_type_editable)
 
-func get_save_data():
-	var data = super()
-	data["Value"] = get_value()
+func set_value_editable(p_value_editable: bool) -> void:
+	_a_Value.set_value_editable(p_value_editable)
+
+func get_save_data() -> Dictionary:
+	var data: Dictionary = super()
+	data[&"Value"] = get_value()
 	
 	return data

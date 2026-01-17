@@ -8,7 +8,7 @@
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("2")
-_e_tabs = Array[String](["Equipment"])
+_e_tabs = Array[StringName]([&"Equipment"])
 _e_tabs_visible = false
 
 [node name="Grid" parent="." index="0"]
@@ -18,6 +18,11 @@ columns = 1
 
 [node name="List" parent="Grid" index="0"]
 mouse_filter = 2
+
+[node name="Sort_By" parent="Grid/List/Options" index="0"]
+_e_sort_args = Dictionary[StringName, StringName]({
+&"Name": &"get_name_"
+})
 
 [node name="Items" parent="Grid/List" index="1"]
 drag_to_rearrange_enabled = true

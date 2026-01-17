@@ -1,11 +1,12 @@
-extends "res://Scripts/Extension_Base.gd"
+extends ExtensionBase
+class_name PlayerShared
 
-var _a_Interaction = null
-var _a_Camera = null
-var _a_Operate = null
-var _a_Interaction_System = null
+var _a_Interaction: Node
+var _a_Camera: Node
+var _a_Operate: CompOperate
+var _a_Interaction_System: PlayerCompInteractionSystem
 
-func ready():
+func ready() -> void:
 	_a_Interaction = _a_entity.get_node("Interactions/1")
 	_a_Camera = _a_entity.get_node("Camera")
 	_a_Operate = _a_entity.get_node("Operate")
@@ -17,9 +18,9 @@ func ready():
 	_a_Interaction.area_exited.connect(_a_Interaction_System._on_Interaction_area_exited)
 	
 	if Global.is_instance_in_game_world(_a_entity):
-		var global_si = Global.get_singleton(_a_entity, "Global")
-		var dialogue_system_si = Global.get_singleton(_a_entity, "Dialogue_System")
-		var cutscene_system_si = Global.get_singleton(_a_entity, "Cutscene_System")
+		var global_si: Global = Global.get_singleton(_a_entity, "Global")
+		var dialogue_system_si: Dialogue_System = Global.get_singleton(_a_entity, "Dialogue_System")
+		var cutscene_system_si: Cutscene_System = Global.get_singleton(_a_entity, "Cutscene_System")
 		dialogue_system_si.main_started.connect(_on_Dialogue_System_main_started)
 		dialogue_system_si.main_completed.connect(_on_Dialogue_System_main_completed)
 		cutscene_system_si.main_started.connect(_on_Cutscene_System_main_started)
@@ -28,37 +29,37 @@ func ready():
 		global_si.set_player(_a_entity)
 		global_si.set_curr_camera(_a_Camera)
 
-func input(p_event):
-	if p_event.is_action_pressed("Open_Main_Menu"):
+func input(p_event: InputEvent) -> void:
+	if p_event.is_action_pressed(&"Open_Main_Menu"):
 		if Main_Menu.is_openable():
-			var vp = _a_entity.get_viewport()
+			var vp: Viewport = _a_entity.get_viewport()
 			vp.set_input_as_handled()
 			
 			Main_Menu.open()
 	
-	elif p_event.is_action_pressed("OK"):
-		var body = _a_Interaction_System.get_body()
+	elif p_event.is_action_pressed(&"OK"):
+		var body: Node = _a_Interaction_System.get_body()
 		if body != null:
-			var vp = _a_entity.get_viewport()
+			var vp: Viewport = _a_entity.get_viewport()
 			vp.set_input_as_handled()
 			
-			var area = _a_Interaction_System.get_area()
-			body.comph().call_comp("Interactions", "interaction", [area])
+			var area: Node = _a_Interaction_System.get_area()
+			body.comph().call_comp("Interactions", &"interaction", [area])
 
-func _on_Operate_to_disabled():
+func _on_Operate_to_disabled() -> void:
 	_a_entity.set_process_input(false)
 
-func _on_Operate_to_enabled():
+func _on_Operate_to_enabled() -> void:
 	_a_entity.set_process_input(true)
 
-func _on_Dialogue_System_main_started(_p_key):
+func _on_Dialogue_System_main_started(_p_key: StringName) -> void:
 	_a_Operate.disable()
 
-func _on_Dialogue_System_main_completed():
+func _on_Dialogue_System_main_completed() -> void:
 	_a_Operate.enable()
 
-func _on_Cutscene_System_main_started(_p_key):
+func _on_Cutscene_System_main_started(_p_key: StringName) -> void:
 	_a_Operate.disable()
 
-func _on_Cutscene_System_main_completed():
+func _on_Cutscene_System_main_completed() -> void:
 	_a_Operate.enable()

@@ -6,7 +6,7 @@
 
 [node name="Tab_General" instance=ExtResource("2")]
 script = ExtResource("1")
-_e_key = "General"
+_e_key = &"General"
 
 [node name="Text" parent="Margin/HSplit/Left" index="0" instance=ExtResource("3_3e07x")]
 layout_mode = 2

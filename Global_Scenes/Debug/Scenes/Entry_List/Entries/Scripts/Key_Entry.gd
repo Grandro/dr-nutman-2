@@ -1,5 +1,6 @@
-extends "res://Global_Scenes/Debug/Scenes/Entry_List/Entries/Scripts/Entry.gd"
+extends DebugEntryListEntry
+class_name DebugEntryListKeyEntry
 
-signal key_changed(p_key)
+signal key_changed(p_key: StringName)
 
-var _a_key = ""
+var _a_key: StringName

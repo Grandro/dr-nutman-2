@@ -1,7 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://b30bm35jd2ovk"]
-
-[ext_resource type="PackedScene" uid="uid://dgfctcj5fhpoc" path="res://Global_Scenes/Battle_System/Battle_SV/Character_Battle/Comps/Actions/Commands/Attack_ATK.tscn" id="1_ocnf5"]
-[ext_resource type="Script" uid="uid://b6wpidmriligd" path="res://Global_Scenes/Battle_System/Battle_SV/Party_Members/Dr_Nutman/Comps/Actions/Commands/Scripts/Attack_ATK.gd" id="2_g271d"]
-
-[node name="Attack_ATK" instance=ExtResource("1_ocnf5")]
-script = ExtResource("2_g271d")

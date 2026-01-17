@@ -102,7 +102,7 @@ one_shot = true
 
 [node name="Anims" type="AnimationPlayer" parent="Node2D/Nutcracker_Jaw" index="1"]
 libraries = {
-"": SubResource("AnimationLibrary_vxtjl")
+&"": SubResource("AnimationLibrary_vxtjl")
 }
 
 [node name="Peanut_Fragments" type="Node2D" parent="Node2D" index="5"]

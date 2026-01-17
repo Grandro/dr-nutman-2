@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://de2jy2ixhp2mw" path="res://Scenes/Object/Comps/Save.tscn" id="8_risyu"]
 [ext_resource type="PackedScene" uid="uid://drpp26gth4snn" path="res://Scenes/Object/Comps/Reference.tscn" id="8_wd0l4"]
 
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_3fcy7"]
 size = Vector3(0.75, 0.25, 1)
 

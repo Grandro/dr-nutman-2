@@ -1,41 +1,42 @@
-extends "res://Global_Scenes/Debug/Scenes/Entry_List/Scripts/Entry_List.gd"
+extends DebugEntryList
+class_name DebugQuestEntryList
 
-func _ready():
+func _ready() -> void:
 	super()
-	var progress_si = Global.get_singleton(self, "Progress")
+	var progress_si: Progress = Global.get_singleton(self, "Progress")
 	progress_si.progress_changed.connect(_on_Progress_progress_changed)
 
-func instantiate_entries():
-	var progress_si = Global.get_singleton(self, "Progress")
-	var quests_data = Databases.get_data("Quests")
-	var quests_progress = progress_si.get_quests()
-	for key in quests_progress:
-		var quest_data = quests_data[key]
-		var type = quest_data.get_type()
-		if type == "Main" || type == "Side":
-			var instance = instantiate_entry_(key)
+func instantiate_entries() -> void:
+	var progress_si: Progress = Global.get_singleton(self, "Progress")
+	var quests_data: Dictionary = Databases.get_data(&"Quests")
+	var quests_progress: Dictionary[StringName, ProgressQuestBase] = progress_si.get_quests()
+	for key: StringName in quests_progress:
+		var quest_data: QuestData = quests_data[key]
+		var type: StringName = quest_data.get_type()
+		if type == &"Main" || type == &"Side":
+			var instance: DebugEntryListQuestEntry = instantiate_entry_(key)
 			add_entry(instance)
 
-func instantiate_entry_(p_key = ""):
-	var instance = instantiate_entry(p_key)
+func instantiate_entry_(p_key: StringName = &"") -> DebugEntryListQuestEntry:
+	var instance: DebugEntryListQuestEntry = instantiate_entry(p_key)
 	instance.set_key(p_key)
 	instance.update_data.call_deferred()
 	
 	return instance
 
-func instantiate_entry_from_data(p_data):
-	var key = p_data["Key"]
-	var instance = instantiate_entry_(key)
+func instantiate_entry_from_data(p_data: Dictionary) -> DebugEntryListQuestEntry:
+	var key: StringName = p_data[&"Key"]
+	var instance: DebugEntryListQuestEntry = instantiate_entry_(key)
 	
 	return instance
 
-func delete_entry(p_key):
-	var instance = _a_entries[p_key]
+func delete_entry(p_key: String) -> void:
+	var instance: DebugEntryListQuestEntry = _a_entries[p_key]
 	instance.queue_free()
 
-func has_entry(p_key):
+func has_entry(p_key: String) -> bool:
 	return _a_entries.has(p_key)
 
-func _on_Progress_progress_changed():
-	for child in get_entries():
+func _on_Progress_progress_changed() -> void:
+	for child: DebugEntryListQuestEntry in get_entries():
 		child.update_data()

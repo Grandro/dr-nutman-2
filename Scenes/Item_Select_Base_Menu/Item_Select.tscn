@@ -10,6 +10,13 @@ theme_override_constants/margin_right = 24
 theme_override_constants/margin_bottom = 24
 script = ExtResource("2")
 
+[node name="Sort_By" parent="Grid/List/Options" index="0"]
+_e_sort_args = Dictionary[StringName, StringName]({
+&"Name": &"get_name_"
+})
+
 [node name="Info" parent="Grid/HBox" index="0"]
 _e_can_use = false
 _e_select_mode = true
+
+[editable path="Grid/List/Options/Search"]

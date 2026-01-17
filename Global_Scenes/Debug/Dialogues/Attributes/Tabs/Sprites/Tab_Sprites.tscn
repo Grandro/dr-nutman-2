@@ -6,7 +6,7 @@
 
 [node name="Tab_Sprites" groups=["Translated"] instance=ExtResource("1")]
 script = ExtResource("3")
-_e_key = "Sprites"
+_e_key = &"Sprites"
 
 [node name="Left" type="VBoxContainer" parent="Margin/HSplit/Left" index="0"]
 light_mask = 8

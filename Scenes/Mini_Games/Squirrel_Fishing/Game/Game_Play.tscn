@@ -378,7 +378,7 @@ bus = &"SFX"
 
 [node name="Anims" type="AnimationPlayer" parent="." index="11"]
 libraries = {
-"": SubResource("AnimationLibrary_yrb7m")
+&"": SubResource("AnimationLibrary_yrb7m")
 }
 
 [node name="Delay" type="Timer" parent="." index="12"]

@@ -1,61 +1,62 @@
 extends Node
+class_name CompMovementKnockbacks
 
 signal started()
 signal finished()
 
-var _a_Knockback_Scene = preload("res://Scenes/Object/Comps/Movement/Comps/Knockbacks/Knockback.tscn")
+var _a_Knockback_Scene: PackedScene = preload("res://Scenes/Object/Comps/Movement/Comps/Knockbacks/Knockback.tscn")
 
-var _a_movement = null
+var _a_movement: Node
 
-var _a_velocity = null # Vector
+var _a_velocity: Variant # Vector
 
-func _physics_process(_p_delta):
+func _physics_process(_p_delta: float) -> void:
 	_a_velocity = _a_movement.get_init_velocity()
 	_process_knockbacks()
 
-func init(p_entity):
+func init(p_entity) -> void:
 	_a_movement = p_entity.comph().get_comp("Movement")
 	
 	_a_velocity = _a_movement.get_init_velocity()
 
-func knockback(p_velocity):
+func knockback(p_velocity: Variant) -> void:
 	if get_child_count() == 0:
 		started.emit()
 	
 	_instantiate_knockback(p_velocity)
 
-func _instantiate_knockback(p_velocity):
-	var instance = _a_Knockback_Scene.instantiate()
+func _instantiate_knockback(p_velocity: Variant) -> void:
+	var instance: CompMovementKnockbacksKnockback = _a_Knockback_Scene.instantiate()
 	instance.tree_exited.connect(_on_Knockback_tree_exited)
 	instance.set_init_velocity(p_velocity)
 	instance.set_wait_time(0.25)
 	
 	add_child(instance)
 
-func _process_knockbacks():
-	for child in get_children():
-		var init_velocity = child.get_init_velocity()
-		var end_velocity = _a_movement.get_init_velocity()
-		var time_left = child.get_time_left()
-		var duration = child.get_wait_time()
-		var t = 1 - (time_left / duration)
-		var velocity = init_velocity.lerp(end_velocity, t)
+func _process_knockbacks() -> void:
+	for child: CompMovementKnockbacksKnockback in get_children():
+		var init_velocity: Variant = child.get_init_velocity()
+		var end_velocity: Variant = _a_movement.get_init_velocity()
+		var time_left: float = child.get_time_left()
+		var duration: float = child.get_wait_time()
+		var t: float = 1.0 - (time_left / duration)
+		var velocity: Variant = init_velocity.lerp(end_velocity, t)
 		_a_velocity += velocity
 
-func reset_velocity():
+func reset_velocity() -> void:
 	_a_velocity = _a_movement.get_init_velocity()
-	for child in get_children():
+	for child: CompMovementKnockbacksKnockback in get_children():
 		child.queue_free()
 
-func adjust_velocity_post(p_velocity):
+func adjust_velocity_post(p_velocity: Variant) -> Variant:
 	return p_velocity
 
-func get_velocity_():
+func get_velocity_() -> Variant:
 	return _a_velocity
 
-func get_speed():
+func get_speed() -> float:
 	return 0.0
 
-func _on_Knockback_tree_exited():
+func _on_Knockback_tree_exited() -> void:
 	if get_child_count() == 0:
 		finished.emit()

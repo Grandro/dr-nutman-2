@@ -10,6 +10,8 @@ font_size = 30
 outline_size = 8
 outline_color = Color(0, 0, 0, 1)
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tgfyx"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_heyon"]
 bg_color = Color(0, 0, 0, 0)
 border_width_left = 1
@@ -20,8 +22,6 @@ expand_margin_left = 2.0
 expand_margin_top = 2.0
 expand_margin_right = 2.0
 expand_margin_bottom = 2.0
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tgfyx"]
 
 [node name="Item_Entry_Inventory" instance=ExtResource("1_eqv0x")]
 script = ExtResource("2_vml2a")
@@ -44,8 +44,8 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 1
-theme_override_styles/focus = SubResource("StyleBoxFlat_heyon")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_heyon")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_tgfyx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_heyon")
+theme_override_styles/focus = SubResource("StyleBoxFlat_heyon")
 action_mode = 0
 flat = true

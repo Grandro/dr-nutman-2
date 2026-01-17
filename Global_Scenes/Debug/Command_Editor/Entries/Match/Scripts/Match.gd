@@ -1,82 +1,82 @@
-extends "res://Global_Scenes/Debug/Command_Editor/Entries/Scripts/Entry_Branch.gd"
+extends DebugCommandEditorEntryBranch
+class_name DebugCommandEditorEntryMatch
 
-var _a_Branch_Base_Scene = preload("res://Global_Scenes/Debug/Command_Editor/Entries/Branches/Base.tscn")
+var _a_Branch_Base_Scene: PackedScene = preload("res://Global_Scenes/Debug/Command_Editor/Entries/Branches/Base.tscn")
 
-func swap_process_next():
-	var child_amount = _a_Branches.get_child_count()
-	var next_branch_idx = max(1, (_a_process_branch_idx + 1) % child_amount)
+func swap_process_next() -> void:
+	var child_count: int = _a_Branches.get_child_count()
+	var next_branch_idx: int = max(1, (_a_process_branch_idx + 1) % child_count)
 	swap_process(next_branch_idx)
 
-# Breakable: Choices: ["Menus"]["Choices"]["Chapter"]["Value"] NOT IMPLEMENTED!!!
-#					  ["Menus"]["Choices"]["Location"]["Value"] NOT IMPLEMENTED!!!
-#					  ["Menus"]["Choices"]["Dialogue"]["Value"]
-#					  ["Menus"]["Choices"]["Part"]["Value"]
-#			 Script: ["Menus"]["Script"]["Expression"]["Instance_Key"]
-func _update_warnings_add():
-	var key = _a_data["Key"]
-	var menu_data = _a_data["Menus"][key]
+# Breakable: Choices: [&"Menus"][&"Choices"][&"Chapter"][&"Value"] NOT IMPLEMENTED!!!
+#					  [&"Menus"][&"Choices"][&"Location"][&"Value"] NOT IMPLEMENTED!!!
+#					  [&"Menus"][&"Choices"][&"Dialogue"][&"Value"]
+#					  [&"Menus"][&"Choices"][&"Part"][&"Value"]
+#			 Script: [&"Menus"][&"Script"][&"Expression"][&"Instance_Key"]
+func _update_warnings_add() -> void:
+	var key: StringName = _a_data[&"Key"]
+	var menu_data: Dictionary = _a_data[&"Menus"][key]
 	match key:
-		"Choices":
-			var key_type = menu_data["Key_Type"]["Value"]
-			var chapter = menu_data["Chapter"]["Value"]
-			var location = menu_data["Location"]["Value"]
-			var dialogue_key = menu_data["Dialogue"]["Value"]
-			var dialogues_data = Databases.get_global_map_data("Dialogues", key_type, chapter, location)
+		&"Choices":
+			var key_type: StringName = menu_data[&"Key_Type"][&"Value"]
+			var chapter: StringName = menu_data[&"Chapter"][&"Value"]
+			var location: StringName = menu_data[&"Location"][&"Value"]
+			var dialogue_key: StringName = menu_data[&"Dialogue"][&"Value"]
+			var dialogues_data: Dictionary = Databases.get_global_map_data(&"Dialogues", key_type, chapter, location)
 			if dialogues_data.has(dialogue_key):
-				var part_idx = menu_data["Part"]["Value"]
-				var parts_data = dialogues_data[dialogue_key]["Data"]
-				if !parts_data.has(str(part_idx)):
-					var value_keys = ["Menus", "Choices", "Part", "Value"]
-					var max_ = parts_data.size() - 1
-					var args = _Warning_Args_Int.new(part_idx, value_keys, 0, max_)
+				var part_entry_key: StringName = menu_data[&"Part"][&"Value"]
+				var parts_data: Dictionary = dialogues_data[dialogue_key][&"Data"]
+				if !parts_data.has(part_entry_key):
+					var value_keys: Array = [&"Menus", &"Choices", &"Part", &"Value"]
+					var args: WarningArgsStringName = WarningArgsStringName.new(part_entry_key, value_keys)
 					_a_warnings.push_back(args)
 			else:
-				var value_keys = ["Menus", "Choices", "Dialogue", "Value"]
-				var args = _Warning_Args_String.new(dialogue_key, value_keys)
+				var value_keys: Array = [&"Menus", &"Choices", &"Dialogue", &"Value"]
+				var args: WarningArgsStringName = WarningArgsStringName.new(dialogue_key, value_keys)
 				_a_warnings.push_back(args)
 		
-		"Script":
-			var value_keys = ["Menus", "Script", "Expression", "Instance_Key"]
-			var expression_args = menu_data["Expression"]
+		&"Script":
+			var value_keys: Array = [&"Menus", &"Script", &"Expression", &"Instance_Key"]
+			var expression_args: Dictionary = menu_data[&"Expression"]
 			_update_warnings_add_expression(expression_args, value_keys)
 
-func _update_display_main_base_args():
-	var key = _a_data["Key"]
-	var menu_data = _a_data["Menus"][key]
+func _update_display_main_base_args() -> void:
+	var key: StringName = _a_data[&"Key"]
+	var menu_data: Dictionary = _a_data[&"Menus"][key]
 	
-	var text = ""
+	var text: String = ""
 	match key:
-		"Choices":
-			var dialogue_key = _get_display_text(menu_data["Dialogue"])
-			var part_idx = _get_display_text(menu_data["Part"])
-			text = "%s: " % tr("CHOICES")
+		&"Choices":
+			var dialogue_key: String = _get_display_text(menu_data[&"Dialogue"])
+			var part_entry_key: String = _get_display_text(menu_data[&"Part"])
+			text = "%s: " % tr(&"CHOICES")
 			text += dialogue_key
-			text += ", %s: " % tr("DEBUG_PART")
-			text += part_idx
+			text += ", %s: " % tr(&"DEBUG_PART")
+			text += part_entry_key
 		
-		"Script":
-			var instance_key = menu_data["Expression"]["Instance_Key"]
-			var expression = menu_data["Expression"]["Expression"]
-			text = "%s: " % tr("DEBUG_CUTSCENES_SCRIPT")
+		&"Script":
+			var instance_key: String = menu_data[&"Expression"][&"Instance_Key"]
+			var expression: String = menu_data[&"Expression"][&"Expression"]
+			text = "%s: " % tr(&"DEBUG_CUTSCENES_SCRIPT")
 			text += instance_key
 			text += ": %s" % expression
 	_a_Main.set_base_args(text)
 
-func _delete_branches(p_from):
-	for i in range(p_from, _a_Branches.get_child_count()):
-		var child = _a_Branches.get_child(i)
+func _delete_branches(p_from: int) -> void:
+	for i: int in range(p_from, _a_Branches.get_child_count()):
+		var child: DebugCommandEditorBranchBase = _a_Branches.get_child(i)
 		child.queue_free()
 
-func _instantiate_branches(p_values, p_from):
-	var base_min_size = _a_Main.get_base_margin_min_size()
-	var margin = _get_main_arg_margin()
-	for i in range(p_from, p_values.size()):
-		var branch_name = str(p_values[i])
-		var margin_min_size = Vector2(margin, base_min_size.y)
+func _instantiate_branches(p_values, p_from: int) -> void:
+	var base_min_size: Vector2 = _a_Main.get_base_margin_min_size()
+	var margin: float = _get_main_arg_margin()
+	for i: int in range(p_from, p_values.size()):
+		var branch_name: String = str(p_values[i])
+		var margin_min_size: Vector2 = Vector2(margin, base_min_size.y)
 		_instantiate_branch(branch_name, margin_min_size)
 
-func _instantiate_branch(p_branch_name, p_margin_min_size):
-	var instance = _a_Branch_Base_Scene.instantiate()
+func _instantiate_branch(p_branch_name: String, p_margin_min_size: Vector2) -> void:
+	var instance: DebugCommandEditorBranchBase = _a_Branch_Base_Scene.instantiate()
 	instance.base_focus_entered.connect(_on_Unselectable_focus_entered)
 	instance.base_gui_input.connect(_on_Unselectable_gui_input)
 	instance.progress_focus_entered.connect(_on_Unselectable_focus_entered)
@@ -87,52 +87,52 @@ func _instantiate_branch(p_branch_name, p_margin_min_size):
 	
 	_a_Branches.add_child(instance)
 
-func _init_branches():
-	var key = _a_data["Key"]
-	var branches_values = _a_data["Menus"][key]["Branches_Values"]
+func _init_branches() -> void:
+	var key: StringName = _a_data[&"Key"]
+	var branches_values = _a_data[&"Menus"][key][&"Branches_Values"]
 	_instantiate_branches(branches_values, 0)
 	
 	# Frame needed for branches to be ready
 	await get_tree().process_frame
 	super()
 
-func _update_branches():
-	var key = _a_data["Key"]
-	var branches_values = _a_data["Menus"][key]["Branches_Values"]
-	var child_count = _a_Branches.get_child_count()
-	var branches_amount = branches_values.size()
-	var to = child_count - 1
-	if to > branches_amount:
-		var from = branches_amount + 1
+func _update_branches() -> void:
+	var key: StringName = _a_data[&"Key"]
+	var branches_values: Array = _a_data[&"Menus"][key][&"Branches_Values"]
+	var child_count: int = _a_Branches.get_child_count()
+	var branches_count: int = branches_values.size()
+	var to: int = child_count - 1
+	if to > branches_count:
+		var from: int = branches_count + 1
 		_delete_branches(from)
-		to = branches_amount
+		to = branches_count
 	
-	for i in to:
-		var branch_name = str(branches_values[i])
-		var child = _a_Branches.get_child(i + 1)
+	for i: int in to:
+		var branch_name: String = str(branches_values[i])
+		var child: DebugCommandEditorBranchBase = _a_Branches.get_child(i + 1)
 		child.set_base_desc(branch_name)
 	_instantiate_branches(branches_values, to)
 	
 	# Frame needed for old branches to be freed and new branches to be ready
 	await get_tree().process_frame
 	
-	var margin = _get_main_arg_margin()
-	for i in range(to + 1, branches_amount + 1):
-		var child = _a_Branches.get_child(i)
-		var entries = child.get_entries_instance()
+	var margin: float = _get_main_arg_margin()
+	for i: int in range(to + 1, branches_count + 1):
+		var child: DebugCommandEditorBranchBase = _a_Branches.get_child(i)
+		var entries: VBoxContainer = child.get_entries_instance()
 		request_empty_entry.emit(i, margin, entries)
 	
-	_a_process_branch_idx = min(_a_process_branch_idx, branches_amount)
+	_a_process_branch_idx = min(_a_process_branch_idx, branches_count)
 	swap_process(_a_process_branch_idx)
 	
-	for i in range(1, _a_Branches.get_child_count()):
-		var child = _a_Branches.get_child(i)
-		var process_margin = child.get_process_margin_instance()
+	for i: int in range(1, _a_Branches.get_child_count()):
+		var child: DebugCommandEditorBranchBase = _a_Branches.get_child(i)
+		var process_margin: Control = child.get_process_margin_instance()
 		process_margin.custom_minimum_size.x = margin
 		child.set_collapse_visible(true)
 	_a_End.set_left_margin(margin)
 
-func set_args(p_args):
+func set_args(p_args: Dictionary) -> void:
 	super(p_args)
-	if !_a_args.has("Process_Branch_Idx"):
-		_a_args["Process_Branch_Idx"] = 1
+	if !_a_args.has(&"Process_Branch_Idx"):
+		_a_args[&"Process_Branch_Idx"] = 1

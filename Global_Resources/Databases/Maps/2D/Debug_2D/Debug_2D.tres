@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=3 format=3 uid="uid://xaxrro82k2dj"]
+[gd_resource type="Resource" script_class="MapData" load_steps=3 format=3 uid="uid://xaxrro82k2dj"]
 
 [ext_resource type="Resource" uid="uid://cxjltl86r5cc1" path="res://Global_Resources/Databases/Maps/2D/Debug_2D/Destinations/Start.tres" id="1_4qdvc"]
 [ext_resource type="Script" uid="uid://cgx4qljo5ouln" path="res://Global_Resources/Databases/Maps/Map_Data.gd" id="2_whete"]

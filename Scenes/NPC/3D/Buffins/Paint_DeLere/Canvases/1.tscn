@@ -289,7 +289,7 @@ transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 
 [node name="Cutscene" parent="." instance=ExtResource("6_q4wwa")]
 
 [node name="States" parent="." instance=ExtResource("14_i4s55")]
-_e_states = Array[String](["Stop"])
+_e_states = Array[StringName]([&"Stop"])
 _e_state = "Stop"
 
 [node name="Save" parent="." instance=ExtResource("9_kfxmn")]

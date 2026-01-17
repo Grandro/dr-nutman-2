@@ -1,0 +1,2 @@
+extends SVActionBase
+class_name SVActionSpecialBase

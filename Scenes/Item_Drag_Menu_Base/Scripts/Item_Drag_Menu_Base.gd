@@ -1,17 +1,18 @@
 extends Control
+class_name ItemDragMenuBase
 
-var _a_Item_Entry_Drag_Scene = preload("res://Scenes/Item_Entry/Item_Entry_Base.tscn")
+var _a_Item_Entry_Drag_Scene: PackedScene = preload("res://Scenes/Item_Entry/Item_Entry_Base.tscn")
 
-@onready var _a_Back = get_node("Back")
+@onready var _a_Back: IndicatorButton = get_node("Back")
 
-var _a_inventory = null # Inventory instance
-var _a_mouse_inventory_group = false # Is mouse hovering over Inventory Group_Entry?
-var _a_slot = null # Slot instance mouse hovers over
-var _a_item_drag = null # Item_Entry_Drag instance
-var _a_item_drag_type = "" # Equip_Slot/Inventory
-var _a_item_drag_instance = null # Dragged item / Equip_Slot
+var _a_inventory: ItemSelectInventory # Inventory instance
+var _a_mouse_inventory_group: bool = false # Is mouse hovering over Inventory Group_Entry?
+var _a_slot: ItemDragMenuBaseSlot = null # Slot instance mouse hovers over
+var _a_item_drag: ItemEntryBase # Item_Entry_Drag instance
+var _a_item_drag_type: StringName # Equip_Slot/Inventory
+var _a_item_drag_instance: Control # Dragged item / Equip_Slot
 
-func _ready():
+func _ready() -> void:
 	_a_Back.select_pressed.connect(_on_Back_select_pressed)
 	_a_inventory.item_pressed.connect(_on_Inventory_item_pressed)
 	_a_inventory.group_mouse_entered.connect(_on_Inventory_group_mouse_entered)
@@ -21,32 +22,32 @@ func _ready():
 	set_process_input(false)
 	hide()
 
-func _process(_p_delta):
-	var mouse_pos = get_local_mouse_position()
-	var item_drag_size = _a_item_drag.get_size() 
-	var pos = mouse_pos - item_drag_size / 2
+func _process(_p_delta: float) -> void:
+	var mouse_pos: Vector2 = get_local_mouse_position()
+	var item_drag_size: Vector2 = _a_item_drag.get_size() 
+	var pos: Vector2 = mouse_pos - item_drag_size / 2.0
 	_a_item_drag.set_position(pos)
 
-func _input(p_event):
-	if p_event.is_action_released("Mouse_Left"):
+func _input(p_event: InputEvent) -> void:
+	if p_event.is_action_released(&"Mouse_Left"):
 		_drop_item()
 
-func open():
+func open() -> void:
 	show()
 
-func _close():
+func _close() -> void:
 	_a_inventory.close()
 	
 	set_process_input(false)
 	hide()
 
-func _drag_item(p_instance, p_item_key, p_drag_type):
+func _drag_item(p_instance: Control, p_item_key: StringName, p_drag_type: StringName) -> void:
 	_a_item_drag_instance = p_instance
 	_a_item_drag_type = p_drag_type
 	
-	var item_path = Global.get_item_path()
-	var texture = load(item_path % p_item_key)
-	var mouse_pos = get_local_mouse_position()
+	var item_path: String = Global.get_item_path()
+	var texture: Texture2D = load(item_path % p_item_key)
+	var mouse_pos: Vector2 = get_local_mouse_position()
 	_a_item_drag = _a_Item_Entry_Drag_Scene.instantiate()
 	_a_item_drag.set_position.call_deferred(mouse_pos)
 	_a_item_drag.set_texture.call_deferred(texture)
@@ -57,11 +58,11 @@ func _drag_item(p_instance, p_item_key, p_drag_type):
 	set_process(true)
 	set_process_input(true)
 
-func _drop_item():
+func _drop_item() -> void:
 	set_process(false)
 	set_process_input(false)
 	
-	var item_key = _a_item_drag.get_key()
+	var item_key: StringName = _a_item_drag.get_key()
 	if _can_equip_slot_drop():
 		_drop_item_slot(item_key)
 	elif _a_mouse_inventory_group:
@@ -72,38 +73,38 @@ func _drop_item():
 	_a_item_drag.queue_free()
 	_a_slot = null
 
-func _drop_item_slot(_p_item_key):
-	var equipped_item_key = _a_slot.get_item_key()
-	if !equipped_item_key.is_empty():
+func _drop_item_slot(_p_item_key: StringName) -> void:
+	var equipped_item_key: StringName = _a_slot.get_item_key()
+	if equipped_item_key != &"":
 		_a_inventory.change_item_amount(equipped_item_key, 1)
 
-func _drop_item_inventory(p_item_key):
+func _drop_item_inventory(p_item_key: StringName) -> void:
 	_a_inventory.change_item_amount(p_item_key, 1)
 
-func _drop_item_revert(p_item_key):
+func _drop_item_revert(p_item_key: StringName) -> void:
 	match _a_item_drag_type:
-		"Inventory": _a_inventory.change_item_amount(p_item_key, 1)
+		&"Inventory": _a_inventory.change_item_amount(p_item_key, 1)
 
-func _can_equip_slot_drop():
+func _can_equip_slot_drop() -> bool:
 	return _a_slot != null
 
-func _on_Back_select_pressed():
+func _on_Back_select_pressed() -> void:
 	_close()
 
-func _on_Inventory_item_pressed(p_instance):
-	var item_key = p_instance.get_key()
+func _on_Inventory_item_pressed(p_instance: ItemEntryInventory) -> void:
+	var item_key: StringName = p_instance.get_key()
 	_a_inventory.change_item_amount(item_key, -1)
 	
-	_drag_item(p_instance, item_key, "Inventory")
+	_drag_item(p_instance, item_key, &"Inventory")
 
-func _on_Inventory_group_mouse_entered():
+func _on_Inventory_group_mouse_entered() -> void:
 	_a_mouse_inventory_group = true
 
-func _on_Inventory_group_mouse_exited():
+func _on_Inventory_group_mouse_exited() -> void:
 	_a_mouse_inventory_group = false
 
-func _on_Slot_mouse_entered(p_instance):
+func _on_Slot_mouse_entered(p_instance: ItemDragMenuBaseSlot) -> void:
 	_a_slot = p_instance
  
-func _on_Slot_mouse_exited():
+func _on_Slot_mouse_exited() -> void:
 	_a_slot = null

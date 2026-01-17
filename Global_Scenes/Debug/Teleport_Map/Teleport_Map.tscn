@@ -6,7 +6,7 @@
 
 [node name="Teleport_Map" type="Node"]
 script = ExtResource("1_j70lb")
-_e_free_cameras = {
-"2D": ExtResource("2_rsnos"),
-"3D": ExtResource("3_n3rdj")
-}
+_e_free_cameras = Dictionary[StringName, PackedScene]({
+&"2D": ExtResource("2_rsnos"),
+&"3D": ExtResource("3_n3rdj")
+})

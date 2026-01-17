@@ -67,119 +67,119 @@
 [node name="Databases" type="Node"]
 script = ExtResource("1")
 _e_data = {
-"Debug": {
-"Data": {},
-"Path": "res://Data/Debug.dat"
+&"Debug": {
+&"Data": {},
+&"Path": "res://Data/Debug.dat"
 },
-"Enemies": {
-"Data": {
-"Citrin": ExtResource("3_fwdp6"),
-"Ghosty": ExtResource("4_cu0rr"),
-"Sick_Apprentice_1": ExtResource("6")
+&"Enemies": {
+&"Data": {
+&"Citrin": ExtResource("3_fwdp6"),
+&"Ghosty": ExtResource("4_cu0rr"),
+&"Sick_Apprentice_1": ExtResource("6")
 }
 },
-"Items": {
-"Data": {
-"Amethyst": ExtResource("13"),
-"Balloon_Dark_Blue": ExtResource("9_v8ckt"),
-"Balloon_Green": ExtResource("11_p26lr"),
-"Balloon_Light_Blue": ExtResource("12_5s1na"),
-"Balloon_Orange": ExtResource("13_ryb2c"),
-"Balloon_Pink": ExtResource("14_a2uy7"),
-"Balloon_Purple": ExtResource("15_nqtfu"),
-"Balloon_Red": ExtResource("16_ysnyp"),
-"Citrin_Shell": ExtResource("17_ap1x8"),
-"Citrin_Shield": ExtResource("18_0gs2q"),
-"Cookie": ExtResource("5"),
-"Disk_Color_Selection": ExtResource("19_irogi"),
-"Disposable_Glove": ExtResource("17_esjlu"),
-"Handful_Peanuts_Cracked": ExtResource("33"),
-"Handful_Peanuts_Uncracked": ExtResource("34"),
-"Party_Hat_1": ExtResource("31")
+&"Items": {
+&"Data": {
+&"Amethyst": ExtResource("13"),
+&"Balloon_Dark_Blue": ExtResource("9_v8ckt"),
+&"Balloon_Green": ExtResource("11_p26lr"),
+&"Balloon_Light_Blue": ExtResource("12_5s1na"),
+&"Balloon_Orange": ExtResource("13_ryb2c"),
+&"Balloon_Pink": ExtResource("14_a2uy7"),
+&"Balloon_Purple": ExtResource("15_nqtfu"),
+&"Balloon_Red": ExtResource("16_ysnyp"),
+&"Citrin_Shell": ExtResource("17_ap1x8"),
+&"Citrin_Shield": ExtResource("18_0gs2q"),
+&"Cookie": ExtResource("5"),
+&"Disk_Color_Selection": ExtResource("19_irogi"),
+&"Disposable_Glove": ExtResource("17_esjlu"),
+&"Handful_Peanuts_Cracked": ExtResource("33"),
+&"Handful_Peanuts_Uncracked": ExtResource("34"),
+&"Party_Hat_1": ExtResource("31")
 }
 },
-"Keyboard_Layouts": {
-"Data": {
-"AZERTY": ExtResource("7"),
-"Colemak": ExtResource("8"),
-"Dvorak": ExtResource("3"),
-"QWERTY": ExtResource("11"),
-"QWERTZ": ExtResource("14")
+&"Keyboard_Layouts": {
+&"Data": {
+&"AZERTY": ExtResource("7"),
+&"Colemak": ExtResource("8"),
+&"Dvorak": ExtResource("3"),
+&"QWERTY": ExtResource("11"),
+&"QWERTZ": ExtResource("14")
 }
 },
-"Main_Menu": {
-"Data": {
-"Sub_Menus": {
-"Inventory": ExtResource("27"),
-"Journal": ExtResource("25"),
-"Journal_Read": ExtResource("29"),
-"Journal_Write": ExtResource("28"),
-"Options": ExtResource("26"),
-"Party": ExtResource("30"),
-"Quests": ExtResource("32")
-}
-}
-},
-"Maps": {
-"Data": {
-"Broko_Forest_1": ExtResource("36"),
-"Broko_House_1": ExtResource("35_pm13d"),
-"Broko_House_2": ExtResource("39_l5kqu"),
-"Broko_House_3": ExtResource("42_gqu5g"),
-"Broko_Town_1": ExtResource("18"),
-"Buffin_House_1": ExtResource("40_idtyp"),
-"Buffin_House_2": ExtResource("41_a5w27"),
-"Buffin_House_3": ExtResource("38_0oiip"),
-"Debug_2D": ExtResource("40_wvujn"),
-"Debug_3D": ExtResource("22"),
-"Doctor_Dream_1": ExtResource("2"),
-"Dr_Nutman_Home_1": ExtResource("4"),
-"Game_Over": ExtResource("36_10vt8")
-}
-},
-"Party_Members": {
-"Data": {
-"Buffin_Assistant_1": ExtResource("15"),
-"Dr_Nutman": ExtResource("16")
-}
-},
-"Quests": {
-"Data": {
-"A_Child_For_A_Balloon": ExtResource("30_hw8d3"),
-"An_Uplifting_Nut": ExtResource("44_6vn4u"),
-"Great_Broko_Town_Festival": ExtResource("29_dgflp"),
-"Groping_In_The_Dark": ExtResource("52_lakrt"),
-"Right_On_The_Nut": ExtResource("33_01ydk")
-}
-},
-"SV_Actions": {
-"Data": {
-"Commands": {
-"Attack_ATK": ExtResource("44_8ux57"),
-"Defense_DEF": ExtResource("45_3r1mj"),
-"Flee": ExtResource("46_hidgb"),
-"Help": ExtResource("47_6sosu"),
-"Special": ExtResource("48_52hep")
-},
-"Specials": {
-"Citrin_Ball_Spew": ExtResource("55_xg21b"),
-"Nut_Munch_Punch": ExtResource("56_lj2og")
+&"Main_Menu": {
+&"Data": {
+&"Sub_Menus": {
+&"Inventory": ExtResource("27"),
+&"Journal": ExtResource("25"),
+&"Journal_Read": ExtResource("29"),
+&"Journal_Write": ExtResource("28"),
+&"Options": ExtResource("26"),
+&"Party": ExtResource("30"),
+&"Quests": ExtResource("32")
 }
 }
 },
-"SV_Encounters": {
-"Data": {
-"Broko_Forest_1": ExtResource("33_anbds"),
-"Ghost_House_1": ExtResource("61_tvg6a"),
-"SP_Sick_Apprentice_1": ExtResource("17")
+&"Maps": {
+&"Data": {
+&"Broko_Forest_1": ExtResource("36"),
+&"Broko_House_1": ExtResource("35_pm13d"),
+&"Broko_House_2": ExtResource("39_l5kqu"),
+&"Broko_House_3": ExtResource("42_gqu5g"),
+&"Broko_Town_1": ExtResource("18"),
+&"Buffin_House_1": ExtResource("40_idtyp"),
+&"Buffin_House_2": ExtResource("41_a5w27"),
+&"Buffin_House_3": ExtResource("38_0oiip"),
+&"Debug_2D": ExtResource("40_wvujn"),
+&"Debug_3D": ExtResource("22"),
+&"Doctor_Dream_1": ExtResource("2"),
+&"Dr_Nutman_Home_1": ExtResource("4"),
+&"Game_Over": ExtResource("36_10vt8")
 }
 },
-"Status": {
-"Data": {
-"Empowered_Attack": ExtResource("54_axkks")
+&"Party_Members": {
+&"Data": {
+&"Buffin_Assistant_1": ExtResource("15"),
+&"Dr_Nutman": ExtResource("16")
 }
 },
-"Vox": {
-"Data": {}
+&"Quests": {
+&"Data": {
+&"A_Child_For_A_Balloon": ExtResource("30_hw8d3"),
+&"An_Uplifting_Nut": ExtResource("44_6vn4u"),
+&"Great_Broko_Town_Festival": ExtResource("29_dgflp"),
+&"Groping_In_The_Dark": ExtResource("52_lakrt"),
+&"Right_On_The_Nut": ExtResource("33_01ydk")
+}
+},
+&"SV_Actions": {
+&"Data": {
+&"Commands": {
+&"Attack_ATK": ExtResource("44_8ux57"),
+&"Defense_DEF": ExtResource("45_3r1mj"),
+&"Flee": ExtResource("46_hidgb"),
+&"Help": ExtResource("47_6sosu"),
+&"Special": ExtResource("48_52hep")
+},
+&"Specials": {
+&"Citrin_Ball_Spew": ExtResource("55_xg21b"),
+&"Nut_Munch_Punch": ExtResource("56_lj2og")
+}
+}
+},
+&"SV_Encounters": {
+&"Data": {
+&"Broko_Forest_1": ExtResource("33_anbds"),
+&"Ghost_House_1": ExtResource("61_tvg6a"),
+&"SP_Sick_Apprentice_1": ExtResource("17")
+}
+},
+&"Status": {
+&"Data": {
+&"Empowered_Attack": ExtResource("54_axkks")
+}
+},
+&"Vox": {
+&"Data": {}
 }
 }

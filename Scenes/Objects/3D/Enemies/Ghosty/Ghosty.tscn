@@ -167,8 +167,8 @@ _e_speeds = Dictionary[String, float]({
 [node name="Battle_Starter" parent="." index="5"]
 _e_enc_key = "Ghost_House_1"
 _e_troops = Dictionary[Array, int]({
-["Ghosty"]: 2,
-["Ghosty", "Ghosty"]: 1
+[&"Ghosty"]: 2,
+[&"Ghosty", &"Ghosty"]: 1
 })
 
 [node name="Neutral" parent="Battle_Starter" index="0"]

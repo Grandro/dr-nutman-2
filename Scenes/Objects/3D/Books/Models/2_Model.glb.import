@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://fnubtago6oj6"
+uid="uid://cql1vrm1qotxs"
 path="res://.godot/imported/2_Model.glb-09fcfe9ad3fd910cd4452d464d3dff90.scn"
 
 [deps]
@@ -32,12 +32,6 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={
-"nodes": {
-"PATH:Book_2": {
-"mesh_instance/layers": 4
-}
-}
-}
+_subresources={}
 gltf/naming_version=1
 gltf/embedded_image_handling=1

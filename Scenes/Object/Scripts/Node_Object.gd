@@ -1,19 +1,19 @@
 extends Node
 class_name NodeObject
 
-var _a_comph = CompHandler.new(self)
+var _a_comph: CompHandler = CompHandler.new(self)
 
-func _ready():
+func _ready() -> void:
 	_a_comph.register_comps()
 
-func comph():
+func comph() -> CompHandler:
 	return _a_comph
 
-func get_save_data():
+func get_save_data() -> Dictionary:
 	return {}
 
-func load_data(_p_data):
+func load_data(_p_data: Dictionary) -> void:
 	pass
 
-func load_data_init():
+func load_data_init() -> void:
 	pass

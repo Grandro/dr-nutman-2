@@ -5,12 +5,12 @@
 [ext_resource type="StyleBox" uid="uid://b4ehs25kus1so" path="res://Scenes/NutOS/Content/Start_Menu/Apps/Resources/Highlighted.tres" id="3_u5lrk"]
 [ext_resource type="StyleBox" uid="uid://de1arcaynwihv" path="res://Scenes/NutOS/Content/Start_Menu/Apps/Resources/Normal.tres" id="4_gquds"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_26p07"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d8nk1"]
+bg_color = Color(0.313726, 0.313726, 0.313726, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mjoys"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d8nk1"]
-bg_color = Color(0.313726, 0.313726, 0.313726, 1)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_26p07"]
 
 [node name="App" type="MarginContainer"]
 light_mask = 8
@@ -25,11 +25,11 @@ script = ExtResource("2")
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
-theme_override_styles/focus = SubResource("StyleBoxEmpty_26p07")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_mjoys")
-theme_override_styles/hover = SubResource("StyleBoxFlat_d8nk1")
-theme_override_styles/pressed = ExtResource("3_u5lrk")
 theme_override_styles/normal = ExtResource("4_gquds")
+theme_override_styles/pressed = ExtResource("3_u5lrk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d8nk1")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_mjoys")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_26p07")
 
 [node name="HBox" type="HBoxContainer" parent="."]
 light_mask = 8

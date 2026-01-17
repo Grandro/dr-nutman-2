@@ -53,12 +53,12 @@ stretch_mode = 5
 
 [node name="Anims" type="AnimationPlayer" parent="Revert"]
 libraries = {
-"": SubResource("AnimationLibrary_vyhyy")
+&"": SubResource("AnimationLibrary_vyhyy")
 }
 
 [node name="File" type="FileDialog" parent="."]
 title = "Open a File"
-size = Vector2i(312, 175)
+size = Vector2i(348, 175)
 theme = ExtResource("4_w33k0")
 ok_button_text = "Open"
 file_mode = 0

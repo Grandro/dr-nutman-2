@@ -5,4 +5,7 @@
 
 [node name="Crack_Nuts" instance=ExtResource("1_h5fn7")]
 _e_item_key = "Handful_Peanuts_Cracked"
+_e_track_init = true
+_e_track_gain = true
+_e_track_loss = false
 _e_data = ExtResource("2_uknc8")

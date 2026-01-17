@@ -1,8 +1,9 @@
-extends "res://Global_Scenes/Debug/Command_Editor/Entries/Scripts/Entry_Command.gd"
+extends DebugCommandEditorEntryCommand
+class_name DebugCommandEditorEntryWait
 
 # Breakable:
-func _update_display_main_args():
-	var time_text = _get_display_text(_a_data["Time"])
-	var text = time_text
-	text += " %s" % tr("SECONDS")
+func _update_display_main_args() -> void:
+	var time_text: String = _get_display_text(_a_data[&"Time"])
+	var text: String = time_text
+	text += " %s" % tr(&"SECONDS")
 	_a_Main.set_base_args(text)

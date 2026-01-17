@@ -21,7 +21,7 @@ layout_mode = 2
 size_flags_vertical = 4
 text = "SELECT"
 
-[node name="Select_File" type="FileDialog" parent="." index="3"]
+[node name="File" type="FileDialog" parent="." index="3"]
 title = "Open a File"
 ok_button_text = "Open"
 file_mode = 0

@@ -11,7 +11,6 @@ size = Vector3(6, 6, 6)
 size = Vector3(2, 0.5, 1)
 
 [node name="Dr_Nutman_1" instance=ExtResource("1")]
-_e_destinations = [["Dr_Nutman_Home_1", "Door"]]
 
 [node name="Model" parent="." index="0" instance=ExtResource("2_5aqgb")]
 
@@ -21,7 +20,7 @@ shape = SubResource("BoxShape3D_ucgbr")
 
 [node name="1" parent="Interactions" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.25, 3.5)
-_e_dirs = Array[String](["Up"])
+_e_dirs = Array[StringName]([&"Up"])
 
 [node name="Collision" parent="Interactions/1" index="0"]
 shape = SubResource("BoxShape3D_j4xvg")

@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://da1f3vjiaw3jr"]
 
 [ext_resource type="Script" uid="uid://vvwpu34fe3xd" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Dr_Nutman_Home_1/Objects/Bed/Scripts/Bed.gd" id="1_eimhv"]
-[ext_resource type="PackedScene" uid="uid://dnv37x6g2ry0r" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Dr_Nutman_Home_1/Objects/Bed/Models/Model.blend" id="1_i3ili"]
 [ext_resource type="PackedScene" uid="uid://dsp0njc065uev" path="res://Scenes/Object/Comps/3D/Collision_Shape.tscn" id="2_gbyqe"]
+[ext_resource type="PackedScene" uid="uid://cpgw546wwhqek" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Dr_Nutman_Home_1/Objects/Bed/Models/Model.glb" id="2_hfjkl"]
 [ext_resource type="PackedScene" uid="uid://nr4813v0r2dg" path="res://Scenes/Object/Comps/3D/Interactions/Interactions.tscn" id="3_8wlfh"]
 [ext_resource type="PackedScene" uid="uid://omsbdulg45pv" path="res://Scenes/Object/Comps/3D/Popup.tscn" id="4_yw46s"]
 [ext_resource type="PackedScene" uid="uid://fnej1f64wfc2" path="res://Scenes/Object/Comps/3D/Nav_Obstacle.tscn" id="6_hfjkl"]
@@ -18,7 +18,7 @@ collision_layer = 8
 collision_mask = 8
 script = ExtResource("1_eimhv")
 
-[node name="Model" parent="." instance=ExtResource("1_i3ili")]
+[node name="Model" parent="." instance=ExtResource("2_hfjkl")]
 
 [node name="Collision" parent="." instance=ExtResource("2_gbyqe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -0.1)
@@ -43,7 +43,6 @@ vertices = PackedVector3Array(1.7, 0, -2.3, 1.7, 0, 2.1, -1.7, 0, 2.1, -1.7, 0, 
 affect_navigation_mesh = true
 avoidance_enabled = false
 
-[editable path="Model"]
 [editable path="Interactions"]
 [editable path="Interactions/1"]
 [editable path="Popup"]

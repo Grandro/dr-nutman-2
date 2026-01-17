@@ -6,4 +6,9 @@
 [node name="Inventory" instance=ExtResource("1")]
 script = ExtResource("2")
 
+[node name="Sort_By" parent="Grid/List/Options" index="0"]
+_e_sort_args = Dictionary[StringName, StringName]({
+&"Name": &"get_name_"
+})
+
 [editable path="Grid/List/Options/Search"]

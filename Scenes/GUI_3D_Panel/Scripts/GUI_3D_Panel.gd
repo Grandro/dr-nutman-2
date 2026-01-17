@@ -1,29 +1,30 @@
 extends Node3D
+class_name GUI3DPanel
 
-var _a_quad_mesh_size = Vector2.ZERO
-var _a_mouse_inside = false
-var _a_mouse_held = false
-var _a_last_mouse_pos_3D = null
-var _a_last_mouse_pos_2D = null
+var _a_quad_mesh_size: Vector2 = Vector2.ZERO
+var _a_mouse_inside: bool = false
+var _a_mouse_held: bool = false
+var _a_last_mouse_pos_3D: Variant = null
+var _a_last_mouse_pos_2D: Variant = null
 
-@onready var _a_Plane = get_node("Plane")
-@onready var _a_Area = get_node("Plane/Area")
-@onready var _a_VP = get_node("VP")
+@onready var _a_Plane: MeshInstance3D = get_node("Plane")
+@onready var _a_Area: Area3D = get_node("Plane/Area")
+@onready var _a_VP: VP = get_node("VP")
 
-func _ready():
+func _ready() -> void:
 	_a_Area.mouse_entered.connect(_on_Area_mouse_entered)
 	
-	var mesh = _a_Plane.get_mesh()
-	var mat = mesh.get_material()
-	var billboard_mode = mat.get_billboard_mode()
+	var mesh: PlaneMesh = _a_Plane.get_mesh()
+	var mat: Material = mesh.get_material()
+	var billboard_mode: BaseMaterial3D.BillboardMode = mat.get_billboard_mode()
 	if billboard_mode == BaseMaterial3D.BILLBOARD_DISABLED:
 		set_process(false)
 
-func _process(_p_delta):
+func _process(_p_delta: float) -> void:
 	_rotate_area_to_billboard()
 
-func _unhandled_input(p_event):
-	var mouse_event = (
+func _unhandled_input(p_event: InputEvent) -> void:
+	var mouse_event: bool = (
 		p_event is InputEventMouse or
 		p_event is InputEventScreenDrag or
 		p_event is InputEventScreenTouch
@@ -35,11 +36,11 @@ func _unhandled_input(p_event):
 	elif !mouse_event:
 		_a_VP.push_input(p_event)
 
-func _handle_mouse(p_event):
+func _handle_mouse(p_event: InputEvent) -> void:
 	if p_event is InputEventMouseButton || p_event is InputEventScreenTouch:
 		_a_mouse_held = p_event.is_pressed()
 	
-	var mouse_pos_3D = _find_mouse(p_event.global_position)
+	var mouse_pos_3D: Variant = _find_mouse(p_event.global_position)
 	_a_mouse_inside = mouse_pos_3D != null
 	if _a_mouse_inside:
 		mouse_pos_3D = _a_Area.global_transform.affine_inverse() * mouse_pos_3D
@@ -49,8 +50,8 @@ func _handle_mouse(p_event):
 		if mouse_pos_3D == null:
 			mouse_pos_3D = Vector3.ZERO
 	
-	var mesh_size = _a_Plane.mesh.size
-	var mouse_pos_2D = Vector2(mouse_pos_3D.x, -mouse_pos_3D.y)
+	var mesh_size: Vector2 = _a_Plane.mesh.size
+	var mouse_pos_2D: Vector2 = Vector2(mouse_pos_3D.x, -mouse_pos_3D.y)
 	# (-quad_size/2) -> (quad_size/2) to 0 -> quad_size
 	mouse_pos_2D.x += mesh_size.x / 2
 	mouse_pos_2D.y += mesh_size.y / 2
@@ -73,52 +74,52 @@ func _handle_mouse(p_event):
 	
 	_a_VP.push_input(p_event)
 
-func _find_mouse(p_global_position):
-	var camera = get_viewport().get_camera_3d()
-	var from = camera.project_ray_origin(p_global_position)
-	var dist = _find_further_distance_to(camera.transform.origin)
-	var to = from + camera.project_ray_normal(p_global_position) * dist
-	var params = PhysicsRayQueryParameters3D.create(from, to, _a_Area.collision_layer)
+func _find_mouse(p_global_position: Vector2) -> Variant:
+	var camera: Camera3D = get_viewport().get_camera_3d()
+	var from: Vector3 = camera.project_ray_origin(p_global_position)
+	var dist: float = _find_further_distance_to(camera.transform.origin)
+	var to: Vector3 = from + camera.project_ray_normal(p_global_position) * dist
+	var params: PhysicsRayQueryParameters3D = PhysicsRayQueryParameters3D.create(from, to, _a_Area.collision_layer)
 	params.set_collide_with_areas(true)
 	params.set_collide_with_bodies(false)
-	var res = get_world_3d().direct_space_state.intersect_ray(params)
+	var res: Dictionary = get_world_3d().direct_space_state.intersect_ray(params)
 	if res.size() > 0:
-		return res["position"]
+		return res[&"position"]
 	else:
 		return null
 
-func _find_further_distance_to(p_origin):
-	var edges = []
-	var top_right = Vector3(_a_quad_mesh_size.x / 2, _a_quad_mesh_size.y / 2, 0)
-	var bottom_right = Vector3(_a_quad_mesh_size.x / 2, -_a_quad_mesh_size.y / 2, 0)
-	var top_left = Vector3(-_a_quad_mesh_size.x / 2, _a_quad_mesh_size.y / 2, 0)
-	var bottom_left = Vector3(-_a_quad_mesh_size.x / 2, -_a_quad_mesh_size.y / 2, 0)
+func _find_further_distance_to(p_origin: Vector3) -> float:
+	var edges: PackedVector3Array = []
+	var top_right: Vector3 = Vector3(_a_quad_mesh_size.x / 2.0, _a_quad_mesh_size.y / 2.0, 0.0)
+	var bottom_right: Vector3 = Vector3(_a_quad_mesh_size.x / 2.0, -_a_quad_mesh_size.y / 2.0, 0.0)
+	var top_left: Vector3 = Vector3(-_a_quad_mesh_size.x / 2.0, _a_quad_mesh_size.y / 2.0, 0.0)
+	var bottom_left: Vector3 = Vector3(-_a_quad_mesh_size.x / 2.0, -_a_quad_mesh_size.y / 2.0, 0.0)
 	edges.push_back(_a_Area.to_global(top_right))
 	edges.push_back(_a_Area.to_global(bottom_right))
 	edges.push_back(_a_Area.to_global(top_left))
 	edges.push_back(_a_Area.to_global(bottom_left))
 	
-	var far_dist = 0
-	for edge in edges:
-		var temp_dist = p_origin.distance_to(edge)
+	var far_dist: float = 0.0
+	for edge: Vector3 in edges:
+		var temp_dist: float = p_origin.distance_to(edge)
 		if temp_dist > far_dist:
 			far_dist = temp_dist
 	
 	return far_dist
 
-func _rotate_area_to_billboard():
-	var mesh = _a_Plane.get_mesh()
-	var mat = mesh.get_material()
-	var billboard_mode = mat.get_billboard_mode()
-	var camera = get_viewport().get_camera_3d()
-	var look = camera.to_global(Vector3(0, 0, -100)) - camera.global_transform.origin
+func _rotate_area_to_billboard() -> void:
+	var mesh: PlaneMesh = _a_Plane.get_mesh()
+	var mat: Material = mesh.get_material()
+	var billboard_mode: BaseMaterial3D.BillboardMode = mat.get_billboard_mode()
+	var camera: Camera3D = get_viewport().get_camera_3d()
+	var look: Vector3 = camera.to_global(Vector3(0, 0, -100)) - camera.global_transform.origin
 	look += _a_Area.position
 	
 	if billboard_mode == BaseMaterial3D.BILLBOARD_FIXED_Y:
-		look.y = 0
+		look.y = 0.0
 	
 	_a_Area.look_at(look, Vector3.UP)
 	_a_Area.rotate_object_local(Vector3.BACK, camera.rotation.z)
 
-func _on_Area_mouse_entered():
+func _on_Area_mouse_entered() -> void:
 	_a_mouse_inside = true

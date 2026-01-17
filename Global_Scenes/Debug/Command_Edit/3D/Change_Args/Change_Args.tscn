@@ -10,11 +10,6 @@
 layout_mode = 2
 _e_var_select_scene = ExtResource("3_f1ru8")
 
-[node name="Value" parent="Window/Contents/Margin/HBox/Right/Options/VBox/Value" index="1"]
-_e_type = "Array"
-_e_children_type = "Array"
-
 [editable path="Window"]
 [editable path="Window/Contents/Margin/HBox/Left/Preview"]
 [editable path="Window/Contents/Margin/HBox/Left/Grid/Offset"]
-[editable path="Window/Contents/Margin/HBox/Right/Options/VBox/Value"]

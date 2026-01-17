@@ -1,46 +1,47 @@
-extends "res://Scenes/Object/Scripts/Node3D_Object.gd"
+extends Node3DObject
+class_name ObjectPressurePlateBase
 
 signal pushed()
 signal released()
 
-@onready var _a_Area = get_node("Area")
-@onready var _a_States = get_node("States")
-@onready var _a_Anims = get_node("Anims")
+@onready var _a_Area: Area3D = get_node("Area")
+@onready var _a_States: CompStates = get_node("States")
+@onready var _a_Anims: CompAnims = get_node("Anims")
 
-var _a_instances = []
-var _a_locked = false
+var _a_instances: Array[Node] = []
+var _a_locked: bool = false
 
-func _ready():
+func _ready() -> void:
 	super()
 	_a_Area.body_entered.connect(_on_Area_body_entered)
 	_a_Area.body_exited.connect(_on_Area_body_exited)
 	_a_Anims.animation_finished.connect(_on_Anims_anim_finished)
 
-func _update_push():
-	var state = _a_States.get_state()
-	if _a_instances.size() >= 1 && state.begins_with("Release"):
-		set_state("Push")
+func _update_push() -> void:
+	var state: StringName = _a_States.get_state()
+	if _a_instances.size() >= 1 && state.begins_with(&"Release"):
+		set_state(&"Push")
 
-func _update_release():
+func _update_release() -> void:
 	if _a_instances.size() == 0:
-		set_state("Release")
+		set_state(&"Release")
 
-func has_instance(p_instance):
+func has_instance(p_instance: Node) -> bool:
 	return _a_instances.has(p_instance)
 
-func set_locked(p_locked):
+func set_locked(p_locked: bool) -> void:
 	_a_locked = p_locked
 	if p_locked:
 		return
 	
-	var state = _a_States.get_state()
+	var state: StringName = _a_States.get_state()
 	match state:
-		"Push": _update_release()
-		"Pushed": _update_release()
-		"Release": _update_push()
-		"Released": _update_push()
+		&"Push": _update_release()
+		&"Pushed": _update_release()
+		&"Release": _update_push()
+		&"Released": _update_push()
 
-func set_state(p_state):
+func set_state(p_state: StringName) -> void:
 	_a_States.set_state(p_state)
 	_a_Anims.update_anim()
 	
@@ -49,36 +50,36 @@ func set_state(p_state):
 	elif p_state.begins_with("Release"):
 		released.emit()
 
-func get_save_data():
-	var data = super()
-	data["Instances"] = []
-	for instance in _a_instances:
-		var path = instance.get_path()
-		data["Instances"].push_back(path)
-	data["Locked"] = _a_locked
+func get_save_data() -> Dictionary:
+	var data: Dictionary = super()
+	data[&"Instances"] = []
+	for instance: Node in _a_instances:
+		var path: String = instance.get_path()
+		data[&"Instances"].push_back(path)
+	data[&"Locked"] = _a_locked
 	
 	return data
 
-func load_data(p_data):
+func load_data(p_data: Dictionary) -> void:
 	super(p_data)
 	_a_instances.clear()
-	for path in p_data["Instances"]:
-		var instance = get_node(path)
+	for path: String in p_data[&"Instances"]:
+		var instance: Node = get_node(path)
 		_a_instances.push_back(instance)
-	set_locked(p_data["Locked"])
+	set_locked(p_data[&"Locked"])
 
-func _on_Area_body_entered(p_body):
+func _on_Area_body_entered(p_body: Node) -> void:
 	if !_a_instances.has(p_body):
 		_a_instances.push_back(p_body)
 	if !_a_locked:
 		_update_push()
 
-func _on_Area_body_exited(p_body):
+func _on_Area_body_exited(p_body: Node) -> void:
 	_a_instances.erase(p_body)
 	if !_a_locked:
 		_update_release()
 
-func _on_Anims_anim_finished(p_name):
+func _on_Anims_anim_finished(p_name: StringName) -> void:
 	match p_name:
-		"Push": _a_States.set_state("Pushed")
-		"Release": _a_States.set_state("Released")
+		&"Push": _a_States.set_state(&"Pushed")
+		&"Release": _a_States.set_state(&"Released")

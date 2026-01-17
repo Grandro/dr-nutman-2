@@ -38,10 +38,10 @@ theme_override_constants/separation = 16
 
 [node name="Sort_By" parent="VBox/VBox/Options" index="0" instance=ExtResource("3_av6wa")]
 layout_mode = 2
-_e_sort_args = {
+_e_sort_args = Dictionary[String, String]({
 "Date": "get_unix_time",
 "Name": "get_name_"
-}
+})
 
 [node name="Search" parent="VBox/VBox/Options" index="1" instance=ExtResource("4_noq72")]
 custom_minimum_size = Vector2(200, 0)

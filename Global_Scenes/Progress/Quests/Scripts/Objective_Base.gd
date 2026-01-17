@@ -1,41 +1,42 @@
 extends Node
+class_name ProgressQuestObjectiveBase
 
 signal progressed()
 signal completed()
 
 @export var _e_data: ObjectiveData = null
 
-var _a_active = true
-var _a_value = null
+var _a_active: bool = true
+var _a_value: Variant = null
 
-func _ready():
+func _ready() -> void:
 	if !_a_active:
 		return
 	
 	_update_progress()
 
-func manual_progress():
+func manual_progress() -> void:
 	pass
 
-func _update_progress():
+func _update_progress() -> void:
 	pass
 
-func get_data():
+func get_data() -> ObjectiveData:
 	return _e_data
 
-func get_value():
+func get_value() -> Variant:
 	return _a_value
 
-func get_save_data():
-	var data = {}
-	data["Active"] = _a_active
-	data["Value"] = _a_value
+func get_save_data() -> Dictionary:
+	var data: Dictionary = {}
+	data[&"Active"] = _a_active
+	data[&"Value"] = _a_value
 	
 	return data
 
-func load_file_data(p_data):
-	_a_active = p_data["Active"]
-	_a_value = p_data["Value"]
+func load_file_data(p_data: Dictionary) -> void:
+	_a_active = p_data[&"Active"]
+	_a_value = p_data[&"Value"]
 
-func load_data_init():
+func load_data_init() -> void:
 	pass

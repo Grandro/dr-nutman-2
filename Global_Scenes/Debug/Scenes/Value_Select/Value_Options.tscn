@@ -5,7 +5,7 @@
 
 [node name="Value_Options" instance=ExtResource("1_ydw81")]
 script = ExtResource("2_lreql")
-_e_init_key = ""
+_e_init_key = null
 _e_options_loc_id = ""
 _e_options = []
 

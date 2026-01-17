@@ -1,6 +1,7 @@
-extends "res://Global_Scenes/Debug/Command_Edit/Scripts/Command_Preview_Object.gd"
+extends DebugCommandEditCommandPreviewObject
+class_name DebugCommandEditCommandDefaultObjectKey
 
-func open(p_instance, p_data, p_res_data):
+func open(p_instance: DebugCommandEditorEntryBase, p_data: Dictionary, p_res_data: Dictionary) -> void:
 	super(p_instance, p_data, p_res_data)
 	
 	_selected_object_changed()
@@ -8,17 +9,17 @@ func open(p_instance, p_data, p_res_data):
 	_a_Window.show()
 	show()
 
-func _open_init(p_res_data):
+func _open_init(p_res_data: Dictionary) -> void:
 	super(p_res_data)
 	_a_Object.load_data_init()
 	_select_default_object(p_res_data)
 	_selected_object_changed()
 
-func _open_load(p_data, p_res_data):
+func _open_load(p_data: Dictionary, p_res_data: Dictionary) -> void:
 	super(p_data, p_res_data)
-	_a_Object.load_data(p_data["Object"])
+	_a_Object.load_data(p_data[&"Object"])
 	_selected_object_changed()
 
-func _selected_object_changed():
+func _selected_object_changed() -> void:
 	super()
 	_a_object = _a_Object.get_selected_value()

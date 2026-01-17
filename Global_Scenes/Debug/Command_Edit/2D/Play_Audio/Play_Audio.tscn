@@ -14,9 +14,6 @@
 script = ExtResource("2_edssg")
 _e_dimensions = ExtResource("8_ulegr")
 
-[node name="VP" parent="Window/Contents/Margin/HBox/Left/Preview" index="0"]
-size = Vector2i(544, 556)
-
 [node name="Audio_Type" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="0" instance=ExtResource("2_wp1js")]
 layout_mode = 2
 _e_options_loc_id = "DEBUG_CUTSCENES_AUDIO_TYPE_%s"

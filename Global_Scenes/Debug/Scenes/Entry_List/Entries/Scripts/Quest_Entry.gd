@@ -1,84 +1,85 @@
-extends "res://Global_Scenes/Debug/Scenes/Entry_List/Entries/Scripts/Entry.gd"
+extends DebugEntryListEntry
+class_name DebugEntryListQuestEntry
 
-var _a_Check_Image = preload("res://Global_Resources/Sprites/UI/Check.png")
-var _a_Cross_Image = preload("res://Global_Resources/Sprites/UI/Cross.png")
+var _a_Check_Image: Texture2D = preload("res://Global_Resources/Sprites/UI/Check.png")
+var _a_Cross_Image: Texture2D = preload("res://Global_Resources/Sprites/UI/Cross.png")
 
-@onready var _a_Completed = get_node("HBox/VBox/Margin/Margin/HBox/Completed")
-@onready var _a_Sub_Quests = get_node("HBox/VBox/Options/Sub_Quests/Entry_List")
+@onready var _a_Completed: TextureRect = get_node("HBox/VBox/Margin/Margin/HBox/Completed")
+@onready var _a_Sub_Quests: DebugQuestEntryList = get_node("HBox/VBox/Options/Sub_Quests/Entry_List")
 
-var _a_key = ""
+var _a_key: StringName
 
-func _ready():
+func _ready() -> void:
 	super()
-	_a_Sub_Quests.entry_select_pressed.connect(_on_Sub_Quest_Entry_select_pressed)
+	_a_Sub_Quests.entry_select_pressed.connect(_on_Sub_Quest_entry_select_pressed)
 	
-	var entry_scene = load("res://Global_Scenes/Debug/Scenes/Entry_List/Entries/Quest_Entry.tscn")
+	var entry_scene: PackedScene = load("res://Global_Scenes/Debug/Scenes/Entry_List/Entries/Quest_Entry.tscn")
 	_a_Sub_Quests.set_entry_scene(entry_scene)
 
-func update_data():
-	var progress_si = Global.get_singleton(self, "Progress")
-	var quest_data_args = Databases.get_data_entry("Quests", _a_key)
-	var quest_data_obj = quest_data_args.get_objectives()
+func update_data() -> void:
+	var progress_si: Progress = Global.get_singleton(self, "Progress")
+	var quest_data_args: QuestData = Databases.get_data_entry("Quests", _a_key)
+	var quest_data_obj: Array[ObjectiveData] = quest_data_args.get_objectives()
 	
-	var quests_progress = progress_si.get_quests()
-	var quest_progress = quests_progress[_a_key]
-	var quest_progress_obj = quest_progress.get_objective_instances()
+	var quests_progress: Dictionary[StringName, ProgressQuestBase] = progress_si.get_quests()
+	var quest_progress: ProgressQuestBase = quests_progress[_a_key]
+	var quest_progress_obj: Array[Node] = quest_progress.get_objective_instances()
 	
-	var quest_name = tr(quest_data_args.get_name_())
-	var quest_active = quest_progress.is_active()
+	var quest_name: String = tr(quest_data_args.get_name_())
+	var quest_active: bool = quest_progress.is_active()
 	_a_Name.set_text(quest_name)
 	_set_completed(!quest_active)
 	
 	# Create Sub-Quests
 	_a_Sub_Quests.clear_entries()
 	
-	var has_sub_quests = false
-	for i in quest_progress_obj.size():
-		var data_obj_args = quest_data_obj[i]
-		var type = data_obj_args.get_type()
-		if type != "Sub_Quest":
+	var has_sub_quests: bool = false
+	for i: int in quest_progress_obj.size():
+		var data_obj_args: ObjectiveData = quest_data_obj[i]
+		var type: StringName = data_obj_args.get_type()
+		if type != &"Sub_Quest":
 			continue
-		var sub_quest = data_obj_args.get_sub_quest()
-		var sub_quest_key = sub_quest.get_key()
+		var sub_quest: QuestData = data_obj_args.get_sub_quest()
+		var sub_quest_key: StringName = sub_quest.get_key()
 		if !progress_si.is_quest_started(sub_quest_key):
 			continue
 		
-		var instance = _a_Sub_Quests.instantiate_entry_(sub_quest_key)
+		var instance: DebugEntryListEntry = _a_Sub_Quests.instantiate_entry_(sub_quest_key)
 		_a_Sub_Quests.add_entry(instance)
 		
 		has_sub_quests = true
 	
 	_a_Collapse.set_visible(has_sub_quests)
 
-func set_key(p_key):
+func set_key(p_key: StringName) -> void:
 	_a_key = p_key
 
-func get_key():
+func get_key() -> StringName:
 	return _a_key
 
-func _set_completed(p_completed):
+func _set_completed(p_completed: bool) -> void:
 	if p_completed:
 		_a_Completed.set_texture(_a_Check_Image)
 	else:
 		_a_Completed.set_texture(_a_Cross_Image)
 
-func get_save_data():
-	var data = super()
-	data["Key"] = get_key()
-	data["Sub_Quests"] = _a_Sub_Quests.get_save_data()
+func get_save_data() -> Dictionary:
+	var data: Dictionary = super()
+	data[&"Key"] = get_key()
+	data[&"Sub_Quests"] = _a_Sub_Quests.get_save_data()
 	
 	return data
 
-func load_data(p_data):
+func load_data(p_data: Dictionary) -> void:
 	super(p_data)
 	
-	var sub_quests = p_data["Sub_Quests"]
-	var sub_quests_keys = sub_quests.keys()
-	for i in sub_quests_keys.size():
-		var key = sub_quests_keys[i]
-		var entry_args = sub_quests[key]
-		var instance = _a_Sub_Quests.get_entry(i)
+	var sub_quests: Dictionary = p_data[&"Sub_Quests"]
+	var sub_quests_keys: Array[StringName]; sub_quests_keys.assign(sub_quests.keys())
+	for i: int in sub_quests_keys.size():
+		var key: StringName = sub_quests_keys[i]
+		var entry_args: Dictionary = sub_quests[key]
+		var instance: DebugEntryListEntry = _a_Sub_Quests.get_entry(i)
 		instance.load_data(entry_args)
 
-func _on_Sub_Quest_Entry_select_pressed(p_instance):
+func _on_Sub_Quest_entry_select_pressed(p_instance: DebugEntryListEntry) -> void:
 	select_pressed.emit(p_instance)

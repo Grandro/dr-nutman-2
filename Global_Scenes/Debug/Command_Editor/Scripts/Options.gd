@@ -1,5 +1,6 @@
-extends "res://Scenes/Context_Menu/Scripts/Context_Menu.gd"
+extends ContextMenu
+class_name DebugCommandEditorOptions
 
-func _ready():
+func _ready() -> void:
 	super()
-	set_option_disabled("Paste", true)
+	set_option_disabled(&"Paste", true)

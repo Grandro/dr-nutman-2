@@ -282,7 +282,7 @@ shape = SubResource("BoxShape3D_rw2yi")
 [node name="Cutscene" parent="." instance=ExtResource("11_vgvbk")]
 
 [node name="States" parent="." instance=ExtResource("9_2epgw")]
-_e_states = Array[String](["Stop"])
+_e_states = ["Stop"]
 _e_state = "Stop"
 
 [node name="Save" parent="." instance=ExtResource("11_akrdg")]

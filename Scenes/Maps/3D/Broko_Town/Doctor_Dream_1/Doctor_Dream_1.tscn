@@ -119,15 +119,12 @@ size = Vector3(1, 0.5, 1)
 size = Vector3(3, 1, 1)
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_witqm"]
-vertices = PackedVector3Array(8, 0.4, 0.4, 6.6, 0.4, 0.4, 6.6, 0.4, 1.8, 8.2, 0.4, 1.8, 10, 0.4, 5.6, 10, 0.4, 1.6, 5.6, 0.4, 2, 5.6, 0.4, 5.6, 10.4, 0.4, 5.8, 10.4, 0.4, 6.4, 12.6, 0.4, 6.4, 12.8, 0.4, 5.6, 13.2, 0.4, 1.8, 14.6, 0.4, 5.6, 14.6, 0.4, 1.8, 13, 0.4, 0.4, 10, 0.4, 0.4, 2.4, 0.4, 6.6, 4.6, 0.4, 6.6, 4.6, 0.4, 5.8, 2.2, 0.4, 5.6, 0.4, 0.4, 1.8, 0.4, 0.4, 5.6, 12.6, 0.4, 7.2, 10.2, 0.4, 7.4, 5.6, 0.4, 10.6, 6.4, 0.4, 10.8, 8.8, 0.4, 10.6, 5.6, 0.4, 7.4, 6.4, 0.4, 12.6, 8.6, 0.4, 12.6, 13.4, 0.4, 7.4, 13.6, 0.4, 10.6, 4.8, 0.4, 7.4, 2.2, 0.4, 8, 0.4, 0.4, 10.6, 0.4, 0.4, 8)
-polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(3, 5, 4), PackedInt32Array(2, 3, 6), PackedInt32Array(6, 3, 7), PackedInt32Array(7, 3, 4), PackedInt32Array(10, 9, 8), PackedInt32Array(8, 4, 10), PackedInt32Array(10, 4, 11), PackedInt32Array(11, 4, 12), PackedInt32Array(12, 4, 5), PackedInt32Array(14, 13, 12), PackedInt32Array(12, 13, 11), PackedInt32Array(16, 15, 5), PackedInt32Array(5, 15, 12), PackedInt32Array(18, 17, 19), PackedInt32Array(19, 17, 20), PackedInt32Array(20, 22, 21), PackedInt32Array(19, 20, 7), PackedInt32Array(7, 20, 6), PackedInt32Array(6, 20, 21), PackedInt32Array(10, 23, 9), PackedInt32Array(9, 23, 24), PackedInt32Array(26, 25, 27), PackedInt32Array(27, 25, 28), PackedInt32Array(27, 28, 24), PackedInt32Array(29, 26, 30), PackedInt32Array(30, 26, 27), PackedInt32Array(23, 31, 24), PackedInt32Array(24, 31, 32), PackedInt32Array(24, 32, 27), PackedInt32Array(18, 33, 17), PackedInt32Array(17, 33, 34), PackedInt32Array(33, 28, 34), PackedInt32Array(34, 28, 25), PackedInt32Array(34, 25, 35), PackedInt32Array(34, 35, 36)]
+vertices = PackedVector3Array(8, 0.5, 1.75, 8, 0.5, 0.5, 6.75, 0.5, 0.5, 6.5, 0.5, 2, 4.5, 0.5, 7.25, 4.75, 0.5, 5.5, 2.5, 0.5, 5.75, 2.5, 0.5, 7.75, 9.5, 0.5, 2, 9.5, 0.5, 5.5, 0.5, 0.5, 8, 0.5, 0.5, 10.5, 6, 0.5, 10.5, 6, 0.5, 7.5, 0.5, 0.5, 2, 0.5, 0.5, 5.5, 6.5, 0.5, 10.75, 6.5, 0.5, 12.5, 8.5, 0.5, 12.5, 8.75, 0.5, 10.5, 10.5, 0.5, 5.75, 10.25, 0.5, 7.5, 12.5, 0.5, 7.25, 12.5, 0.5, 5.75, 13, 0.5, 1.75, 13, 0.5, 0.5, 10, 0.5, 0.5, 10, 0.5, 1.75, 14.5, 0.5, 5.5, 14.5, 0.5, 2, 13.5, 0.5, 10.5, 13.5, 0.5, 7.5)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(5, 4, 6), PackedInt32Array(6, 4, 7), PackedInt32Array(0, 8, 3), PackedInt32Array(3, 8, 9), PackedInt32Array(3, 9, 5), PackedInt32Array(11, 10, 7), PackedInt32Array(4, 13, 7), PackedInt32Array(7, 13, 12), PackedInt32Array(7, 12, 11), PackedInt32Array(6, 15, 5), PackedInt32Array(5, 15, 14), PackedInt32Array(5, 14, 3), PackedInt32Array(17, 16, 18), PackedInt32Array(18, 16, 19), PackedInt32Array(23, 22, 20), PackedInt32Array(20, 22, 21), PackedInt32Array(16, 12, 19), PackedInt32Array(19, 12, 13), PackedInt32Array(19, 13, 21), PackedInt32Array(27, 26, 24), PackedInt32Array(24, 26, 25), PackedInt32Array(23, 20, 28), PackedInt32Array(28, 20, 29), PackedInt32Array(29, 20, 24), PackedInt32Array(24, 20, 8), PackedInt32Array(22, 31, 21), PackedInt32Array(21, 31, 30), PackedInt32Array(21, 30, 19), PackedInt32Array(8, 27, 24), PackedInt32Array(20, 9, 8)]
 geometry_source_geometry_mode = 2
 geometry_source_group_name = &"NavMesh_Main"
-cell_size = 0.2
-cell_height = 0.2
-agent_height = 1.8
-agent_radius = 0.4
-agent_max_climb = 0.2
+agent_height = 2.0
+agent_max_climb = 0.5
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ldx6g"]
 
@@ -566,10 +563,10 @@ _e_audio_keys = Array[String](["Tile_1"])
 shape = SubResource("BoxShape3D_fhsk1")
 
 [node name="Player" parent="Objects" index="2" instance=ExtResource("2_5eo8n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 6)
 
 [node name="Buffin_Assistant" parent="Objects" index="3" instance=ExtResource("3_8gblb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, 4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
 
 [node name="Paint_DeLere" parent="Objects" index="4" instance=ExtResource("4_n3h81")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -16)
@@ -629,7 +626,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9, 0.76, 1)
 
 [node name="1" parent="Objects/Stethoscope/Interactions" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0.75)
-_e_dialogue_args = Array[String](["Stethoscope_1_1"])
+_e_dialogue_args = Array[StringName]([&"Stethoscope_1_1"])
 
 [node name="Collision" parent="Objects/Stethoscope/Interactions/1" index="0"]
 shape = SubResource("BoxShape3D_3mxdh")
@@ -639,10 +636,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.56, 1.56, 7.502)
 
 [node name="1" parent="Objects/Glass_Bowl_1/Interactions" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.25, 0.25)
-_e_dialogue_args = Array[String](["Glass_Bowl_1_1"])
+_e_dialogue_args = Array[StringName]([&"Glass_Bowl_1_1"])
 
 [node name="Collision" parent="Objects/Glass_Bowl_1/Interactions/1" index="0"]
 shape = SubResource("BoxShape3D_revoj")
+
+[node name="States" parent="Objects/Glass_Bowl_1" index="8"]
+_e_states = Array[StringName]([&"Default", &"Filled"])
 
 [node name="Thermometer_Sign" parent="Objects" index="19" instance=ExtResource("15_kqn5h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.75, 1.5, 0.001)
@@ -650,7 +650,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.75, 1.5, 0.001)
 [node name="1" parent="Objects/Thermometer_Sign/Interactions" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.25, 0.25)
 _e_popup_pos = Vector3(0, 1, 0.01)
-_e_dialogue_args = Array[String](["Thermometer_Sign_1_1"])
+_e_dialogue_args = Array[StringName]([&"Thermometer_Sign_1_1"])
 
 [node name="Collision" parent="Objects/Thermometer_Sign/Interactions/1" index="0"]
 shape = SubResource("BoxShape3D_5vyvy")
@@ -661,10 +661,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 7.5)
 [node name="1" parent="Objects/Sink_1/Interactions" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.25)
 _e_popup_pos = Vector3(0, 2.24, 0.01)
-_e_dialogue_args = Array[String](["Sink_1_1"])
+_e_dialogue_args = Array[StringName]([&"Sink_1_1"])
 
 [node name="Collision" parent="Objects/Sink_1/Interactions/1" index="0"]
 shape = SubResource("BoxShape3D_flknr")
+
+[node name="States" parent="Objects/Sink_1" index="7"]
+_e_states = Array[StringName]([&"Default", &"Start", &"End", &"Flowing"])
 
 [node name="Plant_1" parent="Objects" index="21" instance=ExtResource("17_3yk8t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 1)
@@ -678,19 +681,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 1.5, 7.001)
 [node name="1" parent="Objects/Pic_Arrow_Right/Interactions" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.25, 0.25)
 _e_popup_pos = Vector3(0, 0.8, 0.01)
-_e_dialogue_args = Array[String](["Pic_Arrow_Right_1_1"])
+_e_dialogue_args = Array[StringName]([&"Pic_Arrow_Right_1_1"])
 
 [node name="Collision" parent="Objects/Pic_Arrow_Right/Interactions/1" index="0"]
 shape = SubResource("BoxShape3D_bg6un")
 
 [node name="Teleporter_Door_1" parent="Objects/Teleporters" index="0" instance=ExtResource("20_p878s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, 12)
-_e_destination = Array[String](["Dr_Nutman_Home_1", "Start"])
+_e_destination = Array[StringName]([&"Dr_Nutman_Home_1", &"Start"])
 
 [node name="1" parent="Objects/Teleporters/Teleporter_Door_1/Interactions" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0.5)
 _e_type = "Walk_In"
-_e_dirs = Array[String](["Down"])
+_e_dirs = Array[StringName]([&"Down"])
 _e_popup_type = "None"
 
 [node name="Collision" parent="Objects/Teleporters/Teleporter_Door_1/Interactions/1" index="0"]

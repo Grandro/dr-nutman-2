@@ -1,1 +1,2 @@
-extends "res://Scenes/Object/Comps/2D/Movement/Scripts/Movement_Base.gd"
+extends CompMovementBase2D
+class_name CompMovementRigid2D

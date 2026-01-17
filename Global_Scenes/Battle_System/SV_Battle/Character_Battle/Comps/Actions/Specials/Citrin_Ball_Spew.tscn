@@ -1,0 +1,72 @@
+[gd_scene load_steps=7 format=3 uid="uid://bblbjrlyve6p2"]
+
+[ext_resource type="PackedScene" uid="uid://d1b030mi5wn3i" path="res://Global_Scenes/Battle_System/SV_Battle/Character_Battle/Comps/Actions/Action_Base.tscn" id="1_k2w5r"]
+[ext_resource type="Script" uid="uid://7dhpyt2m8adv" path="res://Global_Scenes/Battle_System/SV_Battle/Character_Battle/Comps/Actions/Specials/Scripts/Citrin_Ball_Spew.gd" id="2_s6cpe"]
+
+
+[sub_resource type="Animation" id="Animation_6yi8g"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pos:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.61, 0.52, 0.01)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2i70o"]
+_data = {
+&"RESET": SubResource("Animation_6yi8g")
+}
+
+[sub_resource type="Animation" id="Animation_yqc3v"]
+length = 0.9
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pos:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.61, 0.52, 0.01)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.45),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_shoot_citrin_ball"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6yi8g"]
+_data = {
+&"Shoot_Left": SubResource("Animation_yqc3v")
+}
+
+[node name="Citrin_Ball_Spew" instance=ExtResource("1_k2w5r")]
+script = ExtResource("2_s6cpe")
+
+[node name="Pos" type="Marker3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.61, 0.52, 0.01)
+
+[node name="Anims" type="AnimationPlayer" parent="." index="1"]
+libraries = {
+&"": SubResource("AnimationLibrary_2i70o"),
+&"SV": SubResource("AnimationLibrary_6yi8g")
+}

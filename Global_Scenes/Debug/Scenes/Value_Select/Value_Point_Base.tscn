@@ -8,6 +8,7 @@
 script = ExtResource("2_upe2o")
 _e_type_texture = ExtResource("2_rrltb")
 _e_point_scene = null
+_e_heading_loc_id = &"DEBUG_CUTSCENES_POINT"
 
 [node name="Heading" parent="HBox" index="0"]
 text = "DEBUG_CUTSCENES_POINT"

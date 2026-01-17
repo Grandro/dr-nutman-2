@@ -7,15 +7,15 @@
 resource_local_to_scene = true
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3hpmt"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l12qd"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4m5ym"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4q3ah"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2e8kt"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4q3ah"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4m5ym"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l12qd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3hpmt"]
 
 [node name="App" type="PanelContainer"]
 light_mask = 8
@@ -29,11 +29,11 @@ script = ExtResource("3")
 
 [node name="Select" type="Button" parent="."]
 layout_mode = 2
-theme_override_styles/focus = SubResource("StyleBoxFlat_3hpmt")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_l12qd")
-theme_override_styles/hover = SubResource("StyleBoxFlat_4m5ym")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_2e8kt")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_4q3ah")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2e8kt")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4m5ym")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_l12qd")
+theme_override_styles/focus = SubResource("StyleBoxFlat_3hpmt")
 
 [node name="Image" type="TextureRect" parent="."]
 light_mask = 8

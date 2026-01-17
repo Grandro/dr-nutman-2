@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dwimv7b4jcly5"]
 
 [ext_resource type="Theme" uid="uid://pr4yljlh62sp" path="res://Global_Resources/Themes/Debug/Debug.tres" id="1_pgj22"]
-[ext_resource type="Script" uid="uid://c61wk1ltgpnm1" path="res://Scenes/Stats_Display/Scripts/Stats_Display_Base.gd" id="2_gogad"]
+[ext_resource type="Script" uid="uid://c61wk1ltgpnm1" path="res://Scenes/Stats_Display/Scripts/Stats_Display_Base.gd" id="2_ktkxs"]
 [ext_resource type="PackedScene" uid="uid://h0270tllaxqe" path="res://Scenes/Stats_Display/Entries/Buffin_Assistant_1.tscn" id="3_ogns7"]
 [ext_resource type="PackedScene" uid="uid://dinpgnabtn0u5" path="res://Scenes/Stats_Display/Entries/Dr_Nutman.tscn" id="4_uja4a"]
 
@@ -17,7 +17,7 @@ mouse_filter = 2
 theme = ExtResource("1_pgj22")
 theme_override_constants/margin_left = 32
 theme_override_constants/margin_bottom = -160
-script = ExtResource("2_gogad")
+script = ExtResource("2_ktkxs")
 metadata/_edit_group_ = true
 
 [node name="Entries" type="HBoxContainer" parent="."]

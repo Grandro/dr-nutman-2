@@ -12,6 +12,5 @@ dragger_visibility = 1
 
 [node name="Keyboard_Layout" parent="HSplit/Left" index="0" instance=ExtResource("3_p47xj")]
 layout_mode = 2
-_e_init_key = ""
-_e_options = Array[String](["AZERTY", "Colemak", "Dvorak", "QWERTY", "QWERTZ"])
+_e_options = ["AZERTY", "Colemak", "Dvorak", "QWERTY", "QWERTZ"]
 _e_heading_loc_id = "OPTIONS_CONTROLS_KEYBOARD_LAYOUT"

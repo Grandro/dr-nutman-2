@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=9 format=3 uid="uid://dypeaumd8uhkf"]
+[gd_resource type="Resource" script_class="MapData" load_steps=9 format=3 uid="uid://dypeaumd8uhkf"]
 
 [ext_resource type="Resource" uid="uid://bb3b1vkt0wrnk" path="res://Global_Resources/Databases/Maps/3D/Buffin_House_3/Destinations/Door.tres" id="1_g8ltk"]
 [ext_resource type="Script" uid="uid://cgx4qljo5ouln" path="res://Global_Resources/Databases/Maps/Map_Data.gd" id="2_p3yav"]

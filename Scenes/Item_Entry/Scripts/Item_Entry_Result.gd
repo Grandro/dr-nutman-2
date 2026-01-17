@@ -1,15 +1,16 @@
-extends "res://Scenes/Item_Entry/Scripts/Item_Entry_Loot.gd"
+extends ItemEntryLoot
+class_name ItemEntryResult
 
-signal anim_finished(p_name)
+signal anim_finished(p_name: StringName)
 
-@onready var _a_Anims = get_node("Anims")
+@onready var _a_Anims: AnimationPlayer = get_node("Anims")
 
-func _ready():
+func _ready() -> void:
 	super()
 	_a_Anims.animation_finished.connect(_on_anim_finished)
 
-func play_anim(p_name):
+func play_anim(p_name: StringName):
 	_a_Anims.play(p_name)
 
-func _on_anim_finished(p_name):
+func _on_anim_finished(p_name: StringName) -> void:
 	anim_finished.emit(p_name)

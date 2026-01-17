@@ -1,14 +1,15 @@
-extends "res://Global_Scenes/Debug/Command_Edit/Scripts/Command_Preview_Object.gd"
+extends DebugCommandEditCommandPreviewObject
+class_name DebugCommandEditCommandChangeArgsBase
 
-@onready var _a_Type = get_node("Window/Contents/Margin/HBox/Right/Options/VBox/Type")
-@onready var _a_Idx = get_node("Window/Contents/Margin/HBox/Right/Options/VBox/Idx")
-@onready var _a_Value = get_node("Window/Contents/Margin/HBox/Right/Options/VBox/Value")
+@onready var _a_Type: DebugValueSelectOptions = get_node("Window/Contents/Margin/HBox/Right/Options/VBox/Type")
+@onready var _a_Idx: DebugCommandEditValueSelectIdx = get_node("Window/Contents/Margin/HBox/Right/Options/VBox/Idx")
+@onready var _a_Value: DebugValueSelect = get_node("Window/Contents/Margin/HBox/Right/Options/VBox/Value")
 
-func _ready():
+func _ready() -> void:
 	super()
 	_a_Type.update_options()
 
-func open(p_instance, p_data, p_res_data):
+func open(p_instance: DebugCommandEditorEntryBase, p_data: Dictionary, p_res_data: Dictionary) -> void:
 	super(p_instance, p_data, p_res_data)
 	
 	_selected_object_changed()
@@ -16,7 +17,7 @@ func open(p_instance, p_data, p_res_data):
 	_a_Window.show()
 	show()
 
-func _open_init(p_res_data):
+func _open_init(p_res_data: Dictionary) -> void:
 	super(p_res_data)
 	_a_Object.load_data_init()
 	_select_default_object(p_res_data)
@@ -25,27 +26,27 @@ func _open_init(p_res_data):
 	_a_Idx.load_data_init()
 	_a_Value.load_data_init()
 
-func _open_load(p_data, p_res_data):
+func _open_load(p_data: Dictionary, p_res_data: Dictionary) -> void:
 	super(p_data, p_res_data)
-	_a_Object.load_data(p_data["Object"])
+	_a_Object.load_data(p_data[&"Object"])
 	_selected_object_changed()
-	_a_Type.load_data(p_data["Type"])
-	_a_Idx.load_data(p_data["Idx"])
-	_a_Value.load_data(p_data["Value"])
+	_a_Type.load_data(p_data[&"Type"])
+	_a_Idx.load_data(p_data[&"Idx"])
+	_a_Value.load_data(p_data[&"Value"])
 
-func _selected_object_changed():
+func _selected_object_changed() -> void:
 	super()
 	
 	_a_object = _a_Object.get_selected_value()
-	var interactions_comp = _a_object.comph().get_comp("Interactions")
-	var interaction_count = interactions_comp.get_child_count()
+	var interactions_comp: Node = _a_object.comph().get_comp("Interactions")
+	var interaction_count: int = interactions_comp.get_child_count()
 	_a_Idx.set_interaction_count(interaction_count)
 	_a_Idx.update_options()
 
-func _get_save_data():
-	var data = super()
-	data["Type"] = _a_Type.get_save_data()
-	data["Idx"] = _a_Idx.get_save_data()
-	data["Value"] = _a_Value.get_save_data()
+func _get_save_data() -> Dictionary:
+	var data: Dictionary = super()
+	data[&"Type"] = _a_Type.get_save_data()
+	data[&"Idx"] = _a_Idx.get_save_data()
+	data[&"Value"] = _a_Value.get_save_data()
 	
 	return data

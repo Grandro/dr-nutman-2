@@ -21,7 +21,7 @@ _data = {
 [node name="Global" type="Node"]
 process_mode = 3
 script = ExtResource("1")
-_e_version = "0.0.6"
+_e_version = &"0.0.7"
 
 [node name="Play_Time" type="Timer" parent="."]
 

@@ -228,7 +228,7 @@ VScrollBar/styles/scroll_focus = null
 [node name="Journal" instance=ExtResource("1")]
 mouse_filter = 2
 script = ExtResource("4")
-_e_sub_menus = Array[String](["Journal_Write", "Journal_Read"])
+_e_sub_menus = Array[StringName]([&"Journal_Write", &"Journal_Read"])
 
 [node name="Background" type="TextureRect" parent="." index="0"]
 light_mask = 8

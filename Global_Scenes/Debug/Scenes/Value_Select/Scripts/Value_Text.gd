@@ -1,25 +1,26 @@
-extends "res://Global_Scenes/Debug/Scenes/Value_Select/Scripts/Value_Select.gd"
+extends DebugValueSelect
+class_name DebugValueSelectText
 
-signal text_changed(p_text)
+signal text_changed(p_text: String)
 
-@onready var _a_Value = get_node("Value")
+@onready var _a_Value: LineEdit = get_node("Value")
 
-func _ready():
+func _ready() -> void:
 	super()
 	_a_Value.text_changed.connect(_on_Value_text_changed)
 
-func get_save_data():
-	var data = super()
-	data["Value"] = _a_Value.get_text()
+func get_save_data() -> Dictionary:
+	var data: Dictionary = super()
+	data[&"Value"] = _a_Value.get_text()
 	
 	return data
 
-func load_data(p_data):
+func load_data(p_data: Dictionary) -> void:
 	super(p_data)
-	_a_Value.set_text(p_data["Value"])
+	_a_Value.set_text(p_data[&"Value"])
 
-func _on_Var_Select_active_toggled(p_toggled):
+func _on_Var_Select_active_toggled(p_toggled: bool) -> void:
 	_a_Value.set_editable(!p_toggled)
 
-func _on_Value_text_changed(p_text):
+func _on_Value_text_changed(p_text: String) -> void:
 	text_changed.emit(p_text)

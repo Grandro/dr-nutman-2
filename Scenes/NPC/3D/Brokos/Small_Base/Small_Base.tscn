@@ -130,7 +130,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, 0.03)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3, 0.02)
 
 [node name="States" parent="." index="14"]
-_e_states = Array[String](["Stop", "Idle", "Walk", "Jump", "Place", "Think"])
+_e_states = Array[StringName]([&"Stop", &"Idle", &"Walk", &"Jump", &"Place", &"Think"])
 
 [node name="Debug" parent="." index="17"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4, 0)

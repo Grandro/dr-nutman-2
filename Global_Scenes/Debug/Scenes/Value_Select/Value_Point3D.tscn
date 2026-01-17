@@ -7,4 +7,3 @@
 [node name="Value_Point3D" instance=ExtResource("1_wye61")]
 script = ExtResource("2_5j443")
 _e_point_scene = ExtResource("3_trifb")
-_e_heading_loc_id = "DEBUG_CUTSCENES_POINT"

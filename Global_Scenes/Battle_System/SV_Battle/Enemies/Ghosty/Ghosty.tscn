@@ -1,0 +1,245 @@
+[gd_scene load_steps=44 format=3 uid="uid://qxfiekavfsbt"]
+
+[ext_resource type="PackedScene" uid="uid://dj5d5f0i16w5u" path="res://Global_Scenes/Battle_System/SV_Battle/Enemies/Enemy_Battle.tscn" id="1_ebq7w"]
+[ext_resource type="Texture2D" uid="uid://cnflp2be3lbyg" path="res://Global_Resources/Sprites/Objects/Enemies/Ghosty/Spritesheet.png" id="2_57uh2"]
+[ext_resource type="Script" uid="uid://7aupc7bke16f" path="res://Global_Scenes/Battle_System/SV_Battle/Enemies/Ghosty/Scripts/Ghosty.gd" id="2_pbu2y"]
+[ext_resource type="PackedScene" uid="uid://b028hrfen5mpa" path="res://Scenes/Object/Comps/3D/Movement/Comps/Terrain/Area.tscn" id="3_s7olx"]
+[ext_resource type="Animation" uid="uid://duycu1ss11ktb" path="res://Scenes/Objects/3D/Enemies/Ghosty/Anims/Terrain/Float_Down.res" id="4_3aix2"]
+[ext_resource type="AudioStream" uid="uid://ep54nca0xn0i" path="res://Global_Resources/Audio/SFX/Hit_2.wav" id="4_no8e6"]
+[ext_resource type="Animation" uid="uid://b0bfpgg86pkow" path="res://Scenes/Objects/3D/Enemies/Ghosty/Anims/Terrain/Float_Left.res" id="5_pj8c8"]
+[ext_resource type="Animation" uid="uid://cp7d64o5mt0cc" path="res://Scenes/Objects/3D/Enemies/Ghosty/Anims/Terrain/Float_Right.res" id="6_0e5q6"]
+[ext_resource type="Animation" uid="uid://b3g6mhkicpd5g" path="res://Scenes/Objects/3D/Enemies/Ghosty/Anims/Terrain/Float_Up.res" id="7_y3ccp"]
+[ext_resource type="Animation" uid="uid://c68mieavgh5l5" path="res://Scenes/Objects/3D/Enemies/Ghosty/Anims/Terrain/Idle_Down.res" id="8_ntdew"]
+[ext_resource type="Animation" uid="uid://cueq4bq8ke6oq" path="res://Global_Scenes/Battle_System/SV_Battle/Enemies/Ghosty/Anims/Float_Down.res" id="8_s7olx"]
+[ext_resource type="Animation" uid="uid://paqvtq6ekqs5" path="res://Global_Scenes/Battle_System/SV_Battle/Enemies/Ghosty/Anims/Float_Left.res" id="9_3aix2"]
+[ext_resource type="Animation" uid="uid://bcvtdaa4xomq" path="res://Scenes/Objects/3D/Enemies/Ghosty/Anims/Terrain/Idle_Left.res" id="9_pbu2y"]
+[ext_resource type="Animation" uid="uid://ku148iub2tqw" path="res://Scenes/Objects/3D/Enemies/Ghosty/Anims/Terrain/Idle_Right.res" id="10_gao7a"]
+[ext_resource type="Animation" uid="uid://bwrwu0hmwmajc" path="res://Global_Scenes/Battle_System/SV_Battle/Enemies/Ghosty/Anims/Float_Right.res" id="10_pj8c8"]
+[ext_resource type="Animation" uid="uid://c1uau71iwmmqn" path="res://Global_Scenes/Battle_System/SV_Battle/Enemies/Ghosty/Anims/Float_Up.res" id="11_0e5q6"]
+[ext_resource type="Animation" uid="uid://cvp8d5yqg8sp2" path="res://Scenes/Objects/3D/Enemies/Ghosty/Anims/Terrain/Idle_Up.res" id="11_no8e6"]
+[ext_resource type="Animation" uid="uid://cckbw862y3dw4" path="res://Scenes/Objects/3D/Enemies/Ghosty/Anims/Terrain/Stop_Down.res" id="12_0yvio"]
+[ext_resource type="Animation" uid="uid://csk6wr6cx2mh2" path="res://Scenes/Objects/3D/Enemies/Ghosty/Anims/Terrain/Stop_Left.res" id="13_vw6l0"]
+[ext_resource type="Animation" uid="uid://c66o6g42ntqyu" path="res://Scenes/Objects/3D/Enemies/Ghosty/Anims/Terrain/Stop_Right.res" id="14_nmb2e"]
+[ext_resource type="Animation" uid="uid://cxrvbkk6j4rrf" path="res://Scenes/Objects/3D/Enemies/Ghosty/Anims/Terrain/Stop_Up.res" id="15_y6h1l"]
+[ext_resource type="PackedScene" uid="uid://dqgrkgkqa4kt3" path="res://Global_Scenes/Battle_System/SV_Battle/Enemies/Ghosty/Comps/Actions/Commands/Attack_ATK.tscn" id="17_gao7a"]
+[ext_resource type="Animation" uid="uid://ci3mw6ei2tpo5" path="res://Scenes/Objects/3D/Enemies/Ghosty/Anims/Terrain/Die_Left.res" id="18_nmb2e"]
+[ext_resource type="PackedScene" uid="uid://dx6kvsr6bkbdi" path="res://Global_Scenes/Battle_System/SV_Battle/Enemies/Ghosty/Comps/Actions/Commands/Float_Invisible.tscn" id="19_0yvio"]
+[ext_resource type="Animation" uid="uid://dy0oyqhlhfgai" path="res://Global_Scenes/Battle_System/SV_Battle/Enemies/Ghosty/Anims/Idle_Down.res" id="20_5vd71"]
+[ext_resource type="Animation" uid="uid://mja7twpesmw0" path="res://Global_Scenes/Battle_System/SV_Battle/Enemies/Ghosty/Anims/Idle_Left.res" id="21_7yr68"]
+[ext_resource type="Animation" uid="uid://njikstotg3ny" path="res://Global_Scenes/Battle_System/SV_Battle/Enemies/Ghosty/Anims/Idle_Right.res" id="22_iaolc"]
+[ext_resource type="Animation" uid="uid://dr4854pg80eno" path="res://Global_Scenes/Battle_System/SV_Battle/Enemies/Ghosty/Anims/Idle_Up.res" id="23_f123s"]
+[ext_resource type="Animation" uid="uid://c0ds8x4x7balo" path="res://Global_Scenes/Battle_System/SV_Battle/Enemies/Ghosty/Anims/Stop_Down.res" id="24_51si6"]
+[ext_resource type="Animation" uid="uid://yj1k4aaek6nw" path="res://Global_Scenes/Battle_System/SV_Battle/Enemies/Ghosty/Anims/Stop_Left.res" id="25_ymw2t"]
+[ext_resource type="Animation" uid="uid://pqwhp6fj2cj0" path="res://Global_Scenes/Battle_System/SV_Battle/Enemies/Ghosty/Anims/Stop_Right.res" id="26_iobyb"]
+[ext_resource type="Animation" uid="uid://dcjda56amw84y" path="res://Global_Scenes/Battle_System/SV_Battle/Enemies/Ghosty/Anims/Stop_Up.res" id="27_v2nh0"]
+[ext_resource type="Animation" uid="uid://d1a4oyx1agow1" path="res://Global_Scenes/Battle_System/SV_Battle/Enemies/Ghosty/Anims/Die_Left.res" id="33_y6h1l"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gao7a"]
+radius = 0.4
+height = 1.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ebq7w"]
+size = Vector3(0.74, 0.9, 0.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7xomj"]
+size = Vector3(0.75, 0.1, 0.5)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l6q7y"]
+_data = {
+&"Die_Left": ExtResource("18_nmb2e"),
+&"Float_Down": ExtResource("4_3aix2"),
+&"Float_Left": ExtResource("5_pj8c8"),
+&"Float_Right": ExtResource("6_0e5q6"),
+&"Float_Up": ExtResource("7_y3ccp"),
+&"Idle_Down": ExtResource("8_ntdew"),
+&"Idle_Left": ExtResource("9_pbu2y"),
+&"Idle_Right": ExtResource("10_gao7a"),
+&"Idle_Up": ExtResource("11_no8e6"),
+&"Stop_Down": ExtResource("12_0yvio"),
+&"Stop_Left": ExtResource("13_vw6l0"),
+&"Stop_Right": ExtResource("14_nmb2e"),
+&"Stop_Up": ExtResource("15_y6h1l")
+}
+
+[sub_resource type="Animation" id="Animation_5vd71"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Display:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Display:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Collision:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7yr68"]
+_data = {
+&"RESET": SubResource("Animation_5vd71")
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gw4f6"]
+_data = {
+&"Die_Left": ExtResource("33_y6h1l"),
+&"Float_Down": ExtResource("8_s7olx"),
+&"Float_Left": ExtResource("9_3aix2"),
+&"Float_Right": ExtResource("10_pj8c8"),
+&"Float_Up": ExtResource("11_0e5q6"),
+&"Idle_Down": ExtResource("20_5vd71"),
+&"Idle_Left": ExtResource("21_7yr68"),
+&"Idle_Right": ExtResource("22_iaolc"),
+&"Idle_Up": ExtResource("23_f123s"),
+&"Stop_Down": ExtResource("24_51si6"),
+&"Stop_Left": ExtResource("25_ymw2t"),
+&"Stop_Right": ExtResource("26_iobyb"),
+&"Stop_Up": ExtResource("27_v2nh0")
+}
+
+[sub_resource type="Animation" id="Animation_au8xa"]
+resource_name = "Floating"
+length = 1.6
+loop_mode = 1
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Display")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 1.14, 0, 0.4, 1, 0, 1.04, 0, 0.8, 1, 0, 1.14, 0, 1.2, 1, 0, 1.24, 0)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Movement/Terrain/Areas")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.4, 1, 0, -0.1, 0, 0.8, 1, 0, 0, 0, 1.2, 1, 0, 0.1, 0)
+tracks/2/type = "position_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Collision")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 0, 1.1, 0, 0.4, 1, 0, 1, 0, 0.8, 1, 0, 1.1, 0, 1.2, 1, 0, 1.2, 0)
+
+[sub_resource type="Animation" id="Animation_gao7a"]
+length = 0.001
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Collision")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 1.1, 0)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_88jbl"]
+_data = {
+&"Floating": SubResource("Animation_au8xa"),
+&"RESET": SubResource("Animation_gao7a")
+}
+
+[node name="Ghosty" instance=ExtResource("1_ebq7w")]
+script = ExtResource("2_pbu2y")
+_e_key = "Ghosty"
+_e_select_offset = Vector3(-0.5, 1.9, 0)
+_e_move_state = "Float"
+_e_popup_offset = Vector3(0, 2.1, 0)
+_e_attack_offset = Vector3(-1.1, 0, 0)
+_e_rating_offset = Vector3(-2, 4, 0.01)
+
+[node name="Display" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.10527, 0)
+shaded = false
+texture = ExtResource("2_57uh2")
+hframes = 8
+vframes = 2
+frame = 8
+
+[node name="Collision" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0)
+shape = SubResource("CapsuleShape3D_gao7a")
+
+[node name="Hit" type="AudioStreamPlayer" parent="Audio" index="1"]
+stream = ExtResource("4_no8e6")
+bus = &"SFX"
+
+[node name="Hitbox" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.01, 1.15, 0)
+
+[node name="Collision" type="CollisionShape3D" parent="Hitbox" index="0"]
+shape = SubResource("BoxShape3D_ebq7w")
+debug_color = Color(0.873097, 0.00045705, 0.841883, 0.42)
+
+[node name="Areas" parent="Movement/Terrain" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0347336, 0)
+
+[node name="Body" parent="Movement/Terrain/Areas" index="0" instance=ExtResource("3_s7olx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.73, 0)
+
+[node name="Collision" parent="Movement/Terrain/Areas/Body" index="1"]
+shape = SubResource("BoxShape3D_7xomj")
+
+[node name="Anims" parent="Movement/Terrain" index="1"]
+libraries = {
+&"SV": SubResource("AnimationLibrary_l6q7y")
+}
+
+[node name="States" parent="Movement" index="2"]
+_e_speeds = Dictionary[String, float]({
+"Float": 4.0,
+"Stop": 0.0
+})
+
+[node name="Status" parent="." index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1.1, 0)
+
+[node name="Actions" parent="." index="6"]
+_e_commands = Dictionary[String, PackedScene]({
+"Attack_ATK": ExtResource("17_gao7a"),
+"Float_Invisible": ExtResource("19_0yvio")
+})
+
+[node name="States" parent="." index="7"]
+_e_states = Array[String](["Stop", "Idle", "Float"])
+_e_state = "Idle"
+
+[node name="Anims" parent="." index="9"]
+libraries = {
+&"": SubResource("AnimationLibrary_7yr68"),
+&"SV": SubResource("AnimationLibrary_gw4f6")
+}
+
+[node name="Floating" type="AnimationPlayer" parent="." index="10"]
+libraries = {
+&"": SubResource("AnimationLibrary_88jbl")
+}
+autoplay = "Floating"
+
+[editable path="Movement/Terrain"]
+[editable path="Movement/Terrain/Areas/Body"]

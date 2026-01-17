@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://bjgxkux1hih3y"]
 
+[ext_resource type="Script" uid="uid://dht77d2mx0ttg" path="res://Scenes/Stats_Display/Entries/Scripts/Base.gd" id="1_wu8oa"]
 [ext_resource type="PackedScene" uid="uid://cjrw5luh13vlq" path="res://Scenes/Stats_Display/Entries/Stat_Entry.tscn" id="3"]
-[ext_resource type="Script" uid="uid://dht77d2mx0ttg" path="res://Scenes/Stats_Display/Entries/Scripts/Base.gd" id="5"]
 [ext_resource type="Texture2D" uid="uid://bjb6lkfswi58p" path="res://Scenes/Stats_Display/Sprites/Frame.png" id="6"]
 [ext_resource type="Theme" uid="uid://pr4yljlh62sp" path="res://Global_Resources/Themes/Debug/Debug.tres" id="7"]
 
@@ -67,7 +67,7 @@ custom_minimum_size = Vector2(128, 0)
 offset_right = 140.0
 offset_bottom = 290.0
 mouse_filter = 2
-script = ExtResource("5")
+script = ExtResource("1_wu8oa")
 
 [node name="VBox" type="VBoxContainer" parent="."]
 light_mask = 8
@@ -137,31 +137,31 @@ theme_override_constants/separation = 2
 
 [node name="HP" parent="VBox/Margin/Stats/VBox" instance=ExtResource("3")]
 layout_mode = 2
-_e_key = "HP"
+_e_key = &"HP"
 
 [node name="SP" parent="VBox/Margin/Stats/VBox" instance=ExtResource("3")]
 layout_mode = 2
-_e_key = "SP"
+_e_key = &"SP"
 
 [node name="ATK" parent="VBox/Margin/Stats/VBox" instance=ExtResource("3")]
 layout_mode = 2
-_e_key = "ATK"
+_e_key = &"ATK"
 
 [node name="MAG" parent="VBox/Margin/Stats/VBox" instance=ExtResource("3")]
 layout_mode = 2
-_e_key = "MAG"
+_e_key = &"MAG"
 
 [node name="DEF" parent="VBox/Margin/Stats/VBox" instance=ExtResource("3")]
 layout_mode = 2
-_e_key = "DEF"
+_e_key = &"DEF"
 
 [node name="SPEED" parent="VBox/Margin/Stats/VBox" instance=ExtResource("3")]
 layout_mode = 2
-_e_key = "SPEED"
+_e_key = &"SPEED"
 
 [node name="LUCK" parent="VBox/Margin/Stats/VBox" instance=ExtResource("3")]
 layout_mode = 2
-_e_key = "LUCK"
+_e_key = &"LUCK"
 
 [node name="Padding" type="Control" parent="VBox"]
 light_mask = 8
@@ -170,6 +170,6 @@ layout_mode = 2
 
 [node name="Anims" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_nihol")
+&"": SubResource("AnimationLibrary_nihol")
 }
 autoplay = "Folded"

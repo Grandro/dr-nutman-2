@@ -6,6 +6,7 @@
 
 [node name="Value_Edit_Entry_List" instance=ExtResource("1_vo3e0")]
 script = ExtResource("2_f04st")
+_e_type_editable = false
 _e_value_editable = false
 _e_entry_scene = ExtResource("2_u36ul")
 

@@ -1,5 +1,6 @@
-extends "res://Scenes/Mini_Games/Color_Selection/Game/Scripts/Game_Base.gd"
+extends MiniGameColorSelectionGameBase
+class_name MiniGameColorSelectionGamePreview
 
-func open():
+func open() -> void:
 	_a_Next_Color.hide()
 	super()

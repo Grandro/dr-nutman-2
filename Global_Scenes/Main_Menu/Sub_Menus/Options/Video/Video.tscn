@@ -14,7 +14,7 @@ dragger_visibility = 1
 [node name="VSync_Mode" parent="HSplit/Left" index="0" instance=ExtResource("3_4758q")]
 layout_mode = 2
 _e_options_loc_id = "OPTIONS_VIDEO_VSYNC_MODE_%s"
-_e_options = ["Disabled", "Enabled", "Adaptive", "Mailbox"]
+_e_options = [&"Disabled", &"Enabled", &"Adaptive", &"Mailbox"]
 _e_heading_loc_id = "OPTIONS_VIDEO_VSYNC_MODE"
 
 [node name="Heading" parent="HSplit/Left/VSync_Mode/HBox" index="0"]
@@ -22,7 +22,7 @@ text = "OPTIONS_VIDEO_VSYNC_MODE"
 
 [node name="Window_Size" parent="HSplit/Left" index="1" instance=ExtResource("3_4758q")]
 layout_mode = 2
-_e_options = ["240x135", "480x270", "720x405", "960x540", "1280x720", "1600x900", "1920x1080", "2560x1440", "3840x2160"]
+_e_options = [&"240x135", &"480x270", &"720x405", &"960x540", &"1280x720", &"1600x900", &"1920x1080", &"2560x1440", &"3840x2160"]
 _e_heading_loc_id = "OPTIONS_VIDEO_WINDOW_SIZE"
 
 [node name="Heading" parent="HSplit/Left/Window_Size/HBox" index="0"]
@@ -31,8 +31,8 @@ text = "OPTIONS_VIDEO_WINDOW_SIZE"
 [node name="Window_Mode" parent="HSplit/Left" index="2" instance=ExtResource("3_4758q")]
 layout_mode = 2
 script = ExtResource("5_qma3s")
-_e_options = ["Windowed", "Fullscreen", "Exclusive_Fullscreen"]
-_e_heading_loc_id = "OPTIONS_VIDEO_WINDOW_MODE"
+_e_options = [&"Windowed", &"Fullscreen", &"Exclusive_Fullscreen"]
+_e_heading_loc_id = &"OPTIONS_VIDEO_WINDOW_MODE"
 
 [node name="Heading" parent="HSplit/Left/Window_Mode/HBox" index="0"]
 text = "OPTIONS_VIDEO_WINDOW_MODE"

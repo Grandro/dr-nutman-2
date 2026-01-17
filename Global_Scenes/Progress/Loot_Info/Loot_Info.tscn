@@ -164,7 +164,7 @@ stretch_mode = 5
 
 [node name="Anims" type="AnimationPlayer" parent="Info/Text_Box/Proceed_Dot"]
 libraries = {
-"": SubResource("AnimationLibrary_7k16w")
+&"": SubResource("AnimationLibrary_7k16w")
 }
 autoplay = "Blink"
 
@@ -208,7 +208,7 @@ size_flags_vertical = 8
 
 [node name="Anims" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_4s0th")
+&"": SubResource("AnimationLibrary_4s0th")
 }
 
 [node name="Audio" type="Node" parent="."]

@@ -7,4 +7,4 @@
 [node name="Value_Point2D" instance=ExtResource("1_b8du2")]
 script = ExtResource("2_4hvhj")
 _e_point_scene = ExtResource("3_3qth2")
-_e_heading_loc_id = "DEBUG_CUTSCENES_POINT"
+_e_heading_loc_id = &"DEBUG_CUTSCENES_POINT"

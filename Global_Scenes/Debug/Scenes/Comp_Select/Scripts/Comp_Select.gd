@@ -1,17 +1,18 @@
-extends "res://Global_Scenes/Debug/Scenes/Value_Select/Scripts/Value_Options.gd"
+extends DebugValueSelectOptions
+class_name DebugCompSelect
 
-var _a_object = null
+var _a_object: Node
 
-func update_options():
+func update_options() -> void:
 	_clear_options()
 	
-	var comps = _a_object.comph().get_comps()
-	var comp_keys = comps.keys()
-	for i in comp_keys.size():
-		var comp = comp_keys[i]
+	var comps: Dictionary[StringName, Node] = _a_object.comph().get_comps()
+	var comp_keys: Array[StringName] = comps.keys()
+	for i: int in comp_keys.size():
+		var comp: StringName = comp_keys[i]
 		_a_option_idxs[comp] = i
 		_a_Value.add_item(comp)
 		_a_Value.set_item_metadata(i, comp)
 
-func set_object(p_object):
+func set_object(p_object: Node) -> void:
 	_a_object = p_object

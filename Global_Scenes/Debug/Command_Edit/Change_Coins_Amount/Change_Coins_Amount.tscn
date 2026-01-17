@@ -8,7 +8,6 @@
 
 [node name="Change_Coins_Amount" instance=ExtResource("1_mnee2")]
 script = ExtResource("2_hkj71")
-_e_command = "Change_Coins_Amount"
 
 [node name="Window" parent="." index="1"]
 offset_left = -232.5
@@ -34,7 +33,7 @@ theme_override_constants/separation = 16
 [node name="Type" parent="Window/Contents/Margin/VBox" index="0" instance=ExtResource("4_axyaw")]
 layout_mode = 2
 _e_options_loc_id = "DEBUG_CUTSCENES_%s"
-_e_options = Array[String](["Gain", "Lose"])
+_e_options = ["Gain", "Lose"]
 _e_heading_loc_id = "DEBUG_CUTSCENES_TYPE"
 _e_var_select_scene = ExtResource("5_4r5r5")
 

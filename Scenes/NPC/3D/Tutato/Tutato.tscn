@@ -107,6 +107,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.84, 0.03)
 [node name="Popup" parent="." index="9"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.84, 0.02)
 
+[node name="States" parent="." index="14"]
+_e_states = Array[StringName]([&"Stop", &"Idle", &"Walk"])
+
 [node name="Anims" parent="." index="16"]
 libraries = {
 &"": SubResource("AnimationLibrary_vesjw")

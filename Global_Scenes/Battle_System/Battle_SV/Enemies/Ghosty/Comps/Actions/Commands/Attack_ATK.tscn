@@ -1,9 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://dqgrkgkqa4kt3"]
-
-[ext_resource type="PackedScene" uid="uid://dgfctcj5fhpoc" path="res://Global_Scenes/Battle_System/Battle_SV/Character_Battle/Comps/Actions/Commands/Attack_ATK.tscn" id="1_rfric"]
-[ext_resource type="Script" uid="uid://c1mt2dgb32os3" path="res://Global_Scenes/Battle_System/Battle_SV/Enemies/Ghosty/Comps/Actions/Commands/Scripts/Attack_ATK.gd" id="2_anyqn"]
-
-[node name="Attack_ATK" instance=ExtResource("1_rfric")]
-script = ExtResource("2_anyqn")
-_e_move_state = "Float"
-_e_offset = Vector3(-9, 0, 0)

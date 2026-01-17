@@ -1,7 +1,6 @@
-[gd_scene load_steps=35 format=4 uid="uid://1fosmoy0vdue"]
+[gd_scene load_steps=34 format=4 uid="uid://1fosmoy0vdue"]
 
 [ext_resource type="Texture2D" uid="uid://wrg2potji1vm" path="res://Global_Resources/Sprites/Backgrounds/1_Spritesheet.png" id="1_8jx64"]
-[ext_resource type="Script" uid="uid://cyyd2rw4j1o21" path="res://Scenes/Title_Screen/Progress/Scripts/Progress_Base.gd" id="1_ybby0"]
 [ext_resource type="PackedScene" uid="uid://c5nbgo1iv5xug" path="res://Global_Scenes/Main_Menu/Sub_Menus/Journal/Journal_Read.tscn" id="2_eolbc"]
 [ext_resource type="StyleBox" uid="uid://c00nrdo1pct1v" path="res://Global_Resources/Themes/Default/Button/Styles/Disabled.tres" id="3_ybby0"]
 [ext_resource type="StyleBox" uid="uid://bhd4c43w7mjuv" path="res://Global_Resources/Themes/Default/Button/Styles/Focus.tres" id="4_0j6el"]
@@ -612,7 +611,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_ybby0")
 
 [node name="Background" type="TextureRect" parent="."]
 light_mask = 8

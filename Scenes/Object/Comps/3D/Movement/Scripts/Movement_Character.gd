@@ -1,4 +1,5 @@
-extends "res://Scenes/Object/Comps/3D/Movement/Scripts/Movement_Base.gd"
+extends CompMovementBase3D
+class_name CompMovementCharacter3D
 
-func _physics_process(p_delta):
+func _physics_process(p_delta: float) -> void:
 	_a_shared.physics_process(p_delta)

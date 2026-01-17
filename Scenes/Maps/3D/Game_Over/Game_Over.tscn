@@ -124,9 +124,9 @@ _data = {
 
 [node name="Game_Over" instance=ExtResource("1_alevk")]
 script = ExtResource("2_t2cey")
-_e_quotes_amount = {
-"Dr_Nutman": 5
-}
+_e_quotes_amount = Dictionary[StringName, int]({
+&"Dr_Nutman": 5
+})
 
 [node name="Amethyst_1" type="StaticBody3D" parent="Terrain/Same_As" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 2, 9)
@@ -168,15 +168,6 @@ light_cull_mask = 4293918724
 [node name="Player" parent="Objects" index="2" instance=ExtResource("3_6pleh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 3.34, 9.25)
 
-[node name="Cutscene_Start" type="Node3D" parent="Cutscenes" index="0" groups=["Object"]]
-script = ExtResource("6_iatyl")
-
-[node name="Reference" parent="Cutscenes/Cutscene_Start" index="0" instance=ExtResource("7_xh5jw")]
-
-[node name="Stater" parent="Cutscenes/Cutscene_Start" index="1" instance=ExtResource("8_miifj")]
-
-[node name="Save" parent="Cutscenes/Cutscene_Start" index="2" instance=ExtResource("9_108v5")]
-
 [node name="Light_1" type="SpotLight3D" parent="." index="4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 4.5, 14)
 light_energy = 2.0
@@ -209,3 +200,12 @@ vertical_alignment = 1
 libraries = {
 &"": SubResource("AnimationLibrary_wwcwy")
 }
+
+[node name="Cutscene_Start" type="Node3D" parent="Cutscenes" index="0" groups=["Object"]]
+script = ExtResource("6_iatyl")
+
+[node name="Reference" parent="Cutscenes/Cutscene_Start" index="0" instance=ExtResource("7_xh5jw")]
+
+[node name="Stater" parent="Cutscenes/Cutscene_Start" index="1" instance=ExtResource("8_miifj")]
+
+[node name="Save" parent="Cutscenes/Cutscene_Start" index="2" instance=ExtResource("9_108v5")]

@@ -26,7 +26,7 @@ script = ExtResource("6")
 _e_key = "Dialogues"
 
 [node name="Parts" parent="VBox/HBox" index="0"]
-_e_types = Array[String](["Text", "Info", "Choice"])
+_e_types = ["Text", "Info", "Choice"]
 _e_enumerate = true
 _e_show_search = false
 

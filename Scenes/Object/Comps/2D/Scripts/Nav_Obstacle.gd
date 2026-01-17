@@ -1,21 +1,22 @@
 extends NavigationObstacle2D
+class_name CompNavObstacle2D
 
-var _a_Shared = preload("res://Scenes/Object/Comps/Nav_Obstacle/Scripts/Shared.gd")
+var _a_Shared: GDScript = preload("res://Scenes/Object/Comps/Nav_Obstacle/Scripts/Shared.gd")
 
-var _a_shared = null
+var _a_shared: CompNavObstacleShared
 
-func _ready():
+func _ready() -> void:
 	_a_shared = _a_Shared.new(self)
 	_a_shared.ready()
 
-func init(_p_entity):
+func init(_p_entity: Node) -> void:
 	pass
 
-func get_save_data():
+func get_save_data() -> Dictionary:
 	return {}
 
-func load_data(_p_data):
+func load_data(_p_data: Dictionary) -> void:
 	pass
 
-func load_data_init():
+func load_data_init() -> void:
 	pass

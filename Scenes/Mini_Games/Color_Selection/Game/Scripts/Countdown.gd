@@ -1,18 +1,19 @@
 extends Control
+class_name MiniGameColorSelectionCountdown
 
 signal finished()
 
-@onready var _a_Anims = get_node("Anims")
+@onready var _a_Anims: AnimationPlayer = get_node("Anims")
 
-func _ready():
+func _ready() -> void:
 	_a_Anims.animation_finished.connect(_on_anim_finished)
 
-func start():
-	_a_Anims.play("Countdown")
+func start() -> void:
+	_a_Anims.play(&"Countdown")
 	show()
 
-func _on_anim_finished(p_name):
+func _on_anim_finished(p_name: StringName) -> void:
 	match p_name:
-		"Countdown":
+		&"Countdown":
 			hide()
 			finished.emit()

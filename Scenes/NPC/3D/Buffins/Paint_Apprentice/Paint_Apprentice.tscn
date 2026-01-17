@@ -106,6 +106,9 @@ libraries = {
 [node name="Audio" parent="Popup" index="1"]
 stream = SubResource("7")
 
+[node name="States" parent="." index="14"]
+_e_states = Array[StringName]([&"Stop", &"Idle", &"Walk", &"Jump", &"Place", &"Think"])
+
 [editable path="Interactions"]
 [editable path="Interactions/1"]
 [editable path="Movement/Terrain"]

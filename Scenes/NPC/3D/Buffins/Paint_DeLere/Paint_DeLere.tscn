@@ -166,7 +166,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.4, 0.03)
 visible = false
 
 [node name="States" parent="." index="14"]
-_e_states = Array[String](["Stop", "Idle", "Walk", "Jump", "Place", "Think", "Paint"])
+_e_states = Array[StringName]([&"Stop", &"Idle", &"Walk", &"Jump", &"Place", &"Think", &"Paint"])
 
 [node name="Anims" parent="." index="16"]
 libraries = {

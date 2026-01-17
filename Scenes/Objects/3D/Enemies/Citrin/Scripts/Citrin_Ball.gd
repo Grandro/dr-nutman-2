@@ -1,13 +1,14 @@
 extends RigidBody3DObject
+class_name ObjectCitrinBall
 
 signal hit(p_instance)
 
-@onready var _a_Anims = get_node("Anims")
-@onready var _a_Despawn = get_node("Despawn")
+@onready var _a_Anims: CompAnims = get_node("Anims")
+@onready var _a_Despawn: Timer = get_node("Despawn")
 
 var _a_target = null
 
-func _ready():
+func _ready() -> void:
 	super()
 	body_entered.connect(_on_body_entered)
 	_a_Despawn.timeout.connect(_on_Despawn_timeout)
@@ -15,18 +16,18 @@ func _ready():
 	
 	set_contact_monitor(true)
 
-func set_target(p_target):
+func set_target(p_target) -> void:
 	_a_target = p_target
 
-func _on_body_entered(p_body):
+func _on_body_entered(p_body) -> void:
 	if p_body != _a_target:
 		return
 	
 	set_contact_monitor.call_deferred(false)
 	hit.emit(p_body)
 
-func _on_Despawn_timeout():
-	_a_Anims.play("Despawn")
+func _on_Despawn_timeout() -> void:
+	_a_Anims.play(&"Despawn")
 
-func _on_Anims_anim_finished(_p_anim_name):
+func _on_Anims_anim_finished(_p_anim_name: StringName) -> void:
 	queue_free()

@@ -1,24 +1,24 @@
-extends "res://Global_Scenes/Cutscene_System/Threads/Scripts/Thread_Base.gd"
+extends CutsceneThreadBase
+class_name CutsceneThreadChangeDialogueArgs
 
-func _ready():
+func _ready() -> void:
 	super()
 	if !_a_loads_data:
 		_process_command()
 
-func _process_command():
-	var global_si = Global.get_singleton(self, "Global")
-	var cutscene_system_si = Global.get_singleton(self, "Cutscene_System")
-	var object_key = cutscene_system_si.get_option_value(_a_args["Object"])
-	var type = cutscene_system_si.get_option_value(_a_args["Type"])
-	var idx = cutscene_system_si.get_option_value(_a_args["Idx"])
-	var value = cutscene_system_si.get_option_value(_a_args["Value"])
+func _process_command() -> void:
+	var global_si: Global = Global.get_singleton(self, "Global")
+	var cutscene_system_si: Cutscene_System = Global.get_singleton(self, "Cutscene_System")
+	var object_key: StringName = cutscene_system_si.get_option_value(_a_args[&"Object"])
+	var type: StringName = cutscene_system_si.get_option_value(_a_args[&"Type"])
+	var idx: int = cutscene_system_si.get_option_value(_a_args[&"Idx"])
+	var args: Array[StringName]; args.assign(cutscene_system_si.get_option_value(_a_args[&"Value"]))
 	_a_object = global_si.get_object(object_key)
-	_a_object.comph().call_comp("Cutscene", "increase_in_cutscene")
+	_a_object.comph().call_comp("Cutscene", &"increase_in_cutscene")
 	
-	var interactions_comp = _a_object.comph().get_comp("Interactions")
+	var interactions_comp: Node = _a_object.comph().get_comp("Interactions")
 	match type:
-		"Set":
-			interactions_comp.set_interaction_dialogue_args(idx, value)
+		&"Set": interactions_comp.set_interaction_dialogue_args(idx, args)
 	
 	_emit_completed()
 	queue_free()

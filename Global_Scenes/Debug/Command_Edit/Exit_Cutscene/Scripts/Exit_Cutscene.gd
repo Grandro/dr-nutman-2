@@ -1,11 +1,12 @@
-extends "res://Global_Scenes/Debug/Command_Edit/Scripts/Command_Base.gd"
+extends DebugCommandEditCommandBase
+class_name DebugCommandEditCommandExitCutscene
 
-func _ready():
+func _ready() -> void:
 	_a_OK = get_node("Window/Contents/Margin/HBox/OK")
 	_a_Cancel = get_node("Window/Contents/Margin/HBox/Cancel")
 	super()
 
-func open(p_instance, p_data, p_res_data):
+func open(p_instance: DebugCommandEditorEntryBase, p_data: Dictionary, p_res_data: Dictionary) -> void:
 	super(p_instance, p_data, p_res_data)
 	
 	_a_Window.show()

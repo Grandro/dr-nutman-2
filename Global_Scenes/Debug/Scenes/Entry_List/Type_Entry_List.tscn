@@ -9,7 +9,7 @@ offset_right = 184.0
 offset_bottom = 35.0
 size_flags_vertical = 3
 script = ExtResource("2_p44sy")
-_e_types = Array[String]([])
+_e_types = Array[StringName]([])
 _e_entry_scene = ExtResource("3_w6myb")
 
 [editable path="Search"]

@@ -1,30 +1,30 @@
 extends Node
 
-signal bgm_finished(p_file_name)
-signal sfx_finished(p_file_name)
-signal bgs_finished(p_file_name)
+signal bgm_finished(p_file_name: String)
+signal sfx_finished(p_file_name: String)
+signal bgs_finished(p_file_name: String)
 
-var _a_Pauseable_Audio_Scene = preload("res://Scenes/Pausable_Audio/Pausable_Audio.tscn")
+var _a_Pauseable_Audio_Scene: PackedScene = preload("res://Scenes/Pausable_Audio/Pausable_Audio.tscn")
 
-@onready var _a_BGM = get_node("BGM")
-@onready var _a_SFX = get_node("SFX")
-@onready var _a_BGS = get_node("BGS")
+@onready var _a_BGM: Node = get_node("BGM")
+@onready var _a_SFX: Node = get_node("SFX")
+@onready var _a_BGS: Node = get_node("BGS")
 
-var _a_save_data = {}
+var _a_save_data: Dictionary = {}
 
-var _a_bgm = {} # Match file_name to array of player instances
-var _a_bgs = {} # Match file_name to array of player instances
+var _a_bgm: Dictionary = {} # Match file_name to array of player instances
+var _a_bgs: Dictionary = {} # Match file_name to array of player instances
 
-func play_bgm(p_stream, p_volume = 1.0, p_pitch = 1.0, p_from = 0.0):
-	var path = p_stream.get_path()
-	var file_name = path.get_file()
-	var player = _a_Pauseable_Audio_Scene.instantiate()
+func play_bgm(p_stream: AudioStream, p_volume: float = 1.0, p_pitch: float = 1.0, p_from: float = 0.0) -> PausableAudio:
+	var path: String = p_stream.get_path()
+	var file_name: String = path.get_file()
+	var player: PausableAudio = _a_Pauseable_Audio_Scene.instantiate()
 	player.finished.connect(_on_BGM_finished.bind(player))
 	player.tree_exited.connect(_on_BGM_tree_exited.bind(file_name))
 	player.set_stream(p_stream)
 	player.set_volume_db(linear_to_db(p_volume))
 	player.set_pitch_scale(p_pitch)
-	player.set_bus("BGM")
+	player.set_bus(&"BGM")
 	player.set_name(file_name)
 	player.play.call_deferred(p_from)
 	
@@ -38,10 +38,10 @@ func play_bgm(p_stream, p_volume = 1.0, p_pitch = 1.0, p_from = 0.0):
 	
 	return player
 
-func replace_bgm(p_stream, p_volume = 1.0, p_pitch = 1.0, p_from = 0.0):
-	var path = p_stream.get_path()
-	var file_name = path.get_file()
-	var player = null
+func replace_bgm(p_stream: AudioStream, p_volume: float = 1.0, p_pitch: float = 1.0, p_from: float = 0.0) -> PausableAudio:
+	var path: String = p_stream.get_path()
+	var file_name: String = path.get_file()
+	var player: PausableAudio = null
 	if _a_bgm.has(file_name):
 		player = _a_bgm[file_name][-1]
 	
@@ -53,29 +53,29 @@ func replace_bgm(p_stream, p_volume = 1.0, p_pitch = 1.0, p_from = 0.0):
 	
 	return player
 
-func flatten_bgm(p_except = null):
-	for child in _a_BGM.get_children():
+func flatten_bgm(p_except: PausableAudio = null) -> void:
+	for child: PausableAudio in _a_BGM.get_children():
 		if child == p_except:
 			continue
 		_a_BGM.remove_child(child)
 		child.queue_free()
 
-func stop_bgm(p_file_name):
-	var players = _a_bgm[p_file_name]
-	var player = players[-1]
+func stop_bgm(p_file_name: String) -> void:
+	var players: Array[PausableAudio]; players.assign(_a_bgm[p_file_name])
+	var player: PausableAudio = players[-1]
 	_a_BGM.remove_child(player)
 	player.queue_free()
 
-func play_bgs(p_stream, p_volume = 1.0, p_pitch = 1.0, p_from = 0.0):
-	var path = p_stream.get_path()
-	var file_name = path.get_file()
-	var player = AudioStreamPlayer.new()
+func play_bgs(p_stream: AudioStream, p_volume: float = 1.0, p_pitch: float = 1.0, p_from: float = 0.0) -> AudioStreamPlayer:
+	var path: String = p_stream.get_path()
+	var file_name: String = path.get_file()
+	var player: AudioStreamPlayer = AudioStreamPlayer.new()
 	player.finished.connect(_on_BGS_finished.bind(player))
 	player.tree_exited.connect(_on_BGS_tree_exited.bind(file_name))
 	player.set_stream(p_stream)
 	player.set_volume_db(linear_to_db(p_volume))
 	player.set_pitch_scale(p_pitch)
-	player.set_bus("BGS")
+	player.set_bus(&"BGS")
 	player.set_name(file_name)
 	player.play.call_deferred(p_from)
 	
@@ -87,10 +87,10 @@ func play_bgs(p_stream, p_volume = 1.0, p_pitch = 1.0, p_from = 0.0):
 	
 	return player
 
-func replace_bgs(p_stream, p_volume = 1.0, p_pitch = 1.0, p_from = 0.0):
-	var path = p_stream.get_path()
-	var file_name = path.get_file()
-	var player = null
+func replace_bgs(p_stream: AudioStream, p_volume: float = 1.0, p_pitch: float = 1.0, p_from: float = 0.0) -> AudioStreamPlayer:
+	var path: String = p_stream.get_path()
+	var file_name: String = path.get_file()
+	var player: AudioStreamPlayer = null
 	if _a_bgs.has(file_name):
 		player = _a_bgs[file_name][-1]
 	
@@ -102,117 +102,117 @@ func replace_bgs(p_stream, p_volume = 1.0, p_pitch = 1.0, p_from = 0.0):
 	
 	return player
 
-func flatten_bgs(p_except = []):
-	for child in _a_BGS.get_children():
+func flatten_bgs(p_except: Array[AudioStreamPlayer] = []) -> void:
+	for child: AudioStreamPlayer in _a_BGS.get_children():
 		if p_except.has(child):
 			continue
 		_a_BGS.remove_child(child)
 		child.queue_free()
 
-func stop_bgs(p_file_name):
-	var players = _a_bgs[p_file_name]
-	var player = players[-1]
+func stop_bgs(p_file_name: String) -> void:
+	var players: Array[AudioStreamPlayer]; players.assign(_a_bgs[p_file_name])
+	var player: AudioStreamPlayer = players[-1]
 	_a_BGS.remove_child(player)
 	player.queue_free()
 
-func play_sfx(p_stream, p_volume = 1.0, p_pitch = 1.0, p_from = 0.0):
-	var player = AudioStreamPlayer.new()
+func play_sfx(p_stream: AudioStream, p_volume: float = 1.0, p_pitch: float = 1.0, p_from: float = 0.0) -> void:
+	var player: AudioStreamPlayer = AudioStreamPlayer.new()
 	player.finished.connect(_on_SFX_finished.bind(player))
 	player.set_stream(p_stream)
 	player.set_volume_db(linear_to_db(p_volume))
 	player.set_pitch_scale(p_pitch)
-	player.set_bus("SFX")
+	player.set_bus(&"SFX")
 	player.play.call_deferred(p_from)
 	
 	_a_SFX.add_child(player)
 
-func reset():
+func reset() -> void:
 	_a_save_data.clear()
-	for parent in get_children():
-		for child in parent.get_children():
+	for parent: Node in get_children():
+		for child: AudioStreamPlayer in parent.get_children():
 			parent.remove_child(child)
 			child.queue_free()
 
-func _set_last_bgm_stream_paused(p_paused):
+func _set_last_bgm_stream_paused(p_paused: bool) -> void:
 	if _a_BGM.get_child_count() > 0:
-		var last = _a_BGM.get_child(-1)
+		var last: PausableAudio = _a_BGM.get_child(-1)
 		last.set_stream_paused_(p_paused)
 
-func get_save_data(p_location):
+func get_save_data(p_location: StringName) -> Dictionary:
 	_a_save_data[p_location] = {}
-	var data = _a_save_data[p_location]
-	data["BGM"] = _get_save_data_bgm()
-	data["SFX"] = _get_save_data_sfx()
-	data["BGS"] = _get_save_data_bgs()
+	var data: Dictionary = _a_save_data[p_location]
+	data[&"BGM"] = _get_save_data_bgm()
+	data[&"SFX"] = _get_save_data_sfx()
+	data[&"BGS"] = _get_save_data_bgs()
 	
 	return _a_save_data
 
-func _get_save_data_bgm():
-	var data = []
-	for child in _a_BGM.get_children():
-		var args = child.get_save_data()
+func _get_save_data_bgm() -> Array[Dictionary]:
+	var data: Array[Dictionary] = []
+	for child: PausableAudio in _a_BGM.get_children():
+		var args: Dictionary = child.get_save_data()
 		data.push_back(args)
 	
 	return data
 
-func _get_save_data_bgs():
-	var data = []
-	for child in _a_BGS.get_children():
-		var args = {}
-		var stream = child.get_stream()
-		var stream_path = stream.get_path()
-		args["Stream_Path"] = stream_path
-		args["Volume"] = child.get_volume_db()
-		args["Pitch"] = child.get_pitch_scale()
-		args["Playback_Pos"] = child.get_playback_position()
+func _get_save_data_bgs() -> Array[Dictionary]:
+	var data: Array[Dictionary] = []
+	for child: AudioStreamPlayer in _a_BGS.get_children():
+		var args: Dictionary = {}
+		var stream: AudioStream = child.get_stream()
+		var stream_path: String = stream.get_path()
+		args[&"Stream_Path"] = stream_path
+		args[&"Volume"] = child.get_volume_db()
+		args[&"Pitch"] = child.get_pitch_scale()
+		args[&"Playback_Pos"] = child.get_playback_position()
 		
 		data.push_back(args)
 	
 	return data
 
-func _get_save_data_sfx():
-	var data = []
-	for child in _a_SFX.get_children():
-		var args = {}
-		var stream = child.get_stream()
-		var stream_path = stream.get_path()
-		args["Stream_Path"] = stream_path
-		args["Volume"] = child.get_volume_db()
-		args["Pitch"] = child.get_pitch_scale()
-		args["Playback_Pos"] = child.get_playback_position()
+func _get_save_data_sfx() -> Array[Dictionary]:
+	var data: Array[Dictionary] = []
+	for child: AudioStreamPlayer in _a_SFX.get_children():
+		var args: Dictionary = {}
+		var stream: AudioStream = child.get_stream()
+		var stream_path: String = stream.get_path()
+		args[&"Stream_Path"] = stream_path
+		args[&"Volume"] = child.get_volume_db()
+		args[&"Pitch"] = child.get_pitch_scale()
+		args[&"Playback_Pos"] = child.get_playback_position()
 		
 		data.push_back(args)
 	
 	return data
 
-func load_file_data(p_data):
+func load_file_data(p_data: Dictionary) -> void:
 	_a_save_data = p_data
 
-func load_data(p_location):
+func load_data(p_location: StringName) -> void:
 	if !_a_save_data.has(p_location):
 		return
 	
-	var data = _a_save_data[p_location]
-	_load_data_bgm(data["BGM"])
-	_load_data_bgs(data["BGS"])
-	_load_data_sfx(data["SFX"])
+	var data: Dictionary = _a_save_data[p_location]
+	_load_data_bgm(data[&"BGM"])
+	_load_data_bgs(data[&"BGS"])
+	_load_data_sfx(data[&"SFX"])
 
-func _load_data_bgm(p_args):
-	var top_player = null
+func _load_data_bgm(p_args: Array[Dictionary]) -> void:
+	var top_player: PausableAudio = null
 	if _a_BGM.get_child_count() > 0 && !p_args.is_empty():
 		top_player = _a_BGM.get_child(-1)
 	flatten_bgm(top_player)
 	
-	for i in p_args.size():
-		var args = p_args[i]
-		var stream_path = args["Stream_Path"]
-		var stream = load(stream_path)
-		var volume = db_to_linear(args["Volume"])
-		var pitch = args["Pitch"]
-		var playback_pos = args["Playback_Pos"]
-		var playing = args["Playing"]
+	for i: int in p_args.size():
+		var args: Dictionary = p_args[i]
+		var stream_path: String = args[&"Stream_Path"]
+		var stream: AudioStream = load(stream_path)
+		var volume: float = db_to_linear(args[&"Volume"])
+		var pitch: float = args[&"Pitch"]
+		var playback_pos: float = args[&"Playback_Pos"]
+		var playing: bool = args[&"Playing"]
 		
-		var player = null
+		var player: PausableAudio = null
 		if i < p_args.size() - 1:
 			player = play_bgm(stream, volume, pitch, playback_pos)
 		else:
@@ -228,66 +228,66 @@ func _load_data_bgm(p_args):
 		
 		player.set_stream_paused_.call_deferred(!playing)
 
-func _load_data_bgs(p_args):
-	var players = []
-	for i in p_args.size():
-		var args = p_args[i]
-		var stream_path = args["Stream_Path"]
-		var stream = load(stream_path)
-		var volume = db_to_linear(args["Volume"])
-		var pitch = args["Pitch"]
-		var playback_pos = args["Playback_Pos"]
+func _load_data_bgs(p_args: Array[Dictionary]) -> void:
+	var players: Array[AudioStreamPlayer] = []
+	for i: int in p_args.size():
+		var args: Dictionary = p_args[i]
+		var stream_path: String = args[&"Stream_Path"]
+		var stream: AudioStream = load(stream_path)
+		var volume: float = db_to_linear(args[&"Volume"])
+		var pitch: float = args[&"Pitch"]
+		var playback_pos: float = args[&"Playback_Pos"]
 		
-		var player = replace_bgs(stream, volume, pitch, playback_pos)
+		var player: AudioStreamPlayer = replace_bgs(stream, volume, pitch, playback_pos)
 		players.push_back(player)
 	flatten_bgs(players)
 
-func _load_data_sfx(p_args):
-	for child in _a_SFX.get_children():
+func _load_data_sfx(p_args: Array[Dictionary]) -> void:
+	for child: AudioStreamPlayer in _a_SFX.get_children():
 		_a_SFX.remove_child(child)
 		child.queue_free()
 	
-	for args in p_args:
-		var stream = load(args["Stream_Path"])
-		var volume = db_to_linear(args["Volume"])
-		var pitch = args["Pitch"]
-		var playback_pos = args["Playback_Pos"]
+	for args: Dictionary in p_args:
+		var stream: AudioStream = load(args[&"Stream_Path"])
+		var volume: float = db_to_linear(args[&"Volume"])
+		var pitch: float = args[&"Pitch"]
+		var playback_pos: float = args[&"Playback_Pos"]
 		play_sfx(stream, volume, pitch, playback_pos)
 
-func _on_BGM_finished(p_player):
-	var stream = p_player.get_stream()
-	var file_path = stream.get_path()
-	var file_name = file_path.get_file()
+func _on_BGM_finished(p_player: PausableAudio) -> void:
+	var stream: AudioStream = p_player.get_stream()
+	var file_path: String = stream.get_path()
+	var file_name: String = file_path.get_file()
 	stop_bgm(file_name)
 	
 	bgm_finished.emit(file_name)
 
-func _on_BGM_tree_exited(p_file_name):
-	var players = _a_bgm[p_file_name]
+func _on_BGM_tree_exited(p_file_name: String) -> void:
+	var players: Array[PausableAudio]; players.assign(_a_bgm[p_file_name])
 	players.pop_back()
 	if players.is_empty():
 		_a_bgm.erase(p_file_name)
 	
 	_set_last_bgm_stream_paused(false)
 
-func _on_BGS_finished(p_player):
-	var stream = p_player.get_stream()
-	var file_path = stream.get_path()
-	var file_name = file_path.get_file()
+func _on_BGS_finished(p_player: AudioStreamPlayer) -> void:
+	var stream: AudioStream = p_player.get_stream()
+	var file_path: String = stream.get_path()
+	var file_name: String = file_path.get_file()
 	stop_bgs(file_name)
 	
 	bgs_finished.emit(file_name)
 
-func _on_BGS_tree_exited(p_file_name):
-	var players = _a_bgs[p_file_name]
+func _on_BGS_tree_exited(p_file_name: String) -> void:
+	var players: Array[AudioStreamPlayer]; players.assign(_a_bgs[p_file_name])
 	players.pop_back()
 	if players.is_empty():
 		_a_bgs.erase(p_file_name)
 
-func _on_SFX_finished(p_player):
-	var stream = p_player.get_stream()
-	var file_path = stream.get_path()
-	var file_name = file_path.get_file()
+func _on_SFX_finished(p_player: AudioStreamPlayer) -> void:
+	var stream: AudioStream = p_player.get_stream()
+	var file_path: String = stream.get_path()
+	var file_name: String = file_path.get_file()
 	_a_SFX.remove_child(p_player)
 	p_player.queue_free()
 	

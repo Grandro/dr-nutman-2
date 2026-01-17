@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://bn55f4dlh4qo8"]
+
+[ext_resource type="PackedScene" uid="uid://dgfctcj5fhpoc" path="res://Global_Scenes/Battle_System/SV_Battle/Character_Battle/Comps/Actions/Commands/Attack_ATK.tscn" id="1_q41xu"]
+[ext_resource type="Script" uid="uid://bg4fw78rxitfw" path="res://Global_Scenes/Battle_System/SV_Battle/Enemies/Citrin/Comps/Actions/Commands/Scripts/Attack_ATK.gd" id="2_cycrv"]
+
+
+[node name="Attack_ATK" instance=ExtResource("1_q41xu")]
+script = ExtResource("2_cycrv")

@@ -1,26 +1,27 @@
 extends Resource
+class_name EnemyData
 
-const _a_NAME_LOC_ID = "ENEMY_%s_NAME"
-const _a_DESC_LOC_ID = "ENEMY_%s_DESC"
+const _a_NAME_LOC_ID: String = "ENEMY_%s_NAME"
+const _a_DESC_LOC_ID: String = "ENEMY_%s_DESC"
 
-@export var _e_key: String = ""
+@export var _e_key: StringName = &""
 @export var _e_stats: StatsData = null
-@export var _e_actions: Dictionary = {"Commands": [], "Specials": []}
+@export var _e_actions: Dictionary = {&"Commands": [], &"Specials": []}
 
-func get_name_():
-	var key_upper = _e_key.to_upper()
-	var name_ = tr(_a_NAME_LOC_ID % key_upper)
+func get_name_() -> String:
+	var key_upper: StringName = _e_key.to_upper()
+	var name_: String = tr(_a_NAME_LOC_ID % key_upper)
 	
 	return name_
 
-func get_desc():
-	var key_upper = _e_key.to_upper()
-	var desc = tr(_a_DESC_LOC_ID % key_upper)
+func get_desc() -> String:
+	var key_upper: StringName = _e_key.to_upper()
+	var desc: String = tr(_a_DESC_LOC_ID % key_upper)
 	
 	return desc
 
-func get_stats():
+func get_stats() -> StatsData:
 	return _e_stats
 
-func get_actions():
+func get_actions() -> Dictionary:
 	return _e_actions

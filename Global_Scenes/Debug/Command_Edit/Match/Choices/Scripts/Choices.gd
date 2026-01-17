@@ -1,19 +1,19 @@
-extends "res://Global_Scenes/Debug/Command_Edit/Match/Scripts/Menu_Match.gd"
+extends DebugCommandEditMenuMatch
+class_name DebugCommandEditCommandMatchChoices
 
-var _a_Choice_Entry_Scene = preload("res://Global_Scenes/Debug/Command_Edit/Match/Choices/Choice_Entry.tscn")
+var _a_Choice_Entry_Scene: PackedScene = preload("res://Global_Scenes/Debug/Command_Edit/Match/Choices/Choice_Entry.tscn")
 
-const _a_CHOICE_LOC_ID = "DEBUG_%s"
-const _a_CHOICE_HEADINGS = ["Upper_Left", "Upper_Right", "Lower_Left", "Lower_Right"]
+const _a_CHOICE_LOC_ID: String = "DEBUG_%s"
 
-@onready var _a_Key_Type = get_node("VBox/Key_Type")
-@onready var _a_Chapter = get_node("VBox/Chapter")
-@onready var _a_Location = get_node("VBox/Location")
-@onready var _a_Dialogue = get_node("VBox/Dialogue")
-@onready var _a_Part = get_node("VBox/Part")
-@onready var _a_Choices_Heading = get_node("VBox/VBox/Heading")
-@onready var _a_Choices = get_node("VBox/VBox/Choices")
+@onready var _a_Key_Type: DebugValueSelectOptions = get_node("VBox/Key_Type")
+@onready var _a_Chapter: DebugChapterSelect = get_node("VBox/Chapter")
+@onready var _a_Location: DebugLocationSelect = get_node("VBox/Location")
+@onready var _a_Dialogue: DebugCommandEditCommandMatchChoicesDialogue = get_node("VBox/Dialogue")
+@onready var _a_Part: DebugCommandEditCommandMatchChoicesPart = get_node("VBox/Part")
+@onready var _a_Choices_Heading: RichTextLabel = get_node("VBox/VBox/Heading")
+@onready var _a_Choices: HBoxContainer = get_node("VBox/VBox/Choices")
 
-func _ready():
+func _ready() -> void:
 	_a_Key_Type.selected.connect(_on_Key_Type_selected)
 	_a_Chapter.selected.connect(_on_Chapter_selected)
 	_a_Location.selected.connect(_on_Location_selected)
@@ -25,40 +25,39 @@ func _ready():
 	_a_Location.update_options()
 	update_trans()
 
-func update_trans():
-	_a_Choices_Heading.set_text("[u][center]%s" % tr("CHOICES"))
+func update_trans() -> void:
+	_a_Choices_Heading.set_text("[u][center]%s" % tr(&"CHOICES"))
 
-func _update_choices():
-	for child in _a_Choices.get_children():
+func _update_choices() -> void:
+	for child: DebugCommandEditCommandMatchChoicesChoiceEntry in _a_Choices.get_children():
 		child.queue_free()
 	
 	_a_branches_values.clear()
-	var dialogue_key = _a_Dialogue.get_selected_key()
+	var dialogue_key: Variant = _a_Dialogue.get_selected_key()
 	if dialogue_key == null:
 		branches_values_changed.emit()
 		return
 	
-	var key_type = _a_Key_Type.get_selected_key()
-	var chapter = _a_Chapter.get_selected_key()
-	var location = _a_Location.get_selected_key()
-	var dialogues_data = Databases.get_global_map_data("Dialogues", key_type, chapter, location)
-	var part_idx = _a_Part.get_selected_key()
-	var entry_key = str(part_idx)
-	var args = dialogues_data[dialogue_key]["Data"][entry_key]
-	var type = args["Type"]
+	var key_type: StringName = _a_Key_Type.get_selected_key()
+	var chapter: StringName = _a_Chapter.get_selected_key()
+	var location: StringName = _a_Location.get_selected_key()
+	var dialogues_data: Dictionary = Databases.get_global_map_data(&"Dialogues", key_type, chapter, location)
+	var entry_key: StringName = StringName(_a_Part.get_selected_key())
+	var args: Dictionary = dialogues_data[dialogue_key][&"Data"][entry_key]
+	var type: StringName = args[&"Type"]
 	match type:
-		"Text":
-			var text_data = args["Data"]["Text"]
-			var choice_entries = text_data["Choice"]["Entries"]
-			var choice_entries_keys = choice_entries.keys()
-			for i in choice_entries_keys.size():
-				var choice_entry_key = choice_entries_keys[i]
-				var choice_args = choice_entries[choice_entry_key]
-				var heading = str(i)
-				var text = tr(choice_args["Loc_ID"]["Loc_ID"])
-				var value = choice_args["Value"]
-				var str_value = str(value)
-				var instance = _a_Choice_Entry_Scene.instantiate()
+		&"Text":
+			var text_data: Dictionary = args[&"Data"][&"Text"]
+			var choice_entries: Dictionary = text_data[&"Choice"][&"Entries"]
+			var choice_entries_keys: Array[StringName]; choice_entries_keys.assign(choice_entries.keys())
+			for i: int in choice_entries_keys.size():
+				var choice_entry_key: StringName = choice_entries_keys[i]
+				var choice_args: Dictionary = choice_entries[choice_entry_key]
+				var heading: String = str(i)
+				var text: String = tr(choice_args[&"Loc_ID"][&"Loc_ID"])
+				var value: Variant = choice_args[&"Value"]
+				var str_value: String = str(value)
+				var instance: DebugCommandEditCommandMatchChoicesChoiceEntry = _a_Choice_Entry_Scene.instantiate()
 				instance.set_heading.call_deferred(heading)
 				instance.set_text.call_deferred(text)
 				instance.set_value.call_deferred(str_value)
@@ -67,15 +66,15 @@ func _update_choices():
 					_a_branches_values.push_back(value)
 				_a_Choices.add_child(instance)
 		
-		"Choice":
+		&"Choice":
 			pass
 	
 	branches_values_changed.emit()
 
-func _selected_key_type_changed(p_update):
-	var key_type = _a_Key_Type.get_selected_key()
-	_a_Chapter.set_visible(key_type == "Map")
-	_a_Location.set_visible(key_type == "Map")
+func _selected_key_type_changed(p_update: bool) -> void:
+	var key_type: StringName = _a_Key_Type.get_selected_key()
+	_a_Chapter.set_visible(key_type == &"Map")
+	_a_Location.set_visible(key_type == &"Map")
 	_a_Dialogue.set_key_type(key_type)
 	_a_Part.set_key_type(key_type)
 	
@@ -83,8 +82,8 @@ func _selected_key_type_changed(p_update):
 		_a_Dialogue.update_options()
 		_selected_dialogue_changed()
 
-func _selected_chapter_changed(p_update):
-	var chapter = _a_Chapter.get_selected_key()
+func _selected_chapter_changed(p_update: bool) -> void:
+	var chapter: StringName = _a_Chapter.get_selected_key()
 	_a_Dialogue.set_chapter(chapter)
 	_a_Part.set_chapter(chapter)
 	
@@ -92,36 +91,37 @@ func _selected_chapter_changed(p_update):
 		_a_Dialogue.update_options()
 		_selected_dialogue_changed()
 
-func _selected_location_changed():
-	var location = _a_Location.get_selected_key()
+func _selected_location_changed() -> void:
+	var location: StringName = _a_Location.get_selected_key()
 	_a_Dialogue.set_location(location)
 	_a_Part.set_location(location)
 	
 	_a_Dialogue.update_options()
 	_selected_dialogue_changed()
 
-func _selected_dialogue_changed():
-	var dialogue_key = _a_Dialogue.get_selected_key()
-	if dialogue_key == null: dialogue_key = ""
+func _selected_dialogue_changed() -> void:
+	var dialogue_key: Variant = _a_Dialogue.get_selected_key()
+	if dialogue_key == null:
+		dialogue_key = &""
 	
 	_a_Part.set_dialogue_key(dialogue_key)
 	_a_Part.update_options()
 	_update_choices()
 
-func _selected_part_changed():
+func _selected_part_changed() -> void:
 	_update_choices()
 
-func get_save_data():
-	var data = super()
-	data["Key_Type"] = _a_Key_Type.get_save_data()
-	data["Chapter"] = _a_Chapter.get_save_data()
-	data["Location"] = _a_Location.get_save_data()
-	data["Dialogue"] = _a_Dialogue.get_save_data()
-	data["Part"] = _a_Part.get_save_data()
+func get_save_data() -> Dictionary:
+	var data: Dictionary = super()
+	data[&"Key_Type"] = _a_Key_Type.get_save_data()
+	data[&"Chapter"] = _a_Chapter.get_save_data()
+	data[&"Location"] = _a_Location.get_save_data()
+	data[&"Dialogue"] = _a_Dialogue.get_save_data()
+	data[&"Part"] = _a_Part.get_save_data()
 	
 	return data
 
-func _load_data_init():
+func _load_data_init() -> void:
 	_a_Key_Type.load_data_init()
 	_selected_key_type_changed(false)
 	_a_Chapter.load_data_init()
@@ -132,29 +132,29 @@ func _load_data_init():
 	_selected_dialogue_changed()
 	_a_Part.load_data_init()
 
-func _load_data(p_data):
+func _load_data(p_data: Dictionary) -> void:
 	super(p_data)
-	_a_Key_Type.load_data(p_data["Key_Type"])
+	_a_Key_Type.load_data(p_data[&"Key_Type"])
 	_selected_key_type_changed(false)
-	_a_Chapter.load_data(p_data["Chapter"])
+	_a_Chapter.load_data(p_data[&"Chapter"])
 	_selected_chapter_changed(false)
-	_a_Location.load_data(p_data["Location"])
+	_a_Location.load_data(p_data[&"Location"])
 	_selected_location_changed()
-	_a_Dialogue.load_data(p_data["Dialogue"])
+	_a_Dialogue.load_data(p_data[&"Dialogue"])
 	_selected_dialogue_changed()
-	_a_Part.load_data(p_data["Part"])
+	_a_Part.load_data(p_data[&"Part"])
 
-func _on_Key_Type_selected():
+func _on_Key_Type_selected() -> void:
 	_selected_key_type_changed(true)
 
-func _on_Chapter_selected():
+func _on_Chapter_selected() -> void:
 	_selected_chapter_changed(true)
 
-func _on_Location_selected():
+func _on_Location_selected() -> void:
 	_selected_location_changed()
 
-func _on_Dialogue_selected():
+func _on_Dialogue_selected() -> void:
 	_selected_dialogue_changed()
 
-func _on_Part_selected():
+func _on_Part_selected() -> void:
 	_selected_part_changed()

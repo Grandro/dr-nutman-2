@@ -1,50 +1,50 @@
 extends Node
+class_name PlayerCompInteractionSystem
 
-var _a_entity : Node = null
-var _a_entity_comph : CompHandler = null
+var _a_entity: Node
+var _a_entity_comph: CompHandler
+var _a_global_si: Global
 
-var _a_global_si = null
+var _a_walk_in: Dictionary[Node, Node] = {} # Match area to body
+var _a_press_key: Dictionary[Node, Node] = {} # Match area to body
+var _a_body: Node = null # Curr best interaction body
+var _a_area: Node = null # Curr best interaction area
 
-var _a_walk_in = {} # Match area to body
-var _a_press_key = {} # Match area to body
-var _a_body = null # Curr best interaction body
-var _a_area = null # Curr best interaction area
-
-func _ready():
+func _ready() -> void:
 	_a_global_si = Global.get_singleton(self, "Global")
 
-func _process(_delta):
+func _process(_delta: float) -> void:
 	_handle_interactions()
 
-func init(p_entity):
+func init(p_entity: Node) -> void:
 	_a_entity = p_entity
 	_a_entity_comph = p_entity.comph()
 
-func _handle_interactions():
+func _handle_interactions() -> void:
 	_handle_interactions_walk_in()
 	_handle_interactions_press_key()
 
-func _handle_interactions_walk_in():
-	for area in _a_walk_in:
-		var body = _a_walk_in[area]
+func _handle_interactions_walk_in() -> void:
+	for area: Node in _a_walk_in:
+		var body: Node = _a_walk_in[area]
 		if _can_interact_with(area, body):
-			body.comph().call_comp("Interactions", "interaction", [area])
+			body.comph().call_comp("Interactions", &"interaction", [area])
 
-func _handle_interactions_press_key():
-	var entity_pos = _a_entity_comph.call_comp("Interactions", "get_default_interaction_pos")
+func _handle_interactions_press_key() -> void:
+	var entity_pos: Variant = _a_entity_comph.call_comp("Interactions", &"get_default_interaction_pos")
 	var best_body = null
 	var best_area = null
-	var best_distance = -1.0
-	for area in _a_press_key:
-		var body = _a_press_key[area]
+	var best_distance: float = -1.0
+	for area: Node in _a_press_key:
+		var body: Node = _a_press_key[area]
 		if !_can_interact_with(area, body):
 			continue
 		
-		var area_pos = area.get_global_position()
-		var dir = Global.get_dir_to_pos(area_pos, entity_pos)
-		body.comph().call_comp("Interactions", "interaction_update", [dir])
+		var area_pos: Variant = area.get_global_position()
+		var dir: StringName = Global.get_dir_to_pos(area_pos, entity_pos)
+		body.comph().call_comp("Interactions", &"interaction_update", [dir])
 		
-		var distance = entity_pos.distance_to(area_pos)
+		var distance: float = entity_pos.distance_to(area_pos)
 		if best_area == null:
 			best_body = body
 			best_area = area
@@ -57,43 +57,43 @@ func _handle_interactions_press_key():
 	if _a_area != best_area:
 		_set_interaction(best_body, best_area)
 
-func _can_interact_with(p_area, p_body):
-	var allowed = p_body.comph().call_comp("Interactions", "get_allowed")
+func _can_interact_with(p_area: Node, p_body: Node) -> bool:
+	var allowed: bool = p_body.comph().call_comp("Interactions", &"get_allowed")
 	if !allowed:
 		return false
 	
 	if p_body.comph().has_comp("Cutscene"):
-		var in_cutscene = p_body.comph().call_comp("Cutscene", "is_in_cutscene")
-		var disabled_by_cutscene = p_body.comph().call_comp("Cutscene", "is_disabled_by_cutscene")
+		var in_cutscene: bool = p_body.comph().call_comp("Cutscene", &"is_in_cutscene")
+		var disabled_by_cutscene: bool = p_body.comph().call_comp("Cutscene", &"is_disabled_by_cutscene")
 		if in_cutscene || disabled_by_cutscene:
 			return false
 	
-	var dirs = p_area.get_dirs().duplicate()
-	var entity_dir = _a_entity_comph.call_comp("Movement", "get_dir")
+	var dirs: Array[StringName] = p_area.get_dirs().duplicate()
+	var entity_dir: StringName = _a_entity_comph.call_comp("Movement", &"get_dir")
 	
-	var needs_look_at = p_body.comph().call_comp("Interactions", "get_needs_look_at")
+	var needs_look_at: bool = p_body.comph().call_comp("Interactions", &"get_needs_look_at")
 	if needs_look_at:
-		var entity_pos = _a_entity_comph.call_comp("Interactions", "get_default_interaction_pos")
-		var area_pos = p_area.get_global_position()
+		var entity_pos: Variant = _a_entity_comph.call_comp("Interactions", &"get_default_interaction_pos")
+		var area_pos: Variant = p_area.get_global_position()
 		var face_dir = Global.get_dir_to_pos(entity_pos, area_pos)
 		if entity_dir != face_dir:
 			return false
 	
-	var use_dir = p_area.get_use_dir()
+	var use_dir: bool = p_area.get_use_dir()
 	if use_dir:
-		var body_dir = p_body.comph().call_comp("Movement", "get_dir")
-		var body_rotation_deg = Global.get_dir_rotation_deg(body_dir).y
-		for i in dirs.size():
-			var dir = dirs[i]
-			var rotated_dir = Global.get_dir_rotated(dir, -body_rotation_deg)
+		var body_dir: StringName = p_body.comph().call_comp("Movement", &"get_dir")
+		var body_rotation_deg: float = Global.get_dir_rotation_deg(body_dir).y
+		for i: int in dirs.size():
+			var dir: StringName = dirs[i]
+			var rotated_dir: StringName = Global.get_dir_rotated(dir, -body_rotation_deg)
 			dirs[i] = rotated_dir
 	
-	var use_transform = p_area.get_use_transform()
+	var use_transform: bool = p_area.get_use_transform()
 	if use_transform:
-		var body_rotation_deg = p_body.get_global_rotation_degrees().y
-		for i in dirs.size():
-			var dir = dirs[i]
-			var rotated_dir = Global.get_dir_rotated(dir, -body_rotation_deg)
+		var body_rotation_deg: float = p_body.get_global_rotation_degrees().y
+		for i: int in dirs.size():
+			var dir: StringName = dirs[i]
+			var rotated_dir: StringName = Global.get_dir_rotated(dir, -body_rotation_deg)
 			dirs[i] = rotated_dir
 	
 	if !dirs.has(entity_dir):
@@ -101,41 +101,41 @@ func _can_interact_with(p_area, p_body):
 	
 	return true
 
-func _set_interaction(p_body, p_area):
+func _set_interaction(p_body: Node, p_area: Node) -> void:
 	if is_instance_valid(_a_body):
-		_a_body.comph().call_comp("Interactions", "interaction_deactivate", [_a_area])
+		_a_body.comph().call_comp("Interactions", &"interaction_deactivate", [_a_area])
 	if is_instance_valid(p_body):
-		var entity_dir = _a_entity_comph.call_comp("Movement", "get_dir")
-		p_body.comph().call_comp("Interactions", "interaction_activate", [p_area, entity_dir])
+		var entity_dir: StringName = _a_entity_comph.call_comp("Movement", &"get_dir")
+		p_body.comph().call_comp("Interactions", &"interaction_activate", [p_area, entity_dir])
 	
 	_a_body = p_body
 	_a_area = p_area
 
-func get_body():
+func get_body() -> Node:
 	return _a_body
 
-func get_area():
+func get_area() -> Node:
 	return _a_area
 
-func get_save_data():
+func get_save_data() -> Dictionary:
 	return {}
 
-func load_data(_p_data):
+func load_data(_p_data: Dictionary) -> void:
 	pass
 
-func load_data_init():
+func load_data_init() -> void:
 	pass
 
-func _on_Interaction_area_entered(p_area):
-	var interactions_comp = p_area.get_parent()
-	var body = interactions_comp.get_entity()
-	var type = p_area.get_type()
+func _on_Interaction_area_entered(p_area: Node) -> void:
+	var interactions_comp: Node = p_area.get_parent()
+	var body: Node = interactions_comp.get_entity()
+	var type: StringName = p_area.get_type()
 	match type:
-		"Walk_In": _a_walk_in[p_area] = body
-		"Press_Key": _a_press_key[p_area] = body
+		&"Walk_In": _a_walk_in[p_area] = body
+		&"Press_Key": _a_press_key[p_area] = body
 
-func _on_Interaction_area_exited(p_area):
-	var type = p_area.get_type()
+func _on_Interaction_area_exited(p_area: Node) -> void:
+	var type: StringName = p_area.get_type()
 	match type:
-		"Walk_In": _a_walk_in.erase(p_area)
-		"Press_Key": _a_press_key.erase(p_area)
+		&"Walk_In": _a_walk_in.erase(p_area)
+		&"Press_Key": _a_press_key.erase(p_area)

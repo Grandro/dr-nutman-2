@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ceqb2omopxfjl"]
+[gd_scene load_steps=15 format=3 uid="uid://ceqb2omopxfjl"]
 
 [ext_resource type="PackedScene" uid="uid://5213guffkn3m" path="res://Global_Scenes/Debug/Command_Edit/3D/Command_Preview_Object.tscn" id="1_p6o20"]
 [ext_resource type="Script" uid="uid://b1ale26f25tjr" path="res://Global_Scenes/Debug/Command_Edit/Tween/Scripts/Tween.gd" id="2_6a3p1"]
@@ -11,6 +11,19 @@
 [ext_resource type="PackedScene" uid="uid://cnpcrhnjo25h1" path="res://Global_Scenes/Debug/Scenes/Value_Select/Value_Options.tscn" id="7_275m1"]
 [ext_resource type="PackedScene" uid="uid://qs71x71lxlxi" path="res://Global_Scenes/Debug/Scenes/Value_Select/Value_Edit.tscn" id="8_7mrb8"]
 [ext_resource type="Script" uid="uid://b4ucilaat7ihi" path="res://Global_Scenes/Debug/Command_Edit/3D/Tween/Scripts/Dimensions.gd" id="9_bcydn"]
+[ext_resource type="Script" uid="uid://di7b7k8gw5crj" path="res://Global_Scenes/Debug/Scenes/Value_Edit/Scripts/Data.gd" id="12_oomxv"]
+
+[sub_resource type="Resource" id="Resource_oomxv"]
+script = ExtResource("12_oomxv")
+_e_value = null
+_e_expanded = true
+metadata/_custom_type_script = "uid://di7b7k8gw5crj"
+
+[sub_resource type="Resource" id="Resource_84y8k"]
+script = ExtResource("12_oomxv")
+_e_value = null
+_e_expanded = true
+metadata/_custom_type_script = "uid://di7b7k8gw5crj"
 
 [node name="Tween" instance=ExtResource("1_p6o20")]
 script = ExtResource("2_6a3p1")
@@ -55,11 +68,13 @@ _e_var_select_scene = ExtResource("5_68ymw")
 
 [node name="Start_Value" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="7" instance=ExtResource("8_7mrb8")]
 layout_mode = 2
+_e_data = SubResource("Resource_oomxv")
 _e_heading_loc_id = "DEBUG_CUTSCENES_START_VALUE"
 _e_var_select_scene = ExtResource("5_68ymw")
 
 [node name="End_Value" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="8" instance=ExtResource("8_7mrb8")]
 layout_mode = 2
+_e_data = SubResource("Resource_84y8k")
 _e_heading_loc_id = "DEBUG_CUTSCENES_END_VALUE"
 _e_var_select_scene = ExtResource("5_68ymw")
 

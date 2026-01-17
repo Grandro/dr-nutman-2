@@ -1,24 +1,25 @@
 extends HBoxContainer
+class_name MainMenuSubMenuQuestsInfoObjectiveBase
 
-@onready var _a_Desc = get_node("HBox/Desc")
+@onready var _a_Desc: Label = get_node("HBox/Desc")
 
-var _a_objective_instance = null
+var _a_objective_instance: ProgressQuestObjectiveBase
 
-func _ready():
+func _ready() -> void:
 	_a_objective_instance.progressed.connect(_on_Objective_progressed)
 	
-	var data = _a_objective_instance.get_data()
-	var desc = data.get_desc()
-	var value = _a_objective_instance.get_value()
+	var data: ObjectiveData = _a_objective_instance.get_data()
+	var desc: String = data.get_desc()
+	var value: Variant = _a_objective_instance.get_value()
 	_a_Desc.set_text(desc)
 	_set_progress_curr(value)
 
-func set_objective_instance(p_objective_instance):
+func set_objective_instance(p_objective_instance: ProgressQuestObjectiveBase) -> void:
 	_a_objective_instance = p_objective_instance
 
-func _set_progress_curr(_p_value):
+func _set_progress_curr(_p_value) -> void:
 	pass
 
-func _on_Objective_progressed():
-	var value = _a_objective_instance.get_value()
+func _on_Objective_progressed() -> void:
+	var value: Variant = _a_objective_instance.get_value()
 	_set_progress_curr(value)

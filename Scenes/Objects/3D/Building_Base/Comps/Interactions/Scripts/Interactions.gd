@@ -1,4 +1,5 @@
-extends "res://Scenes/Object/Comps/3D/Interactions/Scripts/Interactions.gd"
+extends CompInteractions3D
+class_name ObjectBuildingBaseCompInteractions
 
-func set_destinations(p_destinations):
+func set_destinations(p_destinations) -> void:
 	_a_shared.set_destinations(p_destinations)

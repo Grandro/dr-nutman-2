@@ -8,9 +8,6 @@
 [node name="Teleport_Object" instance=ExtResource("1_30jw2")]
 script = ExtResource("2_1eu4g")
 
-[node name="VP" parent="Window/Contents/Margin/HBox/Left/Preview" index="0"]
-size = Vector2i(544, 556)
-
 [node name="Object" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="0"]
 _e_allowed_classes = Array[String](["Node2D"])
 

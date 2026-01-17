@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://4lrrv8o3qjkq"]
+[gd_scene load_steps=15 format=3 uid="uid://4lrrv8o3qjkq"]
 
 [ext_resource type="PackedScene" uid="uid://clcnrrgit18fj" path="res://Global_Scenes/Debug/Command_Edit/2D/Command_Preview_Object.tscn" id="1_s30mw"]
 [ext_resource type="Script" uid="uid://b1ale26f25tjr" path="res://Global_Scenes/Debug/Command_Edit/Tween/Scripts/Tween.gd" id="2_mmt1p"]
@@ -11,14 +11,24 @@
 [ext_resource type="PackedScene" uid="uid://cci0bq6durrvf" path="res://Global_Scenes/Debug/Scenes/Value_Select/Value_Float.tscn" id="6_iaagi"]
 [ext_resource type="PackedScene" uid="uid://cnpcrhnjo25h1" path="res://Global_Scenes/Debug/Scenes/Value_Select/Value_Options.tscn" id="7_kx8qd"]
 [ext_resource type="PackedScene" uid="uid://qs71x71lxlxi" path="res://Global_Scenes/Debug/Scenes/Value_Select/Value_Edit.tscn" id="8_vqped"]
+[ext_resource type="Script" uid="uid://di7b7k8gw5crj" path="res://Global_Scenes/Debug/Scenes/Value_Edit/Scripts/Data.gd" id="12_xh8sw"]
+
+[sub_resource type="Resource" id="Resource_m7hkd"]
+script = ExtResource("12_xh8sw")
+_e_value = null
+_e_expanded = true
+metadata/_custom_type_script = "uid://di7b7k8gw5crj"
+
+[sub_resource type="Resource" id="Resource_xh8sw"]
+script = ExtResource("12_xh8sw")
+_e_value = null
+_e_expanded = true
+metadata/_custom_type_script = "uid://di7b7k8gw5crj"
 
 [node name="Tween" instance=ExtResource("1_s30mw")]
 script = ExtResource("2_mmt1p")
 _e_point_scene = ExtResource("3_qb1em")
 _e_dimensions = ExtResource("4_qb1em")
-
-[node name="VP" parent="Window/Contents/Margin/HBox/Left/Preview" index="0"]
-size = Vector2i(544, 556)
 
 [node name="Comp" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="1" instance=ExtResource("2_qsc2g")]
 layout_mode = 2
@@ -55,11 +65,13 @@ _e_var_select_scene = ExtResource("5_7nr0x")
 
 [node name="Start_Value" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="7" instance=ExtResource("8_vqped")]
 layout_mode = 2
+_e_data = SubResource("Resource_m7hkd")
 _e_heading_loc_id = "DEBUG_CUTSCENES_START_VALUE"
 _e_var_select_scene = ExtResource("5_7nr0x")
 
 [node name="End_Value" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="8" instance=ExtResource("8_vqped")]
 layout_mode = 2
+_e_data = SubResource("Resource_xh8sw")
 _e_heading_loc_id = "DEBUG_CUTSCENES_END_VALUE"
 _e_var_select_scene = ExtResource("5_7nr0x")
 

@@ -32,14 +32,13 @@ size = 12.8
 far = 60.0
 
 [node name="Movement" parent="." instance=ExtResource("6_u0j8f")]
-_e_can_move = false
 
 [node name="Anims" parent="." instance=ExtResource("4_nu26h")]
 
 [node name="Party_Member" parent="." instance=ExtResource("7_l8uok")]
 
 [node name="States" parent="." instance=ExtResource("7_nx24j")]
-_e_states = Array[String](["Idle"])
+_e_states = ["Idle"]
 _e_state = "Idle"
 
 [node name="Save" parent="." instance=ExtResource("8_wti6e")]

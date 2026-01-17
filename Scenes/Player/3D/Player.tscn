@@ -95,12 +95,12 @@
 [ext_resource type="PackedScene" uid="uid://cekkcfeurbewx" path="res://Scenes/Object/Comps/3D/Movement/Comps/States.tscn" id="48_x0bp6"]
 [ext_resource type="Animation" uid="uid://x1upswcqqtab" path="res://Scenes/Player/Anims/Global/Celebrate_Down.res" id="53_0b4iy"]
 [ext_resource type="PackedScene" uid="uid://dllj5lbxwqy17" path="res://Scenes/Pausable_Audio/3D/Pausable_Audio.tscn" id="55_7rypf"]
-[ext_resource type="Animation" uid="uid://y78wu4air3l0" path="res://Global_Scenes/Battle_System/Battle_SV/Party_Members/Dr_Nutman/Anims/Idle_Down.tres" id="72_ixntb"]
+[ext_resource type="Animation" uid="uid://y78wu4air3l0" path="res://Global_Scenes/Battle_System/SV_Battle/Party_Members/Dr_Nutman/Anims/Idle_Down.tres" id="72_ixntb"]
 [ext_resource type="PackedScene" uid="uid://djl16ro8388xh" path="res://Scenes/Object/Comps/3D/Movement/Comps/Jump.tscn" id="73_d47ie"]
-[ext_resource type="Animation" uid="uid://q4lbrc883r6c" path="res://Global_Scenes/Battle_System/Battle_SV/Party_Members/Dr_Nutman/Anims/Idle_Left.tres" id="73_p3vc3"]
+[ext_resource type="Animation" uid="uid://q4lbrc883r6c" path="res://Global_Scenes/Battle_System/SV_Battle/Party_Members/Dr_Nutman/Anims/Idle_Left.tres" id="73_p3vc3"]
 [ext_resource type="PackedScene" uid="uid://boh1rwcj5rgwf" path="res://Scenes/Object/Comps/States.tscn" id="74_fu7ls"]
-[ext_resource type="Animation" uid="uid://ef5ueaowv2p1" path="res://Global_Scenes/Battle_System/Battle_SV/Party_Members/Dr_Nutman/Anims/Idle_Right.tres" id="74_ink6g"]
-[ext_resource type="Animation" uid="uid://diq7niafj24ec" path="res://Global_Scenes/Battle_System/Battle_SV/Party_Members/Dr_Nutman/Anims/Idle_Up.tres" id="75_we31h"]
+[ext_resource type="Animation" uid="uid://ef5ueaowv2p1" path="res://Global_Scenes/Battle_System/SV_Battle/Party_Members/Dr_Nutman/Anims/Idle_Right.tres" id="74_ink6g"]
+[ext_resource type="Animation" uid="uid://diq7niafj24ec" path="res://Global_Scenes/Battle_System/SV_Battle/Party_Members/Dr_Nutman/Anims/Idle_Up.tres" id="75_we31h"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_825rx"]
 radius = 0.4
@@ -214,14 +214,14 @@ shape = SubResource("CapsuleShape3D_825rx")
 
 [node name="Equipment" parent="." instance=ExtResource("4_mba0y")]
 _e_scenes = {
-"Feet": {},
-"Head": {
-"Party_Hat_1": ExtResource("5_vjtst"),
-"Party_Hat_2": ExtResource("6_vuxxj"),
-"Party_Hat_3": ExtResource("7_4h3cg")
+&"Feet": {},
+&"Head": {
+&"Party_Hat_1": ExtResource("5_vjtst"),
+&"Party_Hat_2": ExtResource("6_vuxxj"),
+&"Party_Hat_3": ExtResource("7_4h3cg")
 },
-"Legs": {},
-"Torso": {}
+&"Legs": {},
+&"Torso": {}
 }
 _e_shaded = true
 
@@ -330,7 +330,7 @@ _e_pm_key = "Dr_Nutman"
 [node name="Stater" parent="." instance=ExtResource("23_1crq8")]
 
 [node name="States" parent="." instance=ExtResource("74_fu7ls")]
-_e_states = Array[String](["Stop", "Idle", "Walk", "Run", "Jump", "Fall", "Celebrate", "Place"])
+_e_states = ["Stop", "Idle", "Walk", "Run", "Jump", "Fall", "Celebrate", "Place"]
 _e_state = "Stop"
 
 [node name="Interaction_System" parent="." instance=ExtResource("25_sdk1s")]

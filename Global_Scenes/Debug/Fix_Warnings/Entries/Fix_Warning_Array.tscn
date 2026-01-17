@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://bi7tghisgyv5u" path="res://Global_Scenes/Debug/Fix_Warnings/Entries/Scripts/Fix_Warning_Array.gd" id="2_oiyt0"]
 
 [node name="Fix_Warning_Array" instance=ExtResource("1_rdobi")]
+offset_right = 346.0
 script = ExtResource("2_oiyt0")
 
 [node name="Value" parent="VBox/New" index="1" instance=ExtResource("2_gk0ig")]

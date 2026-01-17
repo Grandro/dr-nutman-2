@@ -6,15 +6,15 @@
 [ext_resource type="Texture2D" uid="uid://dbo0a6w212p5f" path="res://Global_Scenes/Main_Menu/Sub_Menus/Party/Selection/Sprites/Dr_Nutman.png" id="3"]
 [ext_resource type="FontFile" uid="uid://bc3cxhu6w0ljt" path="res://Global_Resources/Fonts/ProFont.ttf" id="4"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_llddd"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oudcv"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_whubr"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oqxqg"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_53c5i"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oqxqg"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_whubr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oudcv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_llddd"]
 
 [sub_resource type="Animation" id="2"]
 resource_name = "Zoom_In"
@@ -99,11 +99,11 @@ visibility_layer = 8
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/focus = SubResource("StyleBoxEmpty_llddd")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_oudcv")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_whubr")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_53c5i")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_oqxqg")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_53c5i")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_whubr")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_oudcv")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_llddd")
 
 [node name="Anchor" type="Node2D" parent="."]
 light_mask = 8
@@ -124,7 +124,7 @@ expand_mode = 1
 
 [node name="Anims" type="AnimationPlayer" parent="Anchor/Image"]
 libraries = {
-"": SubResource("AnimationLibrary_63nhx")
+&"": SubResource("AnimationLibrary_63nhx")
 }
 
 [node name="Frame" type="NinePatchRect" parent="Anchor/Image"]

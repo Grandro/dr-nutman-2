@@ -9,7 +9,6 @@
 
 [node name="Change_Item_Amount" instance=ExtResource("1")]
 script = ExtResource("4")
-_e_command = "Change_Item_Amount"
 
 [node name="Background" parent="." index="0"]
 layout_mode = 1
@@ -41,7 +40,7 @@ theme_override_constants/separation = 16
 [node name="Type" parent="Window/Contents/Margin/VBox" index="0" instance=ExtResource("3_rjcfo")]
 layout_mode = 2
 _e_options_loc_id = "DEBUG_CUTSCENES_%s"
-_e_options = Array[String](["Gain", "Lose"])
+_e_options = ["Gain", "Lose"]
 _e_heading_loc_id = "DEBUG_CUTSCENES_TYPE"
 _e_var_select_scene = ExtResource("4_ld8ju")
 

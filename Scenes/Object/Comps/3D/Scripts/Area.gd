@@ -1,13 +1,14 @@
 extends Area3D
+class_name CompArea3D
 
-func init(_p_entity):
+func init(_p_entity: Node) -> void:
 	pass
 
-func get_save_data():
+func get_save_data() -> Dictionary:
 	return {}
 
-func load_data(_p_data):
+func load_data(_p_data: Dictionary) -> void:
 	pass
 
-func load_data_init():
+func load_data_init() -> void:
 	pass

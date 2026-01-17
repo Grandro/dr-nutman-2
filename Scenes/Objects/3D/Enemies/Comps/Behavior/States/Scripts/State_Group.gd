@@ -1,39 +1,40 @@
 extends Node
+class_name ObjectEnemyCompBehaviorStatesStateGroup
 
 signal processed()
 
-var _a_states = {} # Map state to instance
-var _a_instance = null # curr state instance
+var _a_states: Dictionary[StringName, ObjectEnemyCompBehaviorStatesStateBase] = {} # Map state to instance
+var _a_instance: ObjectEnemyCompBehaviorStatesStateBase # curr state instance
 
-func init(p_behavior, p_entity, p_entity_comph):
-	for child in get_children():
+func init(p_behavior: ObjectEnemyCompBehaviorBase, p_entity: Node3D, p_entity_comph: CompHandler) -> void:
+	for child: ObjectEnemyCompBehaviorStatesStateBase in get_children():
 		child.processed.connect(_on_State_processed)
 		child.init(p_behavior, p_entity, p_entity_comph)
 		
-		var key = child.get_name()
+		var key: StringName = child.get_name()
 		_a_states[key] = child
 
-func register(p_actions):
+func register(p_actions: Dictionary) -> void:
 	p_actions[name] = self
 
-func process_start():
-	var keys = _a_states.keys()
-	var rndm = randi() % keys.size()
-	var key = keys[rndm]
+func process_start() -> void:
+	var keys: Array[StringName] = _a_states.keys()
+	var rndm: int = randi() % keys.size()
+	var key: StringName = keys[rndm]
 	_a_instance = _a_states[key]
 	_a_instance.process_start()
 
-func process_end():
+func process_end() -> void:
 	_a_instance.process_end()
 
-func get_keep_state():
+func get_keep_state() -> bool:
 	return _a_instance.get_keep_state()
 
-func get_use_CD():
+func get_use_CD() -> bool:
 	return _a_instance.get_use_CD()
 
-func get_CD():
+func get_CD() -> float:
 	return _a_instance.get_CD()
 
-func _on_State_processed():
+func _on_State_processed() -> void:
 	processed.emit()

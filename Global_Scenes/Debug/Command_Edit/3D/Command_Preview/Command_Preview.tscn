@@ -11,9 +11,6 @@ _e_free_camera_scene = ExtResource("2_wj3gl")
 _e_draw_grid_scene = ExtResource("3_5k2g2")
 _e_dimensions = ExtResource("3_04jnv")
 
-[node name="VP" parent="Window/Contents/Margin/HBox/Left/Preview" index="0"]
-size = Vector2i(544, 556)
-
 [node name="Step" parent="Window/Contents/Margin/HBox/Left/Grid" index="0" instance=ExtResource("3_iji14")]
 layout_mode = 2
 _e_desc_loc_id = "DEBUG_CUTSCENES_GRID_STEP"

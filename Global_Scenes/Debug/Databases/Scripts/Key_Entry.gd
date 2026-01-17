@@ -1,6 +1,7 @@
 extends Button
+class_name DebugDatabasesKeyEntry
 
-@export var _e_key: String = ""
+@export var _e_key: StringName = &""
 
-func get_key():
+func get_key() -> StringName:
 	return _e_key

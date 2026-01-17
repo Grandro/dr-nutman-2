@@ -91,10 +91,10 @@
 [ext_resource type="Animation" uid="uid://d0h85bl0atfer" path="res://Scenes/Player/Anims/Global/Walk_Up.tres" id="47_2gh4l"]
 [ext_resource type="PackedScene" uid="uid://cikd6yq8gyv4w" path="res://Scenes/Object/Comps/2D/Movement/Movement_Character.tscn" id="48_ufamu"]
 [ext_resource type="PackedScene" uid="uid://dbrpw1m2haq0b" path="res://Scenes/Object/Comps/2D/Movement/Comps/States.tscn" id="50_ufamu"]
-[ext_resource type="Animation" uid="uid://y78wu4air3l0" path="res://Global_Scenes/Battle_System/Battle_SV/Party_Members/Dr_Nutman/Anims/Idle_Down.tres" id="82_q5xpx"]
-[ext_resource type="Animation" uid="uid://q4lbrc883r6c" path="res://Global_Scenes/Battle_System/Battle_SV/Party_Members/Dr_Nutman/Anims/Idle_Left.tres" id="83_4pdu5"]
-[ext_resource type="Animation" uid="uid://ef5ueaowv2p1" path="res://Global_Scenes/Battle_System/Battle_SV/Party_Members/Dr_Nutman/Anims/Idle_Right.tres" id="84_ufamu"]
-[ext_resource type="Animation" uid="uid://diq7niafj24ec" path="res://Global_Scenes/Battle_System/Battle_SV/Party_Members/Dr_Nutman/Anims/Idle_Up.tres" id="85_ixjl6"]
+[ext_resource type="Animation" uid="uid://y78wu4air3l0" path="res://Global_Scenes/Battle_System/SV_Battle/Party_Members/Dr_Nutman/Anims/Idle_Down.tres" id="82_q5xpx"]
+[ext_resource type="Animation" uid="uid://q4lbrc883r6c" path="res://Global_Scenes/Battle_System/SV_Battle/Party_Members/Dr_Nutman/Anims/Idle_Left.tres" id="83_4pdu5"]
+[ext_resource type="Animation" uid="uid://ef5ueaowv2p1" path="res://Global_Scenes/Battle_System/SV_Battle/Party_Members/Dr_Nutman/Anims/Idle_Right.tres" id="84_ufamu"]
+[ext_resource type="Animation" uid="uid://diq7niafj24ec" path="res://Global_Scenes/Battle_System/SV_Battle/Party_Members/Dr_Nutman/Anims/Idle_Up.tres" id="85_ixjl6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0w38r"]
 radius = 16.0
@@ -198,12 +198,12 @@ frame = 84
 
 [node name="Equipment" parent="." instance=ExtResource("4_3n0ld")]
 _e_scenes = {
-"Feet": {},
-"Head": {
-"Party_Hat_1": ExtResource("5_4pdu5")
+&"Feet": {},
+&"Head": {
+&"Party_Hat_1": ExtResource("5_4pdu5")
 },
-"Legs": {},
-"Torso": {}
+&"Legs": {},
+&"Torso": {}
 }
 
 [node name="Collision" parent="." instance=ExtResource("5_u5ttv")]
@@ -284,7 +284,7 @@ _e_pm_key = "Dr_Nutman"
 [node name="Stater" parent="." instance=ExtResource("24_vw7d3")]
 
 [node name="States" parent="." instance=ExtResource("25_efqee")]
-_e_states = Array[String](["Stop", "Idle", "Walk", "Run", "Jump", "Fall", "Celebrate", "Place"])
+_e_states = Array[StringName]([&"Stop", &"Idle", &"Walk", &"Run", &"Jump", &"Fall", &"Celebrate", &"Place"])
 
 [node name="Interaction_System" parent="." instance=ExtResource("26_282dh")]
 

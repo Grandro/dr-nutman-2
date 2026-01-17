@@ -3,5 +3,5 @@
 extends AnimBox
 class_name AnimHBox
 
-func _init():
-	_a_is_vertical = false
+func _init() -> void:
+	_a_vertical = false

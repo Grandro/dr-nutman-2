@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://bkach2463m3lb"]
+
+[ext_resource type="Script" uid="uid://ddrwpxb58mt2u" path="res://Scenes/Object/Scripts/RigidBody3D_Object.gd" id="1_6of05"]
+[ext_resource type="PackedScene" uid="uid://dacf2xanj5gaf" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Buffin_House_3/Objects/Batteries/Models/1.blend" id="2_rphuj"]
+[ext_resource type="PackedScene" uid="uid://dsp0njc065uev" path="res://Scenes/Object/Comps/3D/Collision_Shape.tscn" id="3_qdyiy"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_wa3bd"]
+height = 0.45
+radius = 0.06
+
+[node name="Battery_1" type="RigidBody3D"]
+collision_layer = 8
+collision_mask = 9
+script = ExtResource("1_6of05")
+metadata/_custom_type_script = "uid://ddrwpxb58mt2u"
+
+[node name="Model" parent="." instance=ExtResource("2_rphuj")]
+
+[node name="Collision" parent="." instance=ExtResource("3_qdyiy")]
+shape = SubResource("CylinderShape3D_wa3bd")

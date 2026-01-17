@@ -25,7 +25,7 @@ outline_color = Color(0, 0, 0, 1)
 
 [node name="Main" instance=ExtResource("1")]
 script = ExtResource("2")
-_e_sub_menus = Array[String](["Inventory", "Journal", "Party", "Quests", "Options"])
+_e_sub_menus = Array[StringName]([&"Inventory", &"Journal", &"Party", &"Quests", &"Options"])
 
 [node name="Background" type="TextureRect" parent="." index="0"]
 light_mask = 8
@@ -101,6 +101,7 @@ layout_mode = 2
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
+size_flags_horizontal = 8
 size_flags_vertical = 10
 theme_override_constants/separation = 8
 alignment = 2

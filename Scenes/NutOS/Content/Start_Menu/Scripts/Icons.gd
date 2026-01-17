@@ -1,21 +1,22 @@
 extends PanelContainer
+class_name NutOSContentStartMenuIcons
 
 signal settings_pressed()
-signal power_option_selected(p_option)
+signal power_option_selected(p_option: StringName)
 
 @export var _e_expanded_color: Color = Color(0.19, 0.19, 0.19)
 @export var _e_collapsed_color: Color = Color(0.1, 0.1, 0.1)
 
-@onready var _a_Expand_Select = get_node("VBox/Expand/Select")
-@onready var _a_Settings_Select = get_node("VBox/Settings/Select")
-@onready var _a_Settings_Desc = get_node("VBox/Settings/HBox/Desc")
-@onready var _a_Power_Select = get_node("VBox/Power/Select")
-@onready var _a_Power_Desc = get_node("VBox/Power/HBox/Desc")
-@onready var _a_Power_Options = get_node("Power_Options")
+@onready var _a_Expand_Select: Button = get_node("VBox/Expand/Select")
+@onready var _a_Settings_Select: Button = get_node("VBox/Settings/Select")
+@onready var _a_Settings_Desc: Label = get_node("VBox/Settings/HBox/Desc")
+@onready var _a_Power_Select: Button = get_node("VBox/Power/Select")
+@onready var _a_Power_Desc: Label = get_node("VBox/Power/HBox/Desc")
+@onready var _a_Power_Options: ContextMenu = get_node("Power_Options")
 
-var _a_expanded = false
+var _a_expanded: bool = false
 
-func _ready():
+func _ready() -> void:
 	_a_Expand_Select.pressed.connect(_on_Expand_Select_pressed)
 	_a_Settings_Select.pressed.connect(_on_Settings_Select_pressed)
 	_a_Power_Select.pressed.connect(_on_Power_Select_pressed)
@@ -23,11 +24,11 @@ func _ready():
 	
 	_a_Power_Options.set_layer(1026)
 
-func _on_Expand_Select_pressed():
+func _on_Expand_Select_pressed() -> void:
 	expand_collapse(!_a_expanded)
 
-func expand_collapse(p_expand):
-	var style_box = get("theme_override_styles/panel")
+func expand_collapse(p_expand: bool) -> void:
+	var style_box = get(&"theme_override_styles/panel")
 	if p_expand:
 		style_box.set_bg_color(_e_expanded_color)
 	else:
@@ -37,12 +38,12 @@ func expand_collapse(p_expand):
 	
 	_a_expanded = p_expand
 
-func _on_Settings_Select_pressed():
+func _on_Settings_Select_pressed() -> void:
 	settings_pressed.emit()
 
-func _on_Power_Select_pressed():
-	var pos = get_global_mouse_position()
+func _on_Power_Select_pressed() -> void:
+	var pos: Vector2 = get_global_mouse_position()
 	_a_Power_Options.open(pos)
 
-func _on_Power_Options_option_selected(p_option):
+func _on_Power_Options_option_selected(p_option: StringName) -> void:
 	power_option_selected.emit(p_option)

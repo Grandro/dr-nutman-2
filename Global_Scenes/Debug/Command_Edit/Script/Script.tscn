@@ -6,7 +6,6 @@
 
 [node name="Script" instance=ExtResource("1")]
 script = ExtResource("2")
-_e_command = "Script"
 
 [node name="Background" parent="." index="0"]
 layout_mode = 1

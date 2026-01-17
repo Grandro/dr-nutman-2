@@ -1,12 +1,13 @@
-extends "res://Scenes/Object/Comps/Movement/Scripts/Shared_Base.gd"
+extends CompMovementSharedBase
+class_name CompMovementSharedCharacter
 
-func physics_process(_p_delta):
+func physics_process(_p_delta: float) -> void:
 	_update_speed()
 	
 	_a_velocity = _a_entity.get_init_velocity()
-	for child in _a_entity.get_children():
+	for child: Node in _a_entity.get_children():
 		_a_velocity += child.get_velocity_()
-	for child in _a_entity.get_children():
+	for child: Node in _a_entity.get_children():
 		_a_velocity = child.adjust_velocity_post(_a_velocity)
 	
 	_a_entity_entity.set_velocity(_a_velocity)

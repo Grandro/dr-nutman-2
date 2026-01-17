@@ -9,11 +9,11 @@
 [ext_resource type="Texture2D" uid="uid://boiiegmkhe7sx" path="res://Global_Resources/Sprites/Icons/Stats/DEF.png" id="7_ciuf6"]
 [ext_resource type="Texture2D" uid="uid://cojxa2j3i2dwf" path="res://Global_Resources/Sprites/Icons/Stats/SPEED.png" id="8_mwqig"]
 [ext_resource type="Texture2D" uid="uid://dsgj1n6d3wir2" path="res://Global_Resources/Sprites/Icons/Stats/LUCK.png" id="9_1rvwr"]
-[ext_resource type="Texture2D" uid="uid://cy3my7nssxl8m" path="res://Global_Scenes/Battle_System/Battle_SV/Encounters/Command_Circle/Sprites/Commands/Attack_ATK.png" id="10_1rvwr"]
-[ext_resource type="Texture2D" uid="uid://dpwrrsknsw8fm" path="res://Global_Scenes/Battle_System/Battle_SV/Encounters/Command_Circle/Sprites/Commands/Defense_DEF.png" id="11_sck1w"]
-[ext_resource type="Texture2D" uid="uid://5aoswujhwbye" path="res://Global_Scenes/Battle_System/Battle_SV/Encounters/Command_Circle/Sprites/Commands/Special.png" id="12_qtwl8"]
-[ext_resource type="Texture2D" uid="uid://e0foefmbc388" path="res://Global_Scenes/Battle_System/Battle_SV/Encounters/Command_Circle/Sprites/Commands/Flee.png" id="13_j5k3d"]
-[ext_resource type="Texture2D" uid="uid://bjrwc227u4yhn" path="res://Global_Scenes/Battle_System/Battle_SV/Encounters/Command_Circle/Sprites/Commands/Help.png" id="14_wqwju"]
+[ext_resource type="Texture2D" uid="uid://cy3my7nssxl8m" path="res://Global_Scenes/Battle_System/SV_Battle/Encounters/Command_Circle/Sprites/Commands/Attack_ATK.png" id="10_1rvwr"]
+[ext_resource type="Texture2D" uid="uid://dpwrrsknsw8fm" path="res://Global_Scenes/Battle_System/SV_Battle/Encounters/Command_Circle/Sprites/Commands/Defense_DEF.png" id="11_sck1w"]
+[ext_resource type="Texture2D" uid="uid://5aoswujhwbye" path="res://Global_Scenes/Battle_System/SV_Battle/Encounters/Command_Circle/Sprites/Commands/Special.png" id="12_qtwl8"]
+[ext_resource type="Texture2D" uid="uid://e0foefmbc388" path="res://Global_Scenes/Battle_System/SV_Battle/Encounters/Command_Circle/Sprites/Commands/Flee.png" id="13_j5k3d"]
+[ext_resource type="Texture2D" uid="uid://bjrwc227u4yhn" path="res://Global_Scenes/Battle_System/SV_Battle/Encounters/Command_Circle/Sprites/Commands/Help.png" id="14_wqwju"]
 
 [node name="Explain_First_Battle" instance=ExtResource("1_6u6ay")]
 script = ExtResource("2_u8hk1")

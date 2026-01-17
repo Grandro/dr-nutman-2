@@ -1,9 +1,10 @@
 extends ScrollContainer
+class_name DebugDialoguesAttributesTabBase
 
-@export var _e_key: String = ""
+@export var _e_key: StringName = &""
 
-func get_key():
+func get_key() -> StringName:
 	return _e_key
 
-func set_keys_type(_p_keys_type):
+func set_keys_type(_p_keys_type: StringName) -> void:
 	pass

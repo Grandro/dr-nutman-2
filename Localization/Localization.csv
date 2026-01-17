@@ -122,11 +122,6 @@ DEBUG_CUTSCENES_STATE_RUN,Rennen,Run
 DEBUG_CUTSCENES_STATE_JUMP,Springen,Jump
 DEBUG_CUTSCENES_STATE_FALL,Fallen,Fall
 DEBUG_CUTSCENES_SPEED,Geschwindigkeit,Speed
-DEBUG_CUTSCENES_SPEED_VERY_SLOW,Sehr Langsam,Very Slow
-DEBUG_CUTSCENES_SPEED_SLOW,Langsam,Slow
-DEBUG_CUTSCENES_SPEED_NORMAL,Normal,Normal
-DEBUG_CUTSCENES_SPEED_FAST,Schnell,Fast
-DEBUG_CUTSCENES_SPEED_VERY_FAST,Sehr Schnell,Very Fast
 DEBUG_CUTSCENES_WAIT_FINISH,Bis Ende warten,Wait till finish
 DEBUG_CUTSCENES_TYPE,Typ,Type
 DEBUG_CUTSCENES_TYPE_FIXED_DIR,Feste Richtung,Fixed Direction
@@ -247,6 +242,7 @@ DEBUG_CHOICE_ADD,Auswahl hinzufügen:,Add choice:
 DEBUG_FIX_WARNINGS,Warnungen Beheben,Fix Warnings
 DEBUG_OLD_VALUE,Alter Wert:,Old Value:
 DEBUG_NEW_VALUE,Neuer Wert:,New Value:
+DEBUG_VALUE_EDIT_REMOVE_ITEM,Element Entfernen,Remove Item
 PROGRESS_CHAPTER_1_NAME,Ein Fest für einen Helden,A festival for a hero
 PROGRESS_PIN_NO_PINS,Noch nichts angepinnt...,Nothing pinned yet...
 PROGRESS_QUEST_TYPE_MAIN,Hauptquest,Main Quest
@@ -269,10 +265,10 @@ PROGRESS_QUESTS_BROKO_TOWN_1_MAIN_RIGHT_ON_THE_NUT_OBJECTIVE_CRACK_NUTS,Nüsse g
 PROGRESS_QUESTS_BROKO_TOWN_1_MAIN_AN_UPLIFTING_NUT_NAME,Eine erhebende Nuss,An uplifting nut
 PROGRESS_QUESTS_BROKO_TOWN_1_MAIN_AN_UPLIFTING_NUT_DESC,"Auf der südlichen Wiese in Broko Town treiben sich ein paar raffinierte Hörnchen herum. Sie lassen sich in die Luft heben, wenn man ihnen dafür eine Nuss gibt...",There are a few sneaky squirrels hanging around on the southern meadow in Broko Town. They can be lifted into the air if you give them a nut in return...
 PROGRESS_QUESTS_BROKO_TOWN_1_MAIN_AN_UPLIFTING_NUT_OBJECTIVE_CRACK_NUTS,Nüsse geknackt,Nuts cracked
-PROGRESS_QUESTS_BROKO_TOWN_1_MAIN_AN_UPLIFTING_NUT_OBJECTIVE_LIFT_SQUIRRELS,Hörnchen gehoben,Squirrels lifted
+PROGRESS_QUESTS_BROKO_TOWN_1_MAIN_AN_UPLIFTING_NUT_OBJECTIVE_USE_CRACKED_NUTS,Geknackte Nüsse verangelt,Cracked nuts used
 PROGRESS_QUESTS_BROKO_TOWN_1_MAIN_GROPING_IN_THE_DARK_NAME,Im Dunkeln tappen,Groping in the dark
-PROGRESS_QUESTS_BROKO_TOWN_1_MAIN_GROPING_IN_THE_DARK_DESC,"Südlich vom Schloss in Broko Town wurde der Ort des alltäglichen Wohnens in eine wunderbar schaurige Gruselattraktion verwandelt.","South of the castle in Broko Town, the residence of everyday life has been transformed into a wonderfully spooky horror attraction."
-PROGRESS_QUESTS_BROKO_TOWN_1_MAIN_GROPING_IN_THE_DARK_OBJECTIVE_FIND_BATTERIES,"Batterien gefunden","Batteries found"
+PROGRESS_QUESTS_BROKO_TOWN_1_MAIN_GROPING_IN_THE_DARK_DESC,Südlich vom Schloss in Broko Town wurde der Ort des alltäglichen Wohnens in eine wunderbar schaurige Gruselattraktion verwandelt.,"South of the castle in Broko Town, the residence of everyday life has been transformed into a wonderfully spooky horror attraction."
+PROGRESS_QUESTS_BROKO_TOWN_1_MAIN_GROPING_IN_THE_DARK_OBJECTIVE_FIND_BATTERIES,Batterien gefunden,Batteries found
 LOCALE_DE,Deutsch,Deutsch
 LOCALE_EN,English,English
 MINIGAMES_CONTROLS,Steuerung,Controls
@@ -375,7 +371,7 @@ CONFIRM_DELETE_CONDITION,"Bist du sicher, dass du diese Bedingung löschen möch
 CONFIRM_DELETE_ACTION,"Bist du sicher, dass du diese Aktion löschen möchtest?","Are you sure, you want to delete this action?"
 CONFIRM_DELETE_POINT,"Bist du sicher, dass du diesen Punkt löschen möchtest?",Are you sure you want to delete this point?
 CONFIRM_DELETE_COLOR,"Bist du sicher, dass du diese Farbe löschen möchtest?",Are you sure you want to delete this color?
-CONFIRM_DELETE_BRANCH,"Bist du sicher, dass du diese Verzweigung löschen möchtest?","Are you sure you want to delete this branch?"
+CONFIRM_DELETE_BRANCH,"Bist du sicher, dass du diese Verzweigung löschen möchtest?",Are you sure you want to delete this branch?
 SELECT_TYPE,Typ Auswählen,Select Type
 PREVIEW_ALL,Vorschau Alles,Preview All
 NEXT_LVL,Nächstes Lvl,Next Lvl
@@ -481,7 +477,7 @@ ENEMY_SICK_APPRENTICE_1_DESC,"Noch nie zuvor vorgekommen hat das Fibri-Vibri tat
 ENEMY_CITRIN_NAME,Zitrine,Citrin
 ENEMY_CITRIN_DESC,Dieser süß-saure Zweibeiner lebt im Wald und scheut sich nicht davor mit Zitronenkugeln zu spucken.,This sweet and sour biped lives in the forest and is not afraid to spit lemon balls.
 ENEMY_GHOSTY_NAME,Geisti,Ghosty
-ENEMY_GHOSTY_DESC,"Dieser süße kleine Geist mag es unsichtbar zu werden um andere zu überraschen.","This cute little ghost likes to become invisible to surprise others."
+ENEMY_GHOSTY_DESC,Dieser süße kleine Geist mag es unsichtbar zu werden um andere zu überraschen.,This cute little ghost likes to become invisible to surprise others.
 COINS_NAME,Münzen,Coins
 ITEMS_GENERAL_COOKIE_NAME,Keks,Cookie
 ITEMS_GENERAL_COOKIE_DESC,"Ein knusprig-leckerer Keks, welcher 7 [img]res://Global_Resources/Sprites/Icons/Stats/HP.png[/img] wiederherstellt.",A crispy and delicious cookie which restores 7 [img]res://Global_Resources/Sprites/Icons/Stats/HP.png[/img].
@@ -927,72 +923,72 @@ DIALOGUE_BROKO_TOWN_1_BROKO_CHILD_2_BALLOON_QUEST_1_2_1,"Ich weiß gar nicht so 
 DIALOGUE_BROKO_TOWN_1_BROKO_CHILD_2_BALLOON_QUEST_1_3_1,Was ist denn noch da? {Expr Instance_Key=Broko_Child_2 Comp=Balloon_Quest Expression=get_balloon_color_text() Type=Object}? Dann nehm ich den.,What else is left? {Expr Instance_Key=Broko_Child_2 Comp=Balloon_Quest Expression=get_balloon_color_text() Type=Object}? Then I'll take that one.
 DIALOGUE_BROKO_TOWN_1_BROKO_CHILD_2_BALLOON_QUEST_2_1_1,Was ist? Achso. Ich glaube ich wollte einen Ballon der Farbe {Expr Instance_Key=Broko_Child_2 Comp=Balloon_Quest Expression=get_balloon_color_text() Type=Object}.,What is it? I see. I think I wanted a balloon of the color {Expr Instance_Key=Broko_Child_2 Comp=Balloon_Quest Expression=get_balloon_color_text() Type=Object}.
 DIALOGUE_BROKO_TOWN_1_BROKO_CHILD_2_BALLOON_QUEST_3_1_1,Danke. Jetzt können wir den Feuervulkan zusammen beobachten.,Thank you. Now we can watch the fire volcano together.
-DIALOGUE_BUFFIN_HOUSE_3_CUP_1_1_1_1,"Eine gewöhnliche Tasse aus Keramik.","An ordinary cup made of ceramic."
-DIALOGUE_BUFFIN_HOUSE_3_BOOK_1_1_1_1,"Hier liegt ein Buch über Geister. Sollte ich es lesen?","Here is a book about ghosts. Should I read it?"
-DIALOGUE_BUFFIN_HOUSE_3_BOOK_1_1_2_1,"Geister sind in der Lage sich durch Objekte hindurchzubewegen.","Ghosts are able to move through objects."
-DIALOGUE_BUFFIN_HOUSE_3_BOOK_1_1_2_2,"Zusätzlich können sie sich fast komplett geräuschlos fortbewegen.","They can also move almost completely silently."
-DIALOGUE_BUFFIN_HOUSE_3_BOOK_1_1_2_3,"Diese Eigenschaften machen Geister zu überraschenden Gesellen.","These characteristics make ghosts surprising companions."
-DIALOGUE_BUFFIN_HOUSE_3_BOWL_1_1_1_1,"Eine hübsche kleine grüne Schale.","A lovely little green bowl."
-DIALOGUE_BUFFIN_HOUSE_3_CHEST_1_1_1_1,"Nichts. Die Kiste ist komplett leer.","Nothing. The chest is completely empty."
-DIALOGUE_BUFFIN_HOUSE_3_CANDLE_1_1_1_1,"Ich kenne mich zwar mit Sicherheitsvorkehrungen nicht so aus{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.","I am not very familiar with safety precautions{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}."
-DIALOGUE_BUFFIN_HOUSE_3_CANDLE_1_1_1_2,"Aber sicher kann das hier nicht sein.","But this can't be safe."
-DIALOGUE_BUFFIN_HOUSE_3_PLANT_1_1_1_1,"Diese Pflanze bekommt sicher nicht genug Sonnenlicht.","This plant is certainly not getting enough sunlight."
-DIALOGUE_BUFFIN_HOUSE_3_SHELF_1_LEFT_1_1_1,"Ein paar Stapel Teller. Nichts Ungewöhnliches.","A few piles of plates. Nothing unusual."
-DIALOGUE_BUFFIN_HOUSE_3_SHELF_1_RIGHT_1_1_1,"Größtenteils Bücher{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}. Es ist schwer zu lesen.","Mostly books{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}. It is difficult to read."
-DIALOGUE_BUFFIN_HOUSE_3_START_1_1_1,"Hier ist es aber ganz schön unheimlich{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.","It's pretty spooky here{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}."
-DIALOGUE_BUFFIN_HOUSE_3_START_1_1_2,"Woher weiß ich, dass das hier noch zum Fest gehört?","How do I know that this is still part of the festival?"
-DIALOGUE_BUFFIN_HOUSE_3_BOOK_FALL_1_1_1,"Nanu?","Huh?"
+DIALOGUE_BUFFIN_HOUSE_3_CUP_1_1_1_1,Eine gewöhnliche Tasse aus Keramik.,An ordinary cup made of ceramic.
+DIALOGUE_BUFFIN_HOUSE_3_BOOK_1_1_1_1,Hier liegt ein Buch über Geister. Sollte ich es lesen?,Here is a book about ghosts. Should I read it?
+DIALOGUE_BUFFIN_HOUSE_3_BOOK_1_1_2_1,Geister sind in der Lage sich durch Objekte hindurchzubewegen.,Ghosts are able to move through objects.
+DIALOGUE_BUFFIN_HOUSE_3_BOOK_1_1_2_2,Zusätzlich können sie sich fast komplett geräuschlos fortbewegen.,They can also move almost completely silently.
+DIALOGUE_BUFFIN_HOUSE_3_BOOK_1_1_2_3,Diese Eigenschaften machen Geister zu überraschenden Gesellen.,These characteristics make ghosts surprising companions.
+DIALOGUE_BUFFIN_HOUSE_3_BOWL_1_1_1_1,Eine hübsche kleine grüne Schale.,A lovely little green bowl.
+DIALOGUE_BUFFIN_HOUSE_3_CHEST_1_1_1_1,Nichts. Die Kiste ist komplett leer.,Nothing. The chest is completely empty.
+DIALOGUE_BUFFIN_HOUSE_3_CANDLE_1_1_1_1,Ich kenne mich zwar mit Sicherheitsvorkehrungen nicht so aus{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.,I am not very familiar with safety precautions{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.
+DIALOGUE_BUFFIN_HOUSE_3_CANDLE_1_1_1_2,Aber sicher kann das hier nicht sein.,But this can't be safe.
+DIALOGUE_BUFFIN_HOUSE_3_PLANT_1_1_1_1,Diese Pflanze bekommt sicher nicht genug Sonnenlicht.,This plant is certainly not getting enough sunlight.
+DIALOGUE_BUFFIN_HOUSE_3_SHELF_1_LEFT_1_1_1,Ein paar Stapel Teller. Nichts Ungewöhnliches.,A few piles of plates. Nothing unusual.
+DIALOGUE_BUFFIN_HOUSE_3_SHELF_1_RIGHT_1_1_1,Größtenteils Bücher{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}. Es ist schwer zu lesen.,Mostly books{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}. It is difficult to read.
+DIALOGUE_BUFFIN_HOUSE_3_START_1_1_1,Hier ist es aber ganz schön unheimlich{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.,It's pretty spooky here{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.
+DIALOGUE_BUFFIN_HOUSE_3_START_1_1_2,"Woher weiß ich, dass das hier noch zum Fest gehört?",How do I know that this is still part of the festival?
+DIALOGUE_BUFFIN_HOUSE_3_BOOK_FALL_1_1_1,Nanu?,Huh?
 DIALOGUE_BUFFIN_HOUSE_3_BOOK_FALL_1_2_1,"Warst du das, Tizian?","Was that you, Titian?"
-DIALOGUE_BUFFIN_HOUSE_3_BOOK_FALL_1_3_1,"Nein! Ich warte hier ganz ruhig bis Dr. Nutman kommt.","No! I'm waiting here quietly until Dr. Nutman arrives."
-DIALOGUE_BUFFIN_HOUSE_3_BOOK_FALL_1_3_2,"Magst du mir nicht beim Saubermachen helfen?","Won't you help me clean up?"
-DIALOGUE_BUFFIN_HOUSE_3_BOOK_FALL_1_3_3,"Ich will mit dem Aufräumen fertig sein bevor die große Zeremonie startet!","I want to finish cleaning up before the big ceremony starts!"
-DIALOGUE_BUFFIN_HOUSE_3_BOOK_FALL_1_3_4,"Aber Henry! Das ist extra alles so für das Grusel-Feeling!","But Henry! That's all for the creepy feeling!"
-DIALOGUE_BUFFIN_HOUSE_3_BOOK_FALL_1_3_5,"Das Feeling habe ich hier schon lange! Bei diesem Saustall!","I've had that feeling here for a long time! With this mess!"
-DIALOGUE_BUFFIN_HOUSE_3_PAINT_DELERE_1_1_1_1,"Ah! Monsieur Nutman!","Ah! Monsieur Nutman!"
-DIALOGUE_BUFFIN_HOUSE_3_PAINT_DELERE_1_1_2_1,"Isch bin wirklisch froh sie zu seh'ön!","I am really glad to see you!"
-DIALOGUE_BUFFIN_HOUSE_3_PAINT_DELERE_1_1_3_1,"Isch suche nämlich nach meinöm Brudör Elektrik DéLère.","I am looking for my brother Electric DéLère."
-DIALOGUE_BUFFIN_HOUSE_3_PAINT_DELERE_1_1_3_2,"Er meintö er wollö 'ier ein paar Batteriön holen für das Fest.","He said he wanted to get some batteries here for the party."
-DIALOGUE_BUFFIN_HOUSE_3_PAINT_DELERE_1_1_3_3,"{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}. Allördings war das vor Stundön!","{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}. But that was hours ago!"
-DIALOGUE_BUFFIN_HOUSE_3_PAINT_DELERE_1_1_4_1,"Und nün verspörrt mir dieses Tör den Weg und ich kommö nischt weitör!","And now this door is blocking my way and I can't get any further!"
-DIALOGUE_BUFFIN_HOUSE_3_PAINT_DELERE_1_1_5_1,"Isch wäre Ihnön wirklisch sehr verbundön wenn Sie 'ierfür eine Lösung findön könntön!","I would really appreciate it if you could find a solution for this!"
-DIALOGUE_BUFFIN_HOUSE_3_PAINT_DELERE_1_1_6_1,"Unabhängig davön{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}. Möschtön Sie einmal meine neustö Kreation erblickön?","Regardless of this{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}. Would you like to see my newest creation?"
+DIALOGUE_BUFFIN_HOUSE_3_BOOK_FALL_1_3_1,Nein! Ich warte hier ganz ruhig bis Dr. Nutman kommt.,No! I'm waiting here quietly until Dr. Nutman arrives.
+DIALOGUE_BUFFIN_HOUSE_3_BOOK_FALL_1_3_2,Magst du mir nicht beim Saubermachen helfen?,Won't you help me clean up?
+DIALOGUE_BUFFIN_HOUSE_3_BOOK_FALL_1_3_3,Ich will mit dem Aufräumen fertig sein bevor die große Zeremonie startet!,I want to finish cleaning up before the big ceremony starts!
+DIALOGUE_BUFFIN_HOUSE_3_BOOK_FALL_1_3_4,Aber Henry! Das ist extra alles so für das Grusel-Feeling!,But Henry! That's all for the creepy feeling!
+DIALOGUE_BUFFIN_HOUSE_3_BOOK_FALL_1_3_5,Das Feeling habe ich hier schon lange! Bei diesem Saustall!,I've had that feeling here for a long time! With this mess!
+DIALOGUE_BUFFIN_HOUSE_3_PAINT_DELERE_1_1_1_1,Ah! Monsieur Nutman!,Ah! Monsieur Nutman!
+DIALOGUE_BUFFIN_HOUSE_3_PAINT_DELERE_1_1_2_1,Isch bin wirklisch froh sie zu seh'ön!,I am really glad to see you!
+DIALOGUE_BUFFIN_HOUSE_3_PAINT_DELERE_1_1_3_1,Isch suche nämlich nach meinöm Brudör Elektrik DéLère.,I am looking for my brother Electric DéLère.
+DIALOGUE_BUFFIN_HOUSE_3_PAINT_DELERE_1_1_3_2,Er meintö er wollö 'ier ein paar Batteriön holen für das Fest.,He said he wanted to get some batteries here for the party.
+DIALOGUE_BUFFIN_HOUSE_3_PAINT_DELERE_1_1_3_3,{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}. Allördings war das vor Stundön!,{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}. But that was hours ago!
+DIALOGUE_BUFFIN_HOUSE_3_PAINT_DELERE_1_1_4_1,Und nün verspörrt mir dieses Tör den Weg und ich kommö nischt weitör!,And now this door is blocking my way and I can't get any further!
+DIALOGUE_BUFFIN_HOUSE_3_PAINT_DELERE_1_1_5_1,Isch wäre Ihnön wirklisch sehr verbundön wenn Sie 'ierfür eine Lösung findön könntön!,I would really appreciate it if you could find a solution for this!
+DIALOGUE_BUFFIN_HOUSE_3_PAINT_DELERE_1_1_6_1,Unabhängig davön{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}. Möschtön Sie einmal meine neustö Kreation erblickön?,Regardless of this{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}. Would you like to see my newest creation?
 DIALOGUE_BUFFIN_HOUSE_3_PAINT_DELERE_1_1_7_1,"Isch nennö es ""Der Grusel in Dir""{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}. Nischt besönders geistreich.","I call it ""The horror in You""{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}. Not particularly ingenious."
-DIALOGUE_BUFFIN_HOUSE_3_PAINT_DELERE_1_2_1_1,"'Aben Sie schon einö Idee, wie wir hier weiterkömmen?","Do you have any idea yet how we can proceed?"
-DIALOGUE_BUFFIN_HOUSE_3_PUZZLE_1_SOLVED_1_1_1,"Oh la la! Sie 'aben es geschafft!","Oh la la! You've made it!"
-DIALOGUE_BUFFIN_HOUSE_3_PUZZLE_1_SOLVED_1_2_1,"Nün könnön wir endlisch weitörsuchön.","Now we can finally keep on searching."
-DIALOGUE_BUFFIN_HOUSE_3_PUZZLE_2_START_1_1_1,"Mais oui! Das nennö isch wahre Künst!","Mais oui! That's what I call true art!"
-DIALOGUE_BUFFIN_HOUSE_3_PUZZLE_2_START_1_1_2,"So simpöl und doch ist die Nachrischt klar: Man möschte üns zum Laufön animierön!","So simple and yet the message is clear: Someone wants us to take a run!"
+DIALOGUE_BUFFIN_HOUSE_3_PAINT_DELERE_1_2_1_1,"'Aben Sie schon einö Idee, wie wir hier weiterkömmen?",Do you have any idea yet how we can proceed?
+DIALOGUE_BUFFIN_HOUSE_3_PUZZLE_1_SOLVED_1_1_1,Oh la la! Sie 'aben es geschafft!,Oh la la! You've made it!
+DIALOGUE_BUFFIN_HOUSE_3_PUZZLE_1_SOLVED_1_2_1,Nün könnön wir endlisch weitörsuchön.,Now we can finally keep on searching.
+DIALOGUE_BUFFIN_HOUSE_3_PUZZLE_2_START_1_1_1,Mais oui! Das nennö isch wahre Künst!,Mais oui! That's what I call true art!
+DIALOGUE_BUFFIN_HOUSE_3_PUZZLE_2_START_1_1_2,So simpöl und doch ist die Nachrischt klar: Man möschte üns zum Laufön animierön!,So simple and yet the message is clear: Someone wants us to take a run!
 DIALOGUE_BUFFIN_HOUSE_3_PUZZLE_2_START_1_1_3,"'ätte le Künstlör noch eine einzigö Elöment 'inzugöfügt, wärö die Intentiön vermutlisch verflogen.","If the artist had added just a single element, the intention would presumably have evaporated."
-DIALOGUE_BUFFIN_HOUSE_3_PUZZLE_2_START_1_1_4,"Und nün die Irönie: Diesör Schriftzüg projiziert auf das Tör, das üns den Weg verspörrt!","And here is the irony: This writing is projected onto the door that is blocking our way!"
-DIALOGUE_BUFFIN_HOUSE_3_PUZZLE_2_START_1_1_5,"'ier 'at der Künstlör wirklisch mit allön Mittöln gearbeitöt!","The artist has really worked with all kinds of means!"
+DIALOGUE_BUFFIN_HOUSE_3_PUZZLE_2_START_1_1_4,"Und nün die Irönie: Diesör Schriftzüg projiziert auf das Tör, das üns den Weg verspörrt!",And here is the irony: This writing is projected onto the door that is blocking our way!
+DIALOGUE_BUFFIN_HOUSE_3_PUZZLE_2_START_1_1_5,'ier 'at der Künstlör wirklisch mit allön Mittöln gearbeitöt!,The artist has really worked with all kinds of means!
 DIALOGUE_BUFFIN_HOUSE_3_PUZZLE_2_START_1_1_6,"Entschuldigön sie misch bittö, 'err Nutman.","Please excuse me, Mr. Nutman."
-DIALOGUE_BUFFIN_HOUSE_3_PUZZLE_2_START_1_1_7,"Isch muss diesön Moment einfach festhaltön.","I just have to capture this moment."
-DIALOGUE_BUFFIN_HOUSE_3_PUZZLE_2_PROJECTOR_START_1_1_1,"Es scheint als könnte ich diesen Beamer drehen{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.","It seems that I can rotate this projector{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}."
-DIALOGUE_BUFFIN_HOUSE_3_PUZZLE_2_COMMENT_1_1_1,"Monsieur Nutman! Sie verdeckön die ganzö Künst!","Monsieur Nutman! Mr. Nutman! You're covering up all the art!"
-DIALOGUE_BUFFIN_HOUSE_3_PUZZLE_2_COMMENT_1_2_1,"Nanü? Ebön war die Künst noch da!","Why, the art was just there!"
-DIALOGUE_BUFFIN_HOUSE_3_PUZZLE_2_COMMENT_1_3_1,"Das Bild ist fört. Bittö lassön sie misch weitörmalön!","The picture is gone. Please let me continue painting!"
+DIALOGUE_BUFFIN_HOUSE_3_PUZZLE_2_START_1_1_7,Isch muss diesön Moment einfach festhaltön.,I just have to capture this moment.
+DIALOGUE_BUFFIN_HOUSE_3_PUZZLE_2_PROJECTOR_START_1_1_1,Es scheint als könnte ich diesen Beamer drehen{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.,It seems that I can rotate this projector{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.
+DIALOGUE_BUFFIN_HOUSE_3_PUZZLE_2_COMMENT_1_1_1,Monsieur Nutman! Sie verdeckön die ganzö Künst!,Monsieur Nutman! Mr. Nutman! You're covering up all the art!
+DIALOGUE_BUFFIN_HOUSE_3_PUZZLE_2_COMMENT_1_2_1,Nanü? Ebön war die Künst noch da!,"Why, the art was just there!"
+DIALOGUE_BUFFIN_HOUSE_3_PUZZLE_2_COMMENT_1_3_1,Das Bild ist fört. Bittö lassön sie misch weitörmalön!,The picture is gone. Please let me continue painting!
 DIALOGUE_BUFFIN_HOUSE_3_PUZZLE_2_COMMENT_1_4_1,"Wenn Sie einö Portrait von sisch möschten, solltön Sie das vor'ör anmeldön!","If you would like a portrait of yourself, you should register in advance!"
-DIALOGUE_BUFFIN_HOUSE_3_PUZZLE_2_COMMENT_2_1_1,"Ohh! Sie mögen es wohl mir ins Gesischt zu leuschtön!","Ohh! It seems like you like to shine in my face!"
-DIALOGUE_BUFFIN_HOUSE_3_PUZZLE_2_COMMENT_2_2_1,"Isch kann das Referenzbild gar nischt mehr sehön!","I can't see the reference picture anymore!"
-DIALOGUE_BUFFIN_HOUSE_3_PUZZLE_2_COMMENT_2_3_1,"Ein eschtör Künstlör, wie Isch, genießt ös auch manschmal im Rampönlischt zu ste'ön!","A real artist like me enjoys being in the spotlight sometimes!"
+DIALOGUE_BUFFIN_HOUSE_3_PUZZLE_2_COMMENT_2_1_1,Ohh! Sie mögen es wohl mir ins Gesischt zu leuschtön!,Ohh! It seems like you like to shine in my face!
+DIALOGUE_BUFFIN_HOUSE_3_PUZZLE_2_COMMENT_2_2_1,Isch kann das Referenzbild gar nischt mehr sehön!,I can't see the reference picture anymore!
+DIALOGUE_BUFFIN_HOUSE_3_PUZZLE_2_COMMENT_2_3_1,"Ein eschtör Künstlör, wie Isch, genießt ös auch manschmal im Rampönlischt zu ste'ön!",A real artist like me enjoys being in the spotlight sometimes!
 DIALOGUE_BUFFIN_HOUSE_3_PUZZLE_2_COMMENT_2_4_1,"Isch 'abe bereits einö strahlönde Persönlischkeit, Sie müssön misch nischt auch noch anleuchtön!","I already have a radiant personality, you don't have to shine a light on me!"
-DIALOGUE_BUFFIN_HOUSE_3_PUZZLE_2_SOLVED_1_1_1,"Unglaublisch!","Unbelievable!"
+DIALOGUE_BUFFIN_HOUSE_3_PUZZLE_2_SOLVED_1_1_1,Unglaublisch!,Unbelievable!
 DIALOGUE_BUFFIN_HOUSE_3_PUZZLE_2_SOLVED_1_1_2,"Isch wolltö es ihnön nicht sagön, aber isch dachtö dieses Rätsöl wäre unmöglisch!","I didn't want to tell you, but I thought this puzzle was impossible!"
-DIALOGUE_BUFFIN_HOUSE_3_PUZZLE_2_SOLVED_1_2_1,"{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}. Alors! Elektrik DéLère kann nischt mehr weit entförnt sein!","{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}. Alors! Electric DéLère can't be too far away now!"
-DIALOGUE_BUFFIN_HOUSE_3_PUZZLE_3_START_1_1_1,"Oh la la! Wie kommön dönn Schienön in diesö 'Aus?","Oh la la! How did rails end up in this house?"
-DIALOGUE_BUFFIN_HOUSE_3_ELECTRIC_DELERE_1_1_1_1,"Elektrik DéLère! Endlisch 'abön wir disch gefundön!","Electrical DéLère! Finally, we found you!"
-DIALOGUE_BUFFIN_HOUSE_3_ELECTRIC_DELERE_1_1_2_1,"KÜNST!","PAINT!"
-DIALOGUE_BUFFIN_HOUSE_3_ELECTRIC_DELERE_1_1_3_1,"Wir 'abön uns ewisch nischt mehr gese'ön.","We haven't seen each other for ages."
-DIALOGUE_BUFFIN_HOUSE_3_ELECTRIC_DELERE_1_1_4_1,"Ich habe leider generell ewig nichts mehr gesehen.","Unfortunately, I haven't seen anything in ages overall."
-DIALOGUE_BUFFIN_HOUSE_3_ELECTRIC_DELERE_1_1_4_2,"Ich habe versprochen für das Fest ein paar Batterien zu organisieren{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.","I promised to get some batteries for the festival{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}."
+DIALOGUE_BUFFIN_HOUSE_3_PUZZLE_2_SOLVED_1_2_1,{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}. Alors! Elektrik DéLère kann nischt mehr weit entförnt sein!,{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}. Alors! Electric DéLère can't be too far away now!
+DIALOGUE_BUFFIN_HOUSE_3_PUZZLE_3_START_1_1_1,Oh la la! Wie kommön dönn Schienön in diesö 'Aus?,Oh la la! How did rails end up in this house?
+DIALOGUE_BUFFIN_HOUSE_3_ELECTRIC_DELERE_1_1_1_1,Elektrik DéLère! Endlisch 'abön wir disch gefundön!,"Electrical DéLère! Finally, we found you!"
+DIALOGUE_BUFFIN_HOUSE_3_ELECTRIC_DELERE_1_1_2_1,KÜNST!,PAINT!
+DIALOGUE_BUFFIN_HOUSE_3_ELECTRIC_DELERE_1_1_3_1,Wir 'abön uns ewisch nischt mehr gese'ön.,We haven't seen each other for ages.
+DIALOGUE_BUFFIN_HOUSE_3_ELECTRIC_DELERE_1_1_4_1,Ich habe leider generell ewig nichts mehr gesehen.,"Unfortunately, I haven't seen anything in ages overall."
+DIALOGUE_BUFFIN_HOUSE_3_ELECTRIC_DELERE_1_1_4_2,Ich habe versprochen für das Fest ein paar Batterien zu organisieren{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.,I promised to get some batteries for the festival{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.
 DIALOGUE_BUFFIN_HOUSE_3_ELECTRIC_DELERE_1_1_4_3,"Das Haus hier soll wohl ein Batterien Hotspot sein, allerdings finde ich in der Dunkelheit rein gar nichts.","This house is supposed to be a battery hotspot, but I can't find anything in the dark."
 DIALOGUE_BUFFIN_HOUSE_3_ELECTRIC_DELERE_1_1_4_4,"Ich brauche 6 Batterien, dann kann ich endlich zurück zum Fest.","I need 6 batteries, then I can finally go back to the festival."
-DIALOGUE_BUFFIN_HOUSE_3_ELECTRIC_DELERE_1_1_5_1,"Sacre Bleu!","Sacre Bleu!"
-DIALOGUE_BUFFIN_HOUSE_3_VACUUM_CLEANER_1_1_1_1,"Musst du jetzt unbedingt anfangen zu saugen?","Do you really need to start vacuuming now?"
-DIALOGUE_BUFFIN_HOUSE_3_VACUUM_CLEANER_1_1_1_2,"Es ist nicht mehr lange hin bis zur großen Zeremonie.","It's not long now until the big ceremony."
-DIALOGUE_BUFFIN_HOUSE_3_VACUUM_CLEANER_1_1_1_3,"Ich will auch irgendwann Feierabend haben!","I want to call it a day at some point too!"
-DIALOGUE_BUFFIN_HOUSE_3_VACUUM_CLEANER_1_1_1_4,"Zudem ist das Haus in einem fürchterlichen Zustand{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.","Moreover, the house is in terrible condition{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}."
-DIALOGUE_BUFFIN_HOUSE_3_VACUUM_CLEANER_1_1_1_5,"Guck' dir allein mal die ganzen Spinnenweben an!","Just look at all those spider webs!"
+DIALOGUE_BUFFIN_HOUSE_3_ELECTRIC_DELERE_1_1_5_1,Sacre Bleu!,Sacre Bleu!
+DIALOGUE_BUFFIN_HOUSE_3_VACUUM_CLEANER_1_1_1_1,Musst du jetzt unbedingt anfangen zu saugen?,Do you really need to start vacuuming now?
+DIALOGUE_BUFFIN_HOUSE_3_VACUUM_CLEANER_1_1_1_2,Es ist nicht mehr lange hin bis zur großen Zeremonie.,It's not long now until the big ceremony.
+DIALOGUE_BUFFIN_HOUSE_3_VACUUM_CLEANER_1_1_1_3,Ich will auch irgendwann Feierabend haben!,I want to call it a day at some point too!
+DIALOGUE_BUFFIN_HOUSE_3_VACUUM_CLEANER_1_1_1_4,Zudem ist das Haus in einem fürchterlichen Zustand{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.,"Moreover, the house is in terrible condition{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}."
+DIALOGUE_BUFFIN_HOUSE_3_VACUUM_CLEANER_1_1_1_5,Guck' dir allein mal die ganzen Spinnenweben an!,Just look at all those spider webs!
 DIALOGUE_BROKO_FOREST_1_PEANUT_BUSH_UNKNOWN_1_1_1,Was ist das denn für eine Pflanze?,What kind of plant is that?
 DIALOGUE_BROKO_FOREST_1_PEANUT_BUSH_UNKNOWN_1_1_2,"Naja, ich stecke ihre Früchte einfach mal ein{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}.","Well, I'll just pocket their fruit{Wait Time=0.5}.{Wait Time=0.5}.{Wait Time=0.5}."
 DIALOGUE_BROKO_FOREST_1_PEANUT_BUSH_GAIN_1_1_1,Handvoll ungeknackter Erdnüsse erhalten!,Received Handful uncracked peanuts!
@@ -1006,4 +1002,4 @@ DIALOGUE_GAME_OVER_QUOTE_DR_NUTMAN_2_1_1_1,Ich dachte immer der Tod holt einen p
 DIALOGUE_GAME_OVER_QUOTE_DR_NUTMAN_3_1_1_1,Ich hoffe die anderen können diesen Verlust ertragen.,I hope the others can bear this loss.
 DIALOGUE_GAME_OVER_QUOTE_DR_NUTMAN_4_1_1_1,Ob es auch nach dem Tod noch Edelsteine gibt?,Will there still be gemstones after death?
 DIALOGUE_GAME_OVER_QUOTE_DR_NUTMAN_5_1_1_1,Wie konnte das nur passieren?,How could this happen?
-DIALOGUE_DEBUG_2D_TEST_1_1_1,Ein Sample Text um zu überprüfen ob der beste Coder Deutschlands alles im Griff hat,A sample text to check if germanys best coder has got it.
+DIALOGUE_DEBUG_2D_TEST_1_1_1,A sample text in 2D using the same UI as in 3D,A sample text in 2D using the same UI as in 3D

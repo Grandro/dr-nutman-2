@@ -8,6 +8,4 @@
 script = ExtResource("2_3b1xl")
 
 [node name="Value" parent="." index="1" instance=ExtResource("2_3rpdj")]
-light_mask = 8
-visibility_layer = 8
 layout_mode = 2

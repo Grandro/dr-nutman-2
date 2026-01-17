@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b31wlri5vunar"]
+[gd_scene load_steps=10 format=3 uid="uid://b31wlri5vunar"]
 
 [ext_resource type="PackedScene" uid="uid://gi3fh4x5672i" path="res://Global_Scenes/Debug/Command_Edit/Command_Base.tscn" id="1"]
 [ext_resource type="Script" uid="uid://bcdgep250uagx" path="res://Global_Scenes/Debug/Command_Edit/Teleport/Scripts/Teleport.gd" id="2"]
@@ -6,6 +6,22 @@
 [ext_resource type="PackedScene" uid="uid://ceaqnana6y842" path="res://Global_Scenes/Debug/Scenes/Value_Select/Var_Select.tscn" id="4_24dgs"]
 [ext_resource type="PackedScene" uid="uid://dmysqox083lhl" path="res://Global_Scenes/Debug/Scenes/Value_Select/Value_Bool.tscn" id="5_e43bm"]
 [ext_resource type="PackedScene" uid="uid://qs71x71lxlxi" path="res://Global_Scenes/Debug/Scenes/Value_Select/Value_Edit.tscn" id="5_l3xe4"]
+[ext_resource type="Script" uid="uid://di7b7k8gw5crj" path="res://Global_Scenes/Debug/Scenes/Value_Edit/Scripts/Data.gd" id="6_jw5n4"]
+
+[sub_resource type="Resource" id="Resource_5af6o"]
+script = ExtResource("6_jw5n4")
+_e_value = &""
+_e_expanded = true
+metadata/_custom_type_script = "uid://di7b7k8gw5crj"
+
+[sub_resource type="Resource" id="Resource_jes4x"]
+script = ExtResource("6_jw5n4")
+_e_value = []
+_e_type_editable = false
+_e_expanded = true
+_e_removable = false
+_e_fb_child_data = SubResource("Resource_5af6o")
+metadata/_custom_type_script = "uid://di7b7k8gw5crj"
 
 [node name="Teleport" instance=ExtResource("1")]
 script = ExtResource("2")
@@ -56,12 +72,9 @@ _e_var_select_scene = ExtResource("4_24dgs")
 
 [node name="Troop" parent="Window/Contents/Margin/VBox" index="3" instance=ExtResource("5_l3xe4")]
 layout_mode = 2
+_e_data = SubResource("Resource_jes4x")
 _e_heading_loc_id = "DEBUG_CUTSCENES_TROOP"
 _e_var_select_scene = ExtResource("4_24dgs")
-
-[node name="Value" parent="Window/Contents/Margin/VBox/Troop" index="1"]
-_e_type = "Array"
-_e_children_type = "String"
 
 [node name="Handle_Lost_Battle" parent="Window/Contents/Margin/VBox" index="4" instance=ExtResource("5_e43bm")]
 layout_mode = 2
@@ -92,4 +105,3 @@ layout_mode = 2
 text = "CANCEL"
 
 [editable path="Window"]
-[editable path="Window/Contents/Margin/VBox/Troop"]

@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://m064wf80xii3"]
+
+[ext_resource type="PackedScene" uid="uid://dbxigq53qnnvo" path="res://Global_Resources/Mapping/3D/Plane/Plane_Tile.tscn" id="1_2srbo"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_rr035"]
+resource_local_to_scene = true
+size = Vector2(1, 1)
+
+[node name="Rails_Part_Base" instance=ExtResource("1_2srbo")]
+mesh = SubResource("PlaneMesh_rr035")
+
+[node name="Path" type="Path3D" parent="." index="0"]

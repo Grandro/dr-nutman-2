@@ -1,32 +1,33 @@
-extends "res://Global_Scenes/Debug/Command_Edit/Scripts/Command_Base.gd"
+extends DebugCommandEditCommandBase
+class_name DebugCommandEditCommandChangeCoinsAmount
 
-@onready var _a_Type = get_node("Window/Contents/Margin/VBox/Type")
-@onready var _a_Amount = get_node("Window/Contents/Margin/VBox/Amount")
+@onready var _a_Type: DebugValueSelectOptions = get_node("Window/Contents/Margin/VBox/Type")
+@onready var _a_Amount: DebugValueSelectNum = get_node("Window/Contents/Margin/VBox/Amount")
 
-func _ready():
+func _ready() -> void:
 	_a_OK = get_node("Window/Contents/Margin/VBox/HBox/OK")
 	_a_Cancel = get_node("Window/Contents/Margin/VBox/HBox/Cancel")
 	super()
 	
 	_a_Type.update_options()
 
-func open(p_instance, p_data, p_res_data):
+func open(p_instance: DebugCommandEditorEntryBase, p_data: Dictionary, p_res_data: Dictionary) -> void:
 	super(p_instance, p_data, p_res_data)
 	
 	_a_Window.show()
 	show()
 
-func _open_init(_p_res_data):
+func _open_init(_p_res_data: Dictionary) -> void:
 	_a_Type.load_data_init()
 	_a_Amount.load_data_init()
 
-func _open_load(p_data, _p_res_data):
-	_a_Type.load_data(p_data["Type"])
-	_a_Amount.load_data(p_data["Amount"])
+func _open_load(p_data: Dictionary, _p_res_data: Dictionary) -> void:
+	_a_Type.load_data(p_data[&"Type"])
+	_a_Amount.load_data(p_data[&"Amount"])
 
-func _get_save_data():
-	var data = {}
-	data["Type"] = _a_Type.get_save_data()
-	data["Amount"] = _a_Amount.get_save_data()
+func _get_save_data() -> Dictionary:
+	var data: Dictionary = {}
+	data[&"Type"] = _a_Type.get_save_data()
+	data[&"Amount"] = _a_Amount.get_save_data()
 	
 	return data

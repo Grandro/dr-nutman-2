@@ -15,9 +15,6 @@ script = ExtResource("1_yff7e")
 script = ExtResource("4_2yert")
 _e_shared = ExtResource("5_ruyho")
 
-[node name="1" parent="Interactions" index="0"]
-_e_match_dir = false
-
 [node name="Nav_Obstacle" parent="." groups=["NavMesh_Main"] instance=ExtResource("6_34en8")]
 affect_navigation_mesh = true
 avoidance_enabled = false

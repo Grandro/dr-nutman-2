@@ -1,6 +1,7 @@
-extends "res://Global_Resources/Databases/Items/Item_Data.gd"
+extends ItemData
+class_name EquipableData
 
 @export var _e_stats: StatsData = null
 
-func get_stats():
+func get_stats() -> StatsData:
 	return _e_stats

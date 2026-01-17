@@ -9,7 +9,7 @@
 
 [node name="Choice_Entry" groups=["Translated"] instance=ExtResource("1")]
 offset_right = 768.0
-offset_bottom = 252.0
+offset_bottom = 30.0
 script = ExtResource("4")
 
 [node name="Loc_ID" parent="HBox/VBox/Options" index="0" instance=ExtResource("3_57kpo")]

@@ -4,15 +4,15 @@
 [ext_resource type="Script" uid="uid://v8hnexgb4kp4" path="res://Scenes/NutOS/Content/Desktop/Apps/Settings/Menus/Keyboard/Scripts/Color_Entry.gd" id="2"]
 [ext_resource type="Texture2D" uid="uid://dc3hbxm77uphg" path="res://Scenes/NutOS/Content/Desktop/Apps/Settings/Menus/Keyboard/Sprites/Fav.png" id="3"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4ddvd"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kyghj"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k3gb3"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_casnf"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_30vq3"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_casnf"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k3gb3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kyghj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4ddvd"]
 
 [node name="Color_Entry" type="MarginContainer"]
 light_mask = 8
@@ -33,11 +33,11 @@ color = Color(0.329412, 0.768627, 0.32549, 1)
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
-theme_override_styles/focus = SubResource("StyleBoxEmpty_4ddvd")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_kyghj")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_k3gb3")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_30vq3")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_casnf")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_30vq3")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_k3gb3")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_kyghj")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4ddvd")
 
 [node name="Border" type="TextureRect" parent="."]
 light_mask = 8

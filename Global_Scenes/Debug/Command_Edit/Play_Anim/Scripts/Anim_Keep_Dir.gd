@@ -1,17 +1,18 @@
-extends "res://Global_Scenes/Debug/Scenes/Value_Select/Scripts/Value_Options.gd"
+extends DebugValueSelectOptions
+class_name DebugCommandEditCommandPlayAnimKeepDir
 
-const _a_DIRS = ["Down", "Left", "Right", "Up"]
+const _a_DIRS: Array[StringName] = [&"Down", &"Left", &"Right", &"Up"]
 
-var _a_cut_anims = {} # Match anims to cut_anim
+var _a_cut_anims: Dictionary = {} # Match anims to cut_anim
 
-func update_options():
+func update_options() -> void:
 	_clear_options()
 	
-	var anims = {}
-	for anim in _e_options:
-		var cut_anim = anim.substr(0, anim.rfind("_"))
-		var has_dir = false
-		for dir in _a_DIRS:
+	var anims: Dictionary = {}
+	for anim: StringName in _e_options:
+		var cut_anim: StringName = anim.substr(0, anim.rfind("_"))
+		var has_dir: bool = false
+		for dir: StringName in _a_DIRS:
 			if "_" + dir in anim:
 				has_dir = true
 				if !anims.has(cut_anim):
@@ -21,19 +22,19 @@ func update_options():
 		if has_dir:
 			_a_cut_anims[anims[cut_anim]] = cut_anim
 	
-	var keys = anims.keys()
-	for i in keys.size():
-		var key = keys[i]
+	var keys: Array[StringName]; keys.assign(anims.keys())
+	for i: int in keys.size():
+		var key: StringName = keys[i]
 		_a_option_idxs[key] = i
 		_a_Value.add_item(key)
 		_a_Value.set_item_metadata(i, anims[key])
 
-func get_save_data():
-	var data = super()
-	var anims = get_selected_key()
+func get_save_data() -> Dictionary:
+	var data: Dictionary = super()
+	var anims: Variant = get_selected_key()
 	if anims == null:
-		data["Value"] = null
+		data[&"Value"] = null
 	else:
-		data["Value"] = _a_cut_anims[anims]
+		data[&"Value"] = _a_cut_anims[anims]
 	
 	return data

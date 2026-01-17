@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://btuceiu23jtwm"]
 
 [ext_resource type="PackedScene" uid="uid://bc12fh7xhsyy6" path="res://Global_Scenes/Debug/Scenes/Value_Edit/Value_Edit.tscn" id="2"]
-[ext_resource type="Script" uid="uid://7ettqtpmej5x" path="res://Global_Scenes/Debug/Dialogues/Attributes/Scripts/Choice_Entry.tres.gd" id="2_qiiuv"]
+[ext_resource type="Script" uid="uid://7ettqtpmej5x" path="res://Global_Scenes/Debug/Dialogues/Attributes/Scripts/Choice_Entry.gd" id="2_qiiuv"]
 [ext_resource type="Theme" uid="uid://pr4yljlh62sp" path="res://Global_Resources/Themes/Debug/Debug.tres" id="3"]
 [ext_resource type="Texture2D" uid="uid://hijmuyifb08f" path="res://Global_Resources/Sprites/UI/Delete_Hover.png" id="4"]
 [ext_resource type="Texture2D" uid="uid://df65or4arp1io" path="res://Global_Resources/Sprites/UI/Delete_Normal.png" id="5"]
@@ -113,4 +113,4 @@ vertical_alignment = 1
 [node name="Value_Edit" parent="HBox/VBox/Value" instance=ExtResource("2")]
 layout_mode = 2
 theme = ExtResource("3")
-_e_type = "String"
+_e_type = "String_Name"

@@ -1,69 +1,70 @@
 extends Character3DObject
+class_name MapBuffinHouse3ObjectPaintDeLere
 
-@export var _e_ray_range : float = 2.0
-@export var _e_player_comment_amount : int = 4
-@export var _e_self_comment_amount : int = 4
-@export var _e_comment_time : float = 5.0
-@export var _e_comment_cd : float = 5.0
+@export var _e_ray_range: float = 2.0
+@export var _e_player_comment_amount: int = 4
+@export var _e_self_comment_amount: int = 4
+@export var _e_comment_time: float = 5.0
+@export var _e_comment_cd: float = 5.0
 
-var _a_Canvas_Scene = preload("res://Scenes/NPC/3D/Buffins/Paint_DeLere/Canvases/1.tscn")
+var _a_Canvas_Scene: PackedScene = preload("res://Scenes/NPC/3D/Buffins/Paint_DeLere/Canvases/1.tscn")
 
-@onready var _a_Display = get_node("Display")
-@onready var _a_Interactions = get_node("Interactions")
-@onready var _a_Movement = get_node("Movement")
-@onready var _a_Movement_Nav_Agent = get_node("Movement/Nav_Agent")
-@onready var _a_States = get_node("States")
-@onready var _a_Anims = get_node("Anims")
-@onready var _a_Adjust_Ray = get_node("Adjust_Ray")
-@onready var _a_Comment_Timer = get_node("Comment_Timer")
-@onready var _a_Comment_CD = get_node("Comment_CD")
+@onready var _a_Display: CompDisplay3D = get_node("Display")
+@onready var _a_Interactions: CompInteractions3D = get_node("Interactions")
+@onready var _a_Movement: CompMovementCharacter3D = get_node("Movement")
+@onready var _a_Movement_Nav_Agent: CompMovementNavAgent3D = get_node("Movement/Nav_Agent")
+@onready var _a_States: CompStates = get_node("States")
+@onready var _a_Anims: CompAnims = get_node("Anims")
+@onready var _a_Adjust_Ray: RayCast3D = get_node("Adjust_Ray")
+@onready var _a_Comment_Timer: Timer = get_node("Comment_Timer")
+@onready var _a_Comment_CD: Timer = get_node("Comment_CD")
 
-var _a_player = null
-var _a_projector = null
-var _a_canvas = null
+var _a_player: Player3D = null
+var _a_projector: ObjectProjectorBase = null
+var _a_canvas: Static3DObject
 
-var _a_paint_from_projector = false
-var _a_normal = Vector3.ZERO
-var _a_final_pos = Vector3.ZERO
-var _a_ray_collide_type = "" # Player/Self/Canvas/Terrain
-var _a_painting = false
-var _a_walking = false
-var _a_dodging = false
+var _a_paint_from_projector: bool = false
+var _a_normal: Vector3
+var _a_final_pos: Vector3
+var _a_ray_collide_type: StringName # Player/Self/Canvas/Terrain
+var _a_painting: bool = false
+var _a_walking: bool = false
+var _a_dodging: bool = false
 
-func _ready():
+func _ready() -> void:
 	super()
 	_a_Comment_Timer.timeout.connect(_on_Comment_Timer_timeout)
 	_a_Comment_CD.timeout.connect(_on_Comment_CD_timeout)
 	
 	_a_canvas = _a_Canvas_Scene.instantiate()
 	_a_canvas.set_as_top_level(true)
-	_a_canvas.set_name("Canvas_Paint_DeLere")
+	_a_canvas.set_name(&"Canvas_Paint_DeLere")
 	add_child(_a_canvas)
 	_a_canvas.hide()
 
-func start_canvas_tween_picture_progress(p_from, p_to, p_percent_duration):
-	_a_canvas.comph().call_comp("Display", "start_tween_picture_progress", [p_from, p_to, p_percent_duration])
+func start_canvas_tween_picture_progress(p_from: float, p_to: float, p_percent_duration: float) -> void:
+	_a_canvas.comph().call_comp("Display", &"start_tween_picture_progress", [p_from, p_to, p_percent_duration])
 
-func _ray_collided_self():
+func _ray_collided_self() -> void:
 	if _a_dodging:
 		return
 	
 	_a_Adjust_Ray.set_enabled(true)
 	
-	var nav_map = get_world_3d().get_navigation_map()
-	for degrees in [90, -90]:
-		var radians = deg_to_rad(degrees)
-		var adjust_vec = _a_normal.rotated(Vector3.UP, radians)
-		var pos = _a_final_pos + adjust_vec
+	var nav_map: RID = get_world_3d().get_navigation_map()
+	for degrees: float in [90.0, -90.0]:
+		var radians: float = deg_to_rad(degrees)
+		var adjust_vec: Vector3 = _a_normal.rotated(Vector3.UP, radians)
+		var pos: Vector3 = _a_final_pos + adjust_vec
 		pos = NavigationServer3D.map_get_closest_point(nav_map, pos)
 		
-		var distance = global_position.distance_to(pos)
+		var distance: float = global_position.distance_to(pos)
 		if distance < 0.5:
 			continue
 		pos.y = 1.0
 		
 		_a_Adjust_Ray.set_global_position(Vector3(_a_final_pos.x, 1.0, _a_final_pos.z))
-		var local_pos = _a_Adjust_Ray.to_local(pos)
+		var local_pos: Vector3 = _a_Adjust_Ray.to_local(pos)
 		_a_Adjust_Ray.set_target_position(local_pos)
 		_a_Adjust_Ray.force_raycast_update()
 		
@@ -74,7 +75,7 @@ func _ray_collided_self():
 	
 	_a_Adjust_Ray.set_enabled(false)
 
-func _ray_collided_terrain(p_pos, p_normal):
+func _ray_collided_terrain(p_pos: Vector3, p_normal: Vector3) -> void:
 	_a_normal = p_normal
 	_a_final_pos = p_pos + p_normal * _e_ray_range * 0.75
 	_a_final_pos.y = 0.0
@@ -83,54 +84,54 @@ func _ray_collided_terrain(p_pos, p_normal):
 		return
 	
 	if _a_painting:
-		var distance = global_position.distance_to(_a_final_pos)
+		var distance: float = global_position.distance_to(_a_final_pos)
 		if distance > _e_ray_range:
 			_walk_to_pos(_a_final_pos)
 		else:
-			var needed_dir = Global.get_dir_to_pos(global_position, p_pos)
-			var curr_dir = _a_Movement.get_dir()
+			var needed_dir: StringName = Global.get_dir_to_pos(global_position, p_pos)
+			var curr_dir: StringName = _a_Movement.get_dir()
 			if needed_dir != curr_dir:
 				_place_canvas()
 	else:
 		_walk_to_pos(_a_final_pos)
 
-func _place_canvas():
-	var dir = Global.get_vec_dir(-_a_normal)
+func _place_canvas() -> void:
+	var dir: StringName = Global.get_vec_dir(-_a_normal)
 	_a_Movement.set_dir(dir)
 	_a_Anims.update_anim()
 	
-	var canvas_dir = Global.get_opposite_dir(dir)
+	var canvas_dir: StringName = Global.get_opposite_dir(dir)
 	_a_canvas.set_global_position(global_position - _a_normal)
-	_a_canvas.comph().call_comp("Display", "update_billboard_rotation")
-	_a_canvas.comph().call_comp("Movement", "set_dir", [canvas_dir])
-	_a_canvas.comph().call_comp("Anims", "update_anim")
+	_a_canvas.comph().call_comp("Display", &"update_billboard_rotation")
+	_a_canvas.comph().call_comp("Movement", &"set_dir", [canvas_dir])
+	_a_canvas.comph().call_comp("Anims", &"update_anim")
 	_a_canvas.show()
 
-func _pick_up_canvas():
-	_a_canvas.comph().call_comp("Display", "stop_tween_picture_progress")
+func _pick_up_canvas() -> void:
+	_a_canvas.comph().call_comp("Display", &"stop_tween_picture_progress")
 	_a_canvas.set_global_position(Vector3.ZERO)
 	_a_canvas.hide()
 	_set_painting(false)
 
-func _walk_to_pos(p_pos):
+func _walk_to_pos(p_pos: Vector3) -> void:
 	if !_a_walking:
 		_pick_up_canvas()
-	_a_States.set_state("Walk")
+	_a_States.set_state(&"Walk")
 	_a_Movement_Nav_Agent.set_avoidance_enabled(true)
 	_a_Movement_Nav_Agent.set_path([p_pos])
 	_a_walking = true
 
-func set_player(p_player):
+func set_player(p_player: Player3D) -> void:
 	_a_player = p_player
 
-func set_projector(p_projector):
+func set_projector(p_projector: ObjectProjectorBase) -> void:
 	_a_projector = p_projector
 
-func set_billboard(p_billboard):
+func set_billboard(p_billboard: bool) -> void:
 	_a_Display.set_billboard(p_billboard)
-	_a_canvas.comph().call_comp("Display", "set_billboard", [p_billboard])
+	_a_canvas.comph().call_comp("Display", &"set_billboard", [p_billboard])
 
-func set_paint_from_projector(p_paint_from_projector):
+func set_paint_from_projector(p_paint_from_projector: bool) -> void:
 	if _a_paint_from_projector == p_paint_from_projector:
 		return
 	_a_paint_from_projector = p_paint_from_projector
@@ -140,10 +141,10 @@ func set_paint_from_projector(p_paint_from_projector):
 		_a_projector.power_changed.connect(_on_Projector_power_changed)
 		_a_Movement_Nav_Agent.path_finished.connect(_on_Movement_Nav_Agent_path_finished)
 		
-		var projector_texture = _a_projector.get_projector_texture()
-		var billboard = _a_Display.get_billboard()
-		_a_canvas.comph().call_comp("Display", "set_picture_texture", [projector_texture])
-		_a_canvas.comph().call_comp("Display", "set_billboard", [billboard])
+		var projector_texture: ImageTexture = _a_projector.get_projector_texture()
+		var billboard: bool = _a_Display.get_billboard()
+		_a_canvas.comph().call_comp("Display", &"set_picture_texture", [projector_texture])
+		_a_canvas.comph().call_comp("Display", &"set_billboard", [billboard])
 	else:
 		_a_projector.model_ray_collided.disconnect(_on_Projector_model_ray_collided)
 		_a_projector.power_changed.disconnect(_on_Projector_power_changed)
@@ -151,141 +152,141 @@ func set_paint_from_projector(p_paint_from_projector):
 		_a_Comment_Timer.stop()
 		_a_Comment_CD.stop()
 
-func set_canvas_picture_progress(p_progress):
-	_a_canvas.comph().call_comp("Display", "set_picture_progress", [p_progress])
+func set_canvas_picture_progress(p_progress: float) -> void:
+	_a_canvas.comph().call_comp("Display", &"set_picture_progress", [p_progress])
 
-func _set_painting(p_painting):
+func _set_painting(p_painting: bool) -> void:
 	_a_Interactions.set_look_at_update(!p_painting)
 	_a_Interactions.set_look_at_activate(!p_painting)
 	
-	var display_comp = _a_canvas.comph().get_comp("Display")
+	var display_comp: CompPaintDeLereCanvasDisplay = _a_canvas.comph().get_comp("Display")
 	if p_painting:
-		var progress = display_comp.get_picture_progress()
+		var progress: float = display_comp.get_picture_progress()
 		display_comp.start_tween_picture_progress(progress, 0.9, 3.0)
-		_a_States.set_state("Paint")
+		_a_States.set_state(&"Paint")
 	else:
 		display_comp.stop_tween_picture_progress()
-		_a_States.set_state("Idle")
+		_a_States.set_state(&"Idle")
 	
 	_a_Anims.update_anim()
 	_a_painting = p_painting
 
-func get_save_data():
-	var data = super()
-	data["Comment_Timer"] = _a_Comment_Timer.get_time_left()
-	data["Comment_CD"] = _a_Comment_CD.get_time_left()
-	var projector_path = ""
+func get_save_data() -> Dictionary:
+	var data: Dictionary = super()
+	data[&"Comment_Timer"] = _a_Comment_Timer.get_time_left()
+	data[&"Comment_CD"] = _a_Comment_CD.get_time_left()
+	var projector_path: String = ""
 	if _a_projector != null:
 		projector_path = _a_projector.get_path()
-	data["Projector_Path"] = projector_path
-	data["Paint_From_Projector"] = _a_paint_from_projector
-	data["Normal"] = _a_normal
-	data["Final_Pos"] = _a_final_pos
-	data["Ray_Collide_Type"] = _a_ray_collide_type
-	data["Painting"] = _a_painting
-	data["Walking"] = _a_walking
-	data["Dodging"] = _a_dodging
+	data[&"Projector_Path"] = projector_path
+	data[&"Paint_From_Projector"] = _a_paint_from_projector
+	data[&"Normal"] = _a_normal
+	data[&"Final_Pos"] = _a_final_pos
+	data[&"Ray_Collide_Type"] = _a_ray_collide_type
+	data[&"Painting"] = _a_painting
+	data[&"Walking"] = _a_walking
+	data[&"Dodging"] = _a_dodging
 	
 	return data
 
-func load_data(p_data):
+func load_data(p_data: Dictionary) -> void:
 	super(p_data)
-	if p_data["Comment_Timer"] > 0.0:
-		_a_Comment_Timer.start(p_data["Comment_Timer"])
-	if p_data["Comment_CD"] > 0.0:
-		_a_Comment_CD.start(p_data["Comment_CD"])
-	_a_projector = get_node_or_null(p_data["Projector_Path"])
+	if p_data[&"Comment_Timer"] > 0.0:
+		_a_Comment_Timer.start(p_data[&"Comment_Timer"])
+	if p_data[&"Comment_CD"] > 0.0:
+		_a_Comment_CD.start(p_data[&"Comment_CD"])
+	_a_projector = get_node_or_null(p_data[&"Projector_Path"])
 	if _a_projector != null:
-		set_paint_from_projector(p_data["Paint_From_Projector"])
+		set_paint_from_projector(p_data[&"Paint_From_Projector"])
 		if _a_paint_from_projector:
-			_set_painting(p_data["Painting"])
-	_a_normal = p_data["Normal"]
-	_a_final_pos = p_data["Final_Pos"]
-	_a_ray_collide_type = p_data["Ray_Collide_Type"]
-	_a_walking = p_data["Walking"]
-	_a_dodging = p_data["Dodging"]
+			_set_painting(p_data[&"Painting"])
+	_a_normal = p_data[&"Normal"]
+	_a_final_pos = p_data[&"Final_Pos"]
+	_a_ray_collide_type = p_data[&"Ray_Collide_Type"]
+	_a_walking = p_data[&"Walking"]
+	_a_dodging = p_data[&"Dodging"]
 
-func _on_Comment_Timer_timeout():
-	var dialogue_system_si = Global.get_singleton(self, "Dialogue_System")
+func _on_Comment_Timer_timeout() -> void:
+	var dialogue_system_si: Dialogue_System = Global.get_singleton(self, "Dialogue_System")
 	match _a_ray_collide_type:
-		"Player":
-			var rndm = randi() % _e_player_comment_amount + 1
-			var key = "Puzzle_2_Comment_1_%d" % rndm
-			dialogue_system_si.dialogue(key, null, "Sub")
+		&"Player":
+			var rndm: int = randi() % _e_player_comment_amount + 1
+			var key: StringName = "Puzzle_2_Comment_1_%d" % rndm
+			dialogue_system_si.dialogue(key, null, &"Sub")
 			dialogue_system_si.set_dialogue_completed_cb(key, _CB_dialogue_completed)
 		
-		"Self":
-			var rndm = randi() % _e_self_comment_amount + 1
-			var key = "Puzzle_2_Comment_2_%d" % rndm
-			dialogue_system_si.dialogue(key, null, "Sub")
+		&"Self":
+			var rndm: int = randi() % _e_self_comment_amount + 1
+			var key: StringName = "Puzzle_2_Comment_2_%d" % rndm
+			dialogue_system_si.dialogue(key, null, &"Sub")
 			dialogue_system_si.set_dialogue_completed_cb(key, _CB_dialogue_completed)
 
-func _on_Comment_CD_timeout():
+func _on_Comment_CD_timeout() -> void:
 	match _a_ray_collide_type:
-		"Player": _a_Comment_Timer.start(_e_comment_time)
-		"Self": _a_Comment_Timer.start(_e_comment_time)
+		&"Player": _a_Comment_Timer.start(_e_comment_time)
+		&"Self": _a_Comment_Timer.start(_e_comment_time)
 
-func _on_Movement_Nav_Agent_path_finished():
+func _on_Movement_Nav_Agent_path_finished() -> void:
 	_a_walking = false
 	_a_dodging = false
 	_a_Movement_Nav_Agent.set_avoidance_enabled(false)
 	_place_canvas()
 	
 	match _a_ray_collide_type:
-		"Player": _set_painting(false)
-		"Self": _set_painting(false)
-		"Canvas": _set_painting(true)
-		"Terrain": _set_painting(true)
+		&"Player": _set_painting(false)
+		&"Self": _set_painting(false)
+		&"Canvas": _set_painting(true)
+		&"Terrain": _set_painting(true)
 
-func _on_Projector_model_ray_collided(p_collider, p_pos, p_normal):
-	var paint_delere = self
+func _on_Projector_model_ray_collided(p_collider: Object, p_pos: Vector3, p_normal: Vector3) -> void:
+	var paint_delere: MapBuffinHouse3ObjectPaintDeLere = self
 	match p_collider:
 		_a_player:
-			if _a_ray_collide_type != "Player":
+			if _a_ray_collide_type != &"Player":
 				if !_a_walking:
 					_set_painting(false)
 				_a_Comment_Timer.start(_e_comment_time)
 				_a_Comment_CD.stop()
-				_a_ray_collide_type = "Player"
+				_a_ray_collide_type = &"Player"
 		
 		paint_delere:
 			_ray_collided_self()
-			if _a_ray_collide_type != "Self":
+			if _a_ray_collide_type != &"Self":
 				if !_a_walking:
 					_set_painting(false)
 				_a_Comment_Timer.start(_e_comment_time)
 				_a_Comment_CD.stop()
-				_a_ray_collide_type = "Self"
+				_a_ray_collide_type = &"Self"
 		
 		_a_canvas:
-			if _a_ray_collide_type != "Canvas":
+			if _a_ray_collide_type != &"Canvas":
 				if !_a_walking:
 					_set_painting(true)
 				_a_Comment_Timer.stop()
 				_a_Comment_CD.stop()
-				_a_ray_collide_type = "Canvas"
+				_a_ray_collide_type = &"Canvas"
 		
 		_:
-			if _a_ray_collide_type != "Terrain":
+			if _a_ray_collide_type != &"Terrain":
 				if !_a_walking:
 					_set_painting(true)
 			
 			_ray_collided_terrain(p_pos, p_normal)
-			if _a_ray_collide_type != "Terrain":
+			if _a_ray_collide_type != &"Terrain":
 				_a_Comment_Timer.stop()
 				_a_Comment_CD.stop()
-				_a_ray_collide_type = "Terrain"
+				_a_ray_collide_type = &"Terrain"
 
-func _on_Projector_power_changed(p_power):
+func _on_Projector_power_changed(p_power: bool) -> void:
 	if !p_power:
 		_set_painting(false)
-		_a_States.set_state("Idle")
+		_a_States.set_state(&"Idle")
 		_a_Movement_Nav_Agent.set_avoidance_enabled(false)
 		_a_Movement_Nav_Agent.set_path([])
 		_a_walking = false
 		_a_dodging = false
 		_a_Anims.update_anim()
 
-func _CB_dialogue_completed(_p_key):
+func _CB_dialogue_completed(_p_key: StringName) -> void:
 	if _a_paint_from_projector:
 		_a_Comment_CD.start(_e_comment_cd)

@@ -6,7 +6,7 @@
 
 [node name="Expression_Entry" instance=ExtResource("1_lul0d")]
 offset_right = 768.0
-offset_bottom = 178.0
+offset_bottom = 30.0
 script = ExtResource("2_ljqmb")
 
 [node name="Expression" parent="HBox/VBox/Options" index="0" instance=ExtResource("2_pt7uh")]

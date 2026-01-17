@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c2fph1qdnhun3" path="res://Global_Scenes/Main_Menu/Sub_Menus/Party/Status/Equipable/Scripts/Equipable.gd" id="2"]
 [ext_resource type="PackedScene" uid="uid://ru8kg55ap6cp" path="res://Global_Scenes/Main_Menu/Sub_Menus/Party/Status/Equipable/Equip_Slot.tscn" id="3_ru4rx"]
-[ext_resource type="Script" uid="uid://begbv3ig52r6g" path="res://Scenes/Characters/Scripts/Character_Base.gd" id="4_j0s2e"]
+[ext_resource type="Script" uid="uid://begbv3ig52r6g" path="res://Global_Scenes/Main_Menu/Sub_Menus/Party/Status/Equipable/Scripts/Character.gd" id="4_j0s2e"]
 [ext_resource type="Theme" uid="uid://budcfl16xj2tt" path="res://Global_Resources/Themes/Default/Default.tres" id="5"]
 [ext_resource type="PackedScene" uid="uid://nt5gfdybdx7v" path="res://Scenes/VP_Container/VP.tscn" id="5_sfv0c"]
 [ext_resource type="Texture2D" uid="uid://dfuhlj2mlxms5" path="res://Global_Resources/Sprites/UI/Arrow_Left_Normal.png" id="6"]
@@ -113,7 +113,6 @@ size = Vector2i(1280, 720)
 size_2d_override_stretch = false
 _e_sub_world = false
 _e_game_world = false
-_e_resize = false
 _e_activate_physics = false
 
 [node name="Dr_Nutman" parent="HBox/Character/Panel/Margin/VP" instance=ExtResource("6_l2u2q")]

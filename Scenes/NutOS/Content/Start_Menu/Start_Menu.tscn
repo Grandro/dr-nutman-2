@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dvb15d6yvwwni"]
+[gd_scene load_steps=23 format=3 uid="uid://dvb15d6yvwwni"]
 
 [ext_resource type="Script" uid="uid://g4yv3yy7v26y" path="res://Scenes/NutOS/Content/Start_Menu/Scripts/Start_Menu.gd" id="1_f31rw"]
 [ext_resource type="Script" uid="uid://yxh6mshvsywl" path="res://Scenes/NutOS/Content/Start_Menu/Scripts/Icons.gd" id="2_anhpt"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bpa4wwr35yuav" path="res://Scenes/NutOS/Content/Sprites/Icons/Settings.png" id="4_ht4x0"]
 [ext_resource type="Texture2D" uid="uid://cobm41mfrfh68" path="res://Scenes/NutOS/Content/Sprites/Icons/Power.png" id="5_51c3t"]
 [ext_resource type="PackedScene" uid="uid://bdm8bdyt8jrh" path="res://Scenes/Context_Menu/Context_Menu.tscn" id="6_017wa"]
+[ext_resource type="Script" uid="uid://v0jwe56fkhao" path="res://Scenes/Context_Menu/Option_Entry_Data.gd" id="7_ean1c"]
 [ext_resource type="Resource" uid="uid://j15ay0mpeta5" path="res://Scenes/NutOS/Content/Start_Menu/Power_Options/Shutdown_Or_Leave.tres" id="8_pjcha"]
 [ext_resource type="Theme" uid="uid://cphubdfp0kld2" path="res://Global_Resources/Themes/NutOS/NutOS.tres" id="8_v2k5b"]
 
@@ -16,29 +17,29 @@ bg_color = Color(0.105882, 0.105882, 0.105882, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mqxol"]
 bg_color = Color(0.105882, 0.105882, 0.105882, 1)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_558nt"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0ck7n"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7hprg"]
-bg_color = Color(0.313726, 0.313726, 0.313726, 1)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bfywu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y7rqf"]
 bg_color = Color(0.313726, 0.313726, 0.313726, 1)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bfywu"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7hprg"]
+bg_color = Color(0.313726, 0.313726, 0.313726, 1)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_12nr6"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0ck7n"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_01mt7"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_558nt"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c88jo"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pk5xu"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_01mt7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_12nr6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ksdo3"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_22ube"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ksdo3"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pk5xu"]
 
 [node name="Start_Menu" type="PanelContainer"]
 light_mask = 8
@@ -83,11 +84,11 @@ mouse_filter = 2
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
-theme_override_styles/focus = SubResource("StyleBoxEmpty_558nt")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_0ck7n")
-theme_override_styles/hover = SubResource("StyleBoxFlat_7hprg")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_y7rqf")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_bfywu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_y7rqf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7hprg")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_0ck7n")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_558nt")
 
 [node name="HBox" type="HBoxContainer" parent="HBox/Icons/VBox/Expand"]
 light_mask = 8
@@ -123,11 +124,11 @@ mouse_filter = 2
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
-theme_override_styles/focus = SubResource("StyleBoxEmpty_12nr6")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_01mt7")
-theme_override_styles/hover = SubResource("StyleBoxFlat_7hprg")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_7hprg")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_c88jo")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7hprg")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7hprg")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_01mt7")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_12nr6")
 
 [node name="HBox" type="HBoxContainer" parent="HBox/Icons/VBox/Settings"]
 light_mask = 8
@@ -174,11 +175,11 @@ mouse_filter = 2
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
-theme_override_styles/focus = SubResource("StyleBoxEmpty_pk5xu")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_22ube")
-theme_override_styles/hover = SubResource("StyleBoxFlat_7hprg")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_7hprg")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_ksdo3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7hprg")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7hprg")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_22ube")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pk5xu")
 button_mask = 3
 
 [node name="HBox" type="HBoxContainer" parent="HBox/Icons/VBox/Power"]
@@ -215,10 +216,10 @@ text = "NUTOS_ON_OFF"
 
 [node name="Power_Options" parent="HBox/Icons" instance=ExtResource("6_017wa")]
 visible = false
-_e_options = {
-"Shutdown_Or_Leave": ExtResource("8_pjcha")
-}
-_e_options_order = Array[String](["Shutdown_Or_Leave"])
+_e_options = Dictionary[StringName, ExtResource("7_ean1c")]({
+&"Shutdown_Or_Leave": ExtResource("8_pjcha")
+})
+_e_options_order = Array[StringName]([&"Shutdown_Or_Leave"])
 
 [node name="Content" parent="HBox/Icons/Power_Options" index="0"]
 theme = ExtResource("8_v2k5b")

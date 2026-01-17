@@ -48,10 +48,10 @@ layout_mode = 2
 
 [node name="Sort_By" parent="HBox/VBox/Options" instance=ExtResource("4_ohsf0")]
 layout_mode = 2
-_e_sort_args = {
+_e_sort_args = Dictionary[String, String]({
 "Created": "get_time_created",
 "Key": "get_key"
-}
+})
 
 [node name="Search" parent="HBox/VBox/Options" instance=ExtResource("4_y2ige")]
 custom_minimum_size = Vector2(400, 0)

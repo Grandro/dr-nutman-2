@@ -32,7 +32,6 @@
 [ext_resource type="Texture2D" uid="uid://pufjlm3qsh3b" path="res://Global_Resources/Sprites/Joy/Letters_Neutral/Button_Plus.png" id="30_vy7ll"]
 [ext_resource type="Texture2D" uid="uid://di4xy85ldfdgt" path="res://Global_Resources/Sprites/Joy/Shapes_Color/Button_Start.png" id="31_pihty"]
 
-
 [sub_resource type="Animation" id="Animation_pihty"]
 resource_name = "Fade_Out"
 length = 2.0

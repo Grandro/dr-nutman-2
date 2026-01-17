@@ -9,7 +9,6 @@
 size_flags_vertical = 3
 script = ExtResource("3")
 _e_entry_scene = ExtResource("3_toowc")
-_e_delete_loc_id = "CONFIRM_DELETE_LOC_ID"
 _e_show_add = false
 _e_ensure_unique_names = false
 

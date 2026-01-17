@@ -5,6 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://ct2na3d5v3o3y" path="res://Global_Scenes/Main_Menu/Sub_Menus/Party/Party.tscn" id="3"]
 
 [node name="Party" instance=ExtResource("1")]
+offset_right = 100.0
+offset_bottom = 108.0
 _e_key = "Party"
 _e_menu_scene = ExtResource("3")
 _e_type = "Sub_Menu"

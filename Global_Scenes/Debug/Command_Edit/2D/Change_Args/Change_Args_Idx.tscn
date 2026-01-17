@@ -6,6 +6,9 @@
 
 [node name="Change_Args_Idx" instance=ExtResource("1_h3qm6")]
 
+[node name="Idx" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="2"]
+_e_options = []
+
 [node name="Value" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="3" instance=ExtResource("2_fisgm")]
 layout_mode = 2
 _e_heading_loc_id = "DEBUG_CUTSCENES_VALUE"

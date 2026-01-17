@@ -1,33 +1,38 @@
 extends PanelContainer
+class_name DebugValueEditTypeInt
 
-signal value_changed(p_value)
+signal value_changed(p_value: int)
 
-@onready var _a_Value = get_node("Value")
+@onready var _a_Value: SpinBox = get_node("Value")
 
-func _ready():
+func _ready() -> void:
 	_a_Value.value_changed.connect(_on_Value_value_changed)
 	
 	set_default_value()
 
-func expand(_p_depth):
+func expand(_p_depth: int) -> void:
 	pass
 
-func delete():
+func delete() -> void:
 	queue_free()
 
-func set_default_value():
-	set_value(int(0))
+func to_color(_p_color: Color) -> void:
+	pass
 
-func set_value(p_value):
+func set_default_value() -> void:
+	set_value(0)
+
+func set_value(p_value: int) -> void:
 	_a_Value.set_value(p_value)
 
-func get_value():
-	var value = _a_Value.get_value()
-	
-	return int(value)
+func get_value() -> int:
+	return int(_a_Value.get_value())
 
-func set_editable(p_editable):
-	_a_Value.set_editable(p_editable)
+func set_value_editable(p_value_editable: bool) -> void:
+	_a_Value.set_editable(p_value_editable)
 
-func _on_Value_value_changed(p_value):
+func set_expanded(_p_expanded: bool) -> void:
+	pass
+
+func _on_Value_value_changed(p_value: float) -> void:
 	value_changed.emit(int(p_value))

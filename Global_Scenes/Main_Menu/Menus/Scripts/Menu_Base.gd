@@ -1,26 +1,27 @@
 extends Control
+class_name MainMenuMenuBase
 
-signal request_menu(p_scene)
-signal request_sub_menu(p_key, p_scene)
+signal request_menu(p_scene: PackedScene)
+signal request_sub_menu(p_key: StringName, p_scene: PackedScene)
 
-@export var _e_sub_menus: Array[String] = []
+@export var _e_sub_menus: Array[StringName] = []
 
-var _a_data = {}
-var _a_selected = null # Selected Menu_Icon
+var _a_data: Dictionary = {}
+var _a_selected: MainMenuMenuIcon # Selected Menu_Icon
 
-func open():
+func open() -> void:
 	_a_selected.grab_image_focus()
 	show()
 
-func close():
+func close() -> void:
 	hide()
 	queue_free()
 
-func _init_menu_icons(p_parent):
-	var select = true
-	for child in p_parent.get_children():
-		var key = child.get_key()
-		var unlocked = _a_data[key]["Unlocked"]
+func _init_menu_icons(p_parent: Container) -> void:
+	var select: bool = true
+	for child: MainMenuMenuIcon in p_parent.get_children():
+		var key: StringName = child.get_key()
+		var unlocked: bool = _a_data[key][&"Unlocked"]
 		child.pressed.connect(_on_Menu_Icon_pressed.bind(child))
 		child.set_visible(unlocked)
 		
@@ -28,20 +29,20 @@ func _init_menu_icons(p_parent):
 			_a_selected = child
 			select = false
 
-func get_sub_menus():
+func get_sub_menus() -> Array[StringName]:
 	return _e_sub_menus
 
-func set_data(p_data):
+func set_data(p_data: Dictionary) -> void:
 	_a_data = p_data
 
-func _on_Menu_Icon_pressed(p_instance):
+func _on_Menu_Icon_pressed(p_instance: MainMenuMenuIcon) -> void:
 	_a_selected = p_instance
 	
-	var scene = p_instance.get_menu_scene()
-	var type = p_instance.get_type()
+	var scene: PackedScene = p_instance.get_menu_scene()
+	var type: StringName = p_instance.get_type()
 	match type:
-		"Menu":
+		&"Menu":
 			request_menu.emit(scene)
-		"Sub_Menu":
-			var key = p_instance.get_key()
+		&"Sub_Menu":
+			var key: StringName = p_instance.get_key()
 			request_sub_menu.emit(key, scene)

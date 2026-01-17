@@ -1,15 +1,16 @@
-extends "res://Global_Scenes/Debug/Command_Edit/Scripts/Command_Preview_Object.gd"
+extends DebugCommandEditCommandPreviewObject
+class_name DebugCommandEditCommandPlayAnim
 
-@onready var _a_Keep_Dir = get_node("Window/Contents/Margin/HBox/Right/Options/VBox/Keep_Dir")
-@onready var _a_Backwards = get_node("Window/Contents/Margin/HBox/Right/Options/VBox/Backwards")
-@onready var _a_Anim_All = get_node("Window/Contents/Margin/HBox/Right/Options/VBox/Anim_All")
-@onready var _a_Anim_Keep_Dir = get_node("Window/Contents/Margin/HBox/Right/Options/VBox/Anim_Keep_Dir")
-@onready var _a_Speed = get_node("Window/Contents/Margin/HBox/Right/Options/VBox/Speed")
-@onready var _a_Wait_Finish = get_node("Window/Contents/Margin/HBox/Right/Options/VBox/Wait_Finish")
+@onready var _a_Keep_Dir: DebugValueSelectBool = get_node("Window/Contents/Margin/HBox/Right/Options/VBox/Keep_Dir")
+@onready var _a_Backwards: DebugValueSelectBool = get_node("Window/Contents/Margin/HBox/Right/Options/VBox/Backwards")
+@onready var _a_Anim_All: DebugValueSelectOptions = get_node("Window/Contents/Margin/HBox/Right/Options/VBox/Anim_All")
+@onready var _a_Anim_Keep_Dir: DebugCommandEditCommandPlayAnimKeepDir = get_node("Window/Contents/Margin/HBox/Right/Options/VBox/Anim_Keep_Dir")
+@onready var _a_Speed: DebugValueSelectSlider = get_node("Window/Contents/Margin/HBox/Right/Options/VBox/Speed")
+@onready var _a_Wait_Finish: DebugValueSelectBool = get_node("Window/Contents/Margin/HBox/Right/Options/VBox/Wait_Finish")
 
-var _a_keep_dir = true # Backup keep dir when instance without movement comp is selected
+var _a_keep_dir: bool = true # Backup keep dir when instance without movement comp is selected
 
-func _ready():
+func _ready() -> void:
 	super()
 	_a_Keep_Dir.toggled.connect(_on_Keep_Dir_toggled)
 	_a_Backwards.pressed.connect(_on_Backwards_pressed)
@@ -19,7 +20,7 @@ func _ready():
 	
 	_a_Anim_Keep_Dir.hide()
 
-func open(p_instance, p_data, p_res_data):
+func open(p_instance: DebugCommandEditorEntryBase, p_data: Dictionary, p_res_data: Dictionary) -> void:
 	super(p_instance, p_data, p_res_data)
 	
 	_play_selected_anim()
@@ -27,7 +28,7 @@ func open(p_instance, p_data, p_res_data):
 	_a_Window.show()
 	show()
 
-func _open_init(p_res_data):
+func _open_init(p_res_data: Dictionary) -> void:
 	super(p_res_data)
 	_a_Object.load_data_init()
 	_select_default_object(p_res_data)
@@ -39,31 +40,31 @@ func _open_init(p_res_data):
 	_a_Speed.load_data_init()
 	_a_Wait_Finish.load_data_init()
 
-func _open_load(p_data, p_res_data):
+func _open_load(p_data: Dictionary, p_res_data: Dictionary) -> void:
 	super(p_data, p_res_data)
-	_a_Object.load_data(p_data["Object"])
+	_a_Object.load_data(p_data[&"Object"])
 	_selected_object_changed()
-	_a_Keep_Dir.load_data(p_data["Keep_Dir"])
-	_a_Backwards.load_data(p_data["Backwards"])
-	_a_Anim_All.load_data(p_data["Anim_All"])
-	_a_Anim_Keep_Dir.load_data(p_data["Anim_Keep_Dir"])
-	_a_Speed.load_data(p_data["Speed"])
-	_a_Wait_Finish.load_data(p_data["Wait_Finish"])
+	_a_Keep_Dir.load_data(p_data[&"Keep_Dir"])
+	_a_Backwards.load_data(p_data[&"Backwards"])
+	_a_Anim_All.load_data(p_data[&"Anim_All"])
+	_a_Anim_Keep_Dir.load_data(p_data[&"Anim_Keep_Dir"])
+	_a_Speed.load_data(p_data[&"Speed"])
+	_a_Wait_Finish.load_data(p_data[&"Wait_Finish"])
 
-func _selected_object_changed():
+func _selected_object_changed() -> void:
 	super()
 	if is_instance_valid(_a_object):
 		if _a_object.comph().has_comp("Movement"):
-			_a_object.comph().call_comp("Movement", "stop")
+			_a_object.comph().call_comp("Movement", &"stop")
 	
 	_a_object = _a_Object.get_selected_value()
-	var anim_list = Array(_a_object.comph().call_comp("Anims", "get_animation_list"))
+	var anim_list: Array[StringName]; anim_list.assign(Array(_a_object.comph().call_comp("Anims", &"get_animation_list")))
 	_a_Anim_All.set_options(anim_list)
 	_a_Anim_Keep_Dir.set_options(anim_list)
 	_a_Anim_All.update_options()
 	_a_Anim_Keep_Dir.update_options()
 	
-	var has_movement = _a_object.comph().has_comp("Movement")
+	var has_movement: bool = _a_object.comph().has_comp("Movement")
 	_a_Keep_Dir.set_visible(has_movement)
 	if has_movement:
 		_a_Keep_Dir.set_pressed(_a_keep_dir)
@@ -71,57 +72,57 @@ func _selected_object_changed():
 		_a_keep_dir = _a_Keep_Dir.is_pressed()
 		_a_Keep_Dir.set_pressed(false)
 
-func _play_selected_anim():
-	var instance = _a_Object.get_selected_value()
-	var anim_list = instance.comph().call_comp("Anims", "get_animation_list")
+func _play_selected_anim() -> void:
+	var instance: Node = _a_Object.get_selected_value()
+	var anim_list: PackedStringArray = instance.comph().call_comp("Anims", &"get_animation_list")
 	if anim_list.is_empty():
 		return
 	
-	var anim_name = ""
-	var keep_dir = _a_Keep_Dir.is_pressed()
+	var anim_name: StringName = &""
+	var keep_dir: bool = _a_Keep_Dir.is_pressed()
 	if keep_dir && _a_Keep_Dir.is_visible():
-		var anims = _a_Anim_Keep_Dir.get_selected_key()
-		var dir = _get_object_revert_property_value(instance, "Movement", "_a_shared._a_dir")
+		var anims: Dictionary[StringName, StringName]; anims.assign(_a_Anim_Keep_Dir.get_selected_key())
+		var dir: Variant = _get_object_revert_property_value(instance, "Movement", &"_a_shared._a_dir")
 		if dir == null:
-			dir = instance.comph().call_comp("Movement", "get_dir")
+			dir = instance.comph().call_comp("Movement", &"get_dir")
 		if anims.has(dir):
 			anim_name = anims[dir]
 	else:
 		anim_name = _a_Anim_All.get_selected_key()
 	
-	if !anim_name.is_empty():
-		var speed = _a_Speed.get_value()
-		var backwards = _a_Backwards.is_pressed()
-		instance.comph().call_comp("Anims", "play_anim", [anim_name, speed, backwards])
+	if anim_name != &"":
+		var speed: float = _a_Speed.get_value()
+		var backwards: bool = _a_Backwards.is_pressed()
+		instance.comph().call_comp("Anims", &"play_anim", [anim_name, speed, backwards])
 
-func _get_save_data():
-	var data = super()
-	data["Keep_Dir"] = _a_Keep_Dir.get_save_data()
-	data["Backwards"] = _a_Backwards.get_save_data()
-	data["Anim_All"] = _a_Anim_All.get_save_data()
-	data["Anim_Keep_Dir"] = _a_Anim_Keep_Dir.get_save_data()
-	data["Speed"] = _a_Speed.get_save_data()
-	data["Wait_Finish"] = _a_Wait_Finish.get_save_data()
+func _get_save_data() -> Dictionary:
+	var data: Dictionary = super()
+	data[&"Keep_Dir"] = _a_Keep_Dir.get_save_data()
+	data[&"Backwards"] = _a_Backwards.get_save_data()
+	data[&"Anim_All"] = _a_Anim_All.get_save_data()
+	data[&"Anim_Keep_Dir"] = _a_Anim_Keep_Dir.get_save_data()
+	data[&"Speed"] = _a_Speed.get_save_data()
+	data[&"Wait_Finish"] = _a_Wait_Finish.get_save_data()
 	
 	return data
 
-func _on_Object_selected():
+func _on_Object_selected() -> void:
 	super()
 	_play_selected_anim()
 
-func _on_Keep_Dir_toggled(p_toggled):
+func _on_Keep_Dir_toggled(p_toggled: bool) -> void:
 	_a_Anim_All.set_visible(!p_toggled)
 	_a_Anim_Keep_Dir.set_visible(p_toggled)
 	_play_selected_anim()
 
-func _on_Backwards_pressed():
+func _on_Backwards_pressed() -> void:
 	_play_selected_anim()
 
-func _on_Anim_All_selected():
+func _on_Anim_All_selected() -> void:
 	_play_selected_anim()
 
-func _on_Anim_Keep_Dir_selected():
+func _on_Anim_Keep_Dir_selected() -> void:
 	_play_selected_anim()
 
-func _on_Speed_value_changed(_p_value):
+func _on_Speed_value_changed(_p_value: float) -> void:
 	_play_selected_anim()

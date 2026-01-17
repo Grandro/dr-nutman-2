@@ -50,7 +50,7 @@ _e_min = 0.01
 _e_value = 1.0
 
 [node name="Object" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="5"]
-_e_needed_comps = Array[String](["Reference", "Audio"])
+_e_needed_comps = ["Reference", "Audio"]
 
 [node name="Point" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="6" instance=ExtResource("6_h7x5d")]
 layout_mode = 2

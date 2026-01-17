@@ -1,20 +1,21 @@
 extends BoxContainer
+class_name EntryToggler
 
-signal toggled(p_instance)
+signal toggled(p_instance: EntryTogglerEntry)
 
 @export var _e_entry_scene: PackedScene = preload("res://Scenes/Custom_Containers/Entry_Toggler/Entries/Entry.tscn")
 
-var _a_entry = null # Currently toggled entry
+var _a_entry: EntryTogglerEntry = null # Currently toggled entry
 
-func _ready():
-	for child in get_children():
+func _ready() -> void:
+	for child: EntryTogglerEntry in get_children():
 		child.select_toggled.connect(_on_Entry_select_toggled.bind(child))
 	
 	if get_child_count() > 0:
 		_toggle_first()
 
-func instantiate_entry(p_select_text = "", p_texture = null):
-	var instance = _e_entry_scene.instantiate()
+func instantiate_entry(p_select_text: String = "", p_texture: Texture2D = null) -> EntryTogglerEntry:
+	var instance: EntryTogglerEntry = _e_entry_scene.instantiate()
 	instance.ready.connect(_on_Entry_ready)
 	instance.select_toggled.connect(_on_Entry_select_toggled.bind(instance))
 	instance.set_select_text.call_deferred(p_select_text)
@@ -22,14 +23,14 @@ func instantiate_entry(p_select_text = "", p_texture = null):
 	
 	return instance
 
-func add_entry(p_instance):
+func add_entry(p_instance: EntryTogglerEntry) -> void:
 	add_child(p_instance)
 
-func _toggle_first():
-	var first = get_child(0)
+func _toggle_first() -> void:
+	var first: EntryTogglerEntry = get_child(0)
 	_toggle(first)
 
-func _toggle(p_instance):
+func _toggle(p_instance: EntryTogglerEntry) -> void:
 	if _a_entry != null:
 		_a_entry.set_select_disabled(false)
 		_a_entry.set_select_pressed(false)
@@ -39,11 +40,11 @@ func _toggle(p_instance):
 	
 	_a_entry = p_instance
 
-func _on_Entry_ready():
+func _on_Entry_ready() -> void:
 	if get_child_count() == 1:
 		_toggle_first()
 
-func _on_Entry_select_toggled(p_pressed, p_instance):
+func _on_Entry_select_toggled(p_pressed: bool, p_instance: EntryTogglerEntry) -> void:
 	if !p_pressed:
 		return
 	_toggle(p_instance)

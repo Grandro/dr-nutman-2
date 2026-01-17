@@ -5,8 +5,10 @@
 
 [node name="Default_Object_Key" instance=ExtResource("1_mtvel")]
 script = ExtResource("2_rg3of")
-_e_draw_grid = false
 _e_draw_grid_scene = null
+
+[node name="Grid" parent="Window/Contents/Margin/HBox/Left" index="1"]
+size_flags_vertical = 1
 
 [editable path="Window"]
 [editable path="Window/Contents/Margin/HBox/Left/Preview"]

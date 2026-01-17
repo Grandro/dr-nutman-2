@@ -1,9 +1,10 @@
-extends "res://Scenes/Mini_Games/Right_On_The_Nut/Game/Scripts/Game_Base.gd"
+extends MiniGameRightOnTheNutGameBase
+class_name MiniGameRightOnTheNutGamePreview
 
-func open():
+func open() -> void:
 	open_qt_bar(true)
 	super()
 
-func close():
+func close() -> void:
 	close_qt_bar()
 	super()

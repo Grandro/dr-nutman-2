@@ -1,11 +1,12 @@
-extends "res://Global_Scenes/Cutscene_System/Threads/Scripts/Thread_Base.gd"
+extends CutsceneThreadBase
+class_name CutsceneThreadComment
 
-func _ready():
+func _ready() -> void:
 	super()
 	if !_a_loads_data:
 		_process_command()
 
-func _process_command():
+func _process_command() -> void:
 	_emit_completed()
 	queue_free()
 	

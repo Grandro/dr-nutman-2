@@ -8,7 +8,7 @@
 
 [node name="Tab_Vox" groups=["Translated"] instance=ExtResource("1")]
 script = ExtResource("4")
-_e_key = "Vox"
+_e_key = &"Vox"
 
 [node name="Object" parent="Margin/HSplit/Left" index="0" instance=ExtResource("5")]
 layout_mode = 2

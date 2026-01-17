@@ -7,5 +7,8 @@
 [node name="An_Uplifting_Nut" instance=ExtResource("1_2cocq")]
 
 [node name="Crack_Nuts" parent="Objectives" index="0" instance=ExtResource("2_c871y")]
+_e_track_init = true
+_e_track_gain = true
+_e_track_loss = false
 
 [node name="Lift_Squirrels" parent="Objectives" index="1" instance=ExtResource("3_07va3")]

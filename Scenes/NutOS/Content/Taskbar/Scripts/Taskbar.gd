@@ -11,8 +11,8 @@ signal app_select_pressed(p_key: StringName)
 const _a_APP_PATH: String = "res://Scenes/NutOS/Content/Taskbar/Apps/%s.tscn"
 
 @onready var _a_Start_Select: TextureButton = get_node("Tools/Left/Start/Select")
-@onready var _a_Start_Options: ContextMenu = get_node("Tools/Left/Start/Options")
-@onready var _a_Search: Search = get_node("Tools/Left/Search")
+@onready var _a_Start_Options: FWContextMenu = get_node("Tools/Left/Start/Options")
+@onready var _a_Search: FWSearch = get_node("Tools/Left/Search")
 @onready var _a_Apps: HBoxContainer = get_node("Tools/Right/Apps")
 
 var _a_apps: Dictionary[StringName, NutOSContentTaskbarApp] = {} # Match app key to instance

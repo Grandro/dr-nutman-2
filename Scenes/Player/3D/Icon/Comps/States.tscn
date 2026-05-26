@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://decnis7qnn0n4"]
+
+[ext_resource type="PackedScene" uid="uid://boh1rwcj5rgwf" path="res://Framework/Scenes/Object/Comps/States.tscn" id="1_ycr1k"]
+
+[node name="States" unique_id=467405942 instance=ExtResource("1_ycr1k")]
+_e_states = Array[StringName]([&"Stop", &"Walk"])
+_e_state = "Stop"

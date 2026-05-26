@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://c8xkddkeivtbh"]
+[gd_scene format=3 uid="uid://c8xkddkeivtbh"]
 
-[ext_resource type="PackedScene" uid="uid://r41nl45w54n2" path="res://Global_Scenes/Progress/Quests/Objective_Sub_Quest.tscn" id="1_838xq"]
+[ext_resource type="PackedScene" uid="uid://r41nl45w54n2" path="res://Framework/Global_Scenes/Progress/Quests/Objective_Sub_Quest.tscn" id="1_838xq"]
 [ext_resource type="Resource" uid="uid://ddf7spdwgxbqt" path="res://Global_Resources/Databases/Quests/Broko_Town/Main/Great_Broko_Town_Festival/Objective_Groping_In_The_Dark.tres" id="2_838xq"]
 
-[node name="Groping_In_The_Dark" instance=ExtResource("1_838xq")]
+[node name="Groping_In_The_Dark" unique_id=1174502488 instance=ExtResource("1_838xq")]
 _e_data = ExtResource("2_838xq")

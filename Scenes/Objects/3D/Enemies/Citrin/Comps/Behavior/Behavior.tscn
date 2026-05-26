@@ -1,23 +1,25 @@
-[gd_scene load_steps=9 format=3 uid="uid://b01cj3ge0u3va"]
+[gd_scene format=3 uid="uid://b01cj3ge0u3va"]
 
 [ext_resource type="PackedScene" uid="uid://c205mm8y7ppc6" path="res://Scenes/Objects/3D/Enemies/Comps/Behavior/Behavior_Base.tscn" id="1_kxo1d"]
 [ext_resource type="Script" uid="uid://cveli8367ipv4" path="res://Scenes/Objects/3D/Enemies/Citrin/Comps/Behavior/Scripts/Behavior.gd" id="2_mkcd0"]
-[ext_resource type="PackedScene" uid="uid://b3mngk4bgn2ks" path="res://Scenes/Objects/3D/Enemies/Comps/Behavior/States/State_Branch.tscn" id="3_8wdt3"]
-[ext_resource type="PackedScene" uid="uid://lsel7eqbohc5" path="res://Scenes/Objects/3D/Enemies/Comps/Behavior/States/State_Change_Dir.tscn" id="4_7p64k"]
-[ext_resource type="PackedScene" uid="uid://cjanmnf2alc80" path="res://Scenes/Objects/3D/Enemies/Comps/Behavior/States/State_Move.tscn" id="5_7p64k"]
+[ext_resource type="PackedScene" uid="uid://b3mngk4bgn2ks" path="res://Framework/Scenes/Object/Comps/3D/Behavior/States/State_Branch.tscn" id="3_8wdt3"]
+[ext_resource type="PackedScene" uid="uid://lsel7eqbohc5" path="res://Framework/Scenes/Object/Comps/3D/Behavior/States/State_Change_Dir.tscn" id="4_7p64k"]
+[ext_resource type="PackedScene" uid="uid://bxf81ui2kvwk" path="res://Framework/Scenes/Object/Comps/3D/Behavior/States/State_Move_Rndm.tscn" id="5_5gg8d"]
 [ext_resource type="PackedScene" uid="uid://dkumayrglr2d3" path="res://Scenes/Objects/3D/Enemies/Citrin/Comps/Behavior/States/State_Attack.tscn" id="6_dbijs"]
+[ext_resource type="PackedScene" uid="uid://r2oy23u56eku" path="res://Framework/Scenes/Object/Comps/3D/Behavior/States/State_Move_Chase.tscn" id="6_dq18d"]
+[ext_resource type="PackedScene" uid="uid://d3fhj0j4pvvkl" path="res://Framework/Scenes/Object/Comps/3D/Behavior/States/State_Move_Avoid.tscn" id="7_dq18d"]
 [ext_resource type="PackedScene" uid="uid://mnmcs366drxn" path="res://Scenes/Objects/3D/Enemies/Citrin/Comps/Behavior/States/State_Socialize.tscn" id="7_i3jcc"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mkcd0"]
 size = Vector3(5, 2.5, 5)
 
-[node name="Behavior" instance=ExtResource("1_kxo1d")]
+[node name="Behavior" unique_id=699394372 instance=ExtResource("1_kxo1d")]
 script = ExtResource("2_mkcd0")
 _e_citrin_ball_cd_time = 8.0
 _e_citrin_ball_radius = 4.0
 _e_citrin_ball_speed = 10.0
 
-[node name="Enemy_Range" type="Area3D" parent="." index="3"]
+[node name="Enemy_Range" type="Area3D" parent="." index="3" unique_id=733545140]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
 collision_layer = 0
 collision_mask = 64
@@ -25,36 +27,34 @@ monitoring = false
 monitorable = false
 metadata/_edit_group_ = true
 
-[node name="Collision" type="CollisionShape3D" parent="Enemy_Range" index="0"]
+[node name="Collision" type="CollisionShape3D" parent="Enemy_Range" index="0" unique_id=344075610]
 shape = SubResource("BoxShape3D_mkcd0")
 
-[node name="Citrin_Balls" type="Node3D" parent="." index="4"]
+[node name="Citrin_Balls" type="Node3D" parent="." index="4" unique_id=741764379]
 
-[node name="Pos" type="Marker3D" parent="Citrin_Balls" index="0"]
+[node name="Pos" type="Marker3D" parent="Citrin_Balls" index="0" unique_id=1638783864]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01, 0.36, 0.01)
 
-[node name="Rndm" parent="States" index="0" instance=ExtResource("3_8wdt3")]
+[node name="Rndm" parent="States" parent_id_path=PackedInt32Array(892130468) index="0" unique_id=2013209218 instance=ExtResource("3_8wdt3")]
 
-[node name="Change_Dir" parent="States/Rndm" index="0" instance=ExtResource("4_7p64k")]
+[node name="Change_Dir" parent="States/Rndm" index="0" unique_id=2044749922 instance=ExtResource("4_7p64k")]
 _e_CD = 4.0
 
-[node name="Move" parent="States/Rndm" index="1" instance=ExtResource("5_7p64k")]
+[node name="Move" parent="States/Rndm" index="1" unique_id=1292768813 instance=ExtResource("5_5gg8d")]
 _e_CD = 4.0
 
-[node name="Chase" parent="States" index="1" instance=ExtResource("3_8wdt3")]
+[node name="Chase" parent="States" parent_id_path=PackedInt32Array(892130468) index="1" unique_id=380524755 instance=ExtResource("3_8wdt3")]
 
-[node name="Change_Dir" parent="States/Chase" index="0" instance=ExtResource("4_7p64k")]
+[node name="Change_Dir" parent="States/Chase" index="0" unique_id=1845926287 instance=ExtResource("4_7p64k")]
 _e_type = "Look_At"
 
-[node name="Move" parent="States/Chase" index="1" instance=ExtResource("5_7p64k")]
-_e_type = "Chase"
+[node name="Move" parent="States/Chase" index="1" unique_id=1213982446 instance=ExtResource("6_dq18d")]
 
-[node name="Avoid" parent="States" index="2" instance=ExtResource("5_7p64k")]
-_e_type = "Avoid"
+[node name="Avoid" parent="States" parent_id_path=PackedInt32Array(892130468) index="2" unique_id=1983918512 instance=ExtResource("7_dq18d")]
 
-[node name="Attack" parent="States" index="3" instance=ExtResource("6_dbijs")]
+[node name="Attack" parent="States" parent_id_path=PackedInt32Array(892130468) index="3" unique_id=1331594897 instance=ExtResource("6_dbijs")]
 
-[node name="Socialize" parent="States" index="4" instance=ExtResource("7_i3jcc")]
+[node name="Socialize" parent="States" parent_id_path=PackedInt32Array(892130468) index="4" unique_id=2115094905 instance=ExtResource("7_i3jcc")]
 
-[node name="Citrin_Ball_CD" type="Timer" parent="." index="8"]
+[node name="Citrin_Ball_CD" type="Timer" parent="." index="8" unique_id=219413953]
 one_shot = true

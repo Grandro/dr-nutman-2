@@ -1,21 +1,21 @@
 extends Node3D
 class_name MapBuffinHouse3Floor1
 
-signal projector_power_changed(p_projector: MapBuffinHouse3ObjectProjector1, p_power: bool)
+signal projector_power_changed(p_projector: ObjectProjectorBase, p_power: bool)
 
-@onready var _a_Stairway_2: Teleporter3D = get_node("Stairway_2")
+@onready var _a_Stairway_2: FWTeleporter3D = get_node("Stairway_2")
 @onready var _a_Pressure_Plate_1: ObjectPressurePlateBase = get_node("Pressure_Plate_1")
 @onready var _a_Pressure_Plate_2: ObjectPressurePlateBase = get_node("Pressure_Plate_2")
 @onready var _a_Pressure_Plate_3: ObjectPressurePlateBase = get_node("Pressure_Plate_3")
 @onready var _a_Power_Cable_1: PowerCable = get_node("Power_Cable_1")
 @onready var _a_Power_Cable_2: PowerCable = get_node("Power_Cable_2")
 @onready var _a_Power_Cable_3: PowerCable = get_node("Power_Cable_3")
-@onready var _a_Canvas_1: RigidBody3DObject = get_node("Canvas_1")
-@onready var _a_Canvas_2: RigidBody3DObject = get_node("Canvas_2")
+@onready var _a_Canvas_1: FWRigidBody3DObject = get_node("Canvas_1")
+@onready var _a_Canvas_2: FWRigidBody3DObject = get_node("Canvas_2")
 @onready var _a_Gate_1: ObjectGate1 = get_node("Gate_1")
 @onready var _a_Gate_2: ObjectGate1 = get_node("Gate_2")
 @onready var _a_Gate_3: ObjectGate1 = get_node("Gate_3")
-@onready var _a_Projector_1: MapBuffinHouse3ObjectProjector1 = get_node("Projector_1")
+@onready var _a_Projector_1: ObjectProjectorBase = get_node("Projector_1")
 @onready var _a_Ghosty_1: ObjectEnemyBase = get_node("Ghosty_1")
 
 var _a_puzzle_1_solved: bool = false

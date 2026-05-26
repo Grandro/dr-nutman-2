@@ -1,4 +1,4 @@
-extends ProgressQuestBase
+extends FWProgressQuestBase
 class_name ProgressQuestAChildForABalloon
 
 const _a_KEYS: Array[StringName] = [&"Buffin_Child_1", &"Buffin_Child_2", &"Buffin_Child_3",

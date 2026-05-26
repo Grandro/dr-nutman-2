@@ -1,17 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://cl2dymixggqys"]
+[gd_scene format=3 uid="uid://cl2dymixggqys"]
 
-[ext_resource type="PackedScene" uid="uid://dw83gpfjqfylp" path="res://Global_Scenes/Progress/Quests/Quest_Base.tscn" id="1_g5oxs"]
+[ext_resource type="PackedScene" uid="uid://dw83gpfjqfylp" path="res://Framework/Global_Scenes/Progress/Quests/Quest_Base.tscn" id="1_g5oxs"]
 [ext_resource type="PackedScene" uid="uid://dasvljj72alod" path="res://Global_Scenes/Progress/Quests/Great_Broko_Town_Festival/Objectives/A_Child_For_A_Balloon.tscn" id="2_8p1mp"]
 [ext_resource type="PackedScene" uid="uid://ckgoi0d3lyv7h" path="res://Global_Scenes/Progress/Quests/Great_Broko_Town_Festival/Objectives/Right_On_The_Nut.tscn" id="3_yxruc"]
 [ext_resource type="PackedScene" uid="uid://xs8awggn1xig" path="res://Global_Scenes/Progress/Quests/Great_Broko_Town_Festival/Objectives/An_Uplifting_Nut.tscn" id="4_qi0v2"]
 [ext_resource type="PackedScene" uid="uid://c8xkddkeivtbh" path="res://Global_Scenes/Progress/Quests/Great_Broko_Town_Festival/Objectives/Groping_In_The_Dark.tscn" id="5_lbox4"]
 
-[node name="Great_Broko_Town_Festival" instance=ExtResource("1_g5oxs")]
+[node name="Great_Broko_Town_Festival" unique_id=1876073827 instance=ExtResource("1_g5oxs")]
 
-[node name="A_Child_For_A_Balloon" parent="Objectives" index="0" instance=ExtResource("2_8p1mp")]
+[node name="A_Child_For_A_Balloon" parent="Objectives" parent_id_path=PackedInt32Array(621023371) index="0" unique_id=1152114947 instance=ExtResource("2_8p1mp")]
 
-[node name="Right_On_The_Nut" parent="Objectives" index="1" instance=ExtResource("3_yxruc")]
+[node name="Right_On_The_Nut" parent="Objectives" parent_id_path=PackedInt32Array(621023371) index="1" unique_id=919624355 instance=ExtResource("3_yxruc")]
 
-[node name="An_Uplifting_Nut" parent="Objectives" index="2" instance=ExtResource("4_qi0v2")]
+[node name="An_Uplifting_Nut" parent="Objectives" parent_id_path=PackedInt32Array(621023371) index="2" unique_id=1781126472 instance=ExtResource("4_qi0v2")]
 
-[node name="Groping_In_The_Dark" parent="Objectives" index="3" instance=ExtResource("5_lbox4")]
+[node name="Groping_In_The_Dark" parent="Objectives" parent_id_path=PackedInt32Array(621023371) index="3" unique_id=1037769486 instance=ExtResource("5_lbox4")]

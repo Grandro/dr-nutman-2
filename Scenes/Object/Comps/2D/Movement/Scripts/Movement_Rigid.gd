@@ -1,2 +1,0 @@
-extends CompMovementBase2D
-class_name CompMovementRigid2D

@@ -1,4 +1,4 @@
-[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://np506t5c03q2"]
+[gd_resource type="ShaderMaterial" format=3 uid="uid://np506t5c03q2"]
 
 [ext_resource type="Shader" uid="uid://cx4x0ffenq187" path="res://Global_Resources/Materials/2D/Shaders/Trans_Dot.gdshader" id="1"]
 

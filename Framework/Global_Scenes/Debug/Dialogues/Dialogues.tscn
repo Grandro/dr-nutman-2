@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://cdi2ojm12xq7a"]
+
+[ext_resource type="PackedScene" uid="uid://c6hxht1blqh45" path="res://Framework/Global_Scenes/Debug/Dialogues/Attributes/Text/Text.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://b257myw2w1drs" path="res://Framework/Global_Scenes/Debug/Keys_Editor/Keys_Editor_Parts.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://bn0nrurab5o0a" path="res://Framework/Global_Scenes/Debug/Dialogues/Attributes/Info/Info.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://cbqai3mq7novp" path="res://Framework/Global_Scenes/Debug/Dialogues/Attributes/Choice/Choice.tscn" id="5"]
+[ext_resource type="Script" uid="uid://ppgo41gygot0" path="res://Framework/Global_Scenes/Debug/Dialogues/Scripts/Dialogues.gd" id="6"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_1p3fx"]
+content_margin_left = 0.0
+color = Color(1, 1, 1, 1)
+grow_begin = 0.0
+grow_end = 0.0
+thickness = 2
+vertical = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w2y4b"]
+content_margin_left = 16.0
+content_margin_top = 16.0
+content_margin_right = 16.0
+content_margin_bottom = 16.0
+bg_color = Color(0.145098, 0.172549, 0.231373, 1)
+
+[node name="Dialogues" unique_id=1422370554 instance=ExtResource("3")]
+script = ExtResource("6")
+_e_key = "Dialogues"
+
+[node name="Parts" parent="VBox/HBox" parent_id_path=PackedInt32Array(1093986736) index="0" unique_id=1985024580]
+_e_types = Array[StringName]([&"Text", &"Info", &"Choice"])
+_e_default_value = {}
+_e_delete_loc_id = &""
+_e_enumerate = true
+_e_show_search = false
+
+[node name="VSep" type="VSeparator" parent="VBox/HBox" parent_id_path=PackedInt32Array(1093986736) index="1" unique_id=41496259]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_1p3fx")
+
+[node name="Preview_All" type="Button" parent="VBox/HBox/VBox/Options" parent_id_path=PackedInt32Array(2039795706) index="2" unique_id=692246102]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "FW_PREVIEW_ALL"
+
+[node name="Attributes" type="PanelContainer" parent="VBox/HBox/VBox" parent_id_path=PackedInt32Array(1590910835) index="1" unique_id=1100900065]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_w2y4b")
+
+[node name="Text" parent="VBox/HBox/VBox/Attributes" index="0" unique_id=514859363 instance=ExtResource("2")]
+visible = false
+layout_mode = 2
+
+[node name="Info" parent="VBox/HBox/VBox/Attributes" index="1" unique_id=987576993 instance=ExtResource("4")]
+visible = false
+layout_mode = 2
+
+[node name="Choice" parent="VBox/HBox/VBox/Attributes" index="2" unique_id=686659256 instance=ExtResource("5")]
+visible = false
+layout_mode = 2
+
+[editable path="HBox/VBox/Options/Search"]

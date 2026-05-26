@@ -1,9 +1,9 @@
-[gd_scene load_steps=42 format=3 uid="uid://cn4livtidiyqn"]
+[gd_scene format=3 uid="uid://cn4livtidiyqn"]
 
 [ext_resource type="PackedScene" uid="uid://osrm8oliivfv" path="res://Scenes/Objects/3D/Enemies/Enemy_Base.tscn" id="1_2mua1"]
-[ext_resource type="Texture2D" uid="uid://cnflp2be3lbyg" path="res://Global_Resources/Sprites/Objects/Enemies/Ghosty/Spritesheet.png" id="2_cpnii"]
-[ext_resource type="PackedScene" uid="uid://dsp0njc065uev" path="res://Scenes/Object/Comps/3D/Collision_Shape.tscn" id="3_88jbl"]
-[ext_resource type="PackedScene" uid="uid://cfdwl620axohy" path="res://Scenes/Object/Comps/3D/Audio.tscn" id="3_e5on6"]
+[ext_resource type="Texture2D" uid="uid://dvafsb44rr3jr" path="res://Global_Resources/Sprites/Objects/Enemies/Ghosty/Spritesheet.png" id="2_cpnii"]
+[ext_resource type="PackedScene" uid="uid://dsp0njc065uev" path="res://Framework/Scenes/Object/Comps/3D/Collision_Shape.tscn" id="3_88jbl"]
+[ext_resource type="PackedScene" uid="uid://cfdwl620axohy" path="res://Framework/Scenes/Object/Comps/3D/Audio.tscn" id="3_e5on6"]
 [ext_resource type="Animation" uid="uid://cckbw862y3dw4" path="res://Scenes/Objects/3D/Enemies/Ghosty/Anims/Terrain/Stop_Down.res" id="4_jy415"]
 [ext_resource type="Animation" uid="uid://csk6wr6cx2mh2" path="res://Scenes/Objects/3D/Enemies/Ghosty/Anims/Terrain/Stop_Left.res" id="5_au8xa"]
 [ext_resource type="Animation" uid="uid://barpp0sclwak2" path="res://Scenes/Objects/3D/Enemies/Ghosty/Anims/Stop_Down.res" id="5_uplfe"]
@@ -13,7 +13,7 @@
 [ext_resource type="Animation" uid="uid://cxrvbkk6j4rrf" path="res://Scenes/Objects/3D/Enemies/Ghosty/Anims/Terrain/Stop_Up.res" id="7_agaga"]
 [ext_resource type="Animation" uid="uid://bh5ns7ki0h3ym" path="res://Scenes/Objects/3D/Enemies/Ghosty/Anims/Stop_Up.res" id="8_5ebne"]
 [ext_resource type="Animation" uid="uid://c68mieavgh5l5" path="res://Scenes/Objects/3D/Enemies/Ghosty/Anims/Terrain/Idle_Down.res" id="8_8y6sd"]
-[ext_resource type="PackedScene" uid="uid://b028hrfen5mpa" path="res://Scenes/Object/Comps/3D/Movement/Comps/Terrain/Area.tscn" id="8_ikul1"]
+[ext_resource type="PackedScene" uid="uid://b028hrfen5mpa" path="res://Framework/Scenes/Object/Comps/3D/Movement/Comps/Terrain/Area.tscn" id="8_ikul1"]
 [ext_resource type="Animation" uid="uid://bcvtdaa4xomq" path="res://Scenes/Objects/3D/Enemies/Ghosty/Anims/Terrain/Idle_Left.res" id="9_4hwbk"]
 [ext_resource type="Animation" uid="uid://b038r5yd4rlww" path="res://Scenes/Objects/3D/Enemies/Ghosty/Anims/Idle_Down.res" id="9_6v72v"]
 [ext_resource type="Animation" uid="uid://btgsbj4dmho2r" path="res://Scenes/Objects/3D/Enemies/Ghosty/Anims/Idle_Left.res" id="10_erecr"]
@@ -30,8 +30,8 @@
 [ext_resource type="Animation" uid="uid://bygxkm8jixapf" path="res://Scenes/Objects/3D/Enemies/Ghosty/Anims/Float_Right.res" id="15_thtjc"]
 [ext_resource type="Animation" uid="uid://bp02ycfrdh27o" path="res://Scenes/Objects/3D/Enemies/Ghosty/Anims/Float_Up.res" id="16_lhxvm"]
 [ext_resource type="PackedScene" uid="uid://cf8qsc1jiuvt8" path="res://Scenes/Objects/3D/Enemies/Ghosty/Comps/Behavior/Behavior.tscn" id="17_au8xa"]
-[ext_resource type="PackedScene" uid="uid://boh1rwcj5rgwf" path="res://Scenes/Object/Comps/States.tscn" id="29_4x276"]
-[ext_resource type="PackedScene" uid="uid://drpp26gth4snn" path="res://Scenes/Object/Comps/Reference.tscn" id="30_8yh0i"]
+[ext_resource type="PackedScene" uid="uid://boh1rwcj5rgwf" path="res://Framework/Scenes/Object/Comps/States.tscn" id="29_4x276"]
+[ext_resource type="PackedScene" uid="uid://drpp26gth4snn" path="res://Framework/Scenes/Object/Comps/Reference.tscn" id="30_8yh0i"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_agaga"]
 radius = 0.4
@@ -130,69 +130,70 @@ _data = {
 &"Floating": SubResource("Animation_au8xa")
 }
 
-[node name="Ghosty" instance=ExtResource("1_2mua1")]
+[node name="Ghosty" unique_id=1584444253 instance=ExtResource("1_2mua1")]
 
-[node name="Display" parent="." index="0"]
+[node name="Display" parent="." index="0" unique_id=1023854551]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.14, 0)
 shaded = false
 texture = ExtResource("2_cpnii")
 hframes = 8
 vframes = 2
 
-[node name="Collision" parent="." index="1" instance=ExtResource("3_88jbl")]
+[node name="Collision" parent="." index="1" unique_id=597524280 instance=ExtResource("3_88jbl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.15, 0)
 shape = SubResource("CapsuleShape3D_agaga")
 
-[node name="Body" parent="Movement/Terrain/Areas" index="0" instance=ExtResource("8_ikul1")]
+[node name="Body" parent="Movement/Terrain/Areas" parent_id_path=PackedInt32Array(1527968658, 559740516) index="0" unique_id=455326834 instance=ExtResource("8_ikul1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.73, 0)
 
-[node name="Collision" parent="Movement/Terrain/Areas/Body" index="1"]
+[node name="Collision" parent="Movement/Terrain/Areas/Body" index="1" unique_id=1853413607]
 shape = SubResource("BoxShape3D_nb5pv")
 
-[node name="Anims" parent="Movement/Terrain" index="1"]
-libraries = {
-&"": SubResource("AnimationLibrary_4lyxn")
-}
+[node name="Anims" parent="Movement/Terrain" parent_id_path=PackedInt32Array(1527968658) index="1" unique_id=1905048887]
+libraries/ = SubResource("AnimationLibrary_4lyxn")
 
-[node name="States" parent="Movement" index="2"]
-_e_speeds = Dictionary[String, float]({
-"Float": 1.0,
-"Stop": 0.0
+[node name="States" parent="Movement" parent_id_path=PackedInt32Array(1704547041) index="2" unique_id=835987306]
+_e_speeds = Dictionary[StringName, float]({
+&"Float": 1.0,
+&"Stop": 0.0
 })
 
-[node name="Audio" parent="." index="3" instance=ExtResource("3_e5on6")]
+[node name="Audio" parent="." index="3" unique_id=192435580 instance=ExtResource("3_e5on6")]
 
-[node name="Behavior" parent="." index="4" instance=ExtResource("17_au8xa")]
+[node name="Behavior" parent="." index="4" unique_id=1501020101 instance=ExtResource("17_au8xa")]
 
-[node name="Battle_Starter" parent="." index="5"]
-_e_enc_key = "Ghost_House_1"
+[node name="Move" parent="Behavior/States/Rndm" parent_id_path=PackedInt32Array(1501020101, 661693625) index="1" unique_id=1292768813]
+_e_reset_on_finish = true
+
+[node name="Chase" parent="Behavior/States" parent_id_path=PackedInt32Array(1501020101, 892130468) index="1" unique_id=1741032918]
+_e_reset_on_finish = true
+
+[node name="Battle_Starter" parent="." index="5" unique_id=232068546]
+_e_enc_key = &"Ghost_House_1"
 _e_troops = Dictionary[Array, int]({
 [&"Ghosty"]: 2,
 [&"Ghosty", &"Ghosty"]: 1
 })
+_e_bonus_loot = {}
 
-[node name="Neutral" parent="Battle_Starter" index="0"]
+[node name="Neutral" parent="Battle_Starter" index="0" unique_id=1561785572]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0)
 
-[node name="Collision" parent="Battle_Starter/Neutral" index="0"]
+[node name="Collision" parent="Battle_Starter/Neutral" index="0" unique_id=1669649996]
 shape = SubResource("BoxShape3D_uplfe")
 
-[node name="Anims" parent="." index="6"]
-libraries = {
-&"": SubResource("AnimationLibrary_cpnii")
-}
+[node name="Anims" parent="." index="6" unique_id=423240117]
+libraries/ = SubResource("AnimationLibrary_cpnii")
 
-[node name="Floating" type="AnimationPlayer" parent="." index="7"]
-libraries = {
-&"": SubResource("AnimationLibrary_88jbl")
-}
-autoplay = "Floating"
+[node name="Floating" type="AnimationPlayer" parent="." index="7" unique_id=1497807268]
+libraries/ = SubResource("AnimationLibrary_88jbl")
+autoplay = &"Floating"
 
-[node name="States" parent="." index="8" instance=ExtResource("29_4x276")]
-_e_states = Array[String](["Stop", "Idle", "Float"])
+[node name="States" parent="." index="8" unique_id=669521298 instance=ExtResource("29_4x276")]
+_e_states = Array[StringName]([&"Stop", &"Idle", &"Float"])
 _e_state = "Idle"
 
-[node name="Reference" parent="." index="9" instance=ExtResource("30_8yh0i")]
+[node name="Reference" parent="." index="9" unique_id=1820375347 instance=ExtResource("30_8yh0i")]
 
 [editable path="Movement/Terrain"]
 [editable path="Movement/Terrain/Areas/Body"]

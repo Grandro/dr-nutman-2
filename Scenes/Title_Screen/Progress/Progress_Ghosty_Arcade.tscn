@@ -1,0 +1,340 @@
+[gd_scene format=3 uid="uid://b6kvg6rhp0oc3"]
+
+[ext_resource type="PackedScene" uid="uid://cl525dd882uw0" path="res://Framework/Scenes/Title_Screen/Progress/Progress_None.tscn" id="1_jbodt"]
+[ext_resource type="Script" uid="uid://b7he65nsulc0r" path="res://Scenes/Title_Screen/Progress/Scripts/Progress_Ghosty_Arcade.gd" id="3_e8fcp"]
+[ext_resource type="Texture2D" uid="uid://bibp3ffijm6sn" path="res://Global_Resources/Sprites/Backgrounds/2_Spritesheet.png" id="4_nmqnh"]
+[ext_resource type="Texture2D" uid="uid://dvafsb44rr3jr" path="res://Global_Resources/Sprites/Objects/Enemies/Ghosty/Spritesheet.png" id="5_u6a0k"]
+[ext_resource type="Texture2D" uid="uid://cr5jsqxyuwdlo" path="res://Global_Resources/Sprites/Light_1.png" id="7_e8fcp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xnwwh"]
+atlas = ExtResource("5_u6a0k")
+region = Rect2(0, 0, 54, 62)
+
+[sub_resource type="Animation" id="Animation_u6a0k"]
+resource_name = "Float"
+length = 1.6
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-27, -31), Vector2(-27, -26), Vector2(-27, -31), Vector2(-27, -36)]
+}
+
+[sub_resource type="Animation" id="Animation_nmqnh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-27, -31)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ocn0i"]
+_data = {
+&"Floating": SubResource("Animation_u6a0k"),
+&"RESET": SubResource("Animation_nmqnh")
+}
+
+[sub_resource type="Animation" id="Animation_e8fcp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_h2nxt"]
+resource_name = "Rotate"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.283185307179586]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ugjfv"]
+_data = {
+&"RESET": SubResource("Animation_e8fcp"),
+&"Rotate": SubResource("Animation_h2nxt")
+}
+
+[sub_resource type="Animation" id="Animation_ycwee"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [3.0]
+}
+
+[sub_resource type="Animation" id="Animation_gwimr"]
+resource_name = "Shine"
+length = 6.0
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture_scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5, 3, 4.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [3.0, 2.75, 3.0, 3.25]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_82kvc"]
+_data = {
+&"RESET": SubResource("Animation_ycwee"),
+&"Shine": SubResource("Animation_gwimr")
+}
+
+[node name="Progress_Ghosty_Arcade" unique_id=224714966 instance=ExtResource("1_jbodt")]
+script = ExtResource("3_e8fcp")
+
+[node name="Background" parent="." index="0" unique_id=1928639947]
+self_modulate = Color(0.35, 0.35, 0.35, 1)
+light_mask = 24
+texture = ExtResource("4_nmqnh")
+
+[node name="Ghosties" type="Control" parent="." index="1" unique_id=287363037]
+light_mask = 16
+visibility_layer = 8
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+
+[node name="Ghosty_Red" type="Control" parent="Ghosties" index="0" unique_id=1403365879]
+light_mask = 16
+visibility_layer = 8
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_right = -180.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Texture" type="TextureRect" parent="Ghosties/Ghosty_Red" index="0" unique_id=1350448821]
+self_modulate = Color(1, 0, 0, 1)
+light_mask = 16
+visibility_layer = 8
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -27.0
+offset_top = -31.0
+offset_right = 27.0
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_xnwwh")
+
+[node name="Floating" type="AnimationPlayer" parent="Ghosties/Ghosty_Red/Texture" index="0" unique_id=1552804327]
+libraries/ = SubResource("AnimationLibrary_ocn0i")
+autoplay = &"Floating"
+
+[node name="Ghosty_Orange" type="Control" parent="Ghosties" index="1" unique_id=1257476747]
+light_mask = 16
+visibility_layer = 8
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 160.0
+offset_right = 160.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(-1, -1)
+
+[node name="Texture" type="TextureRect" parent="Ghosties/Ghosty_Orange" index="0" unique_id=1533159620]
+self_modulate = Color(1, 0.64705884, 0, 1)
+light_mask = 16
+visibility_layer = 8
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -27.0
+offset_top = -31.0
+offset_right = 27.0
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_xnwwh")
+
+[node name="Floating" type="AnimationPlayer" parent="Ghosties/Ghosty_Orange/Texture" index="0" unique_id=1521044750]
+libraries/ = SubResource("AnimationLibrary_ocn0i")
+autoplay = &"Floating"
+
+[node name="Ghosty_Cyan" type="Control" parent="Ghosties" index="2" unique_id=659687936]
+light_mask = 16
+visibility_layer = 8
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = 140.0
+offset_bottom = 140.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5707964
+scale = Vector2(-1, -1)
+
+[node name="Texture" type="TextureRect" parent="Ghosties/Ghosty_Cyan" index="0" unique_id=882503262]
+self_modulate = Color(0, 1, 1, 1)
+light_mask = 16
+visibility_layer = 8
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -27.0
+offset_top = -31.0
+offset_right = 27.0
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_xnwwh")
+
+[node name="Floating" type="AnimationPlayer" parent="Ghosties/Ghosty_Cyan/Texture" index="0" unique_id=1905822208]
+libraries/ = SubResource("AnimationLibrary_ocn0i")
+autoplay = &"Floating"
+
+[node name="Ghosty_Pink" type="Control" parent="Ghosties" index="3" unique_id=765865520]
+light_mask = 16
+visibility_layer = 8
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -150.0
+offset_bottom = -150.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -1.5707964
+scale = Vector2(-1, -1)
+
+[node name="Texture" type="TextureRect" parent="Ghosties/Ghosty_Pink" index="0" unique_id=1252016396]
+self_modulate = Color(0.7490196, 0.56078434, 0.5921569, 1)
+light_mask = 16
+visibility_layer = 8
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -27.0
+offset_top = -31.0
+offset_right = 27.0
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_xnwwh")
+
+[node name="Floating" type="AnimationPlayer" parent="Ghosties/Ghosty_Pink/Texture" index="0" unique_id=1895420976]
+libraries/ = SubResource("AnimationLibrary_ocn0i")
+autoplay = &"Floating"
+
+[node name="Anims" type="AnimationPlayer" parent="Ghosties" index="4" unique_id=15060762]
+libraries/ = SubResource("AnimationLibrary_ugjfv")
+autoplay = &"Rotate"
+
+[node name="Load_Autosave" type="Button" parent="." index="7" unique_id=613640132]
+light_mask = 16
+visibility_layer = 8
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 270.0
+offset_top = -15.0
+offset_right = 470.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+shortcut_in_tooltip = false
+text = "FW_LOAD_AUTOSAVE"
+clip_text = true
+
+[node name="Light" type="PointLight2D" parent="." index="8" unique_id=503621218]
+light_mask = 9
+visibility_layer = 9
+position = Vector2(1001, 355)
+color = Color(1, 0.805114, 0.453964, 1)
+energy = 5.0
+range_item_cull_mask = 16
+texture = ExtResource("7_e8fcp")
+texture_scale = 3.0
+
+[node name="Anims" type="AnimationPlayer" parent="Light" index="0" unique_id=876570161]
+libraries/ = SubResource("AnimationLibrary_82kvc")
+autoplay = &"Shine"

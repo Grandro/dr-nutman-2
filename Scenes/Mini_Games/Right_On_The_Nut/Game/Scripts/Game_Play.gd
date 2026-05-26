@@ -5,11 +5,11 @@ class_name MiniGameRightOnTheNutGamePlay
 @export var _e_targets_per_launch: int = 5
 @export var _e_fragments_per_crack: int = 6
 
-var _a_Cracked_Peanut_Scene: PackedScene = preload("res://Scenes/Mini_Games/Right_On_The_Nut/Game/Cracked_Peanut.tscn")
-var _a_Uncracked_Peanut_Fragment_Scene: PackedScene = preload("res://Scenes/Mini_Games/Right_On_The_Nut/Game/Uncracked_Peanut_Fragment.tscn")
+var _a_Cracked_Peanut_Scene: PackedScene = preload("uid://bbxdesk7aginw")
+var _a_Uncracked_Peanut_Fragment_Scene: PackedScene = preload("uid://c13ao8dupkdus")
 
-@onready var _a_Back_Button: IndicatorButton = get_node("Canvas_2/Margin/Back_Button")
-@onready var _a_Uncracked_Peanut_Amount: ItemAmountDisplay = get_node("Canvas_2/Margin/Uncracked_Peanut_Amount")
+@onready var _a_Back_Button: FWIndicatorButton = get_node("Canvas_2/Margin/Back_Button")
+@onready var _a_Uncracked_Peanut_Amount: FWItemAmountDisplay = get_node("Canvas_2/Margin/Uncracked_Peanut_Amount")
 @onready var _a_Dots: Node2D = get_node("Node2D/Dots")
 @onready var _a_Dot_1: MiniGameRightOnTheNutDot = get_node("Node2D/Dots/1")
 @onready var _a_Dot_10: MiniGameRightOnTheNutDot = get_node("Node2D/Dots/10")
@@ -17,7 +17,7 @@ var _a_Uncracked_Peanut_Fragment_Scene: PackedScene = preload("res://Scenes/Mini
 @onready var _a_Nutcracker_Jaw_Delay: Timer = get_node("Node2D/Nutcracker_Jaw/Delay")
 @onready var _a_Nutcracker_Jaw_Anims: AnimationPlayer = get_node("Node2D/Nutcracker_Jaw/Anims")
 @onready var _a_Uncracked_Peanut: Sprite2D = get_node("Node2D/Uncracked_Peanut")
-@onready var _a_Uncracked_Peanut_Camera: CompCamera2D = get_node("Node2D/Uncracked_Peanut/Camera")
+@onready var _a_Uncracked_Peanut_Camera: FWCompCamera2D = get_node("Node2D/Uncracked_Peanut/Camera")
 @onready var _a_Peanut_Fragments: Node2D = get_node("Node2D/Peanut_Fragments")
 @onready var _a_Crack_Delay: Timer = get_node("Node2D/Crack_Delay")
 @onready var _a_Audio_Launch_Nut: AudioStreamPlayer = get_node("Node2D/Audio/Launch_Nut")

@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://b6xv3l4rsdckw"]
+
+[ext_resource type="PackedScene" uid="uid://cjr0l2h3yj5lh" path="res://Framework/Scenes/Object/Comps/3D/Speech_Bubble.tscn" id="1_7udjr"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_cxxd5"]
+viewport_path = NodePath("VP")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u04r5"]
+resource_local_to_scene = true
+render_priority = 1
+transparency = 1
+no_depth_test = true
+shading_mode = 0
+albedo_texture = SubResource("ViewportTexture_cxxd5")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_10ebx"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_u04r5")
+size = Vector2(5, 5)
+orientation = 2
+
+[node name="Speech_Bubble" unique_id=30118477 instance=ExtResource("1_7udjr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, 0.03)
+visible = false
+
+[node name="Plane" parent="Panel" parent_id_path=PackedInt32Array(632463135) index="0" unique_id=640928936]
+mesh = SubResource("PlaneMesh_10ebx")
+
+[editable path="Panel"]
+[editable path="Panel/VP/Speech_Bubble_UI"]

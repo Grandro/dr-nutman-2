@@ -1,6 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://4wqajymv3gtt"]
+[gd_scene format=3 uid="uid://4wqajymv3gtt"]
 
-[ext_resource type="PackedScene" uid="uid://c7l6gl3pndhn7" path="res://Global_Resources/Mapping/3D/Plane/Plane_Base.tscn" id="1_jjwnt"]
+[ext_resource type="PackedScene" uid="uid://c7l6gl3pndhn7" path="res://Framework/Global_Resources/Mapping/3D/Plane/Plane_Base.tscn" id="1_jjwnt"]
 [ext_resource type="Texture2D" uid="uid://ds3toxljij0dn" path="res://Global_Resources/Mapping/Sprites/Same_As/Broko_Town/Doctor_Dream_1/Wall_1/Main_Side_Down_Right.png" id="2_4ob6m"]
 [ext_resource type="Texture2D" uid="uid://iatmyxfufkss" path="res://Global_Resources/Mapping/Sprites/Same_As/Broko_Town/Doctor_Dream_1/Wall_1/Single_Side_Down_Center.png" id="3_uooga"]
 [ext_resource type="Texture2D" uid="uid://dv716oxrwpyb6" path="res://Global_Resources/Mapping/Sprites/Same_As/Broko_Town/Doctor_Dream_1/Wall_1/Main_Side_Down_Left.png" id="4_o5nuo"]
@@ -31,23 +31,23 @@ size = Vector2(1, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_b47lw"]
 
-[node name="Single_1" type="Node3D"]
+[node name="Single_1" type="Node3D" unique_id=1924592681]
 
-[node name="Front" parent="." instance=ExtResource("1_jjwnt")]
+[node name="Front" parent="." unique_id=2141296744 instance=ExtResource("1_jjwnt")]
 transform = Transform3D(1, -1.06581e-14, 4.02341e-21, 0, -4.37114e-08, -1, 1.06581e-14, 1, -4.37114e-08, 0, 0.5, 0.5)
 mesh = SubResource("PlaneMesh_i213d")
 
-[node name="Right" parent="." instance=ExtResource("1_jjwnt")]
+[node name="Right" parent="." unique_id=611359751 instance=ExtResource("1_jjwnt")]
 transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91068e-15, 0.5, 0.5, 0)
 mesh = SubResource("PlaneMesh_1q115")
 
-[node name="Back" parent="." instance=ExtResource("1_jjwnt")]
+[node name="Back" parent="." unique_id=425953229 instance=ExtResource("1_jjwnt")]
 transform = Transform3D(-1, -8.74228e-08, 3.82137e-15, 0, -4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, 0, 0.5, -0.5)
 mesh = SubResource("PlaneMesh_cwofl")
 
-[node name="Static" type="StaticBody3D" parent="."]
+[node name="Static" type="StaticBody3D" parent="." unique_id=995238894]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 collision_mask = 0
 
-[node name="Collision" type="CollisionShape3D" parent="Static"]
+[node name="Collision" type="CollisionShape3D" parent="Static" unique_id=491500481]
 shape = SubResource("BoxShape3D_b47lw")

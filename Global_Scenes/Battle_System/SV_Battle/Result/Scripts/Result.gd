@@ -3,10 +3,10 @@ class_name SVResult
 
 signal closed()
 
-@onready var _a_Rewards: LootRewardsResult = get_node("Control/VBox/Rewards")
+@onready var _a_Rewards: FWLootRewardsResult = get_node("Control/VBox/Rewards")
 @onready var _a_Party_Members: ResultPartyMembers = get_node("Control/VBox/Party_Members")
-@onready var _a_Coins: LootCoins = get_node("Control/Coins")
-@onready var _a_Proceed: IndicatorButton = get_node("Control/Proceed")
+@onready var _a_Coins: FWLootCoins = get_node("Control/Coins")
+@onready var _a_Proceed: FWIndicatorButton = get_node("Control/Proceed")
 @onready var _a_Anims: AnimationPlayer = get_node("Anims")
 
 var _a_loot: Dictionary[StringName, int] = {} # Match item_key to amount

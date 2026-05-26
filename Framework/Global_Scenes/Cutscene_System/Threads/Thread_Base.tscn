@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://lsv022k5m6ud"]
+
+[ext_resource type="Script" uid="uid://dbtmd80302add" path="res://Framework/Global_Scenes/Cutscene_System/Threads/Scripts/Thread_Base.gd" id="1"]
+
+[node name="Thread_Base" type="Node" unique_id=493296381]
+script = ExtResource("1")

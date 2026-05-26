@@ -1,4 +1,4 @@
-extends Node3DObject
+extends FWNode3DObject
 class_name PowerCable
 
 signal started()

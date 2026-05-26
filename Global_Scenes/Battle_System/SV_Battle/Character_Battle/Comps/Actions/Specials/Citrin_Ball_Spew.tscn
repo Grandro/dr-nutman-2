@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://bblbjrlyve6p2"]
+[gd_scene format=3 uid="uid://bblbjrlyve6p2"]
 
 [ext_resource type="PackedScene" uid="uid://d1b030mi5wn3i" path="res://Global_Scenes/Battle_System/SV_Battle/Character_Battle/Comps/Actions/Action_Base.tscn" id="1_k2w5r"]
 [ext_resource type="Script" uid="uid://7dhpyt2m8adv" path="res://Global_Scenes/Battle_System/SV_Battle/Character_Battle/Comps/Actions/Specials/Scripts/Citrin_Ball_Spew.gd" id="2_s6cpe"]
-
 
 [sub_resource type="Animation" id="Animation_6yi8g"]
 length = 0.001
@@ -59,14 +58,12 @@ _data = {
 &"Shoot_Left": SubResource("Animation_yqc3v")
 }
 
-[node name="Citrin_Ball_Spew" instance=ExtResource("1_k2w5r")]
+[node name="Citrin_Ball_Spew" unique_id=841629374 instance=ExtResource("1_k2w5r")]
 script = ExtResource("2_s6cpe")
 
-[node name="Pos" type="Marker3D" parent="." index="0"]
+[node name="Pos" type="Marker3D" parent="." index="0" unique_id=368978458]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.61, 0.52, 0.01)
 
-[node name="Anims" type="AnimationPlayer" parent="." index="1"]
-libraries = {
-&"": SubResource("AnimationLibrary_2i70o"),
-&"SV": SubResource("AnimationLibrary_6yi8g")
-}
+[node name="Anims" type="AnimationPlayer" parent="." index="1" unique_id=2074933661]
+libraries/ = SubResource("AnimationLibrary_2i70o")
+libraries/SV = SubResource("AnimationLibrary_6yi8g")

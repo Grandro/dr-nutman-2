@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://chxv6asvj3u0d"]
+
+[ext_resource type="PackedScene" uid="uid://de2jy2ixhp2mw" path="res://Framework/Scenes/Object/Comps/Save.tscn" id="1_v6nk1"]
+[ext_resource type="Script" uid="uid://bhycdd0ggutu5" path="res://Framework/Scenes/Player/Comps/Scripts/Save.gd" id="2_qe1y8"]
+
+[node name="Save" unique_id=719108692 instance=ExtResource("1_v6nk1")]
+script = ExtResource("2_qe1y8")

@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://6m8iwc1igshk"]
+
+[ext_resource type="PackedScene" uid="uid://djhpux4n30xgb" path="res://Framework/Scenes/Window/Window_Control_Base.tscn" id="1"]
+[ext_resource type="Script" uid="uid://dxehr3o7rsf15" path="res://Framework/Global_Scenes/Debug/Preview/Scripts/Commands_Preview.gd" id="3"]
+[ext_resource type="PackedScene" uid="uid://csxl7e1wrfvnx" path="res://Framework/Global_Scenes/Debug/Preview/Preview.tscn" id="3_6w3w3"]
+
+[node name="Commands_Preview" type="CanvasLayer" unique_id=37806832]
+layer = 3
+script = ExtResource("3")
+
+[node name="Background" type="ColorRect" parent="." unique_id=588646134]
+visible = false
+light_mask = 8
+visibility_layer = 8
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+focus_mode = 2
+color = Color(0, 0, 0, 0.196078)
+
+[node name="Window" parent="." unique_id=1038975169 instance=ExtResource("1")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
+_e_window_title = "Cutscene_Preview"
+_e_resizable = false
+
+[node name="Preview" parent="Window/Contents" parent_id_path=PackedInt32Array(1038975169, 1946629432) index="0" unique_id=1135087813 instance=ExtResource("3_6w3w3")]
+layout_mode = 2
+
+[editable path="Window"]
+[editable path="Window/Contents/Preview"]

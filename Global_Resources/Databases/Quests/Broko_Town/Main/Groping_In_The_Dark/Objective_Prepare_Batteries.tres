@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ObjectiveDataSubQuest" format=3 uid="uid://dg0rd8d17d2sm"]
+
+[ext_resource type="Script" uid="uid://gxo7txpgnyj8" path="res://Framework/Global_Resources/Databases/Quests/Objective_Data_Sub_Quest.gd" id="1_6jnv6"]
+[ext_resource type="Resource" uid="uid://3mqem27gkcd8" path="res://Global_Resources/Databases/Quests/Broko_Town/Main/Groping_In_The_Dark_Prepare_Batteries/Groping_In_The_Dark_Prepare_Batteries.tres" id="1_ddtcq"]
+
+[resource]
+script = ExtResource("1_6jnv6")
+_e_sub_quest = ExtResource("1_ddtcq")
+_e_type = "Sub_Quest"
+_e_desc = &"PROGRESS_QUESTS_BROKO_TOWN_1_MAIN_GROPING_IN_THE_DARK_OBJECTIVE_PREPARE_BATTERIES"

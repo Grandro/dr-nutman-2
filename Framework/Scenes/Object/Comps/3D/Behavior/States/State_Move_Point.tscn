@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cp0gj2f41rwwk"]
+
+[ext_resource type="PackedScene" uid="uid://cjanmnf2alc80" path="res://Framework/Scenes/Object/Comps/3D/Behavior/States/State_Move_Base.tscn" id="1_5ydyp"]
+[ext_resource type="Script" uid="uid://wwiombj28bis" path="res://Framework/Scenes/Object/Comps/3D/Behavior/States/Scripts/State_Move_Point.gd" id="2_5ydyp"]
+
+[node name="Move" unique_id=1292768813 instance=ExtResource("1_5ydyp")]
+script = ExtResource("2_5ydyp")
+_e_point = Vector3(0, 0, 0)
+_e_reset_on_finish = true
+_e_min_radius = 0.0
+_e_max_radius = 0.0

@@ -1,4 +1,4 @@
-extends CompInteractionsShared
+extends FWCompInteractionsShared
 class_name ObjectBookshelfCompInteractionsShared
 
 var _a_interaction_area: Node

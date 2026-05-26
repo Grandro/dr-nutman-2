@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://xs4d5mud5si8"]
+
+[ext_resource type="PackedScene" uid="uid://cnpcrhnjo25h1" path="res://Framework/Global_Scenes/Debug/Scenes/Value_Select/Value_Options.tscn" id="1_mgrvm"]
+[ext_resource type="Script" uid="uid://dce3ndklryxm3" path="res://Framework/Global_Scenes/Debug/Scenes/Comp_Select/Scripts/Comp_Select.gd" id="2_jfscf"]
+[ext_resource type="PackedScene" uid="uid://ceaqnana6y842" path="res://Framework/Global_Scenes/Debug/Scenes/Value_Select/Var_Select.tscn" id="3_omkvg"]
+
+[node name="Comp_Select" unique_id=1955102541 instance=ExtResource("1_mgrvm")]
+script = ExtResource("2_jfscf")
+_e_heading_loc_id = &"FW_DEBUG_CUTSCENES_COMP"
+_e_var_select_scene = ExtResource("3_omkvg")
+
+[node name="Heading" parent="HBox" parent_id_path=PackedInt32Array(1270824968) index="0" unique_id=1181981547]
+text = "FW_DEBUG_CUTSCENES_COMP"

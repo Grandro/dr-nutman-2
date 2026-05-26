@@ -1,4 +1,4 @@
-extends Static3DObject
+extends FWStatic3DObject
 class_name MapDrNutmanHome1ObjectBed
 
 @onready var _a_Blanket: MeshInstance3D = get_node("Model/Blanket")

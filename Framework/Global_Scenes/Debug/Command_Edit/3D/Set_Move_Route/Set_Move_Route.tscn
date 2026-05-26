@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://od0ksf0d6wkg"]
+
+[ext_resource type="PackedScene" uid="uid://bd3phdbrcul61" path="res://Framework/Global_Scenes/Debug/Command_Edit/3D/Command_Preview_Object_Path.tscn" id="1_thomr"]
+[ext_resource type="PackedScene" uid="uid://dkxeoahqc7tdy" path="res://Framework/Global_Scenes/Debug/Command_Edit/Set_Move_Route/State.tscn" id="2_b1kch"]
+[ext_resource type="Script" uid="uid://df1swii80imp1" path="res://Framework/Global_Scenes/Debug/Command_Edit/Set_Move_Route/Scripts/Set_Move_Route.gd" id="2_gc7cg"]
+[ext_resource type="PackedScene" uid="uid://ceaqnana6y842" path="res://Framework/Global_Scenes/Debug/Scenes/Value_Select/Var_Select.tscn" id="4_eiklq"]
+[ext_resource type="PackedScene" uid="uid://dg4df175aufiv" path="res://Framework/Global_Scenes/Debug/Scenes/Value_Select/Value_Slider.tscn" id="4_gyf71"]
+[ext_resource type="PackedScene" uid="uid://dmysqox083lhl" path="res://Framework/Global_Scenes/Debug/Scenes/Value_Select/Value_Bool.tscn" id="5_rvuoi"]
+
+[node name="Set_Move_Route" unique_id=752535311 instance=ExtResource("1_thomr")]
+script = ExtResource("2_gc7cg")
+
+[node name="Path_Points" parent="Window/Contents/Margin/HBox" parent_id_path=PackedInt32Array(2048728742) index="1" unique_id=60426775]
+custom_minimum_size = Vector2(300, 0)
+
+[node name="Object" parent="Window/Contents/Margin/HBox/Right/Options/VBox" parent_id_path=PackedInt32Array(213120298) index="0" unique_id=2124627041]
+_e_needed_comps = Array[String](["Reference", "Movement", "States"])
+_e_allowed_classes = Array[String](["Node3D"])
+
+[node name="State" parent="Window/Contents/Margin/HBox/Right/Options/VBox" parent_id_path=PackedInt32Array(213120298) index="1" unique_id=1027914208 instance=ExtResource("2_b1kch")]
+layout_mode = 2
+
+[node name="Speed" parent="Window/Contents/Margin/HBox/Right/Options/VBox" parent_id_path=PackedInt32Array(213120298) index="2" unique_id=147099189 instance=ExtResource("4_gyf71")]
+layout_mode = 2
+_e_display_value = true
+_e_heading_loc_id = &"FW_DEBUG_CUTSCENES_SPEED"
+_e_var_select_scene = ExtResource("4_eiklq")
+
+[node name="Value" parent="Window/Contents/Margin/HBox/Right/Options/VBox/Speed" index="1" unique_id=64840236]
+max_value = 5.0
+step = 0.05
+value = 1.0
+tick_count = 6
+ticks_on_borders = true
+
+[node name="Wait_Finish" parent="Window/Contents/Margin/HBox/Right/Options/VBox" parent_id_path=PackedInt32Array(213120298) index="3" unique_id=1410445520 instance=ExtResource("5_rvuoi")]
+layout_mode = 2
+_e_heading_loc_id = &"FW_DEBUG_CUTSCENES_WAIT_FINISH"
+_e_var_select_scene = ExtResource("4_eiklq")
+
+[node name="Value" parent="Window/Contents/Margin/HBox/Right/Options/VBox/Wait_Finish" index="1" unique_id=2136448895]
+button_pressed = true
+
+[editable path="Window"]
+[editable path="Window/Contents/Margin/HBox/Left/Preview"]
+[editable path="Window/Contents/Margin/HBox/Left/Grid/Offset"]
+[editable path="Window/Contents/Margin/HBox/Right/Options/VBox/Speed"]
+[editable path="Window/Contents/Margin/HBox/Right/Options/VBox/Wait_Finish"]

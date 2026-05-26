@@ -1,8 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bkwsl3ih8vb1o"]
+[gd_scene format=3 uid="uid://bkwsl3ih8vb1o"]
 
 [ext_resource type="PackedScene" uid="uid://fxk5prqetirt" path="res://Scenes/Objects/3D/Building_Base/Building_Base.tscn" id="1"]
 [ext_resource type="PackedScene" uid="uid://byor7863k761r" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Objects/Houses/Buffin_1/Models/Model.glb" id="2_8qggy"]
-[ext_resource type="PackedScene" uid="uid://dsp0njc065uev" path="res://Scenes/Object/Comps/3D/Collision_Shape.tscn" id="3_1tvdj"]
+[ext_resource type="PackedScene" uid="uid://dsp0njc065uev" path="res://Framework/Scenes/Object/Comps/3D/Collision_Shape.tscn" id="3_1tvdj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cfubt"]
 size = Vector3(6, 6, 6)
@@ -10,17 +10,17 @@ size = Vector3(6, 6, 6)
 [sub_resource type="BoxShape3D" id="BoxShape3D_2glkg"]
 size = Vector3(2, 0.5, 1)
 
-[node name="Buffin_1" instance=ExtResource("1")]
+[node name="Buffin_1" unique_id=1612289138 instance=ExtResource("1")]
 
-[node name="Model" parent="." index="0" instance=ExtResource("2_8qggy")]
+[node name="Model" parent="." index="0" unique_id=1112319081 instance=ExtResource("2_8qggy")]
 
-[node name="Collision" parent="." index="1" instance=ExtResource("3_1tvdj")]
+[node name="Collision" parent="." index="1" unique_id=1426985469 instance=ExtResource("3_1tvdj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 shape = SubResource("BoxShape3D_cfubt")
 
 [node name="1" parent="Interactions" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.25, 3.5)
-_e_dirs = Array[String](["Up"])
+_e_dirs = Array[StringName]([&"Up"])
 
 [node name="Collision" parent="Interactions/1" index="0"]
 shape = SubResource("BoxShape3D_2glkg")

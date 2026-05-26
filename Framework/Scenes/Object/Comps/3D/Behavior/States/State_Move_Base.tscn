@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cjanmnf2alc80"]
+
+[ext_resource type="PackedScene" uid="uid://dvcr3pbdmde27" path="res://Framework/Scenes/Object/Comps/3D/Behavior/States/State_Base.tscn" id="1_wu4xf"]
+[ext_resource type="Script" uid="uid://dslgctqvmmewe" path="res://Framework/Scenes/Object/Comps/3D/Behavior/States/Scripts/State_Move_Base.gd" id="2_1symk"]
+
+[node name="Move" unique_id=1292768813 instance=ExtResource("1_wu4xf")]
+script = ExtResource("2_1symk")
+_e_move_state = &"Walk"
+_e_wait_finish = true
+_e_process_time = 0.1
+_e_min_radius = 2.0
+_e_max_radius = 5.0
+
+[node name="Process_Time" type="Timer" parent="." index="0" unique_id=169771468]
+one_shot = true

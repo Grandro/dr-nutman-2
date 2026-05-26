@@ -1,4 +1,4 @@
-extends MiniGameGameBase
+extends FWMiniGameGameBase
 class_name MiniGameRightOnTheNutGameBase
 
 @onready var _a_QT_Bar: MiniGameRightOnTheNutQTBar = get_node("Canvas_2/QT_Bar")

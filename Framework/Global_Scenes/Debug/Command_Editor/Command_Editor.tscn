@@ -1,0 +1,274 @@
+[gd_scene format=3 uid="uid://dqrcelykxg2gc"]
+
+[ext_resource type="PackedScene" uid="uid://bdm8bdyt8jrh" path="res://Framework/Scenes/Context_Menu/Context_Menu.tscn" id="1"]
+[ext_resource type="Texture2D" uid="uid://d2o1fmlrae4qu" path="res://Framework/Global_Scenes/Debug/Command_Editor/Sprites/Contents_BG.png" id="2"]
+[ext_resource type="Script" uid="uid://b3upn0eay11yg" path="res://Framework/Global_Scenes/Debug/Command_Editor/Scripts/Options.gd" id="5"]
+[ext_resource type="Script" uid="uid://vi0vpusmi5uu" path="res://Framework/Global_Scenes/Debug/Command_Editor/Scripts/Command_Editor.gd" id="6"]
+[ext_resource type="Script" uid="uid://v0jwe56fkhao" path="res://Framework/Scenes/Context_Menu/Option_Entry_Data.gd" id="6_42cq7"]
+[ext_resource type="Resource" uid="uid://duicl4g8h75yq" path="res://Framework/Global_Scenes/Debug/Command_Editor/Options/Change_Mark.tres" id="6_ll326"]
+[ext_resource type="Resource" uid="uid://diyr8gn3ai802" path="res://Framework/Global_Scenes/Debug/Command_Editor/Options/Copy.tres" id="7_4keym"]
+[ext_resource type="Theme" uid="uid://pr4yljlh62sp" path="res://Framework/Global_Resources/Themes/Debug/Debug.tres" id="8"]
+[ext_resource type="Resource" uid="uid://dwuy4c07l06kc" path="res://Framework/Global_Scenes/Debug/Command_Editor/Options/Cut.tres" id="8_dgtli"]
+[ext_resource type="Script" uid="uid://dno4u2qhj8qfi" path="res://Framework/Global_Scenes/Debug/Command_Editor/Scripts/Warnings.gd" id="9"]
+[ext_resource type="Resource" uid="uid://op81dkx8jk7w" path="res://Framework/Global_Scenes/Debug/Command_Editor/Options/Delete.tres" id="9_ud1o6"]
+[ext_resource type="Resource" uid="uid://nyws4po5lwwo" path="res://Framework/Global_Scenes/Debug/Command_Editor/Options/Edit.tres" id="10_rupqi"]
+[ext_resource type="Resource" uid="uid://cme23a5k67kff" path="res://Framework/Global_Scenes/Debug/Command_Editor/Options/HSep_1.tres" id="11_t5gcx"]
+[ext_resource type="Resource" uid="uid://b6kstnnakekjf" path="res://Framework/Global_Scenes/Debug/Command_Editor/Options/HSep_2.tres" id="12_g4tgp"]
+[ext_resource type="Resource" uid="uid://c7ca4bf88645e" path="res://Framework/Global_Scenes/Debug/Command_Editor/Options/New.tres" id="13_rscwg"]
+[ext_resource type="Resource" uid="uid://boam02r4a3d8f" path="res://Framework/Global_Scenes/Debug/Command_Editor/Options/Paste.tres" id="14_w338d"]
+[ext_resource type="Resource" uid="uid://00wdt534fk8o" path="res://Framework/Global_Scenes/Debug/Command_Editor/Options/Select_All.tres" id="15_l8edf"]
+[ext_resource type="Resource" uid="uid://cpty52ewdxhui" path="res://Framework/Global_Scenes/Debug/Command_Editor/Options/Swap_Process.tres" id="16_j86y4"]
+[ext_resource type="Resource" uid="uid://b5rjlaisi1ojc" path="res://Framework/Global_Scenes/Debug/Command_Editor/Options/Test.tres" id="17_20kki"]
+
+[node name="Command_Editor" type="HBoxContainer" unique_id=1937727120]
+light_mask = 8
+visibility_layer = 8
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+theme = ExtResource("8")
+script = ExtResource("6")
+_e_edit_scene_uids = {
+&"Change_Camera": {
+&"2D": "uid://c7lin81026g8e",
+&"3D": "uid://xtwq585mtnmy"
+},
+&"Change_Coins_Amount": {
+&"2D": "uid://chfnh4fetj1u6",
+&"3D": "uid://chfnh4fetj1u6"
+},
+&"Change_Cutscene_Args": {
+&"2D": "uid://dq04b3dqutc85",
+&"3D": "uid://bgoe6kr8knhns"
+},
+&"Change_Cutscene_Args_Idx": {
+&"2D": "uid://da0qscdsngtht",
+&"3D": "uid://b7gko4gk4rbwo"
+},
+&"Change_Dialogue_Args": {
+&"2D": "uid://cwxt37c6r1l24",
+&"3D": "uid://jnvl7qryciia"
+},
+&"Change_Dialogue_Args_Idx": {
+&"2D": "uid://diedueow1y7bq",
+&"3D": "uid://bkbrgpoedn85h"
+},
+&"Change_Dir": {
+&"2D": "uid://cltmq5he8wqnd",
+&"3D": "uid://de0gb4u3wc1kw"
+},
+&"Change_Equipable": {
+&"2D": "uid://b6eonecpp4pyg",
+&"3D": "uid://dafsp3uyrc1q5"
+},
+&"Change_Item_Amount": {
+&"2D": "uid://dsys8rn73fa24",
+&"3D": "uid://dsys8rn73fa24"
+},
+&"Change_State": {
+&"2D": "uid://c3tmknhtb6bh8",
+&"3D": "uid://dt0owa78o5xsu"
+},
+&"Change_Visibility": {
+&"2D": "uid://ctvuya8j5g624",
+&"3D": "uid://bxyckg3jjnrr7"
+},
+&"Comment": {
+&"2D": "uid://muylkota1gpe",
+&"3D": "uid://muylkota1gpe"
+},
+&"Cond_Branch": {
+&"2D": "uid://d0024rmnc641w",
+&"3D": "uid://d0024rmnc641w"
+},
+&"Default_Object_Key": {
+&"2D": "uid://5tyevpbxojid",
+&"3D": "uid://dnbf7s83p1sa2"
+},
+&"Disable_Object": {
+&"2D": "uid://bufj4gp243ii0",
+&"3D": "uid://cttyr74cnv4vn"
+},
+&"Exit_Cutscene": {
+&"2D": "uid://b65ss3ty5g17i",
+&"3D": "uid://b65ss3ty5g17i"
+},
+&"Jump": {
+&"2D": "uid://rx1usr081r1f",
+&"3D": "uid://lrpclam7f1rk"
+},
+&"Loop": {
+&"2D": "uid://donnmwjelyu5h",
+&"3D": "uid://donnmwjelyu5h"
+},
+&"Match": {
+&"2D": "uid://dflhfcfu4dv31",
+&"3D": "uid://dflhfcfu4dv31"
+},
+&"Move_Free_Camera": {
+&"2D": "uid://cdjoy5p381lp2",
+&"3D": "uid://by1r6k525gmr2"
+},
+&"Play_Anim": {
+&"2D": "uid://ckyybwba7ypur",
+&"3D": "uid://826f1wh71o1y"
+},
+&"Play_Audio": {
+&"2D": "uid://cssxmrprrxvq0",
+&"3D": "uid://fyac37gl8ner"
+},
+&"Script": {
+&"2D": "uid://bujm1lrtf55a2",
+&"3D": "uid://bujm1lrtf55a2"
+},
+&"Set_Avoidance": {
+&"2D": "uid://coll6moxqv7wj",
+&"3D": "uid://c5xwupbjoh1br"
+},
+&"Set_Move_Route": {
+&"2D": "uid://dvhbfpgivxgmc",
+"3D": "uid://od0ksf0d6wkg"
+},
+&"Show_Dialogue": {
+&"2D": "uid://ddx75hydpncta",
+&"3D": "uid://ddx75hydpncta"
+},
+&"Show_Overlay": {
+&"2D": "uid://b8qb1y4piwgod",
+&"3D": "uid://b8qb1y4piwgod"
+},
+&"Show_Popup": {
+&"2D": "uid://bgvlvvwfnpvya",
+&"3D": "uid://dd04m3dv5wpvr"
+},
+&"Sub_Process": {
+&"2D": "uid://la0uqg2eml53",
+&"3D": "uid://la0uqg2eml53"
+},
+&"Teleport": {
+&"2D": "uid://b31wlri5vunar",
+&"3D": "uid://b31wlri5vunar"
+},
+&"Teleport_Object": {
+&"2D": "uid://bsmps4mrswa6i",
+&"3D": "uid://b0a6k66wb4651"
+},
+&"Tween": {
+&"2D": "uid://4lrrv8o3qjkq",
+&"3D": "uid://ceqb2omopxfjl"
+},
+&"Wait": {
+&"2D": "uid://drocnnom52ph2",
+&"3D": "uid://drocnnom52ph2"
+},
+&"Wait_For_Sub_Process": {
+&"2D": "uid://tqviodgmbjvy",
+&"3D": "uid://tqviodgmbjvy"
+}
+}
+
+[node name="Contents" type="ScrollContainer" parent="." unique_id=1166836632]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+follow_focus = true
+
+[node name="Panel" type="PanelContainer" parent="Contents" unique_id=1308178652]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="BG" type="TextureRect" parent="Contents/Panel" unique_id=201306886]
+self_modulate = Color(0.2, 0.2, 0.2, 1)
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("2")
+stretch_mode = 1
+
+[node name="Entries" type="VBoxContainer" parent="Contents/Panel" unique_id=921662277]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Options" parent="Contents/Panel" unique_id=1525377377 instance=ExtResource("1")]
+layer = 2
+script = ExtResource("5")
+_e_options = Dictionary[StringName, ExtResource("6_42cq7")]({
+&"Change_Mark": ExtResource("6_ll326"),
+&"Copy": ExtResource("7_4keym"),
+&"Cut": ExtResource("8_dgtli"),
+&"Delete": ExtResource("9_ud1o6"),
+&"Edit": ExtResource("10_rupqi"),
+&"HSep_1": ExtResource("11_t5gcx"),
+&"HSep_2": ExtResource("12_g4tgp"),
+&"New": ExtResource("13_rscwg"),
+&"Paste": ExtResource("14_w338d"),
+&"Select_All": ExtResource("15_l8edf"),
+&"Swap_Process": ExtResource("16_j86y4"),
+&"Test": ExtResource("17_20kki")
+})
+_e_options_order = Array[StringName]([&"New", &"Edit", &"HSep_1", &"Cut", &"Copy", &"Paste", &"Delete", &"Select_All", &"HSep_2", &"Test", &"Swap_Process", &"Change_Mark"])
+
+[node name="Warnings" type="Control" parent="Contents/Panel" unique_id=2035124074]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+mouse_filter = 2
+script = ExtResource("9")
+
+[node name="Popup" type="Popup" parent="Contents/Panel/Warnings" unique_id=1142036560]
+canvas_cull_mask = 4293918728
+
+[node name="BG" type="Panel" parent="Contents/Panel/Warnings/Popup" unique_id=1571258643]
+light_mask = 8
+visibility_layer = 8
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="Margin" type="MarginContainer" parent="Contents/Panel/Warnings/Popup" unique_id=888730472]
+light_mask = 8
+visibility_layer = 8
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBox" type="VBoxContainer" parent="Contents/Panel/Warnings/Popup/Margin" unique_id=1131599944]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Entries" type="VBoxContainer" parent="Contents/Panel/Warnings/Popup/Margin/VBox" unique_id=1636442879]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/separation = 2
+
+[node name="Fix" type="Button" parent="Contents/Panel/Warnings/Popup/Margin/VBox" unique_id=148510013]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Fix"

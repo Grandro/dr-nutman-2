@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://cdjoy5p381lp2"]
+
+[ext_resource type="PackedScene" uid="uid://bdrem82kdb2mn" path="res://Framework/Global_Scenes/Debug/Command_Edit/2D/Command_Preview_Object_Path.tscn" id="1_66w8d"]
+[ext_resource type="Script" uid="uid://bf3r4bacyjevx" path="res://Framework/Global_Scenes/Debug/Command_Edit/Scripts/Move_Free_Camera.gd" id="2_cj65f"]
+[ext_resource type="PackedScene" uid="uid://cnpcrhnjo25h1" path="res://Framework/Global_Scenes/Debug/Scenes/Value_Select/Value_Options.tscn" id="3_tmgas"]
+[ext_resource type="PackedScene" uid="uid://ceaqnana6y842" path="res://Framework/Global_Scenes/Debug/Scenes/Value_Select/Var_Select.tscn" id="4_fub15"]
+[ext_resource type="PackedScene" uid="uid://dmysqox083lhl" path="res://Framework/Global_Scenes/Debug/Scenes/Value_Select/Value_Bool.tscn" id="5_2quld"]
+[ext_resource type="PackedScene" uid="uid://co04pnio1htpq" path="res://Framework/Global_Scenes/Debug/Scenes/Object_Select/Object_Select.tscn" id="6_2b0xk"]
+[ext_resource type="PackedScene" uid="uid://dg4df175aufiv" path="res://Framework/Global_Scenes/Debug/Scenes/Value_Select/Value_Slider.tscn" id="6_146k3"]
+[ext_resource type="PackedScene" uid="uid://cuohstyayaobg" path="res://Framework/Global_Scenes/Debug/Scenes/Value_Select/Value_Point2D.tscn" id="7_3l6x6"]
+
+[node name="Move_Free_Camera" unique_id=1880921617 instance=ExtResource("1_66w8d")]
+script = ExtResource("2_cj65f")
+
+[node name="Type" parent="Window/Contents/Margin/HBox/Right/Options/VBox" parent_id_path=PackedInt32Array(213120298) index="0" unique_id=1424686676 instance=ExtResource("3_tmgas")]
+layout_mode = 2
+_e_options_loc_id = "FW_DEBUG_CUTSCENES_TYPE_%s"
+_e_options = ["Move_Route", "Object_To_Object", "Object_To_Point"]
+_e_var_select_scene = ExtResource("4_fub15")
+
+[node name="Interpolate" parent="Window/Contents/Margin/HBox/Right/Options/VBox" parent_id_path=PackedInt32Array(213120298) index="1" unique_id=631131622 instance=ExtResource("5_2quld")]
+layout_mode = 2
+_e_heading_loc_id = &"FW_DEBUG_CUTSCENES_INTERPOLATE"
+_e_var_select_scene = ExtResource("4_fub15")
+
+[node name="Value" parent="Window/Contents/Margin/HBox/Right/Options/VBox/Interpolate" index="1" unique_id=2136448895]
+button_pressed = true
+
+[node name="Speed" parent="Window/Contents/Margin/HBox/Right/Options/VBox" parent_id_path=PackedInt32Array(213120298) index="2" unique_id=659918155 instance=ExtResource("6_146k3")]
+layout_mode = 2
+_e_display_value = true
+_e_heading_loc_id = &"FW_DEBUG_CUTSCENES_SPEED"
+_e_var_select_scene = ExtResource("4_fub15")
+
+[node name="Value" parent="Window/Contents/Margin/HBox/Right/Options/VBox/Speed" index="1" unique_id=64840236]
+max_value = 5.0
+step = 0.05
+value = 1.0
+tick_count = 6
+ticks_on_borders = true
+
+[node name="Trans_Type" parent="Window/Contents/Margin/HBox/Right/Options/VBox" parent_id_path=PackedInt32Array(213120298) index="3" unique_id=1779755683 instance=ExtResource("3_tmgas")]
+layout_mode = 2
+_e_options_loc_id = "FW_DEBUG_CUTSCENES_TRANS_TYPE_%s"
+_e_options = ["Linear", "Sine", "Quint", "Quart", "Quad", "Expo", "Elastic", "Cubic", "Circ", "Bounce", "Back"]
+_e_var_select_scene = ExtResource("4_fub15")
+
+[node name="Ease_Type" parent="Window/Contents/Margin/HBox/Right/Options/VBox" parent_id_path=PackedInt32Array(213120298) index="4" unique_id=1925646052 instance=ExtResource("3_tmgas")]
+layout_mode = 2
+_e_options_loc_id = "FW_DEBUG_CUTSCENES_EASE_TYPE_%s"
+_e_options = ["In", "Out", "In_Out", "Out_In"]
+_e_var_select_scene = ExtResource("4_fub15")
+
+[node name="Object" parent="Window/Contents/Margin/HBox/Right/Options/VBox" parent_id_path=PackedInt32Array(213120298) index="5" unique_id=1444006414]
+_e_allowed_classes = Array[String](["Node2D"])
+_e_heading_loc_id = &""
+
+[node name="End_Object" parent="Window/Contents/Margin/HBox/Right/Options/VBox" parent_id_path=PackedInt32Array(213120298) index="6" unique_id=1129069744 instance=ExtResource("6_2b0xk")]
+layout_mode = 2
+_e_needed_comps = Array[String](["Reference", "Camera"])
+_e_heading_loc_id = &""
+
+[node name="Point" parent="Window/Contents/Margin/HBox/Right/Options/VBox" parent_id_path=PackedInt32Array(213120298) index="7" unique_id=1559759245 instance=ExtResource("7_3l6x6")]
+layout_mode = 2
+_e_var_select_scene = ExtResource("4_fub15")
+
+[node name="Change_Camera" parent="Window/Contents/Margin/HBox/Right/Options/VBox" parent_id_path=PackedInt32Array(213120298) index="8" unique_id=349351293 instance=ExtResource("5_2quld")]
+layout_mode = 2
+_e_heading_loc_id = &"FW_DEBUG_CUTSCENES_CHANGE_CAMERA"
+_e_var_select_scene = ExtResource("4_fub15")
+
+[node name="Wait_Finish" parent="Window/Contents/Margin/HBox/Right/Options/VBox" parent_id_path=PackedInt32Array(213120298) index="9" unique_id=1139975092 instance=ExtResource("5_2quld")]
+layout_mode = 2
+_e_heading_loc_id = &"FW_DEBUG_CUTSCENES_WAIT_FINISH"
+_e_var_select_scene = ExtResource("4_fub15")
+
+[node name="Value" parent="Window/Contents/Margin/HBox/Right/Options/VBox/Wait_Finish" index="1" unique_id=2136448895]
+button_pressed = true
+
+[editable path="Window"]
+[editable path="Window/Contents/Margin/HBox/Left/Preview"]
+[editable path="Window/Contents/Margin/HBox/Right/Options/VBox/Interpolate"]
+[editable path="Window/Contents/Margin/HBox/Right/Options/VBox/Speed"]
+[editable path="Window/Contents/Margin/HBox/Right/Options/VBox/Wait_Finish"]

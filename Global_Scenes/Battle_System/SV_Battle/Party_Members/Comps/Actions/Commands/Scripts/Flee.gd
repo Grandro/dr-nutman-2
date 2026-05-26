@@ -1,11 +1,11 @@
 extends SVActionBase
 class_name SVPartyMemberCompActionsCommandFlee
 
-var _a_Audio: CompAudio3D
+var _a_Audio: FWCompAudio3D
 var _a_Movement: CompSVMovementCharacter
-var _a_Movement_Nav_Agent: CompMovementNavAgent3D
-var _a_States: CompStates
-var _a_Anims: CompAnims
+var _a_Movement_Nav_Agent: FWCompMovementNavAgent3D
+var _a_States: FWCompStates
+var _a_Anims: FWCompAnims
 
 var _a_encounter: SVEncounterBase
 

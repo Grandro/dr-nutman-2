@@ -1,0 +1,129 @@
+[gd_scene format=3 uid="uid://c8lns07r4xyu8"]
+
+[ext_resource type="Theme" uid="uid://pr4yljlh62sp" path="res://Framework/Global_Resources/Themes/Debug/Debug.tres" id="1_qblrb"]
+[ext_resource type="Script" uid="uid://bm435usg25d2" path="res://Framework/Global_Scenes/Debug/Command_Editor/Entries/Branches/Scripts/Base.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://ckxabj7wkcwhv" path="res://Framework/Global_Scenes/Debug/Command_Editor/Entries/Branches/Sprites/Mark_Process.png" id="3"]
+[ext_resource type="FontFile" uid="uid://bc3cxhu6w0ljt" path="res://Global_Resources/Fonts/ProFont.ttf" id="4_phenw"]
+[ext_resource type="Texture2D" uid="uid://c7fr1xnoi2b08" path="res://Global_Resources/Sprites/UI/Collapse.png" id="5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g8aws"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.113725, 0.486275, 0.65098, 0.54902)
+
+[sub_resource type="FontVariation" id="FontVariation_ud7oa"]
+base_font = ExtResource("4_phenw")
+spacing_top = -4
+spacing_bottom = -5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tfwdy"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.113725, 0.486275, 0.65098, 0.54902)
+
+[node name="Base" type="VBoxContainer" unique_id=287278942]
+light_mask = 8
+visibility_layer = 8
+offset_right = 40.0
+offset_bottom = 44.0
+theme = ExtResource("1_qblrb")
+theme_override_constants/separation = 0
+script = ExtResource("2")
+
+[node name="Base" type="MarginContainer" parent="." unique_id=1038757164]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(0, 22)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 2
+
+[node name="Outlines" type="Panel" parent="Base" unique_id=1146064188]
+self_modulate = Color(1, 1, 1, 0)
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_g8aws")
+
+[node name="HBox" type="HBoxContainer" parent="Base" unique_id=826304544]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 1
+
+[node name="Margin" type="Control" parent="Base/HBox" unique_id=817473986]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(4, 0)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Collapse" type="TextureButton" parent="Base/HBox" unique_id=1464051282]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+size_flags_vertical = 4
+texture_normal = ExtResource("5")
+stretch_mode = 5
+
+[node name="Desc" type="Label" parent="Base/HBox" unique_id=659712302]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_ud7oa")
+theme_override_font_sizes/font_size = 18
+vertical_alignment = 1
+
+[node name="Process" type="MarginContainer" parent="." unique_id=1751270796]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(0, 22)
+layout_mode = 2
+focus_mode = 2
+
+[node name="Outlines" type="Panel" parent="Process" unique_id=647024131]
+self_modulate = Color(1, 1, 1, 0)
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_tfwdy")
+
+[node name="HBox" type="HBoxContainer" parent="Process" unique_id=1863691624]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="Margin" type="Control" parent="Process/HBox" unique_id=1028994241]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(4, 0)
+layout_mode = 2
+
+[node name="Mark" type="TextureRect" parent="Process/HBox" unique_id=89117728]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(22, 0)
+layout_mode = 2
+texture = ExtResource("3")
+stretch_mode = 5
+
+[node name="Entries" type="VBoxContainer" parent="." unique_id=1395085494]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 0

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dbw27qymfpltf"]
+
+[ext_resource type="PackedScene" uid="uid://dsxxput7t3drq" path="res://Framework/Scenes/Object/Comps/Party_Member.tscn" id="1_t1kcp"]
+
+[node name="Party_Member" unique_id=235090915 instance=ExtResource("1_t1kcp")]
+_e_pm_key = "Dr_Nutman"

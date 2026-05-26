@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://b6oltpwk05r5k"]
+
+[ext_resource type="Script" uid="uid://bb6q0v6u14t1t" path="res://Framework/Scenes/Object/Comps/3D/Behavior/Scripts/Behavior_Base.gd" id="1_bnt5r"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hwgs3"]
+size = Vector3(7, 2.5, 7)
+
+[node name="Behavior_Base" type="Node3D" unique_id=103479668 groups=["Comp"]]
+script = ExtResource("1_bnt5r")
+
+[node name="Debug_State" type="Label3D" parent="." unique_id=824383954]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+visible = false
+layers = 4
+texture_filter = 0
+font_size = 72
+
+[node name="Debug_Keep_State" type="Label3D" parent="." unique_id=1348234303]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3, 0)
+visible = false
+layers = 4
+texture_filter = 0
+font_size = 72
+
+[node name="Target_Range" type="Area3D" parent="." unique_id=2111719610]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
+collision_layer = 0
+collision_mask = 4
+monitorable = false
+metadata/_edit_group_ = true
+
+[node name="Collision" type="CollisionShape3D" parent="Target_Range" unique_id=139443041]
+shape = SubResource("BoxShape3D_hwgs3")
+
+[node name="States" type="Node" parent="." unique_id=892130468]
+
+[node name="State_CD" type="Timer" parent="." unique_id=1772474103]
+one_shot = true

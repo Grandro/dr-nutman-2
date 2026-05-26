@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dbrkeqyjoqq5h"]
+
+[ext_resource type="PackedScene" uid="uid://dfcne2xq1hclh" path="res://Framework/Global_Scenes/Debug/Fix_Warnings/Entries/Fix_Warning_Base.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://ooodqj0cscur" path="res://Framework/Global_Scenes/Debug/Scenes/Num_Edit/Num_Edit.tscn" id="2"]
+[ext_resource type="Script" uid="uid://bk0ahm15bno61" path="res://Framework/Global_Scenes/Debug/Fix_Warnings/Entries/Scripts/Fix_Warning_Int.gd" id="3"]
+
+[node name="Fix_Warning_Int" unique_id=1324302194 instance=ExtResource("1")]
+script = ExtResource("3")
+
+[node name="Value" parent="VBox/New" parent_id_path=PackedInt32Array(1976983975) index="1" unique_id=1965884946 instance=ExtResource("2")]
+layout_mode = 2

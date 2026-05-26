@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="ObjectiveDataBool" format=3 uid="uid://dxlgd4bla6cue"]
+
+[ext_resource type="Script" uid="uid://g26d8qtd6rfy" path="res://Framework/Global_Resources/Databases/Quests/Objective_Data_Bool.gd" id="1_prho6"]
+
+[resource]
+script = ExtResource("1_prho6")
+_e_type = "Bool"
+_e_desc = &"PROGRESS_QUESTS_BROKO_TOWN_1_MAIN_GROPING_IN_THE_DARK_OBJECTIVE_REACH_END"

@@ -1,15 +1,15 @@
-[gd_scene load_steps=23 format=3 uid="uid://dji60t8dq6ubf"]
+[gd_scene format=3 uid="uid://dji60t8dq6ubf"]
 
-[ext_resource type="Script" uid="uid://uxmbik5bhd5w" path="res://Scenes/Object/Scripts/Node2D_Object.gd" id="1_iljwx"]
-[ext_resource type="PackedScene" uid="uid://bkih1khneqk6f" path="res://Scenes/Object/Comps/2D/Display.tscn" id="2_o3xin"]
+[ext_resource type="Script" uid="uid://uxmbik5bhd5w" path="res://Framework/Scenes/Object/Scripts/Node2D_Object.gd" id="1_iljwx"]
+[ext_resource type="PackedScene" uid="uid://bkih1khneqk6f" path="res://Framework/Scenes/Object/Comps/2D/Display.tscn" id="2_o3xin"]
 [ext_resource type="Texture2D" uid="uid://u1yg30f1ktl7" path="res://Scenes/Objects/2D/Tutato/Sprites/Spritesheet.png" id="3_y1ggt"]
-[ext_resource type="PackedScene" uid="uid://biq4rxen0mdkv" path="res://Scenes/Object/Comps/2D/Speech_Bubble.tscn" id="4_a35qh"]
-[ext_resource type="PackedScene" uid="uid://b1q143fixhaj5" path="res://Scenes/Object/Comps/Anims.tscn" id="5_n0m2k"]
+[ext_resource type="PackedScene" uid="uid://biq4rxen0mdkv" path="res://Framework/Scenes/Object/Comps/2D/Speech_Bubble.tscn" id="4_a35qh"]
+[ext_resource type="PackedScene" uid="uid://b1q143fixhaj5" path="res://Framework/Scenes/Object/Comps/Anims.tscn" id="5_n0m2k"]
 [ext_resource type="PackedScene" uid="uid://csu6abhhga573" path="res://Scenes/Objects/2D/Tutato/Comps/Explain/Explain_Intro.tscn" id="5_y1ggt"]
 [ext_resource type="PackedScene" uid="uid://nejpwwkbci35" path="res://Scenes/Objects/2D/Tutato/Comps/Explain/Explain_First_Battle.tscn" id="6_a35qh"]
-[ext_resource type="PackedScene" uid="uid://b4dvlhw3jh0go" path="res://Scenes/Object/Comps/Cutscene.tscn" id="6_jyo7a"]
+[ext_resource type="PackedScene" uid="uid://b4dvlhw3jh0go" path="res://Framework/Scenes/Object/Comps/Cutscene.tscn" id="6_jyo7a"]
 [ext_resource type="PackedScene" uid="uid://dspho4lit4jlk" path="res://Scenes/Objects/2D/Tutato/Comps/Explain/Explain_Main_Menu_Inventory.tscn" id="7_a35qh"]
-[ext_resource type="PackedScene" uid="uid://drpp26gth4snn" path="res://Scenes/Object/Comps/Reference.tscn" id="7_n3546"]
+[ext_resource type="PackedScene" uid="uid://drpp26gth4snn" path="res://Framework/Scenes/Object/Comps/Reference.tscn" id="7_n3546"]
 [ext_resource type="PackedScene" uid="uid://dwswdtw2tffoh" path="res://Scenes/Objects/2D/Tutato/Comps/Explain/Explain_Main_Menu_Journal.tscn" id="8_n0m2k"]
 [ext_resource type="PackedScene" uid="uid://on1c36yf757q" path="res://Scenes/Objects/2D/Tutato/Comps/Explain/Explain_Main_Menu_Party.tscn" id="9_jyo7a"]
 [ext_resource type="PackedScene" uid="uid://cls5m6jxso1v0" path="res://Scenes/Objects/2D/Tutato/Comps/Explain/Explain_Main_Menu_Quests.tscn" id="10_n3546"]
@@ -258,21 +258,21 @@ _data = {
 &"Rolled_Out": SubResource("Animation_jte5e")
 }
 
-[node name="Tutato" type="Node2D" groups=["Object"]]
+[node name="Tutato" type="Node2D" unique_id=535428823 groups=["Object"]]
 process_mode = 3
 script = ExtResource("1_iljwx")
 
-[node name="Display" parent="." instance=ExtResource("2_o3xin")]
+[node name="Display" parent="." unique_id=1622848463 instance=ExtResource("2_o3xin")]
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("3_y1ggt")
 hframes = 8
 vframes = 2
 
-[node name="Speech_Bubble" parent="." instance=ExtResource("4_a35qh")]
+[node name="Speech_Bubble" parent="." unique_id=536431259 instance=ExtResource("4_a35qh")]
 position = Vector2(0, -150)
 scale = Vector2(2, 2)
 
-[node name="Text" type="Label" parent="."]
+[node name="Text" type="Label" parent="." unique_id=1237617692]
 light_mask = 8
 visibility_layer = 8
 offset_left = 208.0
@@ -284,35 +284,33 @@ theme_override_font_sizes/font_size = 68
 text = "TUTATO_HI"
 vertical_alignment = 1
 
-[node name="Explain_Intro" parent="." instance=ExtResource("5_y1ggt")]
+[node name="Explain_Intro" parent="." unique_id=2009166721 instance=ExtResource("5_y1ggt")]
 visible = false
 
-[node name="Explain_First_Battle" parent="." instance=ExtResource("6_a35qh")]
+[node name="Explain_First_Battle" parent="." unique_id=1625364206 instance=ExtResource("6_a35qh")]
 visible = false
 
-[node name="Explain_Main_Menu_Inventory" parent="." instance=ExtResource("7_a35qh")]
+[node name="Explain_Main_Menu_Inventory" parent="." unique_id=961383696 instance=ExtResource("7_a35qh")]
 visible = false
 
-[node name="Explain_Main_Menu_Journal" parent="." instance=ExtResource("8_n0m2k")]
+[node name="Explain_Main_Menu_Journal" parent="." unique_id=1649616202 instance=ExtResource("8_n0m2k")]
 visible = false
 
-[node name="Explain_Main_Menu_Party" parent="." instance=ExtResource("9_jyo7a")]
+[node name="Explain_Main_Menu_Party" parent="." unique_id=698553962 instance=ExtResource("9_jyo7a")]
 visible = false
 
-[node name="Explain_Main_Menu_Quests" parent="." instance=ExtResource("10_n3546")]
+[node name="Explain_Main_Menu_Quests" parent="." unique_id=730910874 instance=ExtResource("10_n3546")]
 visible = false
 
-[node name="Explain_Main_Menu_Options" parent="." instance=ExtResource("11_x1xu0")]
+[node name="Explain_Main_Menu_Options" parent="." unique_id=88542650 instance=ExtResource("11_x1xu0")]
 visible = false
 
-[node name="Explain_On_Map_Encounter" parent="." instance=ExtResource("12_smc0f")]
+[node name="Explain_On_Map_Encounter" parent="." unique_id=455152714 instance=ExtResource("12_smc0f")]
 visible = false
 
-[node name="Anims" parent="." instance=ExtResource("5_n0m2k")]
-libraries = {
-&"": SubResource("AnimationLibrary_3mgdj")
-}
+[node name="Anims" parent="." unique_id=651289322 instance=ExtResource("5_n0m2k")]
+libraries/ = SubResource("AnimationLibrary_3mgdj")
 
-[node name="Cutscene" parent="." instance=ExtResource("6_jyo7a")]
+[node name="Cutscene" parent="." unique_id=1686428744 instance=ExtResource("6_jyo7a")]
 
-[node name="Reference" parent="." instance=ExtResource("7_n3546")]
+[node name="Reference" parent="." unique_id=103742816 instance=ExtResource("7_n3546")]

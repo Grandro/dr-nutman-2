@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://d3rnjkhvcxxr0"]
+
+[ext_resource type="Script" uid="uid://55nd4xeb8ar8" path="res://Framework/Scenes/Player/3D/Scripts/Player.gd" id="1_icd1y"]
+[ext_resource type="Resource" uid="uid://cbbcqq3nh1f05" path="res://Framework/Scenes/Player/3D/Comps/Data/$Main.tres" id="2_3iarr"]
+[ext_resource type="Resource" uid="uid://kmtggoanqqq6" path="res://Scenes/Player/3D/Dr_Nutman/Comps/Data/Anims.tres" id="3_lktvy"]
+[ext_resource type="Resource" uid="uid://cwqn6nc31505y" path="res://Scenes/Player/3D/Dr_Nutman/Comps/Data/Audio.tres" id="4_d38j0"]
+[ext_resource type="Resource" uid="uid://dvbnc35jtoj5j" path="res://Scenes/Player/3D/Dr_Nutman/Comps/Data/Camera.tres" id="5_2hqqt"]
+[ext_resource type="Resource" uid="uid://cn44krwdgnl6y" path="res://Scenes/Player/3D/Dr_Nutman/Comps/Data/Collision.tres" id="6_jg3p4"]
+[ext_resource type="Resource" uid="uid://b7js8ajjojp2a" path="res://Scenes/Player/3D/Dr_Nutman/Comps/Data/Cutscene.tres" id="7_327u8"]
+[ext_resource type="Resource" uid="uid://b0cggpsrn2ose" path="res://Scenes/Player/3D/Dr_Nutman/Comps/Data/Display.tres" id="8_1nyy1"]
+[ext_resource type="Resource" uid="uid://dshw602xsgnn0" path="res://Scenes/Player/3D/Dr_Nutman/Comps/Data/Equipment.tres" id="9_766ys"]
+[ext_resource type="Resource" uid="uid://btcrsw8qeqcb0" path="res://Scenes/Player/Dr_Nutman/Comps/Data/Input.tres" id="10_bxyqq"]
+[ext_resource type="Resource" uid="uid://b142pw2dsck8r" path="res://Scenes/Player/3D/Dr_Nutman/Comps/Data/Interaction_System.tres" id="11_247j8"]
+[ext_resource type="Resource" uid="uid://cvb5u7q7g8568" path="res://Scenes/Player/3D/Dr_Nutman/Comps/Data/Interactions.tres" id="12_04v0d"]
+[ext_resource type="Resource" uid="uid://cthel2t3k6vrw" path="res://Scenes/Player/3D/Dr_Nutman/Comps/Data/Listener.tres" id="13_fj33a"]
+[ext_resource type="Resource" uid="uid://cvi5r88dgvby" path="res://Scenes/Player/3D/Dr_Nutman/Comps/Data/Movement.tres" id="14_t3ebc"]
+[ext_resource type="Resource" uid="uid://pm1k0gfddirl" path="res://Scenes/Player/3D/Dr_Nutman/Comps/Data/Nav_Obstacle.tres" id="15_hgag1"]
+[ext_resource type="Resource" uid="uid://buq8loddfw5nf" path="res://Scenes/Player/3D/Dr_Nutman/Comps/Data/Operate.tres" id="16_sh3ge"]
+[ext_resource type="Resource" uid="uid://bl6y3ckx3tm08" path="res://Scenes/Player/3D/Dr_Nutman/Comps/Data/Party_Member.tres" id="17_ce007"]
+[ext_resource type="Resource" uid="uid://c7lys3n4hlctn" path="res://Scenes/Player/3D/Dr_Nutman/Comps/Data/Popup.tres" id="18_0vm0n"]
+[ext_resource type="Resource" uid="uid://bdpucl7oyv52x" path="res://Scenes/Player/3D/Dr_Nutman/Comps/Data/Reference.tres" id="19_yqmkd"]
+[ext_resource type="Resource" uid="uid://box28ncf8vlxn" path="res://Scenes/Player/3D/Dr_Nutman/Comps/Data/Save.tres" id="20_jyebf"]
+[ext_resource type="Resource" uid="uid://ddgdu1mbdyomo" path="res://Scenes/Player/3D/Dr_Nutman/Comps/Data/Speech_Bubble.tres" id="21_44s42"]
+[ext_resource type="Resource" uid="uid://hgdaxy3p5oqa" path="res://Scenes/Player/3D/Dr_Nutman/Comps/Data/Stater.tres" id="22_ecd3l"]
+[ext_resource type="Resource" uid="uid://da1oembhx3yc1" path="res://Scenes/Player/3D/Dr_Nutman/Comps/Data/States.tres" id="23_rypbe"]
+[ext_resource type="Resource" uid="uid://ospf1v4k461j" path="res://Scenes/Player/3D/Icon/Comps/Data/Anims.tres" id="24_t02rl"]
+[ext_resource type="Resource" uid="uid://bkso5h123jgfr" path="res://Scenes/Player/3D/Icon/Comps/Data/Collision.tres" id="25_xopj1"]
+[ext_resource type="Resource" uid="uid://dyvt4yeprj3l5" path="res://Scenes/Player/3D/Icon/Comps/Data/Cutscene.tres" id="26_km6ci"]
+[ext_resource type="Resource" uid="uid://yvbctq2wqckl" path="res://Scenes/Player/3D/Icon/Comps/Data/Display.tres" id="27_c61fi"]
+[ext_resource type="Resource" uid="uid://cjmc747xeham0" path="res://Scenes/Player/3D/Icon/Comps/Data/Movement.tres" id="28_deuuq"]
+[ext_resource type="Resource" uid="uid://bxorbk701bksu" path="res://Scenes/Player/3D/Icon/Comps/Data/Operate.tres" id="29_sq3gg"]
+[ext_resource type="Resource" uid="uid://blqqy7e6rjxhs" path="res://Scenes/Player/3D/Icon/Comps/Data/Reference.tres" id="30_to3ky"]
+[ext_resource type="Resource" uid="uid://u5gxsk81603" path="res://Scenes/Player/3D/Icon/Comps/Data/Save.tres" id="31_6eboq"]
+[ext_resource type="Resource" uid="uid://06cbaffujsy3" path="res://Scenes/Player/3D/Icon/Comps/Data/Stater.tres" id="32_q1v56"]
+[ext_resource type="Resource" uid="uid://btiy2pvfvddf2" path="res://Scenes/Player/3D/Icon/Comps/Data/States.tres" id="33_dereo"]
+
+[node name="Player" type="CharacterBody3D" unique_id=1282351821 groups=["Object"]]
+collision_layer = 4
+collision_mask = 9
+floor_max_angle = 1.0472
+floor_snap_length = 0.15
+script = ExtResource("1_icd1y")
+_e_base_comps = Dictionary[StringName, Dictionary]({
+&"Dr_Nutman": {
+&"$Main": ExtResource("2_3iarr"),
+&"Anims": ExtResource("3_lktvy"),
+&"Audio": ExtResource("4_d38j0"),
+&"Camera": ExtResource("5_2hqqt"),
+&"Collision": ExtResource("6_jg3p4"),
+&"Cutscene": ExtResource("7_327u8"),
+&"Display": ExtResource("8_1nyy1"),
+&"Equipment": ExtResource("9_766ys"),
+&"Input": ExtResource("10_bxyqq"),
+&"Interaction_System": ExtResource("11_247j8"),
+&"Interactions": ExtResource("12_04v0d"),
+&"Listener": ExtResource("13_fj33a"),
+&"Movement": ExtResource("14_t3ebc"),
+&"Nav_Obstacle": ExtResource("15_hgag1"),
+&"Operate": ExtResource("16_sh3ge"),
+&"Party_Member": ExtResource("17_ce007"),
+&"Popup": ExtResource("18_0vm0n"),
+&"Reference": ExtResource("19_yqmkd"),
+&"Save": ExtResource("20_jyebf"),
+&"Speech_Bubble": ExtResource("21_44s42"),
+&"Stater": ExtResource("22_ecd3l"),
+&"States": ExtResource("23_rypbe")
+},
+&"Icon": {
+&"$Main": ExtResource("2_3iarr"),
+&"Anims": ExtResource("24_t02rl"),
+&"Collision": ExtResource("25_xopj1"),
+&"Cutscene": ExtResource("26_km6ci"),
+&"Display": ExtResource("27_c61fi"),
+&"Movement": ExtResource("28_deuuq"),
+&"Operate": ExtResource("29_sq3gg"),
+&"Reference": ExtResource("30_to3ky"),
+&"Save": ExtResource("31_6eboq"),
+&"Stater": ExtResource("32_q1v56"),
+&"States": ExtResource("33_dereo")
+}
+})
+_e_override_comps = Dictionary[StringName, Dictionary]({
+&"Dr_Nutman": {},
+&"Icon": {}
+})

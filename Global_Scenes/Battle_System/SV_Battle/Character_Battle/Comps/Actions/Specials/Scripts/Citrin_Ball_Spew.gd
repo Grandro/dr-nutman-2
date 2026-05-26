@@ -1,15 +1,15 @@
 extends SVActionBase
 class_name SVActionSpecialCitrinBallSpew
 
-var _a_Citrin_Ball_Scene: PackedScene = preload("res://Scenes/Objects/3D/Enemies/Citrin/Citrin_Ball.tscn")
+var _a_Citrin_Ball_Scene: PackedScene = preload("uid://d33vq0wfnluph")
 
 @onready var _a_Pos: Marker3D = get_node("Pos")
 @onready var _a_Anims: AnimationPlayer = get_node("Anims")
 
-var _a_Entity_Audio: CompAudio3D
+var _a_Entity_Audio: FWCompAudio3D
 var _a_Entity_Movement: CompSVMovementCharacter
-var _a_Entity_Movement_Nav_Agent: CompMovementNavAgent3D
-var _a_Entity_States: CompStates
+var _a_Entity_Movement_Nav_Agent: FWCompMovementNavAgent3D
+var _a_Entity_States: FWCompStates
 var _a_Entity_Stats: CompSVStats
 var _a_Entity_Anims: CompSVAnims
 

@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://0ns1gxm7fmls"]
+
+[ext_resource type="PackedScene" uid="uid://cu8f28s6wv6u1" path="res://Framework/Scenes/Object/Comps/3D/Light_Omni.tscn" id="1_nsh2p"]
+
+[node name="Light" unique_id=1962252510 instance=ExtResource("1_nsh2p")]

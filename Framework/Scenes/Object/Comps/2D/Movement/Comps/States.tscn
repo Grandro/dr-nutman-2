@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dbrpw1m2haq0b"]
+
+[ext_resource type="PackedScene" uid="uid://bcjnmbcfdeupb" path="res://Framework/Scenes/Object/Comps/Movement/Comps/States_Base.tscn" id="1_75dpv"]
+
+[node name="States" unique_id=555082858 groups=["Movement"] instance=ExtResource("1_75dpv")]
+_e_speeds = Dictionary[StringName, float]({
+&"Jump": 300.0,
+&"Run": 400.0,
+&"Walk": 300.0
+})

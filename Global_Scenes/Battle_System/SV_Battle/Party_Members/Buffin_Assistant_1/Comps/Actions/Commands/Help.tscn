@@ -1,8 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cwal5ag7raush"]
+[gd_scene format=3 uid="uid://cwal5ag7raush"]
 
 [ext_resource type="PackedScene" uid="uid://d1b030mi5wn3i" path="res://Global_Scenes/Battle_System/SV_Battle/Character_Battle/Comps/Actions/Action_Base.tscn" id="1_4yfww"]
 [ext_resource type="Script" uid="uid://tnqudoixrntt" path="res://Global_Scenes/Battle_System/SV_Battle/Party_Members/Buffin_Assistant_1/Comps/Actions/Commands/Scripts/Help.gd" id="2_s803o"]
 
-
-[node name="Help" instance=ExtResource("1_4yfww")]
+[node name="Help" unique_id=1406449098 instance=ExtResource("1_4yfww")]
 script = ExtResource("2_s803o")

@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://ngivbvvkjbgy"]
+
+[ext_resource type="PackedScene" uid="uid://cccu1hepu8gkm" path="res://Framework/Global_Scenes/Progress/Quests/Objective_Bool.tscn" id="1_jgpis"]
+[ext_resource type="Resource" uid="uid://dxlgd4bla6cue" path="res://Global_Resources/Databases/Quests/Broko_Town/Main/Groping_In_The_Dark/Objective_Reach_End.tres" id="2_kib4k"]
+
+[node name="Reach_End" unique_id=354823312 instance=ExtResource("1_jgpis")]
+_e_data = ExtResource("2_kib4k")

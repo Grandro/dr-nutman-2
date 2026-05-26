@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cnsdaip546i4m"]
+
+[ext_resource type="PackedScene" uid="uid://cfdwl620axohy" path="res://Framework/Scenes/Object/Comps/3D/Audio.tscn" id="1_wu8fc"]
+[ext_resource type="PackedScene" uid="uid://dllj5lbxwqy17" path="res://Framework/Scenes/Pausable_Audio/3D/Pausable_Audio.tscn" id="2_1ieet"]
+[ext_resource type="AudioStream" uid="uid://drtkyglm804jx" path="res://Global_Resources/Audio/SFX/Jump_1.wav" id="3_kfa2u"]
+
+[node name="Audio" unique_id=2115949349 instance=ExtResource("1_wu8fc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+
+[node name="Jump" parent="." index="1" unique_id=1534481063 instance=ExtResource("2_1ieet")]
+stream = ExtResource("3_kfa2u")
+volume_db = -10.0
+bus = &"SFX"

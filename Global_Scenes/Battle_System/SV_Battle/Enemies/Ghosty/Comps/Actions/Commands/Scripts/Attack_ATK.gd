@@ -1,8 +1,8 @@
 extends SVActionCommandAttackATK
 class_name SVEnemyGhostyCompActionsCommandAttackATK
 
-var _a_Display: CompDisplay3D
-var _a_Collision: CompCollisionShape3D
+var _a_Display: FWCompDisplay3D
+var _a_Collision: FWCompCollisionShape3D
 
 func init(p_commands: SVActionsBase, p_entity: SVCharacter) -> void:
 	super(p_commands, p_entity)

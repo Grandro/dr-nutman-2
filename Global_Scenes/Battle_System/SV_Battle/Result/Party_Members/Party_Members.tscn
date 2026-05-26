@@ -1,9 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://ctmdtgtdjkp8y"]
+[gd_scene format=3 uid="uid://ctmdtgtdjkp8y"]
 
 [ext_resource type="Script" uid="uid://brakeu1knagq1" path="res://Global_Scenes/Battle_System/SV_Battle/Result/Party_Members/Scripts/Party_Members.gd" id="1_5nup0"]
 
-
-[node name="Party_Members" type="HBoxContainer"]
+[node name="Party_Members" type="HBoxContainer" unique_id=1540152649]
 light_mask = 8
 visibility_layer = 8
 size_flags_vertical = 3

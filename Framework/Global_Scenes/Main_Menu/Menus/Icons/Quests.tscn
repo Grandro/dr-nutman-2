@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dlnl3hywj0vta"]
+
+[ext_resource type="PackedScene" uid="uid://cvvtbog5w6a0b" path="res://Framework/Global_Scenes/Main_Menu/Menus/Icons/Menu_Icon.tscn" id="1"]
+[ext_resource type="Texture2D" uid="uid://chwmdu3d8hxhs" path="res://Framework/Global_Scenes/Main_Menu/Sprites/Icons/Quests/Spritesheet.png" id="2"]
+[ext_resource type="PackedScene" uid="uid://b5e4cxmg5en5w" path="res://Framework/Global_Scenes/Main_Menu/Sub_Menus/Quests/Quests.tscn" id="3"]
+
+[node name="Quests" unique_id=17052690 instance=ExtResource("1")]
+_e_key = "Quests"
+_e_menu_scene = ExtResource("3")
+_e_type = "Sub_Menu"
+
+[node name="Image" parent="." index="0" unique_id=920395304]
+texture_normal = ExtResource("2")
+
+[node name="Desc" parent="." index="1" unique_id=490652867]
+text = "QUESTS"

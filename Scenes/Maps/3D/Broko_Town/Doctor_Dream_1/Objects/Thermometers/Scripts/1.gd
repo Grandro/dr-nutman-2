@@ -1,7 +1,7 @@
-extends Node3DObject
+extends FWNode3DObject
 class_name ObjectThermometer1
 
-@onready var _a_Interactions: CompInteractions3D = get_node("Interactions")
+@onready var _a_Interactions: FWCompInteractions3D = get_node("Interactions")
 @onready var _a_Trigger: Timer = get_node("Trigger")
 
 var _a_vibrate: bool = false
@@ -9,7 +9,7 @@ var _a_trigger_count: int = 0
 
 func _ready() -> void:
 	super()
-	_a_Interactions.interacted.connect(_on_Interactions_interacted)
+	_a_Interactions.interacted_empty.connect(_on_Interactions_interacted_empty)
 	_a_Trigger.timeout.connect(_on_Trigger_timeout)
 
 func start_vibrate() -> void:
@@ -38,7 +38,7 @@ func load_data(p_data: Dictionary) -> void:
 	_a_vibrate = p_data[&"Vibrate"]
 	_a_trigger_count = p_data[&"Trigger_Count"]
 
-func _on_Interactions_interacted() -> void:
+func _on_Interactions_interacted_empty() -> void:
 	var cutscene_system_si: Cutscene_System = Global.get_singleton(self, "Cutscene_System")
 	if _a_vibrate:
 		# Turn off vibration
@@ -56,5 +56,4 @@ func _on_Trigger_timeout() -> void:
 		1: cutscene_system_si.cutscene(&"Thermometer_1", &"2", &"Sub")
 		2: cutscene_system_si.cutscene(&"Thermometer_1", &"3", &"Sub")
 		3: cutscene_system_si.cutscene(&"Thermometer_1", &"4", &"Sub")
-	
 	_a_trigger_count += 1

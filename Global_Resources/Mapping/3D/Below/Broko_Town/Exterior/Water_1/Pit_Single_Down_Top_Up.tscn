@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bg8rm5gqn0ssx"]
+[gd_scene format=3 uid="uid://bg8rm5gqn0ssx"]
 
 [ext_resource type="PackedScene" uid="uid://ewnsuqfdo7m6" path="res://Global_Resources/Mapping/3D/Below/Broko_Town/Exterior/Water_1/Models/Pit_Single_Down_Top_Up.glb" id="1_7j1aq"]
 
@@ -11,25 +11,25 @@ size = Vector3(0.25, 1, 0.75)
 [sub_resource type="BoxShape3D" id="BoxShape3D_0rqew"]
 size = Vector3(0.75, 1, 0.25)
 
-[node name="Island_1" type="Node3D"]
+[node name="Island_1" type="Node3D" unique_id=1745809187]
 
-[node name="Model" parent="." instance=ExtResource("1_7j1aq")]
+[node name="Model" parent="." unique_id=915088014 instance=ExtResource("1_7j1aq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 
-[node name="Water_1_Pit_Single_Down_Top_Up" parent="Model" index="0" groups=["NavMesh_Main"]]
+[node name="Water_1_Pit_Single_Down_Top_Up" parent="Model" index="0" unique_id=208258576 groups=["NavMesh_Main"]]
 
-[node name="Static" type="StaticBody3D" parent="."]
+[node name="Static" type="StaticBody3D" parent="." unique_id=720860930]
 collision_mask = 0
 
-[node name="Collision_1" type="CollisionShape3D" parent="Static"]
+[node name="Collision_1" type="CollisionShape3D" parent="Static" unique_id=1183396399]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.375, -0.5, 0)
 shape = SubResource("BoxShape3D_nv4xy")
 
-[node name="Collision_2" type="CollisionShape3D" parent="Static"]
+[node name="Collision_2" type="CollisionShape3D" parent="Static" unique_id=1366874009]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.125, -0.5, 0.375)
 shape = SubResource("BoxShape3D_yd3g1")
 
-[node name="Collision_3" type="CollisionShape3D" parent="Static"]
+[node name="Collision_3" type="CollisionShape3D" parent="Static" unique_id=601614626]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.375, -0.5, -0.125)
 shape = SubResource("BoxShape3D_0rqew")
 

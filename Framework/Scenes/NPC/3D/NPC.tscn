@@ -1,0 +1,153 @@
+[gd_scene format=3 uid="uid://w5cxcgsk2pyw"]
+
+[ext_resource type="Script" uid="uid://dieeavfoc4v2w" path="res://Framework/Scenes/Object/Scripts/Character3D_Object.gd" id="1_b1bld"]
+[ext_resource type="PackedScene" uid="uid://bblmb8yfchyxr" path="res://Framework/Scenes/Object/Comps/3D/Display.tscn" id="2_pxf51"]
+[ext_resource type="PackedScene" uid="uid://dsp0njc065uev" path="res://Framework/Scenes/Object/Comps/3D/Collision_Shape.tscn" id="3_mheuh"]
+[ext_resource type="PackedScene" uid="uid://dctpibkwbk8nq" path="res://Framework/Scenes/Object/Comps/3D/Equipment.tscn" id="4_dwb2i"]
+[ext_resource type="PackedScene" uid="uid://nr4813v0r2dg" path="res://Framework/Scenes/Object/Comps/3D/Interactions/Interactions.tscn" id="5_lvsao"]
+[ext_resource type="PackedScene" uid="uid://br3fs6efh03rn" path="res://Framework/Scenes/Object/Comps/3D/Movement/Movement_Character.tscn" id="6_wr71o"]
+[ext_resource type="PackedScene" uid="uid://birjyb23mdl01" path="res://Framework/Scenes/Object/Comps/3D/Movement/Comps/Terrain/Terrain_Base.tscn" id="7_6hlmi"]
+[ext_resource type="PackedScene" uid="uid://ks3max245ufk" path="res://Framework/Scenes/Object/Comps/3D/Movement/Comps/Nav_Agent.tscn" id="8_3o6pi"]
+[ext_resource type="PackedScene" uid="uid://cekkcfeurbewx" path="res://Framework/Scenes/Object/Comps/3D/Movement/Comps/States.tscn" id="9_d5gxj"]
+[ext_resource type="PackedScene" uid="uid://djl16ro8388xh" path="res://Framework/Scenes/Object/Comps/3D/Movement/Comps/Jump.tscn" id="10_0jqm3"]
+[ext_resource type="PackedScene" uid="uid://yb8e5q7nbmdp" path="res://Framework/Scenes/Object/Comps/3D/Movement/Comps/Gravity.tscn" id="11_tuggl"]
+[ext_resource type="PackedScene" uid="uid://blot4hpw1al18" path="res://Framework/Scenes/Object/Comps/3D/Camera.tscn" id="12_6hgm1"]
+[ext_resource type="PackedScene" uid="uid://catcx04rfio11" path="res://Framework/Scenes/Object/Comps/3D/Listener.tscn" id="13_65lbv"]
+[ext_resource type="PackedScene" uid="uid://cfdwl620axohy" path="res://Framework/Scenes/Object/Comps/3D/Audio.tscn" id="14_frvmy"]
+[ext_resource type="PackedScene" uid="uid://dllj5lbxwqy17" path="res://Framework/Scenes/Pausable_Audio/3D/Pausable_Audio.tscn" id="15_vx6sp"]
+[ext_resource type="AudioStream" uid="uid://drtkyglm804jx" path="res://Global_Resources/Audio/SFX/Jump_1.wav" id="16_pw6li"]
+[ext_resource type="PackedScene" uid="uid://cjr0l2h3yj5lh" path="res://Framework/Scenes/Object/Comps/3D/Speech_Bubble.tscn" id="17_6gyj4"]
+[ext_resource type="PackedScene" uid="uid://omsbdulg45pv" path="res://Framework/Scenes/Object/Comps/3D/Popup.tscn" id="18_76uik"]
+[ext_resource type="PackedScene" uid="uid://b4dvlhw3jh0go" path="res://Framework/Scenes/Object/Comps/Cutscene.tscn" id="19_bmm12"]
+[ext_resource type="PackedScene" uid="uid://367hnnm3kfjw" path="res://Framework/Scenes/Object/Comps/Operate.tscn" id="20_n5pmv"]
+[ext_resource type="PackedScene" uid="uid://drpp26gth4snn" path="res://Framework/Scenes/Object/Comps/Reference.tscn" id="21_wjrvq"]
+[ext_resource type="PackedScene" uid="uid://de2jy2ixhp2mw" path="res://Framework/Scenes/Object/Comps/Save.tscn" id="22_qvmyy"]
+[ext_resource type="PackedScene" uid="uid://boh1rwcj5rgwf" path="res://Framework/Scenes/Object/Comps/States.tscn" id="23_vhqr6"]
+[ext_resource type="PackedScene" uid="uid://du0jobeb0veao" path="res://Framework/Scenes/Object/Comps/Stater.tscn" id="24_8ilb6"]
+[ext_resource type="PackedScene" uid="uid://b1q143fixhaj5" path="res://Framework/Scenes/Object/Comps/Anims.tscn" id="25_58agt"]
+[ext_resource type="Animation" uid="uid://t1d0xnt5g3wr" path="res://Framework/Scenes/NPC/Anims/Global/Idle_Down.tres" id="26_yfili"]
+[ext_resource type="Animation" uid="uid://dhkgoyij1x6rk" path="res://Framework/Scenes/NPC/Anims/Global/Idle_Left.tres" id="27_wgk2r"]
+[ext_resource type="Animation" uid="uid://c3foxhmlybn11" path="res://Framework/Scenes/NPC/Anims/Global/Idle_Right.tres" id="28_kbudq"]
+[ext_resource type="Animation" uid="uid://c8q8sqkqu8wo6" path="res://Framework/Scenes/NPC/Anims/Global/Idle_Up.tres" id="29_yvvvn"]
+[ext_resource type="Animation" uid="uid://c716o5kooeclg" path="res://Framework/Scenes/NPC/Anims/Global/Jump_Down.tres" id="30_k1hix"]
+[ext_resource type="Animation" uid="uid://dyih225e0mbm8" path="res://Framework/Scenes/NPC/Anims/Global/Jump_Left.tres" id="31_5isxp"]
+[ext_resource type="Animation" uid="uid://dattgub6k7ygj" path="res://Framework/Scenes/NPC/Anims/Global/Jump_Right.tres" id="32_v3qt7"]
+[ext_resource type="Animation" uid="uid://br5eo01fklh5t" path="res://Framework/Scenes/NPC/Anims/Global/Jump_Up.tres" id="33_i38rt"]
+[ext_resource type="Animation" uid="uid://djxi175chvxuf" path="res://Framework/Scenes/NPC/Anims/Global/Place_Down.tres" id="34_gjhea"]
+[ext_resource type="Animation" uid="uid://chmgigsjnpaj7" path="res://Framework/Scenes/NPC/Anims/Global/Place_Left.tres" id="35_48rbh"]
+[ext_resource type="Animation" uid="uid://cnh6dch7b5fq3" path="res://Framework/Scenes/NPC/Anims/Global/Place_Right.tres" id="36_if6fv"]
+[ext_resource type="Animation" uid="uid://dplcqkgcf5pvi" path="res://Framework/Scenes/NPC/Anims/Global/Place_Up.tres" id="37_3d7vu"]
+[ext_resource type="Animation" uid="uid://dfgnsgwre056v" path="res://Framework/Scenes/NPC/Anims/Global/Stop_Down.tres" id="38_pbic7"]
+[ext_resource type="Animation" uid="uid://ck8cgcf127td7" path="res://Framework/Scenes/NPC/Anims/Global/Stop_Left.tres" id="39_fhcjo"]
+[ext_resource type="Animation" uid="uid://ivo3wm1p84py" path="res://Framework/Scenes/NPC/Anims/Global/Stop_Right.tres" id="40_7j1l7"]
+[ext_resource type="Animation" uid="uid://04burlym77ey" path="res://Framework/Scenes/NPC/Anims/Global/Stop_Up.tres" id="41_c21bm"]
+[ext_resource type="Animation" uid="uid://n0743bbyl04i" path="res://Framework/Scenes/NPC/Anims/Global/Think_Down.tres" id="42_6m70h"]
+[ext_resource type="Animation" uid="uid://dpjdr11cddxxd" path="res://Framework/Scenes/NPC/Anims/Global/Think_Left.tres" id="43_417cm"]
+[ext_resource type="Animation" uid="uid://cuhqmlf0og7tp" path="res://Framework/Scenes/NPC/Anims/Global/Think_Right.tres" id="44_ekq6d"]
+[ext_resource type="Animation" uid="uid://mobsppp7sp8j" path="res://Framework/Scenes/NPC/Anims/Global/Think_Up.tres" id="45_ppmdq"]
+[ext_resource type="Animation" uid="uid://c4hlq813kivf5" path="res://Framework/Scenes/NPC/Anims/Global/Walk_Down.tres" id="46_ohtar"]
+[ext_resource type="Animation" uid="uid://dhq15wruxeukq" path="res://Framework/Scenes/NPC/Anims/Global/Walk_Left.tres" id="47_sd2em"]
+[ext_resource type="Animation" uid="uid://c8j4fhnj4dyqf" path="res://Framework/Scenes/NPC/Anims/Global/Walk_Right.tres" id="48_drog0"]
+[ext_resource type="Animation" uid="uid://dm5smq1qltdtu" path="res://Framework/Scenes/NPC/Anims/Global/Walk_Up.tres" id="49_qrol7"]
+[ext_resource type="PackedScene" uid="uid://bnqagj5u7g0tm" path="res://Framework/Scenes/Object/Comps/3D/Debug.tscn" id="50_mw3qc"]
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_diesr"]
+_data = {
+&"Idle_Down": ExtResource("26_yfili"),
+&"Idle_Left": ExtResource("27_wgk2r"),
+&"Idle_Right": ExtResource("28_kbudq"),
+&"Idle_Up": ExtResource("29_yvvvn"),
+&"Jump_Down": ExtResource("30_k1hix"),
+&"Jump_Left": ExtResource("31_5isxp"),
+&"Jump_Right": ExtResource("32_v3qt7"),
+&"Jump_Up": ExtResource("33_i38rt"),
+&"Place_Down": ExtResource("34_gjhea"),
+&"Place_Left": ExtResource("35_48rbh"),
+&"Place_Right": ExtResource("36_if6fv"),
+&"Place_Up": ExtResource("37_3d7vu"),
+&"Stop_Down": ExtResource("38_pbic7"),
+&"Stop_Left": ExtResource("39_fhcjo"),
+&"Stop_Right": ExtResource("40_7j1l7"),
+&"Stop_Up": ExtResource("41_c21bm"),
+&"Think_Down": ExtResource("42_6m70h"),
+&"Think_Left": ExtResource("43_417cm"),
+&"Think_Right": ExtResource("44_ekq6d"),
+&"Think_Up": ExtResource("45_ppmdq"),
+&"Walk_Down": ExtResource("46_ohtar"),
+&"Walk_Left": ExtResource("47_sd2em"),
+&"Walk_Right": ExtResource("48_drog0"),
+&"Walk_Up": ExtResource("49_qrol7")
+}
+
+[node name="NPC" type="CharacterBody3D" unique_id=1868142323 groups=["Object"]]
+collision_layer = 8
+collision_mask = 9
+floor_max_angle = 1.0472
+floor_snap_length = 0.15
+script = ExtResource("1_b1bld")
+
+[node name="Display" parent="." unique_id=484337952 instance=ExtResource("2_pxf51")]
+_e_billboard = null
+
+[node name="Collision" parent="." unique_id=68845023 instance=ExtResource("3_mheuh")]
+
+[node name="Equipment" parent="." unique_id=2139283990 instance=ExtResource("4_dwb2i")]
+_e_scenes = null
+
+[node name="Interactions" parent="." unique_id=755316257 instance=ExtResource("5_lvsao")]
+_e_needs_look_at = true
+_e_look_at_update = true
+
+[node name="Movement" parent="." unique_id=366123676 instance=ExtResource("6_wr71o")]
+
+[node name="Terrain" parent="Movement" unique_id=493980995 instance=ExtResource("7_6hlmi")]
+
+[node name="Nav_Agent" parent="Movement" unique_id=689018329 instance=ExtResource("8_3o6pi")]
+
+[node name="States" parent="Movement" unique_id=1560788057 instance=ExtResource("9_d5gxj")]
+_e_speeds = Dictionary[StringName, float]({
+&"Run": 3.0,
+&"Stop": 0.0,
+&"Walk": 1.5
+})
+
+[node name="Jump" parent="Movement" unique_id=890223057 instance=ExtResource("10_0jqm3")]
+
+[node name="Gravity" parent="Movement" unique_id=799719492 instance=ExtResource("11_tuggl")]
+
+[node name="Camera" parent="." unique_id=1608624036 instance=ExtResource("12_6hgm1")]
+
+[node name="Listener" parent="." unique_id=1781818449 instance=ExtResource("13_65lbv")]
+
+[node name="Audio" parent="." unique_id=796745669 instance=ExtResource("14_frvmy")]
+
+[node name="Jump" parent="Audio" unique_id=2075655374 instance=ExtResource("15_vx6sp")]
+stream = ExtResource("16_pw6li")
+volume_db = -10.0
+bus = &"SFX"
+
+[node name="Speech_Bubble" parent="." unique_id=1364219094 instance=ExtResource("17_6gyj4")]
+visible = false
+
+[node name="Popup" parent="." unique_id=151653346 instance=ExtResource("18_76uik")]
+
+[node name="Cutscene" parent="." unique_id=1265905856 instance=ExtResource("19_bmm12")]
+
+[node name="Operate" parent="." unique_id=880286492 instance=ExtResource("20_n5pmv")]
+
+[node name="Reference" parent="." unique_id=462754731 instance=ExtResource("21_wjrvq")]
+
+[node name="Save" parent="." unique_id=857228388 instance=ExtResource("22_qvmyy")]
+
+[node name="States" parent="." unique_id=1379545458 instance=ExtResource("23_vhqr6")]
+_e_states = Array[StringName]([&"Stop", &"Idle", &"Walk"])
+_e_state = &"Stop"
+
+[node name="Stater" parent="." unique_id=671878990 instance=ExtResource("24_8ilb6")]
+
+[node name="Anims" parent="." unique_id=1122559351 instance=ExtResource("25_58agt")]
+libraries/ = SubResource("AnimationLibrary_diesr")
+
+[node name="Debug" parent="." unique_id=573530566 instance=ExtResource("50_mw3qc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+visible = false

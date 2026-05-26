@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dt4fg3k3u1c8e"]
+
+[ext_resource type="PackedScene" uid="uid://omsbdulg45pv" path="res://Framework/Scenes/Object/Comps/3D/Popup.tscn" id="1_p0myp"]
+
+[node name="Popup" unique_id=2006214040 instance=ExtResource("1_p0myp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4, 0.02)

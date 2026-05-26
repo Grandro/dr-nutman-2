@@ -1,4 +1,4 @@
-extends GUI3DPanel
+extends FWGUI3DPanel
 class_name SVPartyMemberCompShieldBarBase
 
 signal anim_finished(p_name: StringName)

@@ -1,14 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://xts4jxlx4dgp"]
+[gd_scene format=3 uid="uid://xts4jxlx4dgp"]
 
 [ext_resource type="Script" uid="uid://cdm8b33dw05ww" path="res://Global_Scenes/Battle_System/SV_Battle/Result/Scripts/Result.gd" id="1_gto08"]
 [ext_resource type="Theme" uid="uid://budcfl16xj2tt" path="res://Global_Resources/Themes/Default/Default.tres" id="2_2ocq6"]
 [ext_resource type="Texture2D" uid="uid://wrg2potji1vm" path="res://Global_Resources/Sprites/Backgrounds/1_Spritesheet.png" id="3_vcclb"]
-[ext_resource type="PackedScene" uid="uid://xmfga7dl3slw" path="res://Scenes/Loot/Rewards/Rewards_Result.tscn" id="4_bd05d"]
+[ext_resource type="PackedScene" uid="uid://xmfga7dl3slw" path="res://Framework/Scenes/Loot/Rewards/Rewards_Result.tscn" id="4_bd05d"]
 [ext_resource type="PackedScene" uid="uid://ctmdtgtdjkp8y" path="res://Global_Scenes/Battle_System/SV_Battle/Result/Party_Members/Party_Members.tscn" id="5_7g636"]
-[ext_resource type="PackedScene" uid="uid://c6ug0m0m4daq4" path="res://Scenes/Loot/Coins/Coins.tscn" id="6_rc286"]
+[ext_resource type="PackedScene" uid="uid://c6ug0m0m4daq4" path="res://Framework/Scenes/Loot/Coins/Coins.tscn" id="6_rc286"]
 [ext_resource type="AudioStream" uid="uid://nnd1xyhmesj7" path="res://Global_Resources/Audio/SFX/Win_1.wav" id="12_6qfwm"]
-[ext_resource type="PackedScene" uid="uid://6jwys27w5uwp" path="res://Scenes/Indicator/Proceed_Button.tscn" id="13_ce7pm"]
-
+[ext_resource type="PackedScene" uid="uid://6jwys27w5uwp" path="res://Framework/Scenes/Indicator/Proceed_Button.tscn" id="13_ce7pm"]
 
 [sub_resource type="Animation" id="Animation_3tpal"]
 resource_name = "Fade_In"
@@ -63,10 +62,10 @@ _data = {
 &"RESET": SubResource("Animation_ow8il")
 }
 
-[node name="Result" type="CanvasLayer"]
+[node name="Result" type="CanvasLayer" unique_id=1344746520]
 script = ExtResource("1_gto08")
 
-[node name="Control" type="Control" parent="."]
+[node name="Control" type="Control" parent="." unique_id=1162898273]
 modulate = Color(1, 1, 1, 0)
 light_mask = 8
 visibility_layer = 8
@@ -78,7 +77,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_2ocq6")
 
-[node name="Background" type="TextureRect" parent="Control"]
+[node name="Background" type="TextureRect" parent="Control" unique_id=1759892482]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 1
@@ -91,7 +90,7 @@ texture = ExtResource("3_vcclb")
 stretch_mode = 1
 metadata/_edit_lock_ = true
 
-[node name="VBox" type="VBoxContainer" parent="Control"]
+[node name="VBox" type="VBoxContainer" parent="Control" unique_id=296327703]
 light_mask = 8
 visibility_layer = 8
 clip_contents = true
@@ -101,7 +100,7 @@ offset_right = 1280.0
 offset_bottom = 624.0
 theme_override_constants/separation = 12
 
-[node name="Heading" type="Label" parent="Control/VBox"]
+[node name="Heading" type="Label" parent="Control/VBox" unique_id=684433742]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
@@ -113,20 +112,20 @@ text = "SV_BATTLE_WIN"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Rewards" parent="Control/VBox" instance=ExtResource("4_bd05d")]
+[node name="Rewards" parent="Control/VBox" unique_id=629084048 instance=ExtResource("4_bd05d")]
 custom_minimum_size = Vector2(0, 75)
 layout_mode = 2
 size_flags_horizontal = 1
 theme_override_constants/h_separation = 16
 alignment = 1
 
-[node name="Party_Members" parent="Control/VBox" instance=ExtResource("5_7g636")]
+[node name="Party_Members" parent="Control/VBox" unique_id=491906084 instance=ExtResource("5_7g636")]
 layout_mode = 2
 
-[node name="Coins" parent="Control" instance=ExtResource("6_rc286")]
+[node name="Coins" parent="Control" unique_id=812066453 instance=ExtResource("6_rc286")]
 layout_mode = 1
 
-[node name="Proceed" parent="Control" instance=ExtResource("13_ce7pm")]
+[node name="Proceed" parent="Control" unique_id=1585736826 instance=ExtResource("13_ce7pm")]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -141,10 +140,8 @@ grow_horizontal = 0
 grow_vertical = 0
 mouse_filter = 1
 
-[node name="Win" type="AudioStreamPlayer" parent="."]
+[node name="Win" type="AudioStreamPlayer" parent="." unique_id=181182882]
 bus = &"SFX"
 
-[node name="Anims" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_dnv45")
-}
+[node name="Anims" type="AnimationPlayer" parent="." unique_id=1453904346]
+libraries/ = SubResource("AnimationLibrary_dnv45")

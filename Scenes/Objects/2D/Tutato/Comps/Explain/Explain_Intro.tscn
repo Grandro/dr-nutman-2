@@ -1,8 +1,8 @@
-[gd_scene load_steps=35 format=3 uid="uid://csu6abhhga573"]
+[gd_scene format=3 uid="uid://csu6abhhga573"]
 
 [ext_resource type="PackedScene" uid="uid://dpi6g3dw4wg50" path="res://Scenes/Objects/2D/Tutato/Comps/Explain/Explain_Base.tscn" id="1_bsqx4"]
 [ext_resource type="Script" uid="uid://b46lracbiyf4k" path="res://Scenes/Objects/2D/Tutato/Comps/Explain/Scripts/Explain_Intro.gd" id="2_3wkb3"]
-[ext_resource type="PackedScene" uid="uid://cva7lt6ccapbi" path="res://Scenes/Indicator/Indicator.tscn" id="3_an16v"]
+[ext_resource type="PackedScene" uid="uid://cva7lt6ccapbi" path="res://Framework/Scenes/Indicator/Indicator.tscn" id="3_an16v"]
 [ext_resource type="Texture2D" uid="uid://1l80fi2y58vp" path="res://Global_Resources/Sprites/Keys/8593.png" id="4_338k7"]
 [ext_resource type="Texture2D" uid="uid://2bts6obqr07l" path="res://Global_Resources/Sprites/Joy/Letters_Color/Stick_L_Up.png" id="5_338k7"]
 [ext_resource type="Texture2D" uid="uid://bvjt2r8vlpwvb" path="res://Global_Resources/Sprites/Joy/Letters_Neutral/Stick_Up.png" id="6_l4jna"]
@@ -69,13 +69,13 @@ _data = {
 &"RESET": SubResource("Animation_74ytm")
 }
 
-[node name="Explain_Intro" instance=ExtResource("1_bsqx4")]
+[node name="Explain_Intro" unique_id=686795253 instance=ExtResource("1_bsqx4")]
 script = ExtResource("2_3wkb3")
 
-[node name="Background" parent="Control" index="0"]
+[node name="Background" parent="Control" parent_id_path=PackedInt32Array(906811696) index="0" unique_id=298908239]
 color = Color(1, 1, 1, 1)
 
-[node name="Movement" type="VBoxContainer" parent="Control/Parts" index="0"]
+[node name="Movement" type="VBoxContainer" parent="Control/Parts" parent_id_path=PackedInt32Array(2052037425) index="0" unique_id=1954036602]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 1
@@ -94,7 +94,7 @@ scale = Vector2(3, 3)
 theme_override_constants/separation = -4
 alignment = 1
 
-[node name="Up" parent="Control/Parts/Movement" index="0" instance=ExtResource("3_an16v")]
+[node name="Up" parent="Control/Parts/Movement" index="0" unique_id=306638263 instance=ExtResource("3_an16v")]
 modulate = Color(0, 0, 0, 1)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -103,17 +103,17 @@ _e_joy_letters_color_texture = ExtResource("5_338k7")
 _e_joy_letters_neutral_texture = ExtResource("6_l4jna")
 _e_joy_shapes_color_texture = ExtResource("7_ygbwp")
 
-[node name="Input" parent="Control/Parts/Movement/Up/Margin/HBox" index="0"]
+[node name="Input" parent="Control/Parts/Movement/Up/Margin/HBox" parent_id_path=PackedInt32Array(306638263, 115880366) index="0" unique_id=235245026]
 texture = ExtResource("4_338k7")
 
-[node name="HBox" type="HBoxContainer" parent="Control/Parts/Movement" index="1"]
+[node name="HBox" type="HBoxContainer" parent="Control/Parts/Movement" index="1" unique_id=1683728920]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = -4
 
-[node name="Left" parent="Control/Parts/Movement/HBox" index="0" instance=ExtResource("3_an16v")]
+[node name="Left" parent="Control/Parts/Movement/HBox" index="0" unique_id=2056807972 instance=ExtResource("3_an16v")]
 modulate = Color(0, 0, 0, 1)
 layout_mode = 2
 _e_keyboard_texture = ExtResource("8_aymt5")
@@ -121,10 +121,10 @@ _e_joy_letters_color_texture = ExtResource("9_drdy7")
 _e_joy_letters_neutral_texture = ExtResource("10_wyykf")
 _e_joy_shapes_color_texture = ExtResource("11_v0u8e")
 
-[node name="Input" parent="Control/Parts/Movement/HBox/Left/Margin/HBox" index="0"]
+[node name="Input" parent="Control/Parts/Movement/HBox/Left/Margin/HBox" parent_id_path=PackedInt32Array(2056807972, 115880366) index="0" unique_id=235245026]
 texture = ExtResource("8_aymt5")
 
-[node name="Down" parent="Control/Parts/Movement/HBox" index="1" instance=ExtResource("3_an16v")]
+[node name="Down" parent="Control/Parts/Movement/HBox" index="1" unique_id=213891088 instance=ExtResource("3_an16v")]
 modulate = Color(0, 0, 0, 1)
 layout_mode = 2
 _e_keyboard_texture = ExtResource("12_c67nm")
@@ -132,10 +132,10 @@ _e_joy_letters_color_texture = ExtResource("13_o0gm4")
 _e_joy_letters_neutral_texture = ExtResource("14_0ahq5")
 _e_joy_shapes_color_texture = ExtResource("15_wy1tr")
 
-[node name="Input" parent="Control/Parts/Movement/HBox/Down/Margin/HBox" index="0"]
+[node name="Input" parent="Control/Parts/Movement/HBox/Down/Margin/HBox" parent_id_path=PackedInt32Array(213891088, 115880366) index="0" unique_id=235245026]
 texture = ExtResource("12_c67nm")
 
-[node name="Right" parent="Control/Parts/Movement/HBox" index="2" instance=ExtResource("3_an16v")]
+[node name="Right" parent="Control/Parts/Movement/HBox" index="2" unique_id=373923482 instance=ExtResource("3_an16v")]
 modulate = Color(0, 0, 0, 1)
 layout_mode = 2
 _e_keyboard_texture = ExtResource("16_o0gm4")
@@ -143,10 +143,10 @@ _e_joy_letters_color_texture = ExtResource("17_1xro5")
 _e_joy_letters_neutral_texture = ExtResource("18_an16v")
 _e_joy_shapes_color_texture = ExtResource("19_rs5d8")
 
-[node name="Input" parent="Control/Parts/Movement/HBox/Right/Margin/HBox" index="0"]
+[node name="Input" parent="Control/Parts/Movement/HBox/Right/Margin/HBox" parent_id_path=PackedInt32Array(373923482, 115880366) index="0" unique_id=235245026]
 texture = ExtResource("16_o0gm4")
 
-[node name="Run" parent="Control/Parts" index="1" instance=ExtResource("3_an16v")]
+[node name="Run" parent="Control/Parts" parent_id_path=PackedInt32Array(2052037425) index="1" unique_id=2107248186 instance=ExtResource("3_an16v")]
 visible = false
 modulate = Color(0, 0, 0, 1)
 layout_mode = 1
@@ -168,10 +168,10 @@ _e_joy_letters_color_texture = ExtResource("21_xmf7w")
 _e_joy_letters_neutral_texture = ExtResource("22_oyqox")
 _e_joy_shapes_color_texture = ExtResource("23_lkgsk")
 
-[node name="Input" parent="Control/Parts/Run/Margin/HBox" index="0"]
+[node name="Input" parent="Control/Parts/Run/Margin/HBox" parent_id_path=PackedInt32Array(2107248186, 115880366) index="0" unique_id=235245026]
 texture = ExtResource("20_xjgyp")
 
-[node name="Jump" parent="Control/Parts" index="2" instance=ExtResource("3_an16v")]
+[node name="Jump" parent="Control/Parts" parent_id_path=PackedInt32Array(2052037425) index="2" unique_id=1128924615 instance=ExtResource("3_an16v")]
 visible = false
 modulate = Color(0, 0, 0, 1)
 layout_mode = 1
@@ -193,10 +193,10 @@ _e_joy_letters_color_texture = ExtResource("25_04f3q")
 _e_joy_letters_neutral_texture = ExtResource("26_p5wgs")
 _e_joy_shapes_color_texture = ExtResource("27_vy7ll")
 
-[node name="Input" parent="Control/Parts/Jump/Margin/HBox" index="0"]
+[node name="Input" parent="Control/Parts/Jump/Margin/HBox" parent_id_path=PackedInt32Array(1128924615, 115880366) index="0" unique_id=235245026]
 texture = ExtResource("24_2b6ym")
 
-[node name="Action" parent="Control/Parts" index="3" instance=ExtResource("3_an16v")]
+[node name="Action" parent="Control/Parts" parent_id_path=PackedInt32Array(2052037425) index="3" unique_id=1723577361 instance=ExtResource("3_an16v")]
 visible = false
 modulate = Color(0, 0, 0, 1)
 layout_mode = 1
@@ -218,10 +218,10 @@ _e_joy_letters_color_texture = ExtResource("25_04f3q")
 _e_joy_letters_neutral_texture = ExtResource("26_p5wgs")
 _e_joy_shapes_color_texture = ExtResource("27_vy7ll")
 
-[node name="Input" parent="Control/Parts/Action/Margin/HBox" index="0"]
+[node name="Input" parent="Control/Parts/Action/Margin/HBox" parent_id_path=PackedInt32Array(1723577361, 115880366) index="0" unique_id=235245026]
 texture = ExtResource("24_2b6ym")
 
-[node name="Main_Menu" parent="Control/Parts" index="4" instance=ExtResource("3_an16v")]
+[node name="Main_Menu" parent="Control/Parts" parent_id_path=PackedInt32Array(2052037425) index="4" unique_id=2014294990 instance=ExtResource("3_an16v")]
 visible = false
 modulate = Color(0, 0, 0, 1)
 layout_mode = 1
@@ -243,10 +243,8 @@ _e_joy_letters_color_texture = ExtResource("29_vy7ll")
 _e_joy_letters_neutral_texture = ExtResource("30_vy7ll")
 _e_joy_shapes_color_texture = ExtResource("31_pihty")
 
-[node name="Anims" type="AnimationPlayer" parent="." index="1"]
-libraries = {
-&"": SubResource("AnimationLibrary_4pits")
-}
+[node name="Anims" type="AnimationPlayer" parent="." index="1" unique_id=109578872]
+libraries/ = SubResource("AnimationLibrary_4pits")
 
 [editable path="Control/Parts/Movement/Up"]
 [editable path="Control/Parts/Movement/HBox/Left"]

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dvw3wf4ce4o3s"]
+
+[ext_resource type="Script" uid="uid://csakh8quib210" path="res://Framework/Scenes/Object/Comps/2D/Scripts/Nav_Obstacle.gd" id="1_ebsq8"]
+
+[node name="Nav_Obstacle" type="NavigationObstacle2D" unique_id=2066831524 groups=["Comp"]]
+script = ExtResource("1_ebsq8")

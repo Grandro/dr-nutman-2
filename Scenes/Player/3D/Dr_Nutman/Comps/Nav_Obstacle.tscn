@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://byq56u564g32m"]
+
+[ext_resource type="PackedScene" uid="uid://fnej1f64wfc2" path="res://Framework/Scenes/Object/Comps/3D/Nav_Obstacle.tscn" id="1_d5a5b"]
+
+[node name="Nav_Obstacle" unique_id=1855628921 instance=ExtResource("1_d5a5b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+radius = 0.75

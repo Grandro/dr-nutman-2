@@ -27,8 +27,8 @@ func _process(_p_delta: float) -> void:
 	immediate_mesh.surface_end()
 	_a_Lines.set_mesh(immediate_mesh)
 
-func init(p_entity: Node) -> void:
-	_a_entity = p_entity
+func init(p_entities: Array[Node]) -> void:
+	_a_entity = p_entities[-1]
 
 func instantiate_container(p_key: StringName, p_modulate: Color) -> CompBalloonsContainerBase:
 	var instance: CompBalloonsContainerBase = _e_container_scene.instantiate()

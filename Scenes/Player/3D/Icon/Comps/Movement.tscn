@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bx0b7w78x7fgv"]
+
+[ext_resource type="PackedScene" uid="uid://br3fs6efh03rn" path="res://Framework/Scenes/Object/Comps/3D/Movement/Movement_Character.tscn" id="1_25lph"]
+[ext_resource type="PackedScene" uid="uid://dn5hbmoakcthh" path="res://Framework/Scenes/Object/Comps/3D/Movement/Comps/Controller_Base.tscn" id="2_0tko7"]
+[ext_resource type="PackedScene" uid="uid://cekkcfeurbewx" path="res://Framework/Scenes/Object/Comps/3D/Movement/Comps/States.tscn" id="3_qhx8a"]
+
+[node name="Movement" unique_id=1775514236 instance=ExtResource("1_25lph")]
+
+[node name="Controller" parent="." index="0" unique_id=803971904 instance=ExtResource("2_0tko7")]
+
+[node name="States" parent="." index="1" unique_id=613341567 instance=ExtResource("3_qhx8a")]
+_e_speeds = Dictionary[StringName, float]({
+&"Stop": 0.0,
+&"Walk": 3.0
+})

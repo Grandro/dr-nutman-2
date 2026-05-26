@@ -1,0 +1,124 @@
+[gd_scene format=3 uid="uid://cl525dd882uw0"]
+
+[ext_resource type="PackedScene" uid="uid://1fosmoy0vdue" path="res://Framework/Scenes/Title_Screen/Progress/Progress_Base.tscn" id="1_2r6ga"]
+[ext_resource type="Theme" uid="uid://budcfl16xj2tt" path="res://Global_Resources/Themes/Default/Default.tres" id="2_l62m7"]
+[ext_resource type="Script" uid="uid://dt2swbcjk5w8c" path="res://Framework/Scenes/Title_Screen/Progress/Scripts/Progress_None.gd" id="3_wmt4c"]
+[ext_resource type="Texture2D" uid="uid://b0qnc6by6o6d" path="res://Scenes/Title_Screen/Sprites/Logo.png" id="4_2gvli"]
+
+[node name="Progress_None" unique_id=224714966 instance=ExtResource("1_2r6ga")]
+theme = ExtResource("2_l62m7")
+script = ExtResource("3_wmt4c")
+
+[node name="Logo" type="TextureRect" parent="." index="1" unique_id=1922270023]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(430, 180)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -215.0
+offset_right = 215.0
+offset_bottom = 256.0
+grow_horizontal = 2
+texture = ExtResource("4_2gvli")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="VBox" type="VBoxContainer" parent="." index="3" unique_id=1949945272]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -109.5
+offset_right = 100.0
+offset_bottom = 109.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="Start" type="Button" parent="VBox" index="0" unique_id=536089283]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+shortcut_in_tooltip = false
+text = "FW_START"
+clip_text = true
+
+[node name="Load" type="Button" parent="VBox" index="1" unique_id=1442708001]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+shortcut_in_tooltip = false
+text = "FW_LOAD"
+clip_text = true
+
+[node name="Options" type="Button" parent="VBox" index="2" unique_id=987271150]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+shortcut_in_tooltip = false
+text = "FW_MAIN_MENU_OPTIONS"
+clip_text = true
+
+[node name="Credits" type="Button" parent="VBox" index="3" unique_id=684043405]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+shortcut_in_tooltip = false
+text = "FW_CREDITS"
+clip_text = true
+
+[node name="Quit" type="Button" parent="VBox" index="4" unique_id=2117670677]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "FW_QUIT"
+
+[node name="By" type="Label" parent="." index="4" unique_id=462243963]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = -36.0
+offset_right = 122.0
+offset_bottom = -8.0
+grow_vertical = 0
+text = "By Grandro"
+vertical_alignment = 1
+
+[node name="Version" type="Label" parent="." index="5" unique_id=1825889082]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -72.0
+offset_top = -33.0
+offset_right = -12.0
+offset_bottom = -5.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "v0.0.1"
+vertical_alignment = 1

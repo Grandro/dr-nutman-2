@@ -1,8 +1,8 @@
 extends SVEnemy
 class_name SVEnemySickApprentice1
 
-@onready var _a_Audio: CompAudio3D = get_node("Audio")
-@onready var _a_Hitbox: CompArea3D = get_node("Hitbox")
+@onready var _a_Audio: FWCompAudio3D = get_node("Audio")
+@onready var _a_Hitbox: FWCompArea3D = get_node("Hitbox")
 @onready var _a_Fire: GPUParticles3D = get_node("Fire")
 @onready var _a_Fire_Anims: AnimationPlayer = get_node("Fire/Anims")
 @onready var _a_Fever_Anims: AnimationPlayer = get_node("Fever_Anims")
@@ -167,5 +167,5 @@ func _CB_cutscene_completed(_p_type: StringName, p_key: StringName, p_entry_key:
 					_a_tween.play()
 					action_reaction_started.emit(_a_target)
 				&"First_Battle_Dodge_3":
-					_a_progress_si.call_object("Tutato", &"set_explain_battle_dodge", [false])
+					_a_progress_si.call_object(&"Tutato", &"set_explain_battle_dodge", [false])
 					_fever_attack_to_start()

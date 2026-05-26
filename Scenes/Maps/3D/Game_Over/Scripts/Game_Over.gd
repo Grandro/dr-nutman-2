@@ -1,11 +1,11 @@
-extends MapBase3D
+extends FWMapBase3D
 class_name MapGameOver
 
 @export var _e_quotes_amount: Dictionary[StringName, int] = {} # Match pm_key to amount
 
 const _a_QUOTE_DIALOGUE_KEY: String = "Quote_%s_%s_1"
 
-@onready var _a_Player: Player3D = get_node("Objects/Player")
+@onready var _a_Player: FWPlayer3D = get_node("Objects/Player")
 @onready var _a_Anims: AnimationPlayer = get_node("Anims")
 
 func _ready() -> void:
@@ -35,5 +35,5 @@ func load_data_init() -> void:
 func _on_anim_finished(p_name: StringName) -> void:
 	if p_name == &"Fall":
 		var scene_manager_si: Scene_Manager = Global.get_singleton(self, "Scene_Manager")
-		var title_screen_scene_path: String = Global.get_title_screen_scene_path()
-		scene_manager_si.change_scene_path(title_screen_scene_path)
+		var title_screen_scene_uid: String = Global.get_title_screen_scene_uid()
+		scene_manager_si.change_scene_uid(title_screen_scene_uid)

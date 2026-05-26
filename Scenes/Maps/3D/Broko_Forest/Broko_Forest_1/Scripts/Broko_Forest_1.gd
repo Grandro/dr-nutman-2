@@ -1,4 +1,4 @@
-extends MapBase3D
+extends FWMapBase3D
 class_name MapBrokoForest1
 
 func load_data_init() -> void:

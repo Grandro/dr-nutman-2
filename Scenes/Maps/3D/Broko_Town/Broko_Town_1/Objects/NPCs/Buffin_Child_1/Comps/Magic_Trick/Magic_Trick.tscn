@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://due8xbyuvrdca"]
+[gd_scene format=3 uid="uid://due8xbyuvrdca"]
 
 [ext_resource type="Script" uid="uid://chwkpbwn3qm2y" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Objects/NPCs/Buffin_Child_1/Comps/Magic_Trick/Scripts/Magic_Trick.gd" id="1_16irm"]
 [ext_resource type="Texture2D" uid="uid://ofqhd88fi5s7" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Objects/NPCs/Buffin_Child_1/Comps/Magic_Trick/Sprites/Floor/Spritesheet.png" id="3_uw1qk"]
@@ -631,10 +631,10 @@ _data = {
 &"Swallow": SubResource("Animation_p82rw")
 }
 
-[node name="Magic_Trick" type="CanvasLayer" groups=["Comp"]]
+[node name="Magic_Trick" type="CanvasLayer" unique_id=2057097358 groups=["Comp"]]
 script = ExtResource("1_16irm")
 
-[node name="Control" type="Control" parent="."]
+[node name="Control" type="Control" parent="." unique_id=2031461913]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 3
@@ -645,7 +645,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Background" type="ColorRect" parent="Control"]
+[node name="Background" type="ColorRect" parent="Control" unique_id=581745899]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 1
@@ -657,7 +657,7 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 0.498039)
 
-[node name="Anim" type="Control" parent="Control"]
+[node name="Anim" type="Control" parent="Control" unique_id=540996559]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 1
@@ -674,25 +674,25 @@ scale = Vector2(0.5, 0.5)
 mouse_filter = 2
 metadata/_edit_group_ = true
 
-[node name="Floor" type="Sprite2D" parent="Control/Anim"]
+[node name="Floor" type="Sprite2D" parent="Control/Anim" unique_id=2051772980]
 light_mask = 8
 visibility_layer = 8
 position = Vector2(8, 328)
 texture = ExtResource("3_uw1qk")
 
-[node name="Legs" type="Sprite2D" parent="Control/Anim"]
+[node name="Legs" type="Sprite2D" parent="Control/Anim" unique_id=600614759]
 light_mask = 8
 visibility_layer = 8
 position = Vector2(11, 294)
 texture = ExtResource("5_ean02")
 
-[node name="Turf" type="Sprite2D" parent="Control/Anim"]
+[node name="Turf" type="Sprite2D" parent="Control/Anim" unique_id=546339410]
 light_mask = 8
 visibility_layer = 8
 position = Vector2(15, 354)
 texture = ExtResource("7_l4g5q")
 
-[node name="Body" type="Sprite2D" parent="Control/Anim"]
+[node name="Body" type="Sprite2D" parent="Control/Anim" unique_id=1007409790]
 light_mask = 8
 visibility_layer = 8
 position = Vector2(2, 11)
@@ -700,21 +700,21 @@ texture = ExtResource("9_g7w56")
 hframes = 8
 vframes = 2
 
-[node name="Arms" type="Sprite2D" parent="Control/Anim"]
+[node name="Arms" type="Sprite2D" parent="Control/Anim" unique_id=555261002]
 light_mask = 8
 visibility_layer = 8
 position = Vector2(0, 127)
 texture = ExtResource("11_u4ixx")
 hframes = 4
 
-[node name="Party_Hat" type="Sprite2D" parent="Control/Anim"]
+[node name="Party_Hat" type="Sprite2D" parent="Control/Anim" unique_id=926388613]
 light_mask = 8
 visibility_layer = 8
 position = Vector2(2, -330)
 texture = ExtResource("13_5qou2")
 hframes = 2
 
-[node name="Coin" type="Sprite2D" parent="Control/Anim"]
+[node name="Coin" type="Sprite2D" parent="Control/Anim" unique_id=1562841045]
 light_mask = 8
 visibility_layer = 8
 position = Vector2(6, -30)
@@ -723,7 +723,7 @@ hframes = 8
 vframes = 3
 frame = 7
 
-[node name="Stars" type="Sprite2D" parent="Control/Anim"]
+[node name="Stars" type="Sprite2D" parent="Control/Anim" unique_id=720738985]
 visible = false
 light_mask = 8
 visibility_layer = 8
@@ -732,34 +732,32 @@ texture = ExtResource("17_wg70e")
 hframes = 2
 frame = 1
 
-[node name="Anims" type="AnimationPlayer" parent="Control/Anim"]
-libraries = {
-"": SubResource("AnimationLibrary_0i6n2")
-}
+[node name="Anims" type="AnimationPlayer" parent="Control/Anim" unique_id=1152685786]
+libraries/ = SubResource("AnimationLibrary_0i6n2")
 
-[node name="Audio" type="Node" parent="Control"]
+[node name="Audio" type="Node" parent="Control" unique_id=775357185]
 
-[node name="Thump" type="AudioStreamPlayer" parent="Control/Audio"]
+[node name="Thump" type="AudioStreamPlayer" parent="Control/Audio" unique_id=1778920657]
 volume_db = -8.0
 bus = &"SFX"
 
-[node name="Sparkle" type="AudioStreamPlayer" parent="Control/Audio"]
+[node name="Sparkle" type="AudioStreamPlayer" parent="Control/Audio" unique_id=1078043091]
 volume_db = -16.0
 bus = &"SFX"
 
-[node name="Grass" type="AudioStreamPlayer" parent="Control/Audio"]
+[node name="Grass" type="AudioStreamPlayer" parent="Control/Audio" unique_id=1145544063]
 volume_db = -25.0
 bus = &"SFX"
 
-[node name="Fun_Up" type="AudioStreamPlayer" parent="Control/Audio"]
+[node name="Fun_Up" type="AudioStreamPlayer" parent="Control/Audio" unique_id=878663884]
 volume_db = -6.0
 bus = &"SFX"
 
-[node name="Win_Stinger" type="AudioStreamPlayer" parent="Control/Audio"]
+[node name="Win_Stinger" type="AudioStreamPlayer" parent="Control/Audio" unique_id=1416062518]
 volume_db = -12.0
 bus = &"SFX"
 
-[node name="Ref" type="TextureRect" parent="Control"]
+[node name="Ref" type="TextureRect" parent="Control" unique_id=729606531]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 0

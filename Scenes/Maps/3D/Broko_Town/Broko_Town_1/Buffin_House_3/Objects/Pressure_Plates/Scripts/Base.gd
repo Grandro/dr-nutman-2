@@ -1,12 +1,12 @@
-extends Node3DObject
+extends FWNode3DObject
 class_name ObjectPressurePlateBase
 
 signal pushed()
 signal released()
 
 @onready var _a_Area: Area3D = get_node("Area")
-@onready var _a_States: CompStates = get_node("States")
-@onready var _a_Anims: CompAnims = get_node("Anims")
+@onready var _a_States: FWCompStates = get_node("States")
+@onready var _a_Anims: FWCompAnims = get_node("Anims")
 
 var _a_instances: Array[Node] = []
 var _a_locked: bool = false

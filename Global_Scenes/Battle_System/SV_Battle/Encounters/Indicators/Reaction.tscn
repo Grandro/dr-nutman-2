@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://d4g3oydk762s7"]
+[gd_scene format=3 uid="uid://d4g3oydk762s7"]
 
 [ext_resource type="Script" uid="uid://dow77flvmqja5" path="res://Global_Scenes/Battle_System/SV_Battle/Encounters/Indicators/Scripts/Reaction.gd" id="1_el2it"]
-
 
 [sub_resource type="Animation" id="Animation_k3cwt"]
 resource_name = "Fade_In"
@@ -41,11 +40,11 @@ _data = {
 &"Fade_Out": SubResource("Animation_m7d83")
 }
 
-[node name="Reaction" type="CanvasLayer"]
+[node name="Reaction" type="CanvasLayer" unique_id=311672436]
 layer = 2
 script = ExtResource("1_el2it")
 
-[node name="Reactions" type="MarginContainer" parent="."]
+[node name="Reactions" type="MarginContainer" parent="." unique_id=1616630832]
 light_mask = 8
 visibility_layer = 8
 offset_right = 40.0
@@ -53,13 +52,11 @@ offset_bottom = 40.0
 theme_override_constants/margin_left = 24
 theme_override_constants/margin_top = 24
 
-[node name="VBox" type="VBoxContainer" parent="Reactions"]
+[node name="VBox" type="VBoxContainer" parent="Reactions" unique_id=1076807790]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="Anims" type="AnimationPlayer" parent="Reactions"]
-libraries = {
-&"": SubResource("AnimationLibrary_8ei4h")
-}
+[node name="Anims" type="AnimationPlayer" parent="Reactions" unique_id=1583963502]
+libraries/ = SubResource("AnimationLibrary_8ei4h")

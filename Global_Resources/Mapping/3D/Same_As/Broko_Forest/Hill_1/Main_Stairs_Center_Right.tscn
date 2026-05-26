@@ -1,6 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://bwj37a2ccdmxd"]
+[gd_scene format=3 uid="uid://bwj37a2ccdmxd"]
 
-[ext_resource type="PackedScene" uid="uid://dbxigq53qnnvo" path="res://Global_Resources/Mapping/3D/Plane/Plane_Tile.tscn" id="1_nme7l"]
+[ext_resource type="PackedScene" uid="uid://dbxigq53qnnvo" path="res://Framework/Global_Resources/Mapping/3D/Plane/Plane_Tile.tscn" id="1_nme7l"]
 [ext_resource type="Texture2D" uid="uid://qg775ebqu8h4" path="res://Global_Resources/Mapping/Sprites/Same_As/Broko_Forest/Hill_1/Main_Stairs_Top_Center_Right.png" id="1_siocg"]
 [ext_resource type="Texture2D" uid="uid://c21a3olic3rxt" path="res://Global_Resources/Mapping/Sprites/Same_As/Broko_Forest/Hill_1/Main_Stairs_Side_Center_Right.png" id="2_siocg"]
 
@@ -24,19 +24,19 @@ size = Vector2(1, 1)
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_7civm"]
 points = PackedVector3Array(-0.5, 0, 0.5, -0.5, 0, -0.5, -0.5, 1, -0.5, 0.5, 0, 0.5, 0.5, 0, -0.5, 0.5, 1, -0.5)
 
-[node name="Main_1" type="Node3D"]
+[node name="Main_1" type="Node3D" unique_id=1886547348]
 
-[node name="Top" parent="." groups=["NavMesh_Main"] instance=ExtResource("1_nme7l")]
+[node name="Top" parent="." unique_id=1341565418 groups=["NavMesh_Main"] instance=ExtResource("1_nme7l")]
 transform = Transform3D(1, 0, 0, 0, 0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 0.5, 0)
 mesh = SubResource("PlaneMesh_x4hye")
 _e_base_size = Vector3(1, 1.415, 1)
 
-[node name="Right" parent="." instance=ExtResource("1_nme7l")]
+[node name="Right" parent="." unique_id=453614767 instance=ExtResource("1_nme7l")]
 transform = Transform3D(1.31134e-07, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, 1.31134e-07, -5.73206e-15, 0.5, 0.5, 0)
 mesh = SubResource("PlaneMesh_t81am")
 
-[node name="Static" type="StaticBody3D" parent="."]
+[node name="Static" type="StaticBody3D" parent="." unique_id=2021684195]
 collision_mask = 0
 
-[node name="Collision" type="CollisionShape3D" parent="Static"]
+[node name="Collision" type="CollisionShape3D" parent="Static" unique_id=942382027]
 shape = SubResource("ConvexPolygonShape3D_7civm")

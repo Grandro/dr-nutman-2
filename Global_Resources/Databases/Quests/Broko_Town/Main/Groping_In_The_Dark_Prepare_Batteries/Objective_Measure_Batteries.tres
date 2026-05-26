@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="ObjectiveDataInt" format=3 uid="uid://8xfiub00eoj5"]
+
+[ext_resource type="Script" uid="uid://df2f6s4xkip4l" path="res://Framework/Global_Resources/Databases/Quests/Objective_Data_Int.gd" id="1_ycqkl"]
+
+[resource]
+script = ExtResource("1_ycqkl")
+_e_target_value = 6
+_e_desc = &"PROGRESS_QUESTS_BROKO_TOWN_1_MAIN_GROPING_IN_THE_DARK_PREPARE_BATTERIES_OBJECTIVE_MEASURE_BATTERIES"

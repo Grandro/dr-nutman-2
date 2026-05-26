@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cpjbiihii7on6"]
+
+[ext_resource type="PackedScene" uid="uid://dqrcelykxg2gc" path="res://Framework/Global_Scenes/Debug/Command_Editor/Command_Editor.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://b257myw2w1drs" path="res://Framework/Global_Scenes/Debug/Keys_Editor/Keys_Editor_Parts.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://6m8iwc1igshk" path="res://Framework/Global_Scenes/Debug/Preview/Commands_Preview.tscn" id="3"]
+[ext_resource type="Script" uid="uid://d0rbkheg35bv2" path="res://Framework/Global_Scenes/Debug/Cutscenes/Scripts/Cutscenes.gd" id="12"]
+
+[node name="Cutscenes" unique_id=728491906 instance=ExtResource("2")]
+script = ExtResource("12")
+_e_key = "Cutscenes"
+
+[node name="Parts" parent="VBox/HBox" parent_id_path=PackedInt32Array(1093986736) index="0" unique_id=1985024580]
+custom_minimum_size = Vector2(200, 0)
+_e_types = Array[StringName]([&"Default"])
+_e_default_value = []
+_e_delete_loc_id = &""
+
+[node name="Editor" parent="VBox/HBox/VBox" parent_id_path=PackedInt32Array(1590910835) index="1" unique_id=2126679171 instance=ExtResource("1")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Preview" parent="." index="2" unique_id=1760589498 instance=ExtResource("3")]
+layer = 102
+
+[editable path="HBox/VBox/Options/Search"]

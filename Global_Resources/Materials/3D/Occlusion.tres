@@ -1,4 +1,4 @@
-[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://dpj40b7eofpn"]
+[gd_resource type="ShaderMaterial" format=3 uid="uid://dpj40b7eofpn"]
 
 [ext_resource type="Texture2D" uid="uid://cod8mkqx8wdyp" path="res://Global_Resources/Sprites/Objects/Dr_Nutman/Spritesheet.png" id="1_dhrjp"]
 [ext_resource type="Shader" uid="uid://jyu6bfhnf5w6" path="res://Global_Resources/Materials/3D/Shaders/Occlusion.gdshader" id="2_fwa0r"]

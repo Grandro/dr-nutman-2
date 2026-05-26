@@ -1,12 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://c1iochvjs5d5m"]
+[gd_scene format=3 uid="uid://c1iochvjs5d5m"]
 
-[ext_resource type="PackedScene" uid="uid://daiyshvpekgh7" path="res://Global_Resources/Mapping/3D/Mesh_Tile_Group_Collision_Box.tscn" id="1_fv84i"]
+[ext_resource type="PackedScene" uid="uid://daiyshvpekgh7" path="res://Framework/Global_Resources/Mapping/3D/Mesh_Tile_Group_Collision_Box.tscn" id="1_fv84i"]
 [ext_resource type="Texture2D" uid="uid://d2qnxtn4newle" path="res://Global_Resources/Mapping/Sprites/Same_As/Broko_Town/Interior/Wall_1/Main_Side_Down_Center.png" id="2_gqf13"]
-[ext_resource type="PackedScene" uid="uid://dbxigq53qnnvo" path="res://Global_Resources/Mapping/3D/Plane/Plane_Tile.tscn" id="2_robam"]
+[ext_resource type="PackedScene" uid="uid://dbxigq53qnnvo" path="res://Framework/Global_Resources/Mapping/3D/Plane/Plane_Tile.tscn" id="2_robam"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4aenm"]
 albedo_texture = ExtResource("2_gqf13")
-uv1_offset = Vector3(0, 0, 1)
 texture_filter = 0
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_y4gbn"]
@@ -15,20 +14,24 @@ size = Vector2(1, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cciln"]
 albedo_texture = ExtResource("2_gqf13")
-uv1_offset = Vector3(0, 0, 1)
+uv1_scale = Vector3(0.99999994, 0.99999994, 1)
 texture_filter = 0
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_ubym5"]
 material = SubResource("StandardMaterial3D_cciln")
-size = Vector2(1, 1)
+size = Vector2(0.99999994, 0.99999994)
 
-[node name="Single_1" instance=ExtResource("1_fv84i")]
-_e_coll_base_size = Vector3(1, 1, 1)
+[sub_resource type="BoxShape3D" id="BoxShape3D_nawo5"]
 
-[node name="Front" parent="Tiles" index="0" instance=ExtResource("2_robam")]
+[node name="Single_1" unique_id=1231428296 instance=ExtResource("1_fv84i")]
+
+[node name="Front" parent="Tiles" parent_id_path=PackedInt32Array(566639371) index="0" unique_id=507221754 instance=ExtResource("2_robam")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.5, 0.5)
 mesh = SubResource("PlaneMesh_y4gbn")
 
-[node name="Back" parent="Tiles" index="1" instance=ExtResource("2_robam")]
+[node name="Back" parent="Tiles" parent_id_path=PackedInt32Array(566639371) index="1" unique_id=271355016 instance=ExtResource("2_robam")]
 transform = Transform3D(-1, 8.74228e-08, -3.82137e-15, 0, -4.37114e-08, -1, -8.74228e-08, -1, 4.37114e-08, 0, 0.5, -0.5)
 mesh = SubResource("PlaneMesh_ubym5")
+
+[node name="Collision" parent="Static" parent_id_path=PackedInt32Array(448872802) index="0" unique_id=290579066]
+shape = SubResource("BoxShape3D_nawo5")

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://du8b1s5ieoold"]
+[gd_resource type="Resource" script_class="EnemyStatsData" format=3 uid="uid://du8b1s5ieoold"]
 
 [ext_resource type="Script" uid="uid://cwhdo8m6jpg5n" path="res://Global_Resources/Databases/Battle_System/Enemies/Enemy_Stats_Data.gd" id="1_0gs0r"]
 
@@ -6,26 +6,28 @@
 script = ExtResource("1_0gs0r")
 _e_EXP = 4
 _e_loot = {
-"$Coins": {
+&"$Coins": {
 0: 2,
 1: 2,
 2: 2,
 3: 1
 },
-"Citrin_Shell": {
+&"Citrin_Shell": {
 0: 3,
 1: 3,
 2: 1
 },
-"Cookie": {
+&"Cookie": {
 0: 3,
 1: 1
 }
 }
-_e_HP = 12
-_e_SP = 3
-_e_ATK = 2
-_e_MAG = 0
-_e_DEF = 1
-_e_SPEED = 1
-_e_LUCK = 0
+_e_stats = Dictionary[StringName, int]({
+&"ATK": 2,
+&"DEF": 1,
+&"HP": 12,
+&"LUCK": 0,
+&"MAG": 0,
+&"SP": 3,
+&"SPEED": 1
+})

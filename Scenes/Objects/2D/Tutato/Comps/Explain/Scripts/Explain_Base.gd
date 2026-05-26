@@ -11,7 +11,7 @@ func _ready() -> void:
 		child.hide()
 	hide()
 
-func init(_p_entity: Node) -> void:
+func init(_p_entities: Array[Node]) -> void:
 	pass
 
 func open() -> void:

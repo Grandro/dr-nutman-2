@@ -1,0 +1,2 @@
+extends FWCompMovementBase2D
+class_name FWCompMovementRigid2D

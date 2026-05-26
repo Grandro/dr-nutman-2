@@ -1,4 +1,4 @@
-extends ObjectEnemyCompBehaviorStatesStateBase
+extends FWObjectCompBehaviorStatesStateBase
 class_name ObjectEnemyCompBehaviorStatesStateRespawn
 
 func process_start() -> void:

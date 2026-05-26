@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://clt702xeenlsb"]
+[gd_scene format=3 uid="uid://clt702xeenlsb"]
 
 [ext_resource type="PackedScene" uid="uid://m064wf80xii3" path="res://Global_Resources/Mapping/3D/Below/Broko_Town/Interior/Rails_1/Rails_Part_Base.tscn" id="1_m4gu8"]
 [ext_resource type="Texture2D" uid="uid://bje8aqdlvbucv" path="res://Global_Resources/Mapping/Sprites/Below/Broko_Town/Interior/Rails_1/Down_Three_Down_To_Left.png" id="2_m4gu8"]
@@ -19,7 +19,7 @@ _data = {
 }
 point_count = 16
 
-[node name="Rails_1" instance=ExtResource("1_m4gu8")]
+[node name="Rails_1" unique_id=1223939754 instance=ExtResource("1_m4gu8")]
 mesh = SubResource("PlaneMesh_hammi")
 _e_base_size = Vector3(1.16, 1, 1.16)
 

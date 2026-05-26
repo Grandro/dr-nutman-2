@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://k88nwf7dryym"]
+[gd_scene format=3 uid="uid://k88nwf7dryym"]
 
 [ext_resource type="Script" uid="uid://byiq5yjabn2it" path="res://Global_Scenes/Battle_System/SV_Battle/Encounters/Indicators/Scripts/Enemy_Select.gd" id="1_oq1rt"]
 [ext_resource type="Texture2D" uid="uid://bpaiyjrw8yrv4" path="res://Global_Resources/Sprites/SV/A_Button_Spritesheet.png" id="2_pgtvl"]
@@ -116,13 +116,13 @@ _data = {
 &"Fade_Out": SubResource("Animation_e1xg1")
 }
 
-[node name="Enemy_Select" type="Node3D"]
+[node name="Enemy_Select" type="Node3D" unique_id=254660176]
 script = ExtResource("1_oq1rt")
 
-[node name="Sprites" type="Node3D" parent="."]
+[node name="Sprites" type="Node3D" parent="." unique_id=1866133115]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.49012e-08, 0)
 
-[node name="Button" type="Sprite3D" parent="Sprites"]
+[node name="Button" type="Sprite3D" parent="Sprites" unique_id=518985479]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0.2, 0)
 layers = 4
 pixel_size = 0.02
@@ -132,12 +132,10 @@ texture_filter = 0
 texture = ExtResource("2_pgtvl")
 hframes = 2
 
-[node name="Anims" type="AnimationPlayer" parent="Sprites/Button"]
-libraries = {
-&"": SubResource("AnimationLibrary_vsdh8")
-}
+[node name="Anims" type="AnimationPlayer" parent="Sprites/Button" unique_id=1221781711]
+libraries/ = SubResource("AnimationLibrary_vsdh8")
 
-[node name="Arrow" type="Sprite3D" parent="Sprites"]
+[node name="Arrow" type="Sprite3D" parent="Sprites" unique_id=1435806215]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11, -0.07, 0)
 layers = 4
 pixel_size = 0.02
@@ -147,21 +145,17 @@ texture_filter = 0
 texture = ExtResource("3_2oaoo")
 hframes = 4
 
-[node name="Anims" type="AnimationPlayer" parent="Sprites/Arrow"]
-libraries = {
-&"": SubResource("AnimationLibrary_gde6p")
-}
+[node name="Anims" type="AnimationPlayer" parent="Sprites/Arrow" unique_id=2061783621]
+libraries/ = SubResource("AnimationLibrary_gde6p")
 
-[node name="Anims" type="AnimationPlayer" parent="."]
+[node name="Anims" type="AnimationPlayer" parent="." unique_id=637323548]
 root_node = NodePath("../..")
-libraries = {
-&"": SubResource("AnimationLibrary_8wgxs")
-}
+libraries/ = SubResource("AnimationLibrary_8wgxs")
 
-[node name="Canvas" type="CanvasLayer" parent="."]
+[node name="Canvas" type="CanvasLayer" parent="." unique_id=1426582291]
 layer = 2
 
-[node name="VBox" type="VBoxContainer" parent="Canvas"]
+[node name="VBox" type="VBoxContainer" parent="Canvas" unique_id=1402509804]
 light_mask = 8
 visibility_layer = 8
 offset_right = 40.0
@@ -169,25 +163,25 @@ offset_bottom = 40.0
 theme = ExtResource("4_2w12y")
 theme_override_constants/separation = 16
 
-[node name="Enemy" type="MarginContainer" parent="Canvas/VBox"]
+[node name="Enemy" type="MarginContainer" parent="Canvas/VBox" unique_id=1214214468]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
 
-[node name="Border" type="TextureRect" parent="Canvas/VBox/Enemy"]
+[node name="Border" type="TextureRect" parent="Canvas/VBox/Enemy" unique_id=32795021]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
 texture = ExtResource("5_ingii")
 
-[node name="Margin" type="MarginContainer" parent="Canvas/VBox/Enemy"]
+[node name="Margin" type="MarginContainer" parent="Canvas/VBox/Enemy" unique_id=98110695]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
 theme_override_constants/margin_left = 32
 theme_override_constants/margin_right = 32
 
-[node name="Text" type="Label" parent="Canvas/VBox/Enemy/Margin"]
+[node name="Text" type="Label" parent="Canvas/VBox/Enemy/Margin" unique_id=2036159813]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
@@ -198,19 +192,19 @@ theme_override_font_sizes/font_size = 32
 text = "Citrin"
 vertical_alignment = 1
 
-[node name="Cancel" type="MarginContainer" parent="Canvas/VBox"]
+[node name="Cancel" type="MarginContainer" parent="Canvas/VBox" unique_id=1373157745]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
 theme_override_constants/margin_left = 16
 
-[node name="HBox" type="HBoxContainer" parent="Canvas/VBox/Cancel"]
+[node name="HBox" type="HBoxContainer" parent="Canvas/VBox/Cancel" unique_id=478715520]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
 theme_override_constants/separation = 8
 
-[node name="Image" type="TextureRect" parent="Canvas/VBox/Cancel/HBox"]
+[node name="Image" type="TextureRect" parent="Canvas/VBox/Cancel/HBox" unique_id=357792730]
 light_mask = 8
 visibility_layer = 8
 custom_minimum_size = Vector2(32, 32)
@@ -219,14 +213,12 @@ texture = SubResource("AtlasTexture_klt65")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Text" type="Label" parent="Canvas/VBox/Cancel/HBox"]
+[node name="Text" type="Label" parent="Canvas/VBox/Cancel/HBox" unique_id=1127890163]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
-text = "CANCEL"
+text = "FW_CANCEL"
 
-[node name="Anims" type="AnimationPlayer" parent="Canvas/VBox"]
+[node name="Anims" type="AnimationPlayer" parent="Canvas/VBox" unique_id=1808806127]
 root_node = NodePath("../Enemy")
-libraries = {
-&"": SubResource("AnimationLibrary_mh3w7")
-}
+libraries/ = SubResource("AnimationLibrary_mh3w7")

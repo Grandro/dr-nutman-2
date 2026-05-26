@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cleynesu6jd83"]
+
+[ext_resource type="PackedScene" uid="uid://b6oltpwk05r5k" path="res://Framework/Scenes/Object/Comps/3D/Behavior/Behavior_Base.tscn" id="1_jaspk"]
+[ext_resource type="PackedScene" uid="uid://cp0gj2f41rwwk" path="res://Framework/Scenes/Object/Comps/3D/Behavior/States/State_Move_Point.tscn" id="2_nmeik"]
+[ext_resource type="PackedScene" uid="uid://bxf81ui2kvwk" path="res://Framework/Scenes/Object/Comps/3D/Behavior/States/State_Move_Rndm.tscn" id="3_86e1h"]
+
+[node name="Behavior_Base" unique_id=103479668 instance=ExtResource("1_jaspk")]
+
+[node name="Return" parent="States" parent_id_path=PackedInt32Array(892130468) index="0" unique_id=1292768813 instance=ExtResource("2_nmeik")]
+_e_point = Vector3(86, -30, 26.5)
+_e_move_state = &"Float"
+
+[node name="Dazzled" parent="States" parent_id_path=PackedInt32Array(892130468) index="1" unique_id=44197761 instance=ExtResource("3_86e1h")]
+_e_move_state = &"Float"
+_e_reset_on_finish = false
+_e_min_radius = 10.0
+_e_max_radius = 20.0
+_e_CD = 0.0

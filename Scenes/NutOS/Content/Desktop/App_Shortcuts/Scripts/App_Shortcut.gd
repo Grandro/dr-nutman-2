@@ -8,8 +8,8 @@ signal right_pressed()
 
 @export var _e_app_path: String = ""
 
-var _a_Style_Focus: StyleBoxFlat = preload("res://Scenes/NutOS/Content/Desktop/App_Shortcuts/Styles/Focus.tres")
-var _a_Style_Normal: StyleBoxEmpty = preload("res://Scenes/NutOS/Content/Desktop/App_Shortcuts/Styles/Normal.tres")
+var _a_Style_Focus: StyleBoxFlat = preload("uid://bdjmty0dlicg1")
+var _a_Style_Normal: StyleBoxEmpty = preload("uid://dfhyf4va8n5c2")
 
 @onready var _a_Select: Button = get_node("Select")
 

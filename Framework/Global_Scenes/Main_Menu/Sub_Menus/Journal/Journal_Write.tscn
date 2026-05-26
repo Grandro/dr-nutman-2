@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://c10fivgn3ropo"]
+
+[ext_resource type="PackedScene" uid="uid://b4fnx40pilc8i" path="res://Framework/Global_Scenes/Main_Menu/Sub_Menus/Journal/Journal.tscn" id="1"]
+
+[node name="Journal_Write" unique_id=959629493 instance=ExtResource("1")]
+_e_state = "Write"
+
+[node name="Heading" parent="VBox" parent_id_path=PackedInt32Array(935901751) index="0" unique_id=1294028117]
+text = "WRITE"

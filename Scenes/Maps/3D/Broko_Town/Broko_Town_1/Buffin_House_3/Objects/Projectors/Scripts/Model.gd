@@ -5,7 +5,7 @@ signal ray_collided(p_collider: Object, p_point: Vector3, p_normal: Vector3)
 signal light_visibility_changed()
 
 @onready var _a_Light: SpotLight3D = get_node("Light")
-@onready var _a_Camera: CompCamera3D = get_node("Camera")
+@onready var _a_Camera: FWCompCamera3D = get_node("Camera")
 @onready var _a_Ray: RayCast3D = get_node("Ray")
 @onready var _a_Audio_Switch: AudioStreamPlayer3D = get_node("Audio_Switch")
 
@@ -32,10 +32,7 @@ func set_light_visible(p_visible: bool) -> void:
 	
 	light_visibility_changed.emit()
 
-func get_light_visible() -> bool:
-	return _a_Light.is_visible()
-
-func get_camera() -> CompCamera3D:
+func get_camera() -> FWCompCamera3D:
 	return _a_Camera
 
 func get_save_data() -> Dictionary:

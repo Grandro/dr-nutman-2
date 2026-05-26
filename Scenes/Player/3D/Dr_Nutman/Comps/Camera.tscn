@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://e6ohf8ui61sc"]
+
+[ext_resource type="PackedScene" uid="uid://blot4hpw1al18" path="res://Framework/Scenes/Object/Comps/3D/Camera.tscn" id="1_4r6sh"]
+
+[node name="Camera" unique_id=739769440 instance=ExtResource("1_4r6sh")]
+current = true

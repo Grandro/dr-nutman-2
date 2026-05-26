@@ -1,5 +1,5 @@
 @tool
-extends Node3DObject
+extends FWNode3DObject
 class_name Rails
 
 @export_tool_button("Update Path") var _e_update_path_button: Callable = _update_path
@@ -52,21 +52,6 @@ func set_rail_cars_force(p_force: float) -> void:
 func get_rail_cars() -> Array[Node]:
 	return _a_Rail_Cars.get_children()
 
-func get_save_data() -> Dictionary:
-	var data: Dictionary = super()
-	data[&"Rail_Cars"] = []
-	for child: RailCarBase in _a_Rail_Cars.get_children():
-		var child_data: Dictionary = child.get_save_data()
-		data[&"Rail_Cars"].push_back(child_data)
-	
-	return data
-
-func load_data(p_data: Dictionary) -> void:
-	super(p_data)
-	for i: int in _a_Rail_Cars.get_child_count():
-		var child: RailCarBase = _a_Rail_Cars.get_child(i)
-		child.load_data(p_data[&"Rail_Cars"][i])
-
 func _on_Rail_Car_integrate_forces(p_state: PhysicsDirectBodyState3D, p_instance: RailCarBase) -> void:
 	var pos: Vector3 = p_instance.get_position()
 	var path_point: Vector3 = _get_closest_point_on_path(pos)
@@ -74,9 +59,12 @@ func _on_Rail_Car_integrate_forces(p_state: PhysicsDirectBodyState3D, p_instance
 	if dir.length() > 0.0:
 		_a_path_dir = dir
 	
-	var velocity: Vector3 = p_state.get_linear_velocity()
+	#var velocity: Vector3 = p_state.get_linear_velocity()
 	var global_path_point: Vector3 = to_global(path_point)
 	p_state.transform.origin.x = global_path_point.x
 	p_state.transform.origin.z = global_path_point.z
-	p_state.transform.basis.x = _a_path_dir
-	p_state.set_linear_velocity(velocity.dot(_a_path_dir) * _a_path_dir)
+	#p_state.transform.basis.x = _a_path_dir
+	#p_state.transform = p_state.transform.looking_at(p_state.transform.origin + _a_path_dir)
+	p_state.transform.basis = Basis.looking_at(_a_path_dir)
+	p_state.transform.basis = p_state.transform.basis.rotated(Vector3.UP, PI / 2.0)
+	#p_state.set_linear_velocity(velocity.dot(_a_path_dir) * _a_path_dir)

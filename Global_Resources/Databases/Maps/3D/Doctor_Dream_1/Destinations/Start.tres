@@ -1,6 +1,6 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://c7jabtrfnl2r7"]
+[gd_resource type="Resource" script_class="DestinationData3D" format=3 uid="uid://c7jabtrfnl2r7"]
 
-[ext_resource type="Script" uid="uid://dd8g42vshsje" path="res://Global_Resources/Databases/Maps/3D/Destination_Data.gd" id="1_24qqo"]
+[ext_resource type="Script" uid="uid://dd8g42vshsje" path="res://Framework/Global_Resources/Databases/Maps/3D/Destination_Data.gd" id="1_24qqo"]
 
 [resource]
 script = ExtResource("1_24qqo")

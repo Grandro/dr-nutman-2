@@ -1,6 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://cc5p64jtdyfv3"]
+[gd_scene format=3 uid="uid://cc5p64jtdyfv3"]
 
-[ext_resource type="PackedScene" uid="uid://c7l6gl3pndhn7" path="res://Global_Resources/Mapping/3D/Plane/Plane_Base.tscn" id="1_el6y8"]
+[ext_resource type="PackedScene" uid="uid://c7l6gl3pndhn7" path="res://Framework/Global_Resources/Mapping/3D/Plane/Plane_Base.tscn" id="1_el6y8"]
 [ext_resource type="Texture2D" uid="uid://c1mda7w0w4stb" path="res://Global_Resources/Mapping/Sprites/Below/Broko_Town/Interior/Floor_Tile_1/Down_Left.png" id="2_s11mf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uy3ki"]
@@ -14,12 +14,12 @@ size = Vector2(1, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_t23v0"]
 size = Vector3(1, 0.2, 1)
 
-[node name="Floor_Tile_1" groups=["NavMesh_Main"] instance=ExtResource("1_el6y8")]
+[node name="Floor_Tile_1" unique_id=1185041400 groups=["NavMesh_Main"] instance=ExtResource("1_el6y8")]
 mesh = SubResource("PlaneMesh_8u4h3")
 
-[node name="Static" type="StaticBody3D" parent="." index="0"]
+[node name="Static" type="StaticBody3D" parent="." index="0" unique_id=983031973]
 collision_mask = 0
 
-[node name="Collision" type="CollisionShape3D" parent="Static" index="0"]
+[node name="Collision" type="CollisionShape3D" parent="Static" index="0" unique_id=1836907960]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
 shape = SubResource("BoxShape3D_t23v0")

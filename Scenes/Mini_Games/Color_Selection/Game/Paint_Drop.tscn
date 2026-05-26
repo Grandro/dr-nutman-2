@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bqmof5mk6palh"]
+[gd_scene format=3 uid="uid://bqmof5mk6palh"]
 
 [ext_resource type="Texture2D" uid="uid://bbwhgepqriju8" path="res://Scenes/Mini_Games/Color_Selection/Game/Sprites/Paint_Drop_1.png" id="1"]
 [ext_resource type="Script" uid="uid://ccjywf4jdkxhq" path="res://Scenes/Mini_Games/Color_Selection/Game/Scripts/Paint_Drop.gd" id="2"]
@@ -15,7 +15,7 @@ bounce = 0.75
 [sub_resource type="CircleShape2D" id="2"]
 radius = 8.0
 
-[node name="Paint_Drop" type="RigidBody2D" groups=["Paint_Drop"]]
+[node name="Paint_Drop" type="RigidBody2D" unique_id=1967352654 groups=["Paint_Drop"]]
 light_mask = 4
 visibility_layer = 4
 collision_layer = 196608
@@ -28,17 +28,17 @@ script = ExtResource("2")
 _e_on_floor_physics_mat = SubResource("PhysicsMaterial_ykpkg")
 _e_in_air_physics_mat = SubResource("PhysicsMaterial_lmvkv")
 
-[node name="Sprite" type="Sprite2D" parent="."]
+[node name="Sprite" type="Sprite2D" parent="." unique_id=505533409]
 light_mask = 4
 visibility_layer = 4
 texture = ExtResource("1")
 
-[node name="Collision" type="CollisionShape2D" parent="."]
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=65464913]
 light_mask = 4
 visibility_layer = 4
 shape = SubResource("2")
 
-[node name="Audio_Bump" type="AudioStreamPlayer2D" parent="."]
+[node name="Audio_Bump" type="AudioStreamPlayer2D" parent="." unique_id=970497004]
 process_mode = 3
 light_mask = 4
 visibility_layer = 4
@@ -47,6 +47,6 @@ volume_db = -6.0
 pitch_scale = 2.5
 bus = &"SFX"
 
-[node name="Audio_Bump_CD" type="Timer" parent="."]
+[node name="Audio_Bump_CD" type="Timer" parent="." unique_id=1871940592]
 wait_time = 0.5
 one_shot = true

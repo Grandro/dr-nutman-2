@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bymcij7ldk1vv"]
+
+[ext_resource type="PackedScene" uid="uid://butd4kcpqwub6" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Buffin_House_3/Arcade/Ghosties/Ghosty_Base.tscn" id="1_f5gw3"]
+[ext_resource type="PackedScene" uid="uid://dty0moqpc43al" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Buffin_House_3/Arcade/Ghosties/Comps/Behavior/Cyan/Behavior_Cyan.tscn" id="2_lbx68"]
+
+[node name="Ghosty_Cyan" unique_id=672458164 instance=ExtResource("1_f5gw3")]
+_e_color = Color(0, 1, 1, 1)
+
+[node name="Display" parent="." index="0" unique_id=473946948]
+modulate = Color(0, 1, 1, 1)
+
+[node name="Movement" parent="." index="2" unique_id=1775514236]
+_e_dirs = Array[StringName]([&"Down"])
+
+[node name="States" parent="Movement" index="2" unique_id=613341567]
+_e_speeds = Dictionary[StringName, float]({
+&"Float": 2.0,
+&"Stop": 0.0
+})
+
+[node name="Behavior" parent="." index="3" unique_id=103479668 instance=ExtResource("2_lbx68")]
+
+[editable path="Movement/Terrain"]
+[editable path="Movement/Terrain/Areas/Body"]

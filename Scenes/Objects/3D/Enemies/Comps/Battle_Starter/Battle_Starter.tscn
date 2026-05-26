@@ -1,6 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://b7h012x035k2o"]
+[gd_scene format=3 uid="uid://b7h012x035k2o"]
 
 [ext_resource type="Script" uid="uid://dyt8yc1t4t68h" path="res://Scenes/Objects/3D/Enemies/Comps/Battle_Starter/Scripts/Battle_Starter.gd" id="1_ix71o"]
 
-[node name="Battle_Starter" type="Node3D" groups=["Comp"]]
+[node name="Battle_Starter" type="Node3D" unique_id=823354135 groups=["Comp"]]
 script = ExtResource("1_ix71o")
+_e_troops = Dictionary[Array, int]({
+[&""]: 1
+})
+_e_bonus_loot = {
+&"$Coins": {
+0: 1
+}
+}

@@ -1,4 +1,4 @@
-extends MiniGameGameBase
+extends FWMiniGameGameBase
 class_name MiniGameSquirrelFishingGamePlay
 
 const _a_MOVE_SQUIRREL_DIRS: Array[int] = [-1, 1]
@@ -9,8 +9,8 @@ const _a_MOVE_SQUIRREL_FRAME_AMOUNTS: Array[int] = [1, 3, 6]
 @export var _e_delay_min: float = 0.0
 @export var _e_delay_max: float = 0.2
 
-@onready var _a_Back_Button: IndicatorButton = get_node("Canvas_2/Margin/Back_Button")
-@onready var _a_Cracked_Peanut_Amount: ItemAmountDisplay = get_node("Canvas_2/Margin/Cracked_Peanut_Amount")
+@onready var _a_Back_Button: FWIndicatorButton = get_node("Canvas_2/Margin/Back_Button")
+@onready var _a_Cracked_Peanut_Amount: FWItemAmountDisplay = get_node("Canvas_2/Margin/Cracked_Peanut_Amount")
 @onready var _a_Squirrel_Body: Sprite2D = get_node("Squirrel/Body")
 @onready var _a_Squirrel_Hands: Sprite2D = get_node("Squirrel/Hands")
 @onready var _a_Camera: Camera2D = get_node("Camera")

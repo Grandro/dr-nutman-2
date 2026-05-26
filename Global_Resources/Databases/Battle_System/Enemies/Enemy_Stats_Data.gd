@@ -1,4 +1,4 @@
-extends StatsData
+extends FWStatsData
 class_name EnemyStatsData
 
 @export var _e_EXP: int = -1

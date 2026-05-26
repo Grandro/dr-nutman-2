@@ -1,9 +1,135 @@
-[gd_scene load_steps=3 format=3 uid="uid://bi1osipdrngwn"]
+[gd_scene format=3 uid="uid://bi1osipdrngwn"]
 
 [ext_resource type="PackedScene" uid="uid://sjquujprcvpl" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Buffin_House_3/Objects/Pressure_Plates/Base.tscn" id="1_vvtla"]
 [ext_resource type="Texture2D" uid="uid://bldpwqu4fn77h" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Buffin_House_3/Objects/Pressure_Plates/Sprites/Arrow_Right_1_Spritesheet.png" id="2_vvtla"]
+[ext_resource type="AudioStream" uid="uid://dcmq84vaiq31" path="res://Global_Resources/Audio/SFX/Switches/Button_1.wav" id="3_7e5bl"]
+[ext_resource type="AudioStream" uid="uid://bpmakcpoepkg" path="res://Global_Resources/Audio/SFX/Switches/Button_1_Rev.wav" id="4_1b3j1"]
 
-[node name="Pressure_Plate_1" instance=ExtResource("1_vvtla")]
+[sub_resource type="Animation" id="Animation_rh72r"]
+resource_name = "Push"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Display:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Audio/Switch")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_7e5bl")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
+
+[sub_resource type="Animation" id="Animation_3prdw"]
+resource_name = "Pushed"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Display:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_cd775"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Display:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_ym77j"]
+resource_name = "Release"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Display:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Audio/Switch")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_1b3j1")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
+
+[sub_resource type="Animation" id="Animation_scwwp"]
+resource_name = "Released"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Display:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_p2e6j"]
+_data = {
+&"Push": SubResource("Animation_rh72r"),
+&"Pushed": SubResource("Animation_3prdw"),
+&"RESET": SubResource("Animation_cd775"),
+&"Release": SubResource("Animation_ym77j"),
+&"Released": SubResource("Animation_scwwp")
+}
+
+[node name="Pressure_Plate_1" unique_id=1838903140 instance=ExtResource("1_vvtla")]
 
 [node name="Display" parent="." index="0"]
 texture = ExtResource("2_vvtla")
+
+[node name="States" parent="." index="3"]
+_e_states = Array[StringName]([&"Push", &"Pushed", &"Release", &"Released"])
+
+[node name="Anims" parent="." index="6"]
+libraries/ = SubResource("AnimationLibrary_p2e6j")

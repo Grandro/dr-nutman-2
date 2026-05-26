@@ -9,8 +9,8 @@ const _a_NAME_LOC_ID: String = "NUTOS_APP_%s"
 const _a_INSTALL_LOC_ID: StringName = &"INSTALL"
 const _a_UNINSTALL_LOC_ID: StringName = &"UNINSTALL"
 
-var _a_Install_Icon: Texture2D = preload("res://Global_Resources/Sprites/UI/Arrow_Down_Normal.png")
-var _a_Uninstall_Icon: Texture2D = preload("res://Global_Resources/Sprites/UI/Delete_Normal.png")
+var _a_Install_Icon: Texture2D = preload("uid://d0n7unem8uofg")
+var _a_Uninstall_Icon: Texture2D = preload("uid://df65or4arp1io")
 
 @onready var _a_Icon: TextureRect = get_node("HBox/Icon")
 @onready var _a_Name: Label = get_node("HBox/VBox/Name")
@@ -51,7 +51,7 @@ func _update_icon(p_installed: bool) -> void:
 		item_texture = load(_a_INSTALLED_APP_TEXTURE_PATH % _a_key)
 	else:
 		var item_name: StringName = "Disk_%s" % _a_key
-		var item_args: ItemData = Databases.get_data_entry("Items", item_name)
+		var item_args: FWItemData = Databases.get_data_entry(&"Items", item_name)
 		item_texture = item_args.get_texture()
 	
 	_a_Icon.set_texture(item_texture)

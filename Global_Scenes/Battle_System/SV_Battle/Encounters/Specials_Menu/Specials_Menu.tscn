@@ -1,12 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://cc15wpmb3jn3l"]
+[gd_scene format=3 uid="uid://cc15wpmb3jn3l"]
 
 [ext_resource type="Theme" uid="uid://budcfl16xj2tt" path="res://Global_Resources/Themes/Default/Default.tres" id="1_o4nrj"]
 [ext_resource type="Script" uid="uid://bi8srw2efwwp1" path="res://Global_Scenes/Battle_System/SV_Battle/Encounters/Specials_Menu/Scripts/Specials_Menu.gd" id="2_vf8o6"]
 [ext_resource type="AudioStream" uid="uid://dkma2f2bd2c8n" path="res://Global_Resources/Audio/SFX/UI/Ok_1.wav" id="3_bo73m"]
 [ext_resource type="AudioStream" uid="uid://c7uqxd6tigh2j" path="res://Global_Resources/Audio/SFX/UI/Back_1.wav" id="4_bqe68"]
 
-
-[node name="Specials_Menu" type="MarginContainer"]
+[node name="Specials_Menu" type="MarginContainer" unique_id=1935218113]
 light_mask = 8
 visibility_layer = 8
 anchors_preset = 6
@@ -25,17 +24,17 @@ theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 script = ExtResource("2_vf8o6")
 
-[node name="Panel" type="PanelContainer" parent="."]
+[node name="Panel" type="PanelContainer" parent="." unique_id=427258863]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
 
-[node name="VBox" type="VBoxContainer" parent="Panel"]
+[node name="VBox" type="VBoxContainer" parent="Panel" unique_id=1376539272]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
 
-[node name="Desc" type="RichTextLabel" parent="Panel/VBox"]
+[node name="Desc" type="RichTextLabel" parent="Panel/VBox" unique_id=344040641]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
@@ -44,24 +43,24 @@ bbcode_enabled = true
 text = "[center]Der Anwender wirft seine Mütze wie ein absoluter Weltmeister und bewirkt damit rein gar nichts. Es ist dennoch besser, als das Handtuch zu werfen."
 fit_content = true
 
-[node name="HSep" type="HSeparator" parent="Panel/VBox"]
+[node name="HSep" type="HSeparator" parent="Panel/VBox" unique_id=67068290]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
 
-[node name="Entries" type="VBoxContainer" parent="Panel/VBox"]
+[node name="Entries" type="VBoxContainer" parent="Panel/VBox" unique_id=1401817046]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
 mouse_filter = 2
 theme_override_constants/separation = 8
 
-[node name="Audio" type="Node" parent="."]
+[node name="Audio" type="Node" parent="." unique_id=1926129073]
 
-[node name="OK" type="AudioStreamPlayer" parent="Audio"]
+[node name="OK" type="AudioStreamPlayer" parent="Audio" unique_id=267720792]
 stream = ExtResource("3_bo73m")
 bus = &"SFX"
 
-[node name="Cancel" type="AudioStreamPlayer" parent="Audio"]
+[node name="Cancel" type="AudioStreamPlayer" parent="Audio" unique_id=1529610940]
 stream = ExtResource("4_bqe68")
 bus = &"SFX"

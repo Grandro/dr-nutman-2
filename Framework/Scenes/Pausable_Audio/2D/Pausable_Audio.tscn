@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cmrq6lufs5yop"]
+
+[ext_resource type="Script" uid="uid://ixk2k372vw3g" path="res://Framework/Scenes/Pausable_Audio/2D/Scripts/Pausable_Audio.gd" id="1_p8mpy"]
+
+[node name="Pausable_Audio" type="AudioStreamPlayer2D" unique_id=1089491949]
+script = ExtResource("1_p8mpy")

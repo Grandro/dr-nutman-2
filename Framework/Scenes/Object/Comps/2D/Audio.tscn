@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://wbkryt3s27m2"]
+
+[ext_resource type="Script" uid="uid://cjhccgwft4nn3" path="res://Framework/Scenes/Object/Comps/2D/Scripts/Audio.gd" id="1_4o5i8"]
+[ext_resource type="PackedScene" uid="uid://cmrq6lufs5yop" path="res://Framework/Scenes/Pausable_Audio/2D/Pausable_Audio.tscn" id="2_nr3ex"]
+
+[node name="Audio" type="Node2D" unique_id=1728347624 groups=["Comp"]]
+script = ExtResource("1_4o5i8")
+
+[node name="$Free" parent="." unique_id=1851830386 instance=ExtResource("2_nr3ex")]

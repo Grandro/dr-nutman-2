@@ -1,10 +1,10 @@
-extends ItemDragMenuBase
+extends FWItemDragMenuBase
 class_name ObjectSetupDiskDrive
 
 signal slot_inserted(p_item_key: StringName)
 signal slot_removed()
 
-@onready var _a_Slot: ItemDragMenuBaseSlot = get_node("Margin/VBox/HBox/Slot")
+@onready var _a_Slot: FWItemDragMenuBaseSlot = get_node("Margin/VBox/HBox/Slot")
 @onready var _a_Audio_Slot_Insert: AudioStreamPlayer = get_node("Audio/Slot_Insert")
 
 func _ready() -> void:
@@ -19,7 +19,7 @@ func _ready() -> void:
 
 func open() -> void:
 	var global_si: Global = Global.get_singleton(self, "Global")
-	var player: Player3D = global_si.get_player()
+	var player: FWPlayer3D = global_si.get_object(&"Player")
 	player.comph().call_comp("Operate", &"disable")
 	
 	_a_inventory.open()
@@ -32,7 +32,7 @@ func open() -> void:
 
 func _close() -> void:
 	var global_si: Global = Global.get_singleton(self, "Global")
-	var player: Player3D = global_si.get_player()
+	var player: FWPlayer3D = global_si.get_object(&"Player")
 	player.comph().call_comp("Operate", &"enable")
 	
 	super()

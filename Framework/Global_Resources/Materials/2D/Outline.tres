@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bqc55y1g0cpkv"]
+
+[ext_resource type="Shader" uid="uid://cv6h04um0pgyr" path="res://Framework/Global_Resources/Materials/2D/Shaders/Outline.gdshader" id="1_rwa0p"]
+
+[resource]
+shader = ExtResource("1_rwa0p")
+shader_parameter/line_color = Color(1, 0.866667, 0, 1)
+shader_parameter/line_thickness = 1.0

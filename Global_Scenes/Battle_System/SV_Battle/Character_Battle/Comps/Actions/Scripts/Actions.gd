@@ -15,8 +15,8 @@ signal hit()
 @onready var _a_Commands: SVActionsBase = get_node("Commands")
 @onready var _a_Specials: SVActionsBase = get_node("Specials")
 
-func init(p_entity: SVCharacter) -> void:
-	for child: Node3D in get_children():
+func init(p_entities: Array[Node]) -> void:
+	for child: SVActionsBase in get_children():
 		child.started.connect(_on_Action_started)
 		child.finished.connect(_on_Action_finished)
 		child.pre_event.connect(_on_Action_pre_event)
@@ -24,7 +24,7 @@ func init(p_entity: SVCharacter) -> void:
 		child.reaction_started.connect(_on_Action_reaction_started)
 		child.reaction_finished.connect(_on_Action_reaction_finished)
 		child.hit.connect(_on_Action_hit)
-		child.init(p_entity)
+		child.init(p_entities)
 
 func process_command(p_command: StringName) -> void:
 	var scene: PackedScene = _e_commands[p_command]

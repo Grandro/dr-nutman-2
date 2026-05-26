@@ -3,8 +3,8 @@ class_name SVEncounterBase
 
 signal battle_ended(p_location: StringName, p_res: StringName)
 
-@export var _e_BGM: AudioPlayback = null
-@export var _e_BGS: Array[AudioPlayback] = []
+@export var _e_BGM: FWAudioPlayback = null
+@export var _e_BGS: Array[FWAudioPlayback] = []
 @export var _e_pm_comps: Array[PackedScene] = []
 
 const _a_PARTY_MEMBER_SCENE_PATH: String = "res://Global_Scenes/Battle_System/SV_Battle/Party_Members/%s/%s.tscn"
@@ -13,8 +13,8 @@ const _a_COMMAND_LOC_ID: String = "SV_ACTIONS_%s"
 
 var _a_Popup_Scene: PackedScene = preload("uid://d4mam0acvnt2")
 
-@onready var _a_Free_Camera: Node3DObject = get_node("Objects/$Free_Camera")
-@onready var _a_Free_Audio: PausableAudio3D = get_node("Objects/$Free_Audio")
+@onready var _a_Free_Camera: FWNode3DObject = get_node("Objects/$Free_Camera")
+@onready var _a_Free_Audio: FWPausableAudio3D = get_node("Objects/$Free_Audio")
 @onready var _a_Party_Members_Place_Pos: SVEncounterPlacePos = get_node("Objects/Party_Members/Place_Pos")
 @onready var _a_Party_Members_Instances: Node3D = get_node("Objects/Party_Members/Instances")
 @onready var _a_Enemies_Place_Pos: SVEncounterPlacePos = get_node("Objects/Enemies/Place_Pos")
@@ -31,6 +31,7 @@ var _a_Popup_Scene: PackedScene = preload("uid://d4mam0acvnt2")
 
 var _a_map_res: BattleSV.MAP_RES # Result of how the battle started on map
 var _a_troop: Array[StringName] # Enemy keys
+var _a_bonus_loot: Dictionary # Loot from map that will definitely be obtained
 var _a_special: bool # Special battles have a predefined troop
 var _a_order: Array[StringName] = [] # Attack order of battlers
 var _a_order_idx: int = -1 # Current idx of _a_order
@@ -54,7 +55,7 @@ func _ready() -> void:
 	_a_Specials_Menu.canceled.connect(_on_Specials_Menu_canceled)
 	
 	var global_si: Global = Global.get_singleton(self, "Global")
-	var camera_comp: CompCamera3D = _a_Free_Camera.comph().get_comp("Camera")
+	var camera_comp: FWCompCamera3D = _a_Free_Camera.comph().get_comp("Camera")
 	global_si.init_camera_limit()
 	global_si.set_curr_camera(camera_comp)
 	
@@ -123,15 +124,9 @@ func battle_end(p_res: StringName) -> void:
 	for instance: SVEnemy in _a_enemies.values():
 		var EXP: int = instance.get_EXP()
 		var loot: Dictionary = instance.get_loot()
-		var rolled_loot: Dictionary[StringName, int] = global_si.roll_loot(loot)
-		
 		total_EXP += EXP
-		for item_key: StringName in rolled_loot:
-			var amount: int = rolled_loot[item_key]
-			if total_loot.has(item_key):
-				total_loot[item_key] += amount
-			else:
-				total_loot[item_key] = amount
+		_loot_to_total_loot(loot, total_loot)
+	_loot_to_total_loot(_a_bonus_loot, total_loot)
 	
 	var scene_manager_si: Scene_Manager = Global.get_singleton(self, "Scene_Manager")
 	var location: StringName = scene_manager_si.get_location()
@@ -161,13 +156,13 @@ func _play_BGM() -> void:
 	var volume: float = _e_BGM.get_volume()
 	var pitch: float = _e_BGM.get_pitch()
 	var from: float = _e_BGM.get_from()
-	var player: PausableAudio = audio_manager_si.replace_bgm(stream, volume, pitch, from)
+	var player: FWPausableAudio = audio_manager_si.replace_bgm(stream, volume, pitch, from)
 	audio_manager_si.flatten_bgm(player)
 
 func _play_BGS() -> void:
 	var audio_manager_si: Audio_Manager = Global.get_singleton(self, "Audio_Manager")
 	var players: Array[AudioStreamPlayer] = []
-	for BGS: AudioPlayback in _e_BGS:
+	for BGS: FWAudioPlayback in _e_BGS:
 		var stream: AudioStream = BGS.get_stream()
 		var volume: float = BGS.get_volume()
 		var pitch: float = BGS.get_pitch()
@@ -248,7 +243,7 @@ func _init_enemies() -> void:
 		var enemy_key: StringName = instance.get_key()
 		var key: StringName = "%s_%s" % [enemy_key, i]
 		var args: EnemyData = enemies_data[enemy_key]
-		var stats: StatsData = args.get_stats()
+		var stats: EnemyStatsData = args.get_stats()
 		var actions: Dictionary = args.get_actions()
 		instance.action_finished.connect(_on_Character_action_finished)
 		instance.action_canceled.connect(_on_Character_action_canceled)
@@ -260,15 +255,15 @@ func _init_enemies() -> void:
 		instance.died.connect(_on_Enemy_died.bind(key))
 		instance.set_EXP(stats.get_EXP())
 		instance.set_loot(stats.get_loot())
-		instance.comph().call_comp("Stats", &"set_max_stat", [&"HP", stats.get_HP()])
-		instance.comph().call_comp("Stats", &"set_max_stat", [&"SP", stats.get_SP()])
-		instance.comph().call_comp("Stats", &"set_curr_stat", [&"HP", stats.get_HP()])
-		instance.comph().call_comp("Stats", &"set_curr_stat", [&"SP", stats.get_SP()])
-		instance.comph().call_comp("Stats", &"set_curr_stat", [&"ATK", stats.get_ATK()])
-		instance.comph().call_comp("Stats", &"set_curr_stat", [&"MAG", stats.get_MAG()])
-		instance.comph().call_comp("Stats", &"set_curr_stat", [&"DEF", stats.get_DEF()])
-		instance.comph().call_comp("Stats", &"set_curr_stat", [&"SPEED", stats.get_SPEED()])
-		instance.comph().call_comp("Stats", &"set_curr_stat", [&"LUCK", stats.get_LUCK()])
+		instance.comph().call_comp("Stats", &"set_max_stat", [&"HP", stats.get_stat(&"HP")])
+		instance.comph().call_comp("Stats", &"set_max_stat", [&"SP", stats.get_stat(&"SP")])
+		instance.comph().call_comp("Stats", &"set_curr_stat", [&"HP", stats.get_stat(&"HP")])
+		instance.comph().call_comp("Stats", &"set_curr_stat", [&"SP", stats.get_stat(&"SP")])
+		instance.comph().call_comp("Stats", &"set_curr_stat", [&"ATK", stats.get_stat(&"ATK")])
+		instance.comph().call_comp("Stats", &"set_curr_stat", [&"MAG", stats.get_stat(&"MAG")])
+		instance.comph().call_comp("Stats", &"set_curr_stat", [&"DEF", stats.get_stat(&"DEF")])
+		instance.comph().call_comp("Stats", &"set_curr_stat", [&"SPEED", stats.get_stat(&"SPEED")])
+		instance.comph().call_comp("Stats", &"set_curr_stat", [&"LUCK", stats.get_stat(&"LUCK")])
 		
 		instance.set_encounter(self)
 		instance.comph().call_comp("Actions", &"update_data", [actions])
@@ -314,7 +309,7 @@ func _update_order() -> void:
 		var SPEED: int = instance.comph().call_comp("Stats", &"get_curr_stat", [&"SPEED"])
 		instance.set_turn_completed(false)
 		order_args.push_back([SPEED, key])
-	order_args.sort_custom(Global.sort_high)
+	order_args.sort_custom(Global.sort_high_nested)
 	
 	for args: Array in order_args:
 		var key: StringName = args[1]
@@ -335,11 +330,23 @@ func _knockback(p_instance: SVCharacter, p_dmg: int, p_dir_vec: Vector3) -> void
 	var velocity: Vector3 = p_dir_vec * p_dmg * 1.5
 	p_instance.comph().call_comp("Movement/Knockbacks", &"knockback", [velocity])
 
+func _loot_to_total_loot(p_loot: Dictionary, p_total_loot: Dictionary[StringName, int]) -> void:
+	var rolled_loot: Dictionary[StringName, int] = Global.roll_loot(p_loot)
+	for item_key: StringName in rolled_loot:
+		var amount: int = rolled_loot[item_key]
+		if p_total_loot.has(item_key):
+			p_total_loot[item_key] += amount
+		else:
+			p_total_loot[item_key] = amount
+
 func set_map_res(p_map_res: BattleSV.MAP_RES) -> void:
 	_a_map_res = p_map_res
 
 func set_troop(p_troop: Array[StringName]) -> void:
 	_a_troop = p_troop
+
+func set_bonus_loot(p_bonus_loot: Dictionary) -> void:
+	_a_bonus_loot = p_bonus_loot
 
 func set_special(p_special: bool) -> void:
 	_a_special = p_special
@@ -353,10 +360,10 @@ func get_party_members() -> Dictionary[StringName, SVPartyMember]:
 func get_enemies() -> Dictionary[StringName, SVEnemy]:
 	return _a_enemies
 
-func get_free_camera() -> Node3DObject:
+func get_free_camera() -> FWNode3DObject:
 	return _a_Free_Camera
 
-func get_free_audio() -> PausableAudio3D:
+func get_free_audio() -> FWPausableAudio3D:
 	return _a_Free_Audio
 
 func get_flee_pos() -> Vector3:

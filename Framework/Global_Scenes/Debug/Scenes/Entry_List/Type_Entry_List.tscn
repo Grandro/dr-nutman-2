@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cwtttlnee0lcm"]
+
+[ext_resource type="PackedScene" uid="uid://b0t5u8s6p2dc" path="res://Framework/Global_Scenes/Debug/Scenes/Entry_List/Entry_List.tscn" id="1_q6elr"]
+[ext_resource type="Script" uid="uid://buhx3jxcogwj6" path="res://Framework/Global_Scenes/Debug/Scenes/Entry_List/Scripts/Type_Entry_List.gd" id="2_p44sy"]
+[ext_resource type="PackedScene" uid="uid://2ou0266g7a1w" path="res://Framework/Global_Scenes/Debug/Scenes/Entry_List/Entries/Type_Entry.tscn" id="3_w6myb"]
+
+[node name="Type_Entry_List" unique_id=12050915 instance=ExtResource("1_q6elr")]
+offset_right = 184.0
+offset_bottom = 35.0
+size_flags_vertical = 3
+script = ExtResource("2_p44sy")
+_e_types = Array[StringName]([])
+_e_default_value = null
+_e_entry_scene = ExtResource("3_w6myb")
+
+[editable path="Search"]

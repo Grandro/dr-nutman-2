@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://p1br5wo0d1l3"]
+
+[ext_resource type="Shader" uid="uid://dudcf02nj0xvb" path="res://Framework/Global_Resources/Materials/2D/Shaders/Trans.gdshader" id="1_2vpam"]
+[ext_resource type="Texture2D" uid="uid://ceeypafnvuiw7" path="res://Global_Resources/Sprites/Overlays/Trans/Mask_1.png" id="2_h5vxf"]
+
+[resource]
+resource_local_to_scene = true
+shader = ExtResource("1_2vpam")
+shader_parameter/cutoff = 1.0
+shader_parameter/smooth_size = 0.750000035625
+shader_parameter/mask = ExtResource("2_h5vxf")

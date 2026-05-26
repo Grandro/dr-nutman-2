@@ -1,4 +1,4 @@
-extends MiniGameBase
+extends FWMiniGameBase
 class_name MiniGameColorSelection
 
 func _on_Intro_proceed_pressed() -> void:

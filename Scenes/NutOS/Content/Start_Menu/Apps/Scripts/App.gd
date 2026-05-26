@@ -3,8 +3,8 @@ class_name NutOSContentStartMenuApp
 
 signal select_pressed()
 
-var _a_Highlighted: StyleBoxFlat = preload("res://Scenes/NutOS/Content/Start_Menu/Apps/Resources/Highlighted.tres")
-var _a_Normal: StyleBoxEmpty = preload("res://Scenes/NutOS/Content/Start_Menu/Apps/Resources/Normal.tres")
+var _a_Highlighted: StyleBoxFlat = preload("uid://b4ehs25kus1so")
+var _a_Normal: StyleBoxEmpty = preload("uid://de1arcaynwihv")
 
 @onready var _a_Select: Button = get_node("Select")
 @onready var _a_Name: Label = get_node("HBox/Name")

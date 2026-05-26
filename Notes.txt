@@ -50,3 +50,4 @@ Spieler kann Batterieren sammeln und sie ihm geben, er sagt dann immer: "Oh nein
 - Healitem: Eis am Stiel < Eis an zwei Stielen < Eis an drei Stielen
 - Sauberer-Zauberer
 - Minigame: Film gucken, Augen/Ohren je nach Alter/Trigger zuhalten
+- Die Hustlenuss

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dtgwrqkblfr6c"]
+[gd_scene format=3 uid="uid://dtgwrqkblfr6c"]
 
 [ext_resource type="Script" uid="uid://c8nw2n3fr3npv" path="res://Scenes/NutOS/Content/Desktop/Apps/Settings/Menus/Background/Background_Entry/Scripts/Background_Entry.gd" id="1_37ac0"]
 [ext_resource type="Texture2D" uid="uid://b0womv8rqbo15" path="res://Scenes/NutOS/Content/Desktop/Apps/Settings/Menus/Background/Sprites/Color_Border.png" id="2"]
@@ -13,7 +13,7 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fckju"]
 
-[node name="Background_Entry" type="MarginContainer"]
+[node name="Background_Entry" type="MarginContainer" unique_id=830671043]
 light_mask = 8
 visibility_layer = 8
 custom_minimum_size = Vector2(144, 81)
@@ -21,14 +21,14 @@ offset_right = 36.0
 offset_bottom = 36.0
 script = ExtResource("1_37ac0")
 
-[node name="Image" type="TextureRect" parent="."]
+[node name="Image" type="TextureRect" parent="." unique_id=1421923656]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
 mouse_filter = 2
 expand_mode = 1
 
-[node name="Select" type="Button" parent="."]
+[node name="Select" type="Button" parent="." unique_id=701171852]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
@@ -38,7 +38,7 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_1t42b")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_hypm2")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_fckju")
 
-[node name="Border" type="TextureRect" parent="."]
+[node name="Border" type="TextureRect" parent="." unique_id=1315795124]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2

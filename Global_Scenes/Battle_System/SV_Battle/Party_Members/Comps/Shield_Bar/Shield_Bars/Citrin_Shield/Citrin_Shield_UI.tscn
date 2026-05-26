@@ -1,19 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://8oii3sr56byc"]
+[gd_scene format=3 uid="uid://8oii3sr56byc"]
 
 [ext_resource type="PackedScene" uid="uid://d2y0hy0td774l" path="res://Global_Scenes/Battle_System/SV_Battle/Party_Members/Comps/Shield_Bar/Shield_Bars/Shield_Bar_UI_Base.tscn" id="1_vverc"]
 [ext_resource type="Texture2D" uid="uid://dv8erwg4h3k0o" path="res://Global_Resources/Sprites/Progress_Bars/5_Spritesheet.png" id="2_r7rk4"]
 [ext_resource type="Texture2D" uid="uid://0m3t116f8tyh" path="res://Global_Resources/Sprites/Items/Citrin_Shield.png" id="2_y561y"]
-
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3evwu"]
 texture = ExtResource("2_r7rk4")
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 
-[node name="Citrin_Shield_UI" instance=ExtResource("1_vverc")]
+[node name="Citrin_Shield_UI" unique_id=1264969964 instance=ExtResource("1_vverc")]
 
-[node name="Progress" parent="." index="0"]
+[node name="Progress" parent="." index="0" unique_id=1257010668]
 theme_override_styles/fill = SubResource("StyleBoxTexture_3evwu")
 
-[node name="Shield" parent="." index="1"]
+[node name="Shield" parent="." index="1" unique_id=301525603]
 texture = ExtResource("2_y561y")

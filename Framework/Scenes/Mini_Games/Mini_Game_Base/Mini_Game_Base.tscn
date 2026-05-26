@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dlhat5aerwj2v"]
+
+[ext_resource type="Script" uid="uid://o53hffrnlnbk" path="res://Framework/Scenes/Mini_Games/Mini_Game_Base/Scripts/Mini_Game_Base.gd" id="1_ajhje"]
+[ext_resource type="PackedScene" uid="uid://cmjmyox67k3lp" path="res://Framework/Scenes/Mini_Games/Mini_Game_Base/Intro.tscn" id="1_b747p"]
+
+[node name="Mini_Game_Base" type="Control" unique_id=441090161]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ajhje")
+
+[node name="Canvas" type="CanvasLayer" parent="." unique_id=622513922]
+
+[node name="Intro" parent="Canvas" unique_id=558021626 instance=ExtResource("1_b747p")]

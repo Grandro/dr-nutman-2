@@ -4,10 +4,10 @@ class_name NutOSContentDesktopAppSettingsMenuApps
 signal app_installed(p_key: StringName)
 signal app_uninstalled(p_key: StringName)
 
-var _a_App_Entry_Scene: PackedScene = preload("res://Scenes/NutOS/Content/Desktop/Apps/Settings/Menus/Apps/App_Entry.tscn")
+var _a_App_Entry_Scene: PackedScene = preload("uid://dmq6symbdxlkl")
 
-@onready var _a_Sort_By: SortBy = get_node("VBox/VBox/Options/Sort_By")
-@onready var _a_Search: Search = get_node("VBox/VBox/Options/Search")
+@onready var _a_Sort_By: FWSortBy = get_node("VBox/VBox/Options/Sort_By")
+@onready var _a_Search: FWSearch = get_node("VBox/VBox/Options/Search")
 @onready var _a_Entries: VBoxContainer = get_node("VBox/VBox/Scroll/Entries")
 
 var _a_desktop: NutOSContentDesktop
@@ -67,7 +67,7 @@ func _sort_entries() -> void:
 	var args: Array = _a_Sort_By.get_selected_args()
 	var method_name: StringName = args[0]
 	var rel: String = args[1]
-	PropertySorter.sort(_a_Entries, method_name, rel)
+	FWPropertySorter.sort(_a_Entries, method_name, rel)
 
 func set_desktop(p_desktop: NutOSContentDesktop) -> void:
 	_a_desktop = p_desktop

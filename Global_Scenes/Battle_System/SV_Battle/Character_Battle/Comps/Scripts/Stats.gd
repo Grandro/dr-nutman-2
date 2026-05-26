@@ -14,13 +14,11 @@ var _a_curr: Dictionary[StringName, int] = {} # Match stat_key to stat_value
 func _ready() -> void:
 	for key: StringName in _e_curr:
 		_a_status_effects[key] = []
-	
+		_a_curr[key] = -1
 	for key: StringName in _e_max:
 		_a_max[key] = -1
-	for key: StringName in _e_curr:
-		_a_curr[key] = -1
 
-func init(_p_entity: SVCharacter) -> void:
+func init(_p_entities: Array[Node]) -> void:
 	pass
 
 func register_status_effect(p_instance: StatusEffectStat) -> void:

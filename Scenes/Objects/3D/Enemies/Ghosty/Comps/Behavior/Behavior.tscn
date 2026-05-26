@@ -1,36 +1,36 @@
-[gd_scene load_steps=6 format=3 uid="uid://cf8qsc1jiuvt8"]
+[gd_scene format=3 uid="uid://cf8qsc1jiuvt8"]
 
 [ext_resource type="PackedScene" uid="uid://c205mm8y7ppc6" path="res://Scenes/Objects/3D/Enemies/Comps/Behavior/Behavior_Base.tscn" id="1_mu55p"]
 [ext_resource type="Script" uid="uid://bt3uk8m0r6d0i" path="res://Scenes/Objects/3D/Enemies/Ghosty/Comps/Behavior/Scripts/Behavior.gd" id="2_2gnph"]
-[ext_resource type="PackedScene" uid="uid://b3mngk4bgn2ks" path="res://Scenes/Objects/3D/Enemies/Comps/Behavior/States/State_Branch.tscn" id="3_d8xwo"]
-[ext_resource type="PackedScene" uid="uid://lsel7eqbohc5" path="res://Scenes/Objects/3D/Enemies/Comps/Behavior/States/State_Change_Dir.tscn" id="4_dnwak"]
-[ext_resource type="PackedScene" uid="uid://cjanmnf2alc80" path="res://Scenes/Objects/3D/Enemies/Comps/Behavior/States/State_Move.tscn" id="5_coisf"]
+[ext_resource type="PackedScene" uid="uid://b3mngk4bgn2ks" path="res://Framework/Scenes/Object/Comps/3D/Behavior/States/State_Branch.tscn" id="3_d8xwo"]
+[ext_resource type="PackedScene" uid="uid://lsel7eqbohc5" path="res://Framework/Scenes/Object/Comps/3D/Behavior/States/State_Change_Dir.tscn" id="4_dnwak"]
+[ext_resource type="PackedScene" uid="uid://bxf81ui2kvwk" path="res://Framework/Scenes/Object/Comps/3D/Behavior/States/State_Move_Rndm.tscn" id="5_dnwak"]
+[ext_resource type="PackedScene" uid="uid://r2oy23u56eku" path="res://Framework/Scenes/Object/Comps/3D/Behavior/States/State_Move_Chase.tscn" id="6_dnwak"]
 
-[node name="Behavior" instance=ExtResource("1_mu55p")]
+[node name="Behavior" unique_id=493289886 instance=ExtResource("1_mu55p")]
 script = ExtResource("2_2gnph")
 _e_visibility_CD_min = 3.0
 _e_visibility_CD_max = 10.0
 
-[node name="Rndm" parent="States" index="0" instance=ExtResource("3_d8xwo")]
+[node name="Rndm" parent="States" parent_id_path=PackedInt32Array(892130468) index="0" unique_id=661693625 instance=ExtResource("3_d8xwo")]
 
-[node name="Change_Dir" parent="States/Rndm" index="0" instance=ExtResource("4_dnwak")]
+[node name="Change_Dir" parent="States/Rndm" index="0" unique_id=1045870500 instance=ExtResource("4_dnwak")]
 _e_CD = 4.0
 
-[node name="Move" parent="States/Rndm" index="1" instance=ExtResource("5_coisf")]
+[node name="Move" parent="States/Rndm" index="1" unique_id=1292768813 instance=ExtResource("5_dnwak")]
 _e_move_state = "Float"
 _e_min_radius = 0.5
 _e_max_radius = 4.0
 _e_CD = 4.0
 
-[node name="Chase" parent="States" index="1" instance=ExtResource("5_coisf")]
-_e_type = "Chase"
+[node name="Chase" parent="States" parent_id_path=PackedInt32Array(892130468) index="1" unique_id=1741032918 instance=ExtResource("6_dnwak")]
 _e_move_state = "Float"
 _e_min_radius = 0.5
 _e_max_radius = 0.5
 _e_CD = 0.0
 
-[node name="Look_At" parent="States" index="2" instance=ExtResource("4_dnwak")]
+[node name="Look_At" parent="States" parent_id_path=PackedInt32Array(892130468) index="2" unique_id=226426246 instance=ExtResource("4_dnwak")]
 _e_type = "Look_At"
 
-[node name="Invisible_CD" type="Timer" parent="." index="6"]
+[node name="Invisible_CD" type="Timer" parent="." index="6" unique_id=127181103]
 one_shot = true

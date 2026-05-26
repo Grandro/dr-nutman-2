@@ -1,1 +1,1 @@
-extends MiniGameBaseIntro
+extends FWMiniGameBaseIntro

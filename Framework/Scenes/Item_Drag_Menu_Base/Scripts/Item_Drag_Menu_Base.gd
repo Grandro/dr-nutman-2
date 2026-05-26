@@ -1,0 +1,110 @@
+extends Control
+class_name FWItemDragMenuBase
+
+var _a_Item_Entry_Drag_Scene: PackedScene = preload("uid://50pueljyh651")
+
+@onready var _a_Back: FWIndicatorButton = get_node("Back")
+
+var _a_inventory: FWItemSelectInventory # Inventory instance
+var _a_mouse_inventory_group: bool = false # Is mouse hovering over Inventory Group_Entry?
+var _a_slot: FWItemDragMenuBaseSlot = null # Slot instance mouse hovers over
+var _a_item_drag: FWItemEntryBase # Item_Entry_Drag instance
+var _a_item_drag_type: StringName # Equip_Slot/Inventory
+var _a_item_drag_instance: Control # Dragged item / Equip_Slot
+
+func _ready() -> void:
+	_a_Back.select_pressed.connect(_on_Back_select_pressed)
+	_a_inventory.item_pressed.connect(_on_Inventory_item_pressed)
+	_a_inventory.group_mouse_entered.connect(_on_Inventory_group_mouse_entered)
+	_a_inventory.group_mouse_exited.connect(_on_Inventory_group_mouse_exited)
+	
+	set_process(false)
+	set_process_input(false)
+	hide()
+
+func _process(_p_delta: float) -> void:
+	var mouse_pos: Vector2 = get_local_mouse_position()
+	var item_drag_size: Vector2 = _a_item_drag.get_size() 
+	var pos: Vector2 = mouse_pos - item_drag_size / 2.0
+	_a_item_drag.set_position(pos)
+
+func _input(p_event: InputEvent) -> void:
+	if p_event.is_action_released(&"Mouse_Left"):
+		_drop_item()
+
+func open() -> void:
+	show()
+
+func _close() -> void:
+	_a_inventory.close()
+	
+	set_process_input(false)
+	hide()
+
+func _drag_item(p_instance: Control, p_item_key: StringName, p_drag_type: StringName) -> void:
+	_a_item_drag_instance = p_instance
+	_a_item_drag_type = p_drag_type
+	
+	var item_path: String = Global.get_item_path()
+	var texture: Texture2D = load(item_path % p_item_key)
+	var mouse_pos: Vector2 = get_local_mouse_position()
+	_a_item_drag = _a_Item_Entry_Drag_Scene.instantiate()
+	_a_item_drag.set_position.call_deferred(mouse_pos)
+	_a_item_drag.set_texture.call_deferred(texture)
+	_a_item_drag.set_key(p_item_key)
+	
+	add_child(_a_item_drag)
+	
+	set_process(true)
+	set_process_input(true)
+
+func _drop_item() -> void:
+	set_process(false)
+	set_process_input(false)
+	
+	var item_key: StringName = _a_item_drag.get_key()
+	if _can_equip_slot_drop():
+		_drop_item_slot(item_key)
+	elif _a_mouse_inventory_group:
+		_drop_item_inventory(item_key)
+	else:
+		_drop_item_revert(item_key)
+	
+	_a_item_drag.queue_free()
+	_a_slot = null
+
+func _drop_item_slot(_p_item_key: StringName) -> void:
+	var equipped_item_key: StringName = _a_slot.get_item_key()
+	if equipped_item_key != &"":
+		_a_inventory.change_item_amount(equipped_item_key, 1)
+
+func _drop_item_inventory(p_item_key: StringName) -> void:
+	_a_inventory.change_item_amount(p_item_key, 1)
+
+func _drop_item_revert(p_item_key: StringName) -> void:
+	match _a_item_drag_type:
+		&"Inventory": _a_inventory.change_item_amount(p_item_key, 1)
+
+func _can_equip_slot_drop() -> bool:
+	return _a_slot != null
+
+func _on_Back_select_pressed() -> void:
+	_close()
+
+func _on_Inventory_item_pressed(p_instance: FWItemEntryInventory) -> void:
+	var item_key: StringName = p_instance.get_key()
+	_a_inventory.change_item_amount(item_key, -1)
+	
+	_drag_item(p_instance, item_key, &"Inventory")
+
+func _on_Inventory_group_mouse_entered() -> void:
+	_a_mouse_inventory_group = true
+
+func _on_Inventory_group_mouse_exited() -> void:
+	_a_mouse_inventory_group = false
+
+func _on_Slot_mouse_entered(p_instance: FWItemDragMenuBaseSlot) -> void:
+	_a_slot = p_instance
+ 
+func _on_Slot_mouse_exited() -> void:
+	_a_slot = null

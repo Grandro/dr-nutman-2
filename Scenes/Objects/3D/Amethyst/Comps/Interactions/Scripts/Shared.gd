@@ -1,4 +1,4 @@
-extends CompInteractionsShared
+extends FWCompInteractionsShared
 class_name ObjectAmethystCompInteractionsShared
 
 func interaction(_p_area: Node) -> void:

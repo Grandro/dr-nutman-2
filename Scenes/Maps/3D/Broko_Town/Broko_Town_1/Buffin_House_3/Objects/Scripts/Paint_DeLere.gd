@@ -1,4 +1,4 @@
-extends Character3DObject
+extends FWCharacter3DObject
 class_name MapBuffinHouse3ObjectPaintDeLere
 
 @export var _e_ray_range: float = 2.0
@@ -7,21 +7,21 @@ class_name MapBuffinHouse3ObjectPaintDeLere
 @export var _e_comment_time: float = 5.0
 @export var _e_comment_cd: float = 5.0
 
-var _a_Canvas_Scene: PackedScene = preload("res://Scenes/NPC/3D/Buffins/Paint_DeLere/Canvases/1.tscn")
+var _a_Canvas_Scene: PackedScene = preload("uid://beerqvwo1sjnn")
 
-@onready var _a_Display: CompDisplay3D = get_node("Display")
-@onready var _a_Interactions: CompInteractions3D = get_node("Interactions")
-@onready var _a_Movement: CompMovementCharacter3D = get_node("Movement")
-@onready var _a_Movement_Nav_Agent: CompMovementNavAgent3D = get_node("Movement/Nav_Agent")
-@onready var _a_States: CompStates = get_node("States")
-@onready var _a_Anims: CompAnims = get_node("Anims")
+@onready var _a_Display: FWCompDisplay3D = get_node("Display")
+@onready var _a_Interactions: FWCompInteractions3D = get_node("Interactions")
+@onready var _a_Movement: FWCompMovementCharacter3D = get_node("Movement")
+@onready var _a_Movement_Nav_Agent: FWCompMovementNavAgent3D = get_node("Movement/Nav_Agent")
+@onready var _a_States: FWCompStates = get_node("States")
+@onready var _a_Anims: FWCompAnims = get_node("Anims")
 @onready var _a_Adjust_Ray: RayCast3D = get_node("Adjust_Ray")
 @onready var _a_Comment_Timer: Timer = get_node("Comment_Timer")
 @onready var _a_Comment_CD: Timer = get_node("Comment_CD")
 
-var _a_player: Player3D = null
+var _a_player: FWPlayer3D = null
 var _a_projector: ObjectProjectorBase = null
-var _a_canvas: Static3DObject
+var _a_canvas: FWStatic3DObject
 
 var _a_paint_from_projector: bool = false
 var _a_normal: Vector3
@@ -32,7 +32,6 @@ var _a_walking: bool = false
 var _a_dodging: bool = false
 
 func _ready() -> void:
-	super()
 	_a_Comment_Timer.timeout.connect(_on_Comment_Timer_timeout)
 	_a_Comment_CD.timeout.connect(_on_Comment_CD_timeout)
 	
@@ -41,6 +40,8 @@ func _ready() -> void:
 	_a_canvas.set_name(&"Canvas_Paint_DeLere")
 	add_child(_a_canvas)
 	_a_canvas.hide()
+	
+	super()
 
 func start_canvas_tween_picture_progress(p_from: float, p_to: float, p_percent_duration: float) -> void:
 	_a_canvas.comph().call_comp("Display", &"start_tween_picture_progress", [p_from, p_to, p_percent_duration])
@@ -121,7 +122,7 @@ func _walk_to_pos(p_pos: Vector3) -> void:
 	_a_Movement_Nav_Agent.set_path([p_pos])
 	_a_walking = true
 
-func set_player(p_player: Player3D) -> void:
+func set_player(p_player: FWPlayer3D) -> void:
 	_a_player = p_player
 
 func set_projector(p_projector: ObjectProjectorBase) -> void:

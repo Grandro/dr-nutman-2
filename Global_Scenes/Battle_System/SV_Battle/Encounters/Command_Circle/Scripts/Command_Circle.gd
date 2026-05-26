@@ -8,7 +8,7 @@ signal selected(p_command: StringName)
 
 const _a_COMMAND_TEXTURE_PATH: String = "res://Global_Scenes/Battle_System/SV_Battle/Encounters/Command_Circle/Sprites/Commands/%s.png"
 
-var _a_Command_Entry_Scene: PackedScene = preload("res://Global_Scenes/Battle_System/SV_Battle/Encounters/Command_Circle/Entry.tscn")
+var _a_Command_Entry_Scene: PackedScene = preload("uid://fb8f6x0c3kdl")
 
 @onready var _a_Commands: Node3D = get_node("Commands")
 @onready var _a_Jump_Delay: Timer = get_node("Jump_Delay")
@@ -70,7 +70,7 @@ func _process(_p_delta: float) -> void:
 func open(p_instance: SVPartyMember) -> void:
 	_a_instance = p_instance
 	
-	var movement_jump_comp: CompMovementJump3D = _a_instance.comph().get_comp("Movement/Jump")
+	var movement_jump_comp: FWCompMovementJump3D = _a_instance.comph().get_comp("Movement/Jump")
 	movement_jump_comp.jumped.connect(_on_Party_Member_jumped)
 	
 	var pos: Vector3 = p_instance.get_global_position()
@@ -108,7 +108,7 @@ func open(p_instance: SVPartyMember) -> void:
 	show()
 
 func close() -> void:
-	var movement_jump_comp: CompMovementJump3D = _a_instance.comph().get_comp("Movement/Jump")
+	var movement_jump_comp: FWCompMovementJump3D = _a_instance.comph().get_comp("Movement/Jump")
 	movement_jump_comp.jumped.disconnect(_on_Party_Member_jumped)
 	
 	_a_angle = 90.0
@@ -162,7 +162,7 @@ func _on_Jump_Delay_timeout() -> void:
 	_a_command_instance.play_anim(&"Bounce_Up")
 
 func _on_Party_Member_jumped() -> void:
-	var command: String = _a_command_instance.get_command()
+	var command: StringName = _a_command_instance.get_command()
 	_a_instance.comph().call_comp("States", &"set_state_tmp", [&"Idle"])
 	_a_instance.comph().call_comp("Anims", &"update_anim")
 	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dmy71gp2i7sc1"]
+[gd_scene format=3 uid="uid://dmy71gp2i7sc1"]
 
 [ext_resource type="Script" uid="uid://cgf27o8ct11p8" path="res://Global_Scenes/Battle_System/SV_Battle/Encounters/Indicators/Scripts/Command_Circle.gd" id="1_3nu1r"]
 [ext_resource type="Texture2D" uid="uid://bpaiyjrw8yrv4" path="res://Global_Resources/Sprites/SV/A_Button_Spritesheet.png" id="2_swliw"]
@@ -48,10 +48,10 @@ _data = {
 &"Fade_In": SubResource("Animation_ttp7n")
 }
 
-[node name="Command_Circle" type="Node3D"]
+[node name="Command_Circle" type="Node3D" unique_id=1350346678]
 script = ExtResource("1_3nu1r")
 
-[node name="Button" type="Sprite3D" parent="."]
+[node name="Button" type="Sprite3D" parent="." unique_id=1873027407]
 layers = 4
 pixel_size = 0.02
 double_sided = false
@@ -60,14 +60,12 @@ texture_filter = 0
 texture = ExtResource("2_swliw")
 hframes = 2
 
-[node name="Anims" type="AnimationPlayer" parent="Button"]
-libraries = {
-&"": SubResource("AnimationLibrary_vsdh8")
-}
+[node name="Anims" type="AnimationPlayer" parent="Button" unique_id=3351128]
+libraries/ = SubResource("AnimationLibrary_vsdh8")
 
-[node name="Canvas" type="CanvasLayer" parent="."]
+[node name="Canvas" type="CanvasLayer" parent="." unique_id=558780943]
 
-[node name="Command" type="MarginContainer" parent="Canvas"]
+[node name="Command" type="MarginContainer" parent="Canvas" unique_id=1080967259]
 modulate = Color(1, 1, 1, 0)
 light_mask = 8
 visibility_layer = 8
@@ -78,21 +76,21 @@ offset_left = -420.0
 offset_bottom = 56.0
 grow_horizontal = 0
 
-[node name="Border" type="TextureRect" parent="Canvas/Command"]
+[node name="Border" type="TextureRect" parent="Canvas/Command" unique_id=842669004]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
 texture = ExtResource("3_0pql6")
 flip_h = true
 
-[node name="Margin" type="MarginContainer" parent="Canvas/Command"]
+[node name="Margin" type="MarginContainer" parent="Canvas/Command" unique_id=1924650669]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
 theme_override_constants/margin_left = 32
 theme_override_constants/margin_right = 32
 
-[node name="Text" type="Label" parent="Canvas/Command/Margin"]
+[node name="Text" type="Label" parent="Canvas/Command/Margin" unique_id=2136153034]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
@@ -103,7 +101,5 @@ theme_override_font_sizes/font_size = 32
 text = "Attack"
 vertical_alignment = 1
 
-[node name="Anims" type="AnimationPlayer" parent="Canvas/Command"]
-libraries = {
-&"": SubResource("AnimationLibrary_q12sh")
-}
+[node name="Anims" type="AnimationPlayer" parent="Canvas/Command" unique_id=122722461]
+libraries/ = SubResource("AnimationLibrary_q12sh")

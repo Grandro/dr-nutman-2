@@ -1,0 +1,130 @@
+[gd_scene format=3 uid="uid://dmqr87nigr16x"]
+
+[ext_resource type="Theme" uid="uid://pr4yljlh62sp" path="res://Framework/Global_Resources/Themes/Debug/Debug.tres" id="1_oljv3"]
+[ext_resource type="Script" uid="uid://7bl5keecgbyn" path="res://Framework/Global_Scenes/Debug/Scenes/Expression_Base/Scripts/Expression_Base.gd" id="3"]
+
+[node name="Expression_Base" type="HBoxContainer" unique_id=973638672]
+light_mask = 8
+visibility_layer = 8
+offset_right = 550.0
+offset_bottom = 136.0
+size_flags_horizontal = 3
+theme = ExtResource("1_oljv3")
+theme_override_constants/separation = 8
+script = ExtResource("3")
+
+[node name="VBox" type="VBoxContainer" parent="." unique_id=162308430]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_constants/separation = 8
+
+[node name="VBox" type="VBoxContainer" parent="VBox" unique_id=1599343713]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 16
+
+[node name="HBox" type="HBoxContainer" parent="VBox/VBox" unique_id=499116802]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+
+[node name="Instance" type="HBoxContainer" parent="VBox/VBox/HBox" unique_id=30528919]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Desc" type="Label" parent="VBox/VBox/HBox/Instance" unique_id=1276200151]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "FW_DEBUG_EXPRESSION_INSTANCE"
+vertical_alignment = 1
+
+[node name="Options" type="OptionButton" parent="VBox/VBox/HBox/Instance" unique_id=1517884776]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+
+[node name="Execute" type="Button" parent="VBox/VBox/HBox" unique_id=1959734101]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_font_sizes/font_size = 18
+text = "FW_DEBUG_EXPRESSION_EXECUTE"
+
+[node name="Comp" type="HBoxContainer" parent="VBox/VBox" unique_id=177233978]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Desc" type="Label" parent="VBox/VBox/Comp" unique_id=1739382448]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "FW_DEBUG_EXPRESSION_COMP"
+vertical_alignment = 1
+
+[node name="Options" type="OptionButton" parent="VBox/VBox/Comp" unique_id=1635508585]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+
+[node name="Expression" type="HBoxContainer" parent="VBox/VBox" unique_id=1024705251]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 16
+
+[node name="Desc" type="Label" parent="VBox/VBox/Expression" unique_id=452165619]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "FW_DEBUG_EXPRESSION"
+vertical_alignment = 1
+
+[node name="VBox" type="VBoxContainer" parent="VBox/VBox/Expression" unique_id=1837837480]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Value" type="LineEdit" parent="VBox/VBox/Expression/VBox" unique_id=1800177052]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 18
+caret_blink = true
+
+[node name="Error" type="Label" parent="VBox/VBox/Expression/VBox" unique_id=1201570758]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 18
+vertical_alignment = 1
+
+[node name="Attributes" type="Button" parent="VBox/VBox" unique_id=1895042781]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 18
+text = "FW_DEBUG_EXPRESSION_ATTRIBUTES"

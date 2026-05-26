@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cgbvanstb4ohb"]
+
+[ext_resource type="PackedScene" uid="uid://cleynesu6jd83" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Buffin_House_3/Arcade/Ghosties/Comps/Behavior/Behavior_Base.tscn" id="1_a2r01"]
+[ext_resource type="Script" uid="uid://dn14unf2xoigu" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Buffin_House_3/Arcade/Ghosties/Comps/Behavior/Orange/Scripts/Behavior_Orange.gd" id="2_rcock"]
+[ext_resource type="PackedScene" uid="uid://cv7x5wp7bmqxr" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Buffin_House_3/Arcade/Ghosties/Comps/Behavior/Orange/State_Move.tscn" id="3_6vwwp"]
+
+[node name="Behavior" unique_id=103479668 instance=ExtResource("1_a2r01")]
+script = ExtResource("2_rcock")
+
+[node name="Move" parent="States" parent_id_path=PackedInt32Array(892130468) index="2" unique_id=1292768813 instance=ExtResource("3_6vwwp")]
+_e_rndm_min_radius = 5.0
+_e_rndm_max_radius = 10.0
+_e_wait_finish = true
+_e_min_radius = 50.0

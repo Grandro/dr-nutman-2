@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://btvbj8g2udk5r"]
+
+[ext_resource type="PackedScene" uid="uid://dsp0njc065uev" path="res://Framework/Scenes/Object/Comps/3D/Collision_Shape.tscn" id="1_b11it"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_825rx"]
+radius = 0.4
+height = 1.8
+
+[node name="Collision" unique_id=1146581838 instance=ExtResource("1_b11it")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("CapsuleShape3D_825rx")

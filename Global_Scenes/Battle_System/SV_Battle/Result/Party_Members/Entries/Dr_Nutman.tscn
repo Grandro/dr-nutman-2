@@ -1,29 +1,189 @@
-[gd_scene load_steps=5 format=3 uid="uid://s8wxe328f33y"]
+[gd_scene format=3 uid="uid://s8wxe328f33y"]
 
 [ext_resource type="PackedScene" uid="uid://bsanced2ffcm2" path="res://Global_Scenes/Battle_System/SV_Battle/Result/Party_Members/Entries/Entry_Base.tscn" id="1_epqnx"]
 [ext_resource type="PackedScene" uid="uid://bp3l5j3x50mlt" path="res://Scenes/Characters/Dr_Nutman/Dr_Nutman.tscn" id="2_1gyfl"]
+[ext_resource type="Animation" uid="uid://bgjfrn6e3rmns" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/Global/Celebrate_Down.res" id="3_u601t"]
+[ext_resource type="Animation" uid="uid://dt2acypufrx84" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/Global/Fall_Down.res" id="4_3nopd"]
+[ext_resource type="Animation" uid="uid://j7ue1w0obnun" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/Global/Fall_Left.res" id="5_6ukyf"]
+[ext_resource type="Animation" uid="uid://bk80anauecw04" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/Global/Fall_Right.res" id="6_a2vp7"]
+[ext_resource type="Animation" uid="uid://cr206a30y5cl8" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/Global/Fall_Up.res" id="7_dtofu"]
+[ext_resource type="Animation" uid="uid://bwj6gnywpmuyw" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/Global/Idle_Down.tres" id="8_vn7uc"]
+[ext_resource type="Animation" uid="uid://drs2otww8uid1" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/Global/Idle_Left.tres" id="9_p68ek"]
+[ext_resource type="Animation" uid="uid://j4x0awvcwcrn" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/Global/Idle_Right.tres" id="10_17bru"]
+[ext_resource type="Animation" uid="uid://sufwggq6m5c3" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/Global/Idle_Up.tres" id="11_debcv"]
+[ext_resource type="Animation" uid="uid://p5kf4xd8tppw" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/Global/Jump_Down.tres" id="12_kwl8x"]
+[ext_resource type="Animation" uid="uid://d3aj153yko0n3" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/Global/Jump_Left.tres" id="13_ow2q1"]
+[ext_resource type="Animation" uid="uid://b6nyj2dfmijc2" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/Global/Jump_Right.tres" id="14_4aqmi"]
+[ext_resource type="Animation" uid="uid://dvcbfoa63thyd" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/Global/Jump_Up.tres" id="15_lkyid"]
+[ext_resource type="Animation" uid="uid://bh1di0rmlgh3e" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/Global/Place_Down.tres" id="16_agddh"]
+[ext_resource type="Animation" uid="uid://ch02wdu455qf6" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/Global/Place_Left.tres" id="17_gc56w"]
+[ext_resource type="Animation" uid="uid://cxmlcfmijo6hw" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/Global/Place_Right.tres" id="18_crtjk"]
+[ext_resource type="Animation" uid="uid://d0eepee1jc3ba" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/Global/Place_Up.tres" id="19_x2nob"]
+[ext_resource type="Animation" uid="uid://bex7bnnhyncyi" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/Global/Run_Down.tres" id="20_juno4"]
+[ext_resource type="Animation" uid="uid://c0vvtqm2jy6et" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/Global/Run_Left.tres" id="21_8qh3f"]
+[ext_resource type="Animation" uid="uid://bp1j4qd18bh67" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/Global/Run_Right.tres" id="22_utyd5"]
+[ext_resource type="Animation" uid="uid://jx1b7omndnib" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/Global/Run_Up.tres" id="23_wmy6y"]
+[ext_resource type="Animation" uid="uid://bqyqijdpb4405" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/Global/Stop_Down.tres" id="24_ieetd"]
+[ext_resource type="Animation" uid="uid://dlrxvhrl0bpsf" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/Global/Stop_Left.tres" id="25_c7uue"]
+[ext_resource type="Animation" uid="uid://bwvrg2qepo22l" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/Global/Stop_Right.tres" id="26_4bl20"]
+[ext_resource type="Animation" uid="uid://gxcyx7t1vc5e" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/Global/Stop_Up.tres" id="27_gt78l"]
+[ext_resource type="Animation" uid="uid://b4ih0oataocy2" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/Global/Walk_Down.tres" id="28_j06vf"]
+[ext_resource type="Animation" uid="uid://bvrwvy7ovhc1u" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/Global/Walk_Left.tres" id="29_ihts0"]
+[ext_resource type="Animation" uid="uid://b6pccakvrp87q" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/Global/Walk_Right.tres" id="30_50glu"]
+[ext_resource type="Animation" uid="uid://bbk21bikiltvm" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/Global/Walk_Up.tres" id="31_tpm3y"]
+[ext_resource type="Animation" uid="uid://bick6qt0ao3sc" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/SV/Attack_ATK_Charge_Right.res" id="32_msx7o"]
+[ext_resource type="Animation" uid="uid://dymh3e25yq1m6" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/SV/Attack_ATK_Fall_Right.res" id="33_a3k7h"]
+[ext_resource type="Animation" uid="uid://du05x7e5jva55" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/SV/Attack_ATK_Hit_Right.res" id="34_ucq1a"]
+[ext_resource type="Animation" uid="uid://c0yqgijagkmjh" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/SV/Attack_ATK_Recover_Right.res" id="35_hovws"]
+[ext_resource type="Animation" uid="uid://mp4kj54cw5v" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/SV/Attack_ATK_Tumble_Right.res" id="36_74bhx"]
+[ext_resource type="Animation" uid="uid://b4dd64ec2yu31" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/SV/Defend_DEF_Right.res" id="37_x6yfl"]
+[ext_resource type="Animation" uid="uid://dxc03jjleeu08" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/SV/Duck_Right.res" id="38_t8ldb"]
+[ext_resource type="Animation" uid="uid://buf67trw344gi" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/SV/Idle_Down.tres" id="39_tuuk4"]
+[ext_resource type="Animation" uid="uid://rhy4w84a2bh6" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/SV/Idle_Left.tres" id="40_qygab"]
+[ext_resource type="Animation" uid="uid://cwcuoskdn5l6a" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/SV/Idle_Right.tres" id="41_3if8q"]
+[ext_resource type="Animation" uid="uid://cs6ddsdunxa6h" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/SV/Idle_Up.tres" id="42_d5pop"]
+[ext_resource type="Animation" uid="uid://1qmy6jftd074" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/SV/Jump_Right.res" id="43_h0c2b"]
+[ext_resource type="Animation" uid="uid://c5pia3mmshnki" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/SV/Stop_Down.res" id="44_1dqjo"]
+[ext_resource type="Animation" uid="uid://e65jdh4i1sqr" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/SV/Stop_Left.res" id="45_0811k"]
+[ext_resource type="Animation" uid="uid://cjh5kuwsmymah" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/SV/Stop_Right.res" id="46_mnfxx"]
+[ext_resource type="Animation" uid="uid://lutrsnfew24v" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/SV/Stop_Up.res" id="47_bgwrt"]
+[ext_resource type="Animation" uid="uid://buk2wbtcp0ihd" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/SV/Walk_Down.res" id="48_kmefw"]
+[ext_resource type="Animation" uid="uid://bs4hx4yq2e8f2" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/SV/Walk_Left.res" id="49_jqcsv"]
+[ext_resource type="Animation" uid="uid://yvkfla4vkrfb" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/SV/Walk_Right.res" id="50_riw0q"]
+[ext_resource type="Animation" uid="uid://cqpwqwxo6vppk" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/SV/Walk_Up.res" id="51_wlbkr"]
+[ext_resource type="Animation" uid="uid://b0y7484ej2q62" path="res://Scenes/Characters/Dr_Nutman/Anims/Idle_Down.tres" id="52_3q8rh"]
+[ext_resource type="Animation" uid="uid://mtf6ie3yt15f" path="res://Scenes/Characters/Dr_Nutman/Anims/Idle_Left.tres" id="53_1rwpv"]
+[ext_resource type="Animation" uid="uid://ca5k8cwab14x3" path="res://Scenes/Characters/Dr_Nutman/Anims/Idle_Right.tres" id="54_wtcq2"]
+[ext_resource type="Animation" uid="uid://dkm6uitv2slk5" path="res://Scenes/Characters/Dr_Nutman/Anims/Idle_Up.tres" id="55_jtpl3"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_hdnpy"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_j5u7g"]
 viewport_path = NodePath("Panel/VBox/Character/VP")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mrh4w"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_eqrr0"]
 resource_local_to_scene = true
-atlas = SubResource("ViewportTexture_hdnpy")
+atlas = SubResource("ViewportTexture_j5u7g")
 region = Rect2(528, 96, 224, 280)
 
-[node name="Dr_Nutman" instance=ExtResource("1_epqnx")]
+[sub_resource type="Animation" id="Animation_35hrd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.03, 3.03046, 0.01)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6yhyd"]
+_data = {
+&"Celebrate_Down": ExtResource("3_u601t"),
+&"Fall_Down": ExtResource("4_3nopd"),
+&"Fall_Left": ExtResource("5_6ukyf"),
+&"Fall_Right": ExtResource("6_a2vp7"),
+&"Fall_Up": ExtResource("7_dtofu"),
+&"Idle_Down": ExtResource("8_vn7uc"),
+&"Idle_Left": ExtResource("9_p68ek"),
+&"Idle_Right": ExtResource("10_17bru"),
+&"Idle_Up": ExtResource("11_debcv"),
+&"Jump_Down": ExtResource("12_kwl8x"),
+&"Jump_Left": ExtResource("13_ow2q1"),
+&"Jump_Right": ExtResource("14_4aqmi"),
+&"Jump_Up": ExtResource("15_lkyid"),
+&"Place_Down": ExtResource("16_agddh"),
+&"Place_Left": ExtResource("17_gc56w"),
+&"Place_Right": ExtResource("18_crtjk"),
+&"Place_Up": ExtResource("19_x2nob"),
+&"RESET": SubResource("Animation_35hrd"),
+&"Run_Down": ExtResource("20_juno4"),
+&"Run_Left": ExtResource("21_8qh3f"),
+&"Run_Right": ExtResource("22_utyd5"),
+&"Run_Up": ExtResource("23_wmy6y"),
+&"Stop_Down": ExtResource("24_ieetd"),
+&"Stop_Left": ExtResource("25_c7uue"),
+&"Stop_Right": ExtResource("26_4bl20"),
+&"Stop_Up": ExtResource("27_gt78l"),
+&"Walk_Down": ExtResource("28_j06vf"),
+&"Walk_Left": ExtResource("29_ihts0"),
+&"Walk_Right": ExtResource("30_50glu"),
+&"Walk_Up": ExtResource("31_tpm3y")
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3508v"]
+_data = {
+&"Attack_ATK_Charge_Right": ExtResource("32_msx7o"),
+&"Attack_ATK_Fall_Right": ExtResource("33_a3k7h"),
+&"Attack_ATK_Hit_Right": ExtResource("34_ucq1a"),
+&"Attack_ATK_Recover_Right": ExtResource("35_hovws"),
+&"Attack_ATK_Tumble_Right": ExtResource("36_74bhx"),
+&"Defend_Right": ExtResource("37_x6yfl"),
+&"Duck_Right": ExtResource("38_t8ldb"),
+&"Idle_Down": ExtResource("39_tuuk4"),
+&"Idle_Left": ExtResource("40_qygab"),
+&"Idle_Right": ExtResource("41_3if8q"),
+&"Idle_Up": ExtResource("42_d5pop"),
+&"Jump_Right": ExtResource("43_h0c2b"),
+&"Stop_Down": ExtResource("44_1dqjo"),
+&"Stop_Left": ExtResource("45_0811k"),
+&"Stop_Right": ExtResource("46_mnfxx"),
+&"Stop_Up": ExtResource("47_bgwrt"),
+&"Walk_Down": ExtResource("48_kmefw"),
+&"Walk_Left": ExtResource("49_jqcsv"),
+&"Walk_Right": ExtResource("50_riw0q"),
+&"Walk_Up": ExtResource("51_wlbkr")
+}
+
+[sub_resource type="Animation" id="Animation_fe7oi"]
+resource_name = "Celebrate_Down"
+length = 1.2
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Display:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [84, 85, 86, 87]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ssdlm"]
+_data = {
+&"Celebrate_Down": SubResource("Animation_fe7oi"),
+&"Idle_Down": ExtResource("52_3q8rh"),
+&"Idle_Left": ExtResource("53_1rwpv"),
+&"Idle_Right": ExtResource("54_wtcq2"),
+&"Idle_Up": ExtResource("55_jtpl3")
+}
+
+[node name="Dr_Nutman" unique_id=534199587 instance=ExtResource("1_epqnx")]
 
 [node name="Name" parent="." index="0"]
 text = "NAME_DR_NUTMAN"
 
 [node name="Display" parent="Panel/VBox/Character" index="0"]
-texture = SubResource("AtlasTexture_mrh4w")
+texture = SubResource("AtlasTexture_eqrr0")
 
-[node name="Dr_Nutman" parent="Panel/VBox/Character/VP" index="0" instance=ExtResource("2_1gyfl")]
+[node name="Dr_Nutman" parent="Panel/VBox/Character/VP" index="0" unique_id=1112706696 instance=ExtResource("2_1gyfl")]
 
-[node name="Weapon" type="Node3D" parent="Panel/VBox/Character/VP/Dr_Nutman/Equipment" index="4"]
+[node name="Anims" parent="Panel/VBox/Character/VP/Dr_Nutman/Equipment/Head/1" index="0"]
+libraries/ = SubResource("AnimationLibrary_6yhyd")
+libraries/SV = SubResource("AnimationLibrary_3508v")
 
-[node name="Shield" type="Node3D" parent="Panel/VBox/Character/VP/Dr_Nutman/Equipment" index="5"]
+[node name="Weapon" type="Node3D" parent="Panel/VBox/Character/VP/Dr_Nutman/Equipment" index="4" unique_id=1014566167]
+
+[node name="Shield" type="Node3D" parent="Panel/VBox/Character/VP/Dr_Nutman/Equipment" index="5" unique_id=2076534738]
+
+[node name="Anims" parent="Panel/VBox/Character/VP/Dr_Nutman" index="4"]
+libraries/ = SubResource("AnimationLibrary_ssdlm")
 
 [node name="States" parent="Panel/VBox/Character/VP/Dr_Nutman" index="6"]
 _e_states = Array[StringName]([&"Idle", &"Celebrate"])

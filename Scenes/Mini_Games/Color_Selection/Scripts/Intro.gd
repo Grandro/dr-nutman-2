@@ -1,10 +1,10 @@
-extends MiniGameBaseIntro
+extends FWMiniGameBaseIntro
 class_name MiniGameColorSelectionIntro
 
 @export var _e_camera_start_pos: Vector2 = Vector2(640, 464)
 @export var _e_camera_end_pos: Vector2 = Vector2(640, 1224)
 
-@onready var _a_Preview_Camera: CompCamera2D = get_node("Margin/VBox/HBox/Left/HBox/VP/VP/Game_Preview/Node2D/Camera")
+@onready var _a_Preview_Camera: FWCompCamera2D = get_node("Margin/VBox/HBox/Left/HBox/VP/VP/Game_Preview/Node2D/Camera")
 @onready var _a_Preview_Scroll: VScrollBar = get_node("Margin/VBox/HBox/Left/HBox/Scroll")
 
 func _ready() -> void:

@@ -1,12 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://w0par4w2lu7x"]
+[gd_scene format=3 uid="uid://w0par4w2lu7x"]
 
 [ext_resource type="PackedScene" uid="uid://v4e27aml1vi3" path="res://Scenes/Objects/3D/Chests/Base.tscn" id="1_pxm60"]
-[ext_resource type="PackedScene" uid="uid://cfdwl620axohy" path="res://Scenes/Object/Comps/3D/Audio.tscn" id="2_b58ny"]
-[ext_resource type="PackedScene" uid="uid://fnej1f64wfc2" path="res://Scenes/Object/Comps/3D/Nav_Obstacle.tscn" id="2_umq6o"]
-[ext_resource type="PackedScene" uid="uid://de2jy2ixhp2mw" path="res://Scenes/Object/Comps/Save.tscn" id="3_gfkha"]
+[ext_resource type="PackedScene" uid="uid://cfdwl620axohy" path="res://Framework/Scenes/Object/Comps/3D/Audio.tscn" id="2_b58ny"]
+[ext_resource type="PackedScene" uid="uid://fnej1f64wfc2" path="res://Framework/Scenes/Object/Comps/3D/Nav_Obstacle.tscn" id="2_umq6o"]
+[ext_resource type="PackedScene" uid="uid://de2jy2ixhp2mw" path="res://Framework/Scenes/Object/Comps/Save.tscn" id="3_gfkha"]
 [ext_resource type="AudioStream" uid="uid://qqqo2o6ux8xb" path="res://Global_Resources/Audio/SFX/Chest_Open_1.wav" id="3_ibfjk"]
-[ext_resource type="PackedScene" uid="uid://dllj5lbxwqy17" path="res://Scenes/Pausable_Audio/3D/Pausable_Audio.tscn" id="3_mxblm"]
-[ext_resource type="PackedScene" uid="uid://drpp26gth4snn" path="res://Scenes/Object/Comps/Reference.tscn" id="4_woh7m"]
+[ext_resource type="PackedScene" uid="uid://dllj5lbxwqy17" path="res://Framework/Scenes/Pausable_Audio/3D/Pausable_Audio.tscn" id="3_mxblm"]
+[ext_resource type="PackedScene" uid="uid://drpp26gth4snn" path="res://Framework/Scenes/Object/Comps/Reference.tscn" id="4_woh7m"]
 
 [sub_resource type="Animation" id="Animation_28hcp"]
 resource_name = "Open"
@@ -61,26 +61,24 @@ _data = {
 &"RESET": SubResource("Animation_le68f")
 }
 
-[node name="Chest_1" instance=ExtResource("1_pxm60")]
+[node name="Chest_1" unique_id=1197959557 instance=ExtResource("1_pxm60")]
 
-[node name="Audio" parent="." index="4" instance=ExtResource("2_b58ny")]
+[node name="Audio" parent="." index="4" unique_id=1713430107 instance=ExtResource("2_b58ny")]
 
-[node name="Open" parent="Audio" index="0" instance=ExtResource("3_mxblm")]
+[node name="Open" parent="Audio" index="0" unique_id=228326591 instance=ExtResource("3_mxblm")]
 bus = &"SFX"
 
-[node name="Nav_Obstacle" parent="." index="5" groups=["NavMesh_Main"] instance=ExtResource("2_umq6o")]
+[node name="Nav_Obstacle" parent="." index="5" unique_id=1728564282 groups=["NavMesh_Main"] instance=ExtResource("2_umq6o")]
 vertices = PackedVector3Array(0.6, 0, -0.5, -0.6, 0, -0.5, -0.6, 0, 0.6, 0.6, 0, 0.6)
 affect_navigation_mesh = true
 avoidance_enabled = false
 
 [node name="Anims" parent="." index="6"]
-libraries = {
-&"": SubResource("AnimationLibrary_3ruqm")
-}
+libraries/ = SubResource("AnimationLibrary_3ruqm")
 
-[node name="Save" parent="." index="7" instance=ExtResource("3_gfkha")]
+[node name="Save" parent="." index="7" unique_id=1864041379 instance=ExtResource("3_gfkha")]
 
-[node name="Reference" parent="." index="8" instance=ExtResource("4_woh7m")]
+[node name="Reference" parent="." index="8" unique_id=269658285 instance=ExtResource("4_woh7m")]
 
 [editable path="Interactions"]
 [editable path="Interactions/1"]

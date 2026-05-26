@@ -1,4 +1,4 @@
-extends Static3DObject
+extends FWStatic3DObject
 class_name ObjectBuildingBase
 
 @export var _e_destinations: Array = [] # (Array, Array, StringName)

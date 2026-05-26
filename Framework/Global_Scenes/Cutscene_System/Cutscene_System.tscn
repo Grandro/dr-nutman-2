@@ -1,0 +1,134 @@
+[gd_scene format=3 uid="uid://b5caydwpdijlx"]
+
+[ext_resource type="Script" uid="uid://cobyvegukv5np" path="res://Framework/Global_Scenes/Cutscene_System/Scripts/Cutscene_System.gd" id="1"]
+
+[node name="Cutscene_System" type="Node" unique_id=1398154761]
+script = ExtResource("1")
+_e_thread_uids = {
+&"Change_Camera": {
+&"2D": "uid://bgog2fq3synxq",
+&"3D": "uid://bgog2fq3synxq"
+},
+&"Change_Coins_Amount": {
+&"2D": "uid://dbjwm6c5qnw6n",
+&"3D": "uid://dbjwm6c5qnw6n"
+},
+&"Change_Cutscene_Args": {
+&"2D": "uid://b7nxxs2sfnur4",
+&"3D": "uid://b7nxxs2sfnur4"
+},
+&"Change_Cutscene_Args_Idx": {
+&"2D": "uid://dmtnjw6k8xox",
+&"3D": "uid://dmtnjw6k8xox"
+},
+&"Change_Dialogue_Args": {
+&"2D": "uid://cp2hy1v0658qk",
+&"3D": "uid://cp2hy1v0658qk"
+},
+&"Change_Dialogue_Args_Idx": {
+&"2D": "uid://ccsmpxgwqsppr",
+&"3D": "uid://ccsmpxgwqsppr"
+},
+&"Change_Dir": {
+&"2D": "uid://bxefmsdndx7a2",
+&"3D": "uid://bxefmsdndx7a2"
+},
+&"Change_Equipable": {
+&"2D": "uid://bxywkh80ggp0a",
+&"3D": "uid://bxywkh80ggp0a"
+},
+&"Change_Item_Amount": {
+&"2D": "uid://cwwclvh4q0qlv",
+&"3D": "uid://cwwclvh4q0qlv"
+},
+&"Change_State": {
+&"2D": "uid://cnivu8sykulbv",
+&"3D": "uid://cnivu8sykulbv"
+},
+&"Change_Visibility": {
+&"2D": "uid://bmrdgyhvepj3a",
+&"3D": "uid://bmrdgyhvepj3a"
+},
+&"Comment": {
+&"2D": "uid://070ym35lipun",
+&"3D": "uid://070ym35lipun"
+},
+&"Default_Object_Key": {
+&"2D": "uid://dpycs7bh6ot4p",
+&"3D": "uid://dpycs7bh6ot4p"
+},
+&"Disable_Object": {
+&"2D": "uid://lkxgr5hfplkr",
+&"3D": "uid://lkxgr5hfplkr"
+},
+&"Exit_Cutscene": {
+&"2D": "uid://cq4rmgg4gusvw",
+&"3D": "uid://cq4rmgg4gusvw"
+},
+&"Jump": {
+&"2D": "uid://df13oq8biqf14",
+&"3D": "uid://qurisbp8a82"
+},
+&"Move_Free_Camera": {
+&"2D": "uid://cs57tjn5l4tho",
+&"3D": "uid://bsy6fkv2on18"
+},
+&"Play_Anim": {
+&"2D": "uid://ctcfcbosrs5k6",
+&"3D": "uid://ctcfcbosrs5k6"
+},
+&"Play_Audio": {
+&"2D": "uid://bikxu04c77xqy",
+&"3D": "uid://8prbqcotvfnu"
+},
+&"Script": {
+&"2D": "uid://05jy7p4x2pka",
+&"3D": "uid://05jy7p4x2pka"
+},
+&"Set_Avoidance": {
+&"2D": "uid://dwg1vya6potvu",
+&"3D": "uid://dwg1vya6potvu"
+},
+&"Set_Move_Route": {
+&"2D": "uid://bjvwp6iq8vcy",
+&"3D": "uid://dflngil7kju2u"
+},
+&"Show_Dialogue": {
+&"2D": "uid://b7o0xa6euelwd",
+&"3D": "uid://b7o0xa6euelwd"
+},
+&"Show_Overlay": {
+&"2D": "uid://b5wgsqgj5l17i",
+&"3D": "uid://b5wgsqgj5l17i"
+},
+&"Show_Popup": {
+&"2D": "uid://d2u007f2s07uk",
+&"3D": "uid://d2u007f2s07uk"
+},
+&"Teleport": {
+&"2D": "uid://dvx0jrwok7kfr",
+&"3D": "uid://dvx0jrwok7kfr"
+},
+&"Teleport_Object": {
+&"2D": "uid://c2e18rxdvwfk5",
+&"3D": "uid://dyc028u1boi4h"
+},
+&"Tween": {
+&"2D": "uid://ds41ly6qkp30k",
+&"3D": "uid://ds41ly6qkp30k"
+},
+&"Wait": {
+&"2D": "uid://dil8co7ka613j",
+&"3D": "uid://dil8co7ka613j"
+},
+&"Wait_For_Sub_Process": {
+&"2D": "uid://bjoc6af1a0acn",
+&"3D": "uid://bjoc6af1a0acn"
+}
+}
+
+[node name="Branches" type="Node" parent="." unique_id=1448352324]
+
+[node name="Skip_CD" type="Timer" parent="." unique_id=9010742]
+wait_time = 0.01
+one_shot = true

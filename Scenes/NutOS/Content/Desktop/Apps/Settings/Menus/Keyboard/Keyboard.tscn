@@ -1,90 +1,90 @@
-[gd_scene load_steps=5 format=3 uid="uid://dpf738h8nkxie"]
+[gd_scene format=3 uid="uid://dpf738h8nkxie"]
 
 [ext_resource type="PackedScene" uid="uid://yul8j2y77c24" path="res://Scenes/NutOS/Content/Desktop/Apps/Settings/Menus/Menu_Base.tscn" id="1_4m30g"]
 [ext_resource type="Script" uid="uid://coi3wkjcsb6ig" path="res://Scenes/NutOS/Content/Desktop/Apps/Settings/Menus/Keyboard/Scripts/Keyboard.gd" id="5"]
 [ext_resource type="Script" uid="uid://7yfm47wm8auc" path="res://Scenes/NutOS/Content/Desktop/Apps/Settings/Menus/Keyboard/Scripts/Colors.gd" id="6"]
 [ext_resource type="Script" uid="uid://biceyky8re7u6" path="res://Scenes/NutOS/Content/Desktop/Apps/Settings/Menus/Keyboard/Scripts/Static.gd" id="7"]
 
-[node name="Keyboard" instance=ExtResource("1_4m30g")]
+[node name="Keyboard" unique_id=1433437640 instance=ExtResource("1_4m30g")]
 script = ExtResource("5")
 
-[node name="HBox" type="HBoxContainer" parent="VBox" index="1"]
+[node name="HBox" type="HBoxContainer" parent="VBox" parent_id_path=PackedInt32Array(122607867) index="1" unique_id=1093214918]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 10
 
-[node name="Tabs" type="VBoxContainer" parent="VBox/HBox" index="0"]
+[node name="Tabs" type="VBoxContainer" parent="VBox/HBox" index="0" unique_id=235251284]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
 
-[node name="Colors" type="Button" parent="VBox/HBox/Tabs" index="0"]
+[node name="Colors" type="Button" parent="VBox/HBox/Tabs" index="0" unique_id=1501671183]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
 text = "COLORS"
 
-[node name="VSep" type="VSeparator" parent="VBox/HBox" index="1"]
+[node name="VSep" type="VSeparator" parent="VBox/HBox" index="1" unique_id=1932331396]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
 
-[node name="Content" type="MarginContainer" parent="VBox/HBox" index="2"]
+[node name="Content" type="MarginContainer" parent="VBox/HBox" index="2" unique_id=750826923]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Colors" type="VBoxContainer" parent="VBox/HBox/Content" index="0"]
+[node name="Colors" type="VBoxContainer" parent="VBox/HBox/Content" index="0" unique_id=196840749]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
 theme_override_constants/separation = 16
 script = ExtResource("6")
 
-[node name="Type" type="VBoxContainer" parent="VBox/HBox/Content/Colors" index="0"]
+[node name="Type" type="VBoxContainer" parent="VBox/HBox/Content/Colors" index="0" unique_id=920408508]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
 size_flags_horizontal = 0
 
-[node name="Heading" type="Label" parent="VBox/HBox/Content/Colors/Type" index="0"]
+[node name="Heading" type="Label" parent="VBox/HBox/Content/Colors/Type" index="0" unique_id=1041167869]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
-text = "SELECT_TYPE"
+text = "FW_SELECT_TYPE"
 vertical_alignment = 1
 
-[node name="Options" type="OptionButton" parent="VBox/HBox/Content/Colors/Type" index="1"]
+[node name="Options" type="OptionButton" parent="VBox/HBox/Content/Colors/Type" index="1" unique_id=397156955]
 light_mask = 8
 visibility_layer = 8
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 
-[node name="Static" type="VBoxContainer" parent="VBox/HBox/Content/Colors" index="1"]
+[node name="Static" type="VBoxContainer" parent="VBox/HBox/Content/Colors" index="1" unique_id=1977196366]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
 theme_override_constants/separation = 8
 script = ExtResource("7")
 
-[node name="Available" type="VBoxContainer" parent="VBox/HBox/Content/Colors/Static" index="0"]
+[node name="Available" type="VBoxContainer" parent="VBox/HBox/Content/Colors/Static" index="0" unique_id=1003016004]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
 
-[node name="Heading" type="Label" parent="VBox/HBox/Content/Colors/Static/Available" index="0"]
+[node name="Heading" type="Label" parent="VBox/HBox/Content/Colors/Static/Available" index="0" unique_id=1366261868]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
 text = "AVAILABLE"
 vertical_alignment = 1
 
-[node name="HFlow" type="HFlowContainer" parent="VBox/HBox/Content/Colors/Static/Available" index="1"]
+[node name="HFlow" type="HFlowContainer" parent="VBox/HBox/Content/Colors/Static/Available" index="1" unique_id=311942792]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2

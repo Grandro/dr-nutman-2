@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CompData" format=3 uid="uid://cjmc747xeham0"]
+
+[ext_resource type="PackedScene" uid="uid://bx0b7w78x7fgv" path="res://Scenes/Player/3D/Icon/Comps/Movement.tscn" id="1_tmsja"]
+[ext_resource type="Script" uid="uid://dk1y7876kg1po" path="res://Framework/Scenes/Player/Scripts/Comp_Data.gd" id="2_0sng1"]
+
+[resource]
+script = ExtResource("2_0sng1")
+_e_key = &"Movement"
+_e_scene = ExtResource("1_tmsja")
+_e_group = &"Icon"
+metadata/_custom_type_script = "uid://dk1y7876kg1po"

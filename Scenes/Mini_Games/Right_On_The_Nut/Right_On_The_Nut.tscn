@@ -1,46 +1,46 @@
-[gd_scene load_steps=5 format=3 uid="uid://dhtecy78a4m1y"]
+[gd_scene format=3 uid="uid://dhtecy78a4m1y"]
 
-[ext_resource type="PackedScene" uid="uid://dlhat5aerwj2v" path="res://Scenes/Mini_Games/Mini_Game_Base/Mini_Game_Base.tscn" id="1_dnj01"]
+[ext_resource type="PackedScene" uid="uid://dlhat5aerwj2v" path="res://Framework/Scenes/Mini_Games/Mini_Game_Base/Mini_Game_Base.tscn" id="1_dnj01"]
 [ext_resource type="PackedScene" uid="uid://ce87q22isrsm1" path="res://Scenes/Mini_Games/Right_On_The_Nut/Game/Game_Play.tscn" id="3_q2x0w"]
 [ext_resource type="Texture2D" uid="uid://pelxbitvttd4" path="res://Global_Resources/Sprites/Keys/32.png" id="4_add04"]
 [ext_resource type="PackedScene" uid="uid://g72epid2kl6s" path="res://Scenes/Mini_Games/Right_On_The_Nut/Game/Game_Preview.tscn" id="5_hrnol"]
 
-[node name="Right_On_The_Nut" instance=ExtResource("1_dnj01")]
+[node name="Right_On_The_Nut" unique_id=1133882014 instance=ExtResource("1_dnj01")]
 
-[node name="Game_Play" parent="." index="0" instance=ExtResource("3_q2x0w")]
+[node name="Game_Play" parent="." index="0" unique_id=326310854 instance=ExtResource("3_q2x0w")]
 
-[node name="Intro" parent="Canvas" index="0"]
+[node name="Intro" parent="Canvas" parent_id_path=PackedInt32Array(622513922) index="0" unique_id=558021626]
 modulate = Color(1, 1, 1, 1)
 
-[node name="Heading" parent="Canvas/Intro/Margin/VBox" index="0"]
+[node name="Heading" parent="Canvas/Intro/Margin/VBox" parent_id_path=PackedInt32Array(558021626, 461448360) index="0" unique_id=1363743678]
 text = "MINIGAMES_RIGHT_ON_THE_NUT_HEADING"
 
-[node name="VP" parent="Canvas/Intro/Margin/VBox/HBox/Left/HBox/VP" index="0"]
+[node name="VP" parent="Canvas/Intro/Margin/VBox/HBox/Left/HBox/VP" parent_id_path=PackedInt32Array(558021626, 1399718782) index="0"]
 size = Vector2i(604, 540)
 
-[node name="Game_Preview" parent="Canvas/Intro/Margin/VBox/HBox/Left/HBox/VP/VP" index="0" instance=ExtResource("5_hrnol")]
+[node name="Game_Preview" parent="Canvas/Intro/Margin/VBox/HBox/Left/HBox/VP/VP" index="0" unique_id=1193552244 instance=ExtResource("5_hrnol")]
 
-[node name="Scroll" parent="Canvas/Intro/Margin/VBox/HBox/Left/HBox" index="1"]
+[node name="Scroll" parent="Canvas/Intro/Margin/VBox/HBox/Left/HBox" parent_id_path=PackedInt32Array(558021626, 993630008) index="1" unique_id=380076729]
 visible = false
 
-[node name="Desc" parent="Canvas/Intro/Margin/VBox/HBox/Right/VBox" index="0"]
+[node name="Desc" parent="Canvas/Intro/Margin/VBox/HBox/Right/VBox" parent_id_path=PackedInt32Array(558021626, 1088031092) index="0" unique_id=1849681339]
 text = "MINIGAMES_RIGHT_ON_THE_NUT_DESC"
 
-[node name="VBox" type="VBoxContainer" parent="Canvas/Intro/Margin/VBox/HBox/Right/VBox/Controls" index="1"]
+[node name="VBox" type="VBoxContainer" parent="Canvas/Intro/Margin/VBox/HBox/Right/VBox/Controls" parent_id_path=PackedInt32Array(558021626, 1784509275) index="1" unique_id=1606757432]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 16
 
-[node name="Space" type="TextureRect" parent="Canvas/Intro/Margin/VBox/HBox/Right/VBox/Controls/VBox" index="0"]
+[node name="Space" type="TextureRect" parent="Canvas/Intro/Margin/VBox/HBox/Right/VBox/Controls/VBox" index="0" unique_id=995906774]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
 texture = ExtResource("4_add04")
 stretch_mode = 3
 
-[node name="Desc" type="Label" parent="Canvas/Intro/Margin/VBox/HBox/Right/VBox/Controls/VBox" index="1"]
+[node name="Desc" type="Label" parent="Canvas/Intro/Margin/VBox/HBox/Right/VBox/Controls/VBox" index="1" unique_id=1392067351]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2

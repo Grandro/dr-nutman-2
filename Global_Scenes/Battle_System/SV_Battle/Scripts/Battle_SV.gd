@@ -14,30 +14,31 @@ var _a_res: StringName # Win/Loss
 func _ready() -> void:
 	_a_Result.closed.connect(_on_Result_closed)
 
-func battle(p_enc_key: StringName, p_map_res: MAP_RES, p_troop: Array[StringName] = []) -> void:
+func battle(p_enc_key: StringName, p_map_res: MAP_RES, p_troop: Array[StringName] = [], p_bonus_loot: Dictionary = {}) -> void:
 	var scene_manager_si: Scene_Manager = Global.get_singleton(self, "Scene_Manager")
 	_a_return_map = scene_manager_si.get_curr_scene()
 	_a_return_location = scene_manager_si.get_location()
 	
 	var data: SVEncounterData = Databases.get_data_entry(&"SV_Encounters", p_enc_key)
-	var path: String = data.get_path_()
+	var uid: String = data.get_uid()
 	var special: bool = data.get_special()
-	var cb: Callable = _CB_Scene_Manager_Encounter_Set.bind(p_map_res, p_troop, special)
-	scene_manager_si.change_scene_path(path, cb)
+	var cb: Callable = _CB_Scene_Manager_Encounter_Set.bind(p_map_res, p_troop, p_bonus_loot, special)
+	scene_manager_si.change_scene_uid(uid, cb)
 
 func _tp_to_return_location() -> void:
 	var scene_manager_si: Scene_Manager = Global.get_singleton(self, "Scene_Manager")
 	var cb_method: Callable = _CB_Scene_Manager_Return_Scene_Set.bind(_a_return_location, _a_res)
 	scene_manager_si.change_scene_tp(_a_return_location, cb_method)
 
-func _CB_Scene_Manager_Encounter_Set(p_instance: SVEncounterBase, p_map_res: MAP_RES, p_troop: Array[StringName], p_special: bool) -> void:
+func _CB_Scene_Manager_Encounter_Set(p_instance: SVEncounterBase, p_map_res: MAP_RES, p_troop: Array[StringName], p_bonus_loot: Dictionary, p_special: bool) -> void:
 	p_instance.battle_ended.connect(_on_Encounter_battle_ended)
 	p_instance.set_map_res(p_map_res)
 	p_instance.set_troop(p_troop)
+	p_instance.set_bonus_loot(p_bonus_loot)
 	p_instance.set_special(p_special)
 	p_instance.battle()
 
-func _CB_Scene_Manager_Return_Scene_Set(_p_instance: MapBase3D, p_location: StringName, p_res: StringName) -> void:
+func _CB_Scene_Manager_Return_Scene_Set(_p_instance: FWMapBase3D, p_location: StringName, p_res: StringName) -> void:
 	battle_ended.emit(p_location, p_res)
 
 func _on_Result_closed() -> void:

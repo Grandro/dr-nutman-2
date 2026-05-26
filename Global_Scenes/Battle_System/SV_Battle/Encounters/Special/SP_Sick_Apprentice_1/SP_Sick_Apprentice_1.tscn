@@ -1,11 +1,11 @@
-[gd_scene load_steps=39 format=3 uid="uid://77lygxoeegn6"]
+[gd_scene format=3 uid="uid://77lygxoeegn6"]
 
 [ext_resource type="PackedScene" uid="uid://rwpfs10v6p2a" path="res://Global_Scenes/Battle_System/SV_Battle/Encounters/Encounter_Base.tscn" id="1_7apoy"]
 [ext_resource type="Script" uid="uid://dxk0irqj4pxq3" path="res://Global_Scenes/Battle_System/SV_Battle/Encounters/Special/SP_Sick_Apprentice_1/Scripts/SP_Sick_Apprentice_1.gd" id="2_snuwg"]
 [ext_resource type="PackedScene" uid="uid://ff33i620lkpe" path="res://Global_Resources/Mapping/3D/Below/Broko_Town/Doctor_Dream_1/Floor_Tile_1.tscn" id="3_71n6v"]
 [ext_resource type="AudioStream" uid="uid://b4q4cvj0hatg7" path="res://Global_Resources/Audio/BGM/Intro_Battle.ogg" id="3_v7o1y"]
 [ext_resource type="Texture2D" uid="uid://ig6wvy5wwp2g" path="res://Global_Resources/Mapping/Sprites/Below/Broko_Town/Doctor_Dream_1/Floor_Tile_1.png" id="4_i7gc7"]
-[ext_resource type="Script" uid="uid://b3q13t5wk5s2w" path="res://Global_Scenes/Audio_Manager/Scripts/Audio_Playback.gd" id="4_sg2px"]
+[ext_resource type="Script" uid="uid://b3q13t5wk5s2w" path="res://Framework/Global_Scenes/Audio_Manager/Scripts/Audio_Playback.gd" id="4_sg2px"]
 [ext_resource type="PackedScene" uid="uid://b43uus1j31k2o" path="res://Global_Resources/Mapping/3D/Same_As/Broko_Town/Doctor_Dream_1/Wall_1/Main_Side_Down_Center.tscn" id="5_m6if2"]
 [ext_resource type="PackedScene" uid="uid://dedghquqbg5od" path="res://Global_Resources/Mapping/3D/Same_As/Broko_Town/Doctor_Dream_1/Wall_1/Main_Side_Down_Left.tscn" id="6_t4yvn"]
 [ext_resource type="PackedScene" uid="uid://bxoj7ay1iqu54" path="res://Scenes/Maps/3D/Broko_Town/Doctor_Dream_1/Objects/Thermometer_Sign/Thermometer_Sign.tscn" id="7_8t18v"]
@@ -25,11 +25,67 @@
 [ext_resource type="PackedScene" uid="uid://mw0nvucjwb54" path="res://Global_Scenes/Battle_System/SV_Battle/Encounters/Special/SP_Sick_Apprentice_1/Objects/Pill_1/Pill_1.tscn" id="18_rolmv"]
 [ext_resource type="PackedScene" uid="uid://mp23fryjb2qh" path="res://Global_Scenes/Battle_System/SV_Battle/Party_Members/Dr_Nutman/Tutorial/Dr_Nutman_Tutorial.tscn" id="19_87r8x"]
 [ext_resource type="Texture2D" uid="uid://dpqtsje5t4v5f" path="res://Scenes/NPC/3D/Buffins/Paint_DeLere/Canvases/Sprites/Pictures/Disposable_Glove.png" id="19_gxs0q"]
+[ext_resource type="Animation" uid="uid://c2r82wgypsma7" path="res://Scenes/NPC/3D/Buffins/Base/Anims/Terrain/Global/Idle_Down.tres" id="19_vg5qr"]
+[ext_resource type="Animation" uid="uid://c06qprmasd7me" path="res://Scenes/NPC/3D/Buffins/Base/Anims/Terrain/Global/Idle_Left.tres" id="20_nasxj"]
 [ext_resource type="PackedScene" uid="uid://ccwfqfxxy14ws" path="res://Global_Scenes/Battle_System/SV_Battle/Party_Members/Buffin_Assistant_1/Buffin_Assistant_1.tscn" id="20_pveni"]
 [ext_resource type="Texture2D" uid="uid://dg22tot2xi4w0" path="res://Scenes/NPC/3D/Buffins/Paint_DeLere/Canvases/Sprites/Pictures/Brown_Popsicle.png" id="20_r2hei"]
 [ext_resource type="PackedScene" uid="uid://hxm6bm7ao1mr" path="res://Global_Scenes/Battle_System/SV_Battle/Enemies/Sick_Apprentice_1/Sick_Apprentice_1.tscn" id="21_bhy24"]
-[ext_resource type="PackedScene" uid="uid://bevsfn8gnppb1" path="res://Scenes/Maps/Map_Base/3D/Terrain_Area/Shape.tscn" id="22_o4ji8"]
+[ext_resource type="Animation" uid="uid://cydpgmbn7i2vu" path="res://Scenes/NPC/3D/Buffins/Base/Anims/Terrain/Global/Idle_Right.tres" id="21_diq4e"]
+[ext_resource type="PackedScene" uid="uid://bevsfn8gnppb1" path="res://Framework/Scenes/Maps/Map_Base/3D/Terrain_Area/Shape.tscn" id="22_o4ji8"]
+[ext_resource type="Animation" uid="uid://bssyrl3xc13bn" path="res://Scenes/NPC/3D/Buffins/Base/Anims/Terrain/Global/Idle_Up.tres" id="22_x0dbf"]
+[ext_resource type="Animation" uid="uid://buvt457rqwlr6" path="res://Scenes/NPC/3D/Buffins/Base/Anims/Terrain/Global/Jump_Down.tres" id="23_hnhqe"]
+[ext_resource type="Animation" uid="uid://cu1seg5wvw8i0" path="res://Scenes/NPC/3D/Buffins/Base/Anims/Terrain/Global/Jump_Left.tres" id="24_l4vbe"]
+[ext_resource type="Animation" uid="uid://dt4vhphvyd0cv" path="res://Scenes/NPC/3D/Buffins/Base/Anims/Terrain/Global/Jump_Right.tres" id="25_6hv5s"]
+[ext_resource type="Animation" uid="uid://va0j50nkov4s" path="res://Scenes/NPC/3D/Buffins/Base/Anims/Terrain/Global/Jump_Up.tres" id="26_cjhw5"]
+[ext_resource type="Animation" uid="uid://d5abmtj2qxst" path="res://Scenes/NPC/3D/Buffins/Paint_DeLere/Anims/Terrain/Global/Paint_Down.tres" id="27_6agsn"]
+[ext_resource type="Animation" uid="uid://b2mid6qtucjud" path="res://Scenes/NPC/3D/Buffins/Paint_DeLere/Anims/Terrain/Global/Paint_Left.tres" id="28_pu37u"]
 [ext_resource type="Shader" uid="uid://d3qm2ur0f8ihk" path="res://Global_Resources/Materials/2D/Shaders/Dream_Noise.gdshader" id="28_r2hei"]
+[ext_resource type="Animation" uid="uid://bdf0jv4sbl743" path="res://Scenes/NPC/3D/Buffins/Paint_DeLere/Anims/Terrain/Global/Paint_Right.tres" id="29_shlke"]
+[ext_resource type="Animation" uid="uid://cq6hc2gjsvvvk" path="res://Scenes/NPC/3D/Buffins/Paint_DeLere/Anims/Terrain/Global/Paint_Up.tres" id="30_bwn62"]
+[ext_resource type="Animation" uid="uid://kli80ykrfcng" path="res://Scenes/NPC/3D/Buffins/Base/Anims/Terrain/Global/Place_Down.tres" id="31_fytdc"]
+[ext_resource type="Animation" uid="uid://bwhtt1jgpx3kk" path="res://Scenes/NPC/3D/Buffins/Base/Anims/Terrain/Global/Place_Left.tres" id="32_x6alq"]
+[ext_resource type="Animation" uid="uid://drcsh4bjph1of" path="res://Scenes/NPC/3D/Buffins/Base/Anims/Terrain/Global/Place_Right.tres" id="33_crb86"]
+[ext_resource type="Animation" uid="uid://djhqfm3p2wguy" path="res://Scenes/NPC/3D/Buffins/Base/Anims/Terrain/Global/Place_Up.tres" id="34_esmhs"]
+[ext_resource type="Animation" uid="uid://dyskevcmmhbmn" path="res://Scenes/NPC/3D/Buffins/Base/Anims/Terrain/Global/Stop_Down.tres" id="35_exisi"]
+[ext_resource type="Animation" uid="uid://b6fxskot8cyoe" path="res://Scenes/NPC/3D/Buffins/Base/Anims/Terrain/Global/Stop_Left.tres" id="36_q7lv7"]
+[ext_resource type="Animation" uid="uid://dbrngh0iprqjh" path="res://Scenes/NPC/3D/Buffins/Base/Anims/Terrain/Global/Stop_Right.tres" id="37_0y864"]
+[ext_resource type="Animation" uid="uid://cpoyw68k66o0j" path="res://Scenes/NPC/3D/Buffins/Base/Anims/Terrain/Global/Stop_Up.tres" id="38_d35t4"]
+[ext_resource type="Animation" uid="uid://be5o1xwta3u25" path="res://Scenes/NPC/3D/Buffins/Base/Anims/Terrain/Global/Think_Down.tres" id="39_xco8m"]
+[ext_resource type="Animation" uid="uid://foulfqwhihcf" path="res://Scenes/NPC/3D/Buffins/Base/Anims/Terrain/Global/Think_Left.tres" id="40_5c26p"]
+[ext_resource type="Animation" uid="uid://b7gmnbla6gh0e" path="res://Scenes/NPC/3D/Buffins/Base/Anims/Terrain/Global/Think_Right.tres" id="41_w00nd"]
+[ext_resource type="Animation" uid="uid://dv6gmx03h1nwr" path="res://Scenes/NPC/3D/Buffins/Base/Anims/Terrain/Global/Think_Up.tres" id="42_b1ejf"]
+[ext_resource type="Animation" uid="uid://be43ovkiau5sm" path="res://Scenes/NPC/3D/Buffins/Base/Anims/Terrain/Global/Walk_Down.tres" id="43_tmo32"]
+[ext_resource type="Animation" uid="uid://dwrm2rlc0uwbg" path="res://Scenes/NPC/3D/Buffins/Base/Anims/Terrain/Global/Walk_Left.tres" id="44_c4exq"]
+[ext_resource type="Animation" uid="uid://bpi0fnk8dlh7a" path="res://Scenes/NPC/3D/Buffins/Base/Anims/Terrain/Global/Walk_Right.tres" id="45_j1ogf"]
+[ext_resource type="Animation" uid="uid://feervvpsafa4" path="res://Scenes/NPC/3D/Buffins/Base/Anims/Terrain/Global/Walk_Up.tres" id="46_0cqqq"]
+[ext_resource type="Animation" uid="uid://t1d0xnt5g3wr" path="res://Framework/Scenes/NPC/Anims/Global/Idle_Down.tres" id="47_loqe1"]
+[ext_resource type="Animation" uid="uid://dhkgoyij1x6rk" path="res://Framework/Scenes/NPC/Anims/Global/Idle_Left.tres" id="48_g83w1"]
+[ext_resource type="Animation" uid="uid://c3foxhmlybn11" path="res://Framework/Scenes/NPC/Anims/Global/Idle_Right.tres" id="49_d48dh"]
+[ext_resource type="Animation" uid="uid://c8q8sqkqu8wo6" path="res://Framework/Scenes/NPC/Anims/Global/Idle_Up.tres" id="50_p0j61"]
+[ext_resource type="Animation" uid="uid://c716o5kooeclg" path="res://Framework/Scenes/NPC/Anims/Global/Jump_Down.tres" id="51_t5vyn"]
+[ext_resource type="Animation" uid="uid://dyih225e0mbm8" path="res://Framework/Scenes/NPC/Anims/Global/Jump_Left.tres" id="52_xudq7"]
+[ext_resource type="Animation" uid="uid://dattgub6k7ygj" path="res://Framework/Scenes/NPC/Anims/Global/Jump_Right.tres" id="53_h3hnx"]
+[ext_resource type="Animation" uid="uid://br5eo01fklh5t" path="res://Framework/Scenes/NPC/Anims/Global/Jump_Up.tres" id="54_iea44"]
+[ext_resource type="Animation" uid="uid://bjnyjtr0lfrrr" path="res://Scenes/NPC/3D/Buffins/Paint_DeLere/Anims/Paint_Down.tres" id="55_8b6yx"]
+[ext_resource type="Animation" uid="uid://6878kggctcr8" path="res://Scenes/NPC/3D/Buffins/Paint_DeLere/Anims/Paint_Left.tres" id="56_yxmjv"]
+[ext_resource type="Animation" uid="uid://donf0263va3rq" path="res://Scenes/NPC/3D/Buffins/Paint_DeLere/Anims/Paint_Right.tres" id="57_0ndw3"]
+[ext_resource type="Animation" uid="uid://14ewo5x3l88h" path="res://Scenes/NPC/3D/Buffins/Paint_DeLere/Anims/Paint_Up.tres" id="58_kos26"]
+[ext_resource type="Animation" uid="uid://djxi175chvxuf" path="res://Framework/Scenes/NPC/Anims/Global/Place_Down.tres" id="59_61oug"]
+[ext_resource type="Animation" uid="uid://chmgigsjnpaj7" path="res://Framework/Scenes/NPC/Anims/Global/Place_Left.tres" id="60_bw3ek"]
+[ext_resource type="Animation" uid="uid://cnh6dch7b5fq3" path="res://Framework/Scenes/NPC/Anims/Global/Place_Right.tres" id="61_4rkpt"]
+[ext_resource type="Animation" uid="uid://dplcqkgcf5pvi" path="res://Framework/Scenes/NPC/Anims/Global/Place_Up.tres" id="62_rw4so"]
+[ext_resource type="Animation" uid="uid://dfgnsgwre056v" path="res://Framework/Scenes/NPC/Anims/Global/Stop_Down.tres" id="63_dh4jf"]
+[ext_resource type="Animation" uid="uid://ck8cgcf127td7" path="res://Framework/Scenes/NPC/Anims/Global/Stop_Left.tres" id="64_05moc"]
+[ext_resource type="Animation" uid="uid://ivo3wm1p84py" path="res://Framework/Scenes/NPC/Anims/Global/Stop_Right.tres" id="65_mpyix"]
+[ext_resource type="Animation" uid="uid://04burlym77ey" path="res://Framework/Scenes/NPC/Anims/Global/Stop_Up.tres" id="66_b4slr"]
+[ext_resource type="Animation" uid="uid://n0743bbyl04i" path="res://Framework/Scenes/NPC/Anims/Global/Think_Down.tres" id="67_wtle6"]
+[ext_resource type="Animation" uid="uid://dpjdr11cddxxd" path="res://Framework/Scenes/NPC/Anims/Global/Think_Left.tres" id="68_dcspx"]
+[ext_resource type="Animation" uid="uid://cuhqmlf0og7tp" path="res://Framework/Scenes/NPC/Anims/Global/Think_Right.tres" id="69_wg1em"]
+[ext_resource type="Animation" uid="uid://mobsppp7sp8j" path="res://Framework/Scenes/NPC/Anims/Global/Think_Up.tres" id="70_xph8m"]
+[ext_resource type="Animation" uid="uid://c4hlq813kivf5" path="res://Framework/Scenes/NPC/Anims/Global/Walk_Down.tres" id="71_65c3u"]
+[ext_resource type="Animation" uid="uid://dhq15wruxeukq" path="res://Framework/Scenes/NPC/Anims/Global/Walk_Left.tres" id="72_84ywu"]
+[ext_resource type="Animation" uid="uid://c8j4fhnj4dyqf" path="res://Framework/Scenes/NPC/Anims/Global/Walk_Right.tres" id="73_hnp75"]
+[ext_resource type="Animation" uid="uid://dm5smq1qltdtu" path="res://Framework/Scenes/NPC/Anims/Global/Walk_Up.tres" id="74_1o6c3"]
 
 [sub_resource type="Resource" id="Resource_j1mit"]
 script = ExtResource("4_sg2px")
@@ -44,17 +100,81 @@ albedo_color = Color(0, 0, 0, 1)
 material = SubResource("StandardMaterial3D_w2dn0")
 size = Vector2(50, 50)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b2txg"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nd48f"]
 albedo_texture = ExtResource("4_i7gc7")
 uv1_scale = Vector3(16, 10, 1)
 texture_filter = 0
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_w4o8u"]
-material = SubResource("StandardMaterial3D_b2txg")
+[sub_resource type="PlaneMesh" id="PlaneMesh_r12hj"]
+material = SubResource("StandardMaterial3D_nd48f")
 size = Vector2(16, 10)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_71n6v"]
 size = Vector3(16, 1, 10)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mvnwa"]
+_data = {
+&"Idle_Down": ExtResource("19_vg5qr"),
+&"Idle_Left": ExtResource("20_nasxj"),
+&"Idle_Right": ExtResource("21_diq4e"),
+&"Idle_Up": ExtResource("22_x0dbf"),
+&"Jump_Down": ExtResource("23_hnhqe"),
+&"Jump_Left": ExtResource("24_l4vbe"),
+&"Jump_Right": ExtResource("25_6hv5s"),
+&"Jump_Up": ExtResource("26_cjhw5"),
+&"Paint_Down": ExtResource("27_6agsn"),
+&"Paint_Left": ExtResource("28_pu37u"),
+&"Paint_Right": ExtResource("29_shlke"),
+&"Paint_Up": ExtResource("30_bwn62"),
+&"Place_Down": ExtResource("31_fytdc"),
+&"Place_Left": ExtResource("32_x6alq"),
+&"Place_Right": ExtResource("33_crb86"),
+&"Place_Up": ExtResource("34_esmhs"),
+&"Stop_Down": ExtResource("35_exisi"),
+&"Stop_Left": ExtResource("36_q7lv7"),
+&"Stop_Right": ExtResource("37_0y864"),
+&"Stop_Up": ExtResource("38_d35t4"),
+&"Think_Down": ExtResource("39_xco8m"),
+&"Think_Left": ExtResource("40_5c26p"),
+&"Think_Right": ExtResource("41_w00nd"),
+&"Think_Up": ExtResource("42_b1ejf"),
+&"Walk_Down": ExtResource("43_tmo32"),
+&"Walk_Left": ExtResource("44_c4exq"),
+&"Walk_Right": ExtResource("45_j1ogf"),
+&"Walk_Up": ExtResource("46_0cqqq")
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6alg2"]
+_data = {
+&"Idle_Down": ExtResource("47_loqe1"),
+&"Idle_Left": ExtResource("48_g83w1"),
+&"Idle_Right": ExtResource("49_d48dh"),
+&"Idle_Up": ExtResource("50_p0j61"),
+&"Jump_Down": ExtResource("51_t5vyn"),
+&"Jump_Left": ExtResource("52_xudq7"),
+&"Jump_Right": ExtResource("53_h3hnx"),
+&"Jump_Up": ExtResource("54_iea44"),
+&"Paint_Down": ExtResource("55_8b6yx"),
+&"Paint_Left": ExtResource("56_yxmjv"),
+&"Paint_Right": ExtResource("57_0ndw3"),
+&"Paint_Up": ExtResource("58_kos26"),
+&"Place_Down": ExtResource("59_61oug"),
+&"Place_Left": ExtResource("60_bw3ek"),
+&"Place_Right": ExtResource("61_4rkpt"),
+&"Place_Up": ExtResource("62_rw4so"),
+&"Stop_Down": ExtResource("63_dh4jf"),
+&"Stop_Left": ExtResource("64_05moc"),
+&"Stop_Right": ExtResource("65_mpyix"),
+&"Stop_Up": ExtResource("66_b4slr"),
+&"Think_Down": ExtResource("67_wtle6"),
+&"Think_Left": ExtResource("68_dcspx"),
+&"Think_Right": ExtResource("69_wg1em"),
+&"Think_Up": ExtResource("70_xph8m"),
+&"Walk_Down": ExtResource("71_65c3u"),
+&"Walk_Left": ExtResource("72_84ywu"),
+&"Walk_Right": ExtResource("73_hnp75"),
+&"Walk_Up": ExtResource("74_1o6c3")
+}
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_r2hei"]
 vertices = PackedVector3Array(20.4, 0.4, 16.4, 20.2, 0.4, 15.4, 16.4, 0.4, 15.4, 22.4, 0.4, 24.6, 22.2, 0.4, 16.4, 16.4, 0.4, 24.6, 26, 0.4, 16.4, 25.8, 0.4, 15.4, 23.6, 0.4, 15.4, 23.4, 0.4, 16.4, 27, 0.4, 24.6, 27.2, 0.4, 16.4, 31.6, 0.4, 15.4, 29.2, 0.4, 15.4, 29, 0.4, 16.4, 31.6, 0.4, 24.6)
@@ -75,71 +195,71 @@ shader_parameter/effect_color = Color(0.825, 0.7, 1, 1)
 shader_parameter/gamma = 7.0
 shader_parameter/vignette_radius = 1.0
 
-[node name="SP_Sick_Apprentice_1" instance=ExtResource("1_7apoy")]
+[node name="SP_Sick_Apprentice_1" unique_id=161088101 instance=ExtResource("1_7apoy")]
 script = ExtResource("2_snuwg")
 _e_BGM = SubResource("Resource_j1mit")
 
-[node name="Background" type="MeshInstance3D" parent="." index="0"]
+[node name="Background" type="MeshInstance3D" parent="." index="0" unique_id=883892136]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, -0.01, 20)
 mesh = SubResource("PlaneMesh_2o5y5")
 
-[node name="Floor_Tile_1" parent="Terrain/Below" index="0" instance=ExtResource("3_71n6v")]
+[node name="Floor_Tile_1" parent="Terrain/Below" parent_id_path=PackedInt32Array(1561908858) index="0" unique_id=1813249417 instance=ExtResource("3_71n6v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 20)
-mesh = SubResource("PlaneMesh_w4o8u")
+mesh = SubResource("PlaneMesh_r12hj")
 _e_size = Vector3(16, 1, 10)
 
-[node name="Wall_Up_1" type="Node3D" parent="Terrain/Same_As" index="0"]
+[node name="Wall_Up_1" type="Node3D" parent="Terrain/Same_As" parent_id_path=PackedInt32Array(1960974899) index="0" unique_id=177360768]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 14.5)
 
-[node name="Main_6" parent="Terrain/Same_As/Wall_Up_1" index="0" instance=ExtResource("5_m6if2")]
+[node name="Main_6" parent="Terrain/Same_As/Wall_Up_1" index="0" unique_id=1860989014 instance=ExtResource("5_m6if2")]
 _e_size = Vector3(14, 1, 1)
 
-[node name="Main_4" parent="Terrain/Same_As/Wall_Up_1" index="1" instance=ExtResource("6_t4yvn")]
+[node name="Main_4" parent="Terrain/Same_As/Wall_Up_1" index="1" unique_id=1869835153 instance=ExtResource("6_t4yvn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 0)
 
-[node name="Main_3" parent="Terrain/Same_As/Wall_Up_1" index="2" instance=ExtResource("7_gxs0q")]
+[node name="Main_3" parent="Terrain/Same_As/Wall_Up_1" index="2" unique_id=1761473206 instance=ExtResource("7_gxs0q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, 0)
 
-[node name="Main_8" parent="Terrain/Same_As/Wall_Up_1" index="3" instance=ExtResource("8_r2hei")]
+[node name="Main_8" parent="Terrain/Same_As/Wall_Up_1" index="3" unique_id=1640625903 instance=ExtResource("8_r2hei")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 _e_size = Vector3(14, 1, 1)
 
-[node name="Single_1" parent="Terrain/Same_As/Wall_Up_1" index="4" instance=ExtResource("9_v7o1y")]
+[node name="Single_1" parent="Terrain/Same_As/Wall_Up_1" index="4" unique_id=1258840672 instance=ExtResource("9_v7o1y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 _e_size = Vector3(14, 1, 1)
 
-[node name="Main_9" parent="Terrain/Same_As/Wall_Up_1" index="5" instance=ExtResource("10_sg2px")]
+[node name="Main_9" parent="Terrain/Same_As/Wall_Up_1" index="5" unique_id=1093956554 instance=ExtResource("10_sg2px")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 1, 0)
 
-[node name="Single_3" parent="Terrain/Same_As/Wall_Up_1" index="6" instance=ExtResource("11_j1mit")]
+[node name="Single_3" parent="Terrain/Same_As/Wall_Up_1" index="6" unique_id=1413542793 instance=ExtResource("11_j1mit")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 7.5, 2, 0)
 
-[node name="Single_7" parent="Terrain/Same_As/Wall_Up_1" index="7" instance=ExtResource("12_jnvsa")]
+[node name="Single_7" parent="Terrain/Same_As/Wall_Up_1" index="7" unique_id=1267154233 instance=ExtResource("12_jnvsa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 1, 0)
 
-[node name="Single_8" parent="Terrain/Same_As/Wall_Up_1" index="8" instance=ExtResource("11_j1mit")]
+[node name="Single_8" parent="Terrain/Same_As/Wall_Up_1" index="8" unique_id=1797254858 instance=ExtResource("11_j1mit")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 2, 0)
 
-[node name="Table_1" parent="Terrain/Same_As" index="1" instance=ExtResource("7_0502v")]
+[node name="Table_1" parent="Terrain/Same_As" parent_id_path=PackedInt32Array(1960974899) index="1" unique_id=650932652 instance=ExtResource("7_0502v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 15.5)
 
-[node name="Table_2" parent="Terrain/Same_As" index="2" instance=ExtResource("7_0502v")]
+[node name="Table_2" parent="Terrain/Same_As" parent_id_path=PackedInt32Array(1960974899) index="2" unique_id=472150595 instance=ExtResource("7_0502v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.5, 0, 15.5)
 
-[node name="Thermometer_Sign" parent="Terrain/Same_As" index="3" instance=ExtResource("7_8t18v")]
+[node name="Thermometer_Sign" parent="Terrain/Same_As" parent_id_path=PackedInt32Array(1960974899) index="3" unique_id=265277234 instance=ExtResource("7_8t18v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 1.5, 15.01)
 
-[node name="Tile_1" parent="Terrain/Areas" index="0" instance=ExtResource("22_o4ji8")]
+[node name="Tile_1" parent="Terrain/Areas" parent_id_path=PackedInt32Array(1301930970) index="0" unique_id=921092015 instance=ExtResource("22_o4ji8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 20)
 _e_audio_keys = Array[String](["Tile_1"])
 
 [node name="Collision" parent="Terrain/Areas/Tile_1" index="0"]
 shape = SubResource("BoxShape3D_71n6v")
 
-[node name="$Free_Camera" parent="Objects" index="0"]
+[node name="$Free_Camera" parent="Objects" parent_id_path=PackedInt32Array(1255743078) index="0" unique_id=1112581883]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 0, 18)
 
-[node name="Paint_DeLere" parent="Objects" index="2" instance=ExtResource("14_i8o08")]
+[node name="Paint_DeLere" parent="Objects" parent_id_path=PackedInt32Array(1255743078) index="2" unique_id=1748750374 instance=ExtResource("14_i8o08")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.5, 0, 22.5)
 
 [node name="Equipment" parent="Objects/Paint_DeLere" index="2"]
@@ -148,57 +268,63 @@ _e_shaded = true
 [node name="Movement" parent="Objects/Paint_DeLere" index="4"]
 _e_reset_dir = "Up"
 
-[node name="Canvas" parent="Objects" index="3" instance=ExtResource("8_nwdfh")]
+[node name="Anims" parent="Objects/Paint_DeLere/Movement/Terrain" index="1"]
+libraries/ = SubResource("AnimationLibrary_mvnwa")
+
+[node name="Anims" parent="Objects/Paint_DeLere" index="16"]
+libraries/ = SubResource("AnimationLibrary_6alg2")
+
+[node name="Canvas" parent="Objects" parent_id_path=PackedInt32Array(1255743078) index="3" unique_id=566997111 instance=ExtResource("8_nwdfh")]
 process_mode = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.5, 0, 22)
 
-[node name="Frame_Disposable_Glove" parent="Objects" index="4" instance=ExtResource("11_5fv4t")]
+[node name="Frame_Disposable_Glove" parent="Objects" parent_id_path=PackedInt32Array(1255743078) index="4" unique_id=1799087916 instance=ExtResource("11_5fv4t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.5, 1.335, 22)
 visible = false
 
 [node name="Picture" parent="Objects/Frame_Disposable_Glove" index="1"]
 texture = ExtResource("19_gxs0q")
 
-[node name="Frame_Brown_Popsicle" parent="Objects" index="5" instance=ExtResource("11_5fv4t")]
+[node name="Frame_Brown_Popsicle" parent="Objects" parent_id_path=PackedInt32Array(1255743078) index="5" unique_id=1319450095 instance=ExtResource("11_5fv4t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.5, 1.335, 22.01)
 visible = false
 
 [node name="Picture" parent="Objects/Frame_Brown_Popsicle" index="1"]
 texture = ExtResource("20_r2hei")
 
-[node name="Bag" parent="Objects" index="6" instance=ExtResource("15_t6wyw")]
+[node name="Bag" parent="Objects" parent_id_path=PackedInt32Array(1255743078) index="6" unique_id=557610558 instance=ExtResource("15_t6wyw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0.5, 16.125)
 
-[node name="Disposable_Glove" parent="Objects" index="7" instance=ExtResource("16_p2kgd")]
+[node name="Disposable_Glove" parent="Objects" parent_id_path=PackedInt32Array(1255743078) index="7" unique_id=284225741 instance=ExtResource("16_p2kgd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0.5, 15.5)
 
-[node name="Popsicle_Stick" parent="Objects" index="8" instance=ExtResource("17_h1obd")]
+[node name="Popsicle_Stick" parent="Objects" parent_id_path=PackedInt32Array(1255743078) index="8" unique_id=2035099094 instance=ExtResource("17_h1obd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 1, 15.5)
 
-[node name="Pill" parent="Objects" index="9" instance=ExtResource("18_rolmv")]
+[node name="Pill" parent="Objects" parent_id_path=PackedInt32Array(1255743078) index="9" unique_id=975142636 instance=ExtResource("18_rolmv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 1, 15.5)
 
-[node name="Dr_Nutman" parent="Objects/Party_Members/Instances" index="0" instance=ExtResource("19_87r8x")]
+[node name="Dr_Nutman" parent="Objects/Party_Members/Instances" parent_id_path=PackedInt32Array(731212791) index="0" unique_id=342435356 instance=ExtResource("19_87r8x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, 19)
 
-[node name="Buffin_Assistant_1" parent="Objects/Party_Members/Instances" index="1" instance=ExtResource("20_pveni")]
+[node name="Buffin_Assistant_1" parent="Objects/Party_Members/Instances" parent_id_path=PackedInt32Array(731212791) index="1" unique_id=407970482 instance=ExtResource("20_pveni")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 16.25)
 
-[node name="Sick_Apprentice_1" parent="Objects/Enemies/Instances" index="0" instance=ExtResource("21_bhy24")]
+[node name="Sick_Apprentice_1" parent="Objects/Enemies/Instances" parent_id_path=PackedInt32Array(366308920) index="0" unique_id=323712712 instance=ExtResource("21_bhy24")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 19)
 
-[node name="Main" parent="Nav_Regions" index="0"]
+[node name="Main" parent="Nav_Regions" parent_id_path=PackedInt32Array(416761695) index="0" unique_id=1868974869]
 navigation_mesh = SubResource("NavigationMesh_r2hei")
 
-[node name="Flee_Pos" parent="." index="4"]
+[node name="Flee_Pos" parent="." index="4" unique_id=203564291]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 19)
 
-[node name="Sun" type="DirectionalLight3D" parent="." index="9"]
+[node name="Sun" type="DirectionalLight3D" parent="." index="9" unique_id=451364116]
 transform = Transform3D(0.707107, 0.5, -0.5, 0, 0.707107, 0.707107, 0.707107, -0.5, 0.5, 0, 0, 0)
 shadow_enabled = true
 shadow_opacity = 0.5
 
-[node name="Dream_Noise" type="ColorRect" parent="Canvas" index="0"]
+[node name="Dream_Noise" type="ColorRect" parent="Canvas" parent_id_path=PackedInt32Array(202683413) index="0" unique_id=1267756841]
 material = SubResource("ShaderMaterial_r2hei")
 anchors_preset = 15
 anchor_right = 1.0

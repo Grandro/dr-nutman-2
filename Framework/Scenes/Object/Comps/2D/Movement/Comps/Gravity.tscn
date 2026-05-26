@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://k6yc8nn2jeg2"]
+
+[ext_resource type="Script" uid="uid://52622srxwvss" path="res://Framework/Scenes/Object/Comps/2D/Movement/Comps/Scripts/Gravity.gd" id="1_8dhrh"]
+
+[node name="Gravity" type="Node" unique_id=2010634548 groups=["Comp"]]
+script = ExtResource("1_8dhrh")

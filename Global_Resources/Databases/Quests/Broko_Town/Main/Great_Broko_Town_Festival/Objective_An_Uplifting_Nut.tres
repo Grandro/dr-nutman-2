@@ -1,7 +1,7 @@
-[gd_resource type="Resource" script_class="ObjectiveDataSubQuest" load_steps=3 format=3 uid="uid://by7s63vdxm3oy"]
+[gd_resource type="Resource" script_class="ObjectiveDataSubQuest" format=3 uid="uid://by7s63vdxm3oy"]
 
 [ext_resource type="Resource" uid="uid://2f1nifdhykn7" path="res://Global_Resources/Databases/Quests/Broko_Town/Main/An_Uplifting_Nut/An_Uplifting_Nut.tres" id="1_tk4us"]
-[ext_resource type="Script" uid="uid://gxo7txpgnyj8" path="res://Global_Resources/Databases/Quests/Objective_Data_Sub_Quest.gd" id="2_fyep3"]
+[ext_resource type="Script" uid="uid://gxo7txpgnyj8" path="res://Framework/Global_Resources/Databases/Quests/Objective_Data_Sub_Quest.gd" id="2_fyep3"]
 
 [resource]
 script = ExtResource("2_fyep3")

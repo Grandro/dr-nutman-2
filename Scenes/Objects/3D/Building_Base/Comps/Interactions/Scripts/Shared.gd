@@ -1,4 +1,4 @@
-extends CompInteractionsShared
+extends FWCompInteractionsShared
 class_name ObjectBuildingBaseCompInteractionsShared
 
 var _a_destinations: Array = [] # (Array, Array, String)

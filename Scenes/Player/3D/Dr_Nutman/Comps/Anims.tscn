@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://bbqvekggvm0a0"]
+
+[ext_resource type="PackedScene" uid="uid://b1q143fixhaj5" path="res://Framework/Scenes/Object/Comps/Anims.tscn" id="1_5bil0"]
+[ext_resource type="Animation" uid="uid://x1upswcqqtab" path="res://Scenes/Player/Anims/Dr_Nutman/Global/Celebrate_Down.res" id="2_6fxni"]
+[ext_resource type="Animation" uid="uid://d4husa4a8hcr5" path="res://Scenes/Player/Anims/Dr_Nutman/Global/Fall_Down.res" id="3_50nii"]
+[ext_resource type="Animation" uid="uid://0uc4c8hb1hnw" path="res://Scenes/Player/Anims/Dr_Nutman/Global/Fall_Left.res" id="4_5caq0"]
+[ext_resource type="Animation" uid="uid://dvqwyaqlfjdjk" path="res://Scenes/Player/Anims/Dr_Nutman/Global/Fall_Right.res" id="5_68apm"]
+[ext_resource type="Animation" uid="uid://dn66hjjce7ogu" path="res://Scenes/Player/Anims/Dr_Nutman/Global/Fall_Up.res" id="6_ruw7j"]
+[ext_resource type="Animation" uid="uid://bdq4xovwpobw2" path="res://Scenes/Player/Anims/Dr_Nutman/Global/Idle_Down.tres" id="7_fop4a"]
+[ext_resource type="Animation" uid="uid://b6ol47kywjckh" path="res://Scenes/Player/Anims/Dr_Nutman/Global/Idle_Left.tres" id="8_pjtil"]
+[ext_resource type="Animation" uid="uid://bcpc8iiimbw10" path="res://Scenes/Player/Anims/Dr_Nutman/Global/Idle_Right.tres" id="9_ndjwe"]
+[ext_resource type="Animation" uid="uid://bcjdgi6whcnfr" path="res://Scenes/Player/Anims/Dr_Nutman/Global/Idle_Up.tres" id="10_eoj5k"]
+[ext_resource type="Animation" uid="uid://cb46f0a77v0of" path="res://Scenes/Player/Anims/Dr_Nutman/Global/Jump_Down.tres" id="11_ncfi4"]
+[ext_resource type="Animation" uid="uid://trc38o110mmp" path="res://Scenes/Player/Anims/Dr_Nutman/Global/Jump_Left.tres" id="12_wdr57"]
+[ext_resource type="Animation" uid="uid://bl14motuk2g5v" path="res://Scenes/Player/Anims/Dr_Nutman/Global/Jump_Right.tres" id="13_q5fws"]
+[ext_resource type="Animation" uid="uid://ep7wu0q7h535" path="res://Scenes/Player/Anims/Dr_Nutman/Global/Jump_Up.tres" id="14_wmbi2"]
+[ext_resource type="Animation" uid="uid://kkb3vb7hflwj" path="res://Scenes/Player/Anims/Dr_Nutman/Global/Place_Down.tres" id="15_g6jr5"]
+[ext_resource type="Animation" uid="uid://ma7jw61nybsx" path="res://Scenes/Player/Anims/Dr_Nutman/Global/Place_Left.tres" id="16_oticm"]
+[ext_resource type="Animation" uid="uid://dor1teyqar5jp" path="res://Scenes/Player/Anims/Dr_Nutman/Global/Place_Right.tres" id="17_ao4fe"]
+[ext_resource type="Animation" uid="uid://bv3dje5434hxp" path="res://Scenes/Player/Anims/Dr_Nutman/Global/Place_Up.tres" id="18_vlxe1"]
+[ext_resource type="Animation" uid="uid://8v05kdos8akq" path="res://Scenes/Player/Anims/Dr_Nutman/Global/Run_Down.tres" id="19_0yk3s"]
+[ext_resource type="Animation" uid="uid://y8j1mb530twm" path="res://Scenes/Player/Anims/Dr_Nutman/Global/Run_Left.tres" id="20_nkq3j"]
+[ext_resource type="Animation" uid="uid://rr1usa2ai7a4" path="res://Scenes/Player/Anims/Dr_Nutman/Global/Run_Right.tres" id="21_pmkxm"]
+[ext_resource type="Animation" uid="uid://djnfml2kh3poh" path="res://Scenes/Player/Anims/Dr_Nutman/Global/Run_Up.tres" id="22_h5y86"]
+[ext_resource type="Animation" uid="uid://cjqinb7o1dcle" path="res://Scenes/Player/Anims/Dr_Nutman/Global/Stop_Down.tres" id="23_hqvut"]
+[ext_resource type="Animation" uid="uid://05ywykl2yk48" path="res://Scenes/Player/Anims/Dr_Nutman/Global/Stop_Left.tres" id="24_oa364"]
+[ext_resource type="Animation" uid="uid://wobsvaa3i6a4" path="res://Scenes/Player/Anims/Dr_Nutman/Global/Stop_Right.tres" id="25_ojnyy"]
+[ext_resource type="Animation" uid="uid://d08rf1tdjfpds" path="res://Scenes/Player/Anims/Dr_Nutman/Global/Stop_Up.tres" id="26_8k1m1"]
+[ext_resource type="Animation" uid="uid://bpyhc0jtfp5ol" path="res://Scenes/Player/Anims/Dr_Nutman/Global/Walk_Down.tres" id="27_kdkue"]
+[ext_resource type="Animation" uid="uid://cj2cd1nkyvt4q" path="res://Scenes/Player/Anims/Dr_Nutman/Global/Walk_Left.tres" id="28_mcg1o"]
+[ext_resource type="Animation" uid="uid://div7e3lxafeuq" path="res://Scenes/Player/Anims/Dr_Nutman/Global/Walk_Right.tres" id="29_5ix5p"]
+[ext_resource type="Animation" uid="uid://d0h85bl0atfer" path="res://Scenes/Player/Anims/Dr_Nutman/Global/Walk_Up.tres" id="30_7hvj0"]
+[ext_resource type="Animation" uid="uid://y78wu4air3l0" path="res://Global_Scenes/Battle_System/SV_Battle/Party_Members/Dr_Nutman/Anims/Idle_Down.tres" id="31_bgsql"]
+[ext_resource type="Animation" uid="uid://q4lbrc883r6c" path="res://Global_Scenes/Battle_System/SV_Battle/Party_Members/Dr_Nutman/Anims/Idle_Left.tres" id="32_68apm"]
+[ext_resource type="Animation" uid="uid://ef5ueaowv2p1" path="res://Global_Scenes/Battle_System/SV_Battle/Party_Members/Dr_Nutman/Anims/Idle_Right.tres" id="33_ruw7j"]
+[ext_resource type="Animation" uid="uid://diq7niafj24ec" path="res://Global_Scenes/Battle_System/SV_Battle/Party_Members/Dr_Nutman/Anims/Idle_Up.tres" id="34_fop4a"]
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qn8ra"]
+_data = {
+&"Celebrate_Down": ExtResource("2_6fxni"),
+&"Fall_Down": ExtResource("3_50nii"),
+&"Fall_Left": ExtResource("4_5caq0"),
+&"Fall_Right": ExtResource("5_68apm"),
+&"Fall_Up": ExtResource("6_ruw7j"),
+&"Idle_Down": ExtResource("7_fop4a"),
+&"Idle_Left": ExtResource("8_pjtil"),
+&"Idle_Right": ExtResource("9_ndjwe"),
+&"Idle_Up": ExtResource("10_eoj5k"),
+&"Jump_Down": ExtResource("11_ncfi4"),
+&"Jump_Left": ExtResource("12_wdr57"),
+&"Jump_Right": ExtResource("13_q5fws"),
+&"Jump_Up": ExtResource("14_wmbi2"),
+&"Place_Down": ExtResource("15_g6jr5"),
+&"Place_Left": ExtResource("16_oticm"),
+&"Place_Right": ExtResource("17_ao4fe"),
+&"Place_Up": ExtResource("18_vlxe1"),
+&"Run_Down": ExtResource("19_0yk3s"),
+&"Run_Left": ExtResource("20_nkq3j"),
+&"Run_Right": ExtResource("21_pmkxm"),
+&"Run_Up": ExtResource("22_h5y86"),
+&"Stop_Down": ExtResource("23_hqvut"),
+&"Stop_Left": ExtResource("24_oa364"),
+&"Stop_Right": ExtResource("25_ojnyy"),
+&"Stop_Up": ExtResource("26_8k1m1"),
+&"Walk_Down": ExtResource("27_kdkue"),
+&"Walk_Left": ExtResource("28_mcg1o"),
+&"Walk_Right": ExtResource("29_5ix5p"),
+&"Walk_Up": ExtResource("30_7hvj0")
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v6u7d"]
+_data = {
+&"Idle_Down": ExtResource("31_bgsql"),
+&"Idle_Left": ExtResource("32_68apm"),
+&"Idle_Right": ExtResource("33_ruw7j"),
+&"Idle_Up": ExtResource("34_fop4a")
+}
+
+[node name="Anims" unique_id=1923294124 instance=ExtResource("1_5bil0")]
+libraries/ = SubResource("AnimationLibrary_qn8ra")
+libraries/SV = SubResource("AnimationLibrary_v6u7d")

@@ -1,12 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://kxnbe6kfqppa"]
+[gd_scene format=3 uid="uid://kxnbe6kfqppa"]
 
 [ext_resource type="PackedScene" uid="uid://bvmfdxernfsth" path="res://Scenes/NutOS/Content/Start_Menu/Apps/App.tscn" id="1"]
 [ext_resource type="Texture2D" uid="uid://bpa4wwr35yuav" path="res://Scenes/NutOS/Content/Sprites/Icons/Settings.png" id="2_veo0u"]
 
-[node name="Settings" instance=ExtResource("1")]
+[node name="Settings" unique_id=1737086404 instance=ExtResource("1")]
 
-[node name="Texture" parent="HBox" index="1"]
+[node name="Texture" parent="HBox" parent_id_path=PackedInt32Array(644263117) index="1" unique_id=1300603091]
 texture = ExtResource("2_veo0u")
 
-[node name="Name" parent="HBox" index="2"]
+[node name="Name" parent="HBox" parent_id_path=PackedInt32Array(644263117) index="2" unique_id=790501883]
 text = "NUTOS_APP_SETTINGS"

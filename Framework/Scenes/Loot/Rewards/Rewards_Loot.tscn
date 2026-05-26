@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://c5bj8iy5uuq2c"]
+
+[ext_resource type="Script" uid="uid://j84ugo4efpdx" path="res://Framework/Scenes/Loot/Rewards/Scripts/Rewards_Loot.gd" id="1_jh3ka"]
+
+[node name="Rewards_Loot" type="HFlowContainer" unique_id=212767388]
+light_mask = 8
+visibility_layer = 8
+size_flags_horizontal = 4
+size_flags_vertical = 3
+script = ExtResource("1_jh3ka")

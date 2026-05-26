@@ -1,13 +1,15 @@
-[gd_resource type="Resource" script_class="StatsData" load_steps=2 format=3 uid="uid://bjqaei8wi7jvp"]
+[gd_resource type="Resource" script_class="FWStatsData" format=3 uid="uid://bjqaei8wi7jvp"]
 
-[ext_resource type="Script" uid="uid://dyjxv8meogqqy" path="res://Global_Resources/Databases/Stats_Data.gd" id="1"]
+[ext_resource type="Script" uid="uid://dyjxv8meogqqy" path="res://Framework/Global_Resources/Databases/Stats_Data.gd" id="1"]
 
 [resource]
 script = ExtResource("1")
-_e_HP = 2
-_e_SP = 0
-_e_ATK = 0
-_e_MAG = 0
-_e_DEF = 0
-_e_SPEED = 0
-_e_LUCK = 0
+_e_stats = Dictionary[StringName, int]({
+&"ATK": 0,
+&"DEF": 0,
+&"HP": 2,
+&"LUCK": 0,
+&"MAG": 0,
+&"SP": 0,
+&"SPEED": 0
+})

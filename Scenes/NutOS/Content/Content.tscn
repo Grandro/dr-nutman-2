@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://erjiogqrmk5j"]
+[gd_scene format=3 uid="uid://erjiogqrmk5j"]
 
 [ext_resource type="Theme" uid="uid://cphubdfp0kld2" path="res://Global_Resources/Themes/NutOS/NutOS.tres" id="1_2152j"]
 [ext_resource type="Texture2D" uid="uid://b3oyh23o28g7h" path="res://Scenes/NutOS/Content/Desktop/Sprites/Nut_1.png" id="3_10lag"]
@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dvb15d6yvwwni" path="res://Scenes/NutOS/Content/Start_Menu/Start_Menu.tscn" id="6_wfgjw"]
 [ext_resource type="Script" uid="uid://bldvyr72av36i" path="res://Scenes/NutOS/Content/Scripts/Content.gd" id="18"]
 
-[node name="Content" type="Control"]
+[node name="Content" type="Control" unique_id=531936707]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 3
@@ -17,7 +17,7 @@ offset_bottom = 720.0
 theme = ExtResource("1_2152j")
 script = ExtResource("18")
 
-[node name="Background" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="." unique_id=920655134]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 0
@@ -27,13 +27,13 @@ texture = ExtResource("3_10lag")
 expand_mode = 1
 stretch_mode = 6
 
-[node name="Desktop" parent="." instance=ExtResource("5")]
+[node name="Desktop" parent="." unique_id=1734281307 instance=ExtResource("5")]
 layout_mode = 1
 offset_bottom = 681.0
 
-[node name="Canvas" type="CanvasLayer" parent="."]
+[node name="Canvas" type="CanvasLayer" parent="." unique_id=466555375]
 
-[node name="Start_Menu" parent="Canvas" instance=ExtResource("6_wfgjw")]
+[node name="Start_Menu" parent="Canvas" unique_id=1124085369 instance=ExtResource("6_wfgjw")]
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -42,5 +42,5 @@ offset_bottom = -40.0
 grow_vertical = 0
 theme = ExtResource("1_2152j")
 
-[node name="Taskbar" parent="Canvas" instance=ExtResource("5_ea2pe")]
+[node name="Taskbar" parent="Canvas" unique_id=710237943 instance=ExtResource("5_ea2pe")]
 theme = ExtResource("1_2152j")

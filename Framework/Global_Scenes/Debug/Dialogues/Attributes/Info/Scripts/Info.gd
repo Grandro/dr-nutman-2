@@ -1,0 +1,2 @@
+extends FWDebugDialoguesAttributeBase
+class_name FWDebugDialoguesAttributeInfo

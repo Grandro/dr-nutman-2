@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CompData" format=3 uid="uid://dshw602xsgnn0"]
+
+[ext_resource type="PackedScene" uid="uid://cj1dv7xtd0pi" path="res://Scenes/Player/3D/Dr_Nutman/Comps/Equipment.tscn" id="1_0kgni"]
+[ext_resource type="Script" uid="uid://dk1y7876kg1po" path="res://Framework/Scenes/Player/Scripts/Comp_Data.gd" id="2_3l8mc"]
+
+[resource]
+script = ExtResource("2_3l8mc")
+_e_key = &"Equipment"
+_e_scene = ExtResource("1_0kgni")
+_e_group = &"Main"
+metadata/_custom_type_script = "uid://dk1y7876kg1po"

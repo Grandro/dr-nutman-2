@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bb6gq1bq4kjwq"]
+[gd_scene format=3 uid="uid://bb6gq1bq4kjwq"]
 
 [ext_resource type="PackedScene" uid="uid://dmh0h801kn6ye" path="res://Scenes/NutOS/Content/Desktop/Apps/App.tscn" id="1_80raf"]
 [ext_resource type="Texture2D" uid="uid://03g345bov4bh" path="res://Global_Resources/Sprites/Mini_Busts/Dr_Nutman/Default.png" id="2_02fp1"]
@@ -7,7 +7,7 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e3fky"]
 bg_color = Color(0.0980392, 0.0980392, 0.0980392, 1)
 
-[node name="Settings" instance=ExtResource("1_80raf")]
+[node name="Settings" unique_id=1434837932 instance=ExtResource("1_80raf")]
 position = Vector2i(380, 80)
 size = Vector2i(520, 560)
 min_size = Vector2i(520, 560)
@@ -16,7 +16,7 @@ content_scale_mode = 0
 content_scale_aspect = 0
 script = ExtResource("5")
 
-[node name="Background" type="Panel" parent="." index="0"]
+[node name="Background" type="Panel" parent="." index="0" unique_id=1077608971]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -24,7 +24,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_e3fky")
 
-[node name="Contents" type="Control" parent="." index="1"]
+[node name="Contents" type="Control" parent="." index="1" unique_id=662218871]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -32,7 +32,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Main" type="MarginContainer" parent="Contents" index="0"]
+[node name="Main" type="MarginContainer" parent="Contents" index="0" unique_id=113797759]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 1
@@ -44,42 +44,42 @@ grow_vertical = 2
 theme_override_constants/margin_top = 24
 theme_override_constants/margin_bottom = 4
 
-[node name="VBox" type="VBoxContainer" parent="Contents/Main" index="0"]
+[node name="VBox" type="VBoxContainer" parent="Contents/Main" index="0" unique_id=531055654]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
 theme_override_constants/separation = 24
 
-[node name="Profile" type="CenterContainer" parent="Contents/Main/VBox" index="0"]
+[node name="Profile" type="CenterContainer" parent="Contents/Main/VBox" index="0" unique_id=1590782426]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
 
-[node name="HBox" type="HBoxContainer" parent="Contents/Main/VBox/Profile" index="0"]
+[node name="HBox" type="HBoxContainer" parent="Contents/Main/VBox/Profile" index="0" unique_id=76284624]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
 
-[node name="Image" type="TextureRect" parent="Contents/Main/VBox/Profile/HBox" index="0"]
+[node name="Image" type="TextureRect" parent="Contents/Main/VBox/Profile/HBox" index="0" unique_id=618722994]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
 texture = ExtResource("2_02fp1")
 
-[node name="Desc" type="Label" parent="Contents/Main/VBox/Profile/HBox" index="1"]
+[node name="Desc" type="Label" parent="Contents/Main/VBox/Profile/HBox" index="1" unique_id=55112269]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
 text = "NAME_DR_NUTMAN"
 vertical_alignment = 1
 
-[node name="Options" type="ScrollContainer" parent="Contents/Main/VBox" index="1"]
+[node name="Options" type="ScrollContainer" parent="Contents/Main/VBox" index="1" unique_id=1681454399]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="VBox" type="VBoxContainer" parent="Contents/Main/VBox/Options" index="0"]
+[node name="VBox" type="VBoxContainer" parent="Contents/Main/VBox/Options" index="0" unique_id=866650981]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
@@ -87,7 +87,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 8
 
-[node name="Menu" type="MarginContainer" parent="Contents" index="1"]
+[node name="Menu" type="MarginContainer" parent="Contents" index="1" unique_id=1008785383]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 1

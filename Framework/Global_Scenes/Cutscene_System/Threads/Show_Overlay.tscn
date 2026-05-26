@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://b5wgsqgj5l17i"]
+
+[ext_resource type="PackedScene" uid="uid://lsv022k5m6ud" path="res://Framework/Global_Scenes/Cutscene_System/Threads/Thread_Base.tscn" id="1"]
+[ext_resource type="Script" uid="uid://dd1ka5am7sja0" path="res://Framework/Global_Scenes/Cutscene_System/Threads/Scripts/Show_Overlay.gd" id="2"]
+
+[node name="Show_Overlay" unique_id=1362440187 instance=ExtResource("1")]
+script = ExtResource("2")

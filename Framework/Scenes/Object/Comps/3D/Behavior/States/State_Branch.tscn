@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://b3mngk4bgn2ks"]
+
+[ext_resource type="Script" uid="uid://digkgd7l4gr84" path="res://Framework/Scenes/Object/Comps/3D/Behavior/States/Scripts/State_Branch.gd" id="1_d72io"]
+
+[node name="Branch" type="Node" unique_id=2014780521]
+script = ExtResource("1_d72io")

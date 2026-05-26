@@ -93,7 +93,7 @@ func _on_Scene_Manager_scene_changed(p_curr_scene) -> void:
 	if !Scene_Manager.is_curr_scene_map():
 		return
 	
-	var player = Global.get_player()
+	var player = Global.get_object(&"Player")
 	player.died.connect(_on_Party_Member_died.bind(player))
 	battle_started.connect(player._on_battle_started)
 	battle_ended.connect(player._on_battle_ended)

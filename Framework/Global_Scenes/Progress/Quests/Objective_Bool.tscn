@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cccu1hepu8gkm"]
+
+[ext_resource type="PackedScene" uid="uid://4g75hu8xnu3b" path="res://Framework/Global_Scenes/Progress/Quests/Objective_Base.tscn" id="1_q0c31"]
+[ext_resource type="Script" uid="uid://dgn4psgiykwpr" path="res://Framework/Global_Scenes/Progress/Quests/Scripts/Objective_Bool.gd" id="2_rj0ds"]
+
+[node name="Objective_Bool" unique_id=1979566744 instance=ExtResource("1_q0c31")]
+script = ExtResource("2_rj0ds")

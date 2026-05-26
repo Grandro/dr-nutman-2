@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bn0nrurab5o0a"]
+
+[ext_resource type="PackedScene" uid="uid://bhtf075na7yrj" path="res://Framework/Global_Scenes/Debug/Dialogues/Attributes/Attribute_Base.tscn" id="1"]
+[ext_resource type="Script" uid="uid://benqqild4kaht" path="res://Framework/Global_Scenes/Debug/Dialogues/Attributes/Info/Scripts/Info.gd" id="2"]
+[ext_resource type="PackedScene" uid="uid://cttubfh75d6oq" path="res://Framework/Global_Scenes/Debug/Dialogues/Attributes/Tabs/General/Tab_General.tscn" id="3"]
+
+[node name="Info" unique_id=1530759955 instance=ExtResource("1")]
+script = ExtResource("2")
+
+[node name="General" parent="." index="2" unique_id=1771885872 instance=ExtResource("3")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="Vox" parent="." index="3" unique_id=223614744]
+metadata/_tab_index = 2

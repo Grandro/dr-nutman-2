@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cy0wo3ybbwqo8"]
+
+[ext_resource type="Script" uid="uid://btodci6u25oxg" path="res://Framework/Scenes/Object/Comps/2D/Movement/Comps/Scripts/Jump.gd" id="1_ilab5"]
+
+[node name="Jump" type="Node" unique_id=2010634548 groups=["Comp", "Movement"]]
+script = ExtResource("1_ilab5")

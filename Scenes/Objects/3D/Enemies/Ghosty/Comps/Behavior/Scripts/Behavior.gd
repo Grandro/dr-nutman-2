@@ -19,16 +19,16 @@ func _process(p_delta: float) -> void:
 	if _a_check_vision:
 		var can_see: bool = _a_target.comph().call_comp("Vision", &"can_see_instance", [_a_entity])
 		if can_see:
-			_set_state(&"Look_At")
+			set_state(&"Look_At")
 		else:
 			if _a_state != &"Chase":
-				_set_state(&"Chase")
+				set_state(&"Chase")
 
 func _start_invisible_CD() -> void:
 	var invisible_CD: float = randf_range(_e_visibility_CD_min, _e_visibility_CD_max)
 	_a_Invisible_CD.start(invisible_CD)
 
-func _set_state(p_state: StringName, p_process: bool = true) -> void:
+func set_state(p_state: StringName, p_process: bool = true) -> void:
 	super(p_state, p_process)
 	match p_state:
 		&"In_Battle":
@@ -55,19 +55,19 @@ func load_data(p_data: Dictionary) -> void:
 func load_data_init() -> void:
 	await _a_entity_comph.comps_registered
 	
-	_set_state(&"Rndm")
+	set_state(&"Rndm")
 
-func _on_Target_Range_body_entered(_p_body) -> void:
+func _on_Target_Range_body_entered(_p_body: Node3D) -> void:
 	_a_check_vision = true
 	_a_target.comph().call_comp("Vision", &"enable")
 
-func _on_Target_Range_body_exited(_p_body) -> void:
+func _on_Target_Range_body_exited(_p_body: Node3D) -> void:
 	_a_check_vision = false
 	_a_target.comph().call_comp("Vision", &"disable")
 	_set_queued_state(&"Rndm")
 
 func _on_Invisible_CD_timeout() -> void:
-	var display_comp: CompDisplay3D = _a_entity_comph.get_comp("Display")
+	var display_comp: FWCompDisplay3D = _a_entity_comph.get_comp("Display")
 	var rndm: int = randi() % 2
 	var a: float = 0.0
 	if rndm == 1:

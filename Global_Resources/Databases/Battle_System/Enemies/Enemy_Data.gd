@@ -5,7 +5,7 @@ const _a_NAME_LOC_ID: String = "ENEMY_%s_NAME"
 const _a_DESC_LOC_ID: String = "ENEMY_%s_DESC"
 
 @export var _e_key: StringName = &""
-@export var _e_stats: StatsData = null
+@export var _e_stats: EnemyStatsData = null
 @export var _e_actions: Dictionary = {&"Commands": [], &"Specials": []}
 
 func get_name_() -> String:
@@ -20,7 +20,7 @@ func get_desc() -> String:
 	
 	return desc
 
-func get_stats() -> StatsData:
+func get_stats() -> EnemyStatsData:
 	return _e_stats
 
 func get_actions() -> Dictionary:

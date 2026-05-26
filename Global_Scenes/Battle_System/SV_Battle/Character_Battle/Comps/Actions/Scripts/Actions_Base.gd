@@ -12,8 +12,8 @@ signal hit()
 var _a_entity: SVCharacter = null
 var _a_args: Dictionary[StringName, ActionData] = {}
 
-func init(p_entity: SVCharacter) -> void:
-	_a_entity = p_entity
+func init(p_entities: Array[Node]) -> void:
+	_a_entity = p_entities[-1]
 
 func process(p_scene: PackedScene) -> void:
 	var instance: SVActionBase = _instantiate_action(p_scene)

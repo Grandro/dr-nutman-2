@@ -1,64 +1,65 @@
-[gd_scene load_steps=18 format=3 uid="uid://6awbb064kh7p"]
+[gd_scene format=3 uid="uid://6awbb064kh7p"]
 
 [ext_resource type="Script" uid="uid://jr0suxnll6nt" path="res://Global_Scenes/Battle_System/SV_Battle/Character_Battle/Scripts/Character_Battle.gd" id="1_wucqe"]
-[ext_resource type="PackedScene" uid="uid://bblmb8yfchyxr" path="res://Scenes/Object/Comps/3D/Display.tscn" id="2_c7url"]
-[ext_resource type="PackedScene" uid="uid://dsp0njc065uev" path="res://Scenes/Object/Comps/3D/Collision_Shape.tscn" id="3_1go1j"]
-[ext_resource type="PackedScene" uid="uid://bt6c4euae5p4h" path="res://Scenes/Object/Comps/3D/Area.tscn" id="4_dhbqu"]
+[ext_resource type="PackedScene" uid="uid://bblmb8yfchyxr" path="res://Framework/Scenes/Object/Comps/3D/Display.tscn" id="2_c7url"]
+[ext_resource type="PackedScene" uid="uid://dsp0njc065uev" path="res://Framework/Scenes/Object/Comps/3D/Collision_Shape.tscn" id="3_1go1j"]
+[ext_resource type="PackedScene" uid="uid://bt6c4euae5p4h" path="res://Framework/Scenes/Object/Comps/3D/Area.tscn" id="4_dhbqu"]
 [ext_resource type="PackedScene" uid="uid://g11o4ut16cvo" path="res://Global_Scenes/Battle_System/SV_Battle/Character_Battle/Comps/Movement/Movement_Character.tscn" id="4_jkodb"]
-[ext_resource type="PackedScene" uid="uid://cfdwl620axohy" path="res://Scenes/Object/Comps/3D/Audio.tscn" id="4_q2d3w"]
-[ext_resource type="PackedScene" uid="uid://birjyb23mdl01" path="res://Scenes/Object/Comps/3D/Movement/Comps/Terrain/Terrain_Base.tscn" id="5_08j4g"]
-[ext_resource type="PackedScene" uid="uid://boh1rwcj5rgwf" path="res://Scenes/Object/Comps/States.tscn" id="5_nhvs1"]
-[ext_resource type="PackedScene" uid="uid://ks3max245ufk" path="res://Scenes/Object/Comps/3D/Movement/Comps/Nav_Agent.tscn" id="5_t4dp7"]
-[ext_resource type="PackedScene" uid="uid://cekkcfeurbewx" path="res://Scenes/Object/Comps/3D/Movement/Comps/States.tscn" id="6_08j4g"]
+[ext_resource type="PackedScene" uid="uid://cfdwl620axohy" path="res://Framework/Scenes/Object/Comps/3D/Audio.tscn" id="4_q2d3w"]
+[ext_resource type="PackedScene" uid="uid://birjyb23mdl01" path="res://Framework/Scenes/Object/Comps/3D/Movement/Comps/Terrain/Terrain_Base.tscn" id="5_08j4g"]
+[ext_resource type="PackedScene" uid="uid://boh1rwcj5rgwf" path="res://Framework/Scenes/Object/Comps/States.tscn" id="5_nhvs1"]
+[ext_resource type="PackedScene" uid="uid://ks3max245ufk" path="res://Framework/Scenes/Object/Comps/3D/Movement/Comps/Nav_Agent.tscn" id="5_t4dp7"]
+[ext_resource type="PackedScene" uid="uid://cekkcfeurbewx" path="res://Framework/Scenes/Object/Comps/3D/Movement/Comps/States.tscn" id="6_08j4g"]
 [ext_resource type="PackedScene" uid="uid://kwe0wi2c8er5" path="res://Global_Scenes/Battle_System/SV_Battle/Character_Battle/Comps/Stats.tscn" id="6_w5p3p"]
-[ext_resource type="PackedScene" uid="uid://d07xolpcrrwob" path="res://Scenes/Object/Comps/Movement/Comps/Knockbacks/Knockbacks.tscn" id="7_dhbqu"]
-[ext_resource type="PackedScene" uid="uid://b1q143fixhaj5" path="res://Scenes/Object/Comps/Anims.tscn" id="7_djs4b"]
+[ext_resource type="PackedScene" uid="uid://d07xolpcrrwob" path="res://Framework/Scenes/Object/Comps/Movement/Comps/Knockbacks/Knockbacks.tscn" id="7_dhbqu"]
+[ext_resource type="PackedScene" uid="uid://b1q143fixhaj5" path="res://Framework/Scenes/Object/Comps/Anims.tscn" id="7_djs4b"]
 [ext_resource type="Script" uid="uid://14x1ifsvgd6b" path="res://Global_Scenes/Battle_System/SV_Battle/Character_Battle/Comps/Scripts/Anims.gd" id="8_bmb2c"]
 [ext_resource type="PackedScene" uid="uid://dtsovamjoipgb" path="res://Global_Scenes/Battle_System/SV_Battle/Character_Battle/Comps/Status/Status.tscn" id="9_vbmw5"]
 [ext_resource type="PackedScene" uid="uid://dt0oqeg1pngnh" path="res://Global_Scenes/Battle_System/SV_Battle/Character_Battle/Comps/Actions/Actions.tscn" id="10_08j4g"]
 
-
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_o2chk"]
+radius = 0.4
 height = 1.4
 
-[node name="Character_Battle" type="CharacterBody3D" groups=["Object"]]
+[node name="Character_Battle" type="CharacterBody3D" unique_id=860441248 groups=["Object"]]
 collision_layer = 8
 collision_mask = 9
 script = ExtResource("1_wucqe")
 
-[node name="Display" parent="." instance=ExtResource("2_c7url")]
+[node name="Display" parent="." unique_id=1929382541 instance=ExtResource("2_c7url")]
 
-[node name="Collision" parent="." instance=ExtResource("3_1go1j")]
+[node name="Collision" parent="." unique_id=1106206414 instance=ExtResource("3_1go1j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
 shape = SubResource("CapsuleShape3D_o2chk")
+debug_color = Color(0.9590588, 0, 0.52639365, 0.41960785)
 
-[node name="Audio" parent="." instance=ExtResource("4_q2d3w")]
+[node name="Audio" parent="." unique_id=1144323176 instance=ExtResource("4_q2d3w")]
 
-[node name="Hitbox" parent="." instance=ExtResource("4_dhbqu")]
+[node name="Hitbox" parent="." unique_id=500826064 instance=ExtResource("4_dhbqu")]
 collision_layer = 0
 collision_mask = 0
 monitoring = false
 monitorable = false
 
-[node name="Movement" parent="." instance=ExtResource("4_jkodb")]
+[node name="Movement" parent="." unique_id=2026549712 instance=ExtResource("4_jkodb")]
 
-[node name="Terrain" parent="Movement" instance=ExtResource("5_08j4g")]
+[node name="Terrain" parent="Movement" unique_id=299372332 instance=ExtResource("5_08j4g")]
 
-[node name="Nav_Agent" parent="Movement" instance=ExtResource("5_t4dp7")]
+[node name="Nav_Agent" parent="Movement" unique_id=1739203325 instance=ExtResource("5_t4dp7")]
 
-[node name="States" parent="Movement" instance=ExtResource("6_08j4g")]
+[node name="States" parent="Movement" unique_id=260044954 instance=ExtResource("6_08j4g")]
 
-[node name="Knockbacks" parent="Movement" instance=ExtResource("7_dhbqu")]
+[node name="Knockbacks" parent="Movement" unique_id=550689058 instance=ExtResource("7_dhbqu")]
 
-[node name="Status" parent="." instance=ExtResource("9_vbmw5")]
+[node name="Status" parent="." unique_id=2058228235 instance=ExtResource("9_vbmw5")]
 
-[node name="Actions" parent="." instance=ExtResource("10_08j4g")]
+[node name="Actions" parent="." unique_id=61702563 instance=ExtResource("10_08j4g")]
 
-[node name="States" parent="." instance=ExtResource("5_nhvs1")]
+[node name="States" parent="." unique_id=1953301127 instance=ExtResource("5_nhvs1")]
 
-[node name="Stats" parent="." instance=ExtResource("6_w5p3p")]
+[node name="Stats" parent="." unique_id=1597395408 instance=ExtResource("6_w5p3p")]
 
-[node name="Anims" parent="." instance=ExtResource("7_djs4b")]
+[node name="Anims" parent="." unique_id=1809209056 instance=ExtResource("7_djs4b")]
 script = ExtResource("8_bmb2c")
 
 [editable path="Movement/Terrain"]

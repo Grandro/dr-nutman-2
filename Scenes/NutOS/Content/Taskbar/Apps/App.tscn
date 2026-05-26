@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cxwjhxqe7mjn1"]
+[gd_scene format=3 uid="uid://cxwjhxqe7mjn1"]
 
 [ext_resource type="Texture2D" uid="uid://bpa4wwr35yuav" path="res://Scenes/NutOS/Content/Sprites/Icons/Settings.png" id="1"]
 [ext_resource type="Script" uid="uid://cr6ruhkv6iqer" path="res://Scenes/NutOS/Content/Taskbar/Apps/Scripts/App.gd" id="3"]
@@ -17,7 +17,7 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3hpmt"]
 
-[node name="App" type="PanelContainer"]
+[node name="App" type="PanelContainer" unique_id=2004089771]
 light_mask = 8
 visibility_layer = 8
 custom_minimum_size = Vector2(44, 0)
@@ -27,7 +27,7 @@ mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_47p61")
 script = ExtResource("3")
 
-[node name="Select" type="Button" parent="."]
+[node name="Select" type="Button" parent="." unique_id=759930623]
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_4q3ah")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_2e8kt")
@@ -35,7 +35,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_4m5ym")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_l12qd")
 theme_override_styles/focus = SubResource("StyleBoxFlat_3hpmt")
 
-[node name="Image" type="TextureRect" parent="."]
+[node name="Image" type="TextureRect" parent="." unique_id=273209716]
 light_mask = 8
 visibility_layer = 8
 custom_minimum_size = Vector2(32, 32)

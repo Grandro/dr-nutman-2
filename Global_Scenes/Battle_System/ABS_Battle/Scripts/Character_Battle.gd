@@ -140,8 +140,7 @@ func _get_possible_points_rated(p_distance):
 			rating += distance * _e_enemy_prio
 		
 		_a_possible_points.push_back([rating, point])
-	
-	_a_possible_points.sort_custom(Global.sort_high)
+	_a_possible_points.sort_custom(Global.sort_high_nested)
 	
 	return _a_possible_points
 

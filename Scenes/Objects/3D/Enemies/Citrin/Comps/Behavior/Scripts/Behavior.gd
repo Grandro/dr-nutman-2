@@ -5,7 +5,7 @@ class_name ObjectEnemyCitrinCompBehavior
 @export var _e_citrin_ball_radius: float = 4.0
 @export var _e_citrin_ball_speed: float = 10.0
 
-var _a_Citrin_Ball_Scene: PackedScene = preload("res://Scenes/Objects/3D/Enemies/Citrin/Citrin_Ball.tscn")
+var _a_Citrin_Ball_Scene: PackedScene = preload("uid://d33vq0wfnluph")
 
 @onready var _a_Enemy_Range: Area3D = get_node("Enemy_Range")
 @onready var _a_Citrin_Balls: Node3D = get_node("Citrin_Balls")
@@ -16,7 +16,7 @@ var _a_socialize_instance: SVEnemyCitrin
 
 func socialize(p_body: SVEnemyCitrin) -> void:
 	_a_socialize_instance = p_body
-	_set_state(&"Socialize")
+	set_state(&"Socialize")
 
 func _process_state() -> void:
 	match _a_state:
@@ -64,13 +64,13 @@ func load_data(p_data: Dictionary) -> void:
 	
 	var state: StringName = p_data[&"State"]
 	match state:
-		&"Socialize": _set_state(&"Rndm")
+		&"Socialize": set_state(&"Rndm")
 		_: super(p_data)
 
 func load_data_init() -> void:
 	await _a_entity_comph.comps_registered
 	
-	_set_state(&"Rndm")
+	set_state(&"Rndm")
 
 func _on_Comp_Handler_comps_registered() -> void:
 	super()
@@ -78,20 +78,20 @@ func _on_Comp_Handler_comps_registered() -> void:
 
 func _on_State_processed(p_state: StringName) -> void:
 	match p_state:
-		&"Attack": _set_state(&"Avoid")
-		&"Socialize": _set_state(&"Rndm")
+		&"Attack": set_state(&"Avoid")
+		&"Socialize": set_state(&"Rndm")
 		_: super(p_state)
 
-func _on_Target_Range_body_entered(_p_body) -> void:
+func _on_Target_Range_body_entered(_p_body: Node3D) -> void:
 	if _a_Citrin_Ball_CD.get_time_left() == 0.0:
 		_set_queued_state(&"Chase")
 	else:
 		_set_queued_state(&"Avoid")
 
-func _on_Target_Range_body_exited(_p_body) -> void:
+func _on_Target_Range_body_exited(_p_body: Node3D) -> void:
 	_set_queued_state(&"Rndm")
 
-func _on_Enemy_Range_body_entered(p_body) -> void:
+func _on_Enemy_Range_body_entered(p_body: Node3D) -> void:
 	# ToDo: Check if p_body is another Citrin
 	if p_body == _a_entity:
 		return
@@ -101,7 +101,7 @@ func _on_Enemy_Range_body_entered(p_body) -> void:
 			p_body.comph().call_comp("Behavior", &"socialize", [_a_entity])
 			socialize(p_body)
 
-func _on_Citrin_Ball_hit(p_instance) -> void:
+func _on_Citrin_Ball_hit(p_instance: Node3D) -> void:
 	if p_instance == _a_target:
 		var res: BattleSV.MAP_RES = BattleSV.MAP_RES.ENEMY
 		_a_entity_comph.call_comp("Battle_Starter", &"start_battle", [res])

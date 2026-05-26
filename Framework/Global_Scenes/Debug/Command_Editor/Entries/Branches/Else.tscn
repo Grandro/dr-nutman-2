@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bpuif3onqdjke"]
+
+[ext_resource type="PackedScene" uid="uid://c8lns07r4xyu8" path="res://Framework/Global_Scenes/Debug/Command_Editor/Entries/Branches/Base.tscn" id="1"]
+[ext_resource type="FontFile" uid="uid://bc3cxhu6w0ljt" path="res://Global_Resources/Fonts/ProFont.ttf" id="2_otjb4"]
+
+[sub_resource type="FontVariation" id="FontVariation_r6vl4"]
+base_font = ExtResource("2_otjb4")
+spacing_top = -5
+spacing_bottom = -5
+
+[node name="Else" unique_id=302845149 instance=ExtResource("1")]
+offset_right = 48.0
+
+[node name="Colon" type="Label" parent="Base/HBox" parent_id_path=PackedInt32Array(826304544) index="1" unique_id=683133722]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_r6vl4")
+text = ":"
+vertical_alignment = 1

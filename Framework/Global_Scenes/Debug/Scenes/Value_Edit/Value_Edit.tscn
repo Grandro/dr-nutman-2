@@ -1,0 +1,107 @@
+[gd_scene format=3 uid="uid://bc12fh7xhsyy6"]
+
+[ext_resource type="PackedScene" uid="uid://8ye5u4sw8coj" path="res://Framework/Global_Scenes/Debug/Scenes/Value_Edit/Edit.tscn" id="4"]
+[ext_resource type="Script" uid="uid://btniyu0hpkkwr" path="res://Framework/Global_Scenes/Debug/Scenes/Value_Edit/Scripts/Value_Edit.gd" id="5"]
+[ext_resource type="StyleBox" uid="uid://b3gdmc7s1xfel" path="res://Framework/Global_Scenes/Debug/Scenes/Value_Edit/StyleBoxes/VSep.tres" id="13_6frxn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gvcvi"]
+resource_local_to_scene = true
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x5pdl"]
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.635294, 0.811765, 0.807843, 1)
+
+[node name="Value_Edit" type="MarginContainer" unique_id=1735964540]
+light_mask = 8
+visibility_layer = 8
+offset_right = 456.0
+offset_bottom = 33.0
+size_flags_horizontal = 3
+focus_mode = 2
+script = ExtResource("5")
+_e_type_keys = Dictionary[int, String]({
+0: "Null",
+1: "Bool",
+2: "Int",
+3: "Float",
+4: "String",
+5: "Vector2",
+9: "Vector3",
+20: "Color",
+21: "String_Name",
+27: "Dictionary",
+28: "Array"
+})
+_e_colors = Array[Color]([Color(1, 0, 0, 1), Color(1, 0.65, 0, 1), Color(1, 0.9666667, 0, 1), Color(0.5, 1, 0, 1), Color(0, 1, 0.0333333, 1)])
+
+[node name="HBox" type="HBoxContainer" parent="." unique_id=1308428500]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Text" type="PanelContainer" parent="HBox" unique_id=1910178380]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_gvcvi")
+
+[node name="Margin" type="MarginContainer" parent="HBox/Text" unique_id=318165658]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_right = 32
+
+[node name="Scroll" type="ScrollContainer" parent="HBox/Text/Margin" unique_id=1205314111]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+vertical_scroll_mode = 0
+
+[node name="Value" type="Label" parent="HBox/Text/Margin/Scroll" unique_id=1437780982]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_vertical = 7
+vertical_alignment = 1
+
+[node name="Type" type="MarginContainer" parent="HBox" unique_id=1214902760]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VSep" type="VSeparator" parent="HBox" unique_id=1185678921]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_styles/separator = ExtResource("13_6frxn")
+
+[node name="Edit" parent="HBox" unique_id=449706625 instance=ExtResource("4")]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="Focus_Outlines" type="Panel" parent="." unique_id=61858091]
+visible = false
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_x5pdl")

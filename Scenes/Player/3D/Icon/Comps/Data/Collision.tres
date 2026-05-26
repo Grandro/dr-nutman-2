@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CompData" format=3 uid="uid://bkso5h123jgfr"]
+
+[ext_resource type="PackedScene" uid="uid://doe80nr4tw6hh" path="res://Scenes/Player/3D/Icon/Comps/Collision.tscn" id="1_vtf8o"]
+[ext_resource type="Script" uid="uid://dk1y7876kg1po" path="res://Framework/Scenes/Player/Scripts/Comp_Data.gd" id="2_2npna"]
+
+[resource]
+script = ExtResource("2_2npna")
+_e_key = &"Collision"
+_e_scene = ExtResource("1_vtf8o")
+_e_group = &"Icon"
+metadata/_custom_type_script = "uid://dk1y7876kg1po"

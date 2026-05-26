@@ -1,5 +1,5 @@
 @tool
-extends PlaneTile
+extends FWPlaneTile
 class_name RailsPartBase
 
 @export_tool_button("Reverse Path") var _e_reverse_path_button: Callable = _reverse_path

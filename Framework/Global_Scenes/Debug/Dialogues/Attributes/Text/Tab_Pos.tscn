@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://cx3orjpyvucq1"]
+
+[ext_resource type="PackedScene" uid="uid://p8udo2171tc7" path="res://Framework/Global_Scenes/Debug/Dialogues/Attributes/Tabs/Base/Tab_Base.tscn" id="1"]
+[ext_resource type="Script" uid="uid://ceisjebxkvdks" path="res://Framework/Global_Scenes/Debug/Dialogues/Attributes/Text/Scripts/Tab_Pos.gd" id="2"]
+[ext_resource type="PackedScene" uid="uid://bc12fh7xhsyy6" path="res://Framework/Global_Scenes/Debug/Scenes/Value_Edit/Value_Edit.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://bcmeit6hbj55l" path="res://Framework/Global_Scenes/Debug/Dialogues/Attributes/Text/Small_Preview.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://bf8m2llgekjpu" path="res://Framework/Global_Scenes/Debug/Scenes/Loc_ID_Select/Loc_ID_Select.tscn" id="5_gc0td"]
+
+[node name="Tab_Pos" unique_id=1504973350 instance=ExtResource("1")]
+script = ExtResource("2")
+
+[node name="Pos" type="VBoxContainer" parent="Margin/HSplit/Left" parent_id_path=PackedInt32Array(205558874) index="0" unique_id=534202018]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Type" type="VBoxContainer" parent="Margin/HSplit/Left/Pos" index="0" unique_id=602862845]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Heading" type="Label" parent="Margin/HSplit/Left/Pos/Type" index="0" unique_id=1815640585]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "FW_DEBUG_DIALOGUES_ATTRIBUTES_TYPE"
+vertical_alignment = 1
+
+[node name="Options" type="OptionButton" parent="Margin/HSplit/Left/Pos/Type" index="1" unique_id=402956428]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="Custom" type="VBoxContainer" parent="Margin/HSplit/Left/Pos" index="1" unique_id=848640803]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Heading" type="Label" parent="Margin/HSplit/Left/Pos/Custom" index="0" unique_id=1314101769]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "FW_CUSTOM"
+vertical_alignment = 1
+
+[node name="Value" parent="Margin/HSplit/Left/Pos/Custom" index="1" unique_id=1563105444 instance=ExtResource("3")]
+layout_mode = 2
+
+[node name="Name_Type" type="VBoxContainer" parent="Margin/HSplit/Left/Pos" index="2" unique_id=1251185036]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Heading" type="Label" parent="Margin/HSplit/Left/Pos/Name_Type" index="0" unique_id=1800873059]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "FW_DEBUG_DIALOGUES_ATTRIBUTES_NAME_POS"
+vertical_alignment = 1
+
+[node name="Options" type="OptionButton" parent="Margin/HSplit/Left/Pos/Name_Type" index="1" unique_id=639831468]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(100, 22)
+layout_mode = 2
+
+[node name="Small_Preview" parent="Margin/HSplit/Left/Pos" index="3" unique_id=1712254569 instance=ExtResource("4")]
+layout_mode = 2
+
+[node name="Name" parent="Margin/HSplit/Left" parent_id_path=PackedInt32Array(205558874) index="1" unique_id=1757179307 instance=ExtResource("5_gc0td")]
+layout_mode = 2
+_e_heading_loc_id = &"FW_DEBUG_DIALOGUES_ATTRIBUTES_NAME"
+_e_group = "Name"
+
+[node name="Show_Arrow" type="VBoxContainer" parent="Margin/HSplit/Left" parent_id_path=PackedInt32Array(205558874) index="2" unique_id=694436738]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+
+[node name="Heading" type="Label" parent="Margin/HSplit/Left/Show_Arrow" index="0" unique_id=723224860]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "FW_DEBUG_DIALOGUES_ATTRIBUTES_SHOW_ARROW"
+vertical_alignment = 1
+
+[node name="Value" type="CheckBox" parent="Margin/HSplit/Left/Show_Arrow" index="1" unique_id=1356900740]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2

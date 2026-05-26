@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://ttteupbvc4mw"]
+[gd_scene format=3 uid="uid://ttteupbvc4mw"]
 
-[ext_resource type="PackedScene" uid="uid://dbxigq53qnnvo" path="res://Global_Resources/Mapping/3D/Plane/Plane_Tile.tscn" id="1_dnpgv"]
+[ext_resource type="PackedScene" uid="uid://dbxigq53qnnvo" path="res://Framework/Global_Resources/Mapping/3D/Plane/Plane_Tile.tscn" id="1_dnpgv"]
 [ext_resource type="Texture2D" uid="uid://c3p2cgma80lkp" path="res://Global_Resources/Mapping/Sprites/Below/Broko_Town/Exterior/Path_1/Down_Three.png" id="2_c2m42"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p47d5"]
@@ -12,5 +12,5 @@ texture_filter = 0
 material = SubResource("StandardMaterial3D_p47d5")
 size = Vector2(1, 1)
 
-[node name="Path_1" instance=ExtResource("1_dnpgv")]
+[node name="Path_1" unique_id=451828739 instance=ExtResource("1_dnpgv")]
 mesh = SubResource("PlaneMesh_vy5pb")

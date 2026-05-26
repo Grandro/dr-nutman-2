@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://b5ggg7dxi64kw"]
+
+[ext_resource type="Script" uid="uid://ckbk2i4wb1yhq" path="res://Framework/Scenes/Object/Scripts/Node3D_Object.gd" id="1_4mup3"]
+[ext_resource type="PackedScene" uid="uid://dctpibkwbk8nq" path="res://Framework/Scenes/Object/Comps/3D/Equipment.tscn" id="2_uhf5x"]
+[ext_resource type="PackedScene" uid="uid://bblmb8yfchyxr" path="res://Framework/Scenes/Object/Comps/3D/Display.tscn" id="2_xj50c"]
+[ext_resource type="Texture2D" uid="uid://cod8mkqx8wdyp" path="res://Global_Resources/Sprites/Objects/Dr_Nutman/Spritesheet.png" id="3"]
+[ext_resource type="PackedScene" uid="uid://b1q143fixhaj5" path="res://Framework/Scenes/Object/Comps/Anims.tscn" id="4_nu26h"]
+[ext_resource type="PackedScene" uid="uid://rhxd1ab58jtq" path="res://Framework/Scenes/Object/Comps/3D/Movement/Movement_Base.tscn" id="6_u0j8f"]
+[ext_resource type="PackedScene" uid="uid://dsxxput7t3drq" path="res://Framework/Scenes/Object/Comps/Party_Member.tscn" id="7_l8uok"]
+[ext_resource type="PackedScene" uid="uid://boh1rwcj5rgwf" path="res://Framework/Scenes/Object/Comps/States.tscn" id="7_nx24j"]
+[ext_resource type="PackedScene" uid="uid://de2jy2ixhp2mw" path="res://Framework/Scenes/Object/Comps/Save.tscn" id="8_wti6e"]
+
+[node name="Character_Base" type="Node3D" unique_id=1405870135]
+script = ExtResource("1_4mup3")
+
+[node name="Display" parent="." unique_id=1219663208 instance=ExtResource("2_xj50c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.12, 0)
+shaded = false
+texture = ExtResource("3")
+hframes = 8
+vframes = 18
+
+[node name="Equipment" parent="." unique_id=441994587 instance=ExtResource("2_uhf5x")]
+_e_shaded = false
+
+[node name="Camera" type="Camera3D" parent="." unique_id=1569991086]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
+keep_aspect = 0
+projection = 1
+current = true
+size = 12.8
+far = 60.0
+
+[node name="Movement" parent="." unique_id=1718434559 instance=ExtResource("6_u0j8f")]
+
+[node name="Anims" parent="." unique_id=468328238 instance=ExtResource("4_nu26h")]
+
+[node name="Party_Member" parent="." unique_id=21408918 instance=ExtResource("7_l8uok")]
+
+[node name="States" parent="." unique_id=201529940 instance=ExtResource("7_nx24j")]
+_e_states = Array[StringName]([&"Idle"])
+_e_state = "Idle"
+
+[node name="Save" parent="." unique_id=172928466 instance=ExtResource("8_wti6e")]

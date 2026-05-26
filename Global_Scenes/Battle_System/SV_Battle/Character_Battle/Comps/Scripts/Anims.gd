@@ -1,4 +1,4 @@
-extends CompAnims
+extends FWCompAnims
 class_name CompSVAnims
 
 func update_anim() -> void:

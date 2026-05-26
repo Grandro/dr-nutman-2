@@ -1,4 +1,4 @@
-extends VPContainer
+extends FWVPContainer
 class_name NutOS
 
 signal shutdown()
@@ -26,7 +26,7 @@ func _ready() -> void:
 
 func boot() -> void:
 	var global_si: Global = Global.get_singleton(self, "Global")
-	var player: Node = global_si.get_player()
+	var player: Node = global_si.get_object(&"Player")
 	player.comph().call_comp("Operate", &"disable")
 	
 	_a_active = true
@@ -37,7 +37,7 @@ func boot() -> void:
 
 func close() -> void:
 	var global_si: Global = Global.get_singleton(self, "Global")
-	var player: Node = global_si.get_player()
+	var player: Node = global_si.get_object(&"Player")
 	player.comph().call_comp("Operate", &"enable")
 	
 	_a_VP.set_disable_input(true)

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CompData" format=3 uid="uid://7b6225l8jbai"]
+
+[ext_resource type="PackedScene" uid="uid://bxe4tjb2ecuto" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Buffin_House_3/Player/Dr_Nutman/Comps/Display.tscn" id="1_hmuml"]
+[ext_resource type="Script" uid="uid://dk1y7876kg1po" path="res://Framework/Scenes/Player/Scripts/Comp_Data.gd" id="2_xx8mw"]
+
+[resource]
+script = ExtResource("2_xx8mw")
+_e_key = &"Display"
+_e_scene = ExtResource("1_hmuml")
+_e_group = &"Main"
+metadata/_custom_type_script = "uid://dk1y7876kg1po"

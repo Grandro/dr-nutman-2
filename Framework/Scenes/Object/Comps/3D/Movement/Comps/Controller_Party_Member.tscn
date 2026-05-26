@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dxdfob5eka8u1"]
+
+[ext_resource type="PackedScene" uid="uid://6fubcy6emc0c" path="res://Framework/Scenes/Object/Comps/Movement/Comps/Controller_Party_Member.tscn" id="1_vmbmb"]
+[ext_resource type="Script" uid="uid://cqq2fcseblf2n" path="res://Framework/Scenes/Object/Comps/3D/Movement/Comps/Scripts/Controller_Party_Member.gd" id="2_amopt"]
+
+[node name="Controller" unique_id=1724524947 instance=ExtResource("1_vmbmb")]
+script = ExtResource("2_amopt")

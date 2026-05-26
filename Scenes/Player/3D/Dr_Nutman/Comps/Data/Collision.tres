@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CompData" format=3 uid="uid://cn44krwdgnl6y"]
+
+[ext_resource type="PackedScene" uid="uid://btvbj8g2udk5r" path="res://Scenes/Player/3D/Dr_Nutman/Comps/Collision.tscn" id="1_n3pmn"]
+[ext_resource type="Script" uid="uid://dk1y7876kg1po" path="res://Framework/Scenes/Player/Scripts/Comp_Data.gd" id="2_rrdm4"]
+
+[resource]
+script = ExtResource("2_rrdm4")
+_e_key = &"Collision"
+_e_scene = ExtResource("1_n3pmn")
+_e_group = &"Main"
+metadata/_custom_type_script = "uid://dk1y7876kg1po"

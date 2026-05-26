@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://ccr6s0hvxs7i4"]
+
+[ext_resource type="Script" uid="uid://cytubor452swf" path="res://Framework/Global_Resources/Databases/Items/Item_Data.gd" id="1_qwjg8"]
+
+[resource]
+script = ExtResource("1_qwjg8")
+_e_key = &"Battery"
+_e_type = "Key"
+_e_category_type = "Static"
+_e_stack = 99

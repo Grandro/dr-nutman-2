@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://b5p22y37tdyep"]
+[gd_resource type="TileSet" format=3 uid="uid://b5p22y37tdyep"]
 
 [ext_resource type="Texture2D" uid="uid://d2060abjefjk3" path="res://Scenes/Water/Water/WaterTilesOffsetWithBlur.png" id="1_uklav"]
 

@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cv7x5wp7bmqxr"]
+
+[ext_resource type="PackedScene" uid="uid://cjanmnf2alc80" path="res://Framework/Scenes/Object/Comps/3D/Behavior/States/State_Move_Base.tscn" id="1_ybiw3"]
+[ext_resource type="Script" uid="uid://4jrrdlxgisx0" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Buffin_House_3/Arcade/Ghosties/Comps/Behavior/Orange/Scripts/State_Move.gd" id="2_qi18g"]
+
+[node name="Move" unique_id=1292768813 instance=ExtResource("1_ybiw3")]
+script = ExtResource("2_qi18g")
+_e_rndm_min_radius = 2.0
+_e_rndm_max_radius = 5.0
+_e_move_state = &"Float"
+_e_wait_finish = false
+_e_process_time = 0.2
+_e_reset_on_finish = false
+_e_max_radius = 100.0
+_e_CD = 0.0

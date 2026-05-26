@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://cq841sthxrgcs"]
+
+[ext_resource type="Script" uid="uid://d84sycd0p04w" path="res://Framework/Global_Scenes/Debug/Scenes/Value_Edit/Types/Scripts/Array.gd" id="1_s6n1h"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5canx"]
+resource_local_to_scene = true
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[node name="Array" type="VBoxContainer" unique_id=1659202924]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(300, 0)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+script = ExtResource("1_s6n1h")
+
+[node name="Select" type="Button" parent="." unique_id=60880470]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_5canx")
+
+[node name="Value" type="VBoxContainer" parent="." unique_id=138703584]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Size" type="PanelContainer" parent="Value" unique_id=1144614389]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+
+[node name="Margin" type="MarginContainer" parent="Value/Size" unique_id=1518990559]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/margin_left = 8
+
+[node name="HBox" type="HBoxContainer" parent="Value/Size/Margin" unique_id=1609777350]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 52
+
+[node name="Desc" type="Label" parent="Value/Size/Margin/HBox" unique_id=333475528]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+text = "Size:"
+vertical_alignment = 1
+
+[node name="Value" type="SpinBox" parent="Value/Size/Margin/HBox" unique_id=885812104]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Entries" type="VBoxContainer" parent="Value" unique_id=997030808]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0

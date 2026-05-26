@@ -1,10 +1,10 @@
 extends SVEncounterBase
 class_name SVEncounterSpecialSickApprentice1
 
-@onready var _a_Bag: Node3DObject = get_node("Objects/Bag")
-@onready var _a_Disposable_Glove: Node3DObject = get_node("Objects/Disposable_Glove")
-@onready var _a_Popsicle_Stick: Node3DObject = get_node("Objects/Popsicle_Stick")
-@onready var _a_Pill: Node3DObject = get_node("Objects/Pill")
+@onready var _a_Bag: FWNode3DObject = get_node("Objects/Bag")
+@onready var _a_Disposable_Glove: FWNode3DObject = get_node("Objects/Disposable_Glove")
+@onready var _a_Popsicle_Stick: FWNode3DObject = get_node("Objects/Popsicle_Stick")
+@onready var _a_Pill: FWNode3DObject = get_node("Objects/Pill")
 
 func _ready() -> void:
 	super()

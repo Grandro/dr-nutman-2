@@ -4,8 +4,8 @@ class_name SVPartyMember
 @export var _e_command_circle_offset: Vector3 = Vector3.ZERO
 @export var _e_reactions: Dictionary[StringName, Dictionary] = {} # type, reaction_key, button
 
-@onready var _a_Audio: CompAudio3D = get_node("Audio")
-@onready var _a_Movement_Jump: CompMovementJump3D = get_node("Movement/Jump")
+@onready var _a_Audio: FWCompAudio3D = get_node("Audio")
+@onready var _a_Movement_Jump: FWCompMovementJump3D = get_node("Movement/Jump")
 @onready var _a_Shield_Bar: SVPartyMemberCompShieldBar = get_node("Shield_Bar")
 
 var _a_actions: Dictionary = {}

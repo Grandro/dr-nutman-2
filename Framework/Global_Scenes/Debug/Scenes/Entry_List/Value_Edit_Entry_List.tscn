@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cxpvi6qy4i17r"]
+
+[ext_resource type="PackedScene" uid="uid://b0t5u8s6p2dc" path="res://Framework/Global_Scenes/Debug/Scenes/Entry_List/Entry_List.tscn" id="1_vo3e0"]
+[ext_resource type="Script" uid="uid://sflbwkfy8cb4" path="res://Framework/Global_Scenes/Debug/Scenes/Entry_List/Scripts/Value_Edit_Entry_List.gd" id="2_f04st"]
+[ext_resource type="PackedScene" uid="uid://ybmr2rknm3h" path="res://Framework/Global_Scenes/Debug/Scenes/Entry_List/Entries/Value_Edit_Entry.tscn" id="2_u36ul"]
+
+[node name="Value_Edit_Entry_List" unique_id=972759881 instance=ExtResource("1_vo3e0")]
+script = ExtResource("2_f04st")
+_e_type_editable = false
+_e_value_editable = false
+_e_entry_scene = ExtResource("2_u36ul")
+
+[editable path="Search"]

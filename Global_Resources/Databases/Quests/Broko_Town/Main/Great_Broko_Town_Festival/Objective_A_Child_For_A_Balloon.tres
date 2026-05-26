@@ -1,6 +1,6 @@
-[gd_resource type="Resource" script_class="ObjectiveDataSubQuest" load_steps=3 format=3 uid="uid://d22a63jd5eylg"]
+[gd_resource type="Resource" script_class="ObjectiveDataSubQuest" format=3 uid="uid://d22a63jd5eylg"]
 
-[ext_resource type="Script" uid="uid://gxo7txpgnyj8" path="res://Global_Resources/Databases/Quests/Objective_Data_Sub_Quest.gd" id="1_lep6q"]
+[ext_resource type="Script" uid="uid://gxo7txpgnyj8" path="res://Framework/Global_Resources/Databases/Quests/Objective_Data_Sub_Quest.gd" id="1_lep6q"]
 [ext_resource type="Resource" uid="uid://byeid03r2knxj" path="res://Global_Resources/Databases/Quests/Broko_Town/Main/A_Child_For_A_Balloon/A_Child_For_A_Balloon.tres" id="1_mnfst"]
 
 [resource]

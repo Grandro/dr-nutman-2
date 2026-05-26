@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://lsel7eqbohc5"]
+
+[ext_resource type="PackedScene" uid="uid://dvcr3pbdmde27" path="res://Framework/Scenes/Object/Comps/3D/Behavior/States/State_Base.tscn" id="1_0plno"]
+[ext_resource type="Script" uid="uid://sif8l28s2e2n" path="res://Framework/Scenes/Object/Comps/3D/Behavior/States/Scripts/State_Change_Dir.gd" id="2_a0q5b"]
+
+[node name="Change_Dir" unique_id=1105730957 instance=ExtResource("1_0plno")]
+script = ExtResource("2_a0q5b")
+_e_type = "Rndm"

@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://b5kdrokimg8qk"]
+
+[ext_resource type="PackedScene" uid="uid://flbccdv3vysu" path="res://Framework/Global_Scenes/Main_Menu/Sub_Menus/Party/Selection/Dr_Nutman.tscn" id="1"]
+[ext_resource type="Script" uid="uid://bse6pkmxpuncg" path="res://Framework/Global_Scenes/Main_Menu/Sub_Menus/Party/Selection/Scripts/Selection.gd" id="2"]
+[ext_resource type="Theme" uid="uid://budcfl16xj2tt" path="res://Global_Resources/Themes/Default/Default.tres" id="3"]
+[ext_resource type="PackedScene" uid="uid://beoei6o2vrvx" path="res://Framework/Scenes/Indicator/Back_Button.tscn" id="4"]
+
+[node name="Selection" type="Control" unique_id=629177881]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("3")
+script = ExtResource("2")
+
+[node name="Back" parent="." unique_id=581761263 instance=ExtResource("4")]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 112.0
+offset_bottom = 64.0
+size_flags_horizontal = 0
+
+[node name="Margin" type="MarginContainer" parent="." unique_id=204134593]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 128.0
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_right = 24
+
+[node name="VBox" type="VBoxContainer" parent="Margin" unique_id=1683501953]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 64
+
+[node name="HBox" type="HBoxContainer" parent="Margin/VBox" unique_id=1570906894]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="Dr_Nutman" parent="Margin/VBox/HBox" unique_id=1480412021 instance=ExtResource("1")]
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+
+[node name="Dr_Nutman2" parent="Margin/VBox/HBox" unique_id=1415674671 instance=ExtResource("1")]
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+
+[node name="Dr_Nutman3" parent="Margin/VBox/HBox" unique_id=1522164471 instance=ExtResource("1")]
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+
+[node name="Dr_Nutman4" parent="Margin/VBox/HBox" unique_id=2109168930 instance=ExtResource("1")]
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2

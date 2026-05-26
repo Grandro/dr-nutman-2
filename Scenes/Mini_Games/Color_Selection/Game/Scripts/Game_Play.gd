@@ -5,9 +5,9 @@ class_name MiniGameColorSelectionGamePlay
 @export var _e_check_end_time: int = 2 # Seconds to check if all Paint_Drop instances reached the floor
 @export var _e_force_end_time: int = 10 # Time after last spurt to when end is forced
 
-var _a_Paint_Drop_Scene: PackedScene = preload("res://Scenes/Mini_Games/Color_Selection/Game/Paint_Drop.tscn")
+var _a_Paint_Drop_Scene: PackedScene = preload("uid://bqmof5mk6palh")
 
-@onready var _a_Countdown: MiniGameColorSelectionCountdown = get_node("Canvas_2/Countdown")
+@onready var _a_Countdown: FWMiniGameCountdown = get_node("Canvas_2/Countdown")
 @onready var _a_Result: MiniGameColorSelectionResult = get_node("Canvas_2/Result")
 @onready var _a_Syringe: MiniGameColorSelectionSyringe = get_node("Node2D/Syringe")
 @onready var _a_Paint_Drops: Node2D = get_node("Node2D/Paint_Drops")

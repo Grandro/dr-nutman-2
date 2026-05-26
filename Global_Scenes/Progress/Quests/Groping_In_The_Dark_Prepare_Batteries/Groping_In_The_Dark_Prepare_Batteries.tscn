@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dkm2hcfhwa0th"]
+
+[ext_resource type="PackedScene" uid="uid://dw83gpfjqfylp" path="res://Framework/Global_Scenes/Progress/Quests/Quest_Base.tscn" id="1_uysyc"]
+[ext_resource type="PackedScene" uid="uid://gk8xeq1ltww2" path="res://Global_Scenes/Progress/Quests/Groping_In_The_Dark_Prepare_Batteries/Objectives/Find_Batteries.tscn" id="2_3sudy"]
+[ext_resource type="Script" uid="uid://cqy2e1tntfeuh" path="res://Global_Scenes/Progress/Quests/Groping_In_The_Dark_Prepare_Batteries/Scripts/Groping_In_The_Dark_Prepare_Batteries.gd" id="2_i8yw4"]
+[ext_resource type="PackedScene" uid="uid://dqgvooc7ybbu2" path="res://Global_Scenes/Progress/Quests/Groping_In_The_Dark_Prepare_Batteries/Objectives/Measure_Batteries.tscn" id="3_i8yw4"]
+
+[node name="Groping_In_The_Dark_Prepare_Batteries" unique_id=912725552 instance=ExtResource("1_uysyc")]
+script = ExtResource("2_i8yw4")
+
+[node name="Find_Batteries" parent="Objectives" parent_id_path=PackedInt32Array(621023371) index="0" unique_id=1159538438 instance=ExtResource("2_3sudy")]
+_e_item_key = &"Battery"
+
+[node name="Measure_Batteries" parent="Objectives" parent_id_path=PackedInt32Array(621023371) index="1" unique_id=607524778 instance=ExtResource("3_i8yw4")]

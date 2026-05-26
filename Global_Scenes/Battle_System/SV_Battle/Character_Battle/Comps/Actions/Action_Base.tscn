@@ -1,7 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://d1b030mi5wn3i"]
+[gd_scene format=3 uid="uid://d1b030mi5wn3i"]
 
 [ext_resource type="Script" uid="uid://c35fiolurf6jj" path="res://Global_Scenes/Battle_System/SV_Battle/Character_Battle/Comps/Actions/Scripts/Action_Base.gd" id="1_6ejpt"]
 
-
-[node name="Action_Base" type="Node3D"]
+[node name="Action_Base" type="Node3D" unique_id=552608381]
 script = ExtResource("1_6ejpt")

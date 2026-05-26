@@ -1,4 +1,4 @@
-[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://cgjocunkt7lim"]
+[gd_resource type="ShaderMaterial" format=3 uid="uid://cgjocunkt7lim"]
 
 [ext_resource type="Shader" uid="uid://c25wx8oihvkgw" path="res://Scenes/Water/Water/WaterShader.tres" id="1_qm0vv"]
 [ext_resource type="Texture2D" uid="uid://b15stxfa0h0ie" path="res://Scenes/Water/Water/CausticTextureHighlights.png" id="2_ddldc"]

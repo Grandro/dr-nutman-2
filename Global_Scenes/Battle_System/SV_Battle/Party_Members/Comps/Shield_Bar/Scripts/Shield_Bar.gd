@@ -4,7 +4,7 @@ class_name SVPartyMemberCompShieldBar
 const _a_SHIELD_BAR_SCENE_PATH: String = "res://Global_Scenes/Battle_System/SV_Battle/Party_Members/Comps/Shield_Bar/Shield_Bars/%s/%s.tscn"
 
 var _a_entity: SVPartyMember = null
-var _a_entity_comph: CompHandler = null
+var _a_entity_comph: FWCompHandler = null
 
 var _a_instance: SVPartyMemberCompShieldBarBase # Shield_Bar instance of equipped Shield
 var _a_max_shield: int
@@ -13,10 +13,9 @@ var _a_shield: int = 0
 func _ready() -> void:
 	hide()
 
-func init(p_entity: SVPartyMember) -> void:
-	_a_entity = p_entity
-	_a_entity_comph = p_entity.comph()
-	
+func init(p_entities: Array[Node]) -> void:
+	_a_entity = p_entities[-1]
+	_a_entity_comph = _a_entity.comph()
 	_a_entity_comph.comps_registered.connect(_on_Comp_Handler_comps_registered)
 
 func open(p_shield_gain: int) -> void:
@@ -54,7 +53,7 @@ func load_data_init() -> void:
 	pass
 
 func _on_Comp_Handler_comps_registered() -> void:
-	var equipment_comp: CompEquipment3D = _a_entity_comph.get_comp("Equipment")
+	var equipment_comp: FWCompEquipment3D = _a_entity_comph.get_comp("Equipment")
 	equipment_comp.equipped.connect(_on_Equipment_equipped)
 	equipment_comp.unequipped.connect(_on_Equipment_unequipped)
 	

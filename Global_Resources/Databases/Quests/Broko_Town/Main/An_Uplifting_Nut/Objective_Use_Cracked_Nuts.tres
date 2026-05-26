@@ -1,6 +1,6 @@
-[gd_resource type="Resource" script_class="ObjectiveDataInt" load_steps=2 format=3 uid="uid://c6l8oxbxmm1yn"]
+[gd_resource type="Resource" script_class="ObjectiveDataInt" format=3 uid="uid://c6l8oxbxmm1yn"]
 
-[ext_resource type="Script" uid="uid://df2f6s4xkip4l" path="res://Global_Resources/Databases/Quests/Objective_Data_Int.gd" id="1_e2tkw"]
+[ext_resource type="Script" uid="uid://df2f6s4xkip4l" path="res://Framework/Global_Resources/Databases/Quests/Objective_Data_Int.gd" id="1_e2tkw"]
 
 [resource]
 script = ExtResource("1_e2tkw")

@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://datplhbc8atow"]
+
+[ext_resource type="PackedScene" uid="uid://cjanmnf2alc80" path="res://Framework/Scenes/Object/Comps/3D/Behavior/States/State_Move_Base.tscn" id="1_fkpho"]
+[ext_resource type="Script" uid="uid://dxif30xoah15a" path="res://Framework/Scenes/Object/Comps/3D/Behavior/States/Scripts/State_Move_Predict.gd" id="2_fkpho"]
+
+[node name="Move" unique_id=1292768813 instance=ExtResource("1_fkpho")]
+script = ExtResource("2_fkpho")
+_e_range = 4.0

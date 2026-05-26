@@ -1,4 +1,4 @@
-extends ProgressObjectBase
+extends FWProgressObjectBase
 class_name ProgressObjectTutato
 
 var _a_explain_battle_attack: bool = true

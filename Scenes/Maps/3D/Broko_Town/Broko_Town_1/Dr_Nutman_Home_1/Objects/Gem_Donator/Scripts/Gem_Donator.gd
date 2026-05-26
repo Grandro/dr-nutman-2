@@ -1,7 +1,7 @@
-extends Static3DObject
+extends FWStatic3DObject
 class_name MapDrNutmanHome1ObjectGemDonator
 
-@onready var _a_Sticker_Interaction: CompInteractionsInteraction3D = get_node("Interactions/2")
+@onready var _a_Sticker_Interaction: FWCompInteractionsInteraction3D = get_node("Interactions/2")
 
 #func interaction(p_area):
 #	match p_area:

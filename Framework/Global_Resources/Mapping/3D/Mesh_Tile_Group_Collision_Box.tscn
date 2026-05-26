@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://daiyshvpekgh7"]
+
+[ext_resource type="PackedScene" uid="uid://ddv5m0gujpmte" path="res://Framework/Global_Resources/Mapping/3D/Mesh_Tile_Group_Collision_Base.tscn" id="1_ico7e"]
+[ext_resource type="Script" uid="uid://crbxdaccorhid" path="res://Framework/Global_Resources/Mapping/3D/Scripts/Mesh_Tile_Group_Collision_Box.gd" id="2_5bqbf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1avsj"]
+
+[node name="Mesh_Tile_Group_Collision_Box" unique_id=1682862509 instance=ExtResource("1_ico7e")]
+script = ExtResource("2_5bqbf")
+
+[node name="Collision" parent="Static" parent_id_path=PackedInt32Array(448872802) index="0" unique_id=290579066]
+shape = SubResource("BoxShape3D_1avsj")

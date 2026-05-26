@@ -1,4 +1,4 @@
-extends CompDisplay3D
+extends FWCompDisplay3D
 class_name CompPaintDeLereCanvasDisplay
 
 const _a_PICTURE_PATH: String = "res://Scenes/NPC/3D/Buffins/Paint_DeLere/Canvases/Sprites/Pictures/%s.png"

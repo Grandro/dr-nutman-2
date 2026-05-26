@@ -1,6 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://cixboakksfinr"]
+[gd_scene format=3 uid="uid://cixboakksfinr"]
 
-[ext_resource type="PackedScene" uid="uid://b5ggg7dxi64kw" path="res://Scenes/Characters/Character_Base.tscn" id="1_tj8ab"]
+[ext_resource type="PackedScene" uid="uid://b5ggg7dxi64kw" path="res://Framework/Scenes/Characters/Character_Base.tscn" id="1_tj8ab"]
 [ext_resource type="Texture2D" uid="uid://ifemohnwxekh" path="res://Global_Resources/Sprites/Objects/Buffins/Base/Spritesheet.png" id="2_tqqfc"]
 [ext_resource type="PackedScene" uid="uid://ch3av55p41vl6" path="res://Scenes/Equipable/3D/Objects/Buffins/Base/Head/Party_Hats/1.tscn" id="3_eov1h"]
 [ext_resource type="PackedScene" uid="uid://cbajhv6odykij" path="res://Scenes/Equipable/3D/Objects/Buffins/Base/Head/Party_Hats/2.tscn" id="4_bquk0"]
@@ -18,14 +18,14 @@ _data = {
 &"Idle_Up": ExtResource("9_u1keb")
 }
 
-[node name="Buffin_Assistant_1" instance=ExtResource("1_tj8ab")]
+[node name="Buffin_Assistant_1" unique_id=408797969 instance=ExtResource("1_tj8ab")]
 
-[node name="Display" parent="." index="0"]
+[node name="Display" parent="." index="0" unique_id=1219663208]
 texture = ExtResource("2_tqqfc")
 vframes = 13
 frame = 32
 
-[node name="Equipment" parent="." index="1"]
+[node name="Equipment" parent="." index="1" unique_id=441994587]
 _e_scenes = {
 "Feet": {},
 "Head": {
@@ -39,10 +39,8 @@ _e_scenes = {
 "Weapon": {}
 }
 
-[node name="Anims" parent="." index="4"]
-libraries = {
-"": SubResource("AnimationLibrary_p7h2p")
-}
+[node name="Anims" parent="." index="4" unique_id=468328238]
+libraries/ = SubResource("AnimationLibrary_p7h2p")
 
-[node name="Party_Member" parent="." index="5"]
+[node name="Party_Member" parent="." index="5" unique_id=21408918]
 _e_pm_key = "Buffin_Assistant_1"

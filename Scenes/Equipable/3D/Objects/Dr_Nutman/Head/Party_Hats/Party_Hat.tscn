@@ -1,6 +1,6 @@
-[gd_scene load_steps=54 format=3 uid="uid://b12q0fkjaqxux"]
+[gd_scene format=3 uid="uid://b12q0fkjaqxux"]
 
-[ext_resource type="PackedScene" uid="uid://bur1664yc8pn8" path="res://Scenes/Equipable/3D/Equipable.tscn" id="1_3ni7f"]
+[ext_resource type="PackedScene" uid="uid://bur1664yc8pn8" path="res://Framework/Scenes/Equipable/3D/Equipable.tscn" id="1_3ni7f"]
 [ext_resource type="Animation" uid="uid://bwj6gnywpmuyw" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/Global/Idle_Down.tres" id="2_tjfwi"]
 [ext_resource type="Animation" uid="uid://drs2otww8uid1" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/Global/Idle_Left.tres" id="3_ajefp"]
 [ext_resource type="Animation" uid="uid://j4x0awvcwcrn" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/Global/Idle_Right.tres" id="4_mn0oy"]
@@ -37,9 +37,13 @@
 [ext_resource type="Animation" uid="uid://bick6qt0ao3sc" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/SV/Attack_ATK_Charge_Right.res" id="35_2pfwp"]
 [ext_resource type="Animation" uid="uid://dymh3e25yq1m6" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/SV/Attack_ATK_Fall_Right.res" id="36_u4lu6"]
 [ext_resource type="Animation" uid="uid://du05x7e5jva55" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/SV/Attack_ATK_Hit_Right.res" id="37_lxpin"]
+[ext_resource type="Animation" uid="uid://b7ys7is2lfcqm" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/SV/Fall_Down.res" id="38_34fra"]
 [ext_resource type="Animation" uid="uid://c0yqgijagkmjh" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/SV/Attack_ATK_Recover_Right.res" id="38_ia2pg"]
 [ext_resource type="Animation" uid="uid://mp4kj54cw5v" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/SV/Attack_ATK_Tumble_Right.res" id="39_mn0d8"]
-[ext_resource type="Animation" uid="uid://b4dd64ec2yu31" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/SV/Defend_Right.res" id="40_weqcr"]
+[ext_resource type="Animation" uid="uid://cyudkse1fgyn2" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/SV/Fall_Left.res" id="39_nrwkx"]
+[ext_resource type="Animation" uid="uid://c3c6tboyxuf4i" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/SV/Fall_Right.res" id="40_pcag1"]
+[ext_resource type="Animation" uid="uid://b4dd64ec2yu31" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/SV/Defend_DEF_Right.res" id="40_weqcr"]
+[ext_resource type="Animation" uid="uid://cbuxmgacguqr4" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/SV/Fall_Up.res" id="41_34uwr"]
 [ext_resource type="Animation" uid="uid://dxc03jjleeu08" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/SV/Duck_Right.res" id="41_vm4ox"]
 [ext_resource type="Animation" uid="uid://1qmy6jftd074" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/SV/Jump_Right.res" id="42_3kpd5"]
 [ext_resource type="Animation" uid="uid://c5pia3mmshnki" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/Anims/SV/Stop_Down.res" id="43_jbxk1"]
@@ -107,8 +111,12 @@ _data = {
 &"Attack_ATK_Hit_Right": ExtResource("37_lxpin"),
 &"Attack_ATK_Recover_Right": ExtResource("38_ia2pg"),
 &"Attack_ATK_Tumble_Right": ExtResource("39_mn0d8"),
-&"Defend_Right": ExtResource("40_weqcr"),
+&"Defend_DEF_Right": ExtResource("40_weqcr"),
 &"Duck_Right": ExtResource("41_vm4ox"),
+&"Fall_Down": ExtResource("38_34fra"),
+&"Fall_Left": ExtResource("39_nrwkx"),
+&"Fall_Right": ExtResource("40_pcag1"),
+&"Fall_Up": ExtResource("41_34uwr"),
 &"Idle_Down": ExtResource("18_xjw0n"),
 &"Idle_Left": ExtResource("19_0jw22"),
 &"Idle_Right": ExtResource("20_nrm3q"),
@@ -124,14 +132,12 @@ _data = {
 &"Walk_Up": ExtResource("50_0v7sg")
 }
 
-[node name="Party_Hat" instance=ExtResource("1_3ni7f")]
+[node name="Party_Hat" unique_id=1296691396 instance=ExtResource("1_3ni7f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03, 3.03046, 0.01)
 hframes = 1
 vframes = 1
 frame = 0
 
-[node name="Anims" parent="." index="0"]
-libraries = {
-"": SubResource("AnimationLibrary_6yhyd"),
-"SV": SubResource("AnimationLibrary_3508v")
-}
+[node name="Anims" parent="." index="0" unique_id=282547662]
+libraries/ = SubResource("AnimationLibrary_6yhyd")
+libraries/SV = SubResource("AnimationLibrary_3508v")

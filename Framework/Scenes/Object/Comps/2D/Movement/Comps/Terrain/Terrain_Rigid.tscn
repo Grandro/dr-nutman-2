@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://b7q1g5bnf05ux"]
+
+[ext_resource type="PackedScene" uid="uid://befgw1wn2vgt7" path="res://Framework/Scenes/Object/Comps/2D/Movement/Comps/Terrain/Terrain_Base.tscn" id="1_gdvxp"]
+[ext_resource type="Script" uid="uid://bwoc3r3prt042" path="res://Framework/Scenes/Object/Comps/Movement/Comps/Terrain/Scripts/Shared_Rigid.gd" id="2_0bbvu"]
+
+[node name="Terrain_Rigid" unique_id=735532203 instance=ExtResource("1_gdvxp")]
+_e_shared = ExtResource("2_0bbvu")

@@ -1,8 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://cn74gnyun8arl"]
+[gd_scene format=3 uid="uid://cn74gnyun8arl"]
 
-[ext_resource type="PackedScene" uid="uid://dw83gpfjqfylp" path="res://Global_Scenes/Progress/Quests/Quest_Base.tscn" id="1_ippcc"]
-[ext_resource type="PackedScene" uid="uid://bgn52nelgb1f" path="res://Global_Scenes/Progress/Quests/Groping_In_The_Dark/Objectives/Find_Batteries.tscn" id="2_gmju0"]
+[ext_resource type="PackedScene" uid="uid://dw83gpfjqfylp" path="res://Framework/Global_Scenes/Progress/Quests/Quest_Base.tscn" id="1_ippcc"]
+[ext_resource type="PackedScene" uid="uid://ju7fcrp4snch" path="res://Global_Scenes/Progress/Quests/Groping_In_The_Dark/Objectives/Prepare_Batteries.tscn" id="2_gmju0"]
+[ext_resource type="PackedScene" uid="uid://ngivbvvkjbgy" path="res://Global_Scenes/Progress/Quests/Groping_In_The_Dark/Objectives/Reach_End.tscn" id="3_ne7d6"]
 
-[node name="Groping_In_The_Dark" instance=ExtResource("1_ippcc")]
+[node name="Groping_In_The_Dark" unique_id=218464371 instance=ExtResource("1_ippcc")]
 
-[node name="Find_Batteries" parent="Objectives" index="0" instance=ExtResource("2_gmju0")]
+[node name="Prepare_Batteries" parent="Objectives" parent_id_path=PackedInt32Array(621023371) index="0" unique_id=1831948188 instance=ExtResource("2_gmju0")]
+
+[node name="Reach_End" parent="Objectives" parent_id_path=PackedInt32Array(621023371) index="1" unique_id=2041441773 instance=ExtResource("3_ne7d6")]

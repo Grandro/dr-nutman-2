@@ -1,4 +1,4 @@
-extends ProgressObjectBase
+extends FWProgressObjectBase
 class_name ProgressObjectPeanutBushes1
 
 var _a_pluck_count: int = 0

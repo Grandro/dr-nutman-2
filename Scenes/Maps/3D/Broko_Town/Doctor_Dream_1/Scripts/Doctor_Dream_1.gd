@@ -1,4 +1,4 @@
-extends MapBase3D
+extends FWMapBase3D
 class_name MapDoctorDream1
 
 @onready var _a_Color_Selection: MiniGameColorSelection = get_node("Mini_Games/Color_Selection")
@@ -10,7 +10,7 @@ func _ready() -> void:
 
 func open_color_selection() -> void:
 	var global_si: Global = Global.get_singleton(self, "Global")
-	var player: Player3D = global_si.get_player()
+	var player: FWPlayer3D = global_si.get_object(&"Player")
 	player.comph().call_comp("Operate", &"disable")
 	
 	_a_Color_Selection.open()
@@ -35,7 +35,7 @@ func load_data_init() -> void:
 
 func _on_Color_Selection_closed() -> void:
 	var global_si: Global = Global.get_singleton(self, "Global")
-	var player: Player3D = global_si.get_player()
+	var player: FWPlayer3D = global_si.get_object(&"Player")
 	player.comph().call_comp("Operate", &"enable")
 	
 	var cutscene_system_si: Cutscene_System = Global.get_singleton(self, "Cutscene_System")

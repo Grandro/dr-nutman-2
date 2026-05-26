@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bvmfdxernfsth"]
+[gd_scene format=3 uid="uid://bvmfdxernfsth"]
 
 [ext_resource type="Theme" uid="uid://cphubdfp0kld2" path="res://Global_Resources/Themes/NutOS/NutOS.tres" id="1_gcky6"]
 [ext_resource type="Script" uid="uid://bpqagl8krym4x" path="res://Scenes/NutOS/Content/Start_Menu/Apps/Scripts/App.gd" id="2"]
@@ -12,7 +12,7 @@ bg_color = Color(0.313726, 0.313726, 0.313726, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_26p07"]
 
-[node name="App" type="MarginContainer"]
+[node name="App" type="MarginContainer" unique_id=149431783]
 light_mask = 8
 visibility_layer = 8
 custom_minimum_size = Vector2(0, 48)
@@ -21,7 +21,7 @@ offset_bottom = 40.0
 theme = ExtResource("1_gcky6")
 script = ExtResource("2")
 
-[node name="Select" type="Button" parent="."]
+[node name="Select" type="Button" parent="." unique_id=550491632]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
@@ -31,21 +31,21 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_d8nk1")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_mjoys")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_26p07")
 
-[node name="HBox" type="HBoxContainer" parent="."]
+[node name="HBox" type="HBoxContainer" parent="." unique_id=644263117]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
 mouse_filter = 2
 theme_override_constants/separation = 8
 
-[node name="Padding" type="Control" parent="HBox"]
+[node name="Padding" type="Control" parent="HBox" unique_id=856862805]
 light_mask = 8
 visibility_layer = 8
 custom_minimum_size = Vector2(8, 0)
 layout_mode = 2
 mouse_filter = 2
 
-[node name="Texture" type="TextureRect" parent="HBox"]
+[node name="Texture" type="TextureRect" parent="HBox" unique_id=1300603091]
 light_mask = 8
 visibility_layer = 8
 custom_minimum_size = Vector2(32, 32)
@@ -56,7 +56,7 @@ mouse_filter = 2
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Name" type="Label" parent="HBox"]
+[node name="Name" type="Label" parent="HBox" unique_id=790501883]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2

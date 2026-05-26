@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://dtg5xwfgpi3wy"]
+
+[ext_resource type="Script" uid="uid://ckbk2i4wb1yhq" path="res://Framework/Scenes/Object/Scripts/Node3D_Object.gd" id="1_7cg83"]
+[ext_resource type="PackedScene" uid="uid://bblmb8yfchyxr" path="res://Framework/Scenes/Object/Comps/3D/Display.tscn" id="2_mmxyp"]
+[ext_resource type="Texture2D" uid="uid://bnqoca6u6royg" path="res://Global_Resources/Sprites/Items/Battery.png" id="3_5am3q"]
+[ext_resource type="PackedScene" uid="uid://bt6c4euae5p4h" path="res://Framework/Scenes/Object/Comps/3D/Area.tscn" id="4_5am3q"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r8dg6"]
+size = Vector3(1, 0.25, 1)
+
+[node name="Battery" type="Node3D" unique_id=231974245 groups=["Object"]]
+script = ExtResource("1_7cg83")
+
+[node name="Display" parent="." unique_id=473946948 instance=ExtResource("2_mmxyp")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.51, 0)
+shaded = false
+texture = ExtResource("3_5am3q")
+
+[node name="Area" parent="." unique_id=865260482 instance=ExtResource("4_5am3q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+collision_layer = 0
+collision_mask = 4
+
+[node name="Collision" type="CollisionShape3D" parent="Area" unique_id=1066849435]
+shape = SubResource("BoxShape3D_r8dg6")

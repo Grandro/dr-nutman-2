@@ -3,15 +3,11 @@ class_name MiniGameColorSelectionPrevColors
 
 signal color_selected(p_color: Color)
 
-var _a_Prev_Color_Entry_Scene: PackedScene = load("res://Scenes/Mini_Games/Color_Selection/Game/Prev_Color_Entry.tscn")
+var _a_Prev_Color_Entry_Scene: PackedScene = load("uid://18ymogmt1iqx")
 
-@onready var _a_Heading: Label = get_node("VBox/Heading")
 @onready var _a_HFlow: HFlowContainer = get_node("VBox/Scroll/HFlow")
 
 var _a_selected: MiniGameColorSelectionPrevColorEntry # Selected Prev_Color_Entry
-
-func update_trans() -> void:
-	_a_Heading.set_text(tr(&"MINIGAMES_COLOR_SELECTION_PREVCOLORS"))
 
 func open(p_color: Color) -> void:
 	var has_theme_color_: bool = false
@@ -57,10 +53,6 @@ func _instantiate_prev_color_entry(p_color: Color, p_visible: bool) -> MiniGameC
 	
 	return instance
 
-func MESSAGES_PROCEED(p_response: StringName, p_instance: MiniGameColorSelectionPrevColorEntry) -> void:
-	if p_response == &"Yes":
-		p_instance.queue_free()
-
 func _on_Prev_Color_Entry_pressed(p_instance: MiniGameColorSelectionPrevColorEntry) -> void:
 	_a_selected.set_deletable(true)
 	p_instance.set_deletable(false)
@@ -71,4 +63,8 @@ func _on_Prev_Color_Entry_pressed(p_instance: MiniGameColorSelectionPrevColorEnt
 
 func _on_Prev_Color_Entry_delete_pressed(p_instance: MiniGameColorSelectionPrevColorEntry) -> void:
 	var messages_si: Messages = Global.get_singleton(self, "Messages")
-	messages_si.show_proceed(tr(&"CONFIRM_DELETE_COLOR"), self, p_instance)
+	messages_si.show_proceed(tr(&"CONFIRM_DELETE_COLOR"), _CB_Messages_Proceed.bind(p_instance))
+
+func _CB_Messages_Proceed(p_response: StringName, p_instance: MiniGameColorSelectionPrevColorEntry) -> void:
+	if p_response == &"Yes":
+		p_instance.queue_free()

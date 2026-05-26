@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dty0moqpc43al"]
+
+[ext_resource type="PackedScene" uid="uid://cleynesu6jd83" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Buffin_House_3/Arcade/Ghosties/Comps/Behavior/Behavior_Base.tscn" id="1_j24l6"]
+[ext_resource type="PackedScene" uid="uid://datplhbc8atow" path="res://Framework/Scenes/Object/Comps/3D/Behavior/States/State_Move_Predict.tscn" id="2_f55mt"]
+
+[node name="Behavior" unique_id=103479668 instance=ExtResource("1_j24l6")]
+
+[node name="Move" parent="States" parent_id_path=PackedInt32Array(892130468) index="2" unique_id=1292768813 instance=ExtResource("2_f55mt")]
+_e_move_state = &"Float"
+_e_wait_finish = false
+_e_process_time = 0.2
+_e_reset_on_finish = false
+_e_min_radius = 0.0
+_e_max_radius = 100.0
+_e_CD = 0.0

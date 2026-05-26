@@ -1,0 +1,107 @@
+[gd_scene format=3 uid="uid://btan7on4dbplb"]
+
+[ext_resource type="Theme" uid="uid://pr4yljlh62sp" path="res://Framework/Global_Resources/Themes/Debug/Debug.tres" id="1"]
+[ext_resource type="Texture2D" uid="uid://dfuhlj2mlxms5" path="res://Global_Resources/Sprites/UI/Arrow_Left_Normal.png" id="2_q5204"]
+[ext_resource type="Script" uid="uid://l00lh7kxghce" path="res://Framework/Global_Scenes/Debug/Scenes/Attr_Select/Scripts/Attr_Select.gd" id="3"]
+[ext_resource type="PackedScene" uid="uid://b0t5u8s6p2dc" path="res://Framework/Global_Scenes/Debug/Scenes/Entry_List/Entry_List.tscn" id="3_dx3jr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8butd"]
+bg_color = Color(0.113725, 0.133333, 0.160784, 1)
+
+[node name="Attr_Select" type="CanvasLayer" unique_id=1066849693]
+layer = 3
+script = ExtResource("3")
+
+[node name="Background" type="Panel" parent="." unique_id=144470336]
+light_mask = 8
+visibility_layer = 8
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_8butd")
+
+[node name="Margin" type="MarginContainer" parent="." unique_id=1633179436]
+light_mask = 8
+visibility_layer = 8
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1")
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="Back" type="Button" parent="Margin" unique_id=710505543]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(60, 24)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+icon = ExtResource("2_q5204")
+icon_alignment = 1
+expand_icon = true
+
+[node name="HBox" type="HBoxContainer" parent="Margin" unique_id=1754257023]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_constants/separation = 24
+
+[node name="Properties" type="VBoxContainer" parent="Margin/HBox" unique_id=252850797]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 16
+
+[node name="Heading" type="Label" parent="Margin/HBox/Properties" unique_id=1346102285]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 4
+text = "FW_DEBUG_PROPERTIES"
+vertical_alignment = 1
+
+[node name="Entries" parent="Margin/HBox/Properties" unique_id=1050952134 instance=ExtResource("3_dx3jr")]
+layout_mode = 2
+size_flags_vertical = 3
+_e_delete_loc_id = &"FW_DEBUG_DELETE_PART"
+_e_show_duplicate = false
+_e_show_delete = false
+_e_show_add = false
+_e_can_change_name = false
+_e_ensure_unique_names = false
+
+[node name="Methods" type="VBoxContainer" parent="Margin/HBox" unique_id=217504423]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_constants/separation = 16
+
+[node name="Heading" type="Label" parent="Margin/HBox/Methods" unique_id=1492862659]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 4
+text = "FW_DEBUG_METHODS"
+vertical_alignment = 1
+
+[node name="Entries" parent="Margin/HBox/Methods" unique_id=1518159058 instance=ExtResource("3_dx3jr")]
+layout_mode = 2
+size_flags_vertical = 3
+_e_delete_loc_id = &"FW_DEBUG_DELETE_PART"
+_e_show_duplicate = false
+_e_show_delete = false
+_e_show_add = false
+_e_can_change_name = false
+_e_ensure_unique_names = false

@@ -17,13 +17,8 @@ func _ready() -> void:
 	_a_Color.pressed.connect(_on_Color_pressed)
 	_a_Delete_Image.pressed.connect(_on_Delete_Image_pressed)
 	
-	_a_New.set_text(tr(&"MINIGAMES_COLOR_SELECTION_PREVCOLORS_NEW"))
-	
 	_a_New.hide()
 	_a_Delete.hide()
-
-func update_trans() -> void:
-	_a_New.set_text(tr(&"MINIGAMES_COLOR_SELECTION_PREVCOLORS_NEW"))
 
 func set_self_color(p_color: Color) -> void:
 	_a_Color.set_self_modulate(p_color)

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://brlh7mvebe26e"]
 
-[node name="Ceiling_Lamp_1" type="OmniLight3D"]
+[node name="Ceiling_Lamp_1" type="OmniLight3D" unique_id=1090217036]
 layers = 4
 light_color = Color(1, 0.805114, 0.453964, 1)
 light_energy = 8.0

@@ -7,7 +7,7 @@ func _ready() -> void:
 	_a_Anims.animation_finished.connect(_on_anim_finished)
 	hide()
 
-func init(_p_entity: Character3DObject) -> void:
+func init(_p_entities: Array[Node]) -> void:
 	pass
 
 func play_anim(p_name: StringName) -> void:

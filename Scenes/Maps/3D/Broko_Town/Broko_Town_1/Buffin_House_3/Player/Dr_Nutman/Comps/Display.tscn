@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bxe4tjb2ecuto"]
+
+[ext_resource type="PackedScene" uid="uid://dkw8jtjm128pr" path="res://Scenes/Player/3D/Dr_Nutman/Comps/Display.tscn" id="1_fn0gn"]
+
+[node name="Display" unique_id=473946948 instance=ExtResource("1_fn0gn")]
+shaded = false

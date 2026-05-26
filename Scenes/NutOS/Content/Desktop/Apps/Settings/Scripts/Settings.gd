@@ -10,7 +10,7 @@ const _a_OPTION_HEADING: String = "NUTOS_APP_SETTINGS_OPTIONS_%s_HEADING"
 const _a_OPTION_DESC: String = "NUTOS_APP_SETTINGS_OPTIONS_%s_DESC"
 const _a_MENU_PATH: String = "res://Scenes/NutOS/Content/Desktop/Apps/Settings/Menus/%s/%s.tscn"
 
-var _a_Option_Entry_Scene: PackedScene = preload("res://Scenes/NutOS/Content/Desktop/Apps/Settings/Option_Entry.tscn")
+var _a_Option_Entry_Scene: PackedScene = preload("uid://biyv7ru8kxoxf")
 
 @onready var _a_Main: MarginContainer = get_node("Contents/Main")
 @onready var _a_Options: VBoxContainer = get_node("Contents/Main/VBox/Options/VBox")

@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bxbt125a00cga"]
+
+[ext_resource type="PackedScene" uid="uid://bblmb8yfchyxr" path="res://Framework/Scenes/Object/Comps/3D/Display.tscn" id="1_v3xj2"]
+[ext_resource type="Texture2D" uid="uid://cp7gsqye3qh76" path="res://Global_Resources/Sprites/Icons/Dr_Nutman.png" id="2_bn7bx"]
+
+[node name="Display" unique_id=473946948 instance=ExtResource("1_v3xj2")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.51, 0)
+layers = 10
+shaded = false
+texture = ExtResource("2_bn7bx")

@@ -1,25 +1,26 @@
-[gd_scene load_steps=10 format=3 uid="uid://bq340dbv4ksvc"]
+[gd_scene format=3 uid="uid://bq340dbv4ksvc"]
 
 [ext_resource type="PackedScene" uid="uid://6awbb064kh7p" path="res://Global_Scenes/Battle_System/SV_Battle/Character_Battle/Character_Battle.tscn" id="1_segbb"]
 [ext_resource type="Script" uid="uid://bg8utuga3hh6p" path="res://Global_Scenes/Battle_System/SV_Battle/Party_Members/Scripts/Party_Member_Battle.gd" id="2_ihvmg"]
-[ext_resource type="PackedScene" uid="uid://dctpibkwbk8nq" path="res://Scenes/Object/Comps/3D/Equipment.tscn" id="3_ynp27"]
+[ext_resource type="PackedScene" uid="uid://dctpibkwbk8nq" path="res://Framework/Scenes/Object/Comps/3D/Equipment.tscn" id="3_ynp27"]
 [ext_resource type="AudioStream" uid="uid://cpaf3uk6j6us4" path="res://Global_Resources/Audio/SFX/Flee_1.wav" id="4_4ybqs"]
 [ext_resource type="PackedScene" uid="uid://mddl8g7ub2qx" path="res://Global_Scenes/Battle_System/SV_Battle/Party_Members/Comps/Shield_Bar/Shield_Bar.tscn" id="4_47gxf"]
-[ext_resource type="PackedScene" uid="uid://dsxxput7t3drq" path="res://Scenes/Object/Comps/Party_Member.tscn" id="4_jjtkt"]
+[ext_resource type="PackedScene" uid="uid://dsxxput7t3drq" path="res://Framework/Scenes/Object/Comps/Party_Member.tscn" id="4_jjtkt"]
 [ext_resource type="AudioStream" uid="uid://dkma2f2bd2c8n" path="res://Global_Resources/Audio/SFX/UI/Ok_1.wav" id="4_ydmrs"]
-[ext_resource type="PackedScene" uid="uid://djl16ro8388xh" path="res://Scenes/Object/Comps/3D/Movement/Comps/Jump.tscn" id="5_3x2ef"]
+[ext_resource type="PackedScene" uid="uid://djl16ro8388xh" path="res://Framework/Scenes/Object/Comps/3D/Movement/Comps/Jump.tscn" id="5_3x2ef"]
+[ext_resource type="PackedScene" uid="uid://yb8e5q7nbmdp" path="res://Framework/Scenes/Object/Comps/3D/Movement/Comps/Gravity.tscn" id="8_bw6bg"]
 [ext_resource type="PackedScene" uid="uid://d1m8wwsegslr7" path="res://Global_Scenes/Battle_System/SV_Battle/Party_Members/Comps/Actions/Commands/Flee.tscn" id="8_k07fl"]
 
-[node name="Party_Member_Battle" groups=["Party_Member"] instance=ExtResource("1_segbb")]
+[node name="Party_Member_Battle" unique_id=104174345 groups=["Party_Member"] instance=ExtResource("1_segbb")]
 collision_layer = 264
 script = ExtResource("2_ihvmg")
 _e_command_circle_offset = Vector3(0, 5, 0)
 _e_reactions = Dictionary[StringName, Dictionary]({})
 
-[node name="Display" parent="." index="0"]
+[node name="Display" parent="." index="0" unique_id=1929382541]
 layers = 12
 
-[node name="Equipment" parent="." index="1" instance=ExtResource("3_ynp27")]
+[node name="Equipment" parent="." index="1" unique_id=56808241 instance=ExtResource("3_ynp27")]
 _e_scenes = {
 "Feet": {},
 "Head": {},
@@ -29,34 +30,36 @@ _e_scenes = {
 "Weapon": {}
 }
 
-[node name="Weapon" type="Node3D" parent="Equipment" index="4"]
+[node name="Weapon" type="Node3D" parent="Equipment" index="4" unique_id=328274686]
 
-[node name="Shield" type="Node3D" parent="Equipment" index="5"]
+[node name="Shield" type="Node3D" parent="Equipment" index="5" unique_id=1478202797]
 
-[node name="Perform" type="AudioStreamPlayer" parent="Audio" index="1"]
+[node name="Perform" type="AudioStreamPlayer" parent="Audio" parent_id_path=PackedInt32Array(1144323176) index="1" unique_id=1978434988]
 stream = ExtResource("4_ydmrs")
 bus = &"SFX"
 
-[node name="Flee" type="AudioStreamPlayer" parent="Audio" index="2"]
+[node name="Flee" type="AudioStreamPlayer" parent="Audio" parent_id_path=PackedInt32Array(1144323176) index="2" unique_id=1450254307]
 stream = ExtResource("4_4ybqs")
 bus = &"SFX"
 
-[node name="Hitbox" parent="." index="4"]
+[node name="Hitbox" parent="." index="4" unique_id=500826064]
 collision_mask = 64
 
-[node name="Shield_Bar" parent="." index="5" instance=ExtResource("4_47gxf")]
+[node name="Shield_Bar" parent="." index="5" unique_id=740766590 instance=ExtResource("4_47gxf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.7, 0)
 
-[node name="Movement" parent="." index="6"]
+[node name="Movement" parent="." index="6" unique_id=2026549712]
 _e_reset_dir = "Right"
 
-[node name="Jump" parent="Movement" index="3" instance=ExtResource("5_3x2ef")]
+[node name="Jump" parent="Movement" index="3" unique_id=625083948 instance=ExtResource("5_3x2ef")]
 
-[node name="Actions" parent="." index="8"]
+[node name="Gravity" parent="Movement" index="4" unique_id=799719492 instance=ExtResource("8_bw6bg")]
+
+[node name="Actions" parent="." index="8" unique_id=61702563]
 _e_commands = Dictionary[StringName, PackedScene]({
 &"Flee": ExtResource("8_k07fl")
 })
 
-[node name="Party_Member" parent="." index="11" instance=ExtResource("4_jjtkt")]
+[node name="Party_Member" parent="." index="11" unique_id=215784987 instance=ExtResource("4_jjtkt")]
 
 [editable path="Movement/Terrain"]

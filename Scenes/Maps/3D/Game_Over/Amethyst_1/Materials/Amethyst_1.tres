@@ -1,4 +1,4 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bbdgdk1tefch7"]
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bbdgdk1tefch7"]
 
 [ext_resource type="Texture2D" uid="uid://cer06x1wu24sk" path="res://Scenes/Maps/3D/Game_Over/Amethyst_1/Sprites/Amethyst_1_Texture.png" id="1_6612t"]
 

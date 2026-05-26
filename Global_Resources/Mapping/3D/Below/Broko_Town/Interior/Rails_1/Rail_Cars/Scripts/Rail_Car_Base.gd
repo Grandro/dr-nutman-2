@@ -1,4 +1,4 @@
-extends RigidBody3DObject
+extends FWRigidBody3DObject
 class_name RailCarBase
 
 signal integrate_forces(p_state: PhysicsDirectBodyState3D)
@@ -18,4 +18,4 @@ func _integrate_forces(p_state: PhysicsDirectBodyState3D) -> void:
 func set_force(p_force: float) -> void:
 	_a_force = p_force
 	set_linear_velocity(global_transform.basis.x * _a_force)
-	set_physics_process(p_force != 0.0) 
+	set_physics_process(p_force != 0.0)

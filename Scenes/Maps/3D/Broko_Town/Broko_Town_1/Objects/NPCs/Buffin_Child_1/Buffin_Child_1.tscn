@@ -1,11 +1,121 @@
-[gd_scene load_steps=3 format=3 uid="uid://o74s3llgupgl"]
+[gd_scene format=3 uid="uid://o74s3llgupgl"]
 
 [ext_resource type="PackedScene" uid="uid://wn70bfluq2r3" path="res://Scenes/NPC/3D/Buffins/Small_Base/Small_Base.tscn" id="1_vtqp5"]
 [ext_resource type="PackedScene" uid="uid://xwh3xagds0sk" path="res://Scenes/Equipable/3D/Objects/Buffins/Small_Base/Head/Party_Hats/1.tscn" id="2_jxlm6"]
+[ext_resource type="Animation" uid="uid://bx7tjeqknt2oo" path="res://Scenes/NPC/3D/Buffins/Small_Base/Anims/Terrain/Global/Idle_Down.tres" id="3_bh3st"]
+[ext_resource type="Animation" uid="uid://bw38y5focyymc" path="res://Scenes/NPC/3D/Buffins/Small_Base/Anims/Terrain/Global/Idle_Left.tres" id="4_jrruq"]
+[ext_resource type="Animation" uid="uid://dfhoepkrox2rj" path="res://Scenes/NPC/3D/Buffins/Small_Base/Anims/Terrain/Global/Idle_Right.tres" id="5_54rh2"]
+[ext_resource type="Animation" uid="uid://b5hk18ht3py47" path="res://Scenes/NPC/3D/Buffins/Small_Base/Anims/Terrain/Global/Idle_Up.tres" id="6_j2ibn"]
+[ext_resource type="Animation" uid="uid://c7hf20fys7tvj" path="res://Scenes/NPC/3D/Buffins/Small_Base/Anims/Terrain/Global/Jump_Down.tres" id="7_ed0f6"]
+[ext_resource type="Animation" uid="uid://bmew7civlnpqs" path="res://Scenes/NPC/3D/Buffins/Small_Base/Anims/Terrain/Global/Jump_Left.tres" id="8_05vtm"]
+[ext_resource type="Animation" uid="uid://cj7jsvylpfukd" path="res://Scenes/NPC/3D/Buffins/Small_Base/Anims/Terrain/Global/Jump_Right.tres" id="9_bwk5a"]
+[ext_resource type="Animation" uid="uid://bbu00un4e1283" path="res://Scenes/NPC/3D/Buffins/Small_Base/Anims/Terrain/Global/Jump_Up.tres" id="10_kuefk"]
+[ext_resource type="Animation" uid="uid://t0afcqmk7mqx" path="res://Scenes/NPC/3D/Buffins/Small_Base/Anims/Terrain/Global/Place_Down.tres" id="11_erusx"]
+[ext_resource type="Animation" uid="uid://dbyipdo2q6ftb" path="res://Scenes/NPC/3D/Buffins/Small_Base/Anims/Terrain/Global/Place_Left.tres" id="12_rh3h1"]
+[ext_resource type="Animation" uid="uid://dmp1wf66w6qph" path="res://Scenes/NPC/3D/Buffins/Small_Base/Anims/Terrain/Global/Place_Right.tres" id="13_cqjmr"]
+[ext_resource type="Animation" uid="uid://db1ri0xhrvjgs" path="res://Scenes/NPC/3D/Buffins/Small_Base/Anims/Terrain/Global/Place_Up.tres" id="14_2oj3u"]
+[ext_resource type="Animation" uid="uid://cbsrtk4281jgj" path="res://Scenes/NPC/3D/Buffins/Small_Base/Anims/Terrain/Global/Stop_Down.tres" id="15_h77og"]
+[ext_resource type="Animation" uid="uid://bdm1d27g4hnw0" path="res://Scenes/NPC/3D/Buffins/Small_Base/Anims/Terrain/Global/Stop_Left.tres" id="16_q7c2y"]
+[ext_resource type="Animation" uid="uid://dv018r2smrrx7" path="res://Scenes/NPC/3D/Buffins/Small_Base/Anims/Terrain/Global/Stop_Right.tres" id="17_desnx"]
+[ext_resource type="Animation" uid="uid://ddpbowfqbo4a6" path="res://Scenes/NPC/3D/Buffins/Small_Base/Anims/Terrain/Global/Stop_Up.tres" id="18_8s4sf"]
+[ext_resource type="Animation" uid="uid://d131hgv60otck" path="res://Scenes/NPC/3D/Buffins/Small_Base/Anims/Terrain/Global/Think_Down.tres" id="19_c1sje"]
+[ext_resource type="Animation" uid="uid://wurswkgj55ie" path="res://Scenes/NPC/3D/Buffins/Small_Base/Anims/Terrain/Global/Think_Left.tres" id="20_7rgge"]
+[ext_resource type="Animation" uid="uid://3qk11agnvgx0" path="res://Scenes/NPC/3D/Buffins/Small_Base/Anims/Terrain/Global/Think_Right.tres" id="21_8m6tt"]
+[ext_resource type="Animation" uid="uid://dywky1xr8vjp5" path="res://Scenes/NPC/3D/Buffins/Small_Base/Anims/Terrain/Global/Think_Up.tres" id="22_f428c"]
+[ext_resource type="Animation" uid="uid://blag3ugw7v1gy" path="res://Scenes/NPC/3D/Buffins/Small_Base/Anims/Terrain/Global/Walk_Down.tres" id="23_swf2c"]
+[ext_resource type="Animation" uid="uid://cwircykrnqgoy" path="res://Scenes/NPC/3D/Buffins/Small_Base/Anims/Terrain/Global/Walk_Left.tres" id="24_ywtee"]
+[ext_resource type="Animation" uid="uid://5a7eg6du6f12" path="res://Scenes/NPC/3D/Buffins/Small_Base/Anims/Terrain/Global/Walk_Right.tres" id="25_tw0mf"]
+[ext_resource type="Animation" uid="uid://bogdori6ol3pm" path="res://Scenes/NPC/3D/Buffins/Small_Base/Anims/Terrain/Global/Walk_Up.tres" id="26_8p2sd"]
+[ext_resource type="Animation" uid="uid://t1d0xnt5g3wr" path="res://Framework/Scenes/NPC/Anims/Global/Idle_Down.tres" id="27_gtavt"]
+[ext_resource type="Animation" uid="uid://dhkgoyij1x6rk" path="res://Framework/Scenes/NPC/Anims/Global/Idle_Left.tres" id="28_jylqt"]
+[ext_resource type="Animation" uid="uid://c3foxhmlybn11" path="res://Framework/Scenes/NPC/Anims/Global/Idle_Right.tres" id="29_5dshb"]
+[ext_resource type="Animation" uid="uid://c8q8sqkqu8wo6" path="res://Framework/Scenes/NPC/Anims/Global/Idle_Up.tres" id="30_e8up4"]
+[ext_resource type="Animation" uid="uid://c716o5kooeclg" path="res://Framework/Scenes/NPC/Anims/Global/Jump_Down.tres" id="31_47ekm"]
+[ext_resource type="Animation" uid="uid://dyih225e0mbm8" path="res://Framework/Scenes/NPC/Anims/Global/Jump_Left.tres" id="32_hyd4f"]
+[ext_resource type="Animation" uid="uid://dattgub6k7ygj" path="res://Framework/Scenes/NPC/Anims/Global/Jump_Right.tres" id="33_frlhf"]
+[ext_resource type="Animation" uid="uid://br5eo01fklh5t" path="res://Framework/Scenes/NPC/Anims/Global/Jump_Up.tres" id="34_1fbyg"]
+[ext_resource type="Animation" uid="uid://djxi175chvxuf" path="res://Framework/Scenes/NPC/Anims/Global/Place_Down.tres" id="35_hmqrb"]
+[ext_resource type="Animation" uid="uid://chmgigsjnpaj7" path="res://Framework/Scenes/NPC/Anims/Global/Place_Left.tres" id="36_letpe"]
+[ext_resource type="Animation" uid="uid://cnh6dch7b5fq3" path="res://Framework/Scenes/NPC/Anims/Global/Place_Right.tres" id="37_kbyo5"]
+[ext_resource type="Animation" uid="uid://dplcqkgcf5pvi" path="res://Framework/Scenes/NPC/Anims/Global/Place_Up.tres" id="38_3syk1"]
+[ext_resource type="Animation" uid="uid://dfgnsgwre056v" path="res://Framework/Scenes/NPC/Anims/Global/Stop_Down.tres" id="39_wkv0d"]
+[ext_resource type="Animation" uid="uid://ck8cgcf127td7" path="res://Framework/Scenes/NPC/Anims/Global/Stop_Left.tres" id="40_nkjkv"]
+[ext_resource type="Animation" uid="uid://ivo3wm1p84py" path="res://Framework/Scenes/NPC/Anims/Global/Stop_Right.tres" id="41_ojnix"]
+[ext_resource type="Animation" uid="uid://04burlym77ey" path="res://Framework/Scenes/NPC/Anims/Global/Stop_Up.tres" id="42_keac7"]
+[ext_resource type="Animation" uid="uid://n0743bbyl04i" path="res://Framework/Scenes/NPC/Anims/Global/Think_Down.tres" id="43_w4cax"]
+[ext_resource type="Animation" uid="uid://dpjdr11cddxxd" path="res://Framework/Scenes/NPC/Anims/Global/Think_Left.tres" id="44_cgg2r"]
+[ext_resource type="Animation" uid="uid://cuhqmlf0og7tp" path="res://Framework/Scenes/NPC/Anims/Global/Think_Right.tres" id="45_myoqy"]
+[ext_resource type="Animation" uid="uid://mobsppp7sp8j" path="res://Framework/Scenes/NPC/Anims/Global/Think_Up.tres" id="46_wc31p"]
+[ext_resource type="Animation" uid="uid://c4hlq813kivf5" path="res://Framework/Scenes/NPC/Anims/Global/Walk_Down.tres" id="47_2edxr"]
+[ext_resource type="Animation" uid="uid://dhq15wruxeukq" path="res://Framework/Scenes/NPC/Anims/Global/Walk_Left.tres" id="48_42vxd"]
+[ext_resource type="Animation" uid="uid://c8j4fhnj4dyqf" path="res://Framework/Scenes/NPC/Anims/Global/Walk_Right.tres" id="49_bkixp"]
+[ext_resource type="Animation" uid="uid://dm5smq1qltdtu" path="res://Framework/Scenes/NPC/Anims/Global/Walk_Up.tres" id="50_h44df"]
 
-[node name="Buffin_Child_1" instance=ExtResource("1_vtqp5")]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_etd23"]
+_data = {
+&"Idle_Down": ExtResource("3_bh3st"),
+&"Idle_Left": ExtResource("4_jrruq"),
+&"Idle_Right": ExtResource("5_54rh2"),
+&"Idle_Up": ExtResource("6_j2ibn"),
+&"Jump_Down": ExtResource("7_ed0f6"),
+&"Jump_Left": ExtResource("8_05vtm"),
+&"Jump_Right": ExtResource("9_bwk5a"),
+&"Jump_Up": ExtResource("10_kuefk"),
+&"Place_Down": ExtResource("11_erusx"),
+&"Place_Left": ExtResource("12_rh3h1"),
+&"Place_Right": ExtResource("13_cqjmr"),
+&"Place_Up": ExtResource("14_2oj3u"),
+&"Stop_Down": ExtResource("15_h77og"),
+&"Stop_Left": ExtResource("16_q7c2y"),
+&"Stop_Right": ExtResource("17_desnx"),
+&"Stop_Up": ExtResource("18_8s4sf"),
+&"Think_Down": ExtResource("19_c1sje"),
+&"Think_Left": ExtResource("20_7rgge"),
+&"Think_Right": ExtResource("21_8m6tt"),
+&"Think_Up": ExtResource("22_f428c"),
+&"Walk_Down": ExtResource("23_swf2c"),
+&"Walk_Left": ExtResource("24_ywtee"),
+&"Walk_Right": ExtResource("25_tw0mf"),
+&"Walk_Up": ExtResource("26_8p2sd")
+}
 
-[node name="1" parent="Equipment/Head" index="0" instance=ExtResource("2_jxlm6")]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_diesr"]
+_data = {
+&"Idle_Down": ExtResource("27_gtavt"),
+&"Idle_Left": ExtResource("28_jylqt"),
+&"Idle_Right": ExtResource("29_5dshb"),
+&"Idle_Up": ExtResource("30_e8up4"),
+&"Jump_Down": ExtResource("31_47ekm"),
+&"Jump_Left": ExtResource("32_hyd4f"),
+&"Jump_Right": ExtResource("33_frlhf"),
+&"Jump_Up": ExtResource("34_1fbyg"),
+&"Place_Down": ExtResource("35_hmqrb"),
+&"Place_Left": ExtResource("36_letpe"),
+&"Place_Right": ExtResource("37_kbyo5"),
+&"Place_Up": ExtResource("38_3syk1"),
+&"Stop_Down": ExtResource("39_wkv0d"),
+&"Stop_Left": ExtResource("40_nkjkv"),
+&"Stop_Right": ExtResource("41_ojnix"),
+&"Stop_Up": ExtResource("42_keac7"),
+&"Think_Down": ExtResource("43_w4cax"),
+&"Think_Left": ExtResource("44_cgg2r"),
+&"Think_Right": ExtResource("45_myoqy"),
+&"Think_Up": ExtResource("46_wc31p"),
+&"Walk_Down": ExtResource("47_2edxr"),
+&"Walk_Left": ExtResource("48_42vxd"),
+&"Walk_Right": ExtResource("49_bkixp"),
+&"Walk_Up": ExtResource("50_h44df")
+}
+
+[node name="Buffin_Child_1" unique_id=2033406997 instance=ExtResource("1_vtqp5")]
+
+[node name="1" parent="Equipment/Head" index="0" unique_id=1503591403 instance=ExtResource("2_jxlm6")]
+
+[node name="Anims" parent="Movement/Terrain" index="1"]
+libraries/ = SubResource("AnimationLibrary_etd23")
+
+[node name="Anims" parent="." index="16"]
+libraries/ = SubResource("AnimationLibrary_diesr")
 
 [editable path="Equipment"]
 [editable path="Equipment/Head/1"]

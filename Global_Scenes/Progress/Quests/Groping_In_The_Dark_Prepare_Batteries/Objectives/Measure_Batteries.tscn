@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dqgvooc7ybbu2"]
+
+[ext_resource type="PackedScene" uid="uid://cnwen4duxwc58" path="res://Framework/Global_Scenes/Progress/Quests/Objective_Int.tscn" id="1_nuq40"]
+[ext_resource type="Resource" uid="uid://8xfiub00eoj5" path="res://Global_Resources/Databases/Quests/Broko_Town/Main/Groping_In_The_Dark_Prepare_Batteries/Objective_Measure_Batteries.tres" id="2_a1fyd"]
+
+[node name="Measure_Batteries" unique_id=1895593691 instance=ExtResource("1_nuq40")]
+_e_data = ExtResource("2_a1fyd")

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CompData" format=3 uid="uid://btiy2pvfvddf2"]
+
+[ext_resource type="PackedScene" uid="uid://decnis7qnn0n4" path="res://Scenes/Player/3D/Icon/Comps/States.tscn" id="1_q3hr3"]
+[ext_resource type="Script" uid="uid://dk1y7876kg1po" path="res://Framework/Scenes/Player/Scripts/Comp_Data.gd" id="2_omq1v"]
+
+[resource]
+script = ExtResource("2_omq1v")
+_e_key = &"States"
+_e_scene = ExtResource("1_q3hr3")
+_e_group = &"Icon"
+metadata/_custom_type_script = "uid://dk1y7876kg1po"

@@ -1,17 +1,17 @@
-[gd_scene load_steps=75 format=3 uid="uid://bdr4m3xj7c1yn"]
+[gd_scene format=3 uid="uid://bdr4m3xj7c1yn"]
 
 [ext_resource type="PackedScene" uid="uid://bq340dbv4ksvc" path="res://Global_Scenes/Battle_System/SV_Battle/Party_Members/Party_Member_Battle.tscn" id="1_0ouge"]
 [ext_resource type="AudioStream" uid="uid://drtkyglm804jx" path="res://Global_Resources/Audio/SFX/Jump_1.wav" id="2_nexqa"]
 [ext_resource type="AudioStream" uid="uid://ep54nca0xn0i" path="res://Global_Resources/Audio/SFX/Hit_2.wav" id="3_6cjcm"]
 [ext_resource type="Texture2D" uid="uid://cod8mkqx8wdyp" path="res://Global_Resources/Sprites/Objects/Dr_Nutman/Spritesheet.png" id="3_b0glm"]
 [ext_resource type="AudioStream" uid="uid://bo43cb43rwn4t" path="res://Global_Resources/Audio/SFX/Charge_1.wav" id="4_aqyfl"]
-[ext_resource type="PackedScene" uid="uid://b028hrfen5mpa" path="res://Scenes/Object/Comps/3D/Movement/Comps/Terrain/Area.tscn" id="5_kc0g8"]
+[ext_resource type="PackedScene" uid="uid://b028hrfen5mpa" path="res://Framework/Scenes/Object/Comps/3D/Movement/Comps/Terrain/Area.tscn" id="5_kc0g8"]
 [ext_resource type="AudioStream" uid="uid://dwto1bjldkmhg" path="res://Global_Resources/Audio/SFX/Terrain/Tile_1.wav" id="6_p6a5j"]
 [ext_resource type="Animation" uid="uid://wlb72qagatfp" path="res://Global_Scenes/Battle_System/SV_Battle/Party_Members/Dr_Nutman/Anims/Terrain/Global/Attack_ATK_Charge_Right.tres" id="7_fahhh"]
 [ext_resource type="Animation" uid="uid://dlus5cujexlgu" path="res://Global_Scenes/Battle_System/SV_Battle/Party_Members/Dr_Nutman/Anims/Terrain/Global/Attack_ATK_Fall_Right.res" id="8_qa5kl"]
-[ext_resource type="PackedScene" uid="uid://cjr0l2h3yj5lh" path="res://Scenes/Object/Comps/3D/Speech_Bubble.tscn" id="9_l73wi"]
+[ext_resource type="PackedScene" uid="uid://cjr0l2h3yj5lh" path="res://Framework/Scenes/Object/Comps/3D/Speech_Bubble.tscn" id="9_l73wi"]
 [ext_resource type="Animation" uid="uid://c1j8tnkwtqjag" path="res://Global_Scenes/Battle_System/SV_Battle/Party_Members/Dr_Nutman/Anims/Terrain/Global/Attack_ATK_Hit_Right.res" id="9_pn76j"]
-[ext_resource type="PackedScene" uid="uid://omsbdulg45pv" path="res://Scenes/Object/Comps/3D/Popup.tscn" id="10_eaoym"]
+[ext_resource type="PackedScene" uid="uid://omsbdulg45pv" path="res://Framework/Scenes/Object/Comps/3D/Popup.tscn" id="10_eaoym"]
 [ext_resource type="Animation" uid="uid://bdd13e4ai22ul" path="res://Global_Scenes/Battle_System/SV_Battle/Party_Members/Dr_Nutman/Anims/Terrain/Global/Attack_ATK_Recover_Right.res" id="10_u3u4x"]
 [ext_resource type="Animation" uid="uid://c5gmaavililer" path="res://Global_Scenes/Battle_System/SV_Battle/Party_Members/Dr_Nutman/Anims/Terrain/Global/Attack_ATK_Tumble_Right.res" id="11_66tfv"]
 [ext_resource type="Animation" uid="uid://dbffyt3iu25od" path="res://Global_Scenes/Battle_System/SV_Battle/Party_Members/Dr_Nutman/Anims/Terrain/Global/Defend_DEF_Right.res" id="12_1bkri"]
@@ -244,14 +244,14 @@ _data = {
 &"Walk_Up": ExtResource("41_g22ay")
 }
 
-[node name="Dr_Nutman" instance=ExtResource("1_0ouge")]
+[node name="Dr_Nutman" unique_id=1770456927 instance=ExtResource("1_0ouge")]
 _e_command_circle_offset = Vector3(0, 3.8, 0)
-_e_reactions = Dictionary[String, Dictionary]({
-"$Default": {
+_e_reactions = Dictionary[StringName, Dictionary]({
+&"$Default": {
 "Duck": "B",
 "Jump": "A"
 },
-"Defend": {
+&"Defend": {
 "Perfect_Block": "A"
 }
 })
@@ -259,7 +259,7 @@ _e_popup_offset = Vector3(0, 2.33, 0)
 _e_attack_offset = Vector3(0.83, 0, 0.01)
 _e_rating_offset = Vector3(-3, 4, 0.01)
 
-[node name="Display" parent="." index="0"]
+[node name="Display" parent="." index="0" unique_id=1929382541]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.12, 0)
 layers = 14
 texture = ExtResource("3_b0glm")
@@ -267,14 +267,14 @@ hframes = 8
 vframes = 19
 frame = 113
 
-[node name="Speech_Bubble" parent="." index="1" instance=ExtResource("9_l73wi")]
+[node name="Speech_Bubble" parent="." index="1" unique_id=139053799 instance=ExtResource("9_l73wi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02, 4.5, 0.03)
 visible = false
 
-[node name="Popup" parent="." index="2" instance=ExtResource("10_eaoym")]
+[node name="Popup" parent="." index="2" unique_id=432040258 instance=ExtResource("10_eaoym")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.373, 0.01)
 
-[node name="Equipment" parent="." index="3"]
+[node name="Equipment" parent="." index="3" unique_id=56808241]
 _e_scenes = {
 "Feet": {},
 "Head": {
@@ -292,80 +292,76 @@ _e_scenes = {
 }
 }
 
-[node name="Collision" parent="." index="4"]
+[node name="Collision" parent="." index="4" unique_id=1106206414]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
 shape = SubResource("CapsuleShape3D_ea3cw")
 
-[node name="Audio" parent="." index="5"]
+[node name="Audio" parent="." index="5" unique_id=1144323176]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 
-[node name="Jump" type="AudioStreamPlayer" parent="Audio" index="3"]
+[node name="Jump" type="AudioStreamPlayer" parent="Audio" index="3" unique_id=1293830829]
 stream = ExtResource("2_nexqa")
 bus = &"SFX"
 
-[node name="Hit" type="AudioStreamPlayer" parent="Audio" index="4"]
+[node name="Hit" type="AudioStreamPlayer" parent="Audio" index="4" unique_id=1240911958]
 stream = ExtResource("3_6cjcm")
 bus = &"SFX"
 
-[node name="Charge" type="AudioStreamPlayer" parent="Audio" index="5"]
+[node name="Charge" type="AudioStreamPlayer" parent="Audio" index="5" unique_id=1094902590]
 stream = ExtResource("4_aqyfl")
 bus = &"SFX"
 
-[node name="Footsteps" type="AudioStreamPlayer3D" parent="Audio" index="6"]
+[node name="Footsteps" type="AudioStreamPlayer3D" parent="Audio" index="6" unique_id=1559895828]
 stream = ExtResource("6_p6a5j")
 bus = &"SFX"
 
-[node name="Hitbox" parent="." index="6"]
+[node name="Hitbox" parent="." index="6" unique_id=500826064]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0.8, 0)
 
-[node name="Collision" type="CollisionShape3D" parent="Hitbox" index="0"]
+[node name="Collision" type="CollisionShape3D" parent="Hitbox" index="0" unique_id=1486188559]
 shape = SubResource("BoxShape3D_kc0g8")
 
-[node name="Left_Foot" parent="Movement/Terrain/Areas" index="0" instance=ExtResource("5_kc0g8")]
+[node name="Left_Foot" parent="Movement/Terrain/Areas" index="0" unique_id=1112205436 instance=ExtResource("5_kc0g8")]
 
 [node name="Collision" parent="Movement/Terrain/Areas/Left_Foot" index="1"]
 shape = SubResource("BoxShape3D_fahhh")
 
-[node name="Right_Foot" parent="Movement/Terrain/Areas" index="1" instance=ExtResource("5_kc0g8")]
+[node name="Right_Foot" parent="Movement/Terrain/Areas" index="1" unique_id=707215210 instance=ExtResource("5_kc0g8")]
 
 [node name="Collision" parent="Movement/Terrain/Areas/Right_Foot" index="1"]
 shape = SubResource("BoxShape3D_fahhh")
 
-[node name="Anims" parent="Movement/Terrain" index="1"]
-libraries = {
-&"": SubResource("AnimationLibrary_qa5kl"),
-&"SV": SubResource("AnimationLibrary_x6qgm")
-}
+[node name="Anims" parent="Movement/Terrain" parent_id_path=PackedInt32Array(299372332) index="1"]
+libraries/ = SubResource("AnimationLibrary_qa5kl")
+libraries/SV = SubResource("AnimationLibrary_x6qgm")
 
-[node name="States" parent="Movement" index="2"]
-_e_speeds = Dictionary[String, float]({
-"Run": 9.0,
-"Stop": 0.0,
-"Walk": 6.0
+[node name="States" parent="Movement" parent_id_path=PackedInt32Array(2026549712) index="2" unique_id=260044954]
+_e_speeds = Dictionary[StringName, float]({
+&"Run": 9.0,
+&"Stop": 0.0,
+&"Walk": 6.0
 })
 
-[node name="Status" parent="." index="9"]
+[node name="Status" parent="." index="9" unique_id=2058228235]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.75, 1, 0)
 
-[node name="Actions" parent="." index="10"]
-_e_commands = Dictionary[String, PackedScene]({
-"Attack_ATK": ExtResource("41_per0l"),
-"Defense_DEF": ExtResource("42_kc0g8"),
-"Flee": ExtResource("40_kc0g8")
+[node name="Actions" parent="." index="10" unique_id=61702563]
+_e_commands = Dictionary[StringName, PackedScene]({
+&"Attack_ATK": ExtResource("41_per0l"),
+&"Defense_DEF": ExtResource("42_kc0g8"),
+&"Flee": ExtResource("40_kc0g8")
 })
 
-[node name="States" parent="." index="11"]
-_e_states = ["Stop", "Idle", "Walk", "Jump", "Duck", "Fall", "Attack_ATK_Charge", "Attack_ATK_Fall", "Attack_ATK_Hit", "Attack_ATK_Recover", "Attack_ATK_Tumble", "Defend_DEF"]
+[node name="States" parent="." index="11" unique_id=1953301127]
+_e_states = Array[StringName]([&"Stop", &"Idle", &"Walk", &"Jump", &"Duck", &"Fall", &"Attack_ATK_Charge", &"Attack_ATK_Fall", &"Attack_ATK_Hit", &"Attack_ATK_Recover", &"Attack_ATK_Tumble", &"Defend_DEF"])
 _e_state = "Idle"
 
-[node name="Party_Member" parent="." index="13"]
+[node name="Party_Member" parent="." index="13" unique_id=215784987]
 _e_pm_key = "Dr_Nutman"
 
-[node name="Anims" parent="." index="14"]
-libraries = {
-&"": SubResource("AnimationLibrary_pn76j"),
-&"SV": SubResource("AnimationLibrary_gxi8e")
-}
+[node name="Anims" parent="." index="14" unique_id=1809209056]
+libraries/ = SubResource("AnimationLibrary_pn76j")
+libraries/SV = SubResource("AnimationLibrary_gxi8e")
 
 [editable path="Popup"]
 [editable path="Movement/Terrain"]

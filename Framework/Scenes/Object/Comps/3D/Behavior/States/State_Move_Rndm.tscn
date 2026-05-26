@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bxf81ui2kvwk"]
+
+[ext_resource type="PackedScene" uid="uid://cjanmnf2alc80" path="res://Framework/Scenes/Object/Comps/3D/Behavior/States/State_Move_Base.tscn" id="1_r3p0f"]
+[ext_resource type="Script" uid="uid://c25hfyf8kev6g" path="res://Framework/Scenes/Object/Comps/3D/Behavior/States/Scripts/State_Move_Rndm.gd" id="2_bacye"]
+
+[node name="Move" unique_id=1292768813 instance=ExtResource("1_r3p0f")]
+script = ExtResource("2_bacye")

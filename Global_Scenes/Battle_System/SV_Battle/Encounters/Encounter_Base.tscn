@@ -1,9 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://rwpfs10v6p2a"]
+[gd_scene format=3 uid="uid://rwpfs10v6p2a"]
 
-[ext_resource type="PackedScene" uid="uid://cngj2ughe8rfn" path="res://Scenes/Maps/Map_Base/3D/Free_Camera/Free_Camera.tscn" id="1_0fgjv"]
+[ext_resource type="PackedScene" uid="uid://cngj2ughe8rfn" path="res://Framework/Scenes/Maps/Map_Base/3D/Free_Camera/Free_Camera.tscn" id="1_0fgjv"]
 [ext_resource type="Script" uid="uid://cwi43e7jyitj7" path="res://Global_Scenes/Battle_System/SV_Battle/Encounters/Scripts/Encounter_Base.gd" id="1_qem4q"]
 [ext_resource type="PackedScene" uid="uid://vhtor60ei5fs" path="res://Global_Scenes/Battle_System/SV_Battle/Encounters/Command_Circle/Command_Circle.tscn" id="3_8ip60"]
-[ext_resource type="PackedScene" uid="uid://c67cxkpsuanog" path="res://Scenes/Maps/Map_Base/3D/Free_Audio/Free_Audio.tscn" id="3_p5kx0"]
+[ext_resource type="PackedScene" uid="uid://c67cxkpsuanog" path="res://Framework/Scenes/Maps/Map_Base/3D/Free_Audio/Free_Audio.tscn" id="3_p5kx0"]
 [ext_resource type="Script" uid="uid://8hhclql5tf5n" path="res://Global_Scenes/Battle_System/SV_Battle/Encounters/Scripts/Place_Pos.gd" id="4_evj7w"]
 [ext_resource type="PackedScene" uid="uid://0iwgi3bid3ay" path="res://Global_Scenes/Battle_System/SV_Battle/Encounters/Indicators/Indicators.tscn" id="6_3vyu0"]
 [ext_resource type="PackedScene" uid="uid://rjec7v7j244o" path="res://Global_Scenes/Battle_System/SV_Battle/Encounters/Enemy_Select/Enemy_Select.tscn" id="6_tqicl"]
@@ -41,125 +41,125 @@ volumetric_fog_albedo = Color(0.4, 0.4, 0.4, 1)
 volumetric_fog_emission = Color(0.2215, 0.25, 0.22, 1)
 volumetric_fog_emission_energy = 0.5
 
-[node name="Encounter_Base" type="Node3D"]
+[node name="Encounter_Base" type="Node3D" unique_id=1478092642]
 script = ExtResource("1_qem4q")
 
-[node name="Terrain" type="Node3D" parent="."]
+[node name="Terrain" type="Node3D" parent="." unique_id=1079516806]
 
-[node name="Below" type="Node3D" parent="Terrain"]
+[node name="Below" type="Node3D" parent="Terrain" unique_id=1561908858]
 
-[node name="Same_As" type="Node3D" parent="Terrain"]
+[node name="Same_As" type="Node3D" parent="Terrain" unique_id=1960974899]
 
-[node name="Areas" type="Node3D" parent="Terrain"]
+[node name="Areas" type="Node3D" parent="Terrain" unique_id=1301930970]
 
-[node name="Objects" type="Node3D" parent="."]
+[node name="Objects" type="Node3D" parent="." unique_id=1255743078]
 
-[node name="$Free_Camera" parent="Objects" instance=ExtResource("1_0fgjv")]
+[node name="$Free_Camera" parent="Objects" unique_id=1112581883 instance=ExtResource("1_0fgjv")]
 
-[node name="$Free_Audio" parent="Objects" instance=ExtResource("3_p5kx0")]
+[node name="$Free_Audio" parent="Objects" unique_id=1210486558 instance=ExtResource("3_p5kx0")]
 
-[node name="Party_Members" type="Node3D" parent="Objects"]
+[node name="Party_Members" type="Node3D" parent="Objects" unique_id=2066612562]
 
-[node name="Place_Pos" type="Node3D" parent="Objects/Party_Members"]
+[node name="Place_Pos" type="Node3D" parent="Objects/Party_Members" unique_id=1159077025]
 script = ExtResource("4_evj7w")
 
-[node name="1" type="Node3D" parent="Objects/Party_Members/Place_Pos"]
+[node name="1" type="Node3D" parent="Objects/Party_Members/Place_Pos" unique_id=133105926]
 visible = false
 
-[node name="1" type="Marker3D" parent="Objects/Party_Members/Place_Pos/1"]
+[node name="1" type="Marker3D" parent="Objects/Party_Members/Place_Pos/1" unique_id=696750548]
 
-[node name="2" type="Node3D" parent="Objects/Party_Members/Place_Pos"]
+[node name="2" type="Node3D" parent="Objects/Party_Members/Place_Pos" unique_id=883199061]
 visible = false
 
-[node name="1" type="Marker3D" parent="Objects/Party_Members/Place_Pos/2"]
+[node name="1" type="Marker3D" parent="Objects/Party_Members/Place_Pos/2" unique_id=195595107]
 
-[node name="2" type="Marker3D" parent="Objects/Party_Members/Place_Pos/2"]
+[node name="2" type="Marker3D" parent="Objects/Party_Members/Place_Pos/2" unique_id=688917831]
 
-[node name="3" type="Node3D" parent="Objects/Party_Members/Place_Pos"]
+[node name="3" type="Node3D" parent="Objects/Party_Members/Place_Pos" unique_id=957569682]
 visible = false
 
-[node name="1" type="Marker3D" parent="Objects/Party_Members/Place_Pos/3"]
+[node name="1" type="Marker3D" parent="Objects/Party_Members/Place_Pos/3" unique_id=741170583]
 
-[node name="2" type="Marker3D" parent="Objects/Party_Members/Place_Pos/3"]
+[node name="2" type="Marker3D" parent="Objects/Party_Members/Place_Pos/3" unique_id=943260675]
 
-[node name="3" type="Marker3D" parent="Objects/Party_Members/Place_Pos/3"]
+[node name="3" type="Marker3D" parent="Objects/Party_Members/Place_Pos/3" unique_id=1385292021]
 
-[node name="4" type="Node3D" parent="Objects/Party_Members/Place_Pos"]
+[node name="4" type="Node3D" parent="Objects/Party_Members/Place_Pos" unique_id=1834860197]
 visible = false
 
-[node name="1" type="Marker3D" parent="Objects/Party_Members/Place_Pos/4"]
+[node name="1" type="Marker3D" parent="Objects/Party_Members/Place_Pos/4" unique_id=304283923]
 
-[node name="2" type="Marker3D" parent="Objects/Party_Members/Place_Pos/4"]
+[node name="2" type="Marker3D" parent="Objects/Party_Members/Place_Pos/4" unique_id=1983337452]
 
-[node name="3" type="Marker3D" parent="Objects/Party_Members/Place_Pos/4"]
+[node name="3" type="Marker3D" parent="Objects/Party_Members/Place_Pos/4" unique_id=860672459]
 
-[node name="4" type="Marker3D" parent="Objects/Party_Members/Place_Pos/4"]
+[node name="4" type="Marker3D" parent="Objects/Party_Members/Place_Pos/4" unique_id=749840830]
 
-[node name="Instances" type="Node3D" parent="Objects/Party_Members"]
+[node name="Instances" type="Node3D" parent="Objects/Party_Members" unique_id=731212791]
 
-[node name="Enemies" type="Node3D" parent="Objects"]
+[node name="Enemies" type="Node3D" parent="Objects" unique_id=1380998699]
 
-[node name="Place_Pos" type="Node3D" parent="Objects/Enemies"]
+[node name="Place_Pos" type="Node3D" parent="Objects/Enemies" unique_id=1938844284]
 script = ExtResource("4_evj7w")
 
-[node name="1" type="Node3D" parent="Objects/Enemies/Place_Pos"]
+[node name="1" type="Node3D" parent="Objects/Enemies/Place_Pos" unique_id=175192588]
 visible = false
 
-[node name="1" type="Marker3D" parent="Objects/Enemies/Place_Pos/1"]
+[node name="1" type="Marker3D" parent="Objects/Enemies/Place_Pos/1" unique_id=620912127]
 
-[node name="2" type="Node3D" parent="Objects/Enemies/Place_Pos"]
+[node name="2" type="Node3D" parent="Objects/Enemies/Place_Pos" unique_id=179319413]
 visible = false
 
-[node name="1" type="Marker3D" parent="Objects/Enemies/Place_Pos/2"]
+[node name="1" type="Marker3D" parent="Objects/Enemies/Place_Pos/2" unique_id=1081653193]
 
-[node name="2" type="Marker3D" parent="Objects/Enemies/Place_Pos/2"]
+[node name="2" type="Marker3D" parent="Objects/Enemies/Place_Pos/2" unique_id=959480819]
 
-[node name="3" type="Node3D" parent="Objects/Enemies/Place_Pos"]
+[node name="3" type="Node3D" parent="Objects/Enemies/Place_Pos" unique_id=1405372576]
 visible = false
 
-[node name="1" type="Marker3D" parent="Objects/Enemies/Place_Pos/3"]
+[node name="1" type="Marker3D" parent="Objects/Enemies/Place_Pos/3" unique_id=1543675369]
 
-[node name="2" type="Marker3D" parent="Objects/Enemies/Place_Pos/3"]
+[node name="2" type="Marker3D" parent="Objects/Enemies/Place_Pos/3" unique_id=2105687214]
 
-[node name="3" type="Marker3D" parent="Objects/Enemies/Place_Pos/3"]
+[node name="3" type="Marker3D" parent="Objects/Enemies/Place_Pos/3" unique_id=1871430175]
 
-[node name="4" type="Node3D" parent="Objects/Enemies/Place_Pos"]
+[node name="4" type="Node3D" parent="Objects/Enemies/Place_Pos" unique_id=240823986]
 visible = false
 
-[node name="1" type="Marker3D" parent="Objects/Enemies/Place_Pos/4"]
+[node name="1" type="Marker3D" parent="Objects/Enemies/Place_Pos/4" unique_id=1510034122]
 
-[node name="2" type="Marker3D" parent="Objects/Enemies/Place_Pos/4"]
+[node name="2" type="Marker3D" parent="Objects/Enemies/Place_Pos/4" unique_id=404373856]
 
-[node name="3" type="Marker3D" parent="Objects/Enemies/Place_Pos/4"]
+[node name="3" type="Marker3D" parent="Objects/Enemies/Place_Pos/4" unique_id=521160584]
 
-[node name="4" type="Marker3D" parent="Objects/Enemies/Place_Pos/4"]
+[node name="4" type="Marker3D" parent="Objects/Enemies/Place_Pos/4" unique_id=2131547145]
 
-[node name="Instances" type="Node3D" parent="Objects/Enemies"]
+[node name="Instances" type="Node3D" parent="Objects/Enemies" unique_id=366308920]
 
-[node name="Popups" type="Node3D" parent="Objects"]
+[node name="Popups" type="Node3D" parent="Objects" unique_id=2023179208]
 
-[node name="Nav_Regions" type="Node3D" parent="."]
+[node name="Nav_Regions" type="Node3D" parent="." unique_id=416761695]
 
-[node name="Main" type="NavigationRegion3D" parent="Nav_Regions"]
+[node name="Main" type="NavigationRegion3D" parent="Nav_Regions" unique_id=1868974869]
 navigation_mesh = SubResource("NavigationMesh_p5kx0")
 
-[node name="Flee_Pos" type="Marker3D" parent="."]
+[node name="Flee_Pos" type="Marker3D" parent="." unique_id=203564291]
 
-[node name="Command_Circle" parent="." instance=ExtResource("3_8ip60")]
+[node name="Command_Circle" parent="." unique_id=1463931880 instance=ExtResource("3_8ip60")]
 
-[node name="Rating" parent="." instance=ExtResource("6_x7hxv")]
+[node name="Rating" parent="." unique_id=193575852 instance=ExtResource("6_x7hxv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8, 0, 1.1)
 
-[node name="Indicators" parent="." instance=ExtResource("6_3vyu0")]
+[node name="Indicators" parent="." unique_id=1127595967 instance=ExtResource("6_3vyu0")]
 
-[node name="Env" type="WorldEnvironment" parent="."]
+[node name="Env" type="WorldEnvironment" parent="." unique_id=1175655641]
 environment = SubResource("Environment_wu6vb")
 
-[node name="Enemy_Select" parent="." instance=ExtResource("6_tqicl")]
+[node name="Enemy_Select" parent="." unique_id=2135972532 instance=ExtResource("6_tqicl")]
 
-[node name="Canvas" type="CanvasLayer" parent="."]
+[node name="Canvas" type="CanvasLayer" parent="." unique_id=202683413]
 
-[node name="Speedlines" type="ColorRect" parent="Canvas"]
+[node name="Speedlines" type="ColorRect" parent="Canvas" unique_id=219000975]
 light_mask = 8
 visibility_layer = 8
 material = ExtResource("9_okdsx")
@@ -171,8 +171,8 @@ grow_vertical = 2
 mouse_filter = 2
 metadata/_edit_lock_ = true
 
-[node name="Specials_Menu" parent="Canvas" instance=ExtResource("10_hdarf")]
+[node name="Specials_Menu" parent="Canvas" unique_id=265649628 instance=ExtResource("10_hdarf")]
 metadata/_edit_lock_ = true
 
-[node name="Stats_Display" parent="Canvas" instance=ExtResource("11_cwhu6")]
+[node name="Stats_Display" parent="Canvas" unique_id=1294513503 instance=ExtResource("11_cwhu6")]
 metadata/_edit_lock_ = true

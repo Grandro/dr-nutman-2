@@ -1,8 +1,8 @@
-[gd_scene load_steps=33 format=3 uid="uid://d0t4lrrom4qjd"]
+[gd_scene format=3 uid="uid://d0t4lrrom4qjd"]
 
-[ext_resource type="PackedScene" uid="uid://w5cxcgsk2pyw" path="res://Scenes/NPC/3D/NPC.tscn" id="1_ag50w"]
+[ext_resource type="PackedScene" uid="uid://w5cxcgsk2pyw" path="res://Framework/Scenes/NPC/3D/NPC.tscn" id="1_ag50w"]
 [ext_resource type="Texture2D" uid="uid://b81khnxjp32su" path="res://Global_Resources/Sprites/Objects/Tutato/Spritesheet.png" id="2_dxlm0"]
-[ext_resource type="PackedScene" uid="uid://b028hrfen5mpa" path="res://Scenes/Object/Comps/3D/Movement/Comps/Terrain/Area.tscn" id="3_icpmr"]
+[ext_resource type="PackedScene" uid="uid://b028hrfen5mpa" path="res://Framework/Scenes/Object/Comps/3D/Movement/Comps/Terrain/Area.tscn" id="3_icpmr"]
 [ext_resource type="Animation" uid="uid://dfiicvfl56l6y" path="res://Scenes/NPC/3D/Tutato/Anims/Terrain/Global/Idle_Down.tres" id="3_jpffs"]
 [ext_resource type="Animation" uid="uid://c31718yfg3q15" path="res://Scenes/NPC/3D/Tutato/Anims/Idle_Down.tres" id="3_ty0np"]
 [ext_resource type="Animation" uid="uid://cvpai1rtsqqyi" path="res://Scenes/NPC/3D/Tutato/Anims/Idle_Left.tres" id="4_3o2pm"]
@@ -69,20 +69,20 @@ _data = {
 &"Walk_Up": ExtResource("14_myyft")
 }
 
-[node name="Tutato" instance=ExtResource("1_ag50w")]
+[node name="Tutato" unique_id=968316663 instance=ExtResource("1_ag50w")]
 
-[node name="Display" parent="." index="0"]
+[node name="Display" parent="." index="0" unique_id=484337952]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.84, 0)
 texture = ExtResource("2_dxlm0")
 hframes = 8
 vframes = 2
 frame = 2
 
-[node name="Collision" parent="." index="1"]
+[node name="Collision" parent="." index="1" unique_id=68845023]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.84, 0)
 shape = SubResource("SphereShape3D_icpmr")
 
-[node name="1" parent="Interactions" index="0"]
+[node name="1" parent="Interactions" parent_id_path=PackedInt32Array(755316257) index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
 _e_popup_pos = Vector3(0, 1.84, 0.02)
 _e_speech_bubble_pos = Vector3(0, 3.84, 0.03)
@@ -90,30 +90,23 @@ _e_speech_bubble_pos = Vector3(0, 3.84, 0.03)
 [node name="Collision" parent="Interactions/1" index="0"]
 shape = SubResource("BoxShape3D_e2dvm")
 
-[node name="Body" parent="Movement/Terrain/Areas" index="0" instance=ExtResource("3_icpmr")]
+[node name="Body" parent="Movement/Terrain/Areas" index="0" unique_id=1441143076 instance=ExtResource("3_icpmr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [node name="Collision" parent="Movement/Terrain/Areas/Body" index="1"]
 shape = SubResource("BoxShape3D_icpmr")
 
-[node name="Anims" parent="Movement/Terrain" index="1"]
-libraries = {
-&"": SubResource("AnimationLibrary_mp8gf")
-}
+[node name="Anims" parent="Movement/Terrain" parent_id_path=PackedInt32Array(493980995) index="1"]
+libraries/ = SubResource("AnimationLibrary_mp8gf")
 
-[node name="Speech_Bubble" parent="." index="8"]
+[node name="Speech_Bubble" parent="." index="8" unique_id=1364219094]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.84, 0.03)
 
-[node name="Popup" parent="." index="9"]
+[node name="Popup" parent="." index="9" unique_id=151653346]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.84, 0.02)
 
-[node name="States" parent="." index="14"]
-_e_states = Array[StringName]([&"Stop", &"Idle", &"Walk"])
-
-[node name="Anims" parent="." index="16"]
-libraries = {
-&"": SubResource("AnimationLibrary_vesjw")
-}
+[node name="Anims" parent="." index="16" unique_id=1122559351]
+libraries/ = SubResource("AnimationLibrary_vesjw")
 
 [editable path="Interactions"]
 [editable path="Interactions/1"]

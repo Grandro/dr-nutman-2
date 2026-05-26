@@ -1,0 +1,547 @@
+[gd_scene format=3 uid="uid://esqnk2qbp34y"]
+
+[ext_resource type="PackedScene" uid="uid://djhpux4n30xgb" path="res://Framework/Scenes/Window/Window_Control_Base.tscn" id="1"]
+[ext_resource type="Theme" uid="uid://pr4yljlh62sp" path="res://Framework/Global_Resources/Themes/Debug/Debug.tres" id="2"]
+[ext_resource type="Script" uid="uid://cbvikggcr1tw" path="res://Framework/Global_Scenes/Debug/Commands_List/Scripts/Commands_List.gd" id="5"]
+[ext_resource type="PackedScene" uid="uid://6i7bcxgislsv" path="res://Framework/Global_Scenes/Debug/Commands_List/Commands_List_Entry.tscn" id="7"]
+
+[node name="Commands_List" type="CanvasLayer" unique_id=229480347 groups=["Translated"]]
+layer = 2
+script = ExtResource("5")
+
+[node name="Window" parent="." unique_id=450253890 instance=ExtResource("1")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -282.0
+offset_top = -361.0
+offset_right = 282.0
+offset_bottom = 361.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2")
+
+[node name="Margin" type="MarginContainer" parent="Window/Contents" parent_id_path=PackedInt32Array(450253890, 1946629432) index="0" unique_id=309491153]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Tab" type="TabContainer" parent="Window/Contents/Margin" unique_id=1165648455]
+layout_mode = 2
+current_tab = 0
+
+[node name="1" type="MarginContainer" parent="Window/Contents/Margin/Tab" unique_id=1832869842]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+metadata/_tab_index = 0
+
+[node name="HSplit" type="HSplitContainer" parent="Window/Contents/Margin/Tab/1" unique_id=157703301]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+collapsed = true
+dragger_visibility = 1
+
+[node name="Left" type="VBoxContainer" parent="Window/Contents/Margin/Tab/1/HSplit" unique_id=994799222]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 12
+
+[node name="Movement" type="VBoxContainer" parent="Window/Contents/Margin/Tab/1/HSplit/Left" unique_id=769416282]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Heading" type="RichTextLabel" parent="Window/Contents/Margin/Tab/1/HSplit/Left/Movement" unique_id=1832551234]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.901961, 0.160784, 0.223529, 1)
+theme_override_font_sizes/normal_font_size = 21
+bbcode_enabled = true
+text = "{Movement}"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="VBox" type="VBoxContainer" parent="Window/Contents/Margin/Tab/1/HSplit/Left/Movement" unique_id=1970253031]
+layout_mode = 2
+
+[node name="Set_Move_Route" parent="Window/Contents/Margin/Tab/1/HSplit/Left/Movement/VBox" unique_id=712775317 instance=ExtResource("7")]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.901961, 0.160784, 0.223529, 1)
+theme_override_colors/font_focus_color = Color(0.901961, 0.160784, 0.223529, 1)
+theme_override_colors/font_pressed_color = Color(0.66, 0.1188, 0.1639, 1)
+theme_override_colors/font_hover_color = Color(0.901961, 0.160784, 0.223529, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.901961, 0.160784, 0.223529, 1)
+text = "FW_DEBUG_CUTSCENES_COMMANDS_SET_MOVE_ROUTE"
+_e_command = &"Set_Move_Route"
+
+[node name="Set_Avoidance" parent="Window/Contents/Margin/Tab/1/HSplit/Left/Movement/VBox" unique_id=91820983 instance=ExtResource("7")]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.901961, 0.160784, 0.223529, 1)
+theme_override_colors/font_focus_color = Color(0.901961, 0.160784, 0.223529, 1)
+theme_override_colors/font_pressed_color = Color(0.66, 0.1188, 0.1639, 1)
+theme_override_colors/font_hover_color = Color(0.901961, 0.160784, 0.223529, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.901961, 0.160784, 0.223529, 1)
+text = "FW_DEBUG_CUTSCENES_COMMANDS_SET_AVOIDANCE"
+_e_command = &"Set_Avoidance"
+
+[node name="Change_Dir" parent="Window/Contents/Margin/Tab/1/HSplit/Left/Movement/VBox" unique_id=1095737838 instance=ExtResource("7")]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.901961, 0.160784, 0.223529, 1)
+theme_override_colors/font_focus_color = Color(0.901961, 0.160784, 0.223529, 1)
+theme_override_colors/font_pressed_color = Color(0.66, 0.1188, 0.1639, 1)
+theme_override_colors/font_hover_color = Color(0.901961, 0.160784, 0.223529, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.901961, 0.160784, 0.223529, 1)
+text = "FW_DEBUG_CUTSCENES_COMMANDS_CHANGE_DIR"
+_e_command = &"Change_Dir"
+
+[node name="Tween" parent="Window/Contents/Margin/Tab/1/HSplit/Left/Movement/VBox" unique_id=1095727697 instance=ExtResource("7")]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.901961, 0.160784, 0.223529, 1)
+theme_override_colors/font_focus_color = Color(0.901961, 0.160784, 0.223529, 1)
+theme_override_colors/font_pressed_color = Color(0.66, 0.1188, 0.1639, 1)
+theme_override_colors/font_hover_color = Color(0.901961, 0.160784, 0.223529, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.901961, 0.160784, 0.223529, 1)
+text = "FW_DEBUG_CUTSCENES_COMMANDS_TWEEN"
+_e_command = &"Tween"
+
+[node name="Play_Anim" parent="Window/Contents/Margin/Tab/1/HSplit/Left/Movement/VBox" unique_id=637262873 instance=ExtResource("7")]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.901961, 0.160784, 0.223529, 1)
+theme_override_colors/font_focus_color = Color(0.901961, 0.160784, 0.223529, 1)
+theme_override_colors/font_pressed_color = Color(0.66, 0.1188, 0.1639, 1)
+theme_override_colors/font_hover_color = Color(0.901961, 0.160784, 0.223529, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.901961, 0.160784, 0.223529, 1)
+text = "FW_DEBUG_CUTSCENES_COMMANDS_PLAY_ANIM"
+_e_command = &"Play_Anim"
+
+[node name="Teleport_Object" parent="Window/Contents/Margin/Tab/1/HSplit/Left/Movement/VBox" unique_id=1517013776 instance=ExtResource("7")]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.901961, 0.160784, 0.223529, 1)
+theme_override_colors/font_focus_color = Color(0.901961, 0.160784, 0.223529, 1)
+theme_override_colors/font_pressed_color = Color(0.66, 0.1188, 0.1639, 1)
+theme_override_colors/font_hover_color = Color(0.901961, 0.160784, 0.223529, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.901961, 0.160784, 0.223529, 1)
+text = "FW_DEBUG_CUTSCENES_COMMANDS_TELEPORT_OBJECT"
+_e_command = &"Teleport_Object"
+
+[node name="Jump" parent="Window/Contents/Margin/Tab/1/HSplit/Left/Movement/VBox" unique_id=700640696 instance=ExtResource("7")]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.901961, 0.160784, 0.223529, 1)
+theme_override_colors/font_focus_color = Color(0.901961, 0.160784, 0.223529, 1)
+theme_override_colors/font_pressed_color = Color(0.66, 0.1188, 0.1639, 1)
+theme_override_colors/font_hover_color = Color(0.901961, 0.160784, 0.223529, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.901961, 0.160784, 0.223529, 1)
+text = "FW_DEBUG_CUTSCENES_COMMANDS_JUMP"
+_e_command = &"Jump"
+
+[node name="Camera" type="VBoxContainer" parent="Window/Contents/Margin/Tab/1/HSplit/Left" unique_id=239935401]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Heading" type="RichTextLabel" parent="Window/Contents/Margin/Tab/1/HSplit/Left/Camera" unique_id=11984385]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.34902, 0.756863, 0.207843, 1)
+theme_override_font_sizes/normal_font_size = 21
+bbcode_enabled = true
+text = "{Camera}"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="VBox" type="VBoxContainer" parent="Window/Contents/Margin/Tab/1/HSplit/Left/Camera" unique_id=714865559]
+layout_mode = 2
+
+[node name="Move_Free_Camera" parent="Window/Contents/Margin/Tab/1/HSplit/Left/Camera/VBox" unique_id=880992073 instance=ExtResource("7")]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.34902, 0.756863, 0.207843, 1)
+theme_override_colors/font_focus_color = Color(0.34902, 0.756863, 0.207843, 1)
+theme_override_colors/font_pressed_color = Color(0.2353, 0.52, 0.1404, 1)
+theme_override_colors/font_hover_color = Color(0.34902, 0.756863, 0.207843, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.34902, 0.756863, 0.207843, 1)
+text = "FW_DEBUG_CUTSCENES_COMMANDS_MOVE_FREE_CAMERA"
+_e_command = &"Move_Free_Camera"
+
+[node name="Change_Camera" parent="Window/Contents/Margin/Tab/1/HSplit/Left/Camera/VBox" unique_id=3842138 instance=ExtResource("7")]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.34902, 0.756863, 0.207843, 1)
+theme_override_colors/font_focus_color = Color(0.34902, 0.756863, 0.207843, 1)
+theme_override_colors/font_pressed_color = Color(0.2353, 0.52, 0.1404, 1)
+theme_override_colors/font_hover_color = Color(0.34902, 0.756863, 0.207843, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.34902, 0.756863, 0.207843, 1)
+text = "FW_DEBUG_CUTSCENES_COMMANDS_CHANGE_CAMERA"
+_e_command = &"Change_Camera"
+
+[node name="Items" type="VBoxContainer" parent="Window/Contents/Margin/Tab/1/HSplit/Left" unique_id=1912197190]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Heading" type="RichTextLabel" parent="Window/Contents/Margin/Tab/1/HSplit/Left/Items" unique_id=6822871]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.901961, 0.376471, 0.270588, 1)
+theme_override_font_sizes/normal_font_size = 21
+bbcode_enabled = true
+text = "{Items}"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="VBox" type="VBoxContainer" parent="Window/Contents/Margin/Tab/1/HSplit/Left/Items" unique_id=737777997]
+layout_mode = 2
+
+[node name="Change_Item_Amount" parent="Window/Contents/Margin/Tab/1/HSplit/Left/Items/VBox" unique_id=444494900 instance=ExtResource("7")]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.901961, 0.376471, 0.270588, 1)
+theme_override_colors/font_focus_color = Color(0.901961, 0.376471, 0.270588, 1)
+theme_override_colors/font_pressed_color = Color(0.66, 0.275, 0.198, 1)
+theme_override_colors/font_hover_color = Color(0.901961, 0.376471, 0.270588, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.901961, 0.376471, 0.270588, 1)
+text = "FW_DEBUG_CUTSCENES_COMMANDS_CHANGE_ITEM_AMOUNT"
+_e_command = &"Change_Item_Amount"
+
+[node name="Change_Equipable" parent="Window/Contents/Margin/Tab/1/HSplit/Left/Items/VBox" unique_id=1736121604 instance=ExtResource("7")]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.901961, 0.376471, 0.270588, 1)
+theme_override_colors/font_focus_color = Color(0.901961, 0.376471, 0.270588, 1)
+theme_override_colors/font_pressed_color = Color(0.66, 0.275, 0.198, 1)
+theme_override_colors/font_hover_color = Color(0.901961, 0.376471, 0.270588, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.901961, 0.376471, 0.270588, 1)
+text = "FW_DEBUG_CUTSCENES_COMMANDS_CHANGE_EQUIPABLE"
+_e_command = &"Change_Equipable"
+
+[node name="Timing" type="VBoxContainer" parent="Window/Contents/Margin/Tab/1/HSplit/Left" unique_id=905288854]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Heading" type="RichTextLabel" parent="Window/Contents/Margin/Tab/1/HSplit/Left/Timing" unique_id=965120955]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.8, 0.678431, 0, 1)
+theme_override_font_sizes/normal_font_size = 21
+bbcode_enabled = true
+text = "{Timing}"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="VBox" type="VBoxContainer" parent="Window/Contents/Margin/Tab/1/HSplit/Left/Timing" unique_id=1872595494]
+layout_mode = 2
+
+[node name="Wait" parent="Window/Contents/Margin/Tab/1/HSplit/Left/Timing/VBox" unique_id=54608526 instance=ExtResource("7")]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.678431, 0, 1)
+theme_override_colors/font_focus_color = Color(0.8, 0.678431, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.56, 0.476, 0, 1)
+theme_override_colors/font_hover_color = Color(0.8, 0.678431, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.8, 0.678431, 0, 1)
+text = "FW_DEBUG_CUTSCENES_COMMANDS_WAIT"
+_e_command = &"Wait"
+
+[node name="Audio" type="VBoxContainer" parent="Window/Contents/Margin/Tab/1/HSplit/Left" unique_id=365273456]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Heading" type="RichTextLabel" parent="Window/Contents/Margin/Tab/1/HSplit/Left/Audio" unique_id=810511427]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.368627, 0.529412, 1, 1)
+theme_override_font_sizes/normal_font_size = 21
+bbcode_enabled = true
+text = "{Audio}"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="VBox" type="VBoxContainer" parent="Window/Contents/Margin/Tab/1/HSplit/Left/Audio" unique_id=1893002879]
+layout_mode = 2
+
+[node name="Play_Audio" parent="Window/Contents/Margin/Tab/1/HSplit/Left/Audio/VBox" unique_id=1701727495 instance=ExtResource("7")]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.368627, 0.529412, 1, 1)
+theme_override_colors/font_focus_color = Color(0.368627, 0.529412, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.2812, 0.4009, 0.76, 1)
+theme_override_colors/font_hover_color = Color(0.368627, 0.529412, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.368627, 0.529412, 1, 1)
+text = "FW_DEBUG_CUTSCENES_COMMANDS_PLAY_AUDIO"
+_e_command = &"Play_Audio"
+
+[node name="Right" type="VBoxContainer" parent="Window/Contents/Margin/Tab/1/HSplit" unique_id=1016368251]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 12
+
+[node name="Misc" type="VBoxContainer" parent="Window/Contents/Margin/Tab/1/HSplit/Right" unique_id=1390705485]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Heading" type="RichTextLabel" parent="Window/Contents/Margin/Tab/1/HSplit/Right/Misc" unique_id=1020814039]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.0705882, 0.701961, 0.552941, 1)
+theme_override_font_sizes/normal_font_size = 21
+bbcode_enabled = true
+text = "{Misc}"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="VBox" type="VBoxContainer" parent="Window/Contents/Margin/Tab/1/HSplit/Right/Misc" unique_id=2076718738]
+layout_mode = 2
+
+[node name="Script" parent="Window/Contents/Margin/Tab/1/HSplit/Right/Misc/VBox" unique_id=1638994649 instance=ExtResource("7")]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_focus_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_pressed_color = Color(0.046, 0.46, 0.3634, 1)
+theme_override_colors/font_hover_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.07, 0.7, 0.553, 1)
+text = "FW_DEBUG_CUTSCENES_COMMANDS_SCRIPT"
+_e_command = &"Script"
+
+[node name="Change_State" parent="Window/Contents/Margin/Tab/1/HSplit/Right/Misc/VBox" unique_id=1026525464 instance=ExtResource("7")]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_focus_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_pressed_color = Color(0.046, 0.46, 0.3634, 1)
+theme_override_colors/font_hover_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.07, 0.7, 0.553, 1)
+text = "FW_DEBUG_CUTSCENES_COMMANDS_CHANGE_STATE"
+_e_command = &"Change_State"
+
+[node name="Show_Dialogue" parent="Window/Contents/Margin/Tab/1/HSplit/Right/Misc/VBox" unique_id=686437914 instance=ExtResource("7")]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_focus_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_pressed_color = Color(0.046, 0.46, 0.3634, 1)
+theme_override_colors/font_hover_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.07, 0.7, 0.553, 1)
+text = "FW_DEBUG_CUTSCENES_COMMANDS_SHOW_DIALOGUE"
+_e_command = &"Show_Dialogue"
+
+[node name="Show_Popup" parent="Window/Contents/Margin/Tab/1/HSplit/Right/Misc/VBox" unique_id=1414349062 instance=ExtResource("7")]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_focus_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_pressed_color = Color(0.046, 0.46, 0.3634, 1)
+theme_override_colors/font_hover_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.07, 0.7, 0.553, 1)
+text = "FW_DEBUG_CUTSCENES_COMMANDS_SHOW_POPUP"
+_e_command = &"Show_Popup"
+
+[node name="Show_Overlay" parent="Window/Contents/Margin/Tab/1/HSplit/Right/Misc/VBox" unique_id=450991035 instance=ExtResource("7")]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_focus_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_pressed_color = Color(0.046, 0.46, 0.3634, 1)
+theme_override_colors/font_hover_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.07, 0.7, 0.553, 1)
+text = "FW_DEBUG_CUTSCENES_COMMANDS_SHOW_OVERLAY"
+_e_command = &"Show_Overlay"
+
+[node name="Teleport" parent="Window/Contents/Margin/Tab/1/HSplit/Right/Misc/VBox" unique_id=360357784 instance=ExtResource("7")]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_focus_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_pressed_color = Color(0.046, 0.46, 0.3634, 1)
+theme_override_colors/font_hover_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.07, 0.7, 0.553, 1)
+text = "FW_DEBUG_CUTSCENES_COMMANDS_TELEPORT"
+_e_command = &"Teleport"
+
+[node name="Change_Visibility" parent="Window/Contents/Margin/Tab/1/HSplit/Right/Misc/VBox" unique_id=1265953803 instance=ExtResource("7")]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_focus_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_pressed_color = Color(0.046, 0.46, 0.3634, 1)
+theme_override_colors/font_hover_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.07, 0.7, 0.553, 1)
+text = "FW_DEBUG_CUTSCENES_COMMANDS_CHANGE_VISIBILITY"
+_e_command = &"Change_Visibility"
+
+[node name="Comment" parent="Window/Contents/Margin/Tab/1/HSplit/Right/Misc/VBox" unique_id=27250904 instance=ExtResource("7")]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_focus_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_pressed_color = Color(0.046, 0.46, 0.3634, 1)
+theme_override_colors/font_hover_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.07, 0.7, 0.553, 1)
+text = "FW_DEBUG_CUTSCENES_COMMANDS_COMMENT"
+_e_command = &"Comment"
+
+[node name="Default_Object_Key" parent="Window/Contents/Margin/Tab/1/HSplit/Right/Misc/VBox" unique_id=1808507298 instance=ExtResource("7")]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0705882, 0.701961, 0.552941, 1)
+theme_override_colors/font_focus_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_pressed_color = Color(0.046, 0.46, 0.3634, 1)
+theme_override_colors/font_hover_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.07, 0.7, 0.553, 1)
+text = "FW_DEBUG_CUTSCENES_COMMANDS_DEFAULT_OBJECT_KEY"
+_e_command = &"Default_Object_Key"
+
+[node name="Disable_Object" parent="Window/Contents/Margin/Tab/1/HSplit/Right/Misc/VBox" unique_id=1160523116 instance=ExtResource("7")]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_focus_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_pressed_color = Color(0.046, 0.46, 0.3634, 1)
+theme_override_colors/font_hover_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.07, 0.7, 0.553, 1)
+text = "FW_DEBUG_CUTSCENES_COMMANDS_DISABLE_OBJECT"
+_e_command = &"Disable_Object"
+
+[node name="Change_Cutscene_Args" parent="Window/Contents/Margin/Tab/1/HSplit/Right/Misc/VBox" unique_id=626809782 instance=ExtResource("7")]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_focus_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_pressed_color = Color(0.046, 0.46, 0.3634, 1)
+theme_override_colors/font_hover_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.07, 0.7, 0.553, 1)
+text = "FW_DEBUG_CUTSCENES_COMMANDS_CHANGE_CUTSCENE_ARGS"
+_e_command = &"Change_Cutscene_Args"
+
+[node name="Change_Dialogue_Args" parent="Window/Contents/Margin/Tab/1/HSplit/Right/Misc/VBox" unique_id=635439856 instance=ExtResource("7")]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_focus_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_pressed_color = Color(0.046, 0.46, 0.3634, 1)
+theme_override_colors/font_hover_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.07, 0.7, 0.553, 1)
+text = "FW_DEBUG_CUTSCENES_COMMANDS_CHANGE_DIALOGUE_ARGS"
+_e_command = &"Change_Dialogue_Args"
+
+[node name="Change_Cutscene_Args_Idx" parent="Window/Contents/Margin/Tab/1/HSplit/Right/Misc/VBox" unique_id=1946987398 instance=ExtResource("7")]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_focus_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_pressed_color = Color(0.046, 0.46, 0.3634, 1)
+theme_override_colors/font_hover_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.07, 0.7, 0.553, 1)
+text = "FW_DEBUG_CUTSCENES_COMMANDS_CHANGE_CUTSCENE_ARGS_IDX"
+_e_command = &"Change_Cutscene_Args_Idx"
+
+[node name="Change_Dialogue_Args_Idx" parent="Window/Contents/Margin/Tab/1/HSplit/Right/Misc/VBox" unique_id=1129175548 instance=ExtResource("7")]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_focus_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_pressed_color = Color(0.046, 0.46, 0.3634, 1)
+theme_override_colors/font_hover_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.07, 0.7, 0.553, 1)
+text = "FW_DEBUG_CUTSCENES_COMMANDS_CHANGE_DIALOGUE_ARGS_IDX"
+_e_command = &"Change_Dialogue_Args_Idx"
+
+[node name="Change_Coins_Amount" parent="Window/Contents/Margin/Tab/1/HSplit/Right/Misc/VBox" unique_id=554167146 instance=ExtResource("7")]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_focus_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_pressed_color = Color(0.046, 0.46, 0.3634, 1)
+theme_override_colors/font_hover_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.07, 0.7, 0.553, 1)
+text = "FW_DEBUG_CUTSCENES_COMMANDS_CHANGE_COINS_AMOUNT"
+_e_command = &"Change_Coins_Amount"
+
+[node name="2" type="MarginContainer" parent="Window/Contents/Margin/Tab" unique_id=1536669333]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+metadata/_tab_index = 1
+
+[node name="HSplit" type="HSplitContainer" parent="Window/Contents/Margin/Tab/2" unique_id=1439919191]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+collapsed = true
+dragger_visibility = 1
+
+[node name="Left" type="VBoxContainer" parent="Window/Contents/Margin/Tab/2/HSplit" unique_id=1492751244]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 12
+
+[node name="Flow_Control" type="VBoxContainer" parent="Window/Contents/Margin/Tab/2/HSplit/Left" unique_id=1652452730]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Heading" type="RichTextLabel" parent="Window/Contents/Margin/Tab/2/HSplit/Left/Flow_Control" unique_id=2120514735]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.141176, 0.623529, 0.870588, 1)
+theme_override_font_sizes/normal_font_size = 21
+bbcode_enabled = true
+text = "{Flow_Control}"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="VBox" type="VBoxContainer" parent="Window/Contents/Margin/Tab/2/HSplit/Left/Flow_Control" unique_id=1618202237]
+layout_mode = 2
+
+[node name="Cond_Branch" parent="Window/Contents/Margin/Tab/2/HSplit/Left/Flow_Control/VBox" unique_id=178554085 instance=ExtResource("7")]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.141176, 0.623529, 0.870588, 1)
+theme_override_colors/font_focus_color = Color(0.141176, 0.623529, 0.870588, 1)
+theme_override_colors/font_pressed_color = Color(0.1008, 0.4536, 0.63, 1)
+theme_override_colors/font_hover_color = Color(0.141176, 0.623529, 0.870588, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.141176, 0.623529, 0.870588, 1)
+text = "FW_DEBUG_CUTSCENES_COMMANDS_COND_BRANCH"
+_e_command = &"Cond_Branch"
+
+[node name="Match" parent="Window/Contents/Margin/Tab/2/HSplit/Left/Flow_Control/VBox" unique_id=1043318365 instance=ExtResource("7")]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.141176, 0.623529, 0.870588, 1)
+theme_override_colors/font_focus_color = Color(0.141176, 0.623529, 0.870588, 1)
+theme_override_colors/font_pressed_color = Color(0.1008, 0.4536, 0.63, 1)
+theme_override_colors/font_hover_color = Color(0.141176, 0.623529, 0.870588, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.141176, 0.623529, 0.870588, 1)
+text = "FW_DEBUG_CUTSCENES_COMMANDS_MATCH"
+_e_command = &"Match"
+
+[node name="Loop" parent="Window/Contents/Margin/Tab/2/HSplit/Left/Flow_Control/VBox" unique_id=1984308853 instance=ExtResource("7")]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.141176, 0.623529, 0.870588, 1)
+theme_override_colors/font_focus_color = Color(0.141176, 0.623529, 0.870588, 1)
+theme_override_colors/font_pressed_color = Color(0.1008, 0.4536, 0.63, 1)
+theme_override_colors/font_hover_color = Color(0.141176, 0.623529, 0.870588, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.141176, 0.623529, 0.870588, 1)
+text = "FW_DEBUG_CUTSCENES_COMMANDS_LOOP"
+_e_command = &"Loop"
+
+[node name="Sub_Process" parent="Window/Contents/Margin/Tab/2/HSplit/Left/Flow_Control/VBox" unique_id=688705882 instance=ExtResource("7")]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.141176, 0.623529, 0.870588, 1)
+theme_override_colors/font_focus_color = Color(0.141176, 0.623529, 0.870588, 1)
+theme_override_colors/font_pressed_color = Color(0.1008, 0.4536, 0.63, 1)
+theme_override_colors/font_hover_color = Color(0.141176, 0.623529, 0.870588, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.141176, 0.623529, 0.870588, 1)
+text = "FW_DEBUG_CUTSCENES_COMMANDS_SUB_PROCESS"
+_e_command = &"Sub_Process"
+
+[node name="Wait_For_Sub_Process" parent="Window/Contents/Margin/Tab/2/HSplit/Left/Flow_Control/VBox" unique_id=1734863223 instance=ExtResource("7")]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.141176, 0.623529, 0.870588, 1)
+theme_override_colors/font_focus_color = Color(0.141176, 0.623529, 0.870588, 1)
+theme_override_colors/font_pressed_color = Color(0.1008, 0.4536, 0.63, 1)
+theme_override_colors/font_hover_color = Color(0.141176, 0.623529, 0.870588, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.141176, 0.623529, 0.870588, 1)
+text = "FW_DEBUG_CUTSCENES_COMMANDS_WAIT_FOR_SUB_PROCESS"
+_e_command = &"Wait_For_Sub_Process"
+
+[node name="Exit_Cutscene" parent="Window/Contents/Margin/Tab/2/HSplit/Left/Flow_Control/VBox" unique_id=1778821679 instance=ExtResource("7")]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.141176, 0.623529, 0.870588, 1)
+theme_override_colors/font_focus_color = Color(0.141176, 0.623529, 0.870588, 1)
+theme_override_colors/font_pressed_color = Color(0.1008, 0.4536, 0.63, 1)
+theme_override_colors/font_hover_color = Color(0.141176, 0.623529, 0.870588, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.141176, 0.623529, 0.870588, 1)
+text = "FW_DEBUG_CUTSCENES_COMMANDS_EXIT_CUTSCENE"
+_e_command = &"Exit_Cutscene"
+
+[node name="Right" type="VBoxContainer" parent="Window/Contents/Margin/Tab/2/HSplit" unique_id=1247351103]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 12
+
+[editable path="Window"]

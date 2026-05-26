@@ -1,19 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://x2yrrd0230xk"]
+[gd_scene format=3 uid="uid://x2yrrd0230xk"]
 
 [ext_resource type="Script" uid="uid://duitlq2ruviqi" path="res://Global_Resources/Mapping/3D/Below/Broko_Town/Interior/Rails_1/Scripts/Rails.gd" id="1_rtu80"]
-[ext_resource type="PackedScene" uid="uid://de2jy2ixhp2mw" path="res://Scenes/Object/Comps/Save.tscn" id="2_6ivt3"]
-[ext_resource type="PackedScene" uid="uid://drpp26gth4snn" path="res://Scenes/Object/Comps/Reference.tscn" id="3_5x53i"]
 
-[node name="Rails_1" type="Node3D" groups=["Object"]]
+[node name="Rails_1" type="Node3D" unique_id=843666813]
 script = ExtResource("1_rtu80")
+_e_name = null
 
-[node name="Rail_Cars" type="Node3D" parent="."]
+[node name="Rail_Cars" type="Node3D" parent="." unique_id=266744550]
 
-[node name="Parts" type="Node3D" parent="."]
+[node name="Parts" type="Node3D" parent="." unique_id=302118868]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, 0)
 
-[node name="Path" type="Path3D" parent="."]
-
-[node name="Save" parent="." instance=ExtResource("2_6ivt3")]
-
-[node name="Reference" parent="." instance=ExtResource("3_5x53i")]
+[node name="Path" type="Path3D" parent="." unique_id=1678884828]

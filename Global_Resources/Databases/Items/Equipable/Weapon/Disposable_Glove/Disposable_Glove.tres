@@ -1,7 +1,7 @@
-[gd_resource type="Resource" load_steps=3 format=3 uid="uid://o05vnkmxfbau"]
+[gd_resource type="Resource" script_class="FWEquipableData" format=3 uid="uid://o05vnkmxfbau"]
 
 [ext_resource type="Resource" uid="uid://w2b8u7n7kpl2" path="res://Global_Resources/Databases/Items/Equipable/Weapon/Disposable_Glove/Stats.tres" id="1_tqtfb"]
-[ext_resource type="Script" uid="uid://cbffif5a10ikr" path="res://Global_Resources/Databases/Items/Equipable_Data.gd" id="2_oxk1i"]
+[ext_resource type="Script" uid="uid://cbffif5a10ikr" path="res://Framework/Global_Resources/Databases/Items/Equipable_Data.gd" id="2_oxk1i"]
 
 [resource]
 script = ExtResource("2_oxk1i")

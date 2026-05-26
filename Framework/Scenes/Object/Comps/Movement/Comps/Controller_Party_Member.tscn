@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://6fubcy6emc0c"]
+
+[ext_resource type="PackedScene" uid="uid://bx4rh5qdrkc85" path="res://Framework/Scenes/Object/Comps/Movement/Comps/Controller_Base.tscn" id="1_50nej"]
+[ext_resource type="Script" uid="uid://h5bppj7nfr7k" path="res://Framework/Scenes/Object/Comps/Movement/Comps/Scripts/Controller_Party_Member.gd" id="2_vd8s0"]
+
+[node name="Controller" unique_id=1724524947 instance=ExtResource("1_50nej")]
+script = ExtResource("2_vd8s0")
+
+[node name="Idle_CD" type="Timer" parent="." index="0" unique_id=1344467297]
+wait_time = 5.0

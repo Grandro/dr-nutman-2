@@ -1,12 +1,12 @@
-extends RigidBody3DObject
+extends FWRigidBody3DObject
 class_name ObjectCitrinBall
 
-signal hit(p_instance)
+signal hit(p_instance: Node3D)
 
-@onready var _a_Anims: CompAnims = get_node("Anims")
+@onready var _a_Anims: FWCompAnims = get_node("Anims")
 @onready var _a_Despawn: Timer = get_node("Despawn")
 
-var _a_target = null
+var _a_target: Node3D = null
 
 func _ready() -> void:
 	super()
@@ -16,10 +16,10 @@ func _ready() -> void:
 	
 	set_contact_monitor(true)
 
-func set_target(p_target) -> void:
+func set_target(p_target: Node3D) -> void:
 	_a_target = p_target
 
-func _on_body_entered(p_body) -> void:
+func _on_body_entered(p_body: Node3D) -> void:
 	if p_body != _a_target:
 		return
 	
@@ -29,5 +29,5 @@ func _on_body_entered(p_body) -> void:
 func _on_Despawn_timeout() -> void:
 	_a_Anims.play(&"Despawn")
 
-func _on_Anims_anim_finished(_p_anim_name: StringName) -> void:
+func _on_Anims_anim_finished(_p_name: StringName) -> void:
 	queue_free()

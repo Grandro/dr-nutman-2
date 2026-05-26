@@ -11,29 +11,33 @@ config_version=5
 [application]
 
 config/name="Dr. Nutman"
-run/main_scene="res://Scenes/Title_Screen/Title_Screen.tscn"
+run/main_scene="res://Framework/Scenes/Title_Screen/Title_Screen.tscn"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="Dr_Nutman"
-config/features=PackedStringArray("4.5")
+config/features=PackedStringArray("4.6")
 config/icon="res://Global_Resources/Sprites/Items/Amethyst.png"
+
+[audio]
+
+buses/default_bus_layout="uid://6qrhbtijq5x1"
 
 [autoload]
 
-Global="*res://Global_Scenes/Global/Global.tscn"
-Global_Data="*res://Global_Scripts/Global_Data.gd"
-Main_Menu="*res://Global_Scenes/Main_Menu/Main_Menu.tscn"
-FPS_Display="*res://Global_Scenes/FPS_Display/FPS_Display.tscn"
-Data_Parser="*res://Global_Scripts/Data_Parser.gd"
+Global="*uid://bg2qkupuywwyb"
+Global_Data="*res://Framework/Global_Scripts/Global_Data.gd"
+Main_Menu="*res://Framework/Global_Scenes/Main_Menu/Main_Menu.tscn"
+FPS_Display="*res://Framework/Global_Scenes/FPS_Display/FPS_Display.tscn"
+Data_Parser="*res://Framework/Global_Scripts/Data_Parser.gd"
 Battle_System="*res://Global_Scenes/Battle_System/Battle_System.tscn"
-Scene_Manager="*res://Global_Scenes/Scene_Manager/Scene_Manager.tscn"
-Audio_Manager="*res://Global_Scenes/Audio_Manager/Audio_Manager.tscn"
-Dialogue_System="*res://Global_Scenes/Dialogue_System/Dialogue_System.tscn"
-Cutscene_System="*res://Global_Scenes/Cutscene_System/Cutscene_System.tscn"
-Progress="*res://Global_Scenes/Progress/Progress.tscn"
-Virtual_Keyboard="*res://Global_Scenes/Virtual_Keyboard/Virtual_Keyboard.tscn"
-Debug="*res://Global_Scenes/Debug/Debug.tscn"
-Messages="*res://Global_Scenes/Messages/Messages.tscn"
-Databases="*res://Global_Scenes/Databases/Databases.tscn"
+Scene_Manager="*res://Framework/Global_Scenes/Scene_Manager/Scene_Manager.tscn"
+Audio_Manager="*res://Framework/Global_Scenes/Audio_Manager/Audio_Manager.tscn"
+Dialogue_System="*res://Framework/Global_Scenes/Dialogue_System/Dialogue_System.tscn"
+Cutscene_System="*res://Framework/Global_Scenes/Cutscene_System/Cutscene_System.tscn"
+Progress="*res://Framework/Global_Scenes/Progress/Progress.tscn"
+Virtual_Keyboard="*res://Framework/Global_Scenes/Virtual_Keyboard/Virtual_Keyboard.tscn"
+Debug="*res://Framework/Global_Scenes/Debug/Debug.tscn"
+Messages="*res://Framework/Global_Scenes/Messages/Messages.tscn"
+Databases="*uid://cj5ti3xyhxv7t"
 
 [debug]
 
@@ -64,14 +68,20 @@ enabled=PackedStringArray()
 folder_colors={
 "res://Credits/": "gray",
 "res://Data/": "gray",
+"res://Framework/": "pink",
+"res://Framework/Credits/": "gray",
+"res://Framework/Global_Resources/": "green",
+"res://Framework/Global_Scenes/": "blue",
+"res://Framework/Global_Scripts/": "red",
+"res://Framework/Localization/": "yellow",
+"res://Framework/Scenes/": "blue",
+"res://Framework/Scripts/": "red",
 "res://Global_Resources/": "green",
 "res://Global_Scenes/": "blue",
-"res://Global_Scripts/": "red",
 "res://Licenses/": "gray",
 "res://Localization/": "yellow",
 "res://README/": "gray",
 "res://Scenes/": "blue",
-"res://Scripts/": "red",
 "res://addons/": "gray"
 }
 
@@ -730,7 +740,7 @@ Duck={
 
 [internationalization]
 
-locale/translations=PackedStringArray("res://Localization/Localization.de.translation", "res://Localization/Localization.en.translation")
+locale/translations=PackedStringArray("res://Localization/Localization.de.translation", "res://Localization/Localization.en.translation", "res://Framework/Localization/Localization.de.translation", "res://Framework/Localization/Localization.en.translation")
 
 [layer_names]
 
@@ -764,6 +774,7 @@ translation_remaps={}
 
 [physics]
 
+3d/physics_engine="GodotPhysics3D"
 3d/solver/contact_max_allowed_penetration=0.001
 
 [rendering]

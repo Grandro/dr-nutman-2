@@ -1,2 +1,0 @@
-extends DebugDialoguesAttributeBase
-class_name DebugDialoguesAttributeChoice

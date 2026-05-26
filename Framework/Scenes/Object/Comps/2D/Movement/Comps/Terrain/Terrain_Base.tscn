@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://befgw1wn2vgt7"]
+
+[ext_resource type="Script" uid="uid://bpku04gmjqwmr" path="res://Framework/Scenes/Object/Comps/2D/Movement/Comps/Terrain/Scripts/Terrain_Base.gd" id="1_d2225"]
+
+[node name="Terrain" type="Node2D" unique_id=596835490 groups=["Comp", "Movement"]]
+light_mask = 4
+visibility_layer = 4
+script = ExtResource("1_d2225")
+_e_audio_base_path = "res://Global_Resources/Audio/SFX/Terrain"
+_e_veil_base_path = "res://Global_Resources/Sprites/Terrain_Veils"
+
+[node name="Areas" type="Node2D" parent="." unique_id=1231751654]
+
+[node name="Anims" type="AnimationPlayer" parent="." unique_id=1138211981]

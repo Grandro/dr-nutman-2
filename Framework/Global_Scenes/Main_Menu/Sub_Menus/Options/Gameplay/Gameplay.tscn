@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bduqpjkr3fi"]
+
+[ext_resource type="PackedScene" uid="uid://c41rk18ubb0th" path="res://Framework/Global_Scenes/Main_Menu/Sub_Menus/Options/Option_Tab.tscn" id="1_3aol0"]
+[ext_resource type="Script" uid="uid://cikhv0w2lsffg" path="res://Framework/Global_Scenes/Main_Menu/Sub_Menus/Options/Gameplay/Scripts/Gameplay.gd" id="2_mihwg"]
+[ext_resource type="PackedScene" uid="uid://dmysqox083lhl" path="res://Framework/Global_Scenes/Debug/Scenes/Value_Select/Value_Bool.tscn" id="3_8cwd6"]
+
+[node name="Gameplay" unique_id=485230580 instance=ExtResource("1_3aol0")]
+script = ExtResource("2_mihwg")
+
+[node name="Show_Tutato_Explain" parent="HSplit/Left" parent_id_path=PackedInt32Array(339300404) index="0" unique_id=2095833197 instance=ExtResource("3_8cwd6")]
+layout_mode = 2
+_e_heading_loc_id = "OPTIONS_GAMEPLAY_SHOW_TUTATO_EXPLAIN"

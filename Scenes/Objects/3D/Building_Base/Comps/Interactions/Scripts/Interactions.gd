@@ -1,4 +1,4 @@
-extends CompInteractions3D
+extends FWCompInteractions3D
 class_name ObjectBuildingBaseCompInteractions
 
 func set_destinations(p_destinations) -> void:

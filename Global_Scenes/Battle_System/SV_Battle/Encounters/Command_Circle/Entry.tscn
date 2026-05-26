@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://fb8f6x0c3kdl"]
+[gd_scene format=3 uid="uid://fb8f6x0c3kdl"]
 
 [ext_resource type="Script" uid="uid://cp311b6hle3lr" path="res://Global_Scenes/Battle_System/SV_Battle/Encounters/Command_Circle/Scripts/Entry.gd" id="1_82apt"]
 [ext_resource type="AudioStream" uid="uid://mboxkqxpndfs" path="res://Global_Resources/Audio/SFX/Hit_1.wav" id="1_vh3da"]
@@ -59,21 +59,19 @@ _data = {
 &"Selected": SubResource("2")
 }
 
-[node name="Entry" type="Node3D"]
+[node name="Entry" type="Node3D" unique_id=1583681829]
 script = ExtResource("1_82apt")
 
-[node name="Image" type="Sprite3D" parent="."]
+[node name="Image" type="Sprite3D" parent="." unique_id=1425818532]
 layers = 4
 pixel_size = 0.02
 alpha_cut = 2
 texture_filter = 0
 texture = ExtResource("2_u04lt")
 
-[node name="Audio_Bounce" type="AudioStreamPlayer" parent="."]
+[node name="Audio_Bounce" type="AudioStreamPlayer" parent="." unique_id=480370823]
 stream = ExtResource("1_vh3da")
 bus = &"SFX"
 
-[node name="Anims" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_nkdgk")
-}
+[node name="Anims" type="AnimationPlayer" parent="." unique_id=138416062]
+libraries/ = SubResource("AnimationLibrary_nkdgk")

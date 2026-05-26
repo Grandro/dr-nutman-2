@@ -1,4 +1,4 @@
-extends WindowBase
+extends FWWindowBase
 class_name NutOSContentDesktopApp
 
 const _a_TITLE_LOC_ID: String = "NUTOS_APP_%s"

@@ -1,13 +1,13 @@
-[gd_scene load_steps=64 format=3 uid="uid://ccwfqfxxy14ws"]
+[gd_scene format=3 uid="uid://ccwfqfxxy14ws"]
 
 [ext_resource type="PackedScene" uid="uid://bq340dbv4ksvc" path="res://Global_Scenes/Battle_System/SV_Battle/Party_Members/Party_Member_Battle.tscn" id="1_5ryj5"]
 [ext_resource type="Texture2D" uid="uid://ifemohnwxekh" path="res://Global_Resources/Sprites/Objects/Buffins/Base/Spritesheet.png" id="2_oj64x"]
 [ext_resource type="Script" uid="uid://cp8f4rp4xxfca" path="res://Global_Scenes/Battle_System/SV_Battle/Party_Members/Buffin_Assistant_1/Scripts/Buffin_Assistant_1.gd" id="2_y2hva"]
 [ext_resource type="AudioStream" uid="uid://drtkyglm804jx" path="res://Global_Resources/Audio/SFX/Jump_1.wav" id="4_4vmld"]
-[ext_resource type="PackedScene" uid="uid://b028hrfen5mpa" path="res://Scenes/Object/Comps/3D/Movement/Comps/Terrain/Area.tscn" id="5_cd8la"]
-[ext_resource type="PackedScene" uid="uid://cjr0l2h3yj5lh" path="res://Scenes/Object/Comps/3D/Speech_Bubble.tscn" id="5_emqlg"]
-[ext_resource type="PackedScene" uid="uid://omsbdulg45pv" path="res://Scenes/Object/Comps/3D/Popup.tscn" id="6_kn874"]
-[ext_resource type="PackedScene" uid="uid://b4dvlhw3jh0go" path="res://Scenes/Object/Comps/Cutscene.tscn" id="7_4m7cc"]
+[ext_resource type="PackedScene" uid="uid://b028hrfen5mpa" path="res://Framework/Scenes/Object/Comps/3D/Movement/Comps/Terrain/Area.tscn" id="5_cd8la"]
+[ext_resource type="PackedScene" uid="uid://cjr0l2h3yj5lh" path="res://Framework/Scenes/Object/Comps/3D/Speech_Bubble.tscn" id="5_emqlg"]
+[ext_resource type="PackedScene" uid="uid://omsbdulg45pv" path="res://Framework/Scenes/Object/Comps/3D/Popup.tscn" id="6_kn874"]
+[ext_resource type="PackedScene" uid="uid://b4dvlhw3jh0go" path="res://Framework/Scenes/Object/Comps/Cutscene.tscn" id="7_4m7cc"]
 [ext_resource type="Animation" uid="uid://c2r82wgypsma7" path="res://Scenes/NPC/3D/Buffins/Base/Anims/Terrain/Global/Idle_Down.tres" id="7_y24sw"]
 [ext_resource type="Animation" uid="uid://c06qprmasd7me" path="res://Scenes/NPC/3D/Buffins/Base/Anims/Terrain/Global/Idle_Left.tres" id="8_sww1x"]
 [ext_resource type="Animation" uid="uid://cydpgmbn7i2vu" path="res://Scenes/NPC/3D/Buffins/Base/Anims/Terrain/Global/Idle_Right.tres" id="9_o2q73"]
@@ -35,7 +35,7 @@
 [ext_resource type="PackedScene" uid="uid://d1m8wwsegslr7" path="res://Global_Scenes/Battle_System/SV_Battle/Party_Members/Comps/Actions/Commands/Flee.tscn" id="33_j6otq"]
 [ext_resource type="PackedScene" uid="uid://cwal5ag7raush" path="res://Global_Scenes/Battle_System/SV_Battle/Party_Members/Buffin_Assistant_1/Comps/Actions/Commands/Help.tscn" id="34_j6otq"]
 [ext_resource type="Animation" uid="uid://ymjy8qdpsbvu" path="res://Scenes/NPC/Anims/SV/Idle_Down.tres" id="35_n0nvj"]
-[ext_resource type="PackedScene" uid="uid://drpp26gth4snn" path="res://Scenes/Object/Comps/Reference.tscn" id="35_ww1n2"]
+[ext_resource type="PackedScene" uid="uid://drpp26gth4snn" path="res://Framework/Scenes/Object/Comps/Reference.tscn" id="35_ww1n2"]
 [ext_resource type="Animation" uid="uid://baj7l2vj76dkx" path="res://Scenes/NPC/Anims/SV/Idle_Left.tres" id="36_mjsfr"]
 [ext_resource type="Animation" uid="uid://cuc8dl7iksllx" path="res://Scenes/NPC/Anims/SV/Idle_Right.tres" id="37_a0oqm"]
 [ext_resource type="Animation" uid="uid://bf40ma5ntnwii" path="res://Scenes/NPC/Anims/SV/Idle_Up.tres" id="38_gw64c"]
@@ -122,76 +122,72 @@ _data = {
 &"Walk_Up": ExtResource("58_wyg3i")
 }
 
-[node name="Buffin_Assistant_1" instance=ExtResource("1_5ryj5")]
+[node name="Buffin_Assistant_1" unique_id=44763053 instance=ExtResource("1_5ryj5")]
 script = ExtResource("2_y2hva")
 _e_command_circle_offset = Vector3(0, 3.7, 0)
 
-[node name="Display" parent="." index="0"]
+[node name="Display" parent="." index="0" unique_id=1929382541]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.12, 0)
 texture = ExtResource("2_oj64x")
 hframes = 8
 vframes = 13
 frame = 32
 
-[node name="Collision" parent="." index="2"]
+[node name="Collision" parent="." index="2" unique_id=1106206414]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
 shape = SubResource("CapsuleShape3D_j6otq")
 
-[node name="Speech_Bubble" parent="." index="3" instance=ExtResource("5_emqlg")]
+[node name="Speech_Bubble" parent="." index="3" unique_id=822576243 instance=ExtResource("5_emqlg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.2, 0.01)
 visible = false
 
-[node name="Popup" parent="." index="4" instance=ExtResource("6_kn874")]
+[node name="Popup" parent="." index="4" unique_id=1532259019 instance=ExtResource("6_kn874")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.133, 0.01)
 
-[node name="Jump" type="AudioStreamPlayer" parent="Audio" index="0"]
+[node name="Jump" type="AudioStreamPlayer" parent="Audio" parent_id_path=PackedInt32Array(1144323176) index="0" unique_id=1937262930]
 stream = ExtResource("4_4vmld")
 bus = &"SFX"
 
-[node name="Movement" parent="." index="8"]
+[node name="Movement" parent="." index="8" unique_id=2026549712]
 _e_reset_dir = "Down"
 
-[node name="Left_Foot" parent="Movement/Terrain/Areas" index="0" instance=ExtResource("5_cd8la")]
+[node name="Left_Foot" parent="Movement/Terrain/Areas" index="0" unique_id=2141416831 instance=ExtResource("5_cd8la")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22, 0, 0)
 
 [node name="Collision" parent="Movement/Terrain/Areas/Left_Foot" index="1"]
 shape = SubResource("BoxShape3D_ft5on")
 
-[node name="Right_Foot" parent="Movement/Terrain/Areas" index="1" instance=ExtResource("5_cd8la")]
+[node name="Right_Foot" parent="Movement/Terrain/Areas" index="1" unique_id=1643266109 instance=ExtResource("5_cd8la")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22, 0, 0)
 
 [node name="Collision" parent="Movement/Terrain/Areas/Right_Foot" index="1"]
 shape = SubResource("BoxShape3D_ft5on")
 
-[node name="Anims" parent="Movement/Terrain" index="1"]
-libraries = {
-&"SV": SubResource("AnimationLibrary_y8fe6")
-}
+[node name="Anims" parent="Movement/Terrain" parent_id_path=PackedInt32Array(299372332) index="1"]
+libraries/SV = SubResource("AnimationLibrary_y8fe6")
 
-[node name="Status" parent="." index="9"]
+[node name="Status" parent="." index="9" unique_id=2058228235]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 1, 0)
 
-[node name="Actions" parent="." index="10"]
+[node name="Actions" parent="." index="10" unique_id=61702563]
 _e_commands = Dictionary[StringName, PackedScene]({
 &"Flee": ExtResource("33_j6otq"),
 &"Help": ExtResource("34_j6otq")
 })
 
-[node name="States" parent="." index="11"]
+[node name="States" parent="." index="11" unique_id=1953301127]
 _e_states = Array[StringName]([&"Stop", &"Idle", &"Jump", &"Place", &"Think"])
 _e_state = "Idle"
 
-[node name="Cutscene" parent="." index="12" instance=ExtResource("7_4m7cc")]
+[node name="Cutscene" parent="." index="12" unique_id=1152219953 instance=ExtResource("7_4m7cc")]
 
-[node name="Reference" parent="." index="13" instance=ExtResource("35_ww1n2")]
+[node name="Reference" parent="." index="13" unique_id=1719715620 instance=ExtResource("35_ww1n2")]
 
-[node name="Party_Member" parent="." index="15"]
+[node name="Party_Member" parent="." index="15" unique_id=215784987]
 _e_pm_key = "Buffin_Assistant_1"
 
-[node name="Anims" parent="." index="16"]
-libraries = {
-&"SV": SubResource("AnimationLibrary_4s0c6")
-}
+[node name="Anims" parent="." index="16" unique_id=1809209056]
+libraries/SV = SubResource("AnimationLibrary_4s0c6")
 
 [editable path="Popup"]
 [editable path="Movement/Terrain"]

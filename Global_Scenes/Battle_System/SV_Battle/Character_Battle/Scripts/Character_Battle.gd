@@ -1,4 +1,4 @@
-extends Character3DObject
+extends FWCharacter3DObject
 class_name SVCharacter
 
 signal action_started()
@@ -16,10 +16,10 @@ signal died()
 @export var _e_rating_offset: Vector3 = Vector3.ZERO
 
 @onready var _a_Movement: CompSVMovementCharacter = get_node("Movement")
-@onready var _a_Movement_Nav_Agent: CompMovementNavAgent3D = get_node("Movement/Nav_Agent")
-@onready var _a_Movement_Knockbacks: CompMovementKnockbacks = get_node("Movement/Knockbacks")
+@onready var _a_Movement_Nav_Agent: FWCompMovementNavAgent3D = get_node("Movement/Nav_Agent")
+@onready var _a_Movement_Knockbacks: FWCompMovementKnockbacks = get_node("Movement/Knockbacks")
 @onready var _a_Actions: CompSVActions = get_node("Actions")
-@onready var _a_States: CompStates = get_node("States")
+@onready var _a_States: FWCompStates = get_node("States")
 @onready var _a_Stats: CompSVStats = get_node("Stats")
 @onready var _a_Anims: CompSVAnims = get_node("Anims")
 
@@ -60,7 +60,7 @@ func _emit_action_canceled() -> void:
 	action_canceled.emit()
 
 func cutscene(p_key: StringName, p_entry_key: StringName, p_cb_method: Callable = Callable(),
-			  p_process_type: StringName = "Main", p_key_type: StringName = "Map") -> void:
+			  p_process_type: StringName = &"Main", p_key_type: StringName = &"Map") -> void:
 	var cutscene_system_si: Cutscene_System = Global.get_singleton(self, "Cutscene_System")
 	cutscene_system_si.cutscene(p_key, p_entry_key, p_process_type, p_key_type)
 	cutscene_system_si.set_cutscene_completed_cb(p_key, p_entry_key, p_cb_method)

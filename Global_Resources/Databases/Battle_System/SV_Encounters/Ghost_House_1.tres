@@ -1,7 +1,7 @@
-[gd_resource type="Resource" script_class="SVEncounterData" load_steps=2 format=3 uid="uid://dydbo3j3hkk0s"]
+[gd_resource type="Resource" script_class="SVEncounterData" format=3 uid="uid://dydbo3j3hkk0s"]
 
 [ext_resource type="Script" uid="uid://cn2wadtidvilj" path="res://Global_Resources/Databases/Battle_System/SV_Encounters/SV_Encounter_Data.gd" id="1_ajfvy"]
 
 [resource]
 script = ExtResource("1_ajfvy")
-_e_path = "res://Global_Scenes/Battle_System/SV_Battle/Encounters/Ghost_House_1.tscn"
+_e_uid = "uid://dg675wl001q58"

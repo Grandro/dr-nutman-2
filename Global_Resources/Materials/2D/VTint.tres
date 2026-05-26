@@ -1,4 +1,4 @@
-[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://dtcmrg1uodyue"]
+[gd_resource type="ShaderMaterial" format=3 uid="uid://dtcmrg1uodyue"]
 
 [ext_resource type="Shader" uid="uid://cjf25d4mxujp8" path="res://Global_Resources/Materials/2D/Shaders/VTint.tres" id="1"]
 

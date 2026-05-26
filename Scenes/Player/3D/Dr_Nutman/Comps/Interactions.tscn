@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://df2kxjdkanahm"]
+
+[ext_resource type="PackedScene" uid="uid://nr4813v0r2dg" path="res://Framework/Scenes/Object/Comps/3D/Interactions/Interactions.tscn" id="1_dkkl6"]
+[ext_resource type="Script" uid="uid://d3xnqmr6n5pma" path="res://Framework/Scenes/Player/Comps/Interaction_System/Interactions/Shared.gd" id="2_tm18p"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cwf1m"]
+size = Vector3(1, 0.5, 1)
+
+[node name="Interactions" unique_id=1328118541 instance=ExtResource("1_dkkl6")]
+_e_shared = ExtResource("2_tm18p")
+
+[node name="1" parent="." index="0" unique_id=1097719813]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+collision_layer = 0
+collision_mask = 32
+monitoring = true
+monitorable = false
+_e_popup_pos = Vector3(0, 2.4, 0.02)
+_e_speech_bubble_pos = Vector3(0, 4.5, 0.03)
+
+[node name="Collision" parent="1" index="0" unique_id=1431980935]
+shape = SubResource("BoxShape3D_cwf1m")
+
+[editable path="1"]

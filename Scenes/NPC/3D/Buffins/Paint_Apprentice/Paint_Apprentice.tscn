@@ -1,9 +1,72 @@
-[gd_scene load_steps=11 format=4 uid="uid://cs3iw7g8h805i"]
+[gd_scene format=4 uid="uid://cs3iw7g8h805i"]
 
 [ext_resource type="PackedScene" uid="uid://wn70bfluq2r3" path="res://Scenes/NPC/3D/Buffins/Small_Base/Small_Base.tscn" id="1"]
-[ext_resource type="Material" uid="uid://7wwi3hyl3fjb" path="res://Global_Resources/Materials/3D/Buffin_Tint.tres" id="2_rr2ku"]
+[ext_resource type="Shader" uid="uid://bcwgukhc6uvti" path="res://Global_Resources/Materials/3D/Shaders/Buffin_Tint.tres" id="2_o4af3"]
 [ext_resource type="Script" uid="uid://cpsxd6q2trjb2" path="res://Scenes/NPC/3D/Buffins/Paint_Apprentice/Comps/Scripts/Display.gd" id="3_4ble0"]
 [ext_resource type="Texture2D" uid="uid://ch5jchjsb56q4" path="res://Global_Resources/Sprites/Objects/Buffins/Paint_Apprentice/Spritesheet.png" id="3_jgkpl"]
+[ext_resource type="Animation" uid="uid://bx7tjeqknt2oo" path="res://Scenes/NPC/3D/Buffins/Small_Base/Anims/Terrain/Global/Idle_Down.tres" id="5_8ql0j"]
+[ext_resource type="Animation" uid="uid://bw38y5focyymc" path="res://Scenes/NPC/3D/Buffins/Small_Base/Anims/Terrain/Global/Idle_Left.tres" id="6_u7bxl"]
+[ext_resource type="Animation" uid="uid://dfhoepkrox2rj" path="res://Scenes/NPC/3D/Buffins/Small_Base/Anims/Terrain/Global/Idle_Right.tres" id="7_v8pat"]
+[ext_resource type="Animation" uid="uid://b5hk18ht3py47" path="res://Scenes/NPC/3D/Buffins/Small_Base/Anims/Terrain/Global/Idle_Up.tres" id="8_u3d7q"]
+[ext_resource type="Animation" uid="uid://c7hf20fys7tvj" path="res://Scenes/NPC/3D/Buffins/Small_Base/Anims/Terrain/Global/Jump_Down.tres" id="9_w5ffq"]
+[ext_resource type="Animation" uid="uid://bmew7civlnpqs" path="res://Scenes/NPC/3D/Buffins/Small_Base/Anims/Terrain/Global/Jump_Left.tres" id="10_6pbuy"]
+[ext_resource type="Animation" uid="uid://cj7jsvylpfukd" path="res://Scenes/NPC/3D/Buffins/Small_Base/Anims/Terrain/Global/Jump_Right.tres" id="11_xfbc7"]
+[ext_resource type="Animation" uid="uid://bbu00un4e1283" path="res://Scenes/NPC/3D/Buffins/Small_Base/Anims/Terrain/Global/Jump_Up.tres" id="12_y7joi"]
+[ext_resource type="Animation" uid="uid://t0afcqmk7mqx" path="res://Scenes/NPC/3D/Buffins/Small_Base/Anims/Terrain/Global/Place_Down.tres" id="13_u4i8b"]
+[ext_resource type="Animation" uid="uid://dbyipdo2q6ftb" path="res://Scenes/NPC/3D/Buffins/Small_Base/Anims/Terrain/Global/Place_Left.tres" id="14_2gi0p"]
+[ext_resource type="Animation" uid="uid://dmp1wf66w6qph" path="res://Scenes/NPC/3D/Buffins/Small_Base/Anims/Terrain/Global/Place_Right.tres" id="15_7suyp"]
+[ext_resource type="Animation" uid="uid://db1ri0xhrvjgs" path="res://Scenes/NPC/3D/Buffins/Small_Base/Anims/Terrain/Global/Place_Up.tres" id="16_ntaib"]
+[ext_resource type="Animation" uid="uid://cbsrtk4281jgj" path="res://Scenes/NPC/3D/Buffins/Small_Base/Anims/Terrain/Global/Stop_Down.tres" id="17_ln0w2"]
+[ext_resource type="Animation" uid="uid://bdm1d27g4hnw0" path="res://Scenes/NPC/3D/Buffins/Small_Base/Anims/Terrain/Global/Stop_Left.tres" id="18_xlu1i"]
+[ext_resource type="Animation" uid="uid://dv018r2smrrx7" path="res://Scenes/NPC/3D/Buffins/Small_Base/Anims/Terrain/Global/Stop_Right.tres" id="19_35h66"]
+[ext_resource type="Animation" uid="uid://ddpbowfqbo4a6" path="res://Scenes/NPC/3D/Buffins/Small_Base/Anims/Terrain/Global/Stop_Up.tres" id="20_hdjht"]
+[ext_resource type="Animation" uid="uid://d131hgv60otck" path="res://Scenes/NPC/3D/Buffins/Small_Base/Anims/Terrain/Global/Think_Down.tres" id="21_jufld"]
+[ext_resource type="Animation" uid="uid://wurswkgj55ie" path="res://Scenes/NPC/3D/Buffins/Small_Base/Anims/Terrain/Global/Think_Left.tres" id="22_ubhmp"]
+[ext_resource type="Animation" uid="uid://3qk11agnvgx0" path="res://Scenes/NPC/3D/Buffins/Small_Base/Anims/Terrain/Global/Think_Right.tres" id="23_l85ll"]
+[ext_resource type="Animation" uid="uid://dywky1xr8vjp5" path="res://Scenes/NPC/3D/Buffins/Small_Base/Anims/Terrain/Global/Think_Up.tres" id="24_r3ptq"]
+[ext_resource type="Animation" uid="uid://blag3ugw7v1gy" path="res://Scenes/NPC/3D/Buffins/Small_Base/Anims/Terrain/Global/Walk_Down.tres" id="25_7h1ks"]
+[ext_resource type="Animation" uid="uid://cwircykrnqgoy" path="res://Scenes/NPC/3D/Buffins/Small_Base/Anims/Terrain/Global/Walk_Left.tres" id="26_wth87"]
+[ext_resource type="Animation" uid="uid://5a7eg6du6f12" path="res://Scenes/NPC/3D/Buffins/Small_Base/Anims/Terrain/Global/Walk_Right.tres" id="27_57t0w"]
+[ext_resource type="Animation" uid="uid://bogdori6ol3pm" path="res://Scenes/NPC/3D/Buffins/Small_Base/Anims/Terrain/Global/Walk_Up.tres" id="28_tljfu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1xxye"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("2_o4af3")
+shader_parameter/eyes = Color(0.247059, 0.247059, 0.454902, 1)
+shader_parameter/wrapping = Color(0.560784, 0.45098, 0.2, 1)
+shader_parameter/texture_albedo = ExtResource("3_jgkpl")
+shader_parameter/color_A = Color(0.796078, 0.631373, 0.25098, 1)
+shader_parameter/color_B = Color(0.45098, 0.45098, 0.901961, 1)
+shader_parameter/progress = 0.0
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_etd23"]
+_data = {
+&"Idle_Down": ExtResource("5_8ql0j"),
+&"Idle_Left": ExtResource("6_u7bxl"),
+&"Idle_Right": ExtResource("7_v8pat"),
+&"Idle_Up": ExtResource("8_u3d7q"),
+&"Jump_Down": ExtResource("9_w5ffq"),
+&"Jump_Left": ExtResource("10_6pbuy"),
+&"Jump_Right": ExtResource("11_xfbc7"),
+&"Jump_Up": ExtResource("12_y7joi"),
+&"Place_Down": ExtResource("13_u4i8b"),
+&"Place_Left": ExtResource("14_2gi0p"),
+&"Place_Right": ExtResource("15_7suyp"),
+&"Place_Up": ExtResource("16_ntaib"),
+&"Stop_Down": ExtResource("17_ln0w2"),
+&"Stop_Left": ExtResource("18_xlu1i"),
+&"Stop_Right": ExtResource("19_35h66"),
+&"Stop_Up": ExtResource("20_hdjht"),
+&"Think_Down": ExtResource("21_jufld"),
+&"Think_Left": ExtResource("22_ubhmp"),
+&"Think_Right": ExtResource("23_l85ll"),
+&"Think_Up": ExtResource("24_r3ptq"),
+&"Walk_Down": ExtResource("25_7h1ks"),
+&"Walk_Left": ExtResource("26_wth87"),
+&"Walk_Right": ExtResource("27_57t0w"),
+&"Walk_Up": ExtResource("28_tljfu")
+}
 
 [sub_resource type="Animation" id="3"]
 length = 0.1
@@ -78,10 +141,10 @@ data = PackedByteArray("AAD///kAwwC//ov93f4D/Zb+q/y1+9r7Gvi9+er1Sfe58xD1svEk8+/t
 format = 1
 stereo = true
 
-[node name="Paint_Apprentice" instance=ExtResource("1")]
+[node name="Paint_Apprentice" unique_id=1346330200 instance=ExtResource("1")]
 
-[node name="Display" parent="." index="0"]
-material_override = ExtResource("2_rr2ku")
+[node name="Display" parent="." index="0" unique_id=484337952]
+material_override = SubResource("ShaderMaterial_1xxye")
 texture = ExtResource("3_jgkpl")
 frame = 0
 script = ExtResource("3_4ble0")
@@ -92,22 +155,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22, 0, 0)
 [node name="Right_Foot" parent="Movement/Terrain/Areas" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22, 0, 0)
 
-[node name="Speech_Bubble" parent="." index="8"]
+[node name="Anims" parent="Movement/Terrain" parent_id_path=PackedInt32Array(493980995) index="1"]
+libraries/ = SubResource("AnimationLibrary_etd23")
+
+[node name="Speech_Bubble" parent="." index="8" unique_id=1364219094]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.2, 0.03)
 
-[node name="Popup" parent="." index="9"]
+[node name="Popup" parent="." index="9" unique_id=151653346]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.27, 0)
 
 [node name="Anims" parent="Popup" index="0"]
-libraries = {
-&"": SubResource("AnimationLibrary_4a5nk")
-}
+libraries/ = SubResource("AnimationLibrary_4a5nk")
 
 [node name="Audio" parent="Popup" index="1"]
 stream = SubResource("7")
-
-[node name="States" parent="." index="14"]
-_e_states = Array[StringName]([&"Stop", &"Idle", &"Walk", &"Jump", &"Place", &"Think"])
 
 [editable path="Interactions"]
 [editable path="Interactions/1"]

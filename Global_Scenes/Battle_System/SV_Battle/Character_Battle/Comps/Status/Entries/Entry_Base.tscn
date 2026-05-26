@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bu4wmd3ejnsdf"]
+[gd_scene format=3 uid="uid://bu4wmd3ejnsdf"]
 
 [ext_resource type="Texture2D" uid="uid://hdqirk3nj743" path="res://Global_Resources/Sprites/Icons/Item_Types/Equipment/Shield.png" id="1_lbn23"]
 [ext_resource type="Script" uid="uid://pvb6tapdmfdb" path="res://Global_Scenes/Battle_System/SV_Battle/Character_Battle/Comps/Status/Entries/Scripts/Entry_Base.gd" id="1_ph363"]
 [ext_resource type="FontFile" uid="uid://bc3cxhu6w0ljt" path="res://Global_Resources/Fonts/ProFont.ttf" id="2_xovg1"]
-
 
 [sub_resource type="LabelSettings" id="LabelSettings_csft3"]
 font = ExtResource("2_xovg1")
@@ -12,18 +11,18 @@ outline_size = 8
 outline_color = Color(0, 0, 0, 1)
 shadow_color = Color(1, 1, 1, 0.819608)
 
-[node name="Entry_Base" type="MarginContainer"]
+[node name="Entry_Base" type="MarginContainer" unique_id=2086877526]
 light_mask = 8
 visibility_layer = 8
 script = ExtResource("1_ph363")
 
-[node name="Texture" type="TextureRect" parent="."]
+[node name="Texture" type="TextureRect" parent="." unique_id=192535893]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
 texture = ExtResource("1_lbn23")
 
-[node name="Amount" type="Label" parent="."]
+[node name="Amount" type="Label" parent="." unique_id=1159706569]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2

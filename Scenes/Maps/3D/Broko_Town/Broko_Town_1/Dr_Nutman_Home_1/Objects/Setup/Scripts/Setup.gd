@@ -1,4 +1,4 @@
-extends Static3DObject
+extends FWStatic3DObject
 class_name ObjectSetup
 
 @onready var _a_Computer: ObjectSetupComputer = get_node("Computer")

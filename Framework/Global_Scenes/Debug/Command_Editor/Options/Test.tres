@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="ContextMenuOptionEntryData" format=3 uid="uid://b5rjlaisi1ojc"]
+
+[ext_resource type="Script" uid="uid://v0jwe56fkhao" path="res://Framework/Scenes/Context_Menu/Option_Entry_Data.gd" id="1_x7qw2"]
+
+[resource]
+script = ExtResource("1_x7qw2")
+_e_show_right = true

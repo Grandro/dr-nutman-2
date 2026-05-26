@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://ccsjhnqv5qav6"]
+
+[ext_resource type="PackedScene" uid="uid://ek1x7if6akb8" path="res://Framework/Global_Scenes/Debug/Scenes/Entry_List/Entries/Entry.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://dqrcelykxg2gc" path="res://Framework/Global_Scenes/Debug/Command_Editor/Command_Editor.tscn" id="2"]
+[ext_resource type="Script" uid="uid://df8osq4gbrj1l" path="res://Framework/Global_Scenes/Debug/Scenes/Entry_List/Entries/Scripts/Action_Entry.gd" id="3"]
+
+[node name="Action_Entry" unique_id=208883741 instance=ExtResource("1")]
+offset_right = 234.0
+offset_bottom = 38.0
+script = ExtResource("3")
+
+[node name="Preview" type="Button" parent="HBox/VBox/Margin/Margin/HBox" parent_id_path=PackedInt32Array(1390987538) index="2" unique_id=699681270]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 8
+text = "FW_PREVIEW"
+
+[node name="Editor" parent="HBox/VBox/Options" parent_id_path=PackedInt32Array(1495258239) index="0" unique_id=1073850921 instance=ExtResource("2")]
+custom_minimum_size = Vector2(0, 638)
+layout_mode = 2
+size_flags_vertical = 3

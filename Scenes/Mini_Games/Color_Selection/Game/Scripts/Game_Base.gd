@@ -1,11 +1,11 @@
-extends MiniGameGameBase
+extends FWMiniGameGameBase
 class_name MiniGameColorSelectionGameBase
 
 @export var _e_camera_start_pos: Vector2 = Vector2(640, 464)
 @export var _e_camera_end_pos: Vector2 = Vector2(640, 1224)
 
 @onready var _a_Next_Color: MiniGameColorSelectionNextColor = get_node("Canvas_2/Next_Color")
-@onready var _a_Camera: CompCamera2D = get_node("Node2D/Camera")
+@onready var _a_Camera: FWCompCamera2D = get_node("Node2D/Camera")
 @onready var _a_Flippers: Node2D = get_node("Node2D/Flippers")
 
 func _ready() -> void:

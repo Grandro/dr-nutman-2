@@ -1,11 +1,15 @@
-[gd_scene load_steps=28 format=3 uid="uid://cpmd6ra1vqowo"]
+[gd_scene format=3 uid="uid://cpmd6ra1vqowo"]
 
-[ext_resource type="PackedScene" uid="uid://bur1664yc8pn8" path="res://Scenes/Equipable/3D/Equipable.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://bur1664yc8pn8" path="res://Framework/Scenes/Equipable/3D/Equipable.tscn" id="1"]
 [ext_resource type="Texture2D" uid="uid://bip1srx2o3bqs" path="res://Global_Resources/Sprites/Objects/Buffins/Base/Equipables/Head/Party_Hats/1_Spritesheet.png" id="2_gwtfj"]
+[ext_resource type="Animation" uid="uid://c55xxb1l62j0x" path="res://Scenes/Equipable/3D/Objects/Buffins/Base/Head/Party_Hats/Anims/Fall_Down.tres" id="3_2yrh5"]
 [ext_resource type="Animation" uid="uid://cno2j3rwdbmis" path="res://Scenes/Equipable/3D/Objects/Buffins/Base/Head/Party_Hats/Anims/Idle_Down.tres" id="3_fxln6"]
+[ext_resource type="Animation" uid="uid://b2end2iieeeb0" path="res://Scenes/Equipable/3D/Objects/Buffins/Base/Head/Party_Hats/Anims/Fall_Left.tres" id="4_j21jk"]
 [ext_resource type="Animation" uid="uid://b2s8op5ixf3v8" path="res://Scenes/Equipable/3D/Objects/Buffins/Base/Head/Party_Hats/Anims/Idle_Left.tres" id="4_n3w8u"]
+[ext_resource type="Animation" uid="uid://vy5pbh5ecgcf" path="res://Scenes/Equipable/3D/Objects/Buffins/Base/Head/Party_Hats/Anims/Fall_Right.tres" id="5_07l5p"]
 [ext_resource type="Animation" uid="uid://beiaq0715fnyq" path="res://Scenes/Equipable/3D/Objects/Buffins/Base/Head/Party_Hats/Anims/Idle_Right.tres" id="5_yq0p7"]
 [ext_resource type="Animation" uid="uid://bgle7sljv1una" path="res://Scenes/Equipable/3D/Objects/Buffins/Base/Head/Party_Hats/Anims/Idle_Up.tres" id="6_0wynt"]
+[ext_resource type="Animation" uid="uid://3e0ra50fdrp2" path="res://Scenes/Equipable/3D/Objects/Buffins/Base/Head/Party_Hats/Anims/Fall_Up.tres" id="6_lqs7j"]
 [ext_resource type="Animation" uid="uid://djvskulc1wpys" path="res://Scenes/Equipable/3D/Objects/Buffins/Base/Head/Party_Hats/Anims/Jump_Down.tres" id="7_l56t6"]
 [ext_resource type="Animation" uid="uid://tjn04lkf0uu6" path="res://Scenes/Equipable/3D/Objects/Buffins/Base/Head/Party_Hats/Anims/Jump_Left.tres" id="8_2kf3o"]
 [ext_resource type="Animation" uid="uid://bjuf5wd6o72m4" path="res://Scenes/Equipable/3D/Objects/Buffins/Base/Head/Party_Hats/Anims/Jump_Right.tres" id="9_8vkxe"]
@@ -29,6 +33,10 @@
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6c8nw"]
 _data = {
+&"Fall_Down": ExtResource("3_2yrh5"),
+&"Fall_Left": ExtResource("4_j21jk"),
+&"Fall_Right": ExtResource("5_07l5p"),
+&"Fall_Up": ExtResource("6_lqs7j"),
 &"Idle_Down": ExtResource("3_fxln6"),
 &"Idle_Left": ExtResource("4_n3w8u"),
 &"Idle_Right": ExtResource("5_yq0p7"),
@@ -55,14 +63,12 @@ _data = {
 &"Walk_Up": ExtResource("26_x1mal")
 }
 
-[node name="Party_Hat" instance=ExtResource("1")]
+[node name="Party_Hat" unique_id=685343086 instance=ExtResource("1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.82, 0.01)
 texture = ExtResource("2_gwtfj")
 hframes = 1
 vframes = 1
 frame = 0
 
-[node name="Anims" parent="." index="0"]
-libraries = {
-"": SubResource("AnimationLibrary_6c8nw")
-}
+[node name="Anims" parent="." index="0" unique_id=282547662]
+libraries/ = SubResource("AnimationLibrary_6c8nw")

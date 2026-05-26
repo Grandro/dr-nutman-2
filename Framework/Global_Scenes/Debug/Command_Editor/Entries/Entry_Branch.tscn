@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bencex1ddgld3"]
+
+[ext_resource type="PackedScene" uid="uid://cb1ikaj310yps" path="res://Framework/Global_Scenes/Debug/Command_Editor/Entries/Entry_Command.tscn" id="1_xh08s"]
+[ext_resource type="PackedScene" uid="uid://dx2jb6i5c6i3t" path="res://Framework/Global_Scenes/Debug/Command_Editor/Entries/Arg_Entry.tscn" id="2_haw3c"]
+[ext_resource type="Script" uid="uid://5kenhgnf0lje" path="res://Framework/Global_Scenes/Debug/Command_Editor/Entries/Scripts/Entry_Branch.gd" id="2_npcld"]
+
+[node name="Entry_Branch" unique_id=698410723 instance=ExtResource("1_xh08s")]
+script = ExtResource("2_npcld")
+_e_start_branch_idx = 0
+
+[node name="End" parent="HBox/VBox" parent_id_path=PackedInt32Array(704782670) index="1" unique_id=1360891449 instance=ExtResource("2_haw3c")]
+layout_mode = 2

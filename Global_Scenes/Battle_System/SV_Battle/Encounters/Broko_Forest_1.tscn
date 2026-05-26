@@ -1,8 +1,8 @@
-[gd_scene load_steps=68 format=3 uid="uid://8iw7b8hxu6em"]
+[gd_scene format=3 uid="uid://8iw7b8hxu6em"]
 
 [ext_resource type="PackedScene" uid="uid://rwpfs10v6p2a" path="res://Global_Scenes/Battle_System/SV_Battle/Encounters/Encounter_Base.tscn" id="1_twh28"]
 [ext_resource type="AudioStream" uid="uid://dtkfgp530rtis" path="res://Global_Resources/Audio/BGM/Battle_1.ogg" id="2_bhm54"]
-[ext_resource type="Script" uid="uid://b3q13t5wk5s2w" path="res://Global_Scenes/Audio_Manager/Scripts/Audio_Playback.gd" id="3_8bbr4"]
+[ext_resource type="Script" uid="uid://b3q13t5wk5s2w" path="res://Framework/Global_Scenes/Audio_Manager/Scripts/Audio_Playback.gd" id="3_8bbr4"]
 [ext_resource type="AudioStream" uid="uid://3jv257x37w3p" path="res://Global_Resources/Audio/BGS/Forest_1.ogg" id="4_ypatf"]
 [ext_resource type="AudioStream" uid="uid://cywgj83a2fv1h" path="res://Global_Resources/Audio/BGS/Wind_1.ogg" id="5_awpgv"]
 [ext_resource type="PackedScene" uid="uid://c5kj4jbhn02f7" path="res://Global_Resources/Mapping/3D/Below/Broko_Town/Exterior/Floor_Grass_1.tscn" id="6_sw062"]
@@ -23,7 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://b5oco5df5fpk5" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Objects/Trees/1.tscn" id="21_b8bbs"]
 [ext_resource type="PackedScene" uid="uid://8acwt3s3x27g" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Objects/Flowers/1.tscn" id="22_al6jb"]
 [ext_resource type="PackedScene" uid="uid://70osa00vxui2" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Objects/Bushes/1.tscn" id="23_jsiso"]
-[ext_resource type="PackedScene" uid="uid://bevsfn8gnppb1" path="res://Scenes/Maps/Map_Base/3D/Terrain_Area/Shape.tscn" id="24_gogxg"]
+[ext_resource type="PackedScene" uid="uid://bevsfn8gnppb1" path="res://Framework/Scenes/Maps/Map_Base/3D/Terrain_Area/Shape.tscn" id="24_gogxg"]
 
 [sub_resource type="Resource" id="Resource_bvb4k"]
 script = ExtResource("3_8bbr4")
@@ -41,209 +41,209 @@ _e_stream = ExtResource("5_awpgv")
 _e_volume = 0.2
 metadata/_custom_type_script = "uid://b3q13t5wk5s2w"
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t8jkx"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bvb4k"]
 resource_local_to_scene = true
 albedo_texture = ExtResource("7_oud7f")
 uv1_scale = Vector3(20, 12, 1)
 texture_filter = 0
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_o8gqf"]
+[sub_resource type="PlaneMesh" id="PlaneMesh_i4jxv"]
 resource_local_to_scene = true
-material = SubResource("StandardMaterial3D_t8jkx")
+material = SubResource("StandardMaterial3D_bvb4k")
 size = Vector2(20, 12)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lm256"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h3lq0"]
 transparency = 1
 albedo_texture = ExtResource("10_snate")
 texture_filter = 0
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_xj4a5"]
-material = SubResource("StandardMaterial3D_lm256")
+[sub_resource type="PlaneMesh" id="PlaneMesh_t8jkx"]
+material = SubResource("StandardMaterial3D_h3lq0")
 size = Vector2(1, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wdftf"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o8gqf"]
 transparency = 1
 albedo_texture = ExtResource("10_snate")
 uv1_scale = Vector3(2, 1, 1)
 texture_filter = 0
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_lp10j"]
-material = SubResource("StandardMaterial3D_wdftf")
+[sub_resource type="PlaneMesh" id="PlaneMesh_lm256"]
+material = SubResource("StandardMaterial3D_o8gqf")
 size = Vector2(2, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_85ask"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xj4a5"]
 transparency = 1
 albedo_texture = ExtResource("10_snate")
 texture_filter = 0
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_veq0f"]
-material = SubResource("StandardMaterial3D_85ask")
+[sub_resource type="PlaneMesh" id="PlaneMesh_wdftf"]
+material = SubResource("StandardMaterial3D_xj4a5")
 size = Vector2(1, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kygr1"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lp10j"]
 resource_local_to_scene = true
 transparency = 1
 albedo_texture = ExtResource("13_bhh7h")
 uv1_scale = Vector3(8, 1, 1)
 texture_filter = 0
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_d00bc"]
+[sub_resource type="PlaneMesh" id="PlaneMesh_85ask"]
 resource_local_to_scene = true
-material = SubResource("StandardMaterial3D_kygr1")
+material = SubResource("StandardMaterial3D_lp10j")
 size = Vector2(8, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6b480"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_veq0f"]
 resource_local_to_scene = true
 transparency = 1
 albedo_texture = ExtResource("13_bhh7h")
 uv1_scale = Vector3(4, 1, 1)
 texture_filter = 0
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_6e0m7"]
+[sub_resource type="PlaneMesh" id="PlaneMesh_kygr1"]
 resource_local_to_scene = true
-material = SubResource("StandardMaterial3D_6b480")
+material = SubResource("StandardMaterial3D_veq0f")
 size = Vector2(4, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0cv53"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d00bc"]
 transparency = 1
 albedo_texture = ExtResource("15_ot60x")
 uv1_scale = Vector3(1, 3, 1)
 texture_filter = 0
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_c73ib"]
-material = SubResource("StandardMaterial3D_0cv53")
+[sub_resource type="PlaneMesh" id="PlaneMesh_6b480"]
+material = SubResource("StandardMaterial3D_d00bc")
 size = Vector2(1, 3)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4l0xm"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6e0m7"]
 transparency = 1
 albedo_texture = ExtResource("18_yd0pu")
 uv1_scale = Vector3(3, 1, 1)
 texture_filter = 0
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_knwp4"]
-material = SubResource("StandardMaterial3D_4l0xm")
+[sub_resource type="PlaneMesh" id="PlaneMesh_0cv53"]
+material = SubResource("StandardMaterial3D_6e0m7")
 size = Vector2(3, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t7nsg"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c73ib"]
 transparency = 1
 albedo_texture = ExtResource("18_yd0pu")
 texture_filter = 0
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_o8x1r"]
-material = SubResource("StandardMaterial3D_t7nsg")
+[sub_resource type="PlaneMesh" id="PlaneMesh_4l0xm"]
+material = SubResource("StandardMaterial3D_c73ib")
 size = Vector2(1, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ashwn"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_knwp4"]
 transparency = 1
 albedo_texture = ExtResource("18_yd0pu")
 texture_filter = 0
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_gde4v"]
-material = SubResource("StandardMaterial3D_ashwn")
+[sub_resource type="PlaneMesh" id="PlaneMesh_t7nsg"]
+material = SubResource("StandardMaterial3D_knwp4")
 size = Vector2(1, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mjr0n"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o8x1r"]
 transparency = 1
 albedo_texture = ExtResource("18_yd0pu")
 uv1_scale = Vector3(2, 1, 1)
 texture_filter = 0
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_dou07"]
-material = SubResource("StandardMaterial3D_mjr0n")
+[sub_resource type="PlaneMesh" id="PlaneMesh_ashwn"]
+material = SubResource("StandardMaterial3D_o8x1r")
 size = Vector2(2, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0p31c"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gde4v"]
 transparency = 1
 albedo_texture = ExtResource("18_yd0pu")
 uv1_scale = Vector3(3, 1, 1)
 texture_filter = 0
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_ffi3c"]
-material = SubResource("StandardMaterial3D_0p31c")
+[sub_resource type="PlaneMesh" id="PlaneMesh_mjr0n"]
+material = SubResource("StandardMaterial3D_gde4v")
 size = Vector2(3, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vpyak"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dou07"]
 resource_local_to_scene = true
 transparency = 1
 albedo_texture = ExtResource("13_bhh7h")
 uv1_scale = Vector3(7, 1, 1)
 texture_filter = 0
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_tf438"]
+[sub_resource type="PlaneMesh" id="PlaneMesh_0p31c"]
 resource_local_to_scene = true
-material = SubResource("StandardMaterial3D_vpyak")
+material = SubResource("StandardMaterial3D_dou07")
 size = Vector2(7, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cjdfv"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ffi3c"]
 resource_local_to_scene = true
 transparency = 1
 albedo_texture = ExtResource("13_bhh7h")
 uv1_scale = Vector3(5, 1, 1)
 texture_filter = 0
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_lqwq6"]
+[sub_resource type="PlaneMesh" id="PlaneMesh_vpyak"]
 resource_local_to_scene = true
-material = SubResource("StandardMaterial3D_cjdfv")
+material = SubResource("StandardMaterial3D_ffi3c")
 size = Vector2(5, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y3oal"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tf438"]
 resource_local_to_scene = true
 transparency = 1
 albedo_texture = ExtResource("13_bhh7h")
 uv1_scale = Vector3(4, 1, 1)
 texture_filter = 0
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_jj476"]
+[sub_resource type="PlaneMesh" id="PlaneMesh_cjdfv"]
 resource_local_to_scene = true
-material = SubResource("StandardMaterial3D_y3oal")
+material = SubResource("StandardMaterial3D_tf438")
 size = Vector2(4, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nn4ty"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lqwq6"]
 resource_local_to_scene = true
 transparency = 1
 albedo_texture = ExtResource("13_bhh7h")
 uv1_scale = Vector3(9, 1, 1)
 texture_filter = 0
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_eqbw4"]
+[sub_resource type="PlaneMesh" id="PlaneMesh_y3oal"]
 resource_local_to_scene = true
-material = SubResource("StandardMaterial3D_nn4ty")
+material = SubResource("StandardMaterial3D_lqwq6")
 size = Vector2(9, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8n40m"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jj476"]
 resource_local_to_scene = true
 transparency = 1
 albedo_texture = ExtResource("13_bhh7h")
 uv1_scale = Vector3(8, 1, 1)
 texture_filter = 0
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_kfaqg"]
+[sub_resource type="PlaneMesh" id="PlaneMesh_nn4ty"]
 resource_local_to_scene = true
-material = SubResource("StandardMaterial3D_8n40m")
+material = SubResource("StandardMaterial3D_jj476")
 size = Vector2(8, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6vetc"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eqbw4"]
 resource_local_to_scene = true
 transparency = 1
 albedo_texture = ExtResource("13_bhh7h")
 uv1_scale = Vector3(7, 1, 1)
 texture_filter = 0
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_syqv0"]
+[sub_resource type="PlaneMesh" id="PlaneMesh_8n40m"]
 resource_local_to_scene = true
-material = SubResource("StandardMaterial3D_6vetc")
+material = SubResource("StandardMaterial3D_eqbw4")
 size = Vector2(7, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jopki"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kfaqg"]
 resource_local_to_scene = true
 transparency = 1
 albedo_texture = ExtResource("13_bhh7h")
 uv1_scale = Vector3(4, 1, 1)
 texture_filter = 0
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_jutwu"]
+[sub_resource type="PlaneMesh" id="PlaneMesh_6vetc"]
 resource_local_to_scene = true
-material = SubResource("StandardMaterial3D_jopki")
+material = SubResource("StandardMaterial3D_kfaqg")
 size = Vector2(4, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rroqs"]
@@ -260,229 +260,229 @@ agent_height = 1.8
 agent_radius = 0.4
 agent_max_climb = 0.2
 
-[node name="Broko_Forest_1" instance=ExtResource("1_twh28")]
+[node name="Broko_Forest_1" unique_id=625165143 instance=ExtResource("1_twh28")]
 _e_BGM = SubResource("Resource_bvb4k")
 _e_BGS = Array[ExtResource("3_8bbr4")]([SubResource("Resource_i4jxv"), SubResource("Resource_h3lq0")])
 
-[node name="Floor_Grass_1" parent="Terrain/Below" index="0" instance=ExtResource("6_sw062")]
+[node name="Floor_Grass_1" parent="Terrain/Below" index="0" unique_id=810327371 instance=ExtResource("6_sw062")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 6)
-mesh = SubResource("PlaneMesh_o8gqf")
+mesh = SubResource("PlaneMesh_i4jxv")
 _e_size = Vector3(20, 1, 12)
 
-[node name="Grass_1" type="Node3D" parent="Terrain/Below" index="1"]
+[node name="Grass_1" type="Node3D" parent="Terrain/Below" index="1" unique_id=658634945]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0.01, 10)
 
-[node name="Grass_2" parent="Terrain/Below/Grass_1" index="0" instance=ExtResource("8_0q36j")]
+[node name="Grass_2" parent="Terrain/Below/Grass_1" index="0" unique_id=894137509 instance=ExtResource("8_0q36j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 1.5)
 
-[node name="Grass_3" parent="Terrain/Below/Grass_1" index="1" instance=ExtResource("8_0q36j")]
+[node name="Grass_3" parent="Terrain/Below/Grass_1" index="1" unique_id=1439271355 instance=ExtResource("8_0q36j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 0.5)
 
-[node name="Grass_4" parent="Terrain/Below/Grass_1" index="2" instance=ExtResource("9_7ultc")]
+[node name="Grass_4" parent="Terrain/Below/Grass_1" index="2" unique_id=280086721 instance=ExtResource("9_7ultc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 0.5)
-mesh = SubResource("PlaneMesh_xj4a5")
+mesh = SubResource("PlaneMesh_t8jkx")
 
-[node name="Grass_5" parent="Terrain/Below/Grass_1" index="3" instance=ExtResource("8_0q36j")]
+[node name="Grass_5" parent="Terrain/Below/Grass_1" index="3" unique_id=1716009137 instance=ExtResource("8_0q36j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, -0.5)
 
-[node name="Grass_6" parent="Terrain/Below/Grass_1" index="4" instance=ExtResource("9_7ultc")]
+[node name="Grass_6" parent="Terrain/Below/Grass_1" index="4" unique_id=774885185 instance=ExtResource("9_7ultc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
-mesh = SubResource("PlaneMesh_lp10j")
+mesh = SubResource("PlaneMesh_lm256")
 _e_size = Vector3(2, 1, 1)
 
-[node name="Grass_7" parent="Terrain/Below/Grass_1" index="5" instance=ExtResource("11_xd7oe")]
+[node name="Grass_7" parent="Terrain/Below/Grass_1" index="5" unique_id=436160401 instance=ExtResource("11_xd7oe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -0.5)
 
-[node name="Grass_8" parent="Terrain/Below/Grass_1" index="6" instance=ExtResource("9_7ultc")]
+[node name="Grass_8" parent="Terrain/Below/Grass_1" index="6" unique_id=314034464 instance=ExtResource("9_7ultc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 0.5)
-mesh = SubResource("PlaneMesh_veq0f")
+mesh = SubResource("PlaneMesh_wdftf")
 
-[node name="Grass_9" parent="Terrain/Below/Grass_1" index="7" instance=ExtResource("11_xd7oe")]
+[node name="Grass_9" parent="Terrain/Below/Grass_1" index="7" unique_id=311075613 instance=ExtResource("11_xd7oe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 0.5)
 
-[node name="Grass_10" parent="Terrain/Below/Grass_1" index="8" instance=ExtResource("11_xd7oe")]
+[node name="Grass_10" parent="Terrain/Below/Grass_1" index="8" unique_id=1422258335 instance=ExtResource("11_xd7oe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 1.5)
 
-[node name="Grass_1" parent="Terrain/Below/Grass_1" index="9" instance=ExtResource("12_n3lxw")]
+[node name="Grass_1" parent="Terrain/Below/Grass_1" index="9" unique_id=1731788457 instance=ExtResource("12_n3lxw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.5)
-mesh = SubResource("PlaneMesh_d00bc")
+mesh = SubResource("PlaneMesh_85ask")
 _e_size = Vector3(8, 1, 1)
 
-[node name="Grass_11" parent="Terrain/Below/Grass_1" index="10" instance=ExtResource("12_n3lxw")]
+[node name="Grass_11" parent="Terrain/Below/Grass_1" index="10" unique_id=736848949 instance=ExtResource("12_n3lxw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
-mesh = SubResource("PlaneMesh_6e0m7")
+mesh = SubResource("PlaneMesh_kygr1")
 _e_size = Vector3(4, 1, 1)
 
-[node name="Grass_2" type="Node3D" parent="Terrain/Below" index="2"]
+[node name="Grass_2" type="Node3D" parent="Terrain/Below" index="2" unique_id=1256030358]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 0.01, 1.5)
 
-[node name="Grass_1" parent="Terrain/Below/Grass_2" index="0" instance=ExtResource("14_if310")]
+[node name="Grass_1" parent="Terrain/Below/Grass_2" index="0" unique_id=1777266157 instance=ExtResource("14_if310")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
-mesh = SubResource("PlaneMesh_c73ib")
+mesh = SubResource("PlaneMesh_6b480")
 _e_size = Vector3(1, 1, 3)
 
-[node name="Grass_2" parent="Terrain/Below/Grass_2" index="1" instance=ExtResource("16_lixd0")]
+[node name="Grass_2" parent="Terrain/Below/Grass_2" index="1" unique_id=958211023 instance=ExtResource("16_lixd0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 2)
 
-[node name="Grass_3" parent="Terrain/Below/Grass_2" index="2" instance=ExtResource("17_wyb7k")]
+[node name="Grass_3" parent="Terrain/Below/Grass_2" index="2" unique_id=2013899372 instance=ExtResource("17_wyb7k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 2)
-mesh = SubResource("PlaneMesh_knwp4")
+mesh = SubResource("PlaneMesh_0cv53")
 _e_size = Vector3(3, 1, 1)
 
-[node name="Grass_4" parent="Terrain/Below/Grass_2" index="3" instance=ExtResource("19_xxvv4")]
+[node name="Grass_4" parent="Terrain/Below/Grass_2" index="3" unique_id=846829290 instance=ExtResource("19_xxvv4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 2)
 
-[node name="Grass_5" parent="Terrain/Below/Grass_2" index="4" instance=ExtResource("20_lr2if")]
+[node name="Grass_5" parent="Terrain/Below/Grass_2" index="4" unique_id=1370470663 instance=ExtResource("20_lr2if")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 1)
 
-[node name="Grass_6" parent="Terrain/Below/Grass_2" index="5" instance=ExtResource("17_wyb7k")]
+[node name="Grass_6" parent="Terrain/Below/Grass_2" index="5" unique_id=373907290 instance=ExtResource("17_wyb7k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
-mesh = SubResource("PlaneMesh_o8x1r")
+mesh = SubResource("PlaneMesh_4l0xm")
 
-[node name="Grass_7" parent="Terrain/Below/Grass_2" index="6" instance=ExtResource("20_lr2if")]
+[node name="Grass_7" parent="Terrain/Below/Grass_2" index="6" unique_id=1761840870 instance=ExtResource("20_lr2if")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
 
-[node name="Grass_8" parent="Terrain/Below/Grass_2" index="7" instance=ExtResource("17_wyb7k")]
+[node name="Grass_8" parent="Terrain/Below/Grass_2" index="7" unique_id=184049131 instance=ExtResource("17_wyb7k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
-mesh = SubResource("PlaneMesh_gde4v")
+mesh = SubResource("PlaneMesh_t7nsg")
 
-[node name="Grass_9" parent="Terrain/Below/Grass_2" index="8" instance=ExtResource("16_lixd0")]
+[node name="Grass_9" parent="Terrain/Below/Grass_2" index="8" unique_id=1660057212 instance=ExtResource("16_lixd0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
 
-[node name="Grass_10" parent="Terrain/Below/Grass_2" index="9" instance=ExtResource("16_lixd0")]
+[node name="Grass_10" parent="Terrain/Below/Grass_2" index="9" unique_id=1475639250 instance=ExtResource("16_lixd0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 1)
 
-[node name="Grass_11" parent="Terrain/Below/Grass_2" index="10" instance=ExtResource("16_lixd0")]
+[node name="Grass_11" parent="Terrain/Below/Grass_2" index="10" unique_id=1096100212 instance=ExtResource("16_lixd0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 2)
 
-[node name="Grass_12" parent="Terrain/Below/Grass_2" index="11" instance=ExtResource("17_wyb7k")]
+[node name="Grass_12" parent="Terrain/Below/Grass_2" index="11" unique_id=1267631219 instance=ExtResource("17_wyb7k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 2)
-mesh = SubResource("PlaneMesh_dou07")
+mesh = SubResource("PlaneMesh_ashwn")
 skeleton = NodePath("../../..")
 _e_size = Vector3(2, 1, 1)
 
-[node name="Grass_13" parent="Terrain/Below/Grass_2" index="12" instance=ExtResource("16_lixd0")]
+[node name="Grass_13" parent="Terrain/Below/Grass_2" index="12" unique_id=389759524 instance=ExtResource("16_lixd0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 3)
 
-[node name="Grass_14" parent="Terrain/Below/Grass_2" index="13" instance=ExtResource("17_wyb7k")]
+[node name="Grass_14" parent="Terrain/Below/Grass_2" index="13" unique_id=1970853669 instance=ExtResource("17_wyb7k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 3)
-mesh = SubResource("PlaneMesh_ffi3c")
+mesh = SubResource("PlaneMesh_mjr0n")
 skeleton = NodePath("../../..")
 _e_size = Vector3(3, 1, 1)
 
-[node name="Grass_15" parent="Terrain/Below/Grass_2" index="14" instance=ExtResource("12_n3lxw")]
+[node name="Grass_15" parent="Terrain/Below/Grass_2" index="14" unique_id=1847256532 instance=ExtResource("12_n3lxw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -1)
-mesh = SubResource("PlaneMesh_tf438")
+mesh = SubResource("PlaneMesh_0p31c")
 _e_size = Vector3(7, 1, 1)
 
-[node name="Grass_16" parent="Terrain/Below/Grass_2" index="15" instance=ExtResource("12_n3lxw")]
+[node name="Grass_16" parent="Terrain/Below/Grass_2" index="15" unique_id=652833747 instance=ExtResource("12_n3lxw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
-mesh = SubResource("PlaneMesh_lqwq6")
+mesh = SubResource("PlaneMesh_vpyak")
 _e_size = Vector3(5, 1, 1)
 
-[node name="Grass_17" parent="Terrain/Below/Grass_2" index="16" instance=ExtResource("12_n3lxw")]
+[node name="Grass_17" parent="Terrain/Below/Grass_2" index="16" unique_id=602376016 instance=ExtResource("12_n3lxw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, 1)
-mesh = SubResource("PlaneMesh_jj476")
+mesh = SubResource("PlaneMesh_cjdfv")
 _e_size = Vector3(4, 1, 1)
 
-[node name="Grass_18" parent="Terrain/Below/Grass_2" index="17" instance=ExtResource("12_n3lxw")]
+[node name="Grass_18" parent="Terrain/Below/Grass_2" index="17" unique_id=1812937730 instance=ExtResource("12_n3lxw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -1)
-mesh = SubResource("PlaneMesh_eqbw4")
+mesh = SubResource("PlaneMesh_y3oal")
 _e_size = Vector3(9, 1, 1)
 
-[node name="Grass_19" parent="Terrain/Below/Grass_2" index="18" instance=ExtResource("12_n3lxw")]
+[node name="Grass_19" parent="Terrain/Below/Grass_2" index="18" unique_id=950155418 instance=ExtResource("12_n3lxw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, 0)
-mesh = SubResource("PlaneMesh_kfaqg")
+mesh = SubResource("PlaneMesh_nn4ty")
 _e_size = Vector3(8, 1, 1)
 
-[node name="Grass_20" parent="Terrain/Below/Grass_2" index="19" instance=ExtResource("12_n3lxw")]
+[node name="Grass_20" parent="Terrain/Below/Grass_2" index="19" unique_id=784189042 instance=ExtResource("12_n3lxw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 1)
-mesh = SubResource("PlaneMesh_syqv0")
+mesh = SubResource("PlaneMesh_8n40m")
 _e_size = Vector3(7, 1, 1)
 
-[node name="Grass_21" parent="Terrain/Below/Grass_2" index="20" instance=ExtResource("12_n3lxw")]
+[node name="Grass_21" parent="Terrain/Below/Grass_2" index="20" unique_id=1041695074 instance=ExtResource("12_n3lxw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, 2)
-mesh = SubResource("PlaneMesh_jutwu")
+mesh = SubResource("PlaneMesh_6vetc")
 _e_size = Vector3(4, 1, 1)
 
-[node name="Trees_1" type="Node3D" parent="Terrain/Same_As" index="0"]
+[node name="Trees_1" type="Node3D" parent="Terrain/Same_As" index="0" unique_id=1738436818]
 
-[node name="1" parent="Terrain/Same_As/Trees_1" index="0" instance=ExtResource("21_b8bbs")]
+[node name="1" parent="Terrain/Same_As/Trees_1" index="0" unique_id=1555622831 instance=ExtResource("21_b8bbs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 0, 3)
 
-[node name="7" parent="Terrain/Same_As/Trees_1" index="1" instance=ExtResource("21_b8bbs")]
+[node name="7" parent="Terrain/Same_As/Trees_1" index="1" unique_id=1320888176 instance=ExtResource("21_b8bbs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 2)
 
-[node name="8" parent="Terrain/Same_As/Trees_1" index="2" instance=ExtResource("21_b8bbs")]
+[node name="8" parent="Terrain/Same_As/Trees_1" index="2" unique_id=556490843 instance=ExtResource("21_b8bbs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 3)
 
-[node name="9" parent="Terrain/Same_As/Trees_1" index="3" instance=ExtResource("21_b8bbs")]
+[node name="9" parent="Terrain/Same_As/Trees_1" index="3" unique_id=1434071597 instance=ExtResource("21_b8bbs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 3.5)
 
-[node name="10" parent="Terrain/Same_As/Trees_1" index="4" instance=ExtResource("21_b8bbs")]
+[node name="10" parent="Terrain/Same_As/Trees_1" index="4" unique_id=1215034397 instance=ExtResource("21_b8bbs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 2)
 
-[node name="11" parent="Terrain/Same_As/Trees_1" index="5" instance=ExtResource("21_b8bbs")]
+[node name="11" parent="Terrain/Same_As/Trees_1" index="5" unique_id=53659943 instance=ExtResource("21_b8bbs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 2.5)
 
-[node name="12" parent="Terrain/Same_As/Trees_1" index="6" instance=ExtResource("21_b8bbs")]
+[node name="12" parent="Terrain/Same_As/Trees_1" index="6" unique_id=1253709238 instance=ExtResource("21_b8bbs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 4.5)
 
-[node name="13" parent="Terrain/Same_As/Trees_1" index="7" instance=ExtResource("21_b8bbs")]
+[node name="13" parent="Terrain/Same_As/Trees_1" index="7" unique_id=1086970644 instance=ExtResource("21_b8bbs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 3.5)
 
-[node name="2" parent="Terrain/Same_As/Trees_1" index="8" instance=ExtResource("21_b8bbs")]
+[node name="2" parent="Terrain/Same_As/Trees_1" index="8" unique_id=1473709681 instance=ExtResource("21_b8bbs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 4)
 
-[node name="3" parent="Terrain/Same_As/Trees_1" index="9" instance=ExtResource("21_b8bbs")]
+[node name="3" parent="Terrain/Same_As/Trees_1" index="9" unique_id=1634858373 instance=ExtResource("21_b8bbs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5, 0, 2)
 
-[node name="4" parent="Terrain/Same_As/Trees_1" index="10" instance=ExtResource("21_b8bbs")]
+[node name="4" parent="Terrain/Same_As/Trees_1" index="10" unique_id=1524139282 instance=ExtResource("21_b8bbs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 2.5)
 
-[node name="5" parent="Terrain/Same_As/Trees_1" index="11" instance=ExtResource("21_b8bbs")]
+[node name="5" parent="Terrain/Same_As/Trees_1" index="11" unique_id=1683149532 instance=ExtResource("21_b8bbs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.5, 0, 3.5)
 
-[node name="6" parent="Terrain/Same_As/Trees_1" index="12" instance=ExtResource("21_b8bbs")]
+[node name="6" parent="Terrain/Same_As/Trees_1" index="12" unique_id=611157180 instance=ExtResource("21_b8bbs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 5)
 
-[node name="Trees_2" type="Node3D" parent="Terrain/Same_As" index="1"]
+[node name="Trees_2" type="Node3D" parent="Terrain/Same_As" index="1" unique_id=674760514]
 
-[node name="1" parent="Terrain/Same_As/Trees_2" index="0" instance=ExtResource("21_b8bbs")]
+[node name="1" parent="Terrain/Same_As/Trees_2" index="0" unique_id=1206581587 instance=ExtResource("21_b8bbs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 11.5)
 
-[node name="2" parent="Terrain/Same_As/Trees_2" index="1" instance=ExtResource("21_b8bbs")]
+[node name="2" parent="Terrain/Same_As/Trees_2" index="1" unique_id=142582898 instance=ExtResource("21_b8bbs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 12.5)
 
-[node name="3" parent="Terrain/Same_As/Trees_2" index="2" instance=ExtResource("21_b8bbs")]
+[node name="3" parent="Terrain/Same_As/Trees_2" index="2" unique_id=1199425469 instance=ExtResource("21_b8bbs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.5, 0, 12.5)
 
-[node name="Flowers_1" type="Node3D" parent="Terrain/Same_As" index="2"]
+[node name="Flowers_1" type="Node3D" parent="Terrain/Same_As" index="2" unique_id=1039025973]
 
-[node name="1" parent="Terrain/Same_As/Flowers_1" index="0" instance=ExtResource("22_al6jb")]
+[node name="1" parent="Terrain/Same_As/Flowers_1" index="0" unique_id=544041379 instance=ExtResource("22_al6jb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, 3.5)
 
-[node name="2" parent="Terrain/Same_As/Flowers_1" index="1" instance=ExtResource("22_al6jb")]
+[node name="2" parent="Terrain/Same_As/Flowers_1" index="1" unique_id=2105535013 instance=ExtResource("22_al6jb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 2.5)
 
-[node name="3" parent="Terrain/Same_As/Flowers_1" index="2" instance=ExtResource("22_al6jb")]
+[node name="3" parent="Terrain/Same_As/Flowers_1" index="2" unique_id=959731597 instance=ExtResource("22_al6jb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 4)
 
-[node name="Bushes_1" type="Node3D" parent="Terrain/Same_As" index="3"]
+[node name="Bushes_1" type="Node3D" parent="Terrain/Same_As" index="3" unique_id=375201527]
 
-[node name="1" parent="Terrain/Same_As/Bushes_1" index="0" instance=ExtResource("23_jsiso")]
+[node name="1" parent="Terrain/Same_As/Bushes_1" index="0" unique_id=2010931433 instance=ExtResource("23_jsiso")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 10.5)
 
-[node name="2" parent="Terrain/Same_As/Bushes_1" index="1" instance=ExtResource("23_jsiso")]
+[node name="2" parent="Terrain/Same_As/Bushes_1" index="1" unique_id=1999988563 instance=ExtResource("23_jsiso")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, 10)
 
-[node name="3" parent="Terrain/Same_As/Bushes_1" index="2" instance=ExtResource("23_jsiso")]
+[node name="3" parent="Terrain/Same_As/Bushes_1" index="2" unique_id=161148348 instance=ExtResource("23_jsiso")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 11)
 
-[node name="5" parent="Terrain/Same_As/Bushes_1" index="3" instance=ExtResource("23_jsiso")]
+[node name="5" parent="Terrain/Same_As/Bushes_1" index="3" unique_id=2098797476 instance=ExtResource("23_jsiso")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.75, 0, 2.5)
 
-[node name="Dirt" parent="Terrain/Areas" index="0" instance=ExtResource("24_gogxg")]
+[node name="Dirt" parent="Terrain/Areas" index="0" unique_id=136760407 instance=ExtResource("24_gogxg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 6)
 _e_audio_keys = Array[String](["Dirt_1", "Dirt_2"])
 
@@ -495,22 +495,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 7)
 [node name="1" parent="Objects/Party_Members/Place_Pos/1" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 7)
 
-[node name="1" parent="Objects/Enemies/Place_Pos" index="0"]
-visible = true
-
 [node name="1" parent="Objects/Enemies/Place_Pos/1" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, 7)
 
+[node name="2" parent="Objects/Enemies/Place_Pos" index="1"]
+visible = true
+
 [node name="1" parent="Objects/Enemies/Place_Pos/2" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, 6.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, 6.25)
 
 [node name="2" parent="Objects/Enemies/Place_Pos/2" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5, 0, 7.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5, 0, 7.75)
 
 [node name="Main" parent="Nav_Regions" index="0"]
 navigation_mesh = SubResource("NavigationMesh_nng2n")
 
-[node name="Sun" type="DirectionalLight3D" parent="." index="6"]
+[node name="Sun" type="DirectionalLight3D" parent="." index="6" unique_id=1309928728]
 transform = Transform3D(0.707107, 0.5, -0.5, 0, 0.707107, 0.707107, 0.707107, -0.5, 0.5, 0, 0, 0)
 shadow_enabled = true
 shadow_opacity = 0.5

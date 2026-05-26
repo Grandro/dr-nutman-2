@@ -1,5 +1,5 @@
-﻿**Game Engine**:
- - Godot Engine v4.4.1 (Folder: Godot_Engine)
+**Game Engine**:
+ - Godot Engine v4.6.2 (Folder: Godot_Engine)
 
 **Sound Effects:**
  - GameBurp.com (Folder: GameBurp) GameDev Market (https://www.gamedevmarket.net/terms-conditions#pro-licence)
@@ -11,8 +11,6 @@
  - PBR Glass: aubrey (https://godotshaders.com/shader/pbr-glass)
  - Glitch: schatten
  - HFade: schatten
- - 2D Outline: GDQuest (Folder: GDQuest)
- - 3D Outline: axilirate (https://godotshaders.com/shader/pixel-perfect-outline-shader)
  - Speed Lines Shader for Godot 4: axilirate (https://godotshaders.com/shader/speed-lines-shader-for-godot-4)
  - Transition: GDQuest (Folder: GDQuest)
  - Screentone scene transition: vanviethieuanh (https://godotshaders.com/shader/screentone-scene-transition)
@@ -36,4 +34,4 @@
  - Super Rugged: fsuarez913 (www.dafont.com/super-rugged.font)
 
 **Everything Else**:
-Copyright (c) 2025 Grandro
+Copyright (c) 2026 Grandro

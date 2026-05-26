@@ -1,10 +1,12 @@
-extends MapBase3D
+extends FWMapBase3D
 class_name MapBuffinHouse3
 
-@onready var _a_Player: Player3D = get_node("Objects/Player")
+@onready var _a_Player: FWPlayer3D = get_node("Objects/Player")
 @onready var _a_Paint_DeLere: MapBuffinHouse3ObjectPaintDeLere = get_node("Objects/Paint_DeLere")
 @onready var _a_Floor_1: MapBuffinHouse3Floor1 = get_node("Objects/Floor_1")
 @onready var _a_Floor_2: MapBuffinHouse3Floor2 = get_node("Objects/Floor_2")
+@onready var _a_Floor_3: MapBuffinHouse3Floor3 = get_node("Objects/Floor_3")
+@onready var _a_Arcade: Arcade = get_node("Objects/Arcade")
 
 func _ready() -> void:
 	super()
@@ -12,14 +14,28 @@ func _ready() -> void:
 	global_si.curr_camera_changed.connect(_on_Global_curr_camera_changed)
 	_a_Floor_1.projector_power_changed.connect(_on_projector_power_changed.bind(_a_Floor_1))
 	_a_Floor_2.projector_power_changed.connect(_on_projector_power_changed.bind(_a_Floor_2))
+	_a_Arcade.finished.connect(_on_Arcade_finished)
 	
 	_a_Paint_DeLere.set_player(_a_Player)
 	_a_Floor_2.set_paint_delere(_a_Paint_DeLere)
+
+func start_arcade() -> void:
+	_a_Arcade.start()
+
+func set_floor_3_player_fall_pos(p_player_fall_pos: Vector3) -> void:
+	_a_Floor_3.set_player_fall_pos(p_player_fall_pos)
+
+func get_floor_3_player_fall_pos() -> Vector3:
+	return _a_Floor_3.get_player_fall_pos()
+
+func set_floor_3_lower_half_visible(p_lower_half_visible: bool) -> void:
+	_a_Floor_3.set_lower_half_visible(p_lower_half_visible)
 
 func get_save_data() -> Dictionary:
 	var data: Dictionary = super()
 	data[&"Floor_1"] = _a_Floor_1.get_save_data()
 	data[&"Floor_2"] = _a_Floor_2.get_save_data()
+	data[&"Floor_3"] = _a_Floor_3.get_save_data()
 	
 	return data
 
@@ -27,6 +43,7 @@ func load_data(p_map_data: Dictionary) -> void:
 	super(p_map_data)
 	_a_Floor_1.load_data(p_map_data[&"Curr_Scene"][&"Floor_1"])
 	_a_Floor_2.load_data(p_map_data[&"Curr_Scene"][&"Floor_2"])
+	_a_Floor_3.load_data(p_map_data[&"Curr_Scene"][&"Floor_3"])
 
 func _on_Global_curr_camera_changed(p_curr_camera: Camera3D) -> void:
 	var projection: Camera3D.ProjectionType = p_curr_camera.get_projection()
@@ -43,3 +60,11 @@ func _on_projector_power_changed(p_projector: ObjectProjectorBase, p_power: bool
 	match p_floor:
 		_a_Floor_2:
 			_a_Paint_DeLere.set_paint_from_projector(p_power)
+
+func _on_Arcade_finished() -> void:
+	var cutscene_system_si: Cutscene_System = Global.get_singleton(self, "Cutscene_System")
+	cutscene_system_si.cutscene(&"Ghosty_Arcade_Finish", &"Entry", &"Main", &"Global")
+	cutscene_system_si.set_cutscene_completed_cb(&"Ghosty_Arcade_Finish", &"Entry", _CB_cutscene_completed)
+
+func _CB_cutscene_completed(_p_type: StringName, _p_key: StringName, _p_entry_key: StringName) -> void:
+	print("Zuppa")

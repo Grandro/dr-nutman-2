@@ -1,35 +1,35 @@
-[gd_scene load_steps=11 format=3 uid="uid://osrm8oliivfv"]
+[gd_scene format=3 uid="uid://osrm8oliivfv"]
 
 [ext_resource type="Script" uid="uid://b3rn0idf71xj0" path="res://Scenes/Objects/3D/Enemies/Scripts/Enemy_Base.gd" id="1_77khg"]
-[ext_resource type="PackedScene" uid="uid://bblmb8yfchyxr" path="res://Scenes/Object/Comps/3D/Display.tscn" id="2_aj8rk"]
-[ext_resource type="PackedScene" uid="uid://birjyb23mdl01" path="res://Scenes/Object/Comps/3D/Movement/Comps/Terrain/Terrain_Base.tscn" id="4_32ofh"]
-[ext_resource type="PackedScene" uid="uid://br3fs6efh03rn" path="res://Scenes/Object/Comps/3D/Movement/Movement_Character.tscn" id="4_y64kj"]
-[ext_resource type="PackedScene" uid="uid://ks3max245ufk" path="res://Scenes/Object/Comps/3D/Movement/Comps/Nav_Agent.tscn" id="5_0amt2"]
-[ext_resource type="PackedScene" uid="uid://de2jy2ixhp2mw" path="res://Scenes/Object/Comps/Save.tscn" id="6_t6qjh"]
-[ext_resource type="PackedScene" uid="uid://cekkcfeurbewx" path="res://Scenes/Object/Comps/3D/Movement/Comps/States.tscn" id="6_y64kj"]
+[ext_resource type="PackedScene" uid="uid://bblmb8yfchyxr" path="res://Framework/Scenes/Object/Comps/3D/Display.tscn" id="2_aj8rk"]
+[ext_resource type="PackedScene" uid="uid://birjyb23mdl01" path="res://Framework/Scenes/Object/Comps/3D/Movement/Comps/Terrain/Terrain_Base.tscn" id="4_32ofh"]
+[ext_resource type="PackedScene" uid="uid://br3fs6efh03rn" path="res://Framework/Scenes/Object/Comps/3D/Movement/Movement_Character.tscn" id="4_y64kj"]
+[ext_resource type="PackedScene" uid="uid://ks3max245ufk" path="res://Framework/Scenes/Object/Comps/3D/Movement/Comps/Nav_Agent.tscn" id="5_0amt2"]
+[ext_resource type="PackedScene" uid="uid://de2jy2ixhp2mw" path="res://Framework/Scenes/Object/Comps/Save.tscn" id="6_t6qjh"]
+[ext_resource type="PackedScene" uid="uid://cekkcfeurbewx" path="res://Framework/Scenes/Object/Comps/3D/Movement/Comps/States.tscn" id="6_y64kj"]
 [ext_resource type="PackedScene" uid="uid://b7h012x035k2o" path="res://Scenes/Objects/3D/Enemies/Comps/Battle_Starter/Battle_Starter.tscn" id="7_77khg"]
-[ext_resource type="PackedScene" uid="uid://b1q143fixhaj5" path="res://Scenes/Object/Comps/Anims.tscn" id="7_lb4di"]
+[ext_resource type="PackedScene" uid="uid://b1q143fixhaj5" path="res://Framework/Scenes/Object/Comps/Anims.tscn" id="7_lb4di"]
 [ext_resource type="PackedScene" uid="uid://bqd5wag3i55mk" path="res://Scenes/Objects/3D/Enemies/Comps/Battle_Starter/Area.tscn" id="8_06f12"]
 
-[node name="Enemy_Base" type="CharacterBody3D" groups=["Object"]]
+[node name="Enemy_Base" type="CharacterBody3D" unique_id=116374851 groups=["Object"]]
 collision_layer = 72
 collision_mask = 9
 script = ExtResource("1_77khg")
 
-[node name="Display" parent="." instance=ExtResource("2_aj8rk")]
+[node name="Display" parent="." unique_id=1023854551 instance=ExtResource("2_aj8rk")]
 
-[node name="Movement" parent="." instance=ExtResource("4_y64kj")]
+[node name="Movement" parent="." unique_id=1704547041 instance=ExtResource("4_y64kj")]
 
-[node name="Terrain" parent="Movement" instance=ExtResource("4_32ofh")]
+[node name="Terrain" parent="Movement" unique_id=1527968658 instance=ExtResource("4_32ofh")]
 
-[node name="Nav_Agent" parent="Movement" instance=ExtResource("5_0amt2")]
+[node name="Nav_Agent" parent="Movement" unique_id=1530588176 instance=ExtResource("5_0amt2")]
 
-[node name="States" parent="Movement" instance=ExtResource("6_y64kj")]
+[node name="States" parent="Movement" unique_id=835987306 instance=ExtResource("6_y64kj")]
 
-[node name="Battle_Starter" parent="." instance=ExtResource("7_77khg")]
+[node name="Battle_Starter" parent="." unique_id=232068546 instance=ExtResource("7_77khg")]
 
-[node name="Neutral" parent="Battle_Starter" instance=ExtResource("8_06f12")]
+[node name="Neutral" parent="Battle_Starter" unique_id=1561785572 instance=ExtResource("8_06f12")]
 
-[node name="Anims" parent="." instance=ExtResource("7_lb4di")]
+[node name="Anims" parent="." unique_id=423240117 instance=ExtResource("7_lb4di")]
 
-[node name="Save" parent="." instance=ExtResource("6_t6qjh")]
+[node name="Save" parent="." unique_id=1023832090 instance=ExtResource("6_t6qjh")]

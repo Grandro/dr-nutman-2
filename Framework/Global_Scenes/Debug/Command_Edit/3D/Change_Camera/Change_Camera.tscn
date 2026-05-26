@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://xtwq585mtnmy"]
+
+[ext_resource type="PackedScene" uid="uid://5213guffkn3m" path="res://Framework/Global_Scenes/Debug/Command_Edit/3D/Command_Preview_Object.tscn" id="1_qrdem"]
+[ext_resource type="Script" uid="uid://26xrmwaeikuo" path="res://Framework/Global_Scenes/Debug/Command_Edit/Scripts/Change_Camera.gd" id="2_ih0u3"]
+
+[node name="Change_Camera" unique_id=2088442167 instance=ExtResource("1_qrdem")]
+script = ExtResource("2_ih0u3")
+_e_draw_grid_scene = null
+
+[node name="Object" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="0" unique_id=2124627041]
+_e_needed_comps = Array[String](["Reference", "Camera"])
+_e_allowed_classes = Array[String](["Node3D"])
+
+[editable path="Window"]
+[editable path="Window/Contents/Margin/HBox/Left/Preview"]
+[editable path="Window/Contents/Margin/HBox/Left/Grid/Offset"]

@@ -1,4 +1,4 @@
-[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://bsv5f0qyfd8tk"]
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bsv5f0qyfd8tk"]
 
 [ext_resource type="Shader" uid="uid://dov4plwhrbr6a" path="res://Global_Resources/Materials/2D/Shaders/Speedlines.gdshader" id="1_l0lqt"]
 

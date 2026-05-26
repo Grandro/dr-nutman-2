@@ -19,7 +19,7 @@ const _a_APP_SHORTCUT_PATH: String = "res://Scenes/NutOS/Content/Desktop/App_Sho
 @onready var _a_Selection_Rect: NutOSContentDesktopSelectionRect = get_node("Selection_Rect")
 @onready var _a_App_Shortcuts: Control = get_node("App_Shortcuts")
 @onready var _a_Apps: Control = get_node("Apps")
-@onready var _a_App_Options: ContextMenu = get_node("App_Options")
+@onready var _a_App_Options: FWContextMenu = get_node("App_Options")
 
 var _a_rows: int
 var _a_columns: int
@@ -240,7 +240,7 @@ func get_save_data() -> Dictionary:
 func load_data(p_data: Dictionary) -> void:
 	_a_registered_apps = p_data[&"Registered_Apps"]
 	
-	var app_shortcut_args: Dictionary[Vector2i, StringName] = p_data[&"App_Shortcuts"]
+	var app_shortcut_args: Dictionary[Vector2i, StringName]; app_shortcut_args.assign(p_data[&"App_Shortcuts"])
 	for cell: Vector2i in app_shortcut_args:
 		var key: StringName = app_shortcut_args[cell]
 		_instantiate_app_shortcut(key, cell)

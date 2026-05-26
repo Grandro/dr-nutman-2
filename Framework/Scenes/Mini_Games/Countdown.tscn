@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://dxarpisnpwd4i"]
+
+[ext_resource type="Theme" uid="uid://budcfl16xj2tt" path="res://Global_Resources/Themes/Default/Default.tres" id="1_ijn4v"]
+[ext_resource type="Script" uid="uid://7jlpk4351xi5" path="res://Framework/Scenes/Mini_Games/Scripts/Countdown.gd" id="2_cri55"]
+
+[sub_resource type="Animation" id="2"]
+resource_name = "Countdown"
+length = 4.0
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Center/Text:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": ["FW_MINIGAMES_COUNTDOWN_3", "FW_MINIGAMES_COUNTDOWN_2", "FW_MINIGAMES_COUNTDOWN_1", "FW_MINIGAMES_COUNTDOWN_GO"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pvdfs"]
+_data = {
+&"Countdown": SubResource("2")
+}
+
+[node name="Countdown" type="Control" unique_id=1608740248]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ijn4v")
+script = ExtResource("2_cri55")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1235827326]
+modulate = Color(0, 0, 0, 0.196078)
+light_mask = 8
+visibility_layer = 8
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Center" type="CenterContainer" parent="." unique_id=1635076937]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Text" type="Label" parent="Center" unique_id=1756445502]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "FW_MINIGAMES_COUNTDOWN_3"
+vertical_alignment = 1
+
+[node name="Anims" type="AnimationPlayer" parent="." unique_id=715620757]
+libraries/ = SubResource("AnimationLibrary_pvdfs")

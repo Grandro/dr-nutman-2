@@ -8,12 +8,13 @@ class_name CompBalloonsCarry
 
 @onready var _a_Anims: AnimationPlayer = get_node("Anims")
 
-var _a_entity_comph: CompHandler
+var _a_entity_comph: FWCompHandler
 
-func init(p_entity) -> void:
-	super(p_entity)
-	_a_entity_comph = p_entity.comph()
+func init(p_entities: Array[Node]) -> void:
+	super(p_entities)
+	_a_entity_comph = _a_entity.comph()
 	_a_entity_comph.comps_registered.connect(_on_Comp_Handler_comps_registered)
+	tree_exiting.connect(_on_tree_exiting)
 	
 	for child: CompBalloonsContainerCarry in _a_Containers.get_children():
 		child.set_entity(_a_entity)
@@ -38,10 +39,13 @@ func load_data(p_data: Dictionary) -> void:
 	super(p_data)
 
 func _on_Comp_Handler_comps_registered() -> void:
-	var anims_comp: CompAnims = _a_entity_comph.get_comp("Anims")
+	var anims_comp: FWCompAnims = _a_entity_comph.get_comp("Anims")
 	anims_comp.anim_seeked.connect(_on_Anims_anim_seeked)
 	anims_comp.anim_stopped.connect(_on_Anims_anim_stopped)
 	anims_comp.anim_played.connect(_on_Anims_anim_played)
+
+func _on_tree_exiting() -> void:
+	_a_entity_comph.comps_registered.disconnect(_on_Comp_Handler_comps_registered)
 
 func _on_Anims_anim_seeked(p_seconds: float, p_update: bool) -> void:
 	_a_Anims.seek(p_seconds, p_update)
@@ -52,7 +56,7 @@ func _on_Anims_anim_stopped(p_reset: bool) -> void:
 func _on_Anims_anim_played(p_name: StringName) -> void:
 	_update_containers_pos()
 	
-	var anim_comp: CompAnims = _a_entity_comph.get_comp("Anims")
+	var anim_comp: FWCompAnims = _a_entity_comph.get_comp("Anims")
 	var speed: float = anim_comp.get_playing_speed()
 	var pos: float = anim_comp.get_current_animation_position()
 	var backwards: bool = speed < 0.0

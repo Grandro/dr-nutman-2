@@ -1,6 +1,6 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://s57wlkefntsr"]
+[gd_resource type="Resource" script_class="DestinationData3D" format=3 uid="uid://s57wlkefntsr"]
 
-[ext_resource type="Script" uid="uid://dd8g42vshsje" path="res://Global_Resources/Databases/Maps/3D/Destination_Data.gd" id="1_hyqwl"]
+[ext_resource type="Script" uid="uid://dd8g42vshsje" path="res://Framework/Global_Resources/Databases/Maps/3D/Destination_Data.gd" id="1_hyqwl"]
 
 [resource]
 script = ExtResource("1_hyqwl")
@@ -11,5 +11,4 @@ _e_camera_limit = Dictionary[int, float]({
 2: 107.0,
 3: 118.0
 })
-_e_dir = "Down"
 _e_camera_limit_active = true

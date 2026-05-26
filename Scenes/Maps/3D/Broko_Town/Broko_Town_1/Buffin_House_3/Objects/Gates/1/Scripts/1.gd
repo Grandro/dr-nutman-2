@@ -1,10 +1,10 @@
-extends Static3DObject
+extends FWStatic3DObject
 class_name ObjectGate1
 
 signal opened()
 
-@onready var _a_States: CompStates = get_node("States")
-@onready var _a_Anims: CompAnims = get_node("Anims")
+@onready var _a_States: FWCompStates = get_node("States")
+@onready var _a_Anims: FWCompAnims = get_node("Anims")
 
 func _ready() -> void:
 	super()

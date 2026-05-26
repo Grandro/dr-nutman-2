@@ -1,6 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://bl43ipylfgmo3"]
+[gd_scene format=3 uid="uid://bl43ipylfgmo3"]
 
-[ext_resource type="PackedScene" uid="uid://c7l6gl3pndhn7" path="res://Global_Resources/Mapping/3D/Plane/Plane_Base.tscn" id="1_fr876"]
+[ext_resource type="PackedScene" uid="uid://c7l6gl3pndhn7" path="res://Framework/Global_Resources/Mapping/3D/Plane/Plane_Base.tscn" id="1_fr876"]
 [ext_resource type="Texture2D" uid="uid://du1ph3ym3niyp" path="res://Global_Resources/Mapping/Sprites/Below/Broko_Town/Exterior/Water_1/Side_Down_Center.png" id="3_43hna"]
 [ext_resource type="Texture2D" uid="uid://b3mf7nob6mrjq" path="res://Global_Resources/Mapping/Sprites/Below/Broko_Town/Exterior/Water_1/Island_Top_Corner_Down.png" id="3_dttsw"]
 
@@ -22,22 +22,22 @@ size = Vector2(1, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xmnii"]
 
-[node name="Island_1" type="Node3D"]
+[node name="Island_1" type="Node3D" unique_id=1783187242]
 
-[node name="Front" parent="." instance=ExtResource("1_fr876")]
+[node name="Front" parent="." unique_id=1444279472 instance=ExtResource("1_fr876")]
 transform = Transform3D(-1, -8.74228e-08, -3.82137e-15, 0, -4.37114e-08, 1, -8.74228e-08, 1, 4.37114e-08, 0, -0.5, 0.5)
 mesh = SubResource("PlaneMesh_px27q")
 
-[node name="Top" parent="." groups=["NavMesh_Main"] instance=ExtResource("1_fr876")]
+[node name="Top" parent="." unique_id=1159685115 groups=["NavMesh_Main"] instance=ExtResource("1_fr876")]
 mesh = SubResource("PlaneMesh_phlgj")
 
-[node name="Back" parent="." instance=ExtResource("1_fr876")]
+[node name="Back" parent="." unique_id=655003955 instance=ExtResource("1_fr876")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -0.5, -0.5)
 mesh = SubResource("PlaneMesh_px27q")
 
-[node name="Static" type="StaticBody3D" parent="."]
+[node name="Static" type="StaticBody3D" parent="." unique_id=1168738705]
 collision_mask = 0
 
-[node name="Collision" type="CollisionShape3D" parent="Static"]
+[node name="Collision" type="CollisionShape3D" parent="Static" unique_id=1468750356]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 shape = SubResource("BoxShape3D_xmnii")

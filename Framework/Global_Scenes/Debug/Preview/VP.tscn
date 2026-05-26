@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://327misx7wcjf"]
+
+[ext_resource type="PackedScene" uid="uid://nt5gfdybdx7v" path="res://Framework/Scenes/VP_Container/VP.tscn" id="1_1ll0b"]
+
+[node name="VP" unique_id=440732642 instance=ExtResource("1_1ll0b")]
+audio_listener_enable_2d = true
+audio_listener_enable_3d = true
+_e_game_world = false

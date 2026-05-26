@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dkumayrglr2d3"]
+[gd_scene format=3 uid="uid://dkumayrglr2d3"]
 
-[ext_resource type="PackedScene" uid="uid://dvcr3pbdmde27" path="res://Scenes/Objects/3D/Enemies/Comps/Behavior/States/State_Base.tscn" id="1_ewykq"]
+[ext_resource type="PackedScene" uid="uid://dvcr3pbdmde27" path="res://Framework/Scenes/Object/Comps/3D/Behavior/States/State_Base.tscn" id="1_ewykq"]
 [ext_resource type="Script" uid="uid://d0q7kgrr8p1rd" path="res://Scenes/Objects/3D/Enemies/Citrin/Comps/Behavior/States/Scripts/State_Attack.gd" id="2_xkj28"]
 
-[node name="Attack" instance=ExtResource("1_ewykq")]
+[node name="Attack" unique_id=1610234963 instance=ExtResource("1_ewykq")]
 script = ExtResource("2_xkj28")

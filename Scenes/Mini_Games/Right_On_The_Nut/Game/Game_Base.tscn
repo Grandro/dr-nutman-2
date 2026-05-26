@@ -1,6 +1,6 @@
-[gd_scene load_steps=22 format=3 uid="uid://0fiuqormgykw"]
+[gd_scene format=3 uid="uid://0fiuqormgykw"]
 
-[ext_resource type="PackedScene" uid="uid://xuy0gyipng5m" path="res://Scenes/Mini_Games/Mini_Game_Base/Game_Base.tscn" id="1_2f315"]
+[ext_resource type="PackedScene" uid="uid://xuy0gyipng5m" path="res://Framework/Scenes/Mini_Games/Mini_Game_Base/Game_Base.tscn" id="1_2f315"]
 [ext_resource type="Script" uid="uid://cmoxcm1lus3bj" path="res://Scenes/Mini_Games/Right_On_The_Nut/Game/Scripts/Game_Base.gd" id="2_ky4c0"]
 [ext_resource type="Texture2D" uid="uid://dryjuh3483nau" path="res://Scenes/Mini_Games/Right_On_The_Nut/Game/Sprites/Background.png" id="2_whx67"]
 [ext_resource type="Script" uid="uid://cmy36x55mvstq" path="res://Scenes/Mini_Games/Right_On_The_Nut/Game/Scripts/QT_Bar.gd" id="3_fumxx"]
@@ -10,8 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://wgrqr557p8ah" path="res://Scenes/Mini_Games/Right_On_The_Nut/Game/Sprites/Nutcracker_Jaw.png" id="5_owpaj"]
 [ext_resource type="Texture2D" uid="uid://ko7fp446lqab" path="res://Global_Resources/Sprites/Box_Outer.png" id="5_sp60d"]
 [ext_resource type="Texture2D" uid="uid://w7i6nf4arry4" path="res://Scenes/Mini_Games/Right_On_The_Nut/Game/Sprites/Uncracked_Peanut.png" id="6_gjgoq"]
-[ext_resource type="Texture2D" uid="uid://c754kwabi0qe5" path="res://Global_Scenes/Main_Menu/Sub_Menus/Journal/Sprites/Arrow.png" id="6_rbjql"]
-[ext_resource type="PackedScene" uid="uid://bs8m1n5rmnwfd" path="res://Scenes/Object/Comps/2D/Camera.tscn" id="7_0w6mx"]
+[ext_resource type="Texture2D" uid="uid://c754kwabi0qe5" path="res://Framework/Global_Scenes/Main_Menu/Sub_Menus/Journal/Sprites/Arrow.png" id="6_rbjql"]
+[ext_resource type="PackedScene" uid="uid://bs8m1n5rmnwfd" path="res://Framework/Scenes/Object/Comps/2D/Camera.tscn" id="7_0w6mx"]
 [ext_resource type="AudioStream" uid="uid://ba12nswedryws" path="res://Global_Resources/Audio/SFX/Tock_Low_1.wav" id="7_vlyp5"]
 [ext_resource type="AudioStream" uid="uid://djrgv4onh2fv8" path="res://Global_Resources/Audio/SFX/Positive_2.wav" id="8_vnavj"]
 [ext_resource type="AudioStream" uid="uid://bqxr0y7usdr43" path="res://Global_Resources/Audio/SFX/Negative_1.wav" id="9_bpukm"]
@@ -111,10 +111,10 @@ _data = {
 &"Spin": SubResource("4")
 }
 
-[node name="Game_Base" instance=ExtResource("1_2f315")]
+[node name="Game_Base" unique_id=471836940 instance=ExtResource("1_2f315")]
 script = ExtResource("2_ky4c0")
 
-[node name="QT_Bar" type="Control" parent="Canvas_2" index="0"]
+[node name="QT_Bar" type="Control" parent="Canvas_2" parent_id_path=PackedInt32Array(2011405530) index="0" unique_id=1840707087]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 3
@@ -128,7 +128,7 @@ offset_bottom = 192.0
 grow_horizontal = 2
 script = ExtResource("3_fumxx")
 
-[node name="Box_Inner" type="NinePatchRect" parent="Canvas_2/QT_Bar" index="0"]
+[node name="Box_Inner" type="NinePatchRect" parent="Canvas_2/QT_Bar" index="0" unique_id=111717618]
 editor_description = "10061E"
 self_modulate = Color(0.4, 0, 0.00666656, 1)
 light_mask = 8
@@ -142,7 +142,7 @@ patch_margin_top = 24
 patch_margin_right = 24
 patch_margin_bottom = 24
 
-[node name="Target" type="ColorRect" parent="Canvas_2/QT_Bar" index="1"]
+[node name="Target" type="ColorRect" parent="Canvas_2/QT_Bar" index="1" unique_id=1454788716]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 0
@@ -152,7 +152,7 @@ offset_right = 136.0
 offset_bottom = 87.0
 color = Color(0.133333, 0.913725, 0.0666667, 1)
 
-[node name="Box_Outer" type="NinePatchRect" parent="Canvas_2/QT_Bar" index="2"]
+[node name="Box_Outer" type="NinePatchRect" parent="Canvas_2/QT_Bar" index="2" unique_id=1559364388]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 0
@@ -167,7 +167,7 @@ patch_margin_top = 24
 patch_margin_right = 24
 patch_margin_bottom = 24
 
-[node name="Arrow" type="TextureRect" parent="Canvas_2/QT_Bar" index="3"]
+[node name="Arrow" type="TextureRect" parent="Canvas_2/QT_Bar" index="3" unique_id=1514399409]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 0
@@ -177,96 +177,92 @@ offset_right = 37.0014
 offset_bottom = 119.0
 texture = ExtResource("6_rbjql")
 
-[node name="Anims" type="AnimationPlayer" parent="Canvas_2/QT_Bar" index="4"]
-libraries = {
-&"": SubResource("AnimationLibrary_1ilq6")
-}
+[node name="Anims" type="AnimationPlayer" parent="Canvas_2/QT_Bar" index="4" unique_id=1406731458]
+libraries/ = SubResource("AnimationLibrary_1ilq6")
 
-[node name="Audio" type="Node" parent="Canvas_2/QT_Bar" index="5"]
+[node name="Audio" type="Node" parent="Canvas_2/QT_Bar" index="5" unique_id=749313418]
 
-[node name="Move" type="AudioStreamPlayer" parent="Canvas_2/QT_Bar/Audio" index="0"]
+[node name="Move" type="AudioStreamPlayer" parent="Canvas_2/QT_Bar/Audio" index="0" unique_id=1189509787]
 bus = &"SFX"
 
-[node name="Hit" type="AudioStreamPlayer" parent="Canvas_2/QT_Bar/Audio" index="1"]
+[node name="Hit" type="AudioStreamPlayer" parent="Canvas_2/QT_Bar/Audio" index="1" unique_id=1328227053]
 stream = ExtResource("8_vnavj")
 bus = &"SFX"
 
-[node name="Miss" type="AudioStreamPlayer" parent="Canvas_2/QT_Bar/Audio" index="2"]
+[node name="Miss" type="AudioStreamPlayer" parent="Canvas_2/QT_Bar/Audio" index="2" unique_id=1761711120]
 stream = ExtResource("9_bpukm")
 bus = &"SFX"
 
-[node name="Node2D" type="Node2D" parent="." index="2"]
+[node name="Node2D" type="Node2D" parent="." index="2" unique_id=2021060226]
 light_mask = 4
 visibility_layer = 4
 
-[node name="Background" type="Sprite2D" parent="Node2D" index="0"]
+[node name="Background" type="Sprite2D" parent="Node2D" index="0" unique_id=1914230781]
 light_mask = 4
 visibility_layer = 4
 position = Vector2(640, 1000)
 texture = ExtResource("2_whx67")
 
-[node name="Dots" type="Node2D" parent="Node2D" index="1"]
+[node name="Dots" type="Node2D" parent="Node2D" index="1" unique_id=654352823]
 light_mask = 4
 visibility_layer = 4
 
-[node name="1" parent="Node2D/Dots" index="0" instance=ExtResource("3_iglf7")]
+[node name="1" parent="Node2D/Dots" index="0" unique_id=1537892077 instance=ExtResource("3_iglf7")]
 position = Vector2(640, 524)
 
-[node name="2" parent="Node2D/Dots" index="1" instance=ExtResource("3_iglf7")]
+[node name="2" parent="Node2D/Dots" index="1" unique_id=928243290 instance=ExtResource("3_iglf7")]
 position = Vector2(640, 672)
 
-[node name="3" parent="Node2D/Dots" index="2" instance=ExtResource("3_iglf7")]
+[node name="3" parent="Node2D/Dots" index="2" unique_id=1001405036 instance=ExtResource("3_iglf7")]
 position = Vector2(640, 820)
 
-[node name="4" parent="Node2D/Dots" index="3" instance=ExtResource("3_iglf7")]
+[node name="4" parent="Node2D/Dots" index="3" unique_id=1298219033 instance=ExtResource("3_iglf7")]
 position = Vector2(640, 968)
 
-[node name="5" parent="Node2D/Dots" index="4" instance=ExtResource("3_iglf7")]
+[node name="5" parent="Node2D/Dots" index="4" unique_id=364045422 instance=ExtResource("3_iglf7")]
 position = Vector2(640, 1116)
 
-[node name="6" parent="Node2D/Dots" index="5" instance=ExtResource("3_iglf7")]
+[node name="6" parent="Node2D/Dots" index="5" unique_id=1052169459 instance=ExtResource("3_iglf7")]
 position = Vector2(640, 1264)
 
-[node name="7" parent="Node2D/Dots" index="6" instance=ExtResource("3_iglf7")]
+[node name="7" parent="Node2D/Dots" index="6" unique_id=384079524 instance=ExtResource("3_iglf7")]
 position = Vector2(640, 1412)
 
-[node name="8" parent="Node2D/Dots" index="7" instance=ExtResource("3_iglf7")]
+[node name="8" parent="Node2D/Dots" index="7" unique_id=448586709 instance=ExtResource("3_iglf7")]
 position = Vector2(640, 1560)
 
-[node name="9" parent="Node2D/Dots" index="8" instance=ExtResource("3_iglf7")]
+[node name="9" parent="Node2D/Dots" index="8" unique_id=624142573 instance=ExtResource("3_iglf7")]
 position = Vector2(640, 1708)
 
-[node name="10" parent="Node2D/Dots" index="9" instance=ExtResource("3_iglf7")]
+[node name="10" parent="Node2D/Dots" index="9" unique_id=529270766 instance=ExtResource("3_iglf7")]
 position = Vector2(640, 1856)
 
-[node name="Nutcracker_Base" type="Sprite2D" parent="Node2D" index="2"]
+[node name="Nutcracker_Base" type="Sprite2D" parent="Node2D" index="2" unique_id=2144442054]
 light_mask = 4
 visibility_layer = 4
 position = Vector2(640, 610)
 texture = ExtResource("4_vi6wy")
 
-[node name="Nutcracker_Jaw" type="Sprite2D" parent="Node2D" index="3"]
+[node name="Nutcracker_Jaw" type="Sprite2D" parent="Node2D" index="3" unique_id=1714919871]
 light_mask = 4
 visibility_layer = 4
 position = Vector2(640, 642)
 texture = ExtResource("5_owpaj")
 offset = Vector2(0, -64)
 
-[node name="Uncracked_Peanut" type="Sprite2D" parent="Node2D" index="4"]
+[node name="Uncracked_Peanut" type="Sprite2D" parent="Node2D" index="4" unique_id=406949625]
 light_mask = 4
 visibility_layer = 4
 position = Vector2(640, 1856)
 texture = ExtResource("6_gjgoq")
 
-[node name="Camera" parent="Node2D/Uncracked_Peanut" index="0" instance=ExtResource("7_0w6mx")]
+[node name="Camera" parent="Node2D/Uncracked_Peanut" index="0" unique_id=595969 instance=ExtResource("7_0w6mx")]
 zoom = Vector2(1, 1)
 limit_top = 0
 limit_bottom = 2000
 limit_smoothed = true
 position_smoothing_enabled = true
 
-[node name="Anims" type="AnimationPlayer" parent="Node2D/Uncracked_Peanut" index="1"]
-libraries = {
-&"": SubResource("AnimationLibrary_6rss1")
-}
-autoplay = "Spin"
+[node name="Anims" type="AnimationPlayer" parent="Node2D/Uncracked_Peanut" index="1" unique_id=1272445321]
+libraries/ = SubResource("AnimationLibrary_6rss1")
+autoplay = &"Spin"

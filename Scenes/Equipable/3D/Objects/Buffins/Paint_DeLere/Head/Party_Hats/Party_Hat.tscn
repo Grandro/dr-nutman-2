@@ -1,10 +1,14 @@
-[gd_scene load_steps=32 format=3 uid="uid://docx5eayticqo"]
+[gd_scene format=3 uid="uid://docx5eayticqo"]
 
 [ext_resource type="PackedScene" uid="uid://cpmd6ra1vqowo" path="res://Scenes/Equipable/3D/Objects/Buffins/Base/Head/Party_Hats/Party_Hat.tscn" id="1"]
 [ext_resource type="Texture2D" uid="uid://df5usp7qv1roy" path="res://Global_Resources/Sprites/Objects/Buffins/Paint_DeLere/Equipables/Head/Party_Hats/1_Spritesheet.png" id="2"]
 [ext_resource type="Animation" uid="uid://cno2j3rwdbmis" path="res://Scenes/Equipable/3D/Objects/Buffins/Base/Head/Party_Hats/Anims/Idle_Down.tres" id="3_17tgg"]
+[ext_resource type="Animation" uid="uid://c55xxb1l62j0x" path="res://Scenes/Equipable/3D/Objects/Buffins/Base/Head/Party_Hats/Anims/Fall_Down.tres" id="3_vin7t"]
 [ext_resource type="Animation" uid="uid://b2s8op5ixf3v8" path="res://Scenes/Equipable/3D/Objects/Buffins/Base/Head/Party_Hats/Anims/Idle_Left.tres" id="4_7131c"]
+[ext_resource type="Animation" uid="uid://b2end2iieeeb0" path="res://Scenes/Equipable/3D/Objects/Buffins/Base/Head/Party_Hats/Anims/Fall_Left.tres" id="4_githl"]
 [ext_resource type="Animation" uid="uid://beiaq0715fnyq" path="res://Scenes/Equipable/3D/Objects/Buffins/Base/Head/Party_Hats/Anims/Idle_Right.tres" id="5_e60hn"]
+[ext_resource type="Animation" uid="uid://vy5pbh5ecgcf" path="res://Scenes/Equipable/3D/Objects/Buffins/Base/Head/Party_Hats/Anims/Fall_Right.tres" id="5_trjga"]
+[ext_resource type="Animation" uid="uid://3e0ra50fdrp2" path="res://Scenes/Equipable/3D/Objects/Buffins/Base/Head/Party_Hats/Anims/Fall_Up.tres" id="6_iiyjr"]
 [ext_resource type="Animation" uid="uid://bgle7sljv1una" path="res://Scenes/Equipable/3D/Objects/Buffins/Base/Head/Party_Hats/Anims/Idle_Up.tres" id="6_n2w8t"]
 [ext_resource type="Animation" uid="uid://djvskulc1wpys" path="res://Scenes/Equipable/3D/Objects/Buffins/Base/Head/Party_Hats/Anims/Jump_Down.tres" id="7_xke2j"]
 [ext_resource type="Animation" uid="uid://tjn04lkf0uu6" path="res://Scenes/Equipable/3D/Objects/Buffins/Base/Head/Party_Hats/Anims/Jump_Left.tres" id="8_5suqt"]
@@ -33,6 +37,10 @@
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3hcxr"]
 _data = {
+&"Fall_Down": ExtResource("3_vin7t"),
+&"Fall_Left": ExtResource("4_githl"),
+&"Fall_Right": ExtResource("5_trjga"),
+&"Fall_Up": ExtResource("6_iiyjr"),
 &"Idle_Down": ExtResource("3_17tgg"),
 &"Idle_Left": ExtResource("4_7131c"),
 &"Idle_Right": ExtResource("5_e60hn"),
@@ -63,10 +71,8 @@ _data = {
 &"Walk_Up": ExtResource("26_d5ta8")
 }
 
-[node name="Party_Hat" instance=ExtResource("1")]
+[node name="Party_Hat" unique_id=380432335 instance=ExtResource("1")]
 texture = ExtResource("2")
 
-[node name="Anims" parent="." index="0"]
-libraries = {
-"": SubResource("AnimationLibrary_3hcxr")
-}
+[node name="Anims" parent="." index="0" unique_id=282547662]
+libraries/ = SubResource("AnimationLibrary_3hcxr")

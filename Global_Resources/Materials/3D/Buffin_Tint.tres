@@ -1,4 +1,4 @@
-[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://7wwi3hyl3fjb"]
+[gd_resource type="ShaderMaterial" format=3 uid="uid://7wwi3hyl3fjb"]
 
 [ext_resource type="Shader" uid="uid://bcwgukhc6uvti" path="res://Global_Resources/Materials/3D/Shaders/Buffin_Tint.tres" id="1_oibd4"]
 [ext_resource type="Texture2D" uid="uid://ch5jchjsb56q4" path="res://Global_Resources/Sprites/Objects/Buffins/Paint_Apprentice/Spritesheet.png" id="2_7tb26"]

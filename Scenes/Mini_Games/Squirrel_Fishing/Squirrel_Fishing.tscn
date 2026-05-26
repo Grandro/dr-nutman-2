@@ -1,48 +1,48 @@
-[gd_scene load_steps=6 format=3 uid="uid://dy6q6wk1sfjx7"]
+[gd_scene format=3 uid="uid://dy6q6wk1sfjx7"]
 
-[ext_resource type="PackedScene" uid="uid://dlhat5aerwj2v" path="res://Scenes/Mini_Games/Mini_Game_Base/Mini_Game_Base.tscn" id="1_ckcjc"]
+[ext_resource type="PackedScene" uid="uid://dlhat5aerwj2v" path="res://Framework/Scenes/Mini_Games/Mini_Game_Base/Mini_Game_Base.tscn" id="1_ckcjc"]
 [ext_resource type="Script" uid="uid://ctdsroym7xdwd" path="res://Scenes/Mini_Games/Squirrel_Fishing/Scripts/Intro.gd" id="2_7bprc"]
 [ext_resource type="PackedScene" uid="uid://8hnhui6743gg" path="res://Scenes/Mini_Games/Squirrel_Fishing/Game/Game_Preview.tscn" id="2_achdi"]
 [ext_resource type="PackedScene" uid="uid://dbe4pe6v0t5y2" path="res://Scenes/Mini_Games/Squirrel_Fishing/Game/Game_Play.tscn" id="2_ylw4o"]
 [ext_resource type="Texture2D" uid="uid://pelxbitvttd4" path="res://Global_Resources/Sprites/Keys/32.png" id="4_i0c8n"]
 
-[node name="Squirrel_Fishing" instance=ExtResource("1_ckcjc")]
+[node name="Squirrel_Fishing" unique_id=1332208437 instance=ExtResource("1_ckcjc")]
 
-[node name="Game_Play" parent="." index="0" instance=ExtResource("2_ylw4o")]
+[node name="Game_Play" parent="." index="0" unique_id=114403008 instance=ExtResource("2_ylw4o")]
 
-[node name="Intro" parent="Canvas" index="0"]
+[node name="Intro" parent="Canvas" parent_id_path=PackedInt32Array(622513922) index="0" unique_id=558021626]
 modulate = Color(1, 1, 1, 1)
 script = ExtResource("2_7bprc")
 
-[node name="Heading" parent="Canvas/Intro/Margin/VBox" index="0"]
+[node name="Heading" parent="Canvas/Intro/Margin/VBox" parent_id_path=PackedInt32Array(558021626, 461448360) index="0" unique_id=1363743678]
 text = "MINIGAMES_SQUIRREL_FISHING_HEADING"
 
-[node name="VP" parent="Canvas/Intro/Margin/VBox/HBox/Left/HBox/VP" index="0"]
+[node name="VP" parent="Canvas/Intro/Margin/VBox/HBox/Left/HBox/VP" parent_id_path=PackedInt32Array(558021626, 1399718782) index="0"]
 size = Vector2i(604, 540)
 
-[node name="Game_Preview" parent="Canvas/Intro/Margin/VBox/HBox/Left/HBox/VP/VP" index="0" instance=ExtResource("2_achdi")]
+[node name="Game_Preview" parent="Canvas/Intro/Margin/VBox/HBox/Left/HBox/VP/VP" index="0" unique_id=2076771937 instance=ExtResource("2_achdi")]
 
-[node name="Scroll" parent="Canvas/Intro/Margin/VBox/HBox/Left/HBox" index="1"]
+[node name="Scroll" parent="Canvas/Intro/Margin/VBox/HBox/Left/HBox" parent_id_path=PackedInt32Array(558021626, 993630008) index="1" unique_id=380076729]
 visible = false
 
-[node name="Desc" parent="Canvas/Intro/Margin/VBox/HBox/Right/VBox" index="0"]
+[node name="Desc" parent="Canvas/Intro/Margin/VBox/HBox/Right/VBox" parent_id_path=PackedInt32Array(558021626, 1088031092) index="0" unique_id=1849681339]
 text = "MINIGAMES_SQUIRREL_FISHING_DESC"
 
-[node name="VBox" type="VBoxContainer" parent="Canvas/Intro/Margin/VBox/HBox/Right/VBox/Controls" index="1"]
+[node name="VBox" type="VBoxContainer" parent="Canvas/Intro/Margin/VBox/HBox/Right/VBox/Controls" parent_id_path=PackedInt32Array(558021626, 1784509275) index="1" unique_id=1099961087]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 16
 
-[node name="Space" type="TextureRect" parent="Canvas/Intro/Margin/VBox/HBox/Right/VBox/Controls/VBox" index="0"]
+[node name="Space" type="TextureRect" parent="Canvas/Intro/Margin/VBox/HBox/Right/VBox/Controls/VBox" index="0" unique_id=310206777]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
 texture = ExtResource("4_i0c8n")
 stretch_mode = 3
 
-[node name="Desc" type="Label" parent="Canvas/Intro/Margin/VBox/HBox/Right/VBox/Controls/VBox" index="1"]
+[node name="Desc" type="Label" parent="Canvas/Intro/Margin/VBox/HBox/Right/VBox/Controls/VBox" index="1" unique_id=1338296735]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2

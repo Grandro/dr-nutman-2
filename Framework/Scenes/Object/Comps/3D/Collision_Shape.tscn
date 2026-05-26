@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dsp0njc065uev"]
+
+[ext_resource type="Script" uid="uid://h0r3njd28k4n" path="res://Framework/Scenes/Object/Comps/3D/Scripts/Collision_Shape.gd" id="1_yk3sb"]
+
+[node name="Collision" type="CollisionShape3D" unique_id=1146581838 groups=["Comp"]]
+script = ExtResource("1_yk3sb")

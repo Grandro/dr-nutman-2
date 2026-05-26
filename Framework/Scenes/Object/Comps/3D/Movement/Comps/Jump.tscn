@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://djl16ro8388xh"]
+
+[ext_resource type="Script" uid="uid://j2pf0t4xou6l" path="res://Framework/Scenes/Object/Comps/3D/Movement/Comps/Scripts/Jump.gd" id="1_8ynmn"]
+
+[node name="Jump" type="Node" unique_id=799719492 groups=["Comp", "Movement"]]
+script = ExtResource("1_8ynmn")

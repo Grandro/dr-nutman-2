@@ -1,20 +1,20 @@
-[gd_scene load_steps=17 format=3 uid="uid://r7wu0cwc7hrc"]
+[gd_scene format=3 uid="uid://r7wu0cwc7hrc"]
 
 [ext_resource type="PackedScene" uid="uid://bpvtcsv82dm3l" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Buffin_House_3/Objects/Gates/Gate_Base.tscn" id="1_fvka8"]
 [ext_resource type="Texture2D" uid="uid://l2bqpmekn48j" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Buffin_House_3/Objects/Gates/1/Sprites/Gem_Spritesheet.png" id="2"]
 [ext_resource type="Script" uid="uid://d1s4kth3cvp48" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Buffin_House_3/Objects/Gates/1/Scripts/1.gd" id="2_nyisr"]
 [ext_resource type="Texture2D" uid="uid://ejbdxqf0nxvv" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Buffin_House_3/Objects/Gates/1/Sprites/Left_Spritesheet.png" id="3"]
-[ext_resource type="PackedScene" uid="uid://bblmb8yfchyxr" path="res://Scenes/Object/Comps/3D/Display.tscn" id="3_rij21"]
+[ext_resource type="PackedScene" uid="uid://bblmb8yfchyxr" path="res://Framework/Scenes/Object/Comps/3D/Display.tscn" id="3_rij21"]
 [ext_resource type="Texture2D" uid="uid://bapmpv4w6g2gw" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Buffin_House_3/Objects/Gates/1/Sprites/Right_Spritesheet.png" id="4"]
 [ext_resource type="AudioStream" uid="uid://cs3x0vd26pwai" path="res://Global_Resources/Audio/SFX/Gates/Rock_1_Open_Close.wav" id="6_ed5wh"]
-[ext_resource type="PackedScene" uid="uid://dsp0njc065uev" path="res://Scenes/Object/Comps/3D/Collision_Shape.tscn" id="7_rlqsv"]
-[ext_resource type="PackedScene" uid="uid://dllj5lbxwqy17" path="res://Scenes/Pausable_Audio/3D/Pausable_Audio.tscn" id="8_f806w"]
+[ext_resource type="PackedScene" uid="uid://dsp0njc065uev" path="res://Framework/Scenes/Object/Comps/3D/Collision_Shape.tscn" id="7_rlqsv"]
+[ext_resource type="PackedScene" uid="uid://dllj5lbxwqy17" path="res://Framework/Scenes/Pausable_Audio/3D/Pausable_Audio.tscn" id="8_f806w"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_rlqsv"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_f806w"]
 resource_local_to_scene = true
 size = Vector3(0.5, 3, 0.5)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_f806w"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_rcklf"]
 resource_local_to_scene = true
 size = Vector3(0.5, 3, 0.5)
 
@@ -510,42 +510,43 @@ _data = {
 &"Opened": SubResource("Animation_2xkgx")
 }
 
-[node name="Gate_1" instance=ExtResource("1_fvka8")]
+[node name="Gate_1" unique_id=1251182855 instance=ExtResource("1_fvka8")]
 script = ExtResource("2_nyisr")
 
-[node name="Display" parent="." index="0"]
+[node name="Display" parent="." index="0" unique_id=276923868]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 0)
 centered = false
+double_sided = true
 texture = ExtResource("3")
 region_enabled = true
 region_rect = Rect2(104, 4, 25, 200)
 
-[node name="Display_Gem" parent="." index="1" instance=ExtResource("3_rij21")]
+[node name="Display_Gem" parent="." index="1" unique_id=1698998243 instance=ExtResource("3_rij21")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.01, 1.49, 0)
+double_sided = true
 texture = ExtResource("2")
 
-[node name="Display_Right" parent="." index="2" instance=ExtResource("3_rij21")]
+[node name="Display_Right" parent="." index="2" unique_id=580219139 instance=ExtResource("3_rij21")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
 centered = false
+double_sided = true
 texture = ExtResource("4")
 region_enabled = true
 region_rect = Rect2(4, 4, 25, 200)
 
-[node name="Collision" parent="." index="3"]
+[node name="Collision" parent="." index="3" unique_id=2065286840]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.25, 1.5, -0.25)
-shape = SubResource("BoxShape3D_rlqsv")
-debug_color = Color(0.945098, 0, 1, 0.419608)
-
-[node name="Collision_Right" parent="." index="4" instance=ExtResource("7_rlqsv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25, 1.5, -0.25)
 shape = SubResource("BoxShape3D_f806w")
 debug_color = Color(0.945098, 0, 1, 0.419608)
 
-[node name="Move" parent="Audio" index="1" instance=ExtResource("8_f806w")]
+[node name="Collision_Right" parent="." index="4" unique_id=1981536153 instance=ExtResource("7_rlqsv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25, 1.5, -0.25)
+shape = SubResource("BoxShape3D_rcklf")
+debug_color = Color(0.945098, 0, 1, 0.419608)
+
+[node name="Move" parent="Audio" parent_id_path=PackedInt32Array(596678152) index="1" unique_id=434293194 instance=ExtResource("8_f806w")]
 bus = &"SFX"
 
-[node name="Anims" parent="." index="8"]
-libraries = {
-&"": SubResource("AnimationLibrary_ed5wh")
-}
+[node name="Anims" parent="." index="8" unique_id=1422777208]
+libraries/ = SubResource("AnimationLibrary_ed5wh")
 _e_seek_on_load = false

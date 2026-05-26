@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://ks3max245ufk"]
+
+[ext_resource type="Script" uid="uid://d0cacuppwmg00" path="res://Framework/Scenes/Object/Comps/3D/Movement/Comps/Scripts/Nav_Agent.gd" id="1_cx2to"]
+
+[node name="Nav_Agent" type="NavigationAgent3D" unique_id=268676867 groups=["Comp", "Movement"]]
+path_desired_distance = 0.2
+target_desired_distance = 0.2
+path_height_offset = 0.4
+simplify_path = true
+radius = 0.75
+max_speed = 2.0
+script = ExtResource("1_cx2to")

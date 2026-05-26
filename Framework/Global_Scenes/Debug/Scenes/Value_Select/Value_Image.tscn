@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://v03em0dn8b3s"]
+
+[ext_resource type="PackedScene" uid="uid://be6yntrlk06ra" path="res://Framework/Global_Scenes/Debug/Scenes/Value_Select/Value_Select.tscn" id="1_2syub"]
+[ext_resource type="PackedScene" uid="uid://i6fcoygjfmvk" path="res://Framework/Global_Scenes/Debug/Scenes/Image_Select/Image_Select.tscn" id="2_8gnna"]
+[ext_resource type="Script" uid="uid://1xidtllaabm7" path="res://Framework/Global_Scenes/Debug/Scenes/Value_Select/Scripts/Value_Image.gd" id="2_n3i36"]
+
+[node name="Value_Image" unique_id=1378399896 instance=ExtResource("1_2syub")]
+script = ExtResource("2_n3i36")
+
+[node name="Value" parent="." index="1" unique_id=550342410 instance=ExtResource("2_8gnna")]
+layout_mode = 2

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CompData" format=3 uid="uid://yvbctq2wqckl"]
+
+[ext_resource type="PackedScene" uid="uid://bxbt125a00cga" path="res://Scenes/Player/3D/Icon/Comps/Display.tscn" id="1_vei4m"]
+[ext_resource type="Script" uid="uid://dk1y7876kg1po" path="res://Framework/Scenes/Player/Scripts/Comp_Data.gd" id="2_ixm7u"]
+
+[resource]
+script = ExtResource("2_ixm7u")
+_e_key = &"Display"
+_e_scene = ExtResource("1_vei4m")
+_e_group = &"Icon"
+metadata/_custom_type_script = "uid://dk1y7876kg1po"

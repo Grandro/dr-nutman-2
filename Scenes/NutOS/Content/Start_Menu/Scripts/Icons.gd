@@ -12,7 +12,7 @@ signal power_option_selected(p_option: StringName)
 @onready var _a_Settings_Desc: Label = get_node("VBox/Settings/HBox/Desc")
 @onready var _a_Power_Select: Button = get_node("VBox/Power/Select")
 @onready var _a_Power_Desc: Label = get_node("VBox/Power/HBox/Desc")
-@onready var _a_Power_Options: ContextMenu = get_node("Power_Options")
+@onready var _a_Power_Options: FWContextMenu = get_node("Power_Options")
 
 var _a_expanded: bool = false
 

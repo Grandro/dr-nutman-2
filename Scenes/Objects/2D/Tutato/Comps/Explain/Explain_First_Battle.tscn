@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://nejpwwkbci35"]
+[gd_scene format=3 uid="uid://nejpwwkbci35"]
 
 [ext_resource type="PackedScene" uid="uid://dpi6g3dw4wg50" path="res://Scenes/Objects/2D/Tutato/Comps/Explain/Explain_Base.tscn" id="1_6u6ay"]
 [ext_resource type="Script" uid="uid://dvncvaoq8rigp" path="res://Scenes/Objects/2D/Tutato/Comps/Explain/Scripts/Explain_First_Battle.gd" id="2_u8hk1"]
@@ -15,13 +15,13 @@
 [ext_resource type="Texture2D" uid="uid://e0foefmbc388" path="res://Global_Scenes/Battle_System/SV_Battle/Encounters/Command_Circle/Sprites/Commands/Flee.png" id="13_j5k3d"]
 [ext_resource type="Texture2D" uid="uid://bjrwc227u4yhn" path="res://Global_Scenes/Battle_System/SV_Battle/Encounters/Command_Circle/Sprites/Commands/Help.png" id="14_wqwju"]
 
-[node name="Explain_First_Battle" instance=ExtResource("1_6u6ay")]
+[node name="Explain_First_Battle" unique_id=1029084550 instance=ExtResource("1_6u6ay")]
 script = ExtResource("2_u8hk1")
 
-[node name="Background" parent="Control" index="0"]
+[node name="Background" parent="Control" parent_id_path=PackedInt32Array(906811696) index="0" unique_id=298908239]
 color = Color(1, 1, 1, 1)
 
-[node name="Stats_Overview" type="HFlowContainer" parent="Control/Parts" index="0"]
+[node name="Stats_Overview" type="HFlowContainer" parent="Control/Parts" parent_id_path=PackedInt32Array(2052037425) index="0" unique_id=868701679]
 visible = false
 light_mask = 8
 visibility_layer = 8
@@ -42,7 +42,7 @@ theme_override_constants/h_separation = 24
 theme_override_constants/v_separation = 24
 alignment = 1
 
-[node name="HP" type="TextureRect" parent="Control/Parts/Stats_Overview" index="0"]
+[node name="HP" type="TextureRect" parent="Control/Parts/Stats_Overview" index="0" unique_id=1540561331]
 light_mask = 8
 visibility_layer = 8
 custom_minimum_size = Vector2(72, 72)
@@ -50,7 +50,7 @@ layout_mode = 2
 texture = ExtResource("3_c1onk")
 stretch_mode = 5
 
-[node name="SP" type="TextureRect" parent="Control/Parts/Stats_Overview" index="1"]
+[node name="SP" type="TextureRect" parent="Control/Parts/Stats_Overview" index="1" unique_id=461926859]
 light_mask = 8
 visibility_layer = 8
 custom_minimum_size = Vector2(72, 72)
@@ -58,7 +58,7 @@ layout_mode = 2
 texture = ExtResource("4_eskc1")
 stretch_mode = 5
 
-[node name="ATK" type="TextureRect" parent="Control/Parts/Stats_Overview" index="2"]
+[node name="ATK" type="TextureRect" parent="Control/Parts/Stats_Overview" index="2" unique_id=754536906]
 light_mask = 8
 visibility_layer = 8
 custom_minimum_size = Vector2(72, 72)
@@ -66,7 +66,7 @@ layout_mode = 2
 texture = ExtResource("5_8g154")
 stretch_mode = 5
 
-[node name="MAG" type="TextureRect" parent="Control/Parts/Stats_Overview" index="3"]
+[node name="MAG" type="TextureRect" parent="Control/Parts/Stats_Overview" index="3" unique_id=227717642]
 light_mask = 8
 visibility_layer = 8
 custom_minimum_size = Vector2(72, 72)
@@ -74,7 +74,7 @@ layout_mode = 2
 texture = ExtResource("6_jk0wb")
 stretch_mode = 5
 
-[node name="DEF" type="TextureRect" parent="Control/Parts/Stats_Overview" index="4"]
+[node name="DEF" type="TextureRect" parent="Control/Parts/Stats_Overview" index="4" unique_id=43764723]
 light_mask = 8
 visibility_layer = 8
 custom_minimum_size = Vector2(72, 72)
@@ -82,7 +82,7 @@ layout_mode = 2
 texture = ExtResource("7_ciuf6")
 stretch_mode = 5
 
-[node name="SPEED" type="TextureRect" parent="Control/Parts/Stats_Overview" index="5"]
+[node name="SPEED" type="TextureRect" parent="Control/Parts/Stats_Overview" index="5" unique_id=88603775]
 light_mask = 8
 visibility_layer = 8
 custom_minimum_size = Vector2(72, 72)
@@ -90,7 +90,7 @@ layout_mode = 2
 texture = ExtResource("8_mwqig")
 stretch_mode = 5
 
-[node name="LUCK" type="TextureRect" parent="Control/Parts/Stats_Overview" index="6"]
+[node name="LUCK" type="TextureRect" parent="Control/Parts/Stats_Overview" index="6" unique_id=1312048397]
 light_mask = 8
 visibility_layer = 8
 custom_minimum_size = Vector2(72, 72)
@@ -98,7 +98,7 @@ layout_mode = 2
 texture = ExtResource("9_1rvwr")
 stretch_mode = 5
 
-[node name="Stats_Detail" type="VBoxContainer" parent="Control/Parts" index="1"]
+[node name="Stats_Detail" type="VBoxContainer" parent="Control/Parts" parent_id_path=PackedInt32Array(2052037425) index="1" unique_id=1110537116]
 visible = false
 light_mask = 8
 visibility_layer = 8
@@ -114,19 +114,19 @@ offset_bottom = 300.0
 grow_horizontal = 0
 grow_vertical = 2
 
-[node name="HP" type="HBoxContainer" parent="Control/Parts/Stats_Detail" index="0"]
+[node name="HP" type="HBoxContainer" parent="Control/Parts/Stats_Detail" index="0" unique_id=766942787]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
 theme_override_constants/separation = 32
 
-[node name="HBox" type="HBoxContainer" parent="Control/Parts/Stats_Detail/HP" index="0"]
+[node name="HBox" type="HBoxContainer" parent="Control/Parts/Stats_Detail/HP" index="0" unique_id=1657936076]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
 theme_override_constants/separation = 8
 
-[node name="Image" type="TextureRect" parent="Control/Parts/Stats_Detail/HP/HBox" index="0"]
+[node name="Image" type="TextureRect" parent="Control/Parts/Stats_Detail/HP/HBox" index="0" unique_id=1333779396]
 light_mask = 8
 visibility_layer = 8
 custom_minimum_size = Vector2(72, 72)
@@ -134,7 +134,7 @@ layout_mode = 2
 texture = ExtResource("3_c1onk")
 stretch_mode = 5
 
-[node name="Desc" type="Label" parent="Control/Parts/Stats_Detail/HP/HBox" index="1"]
+[node name="Desc" type="Label" parent="Control/Parts/Stats_Detail/HP/HBox" index="1" unique_id=2141868280]
 light_mask = 8
 visibility_layer = 8
 custom_minimum_size = Vector2(84, 0)
@@ -145,7 +145,7 @@ theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 28
 text = "HP"
 
-[node name="Desc" type="Label" parent="Control/Parts/Stats_Detail/HP" index="1"]
+[node name="Desc" type="Label" parent="Control/Parts/Stats_Detail/HP" index="1" unique_id=494357199]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
@@ -155,19 +155,19 @@ theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 28
 text = "STAT_HP"
 
-[node name="SP" type="HBoxContainer" parent="Control/Parts/Stats_Detail" index="1"]
+[node name="SP" type="HBoxContainer" parent="Control/Parts/Stats_Detail" index="1" unique_id=1450357181]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
 theme_override_constants/separation = 32
 
-[node name="HBox" type="HBoxContainer" parent="Control/Parts/Stats_Detail/SP" index="0"]
+[node name="HBox" type="HBoxContainer" parent="Control/Parts/Stats_Detail/SP" index="0" unique_id=1575159662]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
 theme_override_constants/separation = 8
 
-[node name="Image" type="TextureRect" parent="Control/Parts/Stats_Detail/SP/HBox" index="0"]
+[node name="Image" type="TextureRect" parent="Control/Parts/Stats_Detail/SP/HBox" index="0" unique_id=1232906206]
 light_mask = 8
 visibility_layer = 8
 custom_minimum_size = Vector2(72, 72)
@@ -175,7 +175,7 @@ layout_mode = 2
 texture = ExtResource("4_eskc1")
 stretch_mode = 5
 
-[node name="Desc" type="Label" parent="Control/Parts/Stats_Detail/SP/HBox" index="1"]
+[node name="Desc" type="Label" parent="Control/Parts/Stats_Detail/SP/HBox" index="1" unique_id=1463254188]
 light_mask = 8
 visibility_layer = 8
 custom_minimum_size = Vector2(84, 0)
@@ -186,7 +186,7 @@ theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 28
 text = "SP"
 
-[node name="Desc" type="Label" parent="Control/Parts/Stats_Detail/SP" index="1"]
+[node name="Desc" type="Label" parent="Control/Parts/Stats_Detail/SP" index="1" unique_id=89853179]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
@@ -196,19 +196,19 @@ theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 28
 text = "STAT_SP"
 
-[node name="ATK" type="HBoxContainer" parent="Control/Parts/Stats_Detail" index="2"]
+[node name="ATK" type="HBoxContainer" parent="Control/Parts/Stats_Detail" index="2" unique_id=1009355714]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
 theme_override_constants/separation = 32
 
-[node name="HBox" type="HBoxContainer" parent="Control/Parts/Stats_Detail/ATK" index="0"]
+[node name="HBox" type="HBoxContainer" parent="Control/Parts/Stats_Detail/ATK" index="0" unique_id=2078392300]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
 theme_override_constants/separation = 8
 
-[node name="Image" type="TextureRect" parent="Control/Parts/Stats_Detail/ATK/HBox" index="0"]
+[node name="Image" type="TextureRect" parent="Control/Parts/Stats_Detail/ATK/HBox" index="0" unique_id=1499375978]
 light_mask = 8
 visibility_layer = 8
 custom_minimum_size = Vector2(72, 72)
@@ -216,7 +216,7 @@ layout_mode = 2
 texture = ExtResource("5_8g154")
 stretch_mode = 5
 
-[node name="Desc" type="Label" parent="Control/Parts/Stats_Detail/ATK/HBox" index="1"]
+[node name="Desc" type="Label" parent="Control/Parts/Stats_Detail/ATK/HBox" index="1" unique_id=1875195219]
 light_mask = 8
 visibility_layer = 8
 custom_minimum_size = Vector2(84, 0)
@@ -227,7 +227,7 @@ theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 28
 text = "ATK"
 
-[node name="Desc" type="Label" parent="Control/Parts/Stats_Detail/ATK" index="1"]
+[node name="Desc" type="Label" parent="Control/Parts/Stats_Detail/ATK" index="1" unique_id=1592624765]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
@@ -237,19 +237,19 @@ theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 28
 text = "STAT_ATK"
 
-[node name="MAG" type="HBoxContainer" parent="Control/Parts/Stats_Detail" index="3"]
+[node name="MAG" type="HBoxContainer" parent="Control/Parts/Stats_Detail" index="3" unique_id=573520899]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
 theme_override_constants/separation = 32
 
-[node name="HBox" type="HBoxContainer" parent="Control/Parts/Stats_Detail/MAG" index="0"]
+[node name="HBox" type="HBoxContainer" parent="Control/Parts/Stats_Detail/MAG" index="0" unique_id=2136901135]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
 theme_override_constants/separation = 8
 
-[node name="Image" type="TextureRect" parent="Control/Parts/Stats_Detail/MAG/HBox" index="0"]
+[node name="Image" type="TextureRect" parent="Control/Parts/Stats_Detail/MAG/HBox" index="0" unique_id=916466721]
 light_mask = 8
 visibility_layer = 8
 custom_minimum_size = Vector2(72, 72)
@@ -257,7 +257,7 @@ layout_mode = 2
 texture = ExtResource("6_jk0wb")
 stretch_mode = 5
 
-[node name="Desc" type="Label" parent="Control/Parts/Stats_Detail/MAG/HBox" index="1"]
+[node name="Desc" type="Label" parent="Control/Parts/Stats_Detail/MAG/HBox" index="1" unique_id=1077676651]
 light_mask = 8
 visibility_layer = 8
 custom_minimum_size = Vector2(84, 0)
@@ -268,7 +268,7 @@ theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 28
 text = "MAG"
 
-[node name="Desc" type="Label" parent="Control/Parts/Stats_Detail/MAG" index="1"]
+[node name="Desc" type="Label" parent="Control/Parts/Stats_Detail/MAG" index="1" unique_id=310373013]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
@@ -278,19 +278,19 @@ theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 28
 text = "STAT_MAG"
 
-[node name="DEF" type="HBoxContainer" parent="Control/Parts/Stats_Detail" index="4"]
+[node name="DEF" type="HBoxContainer" parent="Control/Parts/Stats_Detail" index="4" unique_id=1827977465]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
 theme_override_constants/separation = 32
 
-[node name="HBox" type="HBoxContainer" parent="Control/Parts/Stats_Detail/DEF" index="0"]
+[node name="HBox" type="HBoxContainer" parent="Control/Parts/Stats_Detail/DEF" index="0" unique_id=1890266348]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
 theme_override_constants/separation = 8
 
-[node name="Image" type="TextureRect" parent="Control/Parts/Stats_Detail/DEF/HBox" index="0"]
+[node name="Image" type="TextureRect" parent="Control/Parts/Stats_Detail/DEF/HBox" index="0" unique_id=1297881701]
 light_mask = 8
 visibility_layer = 8
 custom_minimum_size = Vector2(72, 72)
@@ -298,7 +298,7 @@ layout_mode = 2
 texture = ExtResource("7_ciuf6")
 stretch_mode = 5
 
-[node name="Desc" type="Label" parent="Control/Parts/Stats_Detail/DEF/HBox" index="1"]
+[node name="Desc" type="Label" parent="Control/Parts/Stats_Detail/DEF/HBox" index="1" unique_id=379601072]
 light_mask = 8
 visibility_layer = 8
 custom_minimum_size = Vector2(84, 0)
@@ -309,7 +309,7 @@ theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 28
 text = "DEF"
 
-[node name="Desc" type="Label" parent="Control/Parts/Stats_Detail/DEF" index="1"]
+[node name="Desc" type="Label" parent="Control/Parts/Stats_Detail/DEF" index="1" unique_id=1457228494]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
@@ -319,19 +319,19 @@ theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 28
 text = "STAT_DEF"
 
-[node name="SPEED" type="HBoxContainer" parent="Control/Parts/Stats_Detail" index="5"]
+[node name="SPEED" type="HBoxContainer" parent="Control/Parts/Stats_Detail" index="5" unique_id=1480581755]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
 theme_override_constants/separation = 32
 
-[node name="HBox" type="HBoxContainer" parent="Control/Parts/Stats_Detail/SPEED" index="0"]
+[node name="HBox" type="HBoxContainer" parent="Control/Parts/Stats_Detail/SPEED" index="0" unique_id=1803982117]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
 theme_override_constants/separation = 8
 
-[node name="Image" type="TextureRect" parent="Control/Parts/Stats_Detail/SPEED/HBox" index="0"]
+[node name="Image" type="TextureRect" parent="Control/Parts/Stats_Detail/SPEED/HBox" index="0" unique_id=1853053229]
 light_mask = 8
 visibility_layer = 8
 custom_minimum_size = Vector2(72, 72)
@@ -339,7 +339,7 @@ layout_mode = 2
 texture = ExtResource("8_mwqig")
 stretch_mode = 5
 
-[node name="Desc" type="Label" parent="Control/Parts/Stats_Detail/SPEED/HBox" index="1"]
+[node name="Desc" type="Label" parent="Control/Parts/Stats_Detail/SPEED/HBox" index="1" unique_id=1424745465]
 light_mask = 8
 visibility_layer = 8
 custom_minimum_size = Vector2(84, 0)
@@ -350,7 +350,7 @@ theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 28
 text = "SPEED"
 
-[node name="Desc" type="Label" parent="Control/Parts/Stats_Detail/SPEED" index="1"]
+[node name="Desc" type="Label" parent="Control/Parts/Stats_Detail/SPEED" index="1" unique_id=1673168389]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
@@ -360,19 +360,19 @@ theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 28
 text = "STAT_SPEED"
 
-[node name="LUCK" type="HBoxContainer" parent="Control/Parts/Stats_Detail" index="6"]
+[node name="LUCK" type="HBoxContainer" parent="Control/Parts/Stats_Detail" index="6" unique_id=531024598]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
 theme_override_constants/separation = 32
 
-[node name="HBox" type="HBoxContainer" parent="Control/Parts/Stats_Detail/LUCK" index="0"]
+[node name="HBox" type="HBoxContainer" parent="Control/Parts/Stats_Detail/LUCK" index="0" unique_id=1743004130]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
 theme_override_constants/separation = 8
 
-[node name="Image" type="TextureRect" parent="Control/Parts/Stats_Detail/LUCK/HBox" index="0"]
+[node name="Image" type="TextureRect" parent="Control/Parts/Stats_Detail/LUCK/HBox" index="0" unique_id=2044363570]
 light_mask = 8
 visibility_layer = 8
 custom_minimum_size = Vector2(72, 72)
@@ -380,7 +380,7 @@ layout_mode = 2
 texture = ExtResource("9_1rvwr")
 stretch_mode = 5
 
-[node name="Desc" type="Label" parent="Control/Parts/Stats_Detail/LUCK/HBox" index="1"]
+[node name="Desc" type="Label" parent="Control/Parts/Stats_Detail/LUCK/HBox" index="1" unique_id=308924120]
 light_mask = 8
 visibility_layer = 8
 custom_minimum_size = Vector2(84, 0)
@@ -391,7 +391,7 @@ theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 28
 text = "LUCK"
 
-[node name="Desc" type="Label" parent="Control/Parts/Stats_Detail/LUCK" index="1"]
+[node name="Desc" type="Label" parent="Control/Parts/Stats_Detail/LUCK" index="1" unique_id=1856925396]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
@@ -401,7 +401,7 @@ theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 28
 text = "STAT_LUCK"
 
-[node name="Actions_Overview" type="HFlowContainer" parent="Control/Parts" index="2"]
+[node name="Actions_Overview" type="HFlowContainer" parent="Control/Parts" parent_id_path=PackedInt32Array(2052037425) index="2" unique_id=1462322982]
 visible = false
 light_mask = 8
 visibility_layer = 8
@@ -421,7 +421,7 @@ theme_override_constants/h_separation = 24
 theme_override_constants/v_separation = 24
 alignment = 1
 
-[node name="Attack_ATK" type="TextureRect" parent="Control/Parts/Actions_Overview" index="0"]
+[node name="Attack_ATK" type="TextureRect" parent="Control/Parts/Actions_Overview" index="0" unique_id=2033032209]
 light_mask = 8
 visibility_layer = 8
 custom_minimum_size = Vector2(72, 72)
@@ -429,7 +429,7 @@ layout_mode = 2
 texture = ExtResource("10_1rvwr")
 stretch_mode = 5
 
-[node name="Defense_DEF" type="TextureRect" parent="Control/Parts/Actions_Overview" index="1"]
+[node name="Defense_DEF" type="TextureRect" parent="Control/Parts/Actions_Overview" index="1" unique_id=1748430301]
 light_mask = 8
 visibility_layer = 8
 custom_minimum_size = Vector2(72, 72)
@@ -437,7 +437,7 @@ layout_mode = 2
 texture = ExtResource("11_sck1w")
 stretch_mode = 5
 
-[node name="Special" type="TextureRect" parent="Control/Parts/Actions_Overview" index="2"]
+[node name="Special" type="TextureRect" parent="Control/Parts/Actions_Overview" index="2" unique_id=1066673835]
 light_mask = 8
 visibility_layer = 8
 custom_minimum_size = Vector2(72, 72)
@@ -445,7 +445,7 @@ layout_mode = 2
 texture = ExtResource("12_qtwl8")
 stretch_mode = 5
 
-[node name="Flee" type="TextureRect" parent="Control/Parts/Actions_Overview" index="3"]
+[node name="Flee" type="TextureRect" parent="Control/Parts/Actions_Overview" index="3" unique_id=1025844814]
 light_mask = 8
 visibility_layer = 8
 custom_minimum_size = Vector2(72, 72)
@@ -453,7 +453,7 @@ layout_mode = 2
 texture = ExtResource("13_j5k3d")
 stretch_mode = 5
 
-[node name="Help" type="TextureRect" parent="Control/Parts/Actions_Overview" index="4"]
+[node name="Help" type="TextureRect" parent="Control/Parts/Actions_Overview" index="4" unique_id=2111337833]
 light_mask = 8
 visibility_layer = 8
 custom_minimum_size = Vector2(72, 72)

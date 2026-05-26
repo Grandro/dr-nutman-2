@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://btq586qejen66"]
+
+[ext_resource type="PackedScene" uid="uid://dfcne2xq1hclh" path="res://Framework/Global_Scenes/Debug/Fix_Warnings/Entries/Fix_Warning_Base.tscn" id="1_mal5g"]
+[ext_resource type="Script" uid="uid://druhhlc5pto34" path="res://Framework/Global_Scenes/Debug/Fix_Warnings/Entries/Scripts/Fix_Warning_String_Name.gd" id="2_rst0x"]
+
+[node name="Fix_Warning_String_Name" unique_id=573612215 instance=ExtResource("1_mal5g")]
+script = ExtResource("2_rst0x")
+
+[node name="Value" type="LineEdit" parent="VBox/New" parent_id_path=PackedInt32Array(1976983975) index="1" unique_id=1016888015]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3

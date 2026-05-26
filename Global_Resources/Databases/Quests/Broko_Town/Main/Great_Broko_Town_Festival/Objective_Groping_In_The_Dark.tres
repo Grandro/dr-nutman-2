@@ -1,7 +1,7 @@
-[gd_resource type="Resource" script_class="ObjectiveDataSubQuest" load_steps=3 format=3 uid="uid://ddf7spdwgxbqt"]
+[gd_resource type="Resource" script_class="ObjectiveDataSubQuest" format=3 uid="uid://ddf7spdwgxbqt"]
 
 [ext_resource type="Resource" uid="uid://cb70b14xd8plq" path="res://Global_Resources/Databases/Quests/Broko_Town/Main/Groping_In_The_Dark/Groping_In_The_Dark.tres" id="1_2ijef"]
-[ext_resource type="Script" uid="uid://gxo7txpgnyj8" path="res://Global_Resources/Databases/Quests/Objective_Data_Sub_Quest.gd" id="2_bfdw1"]
+[ext_resource type="Script" uid="uid://gxo7txpgnyj8" path="res://Framework/Global_Resources/Databases/Quests/Objective_Data_Sub_Quest.gd" id="2_bfdw1"]
 
 [resource]
 script = ExtResource("2_bfdw1")

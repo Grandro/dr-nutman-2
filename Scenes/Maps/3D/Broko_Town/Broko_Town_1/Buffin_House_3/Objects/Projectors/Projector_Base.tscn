@@ -1,25 +1,27 @@
-[gd_scene load_steps=11 format=3 uid="uid://chwvwspoox5ko"]
+[gd_scene format=3 uid="uid://chwvwspoox5ko"]
 
 [ext_resource type="Script" uid="uid://cqajbgpipxq0i" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Buffin_House_3/Objects/Projectors/Scripts/Projector_Base.gd" id="1_j5nuf"]
 [ext_resource type="PackedScene" uid="uid://d0074qkueogek" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Buffin_House_3/Objects/Projectors/Models/1.glb" id="2_dp3da"]
 [ext_resource type="Script" uid="uid://cyc2qqh3b8a5v" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Buffin_House_3/Objects/Projectors/Scripts/Model.gd" id="3_3gcqk"]
-[ext_resource type="PackedScene" uid="uid://blot4hpw1al18" path="res://Scenes/Object/Comps/3D/Camera.tscn" id="3_ioa40"]
-[ext_resource type="PackedScene" uid="uid://nr4813v0r2dg" path="res://Scenes/Object/Comps/3D/Interactions/Interactions.tscn" id="3_j5nuf"]
-[ext_resource type="PackedScene" uid="uid://omsbdulg45pv" path="res://Scenes/Object/Comps/3D/Popup.tscn" id="4_gtfb2"]
+[ext_resource type="PackedScene" uid="uid://blot4hpw1al18" path="res://Framework/Scenes/Object/Comps/3D/Camera.tscn" id="3_ioa40"]
+[ext_resource type="PackedScene" uid="uid://nr4813v0r2dg" path="res://Framework/Scenes/Object/Comps/3D/Interactions/Interactions.tscn" id="3_j5nuf"]
+[ext_resource type="PackedScene" uid="uid://omsbdulg45pv" path="res://Framework/Scenes/Object/Comps/3D/Popup.tscn" id="4_gtfb2"]
 [ext_resource type="AudioStream" uid="uid://diuaf0jy1844w" path="res://Global_Resources/Audio/SFX/Switches/Button_Small_1.wav" id="5_1f8uk"]
 [ext_resource type="PackedScene" uid="uid://iq05yb53nqa2" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Buffin_House_3/Objects/Projectors/Rotate_Menu.tscn" id="6_07b4x"]
-[ext_resource type="PackedScene" uid="uid://de2jy2ixhp2mw" path="res://Scenes/Object/Comps/Save.tscn" id="7_yrbxc"]
-[ext_resource type="PackedScene" uid="uid://drpp26gth4snn" path="res://Scenes/Object/Comps/Reference.tscn" id="8_c6jt3"]
+[ext_resource type="PackedScene" uid="uid://de2jy2ixhp2mw" path="res://Framework/Scenes/Object/Comps/Save.tscn" id="7_yrbxc"]
+[ext_resource type="PackedScene" uid="uid://drpp26gth4snn" path="res://Framework/Scenes/Object/Comps/Reference.tscn" id="8_c6jt3"]
+[ext_resource type="PackedScene" uid="uid://b4dvlhw3jh0go" path="res://Framework/Scenes/Object/Comps/Cutscene.tscn" id="10_35cyf"]
 
-[node name="Projector_Base" type="Node3D" groups=["Object"]]
+[node name="Projector_Base" type="Node3D" unique_id=44007974 groups=["Object"]]
 script = ExtResource("1_j5nuf")
+_e_name = null
 metadata/_custom_type_script = "uid://ckbk2i4wb1yhq"
 
-[node name="Model" parent="." instance=ExtResource("2_dp3da")]
+[node name="Model" parent="." unique_id=502606415 instance=ExtResource("2_dp3da")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
 script = ExtResource("3_3gcqk")
 
-[node name="Light" type="SpotLight3D" parent="Model"]
+[node name="Light" type="SpotLight3D" parent="Model" unique_id=108861555]
 transform = Transform3D(1, 0, 0, 0, 0.996195, -0.0871557, 0, 0.0871557, 0.996195, 0, 0, -0.3)
 light_color = Color(1, 0.805114, 0.453964, 1)
 light_energy = 64.0
@@ -29,42 +31,47 @@ spot_range = 9.0
 spot_attenuation = 0.5
 spot_angle = 8.0
 
-[node name="Camera" parent="Model" instance=ExtResource("3_ioa40")]
+[node name="Camera" parent="Model" unique_id=2045613090 instance=ExtResource("3_ioa40")]
 transform = Transform3D(1, 0, 0, 0, 0.996195, -0.0871558, 0, 0.0871558, 0.996195, 0, 1.5, 0)
 keep_aspect = 1
 projection = 0
 size = 3.066
 
-[node name="Ray" type="RayCast3D" parent="Model"]
+[node name="Ray" type="RayCast3D" parent="Model" unique_id=2134822794]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.3)
 enabled = false
 exclude_parent = false
 target_position = Vector3(0, 0, -9)
 collision_mask = 13
 
-[node name="Audio_Switch" type="AudioStreamPlayer3D" parent="Model"]
+[node name="Audio_Switch" type="AudioStreamPlayer3D" parent="Model" unique_id=1448672708]
 stream = ExtResource("5_1f8uk")
 bus = &"SFX"
 
-[node name="Interactions" parent="." instance=ExtResource("3_j5nuf")]
+[node name="Interactions" parent="." unique_id=1967473266 instance=ExtResource("3_j5nuf")]
 
-[node name="1" parent="Interactions" index="0"]
+[node name="1" parent="Interactions" index="0" unique_id=1097719813]
+_e_use_transform = true
 _e_popup_type = "Exclamation"
 _e_popup_pos = Vector3(0, 0.7, 0)
 
-[node name="Popup" parent="." instance=ExtResource("4_gtfb2")]
+[node name="Popup" parent="." unique_id=503104975 instance=ExtResource("4_gtfb2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
 
-[node name="Save" parent="." instance=ExtResource("7_yrbxc")]
+[node name="Save" parent="." unique_id=607523532 instance=ExtResource("7_yrbxc")]
 
-[node name="Reference" parent="." instance=ExtResource("8_c6jt3")]
+[node name="Reference" parent="." unique_id=303336213 instance=ExtResource("8_c6jt3")]
 
-[node name="VP" type="SubViewport" parent="."]
+[node name="Cutscene" parent="." unique_id=1399254281 instance=ExtResource("10_35cyf")]
+
+[node name="VP" type="SubViewport" parent="." unique_id=815759918]
 disable_3d = true
 transparent_bg = true
 render_target_update_mode = 1
 
-[node name="Rotate_Menu" parent="." instance=ExtResource("6_07b4x")]
+[node name="Rotate_Menu" parent="." unique_id=1081012449 instance=ExtResource("6_07b4x")]
+visible = false
+_e_rotate_speed = null
 
 [editable path="Interactions"]
 [editable path="Interactions/1"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://diclq3qqk6hfo"]
+[gd_scene format=3 uid="uid://diclq3qqk6hfo"]
 
 [ext_resource type="Script" uid="uid://bv0vy58ciobtd" path="res://Global_Scenes/Battle_System/ABS_Battle/Scripts/HUD_Entry.gd" id="1"]
 [ext_resource type="Theme" uid="uid://budcfl16xj2tt" path="res://Global_Resources/Themes/Default/Default.tres" id="1_okgpe"]
@@ -11,7 +11,7 @@
 font = ExtResource("5_wff4s")
 font_size = 80
 
-[node name="HUD_Entry" type="HBoxContainer"]
+[node name="HUD_Entry" type="HBoxContainer" unique_id=2035686080]
 light_mask = 8
 visibility_layer = 8
 custom_minimum_size = Vector2(270, 120)
@@ -21,26 +21,26 @@ theme = ExtResource("1_okgpe")
 theme_override_constants/separation = 20
 script = ExtResource("1")
 
-[node name="Center" type="CenterContainer" parent="."]
+[node name="Center" type="CenterContainer" parent="." unique_id=1949084232]
 light_mask = 8
 visibility_layer = 8
 custom_minimum_size = Vector2(104, 104)
 layout_mode = 2
 
-[node name="Bust" type="TextureRect" parent="Center"]
+[node name="Bust" type="TextureRect" parent="Center" unique_id=1375424887]
 light_mask = 8
 visibility_layer = 8
 custom_minimum_size = Vector2(98, 98)
 layout_mode = 2
 
-[node name="Circle" type="TextureRect" parent="Center"]
+[node name="Circle" type="TextureRect" parent="Center" unique_id=1638833811]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
 texture = ExtResource("2")
 stretch_mode = 5
 
-[node name="Bars" type="VBoxContainer" parent="."]
+[node name="Bars" type="VBoxContainer" parent="." unique_id=1105741953]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
@@ -48,7 +48,7 @@ size_flags_horizontal = 3
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="HP" type="ProgressBar" parent="Bars"]
+[node name="HP" type="ProgressBar" parent="Bars" unique_id=1175010736]
 light_mask = 8
 visibility_layer = 8
 custom_minimum_size = Vector2(0, 20)
@@ -57,7 +57,7 @@ size_flags_vertical = 1
 theme_override_styles/fill = ExtResource("4_c6ss5")
 show_percentage = false
 
-[node name="Text" type="Label" parent="Bars/HP"]
+[node name="Text" type="Label" parent="Bars/HP" unique_id=1649761429]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 1
@@ -73,7 +73,7 @@ label_settings = SubResource("LabelSettings_t68wm")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="SP" type="ProgressBar" parent="Bars"]
+[node name="SP" type="ProgressBar" parent="Bars" unique_id=193406584]
 light_mask = 8
 visibility_layer = 8
 custom_minimum_size = Vector2(0, 20)
@@ -82,7 +82,7 @@ size_flags_vertical = 1
 theme_override_styles/fill = ExtResource("6_wpxb2")
 show_percentage = false
 
-[node name="Text" type="Label" parent="Bars/SP"]
+[node name="Text" type="Label" parent="Bars/SP" unique_id=559780861]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 1

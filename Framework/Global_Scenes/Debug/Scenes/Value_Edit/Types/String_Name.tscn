@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://csk4nggp8xol2"]
+
+[ext_resource type="Script" uid="uid://i6ggx62bar63" path="res://Framework/Global_Scenes/Debug/Scenes/Value_Edit/Types/Scripts/String_Name.gd" id="1_ipip8"]
+
+[node name="String_Name" type="PanelContainer" unique_id=992367504]
+offset_right = 300.0
+offset_bottom = 31.0
+script = ExtResource("1_ipip8")
+
+[node name="HBox" type="HBoxContainer" parent="." unique_id=1880265619]
+layout_mode = 2
+
+[node name="And" type="Label" parent="HBox" unique_id=279911624]
+layout_mode = 2
+text = "&"
+
+[node name="Value" type="LineEdit" parent="HBox" unique_id=135540819]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+caret_blink = true

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://blyx83gmtikq8"]
+
+[ext_resource type="PackedScene" uid="uid://0wglwyv7m4dh" path="res://Framework/Global_Scenes/Main_Menu/Sub_Menus/Party/Portraits/Entries/Entry_Base.tscn" id="1"]
+
+[node name="Dr_Nutman" unique_id=1831938639 instance=ExtResource("1")]
+_e_key = "Dr_Nutman"

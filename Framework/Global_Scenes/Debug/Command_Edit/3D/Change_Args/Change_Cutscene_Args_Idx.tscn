@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://b7gko4gk4rbwo"]
+
+[ext_resource type="PackedScene" uid="uid://dqr56lt142dso" path="res://Framework/Global_Scenes/Debug/Command_Edit/3D/Change_Args/Change_Args_Idx.tscn" id="1_tg0cl"]
+
+[node name="Change_Cutscene_Args_Idx" unique_id=352625991 instance=ExtResource("1_tg0cl")]
+
+[editable path="Window"]
+[editable path="Window/Contents/Margin/HBox/Left/Preview"]
+[editable path="Window/Contents/Margin/HBox/Left/Grid/Offset"]
+[editable path="Window/Contents/Margin/HBox/Right/Options/VBox/Value"]

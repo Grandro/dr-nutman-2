@@ -1,8 +1,0 @@
-[gd_resource type="Resource" script_class="ObjectiveDataInt" load_steps=2 format=3 uid="uid://dg0rd8d17d2sm"]
-
-[ext_resource type="Script" uid="uid://df2f6s4xkip4l" path="res://Global_Resources/Databases/Quests/Objective_Data_Int.gd" id="1_5won2"]
-
-[resource]
-script = ExtResource("1_5won2")
-_e_target_value = 6
-_e_desc = &"PROGRESS_QUESTS_BROKO_TOWN_1_MAIN_GROPING_IN_THE_DARK_OBJECTIVE_FIND_BATTERIES"

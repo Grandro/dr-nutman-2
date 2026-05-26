@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://bf6v5vqp4v4wx"]
+
+[ext_resource type="PackedScene" uid="uid://6vs0mx0yax4e" path="res://Framework/Scenes/Object/Comps/3D/Vision/Vision.tscn" id="1_x171w"]
+
+[node name="Vision" unique_id=2008880302 instance=ExtResource("1_x171w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+
+[node name="Ray_1" type="RayCast3D" parent="." index="0" unique_id=417258827]
+target_position = Vector3(0, 0, 1)
+collision_mask = 329
+debug_shape_custom_color = Color(0.829448, 0.0014264, 0.942735, 1)
+
+[node name="Ray_2" type="RayCast3D" parent="." index="1" unique_id=1631953818]
+transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, 0, 0, 0)
+target_position = Vector3(0, 0, 1)
+collision_mask = 329
+debug_shape_custom_color = Color(0.829448, 0.0014264, 0.942735, 1)
+
+[node name="Ray_3" type="RayCast3D" parent="." index="2" unique_id=138964737]
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 0, 0, 0)
+target_position = Vector3(0, 0, 1)
+collision_mask = 329
+debug_shape_custom_color = Color(0.829448, 0.0014264, 0.942735, 1)
+
+[node name="Ray_4" type="RayCast3D" parent="." index="3" unique_id=609978766]
+transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 0, 0, 0)
+target_position = Vector3(0, 0, 1)
+collision_mask = 329
+debug_shape_custom_color = Color(0.829448, 0.0014264, 0.942735, 1)
+
+[node name="Ray_5" type="RayCast3D" parent="." index="4" unique_id=745439034]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 0, 0, 0)
+target_position = Vector3(0, 0, 1)
+collision_mask = 329
+debug_shape_custom_color = Color(0.829448, 0.0014264, 0.942735, 1)
+
+[node name="Ray_6" type="RayCast3D" parent="." index="5" unique_id=920577355]
+transform = Transform3D(0.92388, 0, 0.382683, 0, 1, 0, -0.382683, 0, 0.92388, 0, 0, 0)
+target_position = Vector3(0, 0, 1)
+collision_mask = 329
+debug_shape_custom_color = Color(0.829448, 0.0014264, 0.942735, 1)
+
+[node name="Ray_7" type="RayCast3D" parent="." index="6" unique_id=1268416427]
+transform = Transform3D(0.991445, 0, 0.130526, 0, 1, 0, -0.130526, 0, 0.991445, 0, 0, 0)
+target_position = Vector3(0, 0, 1)
+collision_mask = 329
+debug_shape_custom_color = Color(0.829448, 0.0014264, 0.942735, 1)
+
+[node name="Ray_8" type="RayCast3D" parent="." index="7" unique_id=2021086907]
+transform = Transform3D(0.991445, 0, -0.130526, 0, 1, 0, 0.130526, 0, 0.991445, 0, 0, 0)
+target_position = Vector3(0, 0, 1)
+collision_mask = 329
+debug_shape_custom_color = Color(0.829448, 0.0014264, 0.942735, 1)
+
+[node name="Ray_9" type="RayCast3D" parent="." index="8" unique_id=326235967]
+transform = Transform3D(0.92388, 0, -0.382683, 0, 1, 0, 0.382683, 0, 0.92388, 0, 0, 0)
+target_position = Vector3(0, 0, 1)
+collision_mask = 329
+debug_shape_custom_color = Color(0.829448, 0.0014264, 0.942735, 1)

@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://xw0gxvbwo51g"]
+
+[ext_resource type="Script" uid="uid://nwat4fmqtey8" path="res://Framework/Global_Scenes/Debug/Scenes/Value_Edit/Types/Scripts/Dictionary.gd" id="1_ui7ap"]
+
+[node name="Dictionary" type="VBoxContainer" unique_id=1448130388]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(300, 0)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+script = ExtResource("1_ui7ap")
+
+[node name="Select" type="Button" parent="." unique_id=1847516677]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+
+[node name="Value" type="VBoxContainer" parent="." unique_id=1464446649]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="Entries" type="VBoxContainer" parent="Value" unique_id=889469456]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="New_Key" type="PanelContainer" parent="Value" unique_id=787602758]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+
+[node name="Margin" type="MarginContainer" parent="Value/New_Key" unique_id=206088521]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/margin_left = 8
+
+[node name="HBox" type="HBoxContainer" parent="Value/New_Key/Margin" unique_id=79118445]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+
+[node name="Desc" type="Label" parent="Value/New_Key/Margin/HBox" unique_id=422825452]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+text = "FW_DEBUG_DIALOGUES_ATTRIBUTES_NEW_KEY"
+vertical_alignment = 1
+
+[node name="Value" type="LineEdit" parent="Value/New_Key/Margin/HBox" unique_id=202421567]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+caret_blink = true
+
+[node name="New_Value" type="PanelContainer" parent="Value" unique_id=1153448540]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+
+[node name="Margin" type="MarginContainer" parent="Value/New_Value" unique_id=1557262345]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/margin_left = 8
+
+[node name="HBox" type="HBoxContainer" parent="Value/New_Value/Margin" unique_id=463166269]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+
+[node name="Desc" type="Label" parent="Value/New_Value/Margin/HBox" unique_id=1578997365]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+text = "FW_DEBUG_DIALOGUES_ATTRIBUTES_NEW_VALUE"
+vertical_alignment = 1
+
+[node name="Add" type="Button" parent="Value" unique_id=938483421]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "FW_DEBUG_DIALOGUES_ATTRIBUTES_ADD_KEY_VALUE"

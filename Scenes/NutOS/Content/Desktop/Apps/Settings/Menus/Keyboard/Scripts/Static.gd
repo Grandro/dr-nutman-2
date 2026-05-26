@@ -3,7 +3,7 @@ class_name NutOSContentDesktopAppSettingsMenuKeyboardStatic
 
 signal color_selected(p_color: Color, p_is_fav_color: bool)
 
-var _a_Color_Entry_Scene: PackedScene = preload("res://Scenes/NutOS/Content/Desktop/Apps/Settings/Menus/Keyboard/Color_Entry.tscn")
+var _a_Color_Entry_Scene: PackedScene = preload("uid://dugb61kqlth16")
 
 @onready var _a_Available: HFlowContainer = get_node("Available/HFlow")
 

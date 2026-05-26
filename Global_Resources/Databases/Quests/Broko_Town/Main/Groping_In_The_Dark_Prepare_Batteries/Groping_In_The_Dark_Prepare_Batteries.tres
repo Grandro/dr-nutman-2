@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="QuestData" format=3 uid="uid://3mqem27gkcd8"]
+
+[ext_resource type="Script" uid="uid://d0ns7im888qf3" path="res://Framework/Global_Resources/Databases/Quests/Objective_Data_Base.gd" id="1_30vno"]
+[ext_resource type="Resource" uid="uid://ck242a147qkgo" path="res://Global_Resources/Databases/Quests/Broko_Town/Main/Groping_In_The_Dark_Prepare_Batteries/Objective_Find_Batteries.tres" id="2_30vno"]
+[ext_resource type="Resource" uid="uid://8xfiub00eoj5" path="res://Global_Resources/Databases/Quests/Broko_Town/Main/Groping_In_The_Dark_Prepare_Batteries/Objective_Measure_Batteries.tres" id="3_t56i5"]
+[ext_resource type="Script" uid="uid://ccmwte4egncue" path="res://Framework/Global_Resources/Databases/Quests/Quest_Data.gd" id="4_6fjaq"]
+
+[resource]
+script = ExtResource("4_6fjaq")
+_e_key = &"Groping_In_The_Dark_Prepare_Batteries"
+_e_type = "Main_Sub"
+_e_location = &"Buffin_House_3"
+_e_name = "PROGRESS_QUESTS_BROKO_TOWN_1_MAIN_GROPING_IN_THE_DARK_PREPARE_BATTERIES_NAME"
+_e_desc = "PROGRESS_QUESTS_BROKO_TOWN_1_MAIN_GROPING_IN_THE_DARK_PREPARE_BATTERIES_DESC"
+_e_objectives = Array[ExtResource("1_30vno")]([ExtResource("2_30vno"), ExtResource("3_t56i5")])

@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://ct2na3d5v3o3y"]
+
+[ext_resource type="PackedScene" uid="uid://b5kdrokimg8qk" path="res://Framework/Global_Scenes/Main_Menu/Sub_Menus/Party/Selection/Selection.tscn" id="1"]
+[ext_resource type="Script" uid="uid://csf4ret1i7vsp" path="res://Framework/Global_Scenes/Main_Menu/Sub_Menus/Party/Scripts/Party.gd" id="3"]
+[ext_resource type="Texture2D" uid="uid://wrg2potji1vm" path="res://Global_Resources/Sprites/Backgrounds/1_Spritesheet.png" id="3_c28oq"]
+[ext_resource type="Theme" uid="uid://budcfl16xj2tt" path="res://Global_Resources/Themes/Default/Default.tres" id="4"]
+[ext_resource type="PackedScene" uid="uid://c3ab751j5bk4n" path="res://Framework/Global_Scenes/Main_Menu/Sub_Menus/Party/Status/Status.tscn" id="6_jwf86"]
+
+[node name="Party" type="Control" unique_id=385729684]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4")
+script = ExtResource("3")
+
+[node name="Background" type="TextureRect" parent="." unique_id=330825710]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource("3_c28oq")
+stretch_mode = 1
+
+[node name="Selection" parent="." unique_id=1408526658 instance=ExtResource("1")]
+visible = false
+layout_mode = 1
+
+[node name="Status" parent="." unique_id=923461693 instance=ExtResource("6_jwf86")]
+layout_mode = 1

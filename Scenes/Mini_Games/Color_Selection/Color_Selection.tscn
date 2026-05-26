@@ -1,6 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://c218f8s0a4f2i"]
+[gd_scene format=3 uid="uid://c218f8s0a4f2i"]
 
-[ext_resource type="PackedScene" uid="uid://dlhat5aerwj2v" path="res://Scenes/Mini_Games/Mini_Game_Base/Mini_Game_Base.tscn" id="1_cfg67"]
+[ext_resource type="PackedScene" uid="uid://dlhat5aerwj2v" path="res://Framework/Scenes/Mini_Games/Mini_Game_Base/Mini_Game_Base.tscn" id="1_cfg67"]
 [ext_resource type="Script" uid="uid://bvlokblli20dl" path="res://Scenes/Mini_Games/Color_Selection/Scripts/Color_Selection.gd" id="2_fa0lv"]
 [ext_resource type="PackedScene" uid="uid://dp6cr1v2naad2" path="res://Scenes/Mini_Games/Color_Selection/Game/Game_Play.tscn" id="3_nb36x"]
 [ext_resource type="Script" uid="uid://bul7wyoqufr04" path="res://Scenes/Mini_Games/Color_Selection/Scripts/Intro.gd" id="4_l07fn"]
@@ -10,10 +10,10 @@
 [ext_resource type="Texture2D" uid="uid://1l80fi2y58vp" path="res://Global_Resources/Sprites/Keys/8593.png" id="8_06y3b"]
 [ext_resource type="Texture2D" uid="uid://bpxca1k02qaag" path="res://Global_Resources/Sprites/Keys/8595.png" id="9_1hpdk"]
 
-[node name="Color_Selection" instance=ExtResource("1_cfg67")]
+[node name="Color_Selection" unique_id=1275727870 instance=ExtResource("1_cfg67")]
 script = ExtResource("2_fa0lv")
 
-[node name="Game_Play" parent="." index="0" instance=ExtResource("3_nb36x")]
+[node name="Game_Play" parent="." index="0" unique_id=1326867560 instance=ExtResource("3_nb36x")]
 
 [node name="Intro" parent="Canvas" index="0"]
 visible = false
@@ -29,27 +29,27 @@ text = "MINIGAMES_COLOR_SELECTION_HEADING"
 size = Vector2i(2, 2)
 render_target_update_mode = 0
 
-[node name="Game_Preview" parent="Canvas/Intro/Margin/VBox/HBox/Left/HBox/VP/VP" index="0" instance=ExtResource("5_0k6f0")]
+[node name="Game_Preview" parent="Canvas/Intro/Margin/VBox/HBox/Left/HBox/VP/VP" index="0" unique_id=1113738787 instance=ExtResource("5_0k6f0")]
 visible = false
 
 [node name="Desc" parent="Canvas/Intro/Margin/VBox/HBox/Right/VBox" index="0"]
 text = "MINIGAMES_COLOR_SELECTION_DESC"
 
-[node name="HBox" type="HBoxContainer" parent="Canvas/Intro/Margin/VBox/HBox/Right/VBox/Controls" index="1"]
+[node name="HBox" type="HBoxContainer" parent="Canvas/Intro/Margin/VBox/HBox/Right/VBox/Controls" index="1" unique_id=1741493967]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
 theme_override_constants/separation = 64
 alignment = 1
 
-[node name="Left_Right" type="VBoxContainer" parent="Canvas/Intro/Margin/VBox/HBox/Right/VBox/Controls/HBox" index="0"]
+[node name="Left_Right" type="VBoxContainer" parent="Canvas/Intro/Margin/VBox/HBox/Right/VBox/Controls/HBox" index="0" unique_id=1688400722]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 16
 
-[node name="Desc" type="Label" parent="Canvas/Intro/Margin/VBox/HBox/Right/VBox/Controls/HBox/Left_Right" index="0"]
+[node name="Desc" type="Label" parent="Canvas/Intro/Margin/VBox/HBox/Right/VBox/Controls/HBox/Left_Right" index="0" unique_id=459149538]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
@@ -57,32 +57,32 @@ text = "MINIGAMES_COLOR_SELECTION_CONTROL_FLIPPERS"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HBox" type="HBoxContainer" parent="Canvas/Intro/Margin/VBox/HBox/Right/VBox/Controls/HBox/Left_Right" index="1"]
+[node name="HBox" type="HBoxContainer" parent="Canvas/Intro/Margin/VBox/HBox/Right/VBox/Controls/HBox/Left_Right" index="1" unique_id=2101971426]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="Left" type="TextureRect" parent="Canvas/Intro/Margin/VBox/HBox/Right/VBox/Controls/HBox/Left_Right/HBox" index="0"]
+[node name="Left" type="TextureRect" parent="Canvas/Intro/Margin/VBox/HBox/Right/VBox/Controls/HBox/Left_Right/HBox" index="0" unique_id=1494241427]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
 texture = ExtResource("6_fhypi")
 
-[node name="Right" type="TextureRect" parent="Canvas/Intro/Margin/VBox/HBox/Right/VBox/Controls/HBox/Left_Right/HBox" index="1"]
+[node name="Right" type="TextureRect" parent="Canvas/Intro/Margin/VBox/HBox/Right/VBox/Controls/HBox/Left_Right/HBox" index="1" unique_id=703925163]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
 texture = ExtResource("7_p5teg")
 
-[node name="Up_Down" type="VBoxContainer" parent="Canvas/Intro/Margin/VBox/HBox/Right/VBox/Controls/HBox" index="1"]
+[node name="Up_Down" type="VBoxContainer" parent="Canvas/Intro/Margin/VBox/HBox/Right/VBox/Controls/HBox" index="1" unique_id=1973921364]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 16
 
-[node name="Desc" type="Label" parent="Canvas/Intro/Margin/VBox/HBox/Right/VBox/Controls/HBox/Up_Down" index="0"]
+[node name="Desc" type="Label" parent="Canvas/Intro/Margin/VBox/HBox/Right/VBox/Controls/HBox/Up_Down" index="0" unique_id=1803787989]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
@@ -90,19 +90,19 @@ text = "MINIGAMES_COLOR_SELECTION_MOVE_CAMERA"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HBox" type="HBoxContainer" parent="Canvas/Intro/Margin/VBox/HBox/Right/VBox/Controls/HBox/Up_Down" index="1"]
+[node name="HBox" type="HBoxContainer" parent="Canvas/Intro/Margin/VBox/HBox/Right/VBox/Controls/HBox/Up_Down" index="1" unique_id=1224266289]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="Down" type="TextureRect" parent="Canvas/Intro/Margin/VBox/HBox/Right/VBox/Controls/HBox/Up_Down/HBox" index="0"]
+[node name="Down" type="TextureRect" parent="Canvas/Intro/Margin/VBox/HBox/Right/VBox/Controls/HBox/Up_Down/HBox" index="0" unique_id=264419896]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
 texture = ExtResource("9_1hpdk")
 
-[node name="Up" type="TextureRect" parent="Canvas/Intro/Margin/VBox/HBox/Right/VBox/Controls/HBox/Up_Down/HBox" index="1"]
+[node name="Up" type="TextureRect" parent="Canvas/Intro/Margin/VBox/HBox/Right/VBox/Controls/HBox/Up_Down/HBox" index="1" unique_id=1628434679]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2

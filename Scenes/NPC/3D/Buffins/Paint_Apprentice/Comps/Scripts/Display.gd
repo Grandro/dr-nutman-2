@@ -1,4 +1,4 @@
-extends CompDisplay3D
+extends FWCompDisplay3D
 class_name CompPaintApprenticeDisplay
 
 func tween_tint(p_color: Color, p_duration: float) -> void:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://5lycfv085rm0"]
+[gd_scene format=3 uid="uid://5lycfv085rm0"]
 
 [ext_resource type="PackedScene" uid="uid://cnhxgpnwjp871" path="res://Global_Resources/Mapping/3D/Below/Broko_Town/Interior/Rails_1/Rail_Cars/Rail_Car_Base.tscn" id="1_3pwiv"]
 [ext_resource type="PackedScene" uid="uid://dhuoft05xgqnx" path="res://Global_Resources/Mapping/3D/Below/Broko_Town/Interior/Rails_1/Rail_Cars/Models/Rail_Car_1/Model.glb" id="2_rp0ir"]
@@ -9,22 +9,22 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_2qp4h"]
 size = Vector3(1.5, 1.45, 1.2)
 
-[node name="Rail_Car_1" instance=ExtResource("1_3pwiv")]
+[node name="Rail_Car_1" unique_id=949951061 instance=ExtResource("1_3pwiv")]
 script = ExtResource("2_uvaqx")
 
-[node name="Model" parent="." index="0" instance=ExtResource("2_rp0ir")]
+[node name="Model" parent="." index="0" unique_id=228291982 instance=ExtResource("2_rp0ir")]
 
-[node name="Collision" parent="." index="1"]
+[node name="Collision" parent="." index="1" unique_id=680845430]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.725, 0)
 shape = SubResource("BoxShape3D_2qp4h")
 
-[node name="Table" parent="." index="2" instance=ExtResource("3_qs2yd")]
+[node name="Table" parent="." index="2" unique_id=768387540 instance=ExtResource("3_qs2yd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
-[node name="Projector" parent="." index="3" instance=ExtResource("4_uvaqx")]
+[node name="Projector" parent="." index="3" unique_id=794466071 instance=ExtResource("4_uvaqx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
 
-[node name="Nav_Obstacle" parent="." index="4"]
+[node name="Nav_Obstacle" parent="." index="4" unique_id=1975939746]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
 visible = false
 radius = 1.0

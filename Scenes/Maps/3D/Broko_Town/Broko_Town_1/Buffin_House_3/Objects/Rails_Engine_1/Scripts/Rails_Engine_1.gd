@@ -1,7 +1,7 @@
-extends Static3DObject
+extends FWStatic3DObject
 class_name ObjectRailsEngine1
 
-@export var _e_rails: Node3DObject = null
+@export var _e_rails: FWNode3DObject = null
 @export var _e_left_force: float = -1.0
 @export var _e_right_force: float = 1.0
 @export var _e_left_pushed: bool = false

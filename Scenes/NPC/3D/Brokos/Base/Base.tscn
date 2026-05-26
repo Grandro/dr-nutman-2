@@ -1,11 +1,11 @@
-[gd_scene load_steps=35 format=3 uid="uid://l5l6gxicjcbj"]
+[gd_scene format=3 uid="uid://l5l6gxicjcbj"]
 
-[ext_resource type="PackedScene" uid="uid://w5cxcgsk2pyw" path="res://Scenes/NPC/3D/NPC.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://w5cxcgsk2pyw" path="res://Framework/Scenes/NPC/3D/NPC.tscn" id="1"]
 [ext_resource type="Texture2D" uid="uid://3wvxgeci6xv3" path="res://Global_Resources/Sprites/Objects/Brokos/Base/Spritesheet.png" id="2"]
 [ext_resource type="PackedScene" uid="uid://d104rrv1g0u3e" path="res://Scenes/Equipable/3D/Objects/Brokos/Base/Head/Party_Hats/1.tscn" id="3_5omeo"]
 [ext_resource type="PackedScene" uid="uid://6cqhs6bfv3mp" path="res://Scenes/Equipable/3D/Objects/Brokos/Base/Head/Party_Hats/2.tscn" id="4_2gsag"]
 [ext_resource type="PackedScene" uid="uid://yu4iaamnym5w" path="res://Scenes/Equipable/3D/Objects/Brokos/Base/Head/Party_Hats/3.tscn" id="5_sbwkp"]
-[ext_resource type="PackedScene" uid="uid://b028hrfen5mpa" path="res://Scenes/Object/Comps/3D/Movement/Comps/Terrain/Area.tscn" id="6_36aks"]
+[ext_resource type="PackedScene" uid="uid://b028hrfen5mpa" path="res://Framework/Scenes/Object/Comps/3D/Movement/Comps/Terrain/Area.tscn" id="6_36aks"]
 [ext_resource type="Animation" uid="uid://bdska5dybtrru" path="res://Scenes/NPC/3D/Brokos/Base/Anims/Terrain/Global/Idle_Down.tres" id="7_36aks"]
 [ext_resource type="Animation" uid="uid://dcx260g3vhhe3" path="res://Scenes/NPC/3D/Brokos/Base/Anims/Terrain/Global/Idle_Left.tres" id="8_mkxth"]
 [ext_resource type="Animation" uid="uid://ctax50ndso2bd" path="res://Scenes/NPC/3D/Brokos/Base/Anims/Terrain/Global/Idle_Right.tres" id="9_b7mth"]
@@ -69,20 +69,20 @@ _data = {
 &"Walk_Up": ExtResource("30_t50ag")
 }
 
-[node name="Base" instance=ExtResource("1")]
+[node name="Base" unique_id=2119379236 instance=ExtResource("1")]
 
-[node name="Display" parent="." index="0"]
+[node name="Display" parent="." index="0" unique_id=484337952]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.12, 0)
 texture = ExtResource("2")
 hframes = 8
 vframes = 13
 frame = 32
 
-[node name="Collision" parent="." index="1"]
+[node name="Collision" parent="." index="1" unique_id=68845023]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.09, 0)
 shape = SubResource("CapsuleShape3D_mdxpl")
 
-[node name="Equipment" parent="." index="2"]
+[node name="Equipment" parent="." index="2" unique_id=2139283990]
 _e_scenes = {
 "Feet": {},
 "Head": {
@@ -96,7 +96,7 @@ _e_scenes = {
 "Weapon": {}
 }
 
-[node name="1" parent="Interactions" index="0"]
+[node name="1" parent="Interactions" parent_id_path=PackedInt32Array(755316257) index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
 _e_popup_pos = Vector3(0, 2.6, 0.02)
 _e_speech_bubble_pos = Vector3(0, 4.7, 0.03)
@@ -104,37 +104,35 @@ _e_speech_bubble_pos = Vector3(0, 4.7, 0.03)
 [node name="Collision" parent="Interactions/1" index="0"]
 shape = SubResource("BoxShape3D_h4xqd")
 
-[node name="Left_Foot" parent="Movement/Terrain/Areas" index="0" instance=ExtResource("6_36aks")]
+[node name="Left_Foot" parent="Movement/Terrain/Areas" index="0" unique_id=79795774 instance=ExtResource("6_36aks")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.16, 0, 0)
 
 [node name="Collision" parent="Movement/Terrain/Areas/Left_Foot" index="1"]
 shape = SubResource("BoxShape3D_mkxth")
 
-[node name="Right_Foot" parent="Movement/Terrain/Areas" index="1" instance=ExtResource("6_36aks")]
+[node name="Right_Foot" parent="Movement/Terrain/Areas" index="1" unique_id=518805096 instance=ExtResource("6_36aks")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.16, 0, 0)
 
 [node name="Collision" parent="Movement/Terrain/Areas/Right_Foot" index="1"]
 shape = SubResource("BoxShape3D_mkxth")
 
-[node name="Anims" parent="Movement/Terrain" index="1"]
-libraries = {
-&"": SubResource("AnimationLibrary_4aw2a")
-}
+[node name="Anims" parent="Movement/Terrain" parent_id_path=PackedInt32Array(493980995) index="1"]
+libraries/ = SubResource("AnimationLibrary_4aw2a")
 
-[node name="Listener" parent="." index="6"]
+[node name="Listener" parent="." index="6" unique_id=1781818449]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3, 0)
 
-[node name="Speech_Bubble" parent="." index="8"]
+[node name="Speech_Bubble" parent="." index="8" unique_id=1364219094]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.7, 0.03)
 visible = true
 
-[node name="Popup" parent="." index="9"]
+[node name="Popup" parent="." index="9" unique_id=151653346]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6, 0.02)
 
-[node name="States" parent="." index="14"]
+[node name="States" parent="." index="14" unique_id=1379545458]
 _e_states = Array[StringName]([&"Stop", &"Idle", &"Walk", &"Jump", &"Place", &"Think"])
 
-[node name="Debug" parent="." index="17"]
+[node name="Debug" parent="." index="17" unique_id=573530566]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6, 0)
 
 [editable path="Interactions"]

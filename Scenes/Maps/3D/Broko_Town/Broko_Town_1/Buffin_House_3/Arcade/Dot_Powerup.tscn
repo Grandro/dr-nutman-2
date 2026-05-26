@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://bs7r8e1fcpc60"]
+
+[ext_resource type="PackedScene" uid="uid://b67j6y5hyeaav" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Buffin_House_3/Arcade/Dot.tscn" id="1_p2fkg"]
+[ext_resource type="Script" uid="uid://b50omsmegan7g" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Buffin_House_3/Arcade/Scripts/Dot_Powerup.gd" id="2_jrimm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6fbp8"]
+render_priority = 1
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+grow = true
+grow_amount = 0.02
+stencil_mode = 3
+stencil_flags = 1
+stencil_compare = 5
+metadata/_stencil_owned = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j8wry"]
+next_pass = SubResource("StandardMaterial3D_6fbp8")
+emission_enabled = true
+emission = Color(0.37254903, 0.1882353, 0.6313726, 1)
+emission_energy_multiplier = 12.0
+stencil_mode = 1
+stencil_flags = 2
+stencil_outline_thickness = 0.02
+
+[sub_resource type="SphereMesh" id="SphereMesh_6fbp8"]
+material = SubResource("StandardMaterial3D_j8wry")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j8wry"]
+size = Vector3(1, 0.5, 1)
+
+[sub_resource type="Animation" id="Animation_7lsnf"]
+resource_name = "Blink"
+length = 0.5
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Mesh:mesh:material:emission_energy_multiplier")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [12.0, 6.0]
+}
+
+[sub_resource type="Animation" id="Animation_bs38g"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Mesh:mesh:material:emission_energy_multiplier")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [12.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_p2fkg"]
+_data = {
+&"Blink": SubResource("Animation_7lsnf"),
+&"RESET": SubResource("Animation_bs38g")
+}
+
+[node name="Dot_Powerup" unique_id=983884930 instance=ExtResource("1_p2fkg")]
+script = ExtResource("2_jrimm")
+
+[node name="Mesh" parent="." index="0" unique_id=377769740]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("SphereMesh_6fbp8")
+
+[node name="Collision" parent="Area" parent_id_path=PackedInt32Array(2011630235) index="0" unique_id=75212193]
+shape = SubResource("BoxShape3D_j8wry")
+
+[node name="Anims" type="AnimationPlayer" parent="." index="2" unique_id=1543165214]
+libraries/ = SubResource("AnimationLibrary_p2fkg")
+autoplay = &"Blink"

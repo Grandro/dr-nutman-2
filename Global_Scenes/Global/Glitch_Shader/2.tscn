@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://dq30q68dartg2"]
+[gd_scene format=3 uid="uid://dq30q68dartg2"]
 
 [ext_resource type="Material" uid="uid://dp1yaue4vyhr0" path="res://Global_Resources/Materials/3D/Glitch_2.tres" id="1_pmq7k"]
 
-[node name="Glitch_Shader_1" type="ColorRect"]
+[node name="Glitch_Shader_1" type="ColorRect" unique_id=1167184093]
 light_mask = 8
 visibility_layer = 8
 material = ExtResource("1_pmq7k")

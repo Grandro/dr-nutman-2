@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://d0crwvyh5yulj"]
+
+[ext_resource type="PackedScene" uid="uid://cl2vhhqvmf6i2" path="res://Framework/Scenes/Maps/Map_Base/3D/Map_Base.tscn" id="1_4113k"]
+[ext_resource type="PackedScene" uid="uid://d3rnjkhvcxxr0" path="res://Framework/Scenes/Player/3D/Player.tscn" id="2_p2eag"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_exqpt"]
+geometry_source_geometry_mode = 2
+geometry_source_group_name = &"NavMesh_Main"
+agent_height = 2.0
+agent_max_climb = 0.5
+
+[node name="Debug_3D" unique_id=138783888 instance=ExtResource("1_4113k")]
+
+[node name="Player" parent="Objects" parent_id_path=PackedInt32Array(2067943741) index="2" unique_id=661696778 instance=ExtResource("2_p2eag")]
+
+[node name="Main" parent="Nav_Regions" parent_id_path=PackedInt32Array(1254440687) index="0" unique_id=112090707]
+navigation_mesh = SubResource("NavigationMesh_exqpt")

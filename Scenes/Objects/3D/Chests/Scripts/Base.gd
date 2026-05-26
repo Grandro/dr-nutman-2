@@ -1,16 +1,16 @@
-extends Node3DObject
+extends FWNode3DObject
 class_name ObjectChestBase
 
 @export var _e_loot: Dictionary = {} # [item_key][amount] = amount_in_pool
 
-@onready var _a_Interactions: CompInteractions3D = get_node("Interactions")
-@onready var _a_Anims: CompAnims = get_node("Anims")
+@onready var _a_Interactions: FWCompInteractions3D = get_node("Interactions")
+@onready var _a_Anims: FWCompAnims = get_node("Anims")
 
 var _a_opened: bool = false
 
 func _ready() -> void:
 	super()
-	_a_Interactions.interacted.connect(_on_Interactions_interacted)
+	_a_Interactions.interacted_empty.connect(_on_Interactions_interacted_empty)
 	_a_Anims.animation_finished.connect(_on_Anims_anim_finished)
 
 func _opened() -> void:
@@ -32,7 +32,7 @@ func load_data(p_data: Dictionary) -> void:
 	super(p_data)
 	_a_opened = p_data[&"Opened"]
 
-func _on_Interactions_interacted() -> void:
+func _on_Interactions_interacted_empty() -> void:
 	if !_a_opened:
 		_a_Anims.play(&"Open")
 

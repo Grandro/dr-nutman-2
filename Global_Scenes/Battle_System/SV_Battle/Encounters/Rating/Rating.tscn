@@ -1,9 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://culespvwy38kj"]
+[gd_scene format=3 uid="uid://culespvwy38kj"]
 
 [ext_resource type="Script" uid="uid://qhsf153tgnr0" path="res://Global_Scenes/Battle_System/SV_Battle/Encounters/Rating/Scripts/Rating.gd" id="1_plqnu"]
-[ext_resource type="PackedScene" uid="uid://nt5gfdybdx7v" path="res://Scenes/VP_Container/VP.tscn" id="2_jejy6"]
+[ext_resource type="PackedScene" uid="uid://nt5gfdybdx7v" path="res://Framework/Scenes/VP_Container/VP.tscn" id="2_jejy6"]
 [ext_resource type="FontFile" uid="uid://bc3cxhu6w0ljt" path="res://Global_Resources/Fonts/ProFont.ttf" id="3_12b37"]
-
 
 [sub_resource type="FontVariation" id="FontVariation_t56kx"]
 base_font = ExtResource("3_12b37")
@@ -94,23 +93,22 @@ _data = {
 &"Fade_Out": SubResource("3")
 }
 
-[node name="Rating" type="Node3D"]
+[node name="Rating" type="Node3D" unique_id=1674448289]
 script = ExtResource("1_plqnu")
 _e_OK_color = Color(1, 0.784314, 0, 1)
 _e_good_color = Color(1, 0.584314, 0, 1)
 _e_great_color = Color(1, 0.392157, 0, 1)
 
-[node name="VP" parent="." instance=ExtResource("2_jejy6")]
+[node name="VP" parent="." unique_id=1831068156 instance=ExtResource("2_jejy6")]
 transparent_bg = true
 canvas_cull_mask = 4293918728
 size = Vector2i(1280, 720)
 size_2d_override = Vector2i(256, 256)
 _e_sub_world = false
 _e_game_world = false
-_e_resize = false
 _e_activate_physics = false
 
-[node name="Text" type="RichTextLabel" parent="VP"]
+[node name="Text" type="RichTextLabel" parent="VP" unique_id=1004827712]
 self_modulate = Color(1, 1, 1, 0)
 light_mask = 8
 visibility_layer = 8
@@ -139,16 +137,14 @@ hint_underlined = false
 deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 
-[node name="Mesh" type="MeshInstance3D" parent="."]
+[node name="Mesh" type="MeshInstance3D" parent="." unique_id=83393829]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, -2.9, 0.01)
 layers = 4
 mesh = SubResource("QuadMesh_sssmx")
 
-[node name="Anims" type="AnimationPlayer" parent="."]
+[node name="Anims" type="AnimationPlayer" parent="." unique_id=1712477294]
 callback_mode_method = 1
-libraries = {
-"": SubResource("AnimationLibrary_47sen")
-}
+libraries/ = SubResource("AnimationLibrary_47sen")
 
-[node name="Delay" type="Timer" parent="."]
+[node name="Delay" type="Timer" parent="." unique_id=1437401003]
 one_shot = true

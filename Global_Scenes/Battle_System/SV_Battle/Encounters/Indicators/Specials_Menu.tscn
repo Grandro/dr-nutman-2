@@ -1,9 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://bmpydjbwhwucc"]
+[gd_scene format=3 uid="uid://bmpydjbwhwucc"]
 
 [ext_resource type="Script" uid="uid://3trywrsuuhih" path="res://Global_Scenes/Battle_System/SV_Battle/Encounters/Indicators/Scripts/Specials_Menu.gd" id="1_mab4n"]
 [ext_resource type="Theme" uid="uid://budcfl16xj2tt" path="res://Global_Resources/Themes/Default/Default.tres" id="1_utcbi"]
 [ext_resource type="Texture2D" uid="uid://cqxvdm8r25usg" path="res://Global_Resources/Sprites/SV/B_Button_Spritesheet.png" id="2_n1og8"]
-
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x2a4g"]
 atlas = ExtResource("2_n1og8")
@@ -47,11 +46,11 @@ _data = {
 &"Fade_Out": SubResource("Animation_e1xg1")
 }
 
-[node name="Specials_Menu" type="CanvasLayer"]
+[node name="Specials_Menu" type="CanvasLayer" unique_id=373781172]
 layer = 2
 script = ExtResource("1_mab4n")
 
-[node name="Cancel" type="MarginContainer" parent="."]
+[node name="Cancel" type="MarginContainer" parent="." unique_id=1569664062]
 modulate = Color(1, 1, 1, 0)
 light_mask = 8
 visibility_layer = 8
@@ -59,13 +58,13 @@ theme = ExtResource("1_utcbi")
 theme_override_constants/margin_left = 16
 theme_override_constants/margin_top = 16
 
-[node name="HBox" type="HBoxContainer" parent="Cancel"]
+[node name="HBox" type="HBoxContainer" parent="Cancel" unique_id=1533852294]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
 theme_override_constants/separation = 8
 
-[node name="Image" type="TextureRect" parent="Cancel/HBox"]
+[node name="Image" type="TextureRect" parent="Cancel/HBox" unique_id=278141248]
 light_mask = 8
 visibility_layer = 8
 custom_minimum_size = Vector2(32, 32)
@@ -74,13 +73,11 @@ texture = SubResource("AtlasTexture_x2a4g")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Text" type="Label" parent="Cancel/HBox"]
+[node name="Text" type="Label" parent="Cancel/HBox" unique_id=2003536071]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
-text = "CANCEL"
+text = "FW_CANCEL"
 
-[node name="Anims" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_mh3w7")
-}
+[node name="Anims" type="AnimationPlayer" parent="." unique_id=1621042604]
+libraries/ = SubResource("AnimationLibrary_mh3w7")

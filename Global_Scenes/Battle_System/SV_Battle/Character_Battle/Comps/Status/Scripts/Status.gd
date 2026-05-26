@@ -14,8 +14,8 @@ func _ready() -> void:
 	for child: SVStatusEntryBase in _a_Status.get_children():
 		child.queue_free()
 
-func init(p_entity: SVCharacter) -> void:
-	_a_entity = p_entity
+func init(p_entities: Array[Node]) -> void:
+	_a_entity = p_entities[-1]
 
 func handle_trigger_effects(p_trigger_type: StringName) -> void:
 	_handle_trigger_effects_activation(p_trigger_type)

@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://ju7fcrp4snch"]
+
+[ext_resource type="PackedScene" uid="uid://r41nl45w54n2" path="res://Framework/Global_Scenes/Progress/Quests/Objective_Sub_Quest.tscn" id="1_pmx02"]
+[ext_resource type="Resource" uid="uid://dg0rd8d17d2sm" path="res://Global_Resources/Databases/Quests/Broko_Town/Main/Groping_In_The_Dark/Objective_Prepare_Batteries.tres" id="2_m1gbj"]
+
+[node name="Prepare_Batteries" unique_id=402770769 instance=ExtResource("1_pmx02")]
+_e_data = ExtResource("2_m1gbj")

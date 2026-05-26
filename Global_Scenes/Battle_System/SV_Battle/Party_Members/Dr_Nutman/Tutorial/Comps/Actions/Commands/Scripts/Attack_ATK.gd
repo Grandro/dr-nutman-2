@@ -9,7 +9,7 @@ func _ready() -> void:
 	_a_show_tutato_explain = Global_Data.get_options_gameplay_show_tutato_explain()
 
 func _moved_to_target() -> void:
-	var explain_attack: bool = _a_progress_si.call_object("Tutato", &"get_explain_battle_attack")
+	var explain_attack: bool = _a_progress_si.call_object(&"Tutato", &"get_explain_battle_attack")
 	if _a_show_tutato_explain && explain_attack:
 		_a_States.set_state_tmp(&"Idle")
 		_a_Anims.update_anim()
@@ -52,15 +52,15 @@ func _CB_cutscene_completed(_p_process_type: StringName, p_key: StringName, p_en
 					_a_Movement.set_state(&"Move_To_Org_Pos")
 					_a_Movement.move_to_org_pos()
 					_a_Anims.update_anim()
-					_a_progress_si.call_object("Tutato", &"set_explain_battle_attack", [false])
+					_a_progress_si.call_object(&"Tutato", &"set_explain_battle_attack", [false])
 
 func _on_Hitbox_body_entered(p_body: Node3D) -> void:
-	var explain_attack: bool = _a_progress_si.call_object("Tutato", &"get_explain_battle_attack")
+	var explain_attack: bool = _a_progress_si.call_object(&"Tutato", &"get_explain_battle_attack")
 	if !_a_show_tutato_explain || !explain_attack:
 		super(p_body)
 
 func _on_Anims_anim_finished(p_name: StringName) -> void:
-	var explain_attack: bool = _a_progress_si.call_object("Tutato", &"get_explain_battle_attack")
+	var explain_attack: bool = _a_progress_si.call_object(&"Tutato", &"get_explain_battle_attack")
 	if _a_show_tutato_explain && explain_attack:
 		match p_name:
 			&"SV/Attack_ATK_Charge_Right":

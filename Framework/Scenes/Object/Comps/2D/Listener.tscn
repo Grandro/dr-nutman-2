@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dsj1lc5ddb7yj"]
+
+[ext_resource type="Script" uid="uid://dmoek6nxsoop8" path="res://Framework/Scenes/Object/Comps/2D/Scripts/Listener.gd" id="1_72gfw"]
+
+[node name="Listener" type="AudioListener2D" unique_id=1153311756 groups=["Comp"]]
+script = ExtResource("1_72gfw")

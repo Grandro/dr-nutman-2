@@ -1,10 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://dmh0h801kn6ye"]
+[gd_scene format=3 uid="uid://dmh0h801kn6ye"]
 
-[ext_resource type="PackedScene" uid="uid://pu7yiomgntci" path="res://Scenes/Window/Window_Base.tscn" id="1_w58ma"]
+[ext_resource type="PackedScene" uid="uid://pu7yiomgntci" path="res://Framework/Scenes/Window/Window_Base.tscn" id="1_w58ma"]
 [ext_resource type="Theme" uid="uid://cphubdfp0kld2" path="res://Global_Resources/Themes/NutOS/NutOS.tres" id="2_4woae"]
 [ext_resource type="Script" uid="uid://cc307yh82gy85" path="res://Scenes/NutOS/Content/Desktop/Apps/Scripts/App.gd" id="2_8reie"]
 
-[node name="App" instance=ExtResource("1_w58ma")]
+[node name="App" unique_id=88417649 instance=ExtResource("1_w58ma")]
 audio_listener_enable_2d = true
 oversampling_override = 1.0
 position = Vector2i(160, 54)

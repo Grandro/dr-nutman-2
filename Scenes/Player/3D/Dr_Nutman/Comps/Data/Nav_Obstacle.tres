@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CompData" format=3 uid="uid://pm1k0gfddirl"]
+
+[ext_resource type="PackedScene" uid="uid://byq56u564g32m" path="res://Scenes/Player/3D/Dr_Nutman/Comps/Nav_Obstacle.tscn" id="1_kmb58"]
+[ext_resource type="Script" uid="uid://dk1y7876kg1po" path="res://Framework/Scenes/Player/Scripts/Comp_Data.gd" id="2_6oy7m"]
+
+[resource]
+script = ExtResource("2_6oy7m")
+_e_key = &"Nav_Obstacle"
+_e_scene = ExtResource("1_kmb58")
+_e_group = &"Main"
+metadata/_custom_type_script = "uid://dk1y7876kg1po"

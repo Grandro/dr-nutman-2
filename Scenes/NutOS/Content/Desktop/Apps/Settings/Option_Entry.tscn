@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://biyv7ru8kxoxf"]
+[gd_scene format=3 uid="uid://biyv7ru8kxoxf"]
 
 [ext_resource type="Theme" uid="uid://cphubdfp0kld2" path="res://Global_Resources/Themes/NutOS/NutOS.tres" id="1_1c57s"]
 [ext_resource type="Texture2D" uid="uid://bnrj00yxv67xs" path="res://Scenes/NutOS/Content/Desktop/Apps/Settings/Sprites/Keyboard.png" id="3"]
@@ -17,7 +17,7 @@ bg_color = Color(0.313726, 0.313726, 0.313726, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n7uia"]
 bg_color = Color(0.313726, 0.313726, 0.313726, 1)
 
-[node name="Option_Entry" type="MarginContainer"]
+[node name="Option_Entry" type="MarginContainer" unique_id=825885461]
 light_mask = 8
 visibility_layer = 8
 offset_right = 374.0
@@ -26,7 +26,7 @@ size_flags_horizontal = 3
 theme = ExtResource("1_1c57s")
 script = ExtResource("4")
 
-[node name="Select" type="Button" parent="."]
+[node name="Select" type="Button" parent="." unique_id=938489095]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
@@ -36,7 +36,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_x7pc6")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_64nxu")
 theme_override_styles/focus = SubResource("StyleBoxFlat_n7uia")
 
-[node name="Margin" type="MarginContainer" parent="."]
+[node name="Margin" type="MarginContainer" parent="." unique_id=1546289723]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
@@ -44,14 +44,14 @@ mouse_filter = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_right = 8
 
-[node name="HBox" type="HBoxContainer" parent="Margin"]
+[node name="HBox" type="HBoxContainer" parent="Margin" unique_id=5072573]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
 mouse_filter = 2
 theme_override_constants/separation = 16
 
-[node name="Icon" type="TextureRect" parent="Margin/HBox"]
+[node name="Icon" type="TextureRect" parent="Margin/HBox" unique_id=388389310]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
@@ -59,14 +59,14 @@ mouse_filter = 2
 texture = ExtResource("3")
 stretch_mode = 3
 
-[node name="VBox" type="VBoxContainer" parent="Margin/HBox"]
+[node name="VBox" type="VBoxContainer" parent="Margin/HBox" unique_id=204057872]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
 mouse_filter = 2
 theme_override_constants/separation = -10
 
-[node name="Heading" type="Label" parent="Margin/HBox/VBox"]
+[node name="Heading" type="Label" parent="Margin/HBox/VBox" unique_id=441008216]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
@@ -74,7 +74,7 @@ theme_override_font_sizes/font_size = 22
 text = "Keyboard Customizer"
 vertical_alignment = 1
 
-[node name="Desc" type="Label" parent="Margin/HBox/VBox"]
+[node name="Desc" type="Label" parent="Margin/HBox/VBox" unique_id=1437339691]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2

@@ -1,14 +1,14 @@
-extends CompMovementCharacter3D
+extends FWCompMovementCharacter3D
 class_name CompSVMovementCharacter
 
-@onready var _a_Nav_Agent: CompMovementNavAgent3D = get_node("Nav_Agent")
+@onready var _a_Nav_Agent: FWCompMovementNavAgent3D = get_node("Nav_Agent")
 
 var _a_org_pos: Vector3
 var _a_state: StringName
 
-func init(p_entity: Node) -> void:
-	super(p_entity)
-	_a_org_pos = p_entity.get_global_position()
+func init(p_entities: Array[Node]) -> void:
+	super(p_entities)
+	_a_org_pos = p_entities[-1].get_global_position()
 
 func move_to_pos(p_pos: Vector3) -> void:
 	var pos: Vector3 = get_global_position()

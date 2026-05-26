@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bgva6yvfkl7lq"]
+
+[ext_resource type="PackedScene" uid="uid://butd4kcpqwub6" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Buffin_House_3/Arcade/Ghosties/Ghosty_Base.tscn" id="1_xmto7"]
+[ext_resource type="PackedScene" uid="uid://b5k7jl4aswo53" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Buffin_House_3/Arcade/Ghosties/Comps/Behavior/Red/Behavior_Red.tscn" id="2_3ogmm"]
+
+[node name="Ghosty_Red" unique_id=672458164 instance=ExtResource("1_xmto7")]
+_e_color = Color(1, 0, 0, 1)
+
+[node name="Display" parent="." index="0" unique_id=473946948]
+modulate = Color(1, 0, 0, 1)
+
+[node name="Movement" parent="." index="2" unique_id=1775514236]
+_e_dirs = Array[StringName]([&"Down"])
+
+[node name="States" parent="Movement" index="2" unique_id=613341567]
+_e_speeds = Dictionary[StringName, float]({
+&"Float": 2.0,
+&"Stop": 0.0
+})
+
+[node name="Behavior" parent="." index="3" unique_id=103479668 instance=ExtResource("2_3ogmm")]
+
+[editable path="Movement/Terrain"]
+[editable path="Movement/Terrain/Areas/Body"]

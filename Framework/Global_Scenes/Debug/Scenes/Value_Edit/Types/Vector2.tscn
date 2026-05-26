@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://b3graoo4nc0cd"]
+
+[ext_resource type="Script" uid="uid://bh5lpev6ds560" path="res://Framework/Global_Scenes/Debug/Scenes/Value_Edit/Types/Scripts/Vector2.gd" id="1_c0sr5"]
+[ext_resource type="PackedScene" uid="uid://caj33yuoli0g" path="res://Framework/Global_Scenes/Debug/Scenes/Float_Edit/Float_Edit.tscn" id="3_h4j7m"]
+
+[node name="Vector2" type="VBoxContainer" unique_id=1881578403]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(300, 0)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+script = ExtResource("1_c0sr5")
+
+[node name="Select" type="Button" parent="." unique_id=426906888]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="." unique_id=668844828]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="X" type="PanelContainer" parent="VBox" unique_id=53525687]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+
+[node name="HBox" type="HBoxContainer" parent="VBox/X" unique_id=389829021]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+
+[node name="Desc" type="Label" parent="VBox/X/HBox" unique_id=1160506542]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "X"
+vertical_alignment = 1
+
+[node name="Value" parent="VBox/X/HBox" unique_id=2002959914 instance=ExtResource("3_h4j7m")]
+layout_mode = 2
+size_flags_horizontal = 3
+caret_blink = true
+_e_allow_lesser = true
+_e_allow_greater = true
+
+[node name="Y" type="PanelContainer" parent="VBox" unique_id=852732223]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+
+[node name="HBox" type="HBoxContainer" parent="VBox/Y" unique_id=182067100]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+
+[node name="Desc" type="Label" parent="VBox/Y/HBox" unique_id=391437337]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "Y"
+vertical_alignment = 1
+
+[node name="Value" parent="VBox/Y/HBox" unique_id=388186638 instance=ExtResource("3_h4j7m")]
+layout_mode = 2
+size_flags_horizontal = 3
+caret_blink = true
+_e_allow_lesser = true
+_e_allow_greater = true

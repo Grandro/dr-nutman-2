@@ -1,21 +1,28 @@
-[gd_scene load_steps=6 format=3 uid="uid://66v385vh2vqh"]
+[gd_scene format=3 uid="uid://66v385vh2vqh"]
 
-[ext_resource type="PackedScene" uid="uid://dbxigq53qnnvo" path="res://Global_Resources/Mapping/3D/Plane/Plane_Tile.tscn" id="1_x3xmi"]
-[ext_resource type="Material" uid="uid://5jcn0ur1h1og" path="res://Global_Resources/Materials/3D/VTint_Down_To_Up.tres" id="2_xi5vj"]
+[ext_resource type="PackedScene" uid="uid://dbxigq53qnnvo" path="res://Framework/Global_Resources/Mapping/3D/Plane/Plane_Tile.tscn" id="1_x3xmi"]
+[ext_resource type="Shader" uid="uid://c5qli6h5oflag" path="res://Global_Resources/Materials/3D/Shaders/VTint_Down_To_Up.tres" id="2_jrwvd"]
 [ext_resource type="Script" uid="uid://b86ox4qmvgek2" path="res://Global_Resources/Mapping/3D/Below/Broko_Town/Interior/Power_Cable_1/Scripts/Power_Cable_Stripe.gd" id="3_jrwvd"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nek7c"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mxflr"]
 resource_local_to_scene = true
-next_pass = ExtResource("2_xi5vj")
+render_priority = 0
+shader = ExtResource("2_jrwvd")
+shader_parameter/progress = 0.5
+shader_parameter/color = Vector3(0.13, 0.91, 0.06)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4voo4"]
+resource_local_to_scene = true
+next_pass = SubResource("ShaderMaterial_mxflr")
 transparency = 1
 albedo_color = Color(1, 1, 1, 0)
 texture_filter = 0
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_jrwvd"]
+[sub_resource type="PlaneMesh" id="PlaneMesh_yaoaa"]
 resource_local_to_scene = true
-material = SubResource("StandardMaterial3D_nek7c")
+material = SubResource("StandardMaterial3D_4voo4")
 size = Vector2(0.1, 0.5)
 
-[node name="Power_Cable_Stripe" instance=ExtResource("1_x3xmi")]
-mesh = SubResource("PlaneMesh_jrwvd")
+[node name="Power_Cable_Stripe" unique_id=78376085 instance=ExtResource("1_x3xmi")]
+mesh = SubResource("PlaneMesh_yaoaa")
 script = ExtResource("3_jrwvd")

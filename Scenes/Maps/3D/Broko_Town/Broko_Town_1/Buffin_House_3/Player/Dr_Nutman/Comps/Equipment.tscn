@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bndhiwqrpp0rg"]
+
+[ext_resource type="PackedScene" uid="uid://cj1dv7xtd0pi" path="res://Scenes/Player/3D/Dr_Nutman/Comps/Equipment.tscn" id="1_8thfo"]
+
+[node name="Equipment" unique_id=1156134869 instance=ExtResource("1_8thfo")]
+_e_shaded = false

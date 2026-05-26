@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cekkcfeurbewx"]
+
+[ext_resource type="PackedScene" uid="uid://bcjnmbcfdeupb" path="res://Framework/Scenes/Object/Comps/Movement/Comps/States_Base.tscn" id="1_b3v3e"]
+
+[node name="States" unique_id=613341567 groups=["Movement"] instance=ExtResource("1_b3v3e")]
+_e_speeds = Dictionary[StringName, float]({
+&"Stop": 0.0
+})

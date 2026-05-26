@@ -1,5 +1,5 @@
 @tool
-extends PlaneTile
+extends FWPlaneTile
 class_name PowerCableStripe
 
 signal completed()

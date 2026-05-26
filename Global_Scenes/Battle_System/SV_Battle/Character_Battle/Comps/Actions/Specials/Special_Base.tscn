@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://c7dldpydx4yw2"]
+[gd_scene format=3 uid="uid://c7dldpydx4yw2"]
 
 [ext_resource type="PackedScene" uid="uid://d1b030mi5wn3i" path="res://Global_Scenes/Battle_System/SV_Battle/Character_Battle/Comps/Actions/Action_Base.tscn" id="1_t56kh"]
 
-[node name="Special_Base" instance=ExtResource("1_t56kh")]
+[node name="Special_Base" unique_id=1844622070 instance=ExtResource("1_t56kh")]
 script = null

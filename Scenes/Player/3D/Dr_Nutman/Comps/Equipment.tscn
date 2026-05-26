@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cj1dv7xtd0pi"]
+
+[ext_resource type="PackedScene" uid="uid://dctpibkwbk8nq" path="res://Framework/Scenes/Object/Comps/3D/Equipment.tscn" id="1_2emr2"]
+[ext_resource type="PackedScene" uid="uid://xgr0cw1har28" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/1.tscn" id="2_30xts"]
+[ext_resource type="PackedScene" uid="uid://cwgru3f45ef2f" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/2.tscn" id="3_tm0wf"]
+[ext_resource type="PackedScene" uid="uid://oukfsmrxqsny" path="res://Scenes/Equipable/3D/Objects/Dr_Nutman/Head/Party_Hats/3.tscn" id="4_niu6k"]
+
+[node name="Equipment" unique_id=1156134869 instance=ExtResource("1_2emr2")]
+_e_scenes = {
+&"Feet": {},
+&"Head": {
+&"Party_Hat_1": ExtResource("2_30xts"),
+&"Party_Hat_2": ExtResource("3_tm0wf"),
+&"Party_Hat_3": ExtResource("4_niu6k")
+},
+&"Legs": {},
+&"Torso": {}
+}
+_e_shaded = true

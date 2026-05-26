@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dvcr3pbdmde27"]
+
+[ext_resource type="Script" uid="uid://4lx3seuhwrm4" path="res://Framework/Scenes/Object/Comps/3D/Behavior/States/Scripts/State_Base.gd" id="1_tn8jv"]
+
+[node name="State_Base" type="Node" unique_id=240605992]
+script = ExtResource("1_tn8jv")

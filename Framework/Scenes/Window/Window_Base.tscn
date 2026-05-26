@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://pu7yiomgntci"]
+
+[ext_resource type="Script" uid="uid://dork4uyiscejj" path="res://Framework/Scenes/Window/Scripts/Window_Base.gd" id="1_wbhgr"]
+
+[node name="Window_Base" type="Window" unique_id=583607241]
+own_world_3d = true
+oversampling_override = 1.0
+script = ExtResource("1_wbhgr")

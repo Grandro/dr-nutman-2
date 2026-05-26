@@ -1,4 +1,4 @@
-extends Static3DObject
+extends FWStatic3DObject
 class_name MapBuffinHouse3ObjectBookshelf1
 
 @onready var _a_Book_38: Node3D = get_node("Books/Book_38")

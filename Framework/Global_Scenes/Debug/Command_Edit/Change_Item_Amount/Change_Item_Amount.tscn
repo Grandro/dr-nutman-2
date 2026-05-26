@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://dsys8rn73fa24"]
+
+[ext_resource type="PackedScene" uid="uid://gi3fh4x5672i" path="res://Framework/Global_Scenes/Debug/Command_Edit/Command_Base.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://cnpcrhnjo25h1" path="res://Framework/Global_Scenes/Debug/Scenes/Value_Select/Value_Options.tscn" id="3_rjcfo"]
+[ext_resource type="Script" uid="uid://km2wb6xb2kt3" path="res://Framework/Global_Scenes/Debug/Command_Edit/Change_Item_Amount/Scripts/Change_Item_Amount.gd" id="4"]
+[ext_resource type="PackedScene" uid="uid://bxn66p8i5vfx5" path="res://Framework/Global_Scenes/Debug/Scenes/Item_Select/Item_Select.tscn" id="4_a25ma"]
+[ext_resource type="PackedScene" uid="uid://ceaqnana6y842" path="res://Framework/Global_Scenes/Debug/Scenes/Value_Select/Var_Select.tscn" id="4_ld8ju"]
+[ext_resource type="PackedScene" uid="uid://cxnqe4iwkkj12" path="res://Framework/Global_Scenes/Debug/Scenes/Value_Select/Value_Num.tscn" id="6_qhghw"]
+
+[node name="Change_Item_Amount" unique_id=1110754468 instance=ExtResource("1")]
+script = ExtResource("4")
+
+[node name="Background" parent="." index="0" unique_id=938260887]
+layout_mode = 1
+anchors_preset = 15
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Window" parent="." index="1" unique_id=2046277392]
+offset_left = -232.5
+offset_top = -102.0
+offset_right = 232.5
+offset_bottom = 102.0
+
+[node name="Margin" type="MarginContainer" parent="Window/Contents" parent_id_path=PackedInt32Array(2046277392, 1946629432) index="0" unique_id=347233068]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBox" type="VBoxContainer" parent="Window/Contents/Margin" index="0" unique_id=2088399659]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Type" parent="Window/Contents/Margin/VBox" index="0" unique_id=1414508094 instance=ExtResource("3_rjcfo")]
+layout_mode = 2
+_e_options_loc_id = "FW_DEBUG_CUTSCENES_%s"
+_e_options = ["Gain", "Lose"]
+_e_heading_loc_id = &"FW_DEBUG_CUTSCENES_TYPE"
+_e_var_select_scene = ExtResource("4_ld8ju")
+
+[node name="Item" parent="Window/Contents/Margin/VBox" index="1" unique_id=89776204 instance=ExtResource("4_a25ma")]
+layout_mode = 2
+
+[node name="Amount" parent="Window/Contents/Margin/VBox" index="2" unique_id=941315586 instance=ExtResource("6_qhghw")]
+layout_mode = 2
+_e_heading_loc_id = &"FW_DEBUG_CUTSCENES_AMOUNT"
+_e_var_select_scene = ExtResource("4_ld8ju")
+
+[node name="Value" parent="Window/Contents/Margin/VBox/Amount" index="1" unique_id=2135825100]
+max_value = 0.0
+
+[node name="HBox" type="HBoxContainer" parent="Window/Contents/Margin/VBox" index="3" unique_id=1715197916]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 10
+theme_override_constants/separation = 8
+
+[node name="OK" type="Button" parent="Window/Contents/Margin/VBox/HBox" index="0" unique_id=375013676]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+text = "OK"
+
+[node name="Cancel" type="Button" parent="Window/Contents/Margin/VBox/HBox" index="1" unique_id=1238987963]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+text = "CANCEL"
+
+[editable path="Window"]
+[editable path="Window/Contents/Margin/VBox/Amount"]

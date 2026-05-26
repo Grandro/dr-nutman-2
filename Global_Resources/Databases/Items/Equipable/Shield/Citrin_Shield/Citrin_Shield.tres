@@ -1,7 +1,7 @@
-[gd_resource type="Resource" load_steps=3 format=3 uid="uid://dmkvhq5ft4at4"]
+[gd_resource type="Resource" script_class="EquipableData" format=3 uid="uid://dmkvhq5ft4at4"]
 
 [ext_resource type="Resource" uid="uid://bn4cp7vil6knk" path="res://Global_Resources/Databases/Items/Equipable/Shield/Citrin_Shield/Stats.tres" id="1_x06hp"]
-[ext_resource type="Script" uid="uid://cbffif5a10ikr" path="res://Global_Resources/Databases/Items/Equipable_Data.gd" id="2_14eb8"]
+[ext_resource type="Script" uid="uid://cbffif5a10ikr" path="res://Framework/Global_Resources/Databases/Items/Equipable_Data.gd" id="2_14eb8"]
 
 [resource]
 script = ExtResource("2_14eb8")

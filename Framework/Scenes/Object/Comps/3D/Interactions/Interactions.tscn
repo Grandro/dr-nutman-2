@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://nr4813v0r2dg"]
+
+[ext_resource type="Script" uid="uid://dpabjn88wg3in" path="res://Framework/Scenes/Object/Comps/3D/Interactions/Scripts/Interactions.gd" id="1_nl6n8"]
+[ext_resource type="PackedScene" uid="uid://bl63t3p1cx6kk" path="res://Framework/Scenes/Object/Comps/3D/Interactions/Interaction.tscn" id="2_4hyqe"]
+
+[node name="Interactions" type="Node3D" unique_id=1328118541 groups=["Comp"]]
+script = ExtResource("1_nl6n8")
+
+[node name="1" parent="." unique_id=1097719813 instance=ExtResource("2_4hyqe")]
+
+[editable path="1"]

@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://d108mdwbxjmpx"]
+
+[ext_resource type="PackedScene" uid="uid://btb7d6ikxaqe2" path="res://Framework/Global_Scenes/Debug/Command_Edit/Match/Menu_Match.tscn" id="1_fh4pg"]
+[ext_resource type="Script" uid="uid://c6s33qftnpxgf" path="res://Framework/Global_Scenes/Debug/Command_Edit/Match/Choices/Scripts/Choices.gd" id="2_sjm6v"]
+[ext_resource type="PackedScene" uid="uid://cnpcrhnjo25h1" path="res://Framework/Global_Scenes/Debug/Scenes/Value_Select/Value_Options.tscn" id="3_skri3"]
+[ext_resource type="PackedScene" uid="uid://dfb228vssiiji" path="res://Framework/Global_Scenes/Debug/Command_Edit/Match/Choices/Dialogue.tscn" id="4_47bwf"]
+[ext_resource type="PackedScene" uid="uid://ceaqnana6y842" path="res://Framework/Global_Scenes/Debug/Scenes/Value_Select/Var_Select.tscn" id="4_bflua"]
+[ext_resource type="PackedScene" uid="uid://wmiiwjjs18ei" path="res://Framework/Global_Scenes/Debug/Scenes/Chapter_Select/Chapter_Select.tscn" id="5_ad1qi"]
+[ext_resource type="PackedScene" uid="uid://bglcnyk4hrubp" path="res://Framework/Global_Scenes/Debug/Command_Edit/Match/Choices/Part.tscn" id="5_bflua"]
+[ext_resource type="PackedScene" uid="uid://bpijw3hp7xrab" path="res://Framework/Global_Scenes/Debug/Scenes/Location_Select/Location_Select.tscn" id="6_ad1qi"]
+
+[node name="Choices" unique_id=2058202710 groups=["Translated"] instance=ExtResource("1_fh4pg")]
+script = ExtResource("2_sjm6v")
+_e_branches_editable = false
+_e_key = "Choices"
+
+[node name="VBox" type="VBoxContainer" parent="." index="0" unique_id=381999680]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="Key_Type" parent="VBox" index="0" unique_id=469907410 instance=ExtResource("3_skri3")]
+layout_mode = 2
+_e_options_loc_id = "FW_DEBUG_TYPE_%s"
+_e_options = ["Map", "Global"]
+_e_heading_loc_id = &"FW_DEBUG_CUTSCENES_KEY_TYPE"
+_e_var_select_scene = ExtResource("4_bflua")
+
+[node name="Heading" parent="VBox/Key_Type/HBox" parent_id_path=PackedInt32Array(469907410, 1270824968) index="0" unique_id=1181981547]
+text = "DEBUG_CUTSCENES_KEY_TYPE"
+
+[node name="Chapter" parent="VBox" index="1" unique_id=221931984 instance=ExtResource("5_ad1qi")]
+layout_mode = 2
+
+[node name="Location" parent="VBox" index="2" unique_id=2014628044 instance=ExtResource("6_ad1qi")]
+layout_mode = 2
+
+[node name="Dialogue" parent="VBox" index="3" unique_id=693804748 instance=ExtResource("4_47bwf")]
+layout_mode = 2
+
+[node name="Part" parent="VBox" index="4" unique_id=1748507396 instance=ExtResource("5_bflua")]
+layout_mode = 2
+_e_heading_loc_id = &""
+
+[node name="VBox" type="VBoxContainer" parent="VBox" index="5" unique_id=1282255277]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Heading" type="RichTextLabel" parent="VBox/VBox" index="0" unique_id=124074632]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+bbcode_enabled = true
+text = "{Choices}"
+fit_content = true
+scroll_active = false
+
+[node name="Choices" type="HBoxContainer" parent="VBox/VBox" index="1" unique_id=839312442]
+light_mask = 8
+visibility_layer = 8
+clip_contents = true
+layout_mode = 2
+theme_override_constants/separation = 32
+alignment = 1
+
+[editable path="VBox/Key_Type"]

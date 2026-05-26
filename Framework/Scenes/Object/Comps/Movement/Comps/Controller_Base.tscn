@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bx4rh5qdrkc85"]
+
+[ext_resource type="Script" uid="uid://f666q2cekqj4" path="res://Framework/Scenes/Object/Comps/Movement/Comps/Scripts/Controller_Base.gd" id="1_rrlmt"]
+
+[node name="Controller" type="Node" unique_id=1724524947 groups=["Comp", "Movement"]]
+script = ExtResource("1_rrlmt")

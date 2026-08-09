@@ -80,14 +80,16 @@ theme_override_constants/separation = 8
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
-bbcode_enabled = true
 text = "{Branches}"
 fit_content = true
 scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Parts" parent="Window/Contents/Margin/VBox/VBox/Branches" index="1" unique_id=1778151255 instance=ExtResource("11_aojeh")]
 layout_mode = 2
 size_flags_vertical = 3
+_e_delete_loc_id = &"FW_CONFIRM_DELETE_BRANCH"
 _e_enumerate = true
 _e_show_search = false
 _e_can_change_name = false

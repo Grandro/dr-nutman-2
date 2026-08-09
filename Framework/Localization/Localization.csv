@@ -293,7 +293,6 @@ FW_CONFIRM_DELETE_CHOICE,"Bist du sicher, dass du diese Auswahl löschen möchte
 FW_CONFIRM_DELETE_CONDITION,"Bist du sicher, dass du diese Bedingung löschen möchtest?",Are you sure you want to delete this condition?
 FW_CONFIRM_DELETE_ACTION,"Bist du sicher, dass du diese Aktion löschen möchtest?","Are you sure, you want to delete this action?"
 FW_CONFIRM_DELETE_POINT,"Bist du sicher, dass du diesen Punkt löschen möchtest?",Are you sure you want to delete this point?
-FW_CONFIRM_DELETE_COLOR,"Bist du sicher, dass du diese Farbe löschen möchtest?",Are you sure you want to delete this color?
 FW_CONFIRM_DELETE_BRANCH,"Bist du sicher, dass du diese Verzweigung löschen möchtest?",Are you sure you want to delete this branch?
 FW_SELECT_TYPE,Typ Auswählen,Select Type
 FW_PREVIEW_ALL,Vorschau Alles,Preview All
@@ -353,8 +352,11 @@ FW_POS_CENTER_BOTTOM,Zentrum Unten,Center Bottom
 FW_POS_CENTER,Zentrum,Center
 FW_POS_LEFT,Links,Left
 FW_POS_RIGHT,Rechts,Right
+FW_CONTEXT_MENU_OPTIONS_UNDO_LEFT,Rückgängig,Undo
+FW_CONTEXT_MENU_OPTIONS_UNDO_RIGHT,Strg+Z,Ctrl+Z
+FW_CONTEXT_MENU_OPTIONS_REDO_LEFT,Wiederherstellen,Redo
+FW_CONTEXT_MENU_OPTIONS_REDO_RIGHT,Strg+Shift+Z,Ctrl+Shift+Z
 FW_CONTEXT_MENU_OPTIONS_NEW_LEFT,Neu,New
-FW_CONTEXT_MENU_OPTIONS_NEW_RIGHT,Zurück,Return
 FW_CONTEXT_MENU_OPTIONS_EDIT_LEFT,Bearbeiten,Edit
 FW_CONTEXT_MENU_OPTIONS_EDIT_RIGHT,Leertaste,Space
 FW_CONTEXT_MENU_OPTIONS_CUT_LEFT,Ausschneiden,Cut

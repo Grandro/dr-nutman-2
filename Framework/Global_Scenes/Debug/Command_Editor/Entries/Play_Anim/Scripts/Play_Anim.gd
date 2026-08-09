@@ -11,7 +11,7 @@ func _update_warnings_add() -> void:
 		var type_key: StringName
 		if keep_dir:
 			anim_name = _a_data[&"Anim_Keep_Dir"][&"Value"]
-			anim_name += "_%s" % instance.comph().call_comp("Movement", &"get_dir")
+			anim_name += "_%s" % instance.comph().call_comp("Movement", &"get_dir_name")
 			type_key = &"Anim_Keep_Dir"
 		else:
 			anim_name = _a_data[&"Anim_All"][&"Value"]
@@ -37,9 +37,9 @@ func _update_display_main_base_args() -> void:
 	var text: String = object_text
 	text += ", %s" % anim_text
 	if backwards:
-		text += ", %s" % tr(&"DEBUG_CUTSCENES_BACKWARDS")
+		text += ", %s" % tr(&"FW_DEBUG_CUTSCENES_BACKWARDS")
 	text += ", %s" % speed_text
 	
 	if wait_finish:
-		text += " (%s)" % tr(&"WAIT")
+		text += " (%s)" % tr(&"FW_WAIT")
 	_a_Main.set_base_args(text)

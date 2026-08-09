@@ -39,7 +39,7 @@ func _moved_to_target() -> void:
 
 func _moved_to_org_pos() -> void:
 	_a_States.set_state(&"Idle")
-	_a_Movement.reset_dir()
+	_a_Movement.reset_dir_vec()
 	_a_Anims.update_anim()
 	_finished()
 

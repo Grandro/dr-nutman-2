@@ -9,9 +9,11 @@ class_name RailsPartBase
 func _reverse_path() -> void:
 	var curve: Curve3D = _a_Path.get_curve()
 	var points: PackedVector3Array = PackedVector3Array()
-	for i: int in curve.get_point_count():
+	var size: int = curve.get_point_count()
+	points.resize(size)
+	for i: int in size:
 		var point: Vector3 = curve.get_point_position(i)
-		points.push_back(point)
+		points[i] = point
 	curve.clear_points()
 	for i: int in range(points.size() - 1, -1, -1):
 		var point: Vector3 = points[i]

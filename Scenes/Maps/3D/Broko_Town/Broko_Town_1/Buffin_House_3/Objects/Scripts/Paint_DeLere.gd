@@ -89,22 +89,22 @@ func _ray_collided_terrain(p_pos: Vector3, p_normal: Vector3) -> void:
 		if distance > _e_ray_range:
 			_walk_to_pos(_a_final_pos)
 		else:
-			var needed_dir: StringName = Global.get_dir_to_pos(global_position, p_pos)
-			var curr_dir: StringName = _a_Movement.get_dir()
-			if needed_dir != curr_dir:
+			var needed_dir_name: StringName = Global.get_dir_name_to_pos(global_position, p_pos)
+			var curr_dir_name: StringName = _a_Movement.get_dir_name()
+			if needed_dir_name != curr_dir_name:
 				_place_canvas()
 	else:
 		_walk_to_pos(_a_final_pos)
 
 func _place_canvas() -> void:
-	var dir: StringName = Global.get_vec_dir(-_a_normal)
-	_a_Movement.set_dir(dir)
+	var dir_name: StringName = Global.get_dir_vec_name(-_a_normal)
+	_a_Movement.set_dir_name(dir_name)
 	_a_Anims.update_anim()
 	
-	var canvas_dir: StringName = Global.get_opposite_dir(dir)
+	var canvas_dir_name: StringName = Global.get_opposite_dir_name(dir_name)
 	_a_canvas.set_global_position(global_position - _a_normal)
 	_a_canvas.comph().call_comp("Display", &"update_billboard_rotation")
-	_a_canvas.comph().call_comp("Movement", &"set_dir", [canvas_dir])
+	_a_canvas.comph().call_comp("Movement", &"set_dir_name", [canvas_dir_name])
 	_a_canvas.comph().call_comp("Anims", &"update_anim")
 	_a_canvas.show()
 

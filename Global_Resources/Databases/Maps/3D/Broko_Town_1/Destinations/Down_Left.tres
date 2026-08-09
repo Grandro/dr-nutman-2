@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="DestinationData3D" format=3 uid="uid://cf0h863wbkkw4"]
+[gd_resource type="Resource" script_class="FWDestinationData3D" format=3 uid="uid://cf0h863wbkkw4"]
 
 [ext_resource type="Script" uid="uid://dd8g42vshsje" path="res://Framework/Global_Resources/Databases/Maps/3D/Destination_Data.gd" id="1_npvpy"]
 
@@ -11,5 +11,5 @@ _e_camera_limit = Dictionary[int, float]({
 2: 107.0,
 3: 118.0
 })
-_e_dir = "Right"
+_e_dir_name = &"Right"
 _e_camera_limit_active = true

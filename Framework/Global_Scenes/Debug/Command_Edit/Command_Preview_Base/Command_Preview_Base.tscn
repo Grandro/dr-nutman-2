@@ -7,6 +7,7 @@
 
 [node name="Command_Preview_Base" unique_id=737451686 instance=ExtResource("1_4xyf8")]
 script = ExtResource("2_h60y2")
+_e_dim = "2D"
 _e_free_camera_scene = null
 _e_draw_grid_scene = null
 _e_gen_path_scene = null
@@ -89,14 +90,14 @@ light_mask = 8
 visibility_layer = 8
 custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
-text = "OK"
+text = "FW_OK"
 
 [node name="Cancel" type="Button" parent="Window/Contents/Margin/HBox/Right/HBox" index="1" unique_id=2129381531]
 light_mask = 8
 visibility_layer = 8
 custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
-text = "CANCEL"
+text = "FW_CANCEL"
 
 [editable path="Window"]
 [editable path="Window/Contents/Margin/HBox/Left/Preview"]

@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://rhxd1ab58jtq" path="res://Framework/Scenes/Object/Comps/3D/Movement/Movement_Base.tscn" id="10_2pswi"]
 [ext_resource type="PackedScene" uid="uid://blot4hpw1al18" path="res://Framework/Scenes/Object/Comps/3D/Camera.tscn" id="13_a4x20"]
 [ext_resource type="PackedScene" uid="uid://boh1rwcj5rgwf" path="res://Framework/Scenes/Object/Comps/States.tscn" id="14_i4s55"]
-[ext_resource type="PackedScene" uid="uid://b1q143fixhaj5" path="res://Framework/Scenes/Object/Comps/Anims.tscn" id="17_psxyv"]
+[ext_resource type="PackedScene" uid="uid://b1q143fixhaj5" path="res://Framework/Scenes/Object/Comps/Anims_Player.tscn" id="17_psxyv"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_i4s55"]
 resource_local_to_scene = true
@@ -256,11 +256,10 @@ double_sided = true
 alpha_cut = 3
 texture = ExtResource("3_0viix")
 hframes = 4
-frame = 2
 script = ExtResource("4_lyp3u")
 
 [node name="Picture" type="Sprite3D" parent="Display" unique_id=430953896]
-transform = Transform3D(0.2, 0, 0, 0, 1, 0, 0, 0, 1, -0.07, 0.1, 0.02)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.02)
 layers = 4
 material_override = SubResource("ShaderMaterial_i4s55")
 pixel_size = 0.02
@@ -275,7 +274,7 @@ shape = SubResource("BoxShape3D_rw2yi")
 
 [node name="Interactions" parent="." unique_id=924303659 instance=ExtResource("7_3wd3y")]
 
-[node name="1" parent="Interactions" index="0"]
+[node name="1" parent="Interactions" index="0" unique_id=1097719813]
 _e_popup_pos = Vector3(0, 1.9, 0.01)
 
 [node name="Movement" parent="." unique_id=2026803822 instance=ExtResource("10_2pswi")]
@@ -298,6 +297,7 @@ _e_state = "Stop"
 
 [node name="Anims" parent="." unique_id=932384246 instance=ExtResource("17_psxyv")]
 libraries/ = SubResource("AnimationLibrary_mdeqi")
+_e_use_dir_name = true
 
 [editable path="Interactions"]
 [editable path="Interactions/1"]

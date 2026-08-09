@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bsqwudm2cdj15"]
+
+[ext_resource type="Script" uid="uid://1hp2qoh4m0y5" path="res://Framework/Scenes/Object/Comps/3D/Scripts/Model.gd" id="1_bwyxo"]
+
+[node name="Model" type="Node3D" unique_id=788495403 groups=["Comp"]]
+script = ExtResource("1_bwyxo")

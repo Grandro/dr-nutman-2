@@ -17,26 +17,13 @@ _e_options_loc_id = "FW_OPTIONS_VIDEO_VSYNC_MODE_%s"
 _e_options = [&"Disabled", &"Enabled", &"Adaptive", &"Mailbox"]
 _e_heading_loc_id = &"FW_OPTIONS_VIDEO_VSYNC_MODE"
 
-[node name="Heading" parent="HSplit/Left/VSync_Mode/HBox" parent_id_path=PackedInt32Array(992718340, 1270824968) index="0" unique_id=1181981547]
-text = "OPTIONS_VIDEO_VSYNC_MODE"
-
 [node name="Window_Size" parent="HSplit/Left" parent_id_path=PackedInt32Array(339300404) index="1" unique_id=1751223297 instance=ExtResource("3_4758q")]
 layout_mode = 2
 _e_options = [&"240x135", &"480x270", &"720x405", &"960x540", &"1280x720", &"1600x900", &"1920x1080", &"2560x1440", &"3840x2160"]
 _e_heading_loc_id = &"FW_OPTIONS_VIDEO_WINDOW_SIZE"
-
-[node name="Heading" parent="HSplit/Left/Window_Size/HBox" parent_id_path=PackedInt32Array(1751223297, 1270824968) index="0" unique_id=1181981547]
-text = "OPTIONS_VIDEO_WINDOW_SIZE"
 
 [node name="Window_Mode" parent="HSplit/Left" parent_id_path=PackedInt32Array(339300404) index="2" unique_id=1829075368 instance=ExtResource("3_4758q")]
 layout_mode = 2
 script = ExtResource("5_qma3s")
 _e_options = [&"Windowed", &"Fullscreen", &"Exclusive_Fullscreen"]
 _e_heading_loc_id = &"FW_OPTIONS_VIDEO_WINDOW_MODE"
-
-[node name="Heading" parent="HSplit/Left/Window_Mode/HBox" parent_id_path=PackedInt32Array(1829075368, 1270824968) index="0" unique_id=1181981547]
-text = "OPTIONS_VIDEO_WINDOW_MODE"
-
-[editable path="HSplit/Left/VSync_Mode"]
-[editable path="HSplit/Left/Window_Size"]
-[editable path="HSplit/Left/Window_Mode"]

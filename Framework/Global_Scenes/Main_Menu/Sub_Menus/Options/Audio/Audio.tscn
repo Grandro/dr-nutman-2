@@ -25,7 +25,7 @@ _e_heading_loc_id = &"FW_OPTIONS_AUDIO_VOLUME_MASTER"
 
 [node name="Heading" parent="HSplit/Left/Volume/Master/HBox" parent_id_path=PackedInt32Array(384814958, 1270824968) index="0" unique_id=1181981547]
 custom_minimum_size = Vector2(250, 0)
-text = "OPTIONS_AUDIO_VOLUME_MASTER"
+text = "FW_OPTIONS_AUDIO_VOLUME_MASTER"
 
 [node name="Value" parent="HSplit/Left/Volume/Master" index="1" unique_id=64840236]
 custom_minimum_size = Vector2(400, 0)
@@ -44,7 +44,7 @@ _e_heading_loc_id = &"FW_OPTIONS_AUDIO_VOLUME_BGM"
 
 [node name="Heading" parent="HSplit/Left/Volume/BGM/HBox" parent_id_path=PackedInt32Array(1772076702, 1270824968) index="0" unique_id=1181981547]
 custom_minimum_size = Vector2(250, 0)
-text = "OPTIONS_AUDIO_VOLUME_BGM"
+text = "FW_OPTIONS_AUDIO_VOLUME_BGM"
 
 [node name="Value" parent="HSplit/Left/Volume/BGM" index="1" unique_id=64840236]
 custom_minimum_size = Vector2(400, 0)
@@ -63,7 +63,7 @@ _e_heading_loc_id = &"FW_OPTIONS_AUDIO_VOLUME_BGS"
 
 [node name="Heading" parent="HSplit/Left/Volume/BGS/HBox" parent_id_path=PackedInt32Array(1244546816, 1270824968) index="0" unique_id=1181981547]
 custom_minimum_size = Vector2(250, 0)
-text = "OPTIONS_AUDIO_VOLUME_BGS"
+text = "FW_OPTIONS_AUDIO_VOLUME_BGS"
 
 [node name="Value" parent="HSplit/Left/Volume/BGS" index="1" unique_id=64840236]
 custom_minimum_size = Vector2(400, 0)
@@ -82,7 +82,7 @@ _e_heading_loc_id = &"FW_OPTIONS_AUDIO_VOLUME_SFX"
 
 [node name="Heading" parent="HSplit/Left/Volume/SFX/HBox" parent_id_path=PackedInt32Array(821451421, 1270824968) index="0" unique_id=1181981547]
 custom_minimum_size = Vector2(250, 0)
-text = "OPTIONS_AUDIO_VOLUME_SFX"
+text = "FW_OPTIONS_AUDIO_VOLUME_SFX"
 
 [node name="Value" parent="HSplit/Left/Volume/SFX" index="1" unique_id=64840236]
 custom_minimum_size = Vector2(400, 0)

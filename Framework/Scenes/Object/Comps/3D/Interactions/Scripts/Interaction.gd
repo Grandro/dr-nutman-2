@@ -2,7 +2,7 @@ extends Area3D
 class_name FWCompInteractionsInteraction3D
 
 @export_enum("Walk_In", "Press_Key") var _e_type: String = "Press_Key"
-@export var _e_dirs: Array[StringName] = [&"Down", &"Up", &"Left", &"Right"]
+@export var _e_dir_names: Array[StringName] = [&"Down", &"Up", &"Left", &"Right"]
 @export var _e_use_dir: bool = false
 @export var _e_use_transform: bool = false
 @export_enum("Exclamation", "Question", "Speech", "None") var _e_popup_type: String = "Speech"
@@ -27,7 +27,7 @@ var _a_shared: FWCompInteractionsInteractionShared
 func _ready() -> void:
 	_a_shared = _a_Shared.new(self)
 	_a_shared.set_type(_e_type)
-	_a_shared.set_dirs(_e_dirs)
+	_a_shared.set_dir_names(_e_dir_names)
 	_a_shared.set_use_dir(_e_use_dir)
 	_a_shared.set_use_transform(_e_use_transform)
 	_a_shared.set_popup_type(_e_popup_type)
@@ -63,11 +63,11 @@ func set_type(p_type: StringName) -> void:
 func get_type() -> StringName:
 	return _a_shared.get_type()
 
-func set_dirs(p_dirs: Array[StringName]) -> void:
-	_a_shared.set_dirs(p_dirs)
+func set_dir_names(p_dir_names: Array[StringName]) -> void:
+	_a_shared.set_dir_names(p_dir_names)
 
-func get_dirs() -> Array[StringName]:
-	return _a_shared.get_dirs()
+func get_dir_names() -> Array[StringName]:
+	return _a_shared.get_dir_names()
 
 func set_use_dir(p_use_dir: bool) -> void:
 	_a_shared.set_use_dir(p_use_dir)

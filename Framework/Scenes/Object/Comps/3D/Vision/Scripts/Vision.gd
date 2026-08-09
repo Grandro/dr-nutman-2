@@ -26,9 +26,9 @@ func disable() -> void:
 		_set_enabled(false)
 	_a_enabled -= 1
 
-func _update_rotation_deg(p_dir: StringName) -> void:
-	var dir_rotation_deg: Vector3 = Global.get_dir_rotation_deg(p_dir)
-	set_rotation_degrees(dir_rotation_deg)
+func _update_rotation_deg(p_dir_vec: Vector3) -> void:
+	var pos: Vector3 = get_global_position() + p_dir_vec
+	look_at(pos, Vector3.UP, true)
 
 func can_see_instance(p_instance: Node3D) -> bool:
 	var entity_pos: Vector3 = _a_entity.get_global_position()
@@ -51,8 +51,8 @@ func _set_enabled(p_enabled: bool) -> void:
 		child.set_enabled(p_enabled)
 	
 	if p_enabled:
-		var dir: StringName = _a_entity_comph.call_comp("Movement", &"get_dir")
-		_update_rotation_deg(dir)
+		var dir_vec: Vector3 = _a_entity_comph.call_comp("Movement", &"get_dir_vec")
+		_update_rotation_deg(dir_vec)
 	
 	if p_enabled == (_a_enabled > 0):
 		return
@@ -60,9 +60,9 @@ func _set_enabled(p_enabled: bool) -> void:
 	if _a_entity_comph.has_comp("Movement"):
 		var movement_comp: FWCompMovementBase3D = _a_entity_comph.get_comp("Movement")
 		if p_enabled:
-			movement_comp.dir_changed.connect(_on_Movement_dir_changed)
+			movement_comp.dir_vec_changed.connect(_on_Movement_dir_vec_changed)
 		else:
-			movement_comp.dir_changed.disconnect(_on_Movement_dir_changed)
+			movement_comp.dir_vec_changed.disconnect(_on_Movement_dir_vec_changed)
 
 func get_save_data() -> Dictionary:
 	var data: Dictionary = {}
@@ -83,5 +83,5 @@ func load_data_init() -> void:
 	
 	_set_enabled(false)
 
-func _on_Movement_dir_changed(p_dir: StringName) -> void:
-	_update_rotation_deg(p_dir)
+func _on_Movement_dir_vec_changed(p_dir_vec: Vector3) -> void:
+	_update_rotation_deg(p_dir_vec)

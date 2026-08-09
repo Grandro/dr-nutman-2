@@ -69,5 +69,8 @@ _data = {
 offset_bottom = 79.0
 script = ExtResource("2_i17hl")
 
+[node name="Name" parent="VBox" parent_id_path=PackedInt32Array(378282553) index="0" unique_id=819303924]
+text = "Name"
+
 [node name="Anims" type="AnimationPlayer" parent="." index="2" unique_id=780885185]
 libraries/ = SubResource("AnimationLibrary_3kiof")

@@ -59,10 +59,15 @@ func set_completed(p_power) -> void:
 
 func get_save_data() -> Dictionary:
 	var data: Dictionary = super()
-	data[&"Parts"] = []
-	for child: Node3D in _a_Parts.get_children():
+	
+	var parts_data: Array = []
+	var size: int = _a_Parts.get_child_count()
+	parts_data.resize(size)
+	for i: int in size:
+		var child: Node3D = _a_Parts.get_child(i)
 		var child_data = child.get_save_data()
-		data[&"Parts"].push_back(child_data)
+		parts_data[i] = child_data
+	data[&"Parts"] = parts_data
 	data[&"Area_Per_S"] = _e_area_per_s
 	data[&"Simul"] = _e_simul
 	data[&"Part_Idx"] = _a_part.get_index()

@@ -9,8 +9,8 @@ func _ready() -> void:
 
 func _on_toggled(p_toggled: bool) -> void:
 	if p_toggled:
-		set_text(tr(&"PINNED"))
+		set_text(tr(&"FW_PINNED"))
 		set_button_icon(_a_Pinned_Texture)
 	else:
-		set_text(tr(&"PIN"))
+		set_text(tr(&"FW_PIN"))
 		set_button_icon(_a_Pin_Texture)

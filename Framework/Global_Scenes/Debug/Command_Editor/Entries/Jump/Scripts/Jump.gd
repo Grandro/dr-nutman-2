@@ -11,5 +11,5 @@ func _update_display_main_base_args() -> void:
 	if point_selected:
 		text += " %s" % str(point_text)
 	if wait_finish:
-		text += " (%s)" % tr(&"WAIT")
+		text += " (%s)" % tr(&"FW_WAIT")
 	_a_Main.set_base_args(text)

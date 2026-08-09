@@ -31,8 +31,8 @@ func instantiate_container(p_key: StringName, p_modulate: Color) -> CompBalloons
 	return instance
 
 func _update_containers_pos() -> void:
-	var dir: StringName = _a_entity_comph.call_comp("Movement", &"get_dir")
-	_a_Containers.position = _e_containers_offset[dir]
+	var dir_name: StringName = _a_entity_comph.call_comp("Movement", &"get_dir_name")
+	_a_Containers.position = _e_containers_offset[dir_name]
 
 func load_data(p_data: Dictionary) -> void:
 	_update_containers_pos()

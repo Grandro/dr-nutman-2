@@ -80,10 +80,13 @@ func get_branches_margin() -> float:
 
 func get_branch_idxs() -> Array[int]:
 	var idxs: Array[int] = []
-	for parent: FWDebugCommandEditorEntryBase in _a_parents:
+	var size_: int = _a_parents.size()
+	idxs.resize(size_ + 1)
+	for i: int in size_:
+		var parent: FWDebugCommandEditorEntryBase = _a_parents[i]
 		var idx: int = parent.get_branch_idx()
-		idxs.push_back(idx)
-	idxs.push_back(_a_branch_idx)
+		idxs[i] = idx
+	idxs[size_] = _a_branch_idx
 	
 	return idxs
 

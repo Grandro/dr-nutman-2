@@ -89,10 +89,7 @@ func _set_velocity(p_velocity: Vector3) -> void:
 	_a_velocity = p_velocity
 	
 	if p_velocity.length() > 0.0:
-		var global_pos: Vector3 = _a_entity.get_global_position()
-		var pos: Vector3 = global_pos + p_velocity
-		var dir: StringName = Global.get_dir_to_pos(global_pos, pos)
-		_a_movement.set_dir(dir)
+		_a_movement.set_dir_vec(p_velocity)
 		_a_entity_comph.call_comp("Anims", &"update_anim")
 
 func get_save_data() -> Dictionary:

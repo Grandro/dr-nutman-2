@@ -2,7 +2,7 @@ extends FWExtensionBase
 class_name FWCompInteractionsInteractionShared
 
 var _a_type: StringName
-var _a_dirs: Array[StringName]
+var _a_dir_names: Array[StringName]
 var _a_use_dir: bool
 var _a_use_transform: bool
 var _a_popup_type: StringName
@@ -39,11 +39,11 @@ func set_type(p_type: StringName) -> void:
 func get_type() -> StringName:
 	return _a_type
 
-func set_dirs(p_dirs: Array[StringName]) -> void:
-	_a_dirs = p_dirs
+func set_dir_names(p_dir_names: Array[StringName]) -> void:
+	_a_dir_names = p_dir_names
 
-func get_dirs() -> Array[StringName]:
-	return _a_dirs
+func get_dir_names() -> Array[StringName]:
+	return _a_dir_names
 
 func set_use_dir(p_use_dir: bool) -> void:
 	_a_use_dir = p_use_dir

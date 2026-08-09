@@ -20,7 +20,7 @@ func _ready() -> void:
 	update_trans()
 
 func update_trans() -> void:
-	_a_Branches_Heading.set_text("[u]%s" % tr(&"DEBUG_CUTSCENES_BRANCHES"))
+	_a_Branches_Heading.set_text(tr(&"FW_DEBUG_CUTSCENES_BRANCHES"))
 
 func open(p_instance: FWDebugCommandEditorEntryBase, p_data: Dictionary, p_res_data: Dictionary) -> void:
 	super(p_instance, p_data, p_res_data)
@@ -79,9 +79,12 @@ func _branches_values_changed(p_instance: FWDebugCommandEditMenuBase) -> void:
 func _update_menu_data() -> void:
 	var menu_instance: FWDebugCommandEditMenuBase = _a_menus[_a_key]
 	var branches_values: Array = []
-	for instance: FWDebugEntryListEntry in _a_Branches.get_entries():
+	var size_: int = _a_Branches.get_entry_count()
+	branches_values.resize(size_)
+	for i: int in size_:
+		var instance: FWDebugEntryListEntry = _a_Branches.get_entry(i)
 		var value: Variant = instance.get_value()
-		branches_values.push_back(value)
+		branches_values[i] = value
 	menu_instance.set_branches_values(branches_values)
 
 func _get_save_data() -> Dictionary:

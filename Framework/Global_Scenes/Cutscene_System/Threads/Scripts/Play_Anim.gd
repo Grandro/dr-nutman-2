@@ -20,9 +20,10 @@ func _ready() -> void:
 		_a_wait_finish = cutscene_system_si.get_option_value(_a_args[&"Wait_Finish"])
 		_a_object = global_si.get_object(_a_object_key)
 		if _a_keep_dir:
-			var dir: StringName = _a_object.comph().call_comp("Movement", &"get_dir")
+			var dir_vec: Variant = _a_object.comph().call_comp("Movement", &"get_dir_vec")
+			var dir_name: StringName = Global.get_dir_vec_name(dir_vec)
 			_a_anim_name = cutscene_system_si.get_option_value(_a_args[&"Anim_Keep_Dir"])
-			_a_anim_name = "%s_%s" % [_a_anim_name, dir]
+			_a_anim_name = "%s_%s" % [_a_anim_name, dir_name]
 		else:
 			_a_anim_name = cutscene_system_si.get_option_value(_a_args[&"Anim_All"])
 		_process_command()
@@ -60,8 +61,8 @@ func _process_command() -> void:
 	
 	if _a_object.comph().has_comp("Movement"):
 		if anim_split.size() > 1 && !_a_keep_dir:
-			var dir: StringName = anim_split[-1]
-			_a_object.comph().call_comp("Movement", &"set_dir", [dir])
+			var dir_name: StringName = anim_split[-1]
+			_a_object.comph().call_comp("Movement", &"set_dir_name", [dir_name])
 	
 	if _a_wait_finish:
 		var anims_comp: FWCompAnims = _a_object.comph().get_comp("Anims")

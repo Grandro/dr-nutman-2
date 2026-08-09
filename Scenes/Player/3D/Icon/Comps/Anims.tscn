@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bmfuyg43jr180"]
 
-[ext_resource type="PackedScene" uid="uid://b1q143fixhaj5" path="res://Framework/Scenes/Object/Comps/Anims.tscn" id="1_4gfq4"]
+[ext_resource type="PackedScene" uid="uid://b1q143fixhaj5" path="res://Framework/Scenes/Object/Comps/Anims_Player.tscn" id="1_4gfq4"]
 [ext_resource type="Animation" uid="uid://d2jw867h1s31q" path="res://Scenes/Player/Anims/Icon/Global/Stop_Down.res" id="2_m42cb"]
 [ext_resource type="Animation" uid="uid://cr7ijblovsdpb" path="res://Scenes/Player/Anims/Icon/Global/Walk_Down.res" id="3_b1e7u"]
 
@@ -12,3 +12,4 @@ _data = {
 
 [node name="Anims" unique_id=1923294124 instance=ExtResource("1_4gfq4")]
 libraries/ = SubResource("AnimationLibrary_qn8ra")
+_e_use_dir_name = true

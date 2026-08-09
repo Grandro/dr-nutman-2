@@ -38,7 +38,7 @@ func display(p_key: StringName) -> void:
 	var item_texture: Texture2D = item_args.get_texture()
 	_a_Name.set_text(item_name)
 	_a_Image.set_texture(item_texture)
-	_a_Desc.set_text("[center]%s" % tr(item_desc))
+	_a_Desc.set_text(tr(item_desc))
 	
 	match item_category_type:
 		&"Consumable":

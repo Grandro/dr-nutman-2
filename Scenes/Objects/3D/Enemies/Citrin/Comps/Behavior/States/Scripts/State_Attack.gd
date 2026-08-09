@@ -15,8 +15,8 @@ func process_start() -> void:
 	var target: Node3D = _a_behavior.get_target()
 	var entity_pos: Vector3 = _a_entity.get_global_position()
 	var target_pos: Vector3 = target.get_global_position()
-	var dir: StringName = Global.get_dir_to_pos(entity_pos, target_pos)
-	_a_entity_comph.call_comp("Movement", &"set_dir", [dir])
+	var dir_vec: Vector3 = target_pos - entity_pos
+	_a_entity_comph.call_comp("Movement", &"set_dir_vec", [dir_vec])
 	_a_entity_comph.call_comp("States", &"set_state", [&"Shoot"])
 	_a_entity_comph.call_comp("Anims", &"update_anim")
 

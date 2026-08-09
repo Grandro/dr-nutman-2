@@ -61,6 +61,7 @@ size_flags_vertical = 3
 
 [node name="Desc" parent="Panel/VBox/Lvl" index="0" unique_id=1416710109]
 size_flags_vertical = 0
+text = "FW_LVL"
 
 [node name="Value" parent="Panel/VBox/Lvl" index="1" unique_id=1706544091]
 size_flags_vertical = 0
@@ -72,6 +73,9 @@ texture = SubResource("AtlasTexture_uyhc0")
 
 [node name="Anims" parent="Panel/VBox/Character/VP/Buffin_Assistant_1" index="4" unique_id=468328238]
 libraries/ = SubResource("AnimationLibrary_p7h2p")
+
+[node name="Desc" parent="Panel/VBox/Exp/Text" parent_id_path=PackedInt32Array(781234547) index="0" unique_id=772020589]
+text = "FW_LVL"
 
 [node name="Plus" parent="Panel/VBox/Exp/Text/HBox" parent_id_path=PackedInt32Array(596750729) index="0" unique_id=2022197576]
 theme_override_colors/font_color = Color(0.639216, 0.509804, 0.203922, 1)

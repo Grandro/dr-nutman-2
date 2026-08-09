@@ -7,8 +7,8 @@ func _update_display_main_base_args() -> void:
 	
 	var text: String = ""
 	if is_disabled:
-		text += tr(&"DEBUG_CUTSCENES_DISABLE")
+		text += tr(&"FW_DEBUG_CUTSCENES_DISABLE")
 	else:
-		text += tr(&"DEBUG_CUTSCENES_ENABLE")
+		text += tr(&"FW_DEBUG_CUTSCENES_ENABLE")
 	text += " %s" % object_text
 	_a_Main.set_base_args(text)

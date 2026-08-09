@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bsr3ikk0qgy16" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Objects/Flowers/Sprites/1_Spritesheet.png" id="2"]
 [ext_resource type="PackedScene" uid="uid://bblmb8yfchyxr" path="res://Framework/Scenes/Object/Comps/3D/Display.tscn" id="2_4ba3j"]
 [ext_resource type="PackedScene" uid="uid://dsp0njc065uev" path="res://Framework/Scenes/Object/Comps/3D/Collision_Shape.tscn" id="4_xyv1d"]
-[ext_resource type="PackedScene" uid="uid://b1q143fixhaj5" path="res://Framework/Scenes/Object/Comps/Anims.tscn" id="5_h7xru"]
+[ext_resource type="PackedScene" uid="uid://b1q143fixhaj5" path="res://Framework/Scenes/Object/Comps/Anims_Player.tscn" id="5_h7xru"]
 [ext_resource type="PackedScene" uid="uid://fnej1f64wfc2" path="res://Framework/Scenes/Object/Comps/3D/Nav_Obstacle.tscn" id="5_lhkud"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3kipi"]

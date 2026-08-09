@@ -135,9 +135,9 @@ func _update_key_instances(p_keyboard_layout: StringName) -> void:
 
 func _update_back_text() -> void:
 	if _a_input.is_empty():
-		_a_Back_Text.set_text(tr(&"CLOSE"))
+		_a_Back_Text.set_text(tr(&"FW_CLOSE"))
 	else:
-		_a_Back_Text.set_text(tr(&"BACK"))
+		_a_Back_Text.set_text(tr(&"FW_BACK"))
 
 func _set_focus_neighbours() -> void:
 	var hboxs_count: int = _a_Keys_HBoxs.get_child_count()

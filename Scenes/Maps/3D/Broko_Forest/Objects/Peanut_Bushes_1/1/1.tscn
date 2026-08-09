@@ -32,10 +32,10 @@ shape = SubResource("BoxShape3D_ulq3w")
 
 [node name="Interactions" parent="." unique_id=602162136 instance=ExtResource("5_ml6io")]
 
-[node name="1" parent="Interactions" index="0"]
+[node name="1" parent="Interactions" index="0" unique_id=1097719813]
 _e_popup_pos = Vector3(0, 1.2, 0.02)
 
-[node name="Collision" parent="Interactions/1" index="0"]
+[node name="Collision" parent="Interactions/1" index="0" unique_id=1431980935]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
 shape = SubResource("BoxShape3D_upaf1")
 

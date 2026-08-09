@@ -4,7 +4,6 @@ class_name FWDebugCommandEditorEntryCommand
 signal arg_focus_entered()
 signal arg_right_clicked(p_pos: Vector2)
 signal warning_pressed(p_pos: Vector2)
-signal mark_changed(p_mark: StringName)
 
 @export var _e_color: Color = Color.WHITE
 
@@ -23,17 +22,9 @@ func connect_to_editor(p_editor: FWDebugCommandEditor) -> void:
 	arg_focus_entered.connect(p_editor._on_Entry_arg_focus_entered.bind(self))
 	arg_right_clicked.connect(p_editor._on_Entry_arg_right_clicked.bind(self))
 	warning_pressed.connect(p_editor._on_Entry_warning_pressed.bind(self))
-	mark_changed.connect(p_editor._on_Entry_mark_changed.bind(self))
-
-func update_data(p_data: Dictionary) -> void:
-	_a_data = p_data
-	
-	update_warnings()
-	update_display()
 
 func update_warnings() -> void:
 	_a_warnings.clear()
-	
 	_update_warnings_add()
 	
 	var show_warning: bool = !_a_warnings.is_empty()
@@ -91,12 +82,17 @@ func _instantiate_main_arg(p_desc: String, p_color: Color) -> void:
 	_a_Main.add_args_child(instance)
 
 func set_args(p_args: Dictionary) -> void:
-	_a_args = p_args
+	_a_args = p_args.duplicate(true)
 	
 	if _a_args.has(&"Mark"):
 		set_mark(_a_args[&"Mark"])
 	else:
 		set_mark(&"Default")
+
+func set_data(p_data: Dictionary) -> void:
+	_a_data = p_data.duplicate(true)
+	update_warnings()
+	update_display()
 
 func get_data() -> Dictionary:
 	return _a_data
@@ -118,7 +114,9 @@ func get_save_data() -> Dictionary:
 func set_mark(p_mark: StringName) -> void:
 	_a_Main.set_mark(p_mark)
 	_a_args[&"Mark"] = p_mark
-	mark_changed.emit(p_mark)
+
+func get_mark() -> StringName:
+	return _a_args[&"Mark"]
 
 func get_entries_count(p_branch_idx: int = -1) -> int:
 	var entries: Array[FWDebugCommandEditorEntryBase] = get_entries(p_branch_idx)

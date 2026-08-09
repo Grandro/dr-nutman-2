@@ -1,6 +1,7 @@
 extends FWDebugCommandEditCommandBase
 class_name FWDebugCommandEditCommandPreviewBase
 
+@export_enum("2D", "3D") var _e_dim: String = "2D"
 @export var _e_free_camera_scene: PackedScene = null
 @export var _e_draw_grid_scene: PackedScene = null
 @export var _e_gen_path_scene: PackedScene = null
@@ -82,7 +83,7 @@ func _create_preview() -> void:
 		if is_gen_path():
 			_a_gen_path = _e_gen_path_scene.instantiate()
 			_a_gen_path.position.y = 0.05
-			_a_gen_path.last_dir_changed.connect(_on_Gen_Path_last_dir_changed)
+			_a_gen_path.last_dir_name_changed.connect(_on_Gen_Path_last_dir_name_changed)
 			_a_gen_path.path_updated.connect(_on_Gen_Path_path_updated)
 			_a_preview_scene.add_child(_a_gen_path)
 		_a_preview_scene.add_child(_a_draw_grid)
@@ -143,7 +144,7 @@ func _on_Preview_gui_input(p_event: InputEvent) -> void:
 		var factor: float = p_event.get_factor()
 		_a_dimensions.handle_free_camera_zoom_out(factor)
 
-func _on_Gen_Path_last_dir_changed(_p_dir: StringName) -> void:
+func _on_Gen_Path_last_dir_name_changed(_p_dir_name: StringName) -> void:
 	pass
 
 func _on_Gen_Path_path_updated() -> void:

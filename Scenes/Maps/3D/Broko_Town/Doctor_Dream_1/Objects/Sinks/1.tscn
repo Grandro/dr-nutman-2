@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://nr4813v0r2dg" path="res://Framework/Scenes/Object/Comps/3D/Interactions/Interactions.tscn" id="6_g3pi6"]
 [ext_resource type="PackedScene" uid="uid://omsbdulg45pv" path="res://Framework/Scenes/Object/Comps/3D/Popup.tscn" id="7_ioskb"]
 [ext_resource type="PackedScene" uid="uid://fnej1f64wfc2" path="res://Framework/Scenes/Object/Comps/3D/Nav_Obstacle.tscn" id="8_a4qth"]
-[ext_resource type="PackedScene" uid="uid://b1q143fixhaj5" path="res://Framework/Scenes/Object/Comps/Anims.tscn" id="8_dwlih"]
+[ext_resource type="PackedScene" uid="uid://b1q143fixhaj5" path="res://Framework/Scenes/Object/Comps/Anims_Player.tscn" id="8_dwlih"]
 [ext_resource type="PackedScene" uid="uid://b4dvlhw3jh0go" path="res://Framework/Scenes/Object/Comps/Cutscene.tscn" id="9_gli66"]
 [ext_resource type="PackedScene" uid="uid://boh1rwcj5rgwf" path="res://Framework/Scenes/Object/Comps/States.tscn" id="9_klapd"]
 [ext_resource type="PackedScene" uid="uid://drpp26gth4snn" path="res://Framework/Scenes/Object/Comps/Reference.tscn" id="9_x0jmj"]

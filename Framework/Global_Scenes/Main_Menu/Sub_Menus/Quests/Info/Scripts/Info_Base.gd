@@ -5,7 +5,7 @@ signal back_pressed()
 
 @export var _e_show_back: bool = false
 
-const _a_OBJECTIVE_SCENE_PATH: String = "res://Global_Scenes/Main_Menu/Sub_Menus/Quests/Info/Objective_%s.tscn"
+const _a_OBJECTIVE_SCENE_PATH: String = "res://Framework/Global_Scenes/Main_Menu/Sub_Menus/Quests/Info/Objective_%s.tscn"
 
 @onready var _a_Back: Button = get_node("Margin/VBox/Back")
 @onready var _a_Heading: RichTextLabel = get_node("Margin/VBox/VBox/VBox/Heading")
@@ -26,8 +26,8 @@ func display(p_key: StringName) -> void:
 	var quest_args: FWQuestData = Databases.get_data_entry(&"Quests", p_key)
 	var quest_name: String = tr(quest_args.get_name_())
 	var quest_desc: String = tr(quest_args.get_desc())
-	_a_Heading.set_text("[center]%s" % quest_name)
-	_a_Desc.set_text("[center]%s" % quest_desc)
+	_a_Heading.set_text(quest_name)
+	_a_Desc.set_text(quest_desc)
 	
 	var progress_si: Progress = Global.get_singleton(self, "Progress")
 	var quests_progress: Dictionary[StringName, FWProgressQuestBase] = progress_si.get_quests()
@@ -49,7 +49,8 @@ func _clear_objectives() -> void:
 func _instantiate_objective(p_objective_instance: FWProgressQuestObjectiveBase) -> void:
 	var data: FWObjectiveData = p_objective_instance.get_data()
 	var type: StringName = data.get_type()
-	var scene: PackedScene = load(_a_OBJECTIVE_SCENE_PATH % type)
+	var path: String = _a_OBJECTIVE_SCENE_PATH % type
+	var scene: PackedScene = load(path)
 	var instance: MainMenuSubMenuQuestsInfoObjectiveBase = scene.instantiate()
 	instance.set_objective_instance(p_objective_instance)
 	

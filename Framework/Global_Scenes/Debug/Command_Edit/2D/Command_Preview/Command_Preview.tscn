@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://ddg41g2620wlk" path="res://Framework/Global_Scenes/Debug/Command_Edit/2D/Command_Preview/Scripts/Dimensions.gd" id="3_tsy0c"]
 
 [node name="Command_Preview" unique_id=799948797 instance=ExtResource("1_ig5h5")]
+_e_dim = "2D"
 _e_free_camera_scene = ExtResource("2_ryhha")
 _e_draw_grid_scene = ExtResource("3_m00q4")
 _e_dimensions = ExtResource("3_tsy0c")

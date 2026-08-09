@@ -149,21 +149,21 @@ stream = ExtResource("4_4vmld")
 bus = &"SFX"
 
 [node name="Movement" parent="." index="8" unique_id=2026549712]
-_e_reset_dir = "Down"
+_e_reset_dir_vec = Vector3(0, 0, 1)
 
-[node name="Left_Foot" parent="Movement/Terrain/Areas" index="0" unique_id=2141416831 instance=ExtResource("5_cd8la")]
+[node name="Left_Foot" parent="Movement/Terrain/Areas" parent_id_path=PackedInt32Array(299372332, 559740516) index="0" unique_id=2141416831 instance=ExtResource("5_cd8la")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22, 0, 0)
 
-[node name="Collision" parent="Movement/Terrain/Areas/Left_Foot" index="1"]
+[node name="Collision" parent="Movement/Terrain/Areas/Left_Foot" index="1" unique_id=1853413607]
 shape = SubResource("BoxShape3D_ft5on")
 
-[node name="Right_Foot" parent="Movement/Terrain/Areas" index="1" unique_id=1643266109 instance=ExtResource("5_cd8la")]
+[node name="Right_Foot" parent="Movement/Terrain/Areas" parent_id_path=PackedInt32Array(299372332, 559740516) index="1" unique_id=1643266109 instance=ExtResource("5_cd8la")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22, 0, 0)
 
-[node name="Collision" parent="Movement/Terrain/Areas/Right_Foot" index="1"]
+[node name="Collision" parent="Movement/Terrain/Areas/Right_Foot" index="1" unique_id=1853413607]
 shape = SubResource("BoxShape3D_ft5on")
 
-[node name="Anims" parent="Movement/Terrain" parent_id_path=PackedInt32Array(299372332) index="1"]
+[node name="Anims" parent="Movement/Terrain" parent_id_path=PackedInt32Array(299372332) index="1" unique_id=1905048887]
 libraries/SV = SubResource("AnimationLibrary_y8fe6")
 
 [node name="Status" parent="." index="9" unique_id=2058228235]

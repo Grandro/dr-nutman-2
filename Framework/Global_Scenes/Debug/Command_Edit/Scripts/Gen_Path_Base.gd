@@ -1,7 +1,7 @@
 extends Node
 class_name FWDebugCommandEditGenPathBase
 
-signal last_dir_changed(p_dir: StringName)
+signal last_dir_name_changed(p_dir_name: StringName)
 signal path_updated()
 
 const a_SPRITE_PATH: String = "res://Framework/Global_Scenes/Debug/Sprites/Path/%s.png"
@@ -33,7 +33,7 @@ func update_path() -> void:
 	
 	var world: Variant = _get_world()
 	var map_rid: RID = world.get_navigation_map()
-	var from_dir: StringName = &""
+	var from_dir_name: StringName = &""
 	var path_points_size: int = _a_path_points.size()
 	for i: int in path_points_size:
 		var path_point: Variant = _a_path_points[i]
@@ -60,28 +60,28 @@ func update_path() -> void:
 				continue
 			
 			if i == path_points_size - 1 && j == nav_path_points.size() - 1:
-				_instantiate_sprite(nav_path_point, "End_%s" % from_dir, true)
+				_instantiate_sprite(nav_path_point, "End_%s" % from_dir_name, true)
 				continue
 			
 			var next_nav_path_point: Variant = nav_path_points[j + 1]
 			var approach: Variant = next_nav_path_point - nav_path_point
 			while !_is_approach_at_target(approach):
 				var curr_point: Variant = next_nav_path_point - approach
-				var dir: StringName = _get_next_dir(approach)
-				approach = _adjust_approach(approach, dir)
+				var dir_name: StringName = _get_next_dir_name(approach)
+				approach = _adjust_approach(approach, dir_name)
 				
 				if _is_approach_at_target(approach):
-					last_dir_changed.emit(dir)
+					last_dir_name_changed.emit(dir_name)
 				
-				if from_dir == &"":
-					var sprite_name: String = "Start_%s" % dir
+				if from_dir_name == &"":
+					var sprite_name: String = "Start_%s" % dir_name
 					_instantiate_sprite(curr_point, sprite_name, true)
 				else:
-					var sprite_name: String = "%s_To_%s" % [from_dir, dir]
+					var sprite_name: String = "%s_To_%s" % [from_dir_name, dir_name]
 					var main: bool = curr_point == nav_mesh_path_point
 					_instantiate_sprite(curr_point, sprite_name, main)
 				
-				from_dir = Global.get_opposite_dir(dir)
+				from_dir_name = Global.get_opposite_dir_name(dir_name)
 	
 	path_updated.emit()
 
@@ -106,7 +106,7 @@ func _reset() -> void:
 	_a_sprites.clear()
 	_a_sprite_names.clear()
 
-func _adjust_approach(_p_approach, _p_dir: StringName):
+func _adjust_approach(_p_approach, _p_dir_name: StringName):
 	pass
 
 func set_start(p_start: Variant) -> void:
@@ -150,7 +150,7 @@ func _get_nav_path_points(p_from: Variant, p_to: Variant, p_map_rid: RID) -> Arr
 	
 	return nav_path_points
 
-func _get_next_dir(_p_approach) -> StringName:
+func _get_next_dir_name(_p_approach) -> StringName:
 	return &""
 
 func _is_approach_at_target(_p_approach) -> bool:

@@ -134,9 +134,9 @@ func _update_player(p_data: FWDestinationDataBase) -> void:
 	var global_si: Global = Global.get_singleton(self, "Global")
 	var player: Node = global_si.get_object(&"Player")
 	var pos: Variant = p_data.get_pos()
-	var dir: StringName = p_data.get_dir()
+	var dir_name: StringName = p_data.get_dir_name()
 	player.set_position(pos)
-	player.comph().call_comp("Movement", &"set_dir", [dir])
+	player.comph().call_comp("Movement", &"set_dir_name", [dir_name])
 	player.comph().call_comp("Anims", &"update_anim")
 
 func _set_new_scene(p_scene: PackedScene) -> void:

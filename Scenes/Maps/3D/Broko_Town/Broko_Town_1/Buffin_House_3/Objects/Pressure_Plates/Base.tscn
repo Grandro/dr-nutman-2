@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cagsy144d5116" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Buffin_House_3/Objects/Pressure_Plates/Scripts/Base.gd" id="1_2121t"]
 [ext_resource type="PackedScene" uid="uid://bblmb8yfchyxr" path="res://Framework/Scenes/Object/Comps/3D/Display.tscn" id="2_2121t"]
-[ext_resource type="PackedScene" uid="uid://b1q143fixhaj5" path="res://Framework/Scenes/Object/Comps/Anims.tscn" id="4_1yqaq"]
+[ext_resource type="PackedScene" uid="uid://b1q143fixhaj5" path="res://Framework/Scenes/Object/Comps/Anims_Player.tscn" id="4_1yqaq"]
 [ext_resource type="PackedScene" uid="uid://cfdwl620axohy" path="res://Framework/Scenes/Object/Comps/3D/Audio.tscn" id="4_rh72r"]
 [ext_resource type="PackedScene" uid="uid://dllj5lbxwqy17" path="res://Framework/Scenes/Pausable_Audio/3D/Pausable_Audio.tscn" id="5_chk81"]
 [ext_resource type="PackedScene" uid="uid://boh1rwcj5rgwf" path="res://Framework/Scenes/Object/Comps/States.tscn" id="5_p2e6j"]

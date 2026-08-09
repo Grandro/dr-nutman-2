@@ -324,7 +324,6 @@ _e_can_jump = false
 
 [node name="Background" type="MeshInstance3D" parent="." index="0" unique_id=863076697]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, -0.01, 4.5)
-visible = false
 mesh = SubResource("PlaneMesh_lcpt4")
 
 [node name="Floor_Tile_1" parent="Terrain/Below" parent_id_path=PackedInt32Array(1078580167) index="0" unique_id=2419681 instance=ExtResource("3_3sr2c")]
@@ -779,6 +778,7 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 
 
 [node name="1" parent="Objects/Thermometer/Interactions" parent_id_path=PackedInt32Array(1906962903, 631922061) index="0" unique_id=1097719813]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0.75)
+_e_dir_names = Array[StringName]([&"Up"])
 _e_popup_pos = Vector3(0, 0.75, 0.01)
 _e_speech_bubble_pos = Vector3(0, 1.6, 0.01)
 
@@ -790,6 +790,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9, 0.76, 1)
 
 [node name="1" parent="Objects/Stethoscope/Interactions" parent_id_path=PackedInt32Array(910965320, 573568776) index="0" unique_id=1097719813]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0.75)
+_e_dir_names = Array[StringName]([&"Up"])
 _e_dialogue_args = Array[StringName]([&"Stethoscope_1_1"])
 
 [node name="Collision" parent="Objects/Stethoscope/Interactions/1" index="0" unique_id=1431980935]
@@ -800,6 +801,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.56, 1.56, 7.502)
 
 [node name="1" parent="Objects/Glass_Bowl_1/Interactions" parent_id_path=PackedInt32Array(1402000207, 839374948) index="0" unique_id=1097719813]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.25, 0.25)
+_e_dir_names = Array[StringName]([&"Up"])
 _e_dialogue_args = Array[StringName]([&"Glass_Bowl_1_1"])
 
 [node name="Collision" parent="Objects/Glass_Bowl_1/Interactions/1" index="0" unique_id=1431980935]
@@ -813,6 +815,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.75, 1.5, 0.001)
 
 [node name="1" parent="Objects/Thermometer_Sign/Interactions" parent_id_path=PackedInt32Array(417527607, 491324723) index="0" unique_id=1097719813]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.25, 0.25)
+_e_dir_names = Array[StringName]([&"Up"])
 _e_popup_pos = Vector3(0, 1, 0.01)
 _e_dialogue_args = Array[StringName]([&"Thermometer_Sign_1_1"])
 
@@ -824,6 +827,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 7.5)
 
 [node name="1" parent="Objects/Sink_1/Interactions" parent_id_path=PackedInt32Array(2059681396, 1971752762) index="0" unique_id=1097719813]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.25)
+_e_dir_names = Array[StringName]([&"Up"])
 _e_popup_pos = Vector3(0, 2.24, 0.01)
 _e_dialogue_args = Array[StringName]([&"Sink_1_1"])
 
@@ -844,6 +848,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 1.5, 7.001)
 
 [node name="1" parent="Objects/Pic_Arrow_Right/Interactions" parent_id_path=PackedInt32Array(548839846, 1984951369) index="0" unique_id=1097719813]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.25, 0.25)
+_e_dir_names = Array[StringName]([&"Up"])
 _e_popup_pos = Vector3(0, 0.8, 0.01)
 _e_dialogue_args = Array[StringName]([&"Pic_Arrow_Right_1_1"])
 
@@ -857,7 +862,7 @@ _e_destination = Array[StringName]([&"Dr_Nutman_Home_1", &"Start"])
 [node name="1" parent="Objects/Teleporters/Teleporter_Door_1/Interactions" parent_id_path=PackedInt32Array(377588431, 873204466) index="0" unique_id=1097719813]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0.5)
 _e_type = "Walk_In"
-_e_dirs = Array[StringName]([&"Down"])
+_e_dir_names = Array[StringName]([&"Down"])
 _e_popup_type = "None"
 
 [node name="Collision" parent="Objects/Teleporters/Teleporter_Door_1/Interactions/1" index="0" unique_id=1431980935]

@@ -73,7 +73,7 @@ func _on_Duplicate_pressed() -> void:
 
 func _on_Delete_pressed() -> void:
 	var messages: Messages = Debug.get_messages()
-	messages.show_proceed(tr(&"CONFIRM_DELETE_KEY"), _CB_Messages_Proceed)
+	messages.show_proceed(tr(&"FW_CONFIRM_DELETE_KEY"), _CB_Messages_Proceed)
 
 func _CB_Messages_Proceed(p_response: StringName) -> void:
 	if p_response == &"Yes":

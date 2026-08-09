@@ -1,7 +1,7 @@
 extends Control
 class_name FWProgressQuestInfo
 
-const _a_CHAPTER_NAME_LOC_ID: String = "FW_PROGRESS_%s_NAME"
+const _a_CHAPTER_NAME_LOC_ID: String = "PROGRESS_%s_NAME"
 const _a_TYPE_LOC_ID: String = "FW_PROGRESS_QUEST_TYPE_%s"
 const _a_STATUS_LOC_ID: String = "FW_PROGRESS_QUEST_INFO_STATUS_%s"
 

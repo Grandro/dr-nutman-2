@@ -439,22 +439,22 @@ shape = SubResource("BoxShape3D_wa743")
 
 [node name="Interactions" parent="." unique_id=1812786831 instance=ExtResource("5_cfkrr")]
 
-[node name="1" parent="Interactions" index="0"]
+[node name="1" parent="Interactions" index="0" unique_id=1097719813]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0.375)
-_e_dirs = Array[StringName]([&"Up"])
+_e_dir_names = Array[StringName]([&"Up"])
 _e_popup_pos = Vector3(0, 3.6, 0.01)
 _e_cutscene_args = Array[Array]([["Setup_1", "NutOS"]])
 
-[node name="Collision" parent="Interactions/1" index="0"]
+[node name="Collision" parent="Interactions/1" index="0" unique_id=1431980935]
 shape = SubResource("BoxShape3D_yhnwh")
 
 [node name="2" parent="Interactions" unique_id=1333247642 instance=ExtResource("20_fraru")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1, 0.25, 0.375)
-_e_dirs = Array[StringName]([&"Up"])
+_e_dir_names = Array[StringName]([&"Up"])
 _e_popup_pos = Vector3(-1.05, 1.5, 0.03)
 _e_cutscene_args = Array[Array]([["Setup_1", "Disk_Drive"]])
 
-[node name="Collision" parent="Interactions/2" index="0"]
+[node name="Collision" parent="Interactions/2" index="0" unique_id=1431980935]
 shape = SubResource("BoxShape3D_7ve6h")
 
 [node name="Popup" parent="." unique_id=1798099131 instance=ExtResource("6_iosl5")]

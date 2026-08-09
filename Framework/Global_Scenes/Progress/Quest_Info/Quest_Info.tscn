@@ -120,6 +120,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Info" type="MarginContainer" parent="." unique_id=152698084]
+modulate = Color(1, 1, 1, 0)
 self_modulate = Color(1, 1, 1, 0)
 light_mask = 8
 visibility_layer = 8

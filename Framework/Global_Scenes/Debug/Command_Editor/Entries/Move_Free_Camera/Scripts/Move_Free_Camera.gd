@@ -47,7 +47,7 @@ func _update_display_main_base_args() -> void:
 				text += ", %s" % trans_type_text
 				text += ", %s" % ease_type_text
 				if wait_finish:
-					text += " (%s)" % tr(&"WAIT")
+					text += " (%s)" % tr(&"FW_WAIT")
 			else:
 				var nav_mesh_path_points: Dictionary = _a_data[&"Gen_Path"][&"Nav_Mesh_Path_Points"]
 				if nav_mesh_path_points.is_empty():
@@ -69,7 +69,7 @@ func _update_display_main_base_args() -> void:
 				text += ", %s" % trans_type_text
 				text += ", %s" % ease_type_text
 				if wait_finish:
-					text += " (%s)" % tr(&"WAIT")
+					text += " (%s)" % tr(&"FW_WAIT")
 			else:
 				text += end_object_text
 		
@@ -94,7 +94,7 @@ func _update_display_main_base_args() -> void:
 				text += ", %s" % trans_type_text
 				text += ", %s" % ease_type_text
 				if wait_finish:
-					text += " (%s)" % tr(&"WAIT")
+					text += " (%s)" % tr(&"FW_WAIT")
 	_a_Main.set_base_args(text)
 
 func _update_display_main_args() -> void:

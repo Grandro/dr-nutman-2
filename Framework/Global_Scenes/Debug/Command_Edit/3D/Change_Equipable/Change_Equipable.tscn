@@ -12,12 +12,13 @@ _e_draw_grid_scene = null
 
 [node name="Object" parent="Window/Contents/Margin/HBox/Right/Options/VBox" parent_id_path=PackedInt32Array(213120298) index="0" unique_id=2124627041]
 _e_needed_comps = Array[String](["Reference", "Equipment"])
+_e_allowed_classes = Array[StringName]([&"Node"])
 
 [node name="Type" parent="Window/Contents/Margin/HBox/Right/Options/VBox" parent_id_path=PackedInt32Array(213120298) index="1" unique_id=118786566 instance=ExtResource("2_4xsd4")]
 layout_mode = 2
 _e_options_loc_id = "FW_DEBUG_CUTSCENES_TYPE_%s"
 _e_options = ["Equip", "Unequip"]
-_e_heading_loc_id = "DEBUG_CUTSCENES_TYPE"
+_e_heading_loc_id = &"FW_DEBUG_CUTSCENES_TYPE"
 _e_var_select_scene = ExtResource("3_077uf")
 
 [node name="Equipable_Group" parent="Window/Contents/Margin/HBox/Right/Options/VBox" parent_id_path=PackedInt32Array(213120298) index="2" unique_id=1236635088 instance=ExtResource("4_7h64c")]

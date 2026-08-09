@@ -76,9 +76,8 @@ func _input(p_event: InputEvent) -> void:
 		if p_event is InputEventJoypadButton || p_event is InputEventJoypadMotion:
 			use_joy = true
 	
-	var changed_use_joy: bool = use_joy != _a_use_joy
-	_a_use_joy = use_joy
-	if changed_use_joy:
+	if use_joy != _a_use_joy:
+		_a_use_joy = use_joy
 		use_joy_changed.emit()
 	
 	if p_event.is_action_pressed(&"Toggle_Fullscreen"):
@@ -670,19 +669,19 @@ func get_text_color_for_bg(p_bg_color: Color) -> Color:
 	else:
 		return Color.BLACK
 
-func get_dir_to_pos(p_from: Variant, p_to: Variant) -> StringName:
-	var diff: Variant = p_to - p_from
-	var dir: StringName = get_vec_dir(diff)
+func get_dir_name_to_pos(p_from: Variant, p_to: Variant) -> StringName:
+	var dir_vec: Variant = p_to - p_from
+	var dir_name: StringName = get_dir_vec_name(dir_vec)
 	
-	return dir
+	return dir_name
 
-func get_vec_dir(p_vec: Variant) -> StringName:
+func get_dir_vec_name(p_dir_vec: Variant) -> StringName:
 	var ordinate: float
-	if p_vec is Vector2: ordinate = p_vec.y
-	elif p_vec is Vector3: ordinate = p_vec.z
+	if p_dir_vec is Vector2: ordinate = p_dir_vec.y
+	elif p_dir_vec is Vector3: ordinate = p_dir_vec.z
 	
-	if abs(p_vec.x) > abs(ordinate):
-		if p_vec.x < 0.0:
+	if abs(p_dir_vec.x) > abs(ordinate):
+		if p_dir_vec.x < 0.0:
 			return &"Left"
 		else:
 			return &"Right"
@@ -692,41 +691,85 @@ func get_vec_dir(p_vec: Variant) -> StringName:
 		else:
 			return &"Down"
 
-func get_dir_rotation_deg(p_dir: StringName) -> Vector3:
-	match p_dir:
-		&"Down": return Vector3(0.0, 0.0, 0.0)
-		&"Left": return Vector3(0.0, -90.0, 0.0)
-		&"Right": return Vector3(0.0, 90.0, 0.0)
-		&"Up": return Vector3(0.0, 180.0, 0.0)
+func get_dir_vec_rotated(p_dir_vec: Variant, p_degrees: float) -> Variant:
+	if p_dir_vec is Vector2: return get_dir_vec_rotated_2D(p_dir_vec, p_degrees)
+	elif p_dir_vec is Vector3: return get_dir_vec_rotated_3D(p_dir_vec, p_degrees)
+	
+	return null
+
+func get_dir_vec_rotated_2D(p_dir_vec: Vector2, p_degrees: float) -> Vector2:
+	return p_dir_vec.rotated(deg_to_rad(p_degrees))
+
+func get_dir_vec_rotated_3D(p_dir_vec: Vector3, p_degrees: float) -> Vector3:
+	return p_dir_vec.rotated(Vector3.UP, deg_to_rad(p_degrees))
+
+func get_dir_name_vec(p_dir_name: StringName, p_dim: StringName) -> Variant:
+	match p_dim:
+		&"2D": return get_dir_name_vec_2D(p_dir_name)
+		&"3D": return get_dir_name_vec_3D(p_dir_name)
+	
+	return null
+
+func get_dir_name_vec_2D(p_dir_name: StringName) -> Vector2:
+	match p_dir_name:
+		&"Down": return Vector2.DOWN
+		&"Left": return Vector2.LEFT
+		&"Right": return Vector2.RIGHT
+		&"Up": return Vector2.UP
+	
+	return Vector2.ZERO
+
+func get_dir_name_vec_3D(p_dir_name: StringName) -> Vector3:
+	match p_dir_name:
+		&"Down": return Vector3.BACK
+		&"Left": return Vector3.LEFT
+		&"Right": return Vector3.RIGHT
+		&"Up": return Vector3.FORWARD
 	
 	return Vector3.ZERO
 
-func get_opposite_dir(p_dir: StringName) -> StringName:
-	match p_dir:
+func get_dir_vec_rotation_deg(p_dir_vec: Variant) -> Variant:
+	if p_dir_vec is Vector2: return get_dir_vec_rotation_deg_2D(p_dir_vec)
+	elif p_dir_vec is Vector3: return get_dir_vec_rotation_deg_3D(p_dir_vec)
+	
+	return null
+
+func get_dir_vec_rotation_deg_2D(p_dir_vec: Vector2) -> float:
+	var angle: float = atan2(p_dir_vec.x, p_dir_vec.y)
+	var rotation: float = fposmod(rad_to_deg(angle) + 180.0, 360.0)
+	return rotation
+
+func get_dir_vec_rotation_deg_3D(p_dir_vec: Vector3) -> float:
+	var angle: float = atan2(p_dir_vec.x, p_dir_vec.z)
+	var rotation: float = fposmod(rad_to_deg(angle) + 180.0, 360.0)
+	return rotation
+
+func get_opposite_dir_name(p_dir_name: StringName) -> StringName:
+	match p_dir_name:
 		&"Down": return &"Up"
 		&"Left": return &"Right"
 		&"Right": return &"Left"
 		&"Up": return &"Down"
 	
-	return ""
+	return &""
 
-func get_dir_rotated(p_dir: StringName, p_degrees: float) -> StringName:
-	var dirs: Array[StringName] = [&"Up", &"Right", &"Down", &"Left"]
-	var dir_idx: int = dirs.find(p_dir)
+func get_dir_name_rotated(p_dir_name: StringName, p_degrees: float) -> StringName:
+	var dir_names: Array[StringName] = [&"Up", &"Right", &"Down", &"Left"]
+	var dir_name_idx: int = dir_names.find(p_dir_name)
 	var offset: int = int(snappedf(p_degrees, 45.0) / 90.0)
-	var new_idx: int = (dir_idx + offset) % 4
-	var dir: StringName = dirs[new_idx]
+	var new_idx: int = (dir_name_idx + offset) % 4
+	var dir_name: StringName = dir_names[new_idx]
 	
-	return dir
+	return dir_name
 
-func get_rndm_dir(p_excluded: StringName = &"") -> StringName:
-	var dirs: Array[StringName] = [&"Down", &"Left", &"Right", &"Up"]
-	if !p_excluded.is_empty():
-		dirs.erase(p_excluded)
-	var idx: int = randi() % dirs.size()
-	var dir: StringName = dirs[idx]
+func get_rndm_dir_name(p_excluded: StringName = &"") -> StringName:
+	var dir_names: Array[StringName] = [&"Down", &"Left", &"Right", &"Up"]
+	if p_excluded != &"":
+		dir_names.erase(p_excluded)
+	var idx: int = randi() % dir_names.size()
+	var dir_name: StringName = dir_names[idx]
 	
-	return dir
+	return dir_name
 
 func get_rndm_point_circle(p_min_radius: float, p_max_radius: float) -> Vector2:
 	var r2_max: float = p_max_radius**2
@@ -746,7 +789,7 @@ func get_nodes_in_group_vp(p_vp: Viewport, p_group: StringName) -> Array[Node]:
 	return nodes
 
 func get_objects_vp(p_vp: Viewport, p_needed_comps: Array[String] = [],
-					p_allowed_classes: Array[String] = ["Node"]) -> Array[Node]:
+					p_allowed_classes: Array[StringName] = [&"Node"]) -> Array[Node]:
 	var objects: Array[Node] = []
 	var instances: Array[Node] = get_tree().get_nodes_in_group(&"Object")
 	for instance: Node in instances:
@@ -761,7 +804,7 @@ func get_objects_vp(p_vp: Viewport, p_needed_comps: Array[String] = [],
 				break
 		
 		var class_allowed: bool = false
-		for class_: String in p_allowed_classes:
+		for class_: StringName in p_allowed_classes:
 			if instance.is_class(class_):
 				class_allowed = true
 				break

@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="ContextMenuOptionEntryData" format=3 uid="uid://ddhufmydg13jt"]
+[gd_resource type="Resource" script_class="FWContextMenuOptionEntryData" format=3 uid="uid://ddhufmydg13jt"]
 
 [ext_resource type="Script" uid="uid://v0jwe56fkhao" path="res://Framework/Scenes/Context_Menu/Option_Entry_Data.gd" id="1_ggcyi"]
 
 [resource]
 script = ExtResource("1_ggcyi")
+_e_loc_id_left = &"CONTEXT_MENU_OPTIONS_OPEN_LEFT"

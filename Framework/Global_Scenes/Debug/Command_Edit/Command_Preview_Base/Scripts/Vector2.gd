@@ -23,9 +23,8 @@ func set_y_value(p_value: float) -> void:
 	_a_Y.set_value(p_value)
 
 func get_value() -> Variant:
-	var x = _a_X.get_value()
-	var y = _a_Y.get_value()
-	
+	var x: float = _a_X.get_value()
+	var y: float = _a_Y.get_value()
 	return Vector2(x, y)
 
 func set_x_max(p_max: float) -> void:

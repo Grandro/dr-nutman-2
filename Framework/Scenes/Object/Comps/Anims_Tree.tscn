@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dpl31ekgpkwqj"]
+
+[ext_resource type="PackedScene" uid="uid://b1q143fixhaj5" path="res://Framework/Scenes/Object/Comps/Anims_Player.tscn" id="1_n24br"]
+[ext_resource type="Script" uid="uid://eqxo1mw05c6t" path="res://Framework/Scenes/Object/Comps/Scripts/Anims_Tree.gd" id="2_bbk0j"]
+
+[node name="Anims" unique_id=1923294124 instance=ExtResource("1_n24br")]
+script = ExtResource("2_bbk0j")
+
+[node name="Tree" type="AnimationTree" parent="." index="0" unique_id=1510526316]
+root_node = NodePath("../..")
+anim_player = NodePath("..")

@@ -34,10 +34,15 @@ func get_save_data() -> Dictionary:
 	var data: Dictionary = {}
 	data[&"Active"] = _a_active
 	data[&"Completed_Objectives_Amount"] = _a_completed_objectives_amount
-	data[&"Objectives"] = []
-	for child: FWProgressQuestObjectiveBase in _a_Objectives.get_children():
+	
+	var objectives_data: Array[Dictionary] = []
+	var size: int = _a_Objectives.get_child_count()
+	objectives_data.resize(size)
+	for i: int in size:
+		var child: FWProgressQuestObjectiveBase = _a_Objectives.get_child(i)
 		var child_data: Dictionary = child.get_save_data()
-		data[&"Objectives"].push_back(child_data)
+		objectives_data[i] = child_data
+	data[&"Objectives"] = objectives_data
 	
 	return data
 

@@ -84,7 +84,7 @@ func _on_Entity_Movement_Nav_Agent_path_finished() -> void:
 			_moved_to_target()
 		&"Move_To_Org_Pos":
 			_a_Entity_States.set_state(&"Idle")
-			_a_Entity_Movement.reset_dir()
+			_a_Entity_Movement.reset_dir_vec()
 			_a_Entity_Anims.update_anim()
 			_finished()
 

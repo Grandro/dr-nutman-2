@@ -6,8 +6,12 @@
 
 [node name="Change_Args" unique_id=2100617059 instance=ExtResource("1_nk64v")]
 
-[node name="Value" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="3" unique_id=96440392 instance=ExtResource("5_3x3k8")]
+[node name="Object" parent="Window/Contents/Margin/HBox/Right/Options/VBox" parent_id_path=PackedInt32Array(213120298) index="0" unique_id=2124627041]
+_e_allowed_classes = Array[StringName]([&"Node"])
+
+[node name="Value" parent="Window/Contents/Margin/HBox/Right/Options/VBox" parent_id_path=PackedInt32Array(213120298) index="3" unique_id=96440392 instance=ExtResource("5_3x3k8")]
 layout_mode = 2
+_e_heading_loc_id = &"FW_DEBUG_CUTSCENES_VALUE"
 _e_var_select_scene = ExtResource("3_f1ru8")
 
 [editable path="Window"]

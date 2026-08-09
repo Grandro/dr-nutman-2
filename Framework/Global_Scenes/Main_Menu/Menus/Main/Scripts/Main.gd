@@ -21,7 +21,7 @@ func _on_Back_select_pressed() -> void:
 
 func _on_Titlescreen_pressed() -> void:
 	var messages_si: Messages = Global.get_singleton(self, "Messages")
-	messages_si.show_proceed(tr(&"MAIN_MENU_UNSAVEDWARNING"), _CB_Messages_Proceed)
+	messages_si.show_proceed(tr(&"FW_MAIN_MENU_UNSAVEDWARNING"), _CB_Messages_Proceed)
 	set_process_unhandled_input(false)
 
 func _CB_Messages_Proceed(p_response: StringName) -> void:

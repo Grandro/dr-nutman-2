@@ -12,10 +12,14 @@
 [node name="Move_Free_Camera" unique_id=1880921617 instance=ExtResource("1_66w8d")]
 script = ExtResource("2_cj65f")
 
+[node name="Path_Points" parent="Window/Contents/Margin/HBox" parent_id_path=PackedInt32Array(2048728742) index="1" unique_id=1464022180]
+_e_delete_loc_id = &""
+
 [node name="Type" parent="Window/Contents/Margin/HBox/Right/Options/VBox" parent_id_path=PackedInt32Array(213120298) index="0" unique_id=1424686676 instance=ExtResource("3_tmgas")]
 layout_mode = 2
 _e_options_loc_id = "FW_DEBUG_CUTSCENES_TYPE_%s"
 _e_options = ["Move_Route", "Object_To_Object", "Object_To_Point"]
+_e_heading_loc_id = &"FW_DEBUG_CUTSCENES_TYPE"
 _e_var_select_scene = ExtResource("4_fub15")
 
 [node name="Interpolate" parent="Window/Contents/Margin/HBox/Right/Options/VBox" parent_id_path=PackedInt32Array(213120298) index="1" unique_id=631131622 instance=ExtResource("5_2quld")]
@@ -52,13 +56,12 @@ _e_options = ["In", "Out", "In_Out", "Out_In"]
 _e_var_select_scene = ExtResource("4_fub15")
 
 [node name="Object" parent="Window/Contents/Margin/HBox/Right/Options/VBox" parent_id_path=PackedInt32Array(213120298) index="5" unique_id=1444006414]
-_e_allowed_classes = Array[String](["Node2D"])
-_e_heading_loc_id = &""
+_e_allowed_classes = Array[StringName]([&"Node2D"])
 
 [node name="End_Object" parent="Window/Contents/Margin/HBox/Right/Options/VBox" parent_id_path=PackedInt32Array(213120298) index="6" unique_id=1129069744 instance=ExtResource("6_2b0xk")]
 layout_mode = 2
 _e_needed_comps = Array[String](["Reference", "Camera"])
-_e_heading_loc_id = &""
+_e_allowed_classes = Array[StringName]([&"Node"])
 
 [node name="Point" parent="Window/Contents/Margin/HBox/Right/Options/VBox" parent_id_path=PackedInt32Array(213120298) index="7" unique_id=1559759245 instance=ExtResource("7_3l6x6")]
 layout_mode = 2

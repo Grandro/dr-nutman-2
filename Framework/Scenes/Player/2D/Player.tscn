@@ -54,7 +54,7 @@
 [ext_resource type="PackedScene" uid="uid://k6yc8nn2jeg2" path="res://Framework/Scenes/Object/Comps/2D/Movement/Comps/Gravity.tscn" id="52_0pabn"]
 [ext_resource type="PackedScene" uid="uid://5rytcm7ifelj" path="res://Framework/Scenes/Object/Comps/2D/Movement/Comps/Rigid_Collision.tscn" id="53_i6ygr"]
 [ext_resource type="PackedScene" uid="uid://dvw3wf4ce4o3s" path="res://Framework/Scenes/Object/Comps/2D/Nav_Obstacle.tscn" id="54_3patw"]
-[ext_resource type="PackedScene" uid="uid://b1q143fixhaj5" path="res://Framework/Scenes/Object/Comps/Anims.tscn" id="55_f4hjb"]
+[ext_resource type="PackedScene" uid="uid://b1q143fixhaj5" path="res://Framework/Scenes/Object/Comps/Anims_Player.tscn" id="55_f4hjb"]
 [ext_resource type="Animation" uid="uid://x1upswcqqtab" path="res://Scenes/Player/Anims/Dr_Nutman/Global/Celebrate_Down.res" id="56_7lvbj"]
 [ext_resource type="Animation" uid="uid://d4husa4a8hcr5" path="res://Scenes/Player/Anims/Dr_Nutman/Global/Fall_Down.res" id="57_b05l1"]
 [ext_resource type="Animation" uid="uid://0uc4c8hb1hnw" path="res://Scenes/Player/Anims/Dr_Nutman/Global/Fall_Left.res" id="58_5jkww"]
@@ -269,6 +269,7 @@ libraries/SV = SubResource("AnimationLibrary_rjoxu")
 [node name="Anims" parent="." unique_id=1567534224 instance=ExtResource("55_f4hjb")]
 libraries/ = SubResource("AnimationLibrary_1vfd5")
 libraries/SV = SubResource("AnimationLibrary_6bb04")
+_e_use_dir_name = true
 
 [node name="Cutscene" parent="." unique_id=1926252922 instance=ExtResource("89_c6w7y")]
 

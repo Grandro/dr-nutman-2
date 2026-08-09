@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ContextMenuOptionEntryData" format=3 uid="uid://bx1v5eqaabbbt"]
+[gd_resource type="Resource" script_class="FWContextMenuOptionEntryData" format=3 uid="uid://bx1v5eqaabbbt"]
 
 [ext_resource type="Resource" uid="uid://d2jkprbiyn0xw" path="res://Scenes/NutOS/Content/Taskbar/Options/Leave.tres" id="1_2e5kr"]
 [ext_resource type="Resource" uid="uid://bnpgsxh0hgvwc" path="res://Scenes/NutOS/Content/Taskbar/Options/Shutdown.tres" id="2_iupug"]
@@ -6,6 +6,7 @@
 
 [resource]
 script = ExtResource("3_autwf")
+_e_loc_id_left = &"CONTEXT_MENU_OPTIONS_SHUTDOWN_OR_LEAVE_LEFT"
 _e_options = Dictionary[StringName, ExtResource("3_autwf")]({
 &"Leave": ExtResource("1_2e5kr"),
 &"Shutdown": ExtResource("2_iupug")

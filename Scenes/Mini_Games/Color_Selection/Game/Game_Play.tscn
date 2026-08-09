@@ -16,11 +16,11 @@
 [node name="Game_Play" unique_id=157924025 instance=ExtResource("1_xvrek")]
 visible = false
 script = ExtResource("2_v1vva")
-_e_camera_start_pos = null
-_e_camera_end_pos = null
 _e_total_spurt = null
 _e_check_end_time = null
 _e_force_end_time = null
+_e_camera_start_pos = null
+_e_camera_end_pos = null
 
 [node name="Background" parent="Canvas_1" parent_id_path=PackedInt32Array(384142803) index="0" unique_id=192544596]
 visible = false
@@ -102,8 +102,8 @@ stretch_mode = 5
 [node name="Text" type="RichTextLabel" parent="Canvas_2/Result/HBox/VBox/HBox_1/Bust" index="1" unique_id=377571532]
 light_mask = 8
 visibility_layer = 8
-clip_contents = false
 custom_minimum_size = Vector2(200, 0)
+clip_contents = false
 layout_mode = 2
 bbcode_enabled = true
 text = "MINIGAMES_COLOR_SELECTION_ISTHATFAVCOLOR"
@@ -129,7 +129,7 @@ light_mask = 8
 visibility_layer = 8
 custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
-text = "YES"
+text = "FW_YES"
 
 [node name="Play_Again" type="Button" parent="Canvas_2/Result/HBox/VBox/HBox_2" index="1" unique_id=1463487440]
 light_mask = 8

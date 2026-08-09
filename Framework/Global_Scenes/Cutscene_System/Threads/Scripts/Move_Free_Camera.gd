@@ -44,9 +44,12 @@ func _prep_ready_move_route() -> void:
 	var grid_start: Variant = _a_args[&"Grid"][&"Start"]
 	var gen_points: Array = _a_args[&"Gen_Path"][&"Gen_Points"]
 	if _a_interpolate:
-		for point: Variant in gen_points:
+		var gen_points_size: int = gen_points.size()
+		_a_pos.resize(gen_points_size)
+		for i: int in gen_points_size:
+			var point: Variant = gen_points[i]
 			var pos: Variant = Global.grid_point_to_pos(point, grid_step, grid_start)
-			_a_pos.push_back(pos)
+			_a_pos[i] = pos
 	else:
 		var last_point: Variant = gen_points[-1]
 		var pos: Variant = Global.grid_point_to_pos(last_point, grid_step, grid_start)

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ContextMenuOptionEntryData" format=3 uid="uid://duicl4g8h75yq"]
+[gd_resource type="Resource" script_class="FWContextMenuOptionEntryData" format=3 uid="uid://duicl4g8h75yq"]
 
 [ext_resource type="Resource" uid="uid://dyb7014ndlq60" path="res://Framework/Global_Scenes/Debug/Command_Editor/Options/Change_Mark_Default.tres" id="1_wsnjt"]
 [ext_resource type="Script" uid="uid://v0jwe56fkhao" path="res://Framework/Scenes/Context_Menu/Option_Entry_Data.gd" id="1_ydhff"]
@@ -6,6 +6,7 @@
 
 [resource]
 script = ExtResource("1_ydhff")
+_e_loc_id_left = &"FW_CONTEXT_MENU_OPTIONS_CHANGE_MARK_LEFT"
 _e_options = Dictionary[StringName, ExtResource("1_ydhff")]({
 &"Change_Mark_Default": ExtResource("1_wsnjt"),
 &"Change_Mark_Test": ExtResource("2_nqt1p")

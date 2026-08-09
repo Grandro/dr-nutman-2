@@ -12,7 +12,7 @@ func _ready() -> void:
 		child.progress_focus_entered.connect(_on_Unselectable_focus_entered)
 		child.progress_gui_input.connect(_on_Unselectable_gui_input)
 	
-	_a_Else.set_base_desc(tr(&"DEBUG_CUTSCENES_ELSE"))
+	_a_Else.set_base_desc(tr(&"FW_DEBUG_CUTSCENES_ELSE"))
 	_a_Else.hide()
 
 func update_display() -> void:
@@ -57,7 +57,7 @@ func _update_warnings_add_script(p_data: Dictionary) -> void:
 
 func _update_display_main_base_args() -> void:
 	var option_key: StringName = _a_data[&"Key"]
-	var text: String = "%s: " % tr("DEBUG_CUTSCENES_%s" % option_key.to_upper())
+	var text: String = "%s: " % tr("FW_DEBUG_CUTSCENES_%s" % option_key.to_upper())
 	var menu_data: Dictionary = _a_data[&"Menus"][option_key]
 	match option_key:
 		&"Items":
@@ -74,7 +74,7 @@ func _update_display_main_base_args() -> void:
 				&"Value":
 					var amount_min_text: String = _get_display_text(amount_args[&"Min"])
 					var amount_max_text: String = _get_display_text(amount_args[&"Max"])
-					text += ", %s " % tr(&"DEBUG_CUTSCENES_AMOUNT")
+					text += ", %s " % tr(&"FW_DEBUG_CUTSCENES_AMOUNT")
 					text += "%s - %s" % [amount_min_text, amount_max_text]
 		
 		&"Script":

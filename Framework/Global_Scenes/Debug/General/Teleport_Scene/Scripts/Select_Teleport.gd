@@ -16,7 +16,7 @@ func _ready() -> void:
 	hide()
 
 func update_trans() -> void:
-	_a_Teleportations_Heading.set_text("[center][u]%s" % tr(&"DEBUG_GENERAL_TELEPORTATIONS"))
+	_a_Teleportations_Heading.set_text(tr(&"FW_DEBUG_GENERAL_TELEPORTATIONS"))
 
 func open() -> void:
 	show()

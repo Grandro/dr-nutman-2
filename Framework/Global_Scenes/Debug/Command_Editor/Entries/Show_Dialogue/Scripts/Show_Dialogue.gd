@@ -44,5 +44,5 @@ func _update_display_main_base_args() -> void:
 	text += ", %s" % end_idx_text
 	text += ", %s" % layer_text
 	if fade_out:
-		text += ", %s" % tr(&"DEBUG_CUTSCENES_FADE_OUT")
+		text += ", %s" % tr(&"FW_DEBUG_CUTSCENES_FADE_OUT")
 	_a_Main.set_base_args(text)

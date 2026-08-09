@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://deh11u32lcoj" path="res://Framework/Global_Scenes/Debug/Command_Edit/3D/Command_Preview/Vector3.tscn" id="3_iji14"]
 
 [node name="Command_Preview" unique_id=1064534402 instance=ExtResource("1_r2uk0")]
+_e_dim = "3D"
 _e_free_camera_scene = ExtResource("2_wj3gl")
 _e_draw_grid_scene = ExtResource("3_5k2g2")
 _e_dimensions = ExtResource("3_04jnv")

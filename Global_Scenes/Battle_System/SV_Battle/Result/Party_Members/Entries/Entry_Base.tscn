@@ -97,7 +97,7 @@ layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 28
-text = "LVL"
+text = "FW_LVL"
 vertical_alignment = 1
 
 [node name="Value" type="Label" parent="Panel/VBox/Lvl" unique_id=1706544091]
@@ -150,7 +150,7 @@ visibility_layer = 8
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
-text = "EXP"
+text = "FW_LVL"
 
 [node name="HBox" type="HBoxContainer" parent="Panel/VBox/Exp/Text" unique_id=596750729]
 light_mask = 8

@@ -41,8 +41,8 @@ func _update_display_main_base_args() -> void:
 			var end_text: String = _get_display_text(args[&"End"])
 			var step_text: String = _get_display_text(args[&"Step"])
 			text += "%s = %s" % [idx_text, start_text]
-			text += ", %s: %s" % [tr(&"DEBUG_CUTSCENES_END"), end_text]
-			text += ", %s: %s" % [tr(&"DEBUG_CUTSCENES_STEP"), step_text]
+			text += ", %s: %s" % [tr(&"FW_DEBUG_CUTSCENES_END"), end_text]
+			text += ", %s: %s" % [tr(&"FW_DEBUG_CUTSCENES_STEP"), step_text]
 	_a_Main.set_base_args(text)
 
 func _update_branches() -> void:

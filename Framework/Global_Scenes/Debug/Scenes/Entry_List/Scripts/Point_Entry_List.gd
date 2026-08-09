@@ -19,8 +19,11 @@ func instantiate_entry_from_data(p_data: Dictionary) -> FWDebugEntryListPointEnt
 
 func get_points() -> Array:
 	var points: Array = []
-	for instance: FWDebugEntryListPointEntry in get_entries():
+	var size_: int = get_entry_count()
+	points.resize(size_)
+	for i: int in size_:
+		var instance: FWDebugEntryListPointEntry = get_entry(i)
 		var point: Variant = instance.get_point()
-		points.push_back(point)
+		points[i] = point
 	
 	return points

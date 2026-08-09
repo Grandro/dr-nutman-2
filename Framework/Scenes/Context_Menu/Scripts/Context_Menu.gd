@@ -13,9 +13,6 @@ signal option_selected(p_option: StringName)
 
 var _a_HSep_Scene: PackedScene = preload("uid://ibd2khf2xhvp")
 
-const _a_OPTION_LEFT_LOC_ID: String = "FW_CONTEXT_MENU_OPTIONS_%s_LEFT"
-const _a_OPTION_RIGHT_LOC_ID: String = "FW_CONTEXT_MENU_OPTIONS_%s_RIGHT"
-
 @onready var _a_Content: PanelContainer = get_node("Content")
 @onready var _a_Entries: VBoxContainer = get_node("Content/Entries")
 
@@ -83,15 +80,15 @@ func _create_options() -> void:
 			
 			var show_left: bool = args.get_show_left()
 			if show_left:
-				var left_text: String = tr(_a_OPTION_LEFT_LOC_ID % option.to_upper())
-				instance.set_left_text.call_deferred(left_text)
+				var loc_id_left: StringName = args.get_loc_id_left()
+				instance.set_left_text.call_deferred(tr(loc_id_left))
 			else:
 				instance.hide_left.call_deferred()
 			
 			var show_right: bool = args.get_show_right()
 			if show_right:
-				var right_text: String = tr(_a_OPTION_RIGHT_LOC_ID % option.to_upper())
-				instance.set_right_text.call_deferred(right_text)
+				var loc_id_right: StringName = args.get_loc_id_right()
+				instance.set_right_text.call_deferred(tr(loc_id_right))
 			else:
 				instance.hide_right.call_deferred()
 			
@@ -126,18 +123,11 @@ func set_option_disabled(p_option: StringName, p_disabled: bool) -> void:
 		var instance: FWContextMenuOptionEntry = _a_options[p_option]
 		instance.set_disabled(p_disabled)
 
-func set_options_disabled_all(p_disabled: bool, p_exclude = []) -> void:
-	set_options_disabled(_e_options_order, p_disabled, false, p_exclude)
-
-func set_options_disabled(p_options: Array[StringName], p_disabled: bool, p_flip_others: bool, p_exclude = []) -> void:
-	for option: StringName in _e_options_order:
+func set_options_disabled(p_options: Array[StringName], p_disabled: bool, p_exclude: Array[StringName] = []) -> void:
+	for option: StringName in p_options:
 		if p_exclude.has(option):
 			continue
-		
-		if p_options.has(option):
-			set_option_disabled(option, p_disabled)
-		elif p_flip_others:
-			set_option_disabled(option, !p_disabled)
+		set_option_disabled(option, p_disabled)
 
 func set_option_visible(p_option: StringName, p_visible: bool) -> void:
 	var args: FWContextMenuOptionEntryData = _e_options[p_option]
@@ -156,6 +146,9 @@ func set_options(p_options: Dictionary[StringName, FWContextMenuOptionEntryData]
 func set_options_order(p_options_order: Array[StringName]) -> void:
 	_e_options_order = p_options_order
 
+func get_option_names() -> Array[StringName]:
+	return _e_options_order
+
 func set_theme(p_theme: Theme) -> void:
 	_a_Content.set_theme(p_theme)
 
@@ -168,7 +161,6 @@ func has_rect_point(p_point: Vector2) -> bool:
 	for child: Control in _a_Entries.get_children():
 		if child is HSeparator:
 			continue
-		
 		if child.has_sub_menu_rect_point(p_point):
 			has_point = true
 			break

@@ -4,3 +4,6 @@
 
 [node name="State_Base" type="Node" unique_id=240605992]
 script = ExtResource("1_tn8jv")
+
+[node name="Process_Time" type="Timer" parent="." unique_id=1641200947]
+one_shot = true

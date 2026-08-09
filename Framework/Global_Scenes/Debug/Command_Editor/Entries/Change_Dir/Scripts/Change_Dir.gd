@@ -25,8 +25,8 @@ func _update_display_main_base_args() -> void:
 	var loc_id: StringName
 	match type:
 		&"Fixed_Dir":
-			var dir: String = _get_display_text(_a_data[&"Args"][&"Dir"])
-			args_text += "(%s)" % dir
+			var dir_name: String = _get_display_text(_a_data[&"Args"][&"Dir"])
+			args_text += "(%s)" % dir_name
 		
 		&"Look_Degrees":
 			var degrees: String = _get_display_text(_a_data[&"Args"][&"Degrees"])

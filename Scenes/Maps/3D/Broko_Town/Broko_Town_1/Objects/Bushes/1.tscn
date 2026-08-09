@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bblmb8yfchyxr" path="res://Framework/Scenes/Object/Comps/3D/Display.tscn" id="1_b3ilg"]
 [ext_resource type="Texture2D" uid="uid://c2mb1cd7bns4q" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Objects/Bushes/Sprites/Spritesheet_1.png" id="2"]
-[ext_resource type="PackedScene" uid="uid://b1q143fixhaj5" path="res://Framework/Scenes/Object/Comps/Anims.tscn" id="3_adhdh"]
+[ext_resource type="PackedScene" uid="uid://b1q143fixhaj5" path="res://Framework/Scenes/Object/Comps/Anims_Player.tscn" id="3_adhdh"]
 
 [sub_resource type="Animation" id="Animation_y5vhm"]
 resource_name = "Idle"

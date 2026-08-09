@@ -27,9 +27,12 @@ func _open_load(p_data: Dictionary, _p_res_data: Dictionary) -> void:
 
 func _get_save_data() -> Dictionary:
 	var data: Dictionary = {}
-	data[&"Text"] = []
-	for i: int in _a_Text.get_line_count():
+	var text: Array[PackedStringArray] = []
+	var line_count: int = _a_Text.get_line_count()
+	text.resize(line_count)
+	for i: int in line_count:
 		var wrapped_text: PackedStringArray = _a_Text.get_line_wrapped_text(i)
-		data[&"Text"].push_back(wrapped_text)
+		text[i] = wrapped_text
+	data[&"Text"] = text
 	
 	return data

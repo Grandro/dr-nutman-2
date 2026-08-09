@@ -1,4 +1,5 @@
 id,de,en
+CONFIRM_DELETE_COLOR,"Bist du sicher, dass du diese Farbe löschen möchtest?",Are you sure you want to delete this color?
 STATE_STOP,Stopp,Stop
 STATE_IDLE,Idle,Idle
 STATE_WALK,Laufen,Walk

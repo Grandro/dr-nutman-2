@@ -11,16 +11,19 @@ _e_selected_color = Color(1, 0.84, 0, 1)
 _e_normal_color = Color(1, 1, 1, 1)
 _e_gen_path_scene = ExtResource("2_7egaj")
 
-[node name="Path_Points" parent="Window/Contents/Margin/HBox" index="1" unique_id=1464022180 instance=ExtResource("3_s4btc")]
+[node name="Path_Points" parent="Window/Contents/Margin/HBox" parent_id_path=PackedInt32Array(2048728742) index="1" unique_id=1464022180 instance=ExtResource("3_s4btc")]
 layout_mode = 2
 size_flags_horizontal = 3
-_e_delete_loc_id = "CONFIRM_DELETE_POINT"
+_e_delete_loc_id = &"FW_CONFIRM_DELETE_POINT"
 _e_show_duplicate = false
 _e_confirm_delete = false
 _e_show_search = false
 _e_show_add = false
 _e_can_change_name = false
 _e_ensure_unique_names = false
+
+[node name="Object" parent="Window/Contents/Margin/HBox/Right/Options/VBox" parent_id_path=PackedInt32Array(213120298) index="0" unique_id=1444006414]
+_e_allowed_classes = Array[StringName]([&"Node"])
 
 [editable path="Window"]
 [editable path="Window/Contents/Margin/HBox/Left/Preview"]

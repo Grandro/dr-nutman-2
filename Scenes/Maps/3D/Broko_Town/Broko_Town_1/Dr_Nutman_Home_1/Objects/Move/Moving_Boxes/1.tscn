@@ -28,13 +28,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.375, -0.1)
 shape = SubResource("BoxShape3D_t2gr1")
 
 [node name="Interactions" parent="." unique_id=1710535885 instance=ExtResource("4_aoo26")]
+_e_needs_look_at = true
 
-[node name="1" parent="Interactions" index="0"]
+[node name="1" parent="Interactions" index="0" unique_id=1097719813]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
 _e_popup_pos = Vector3(0, 1.08, 0.01)
 _e_dialogue_args = Array[StringName]([&"Moving_Box_1_1"])
 
-[node name="Collision" parent="Interactions/1" index="0"]
+[node name="Collision" parent="Interactions/1" index="0" unique_id=1431980935]
 shape = SubResource("BoxShape3D_75qxd")
 
 [node name="Popup" parent="." unique_id=458713792 instance=ExtResource("5_0ltye")]

@@ -12,12 +12,13 @@ script = ExtResource("2_vmnnu")
 
 [node name="Object" parent="Window/Contents/Margin/HBox/Right/Options/VBox" parent_id_path=PackedInt32Array(213120298) index="0" unique_id=1444006414]
 _e_needed_comps = Array[String](["Reference", "Movement"])
+_e_allowed_classes = Array[StringName]([&"Node"])
 
 [node name="Type" parent="Window/Contents/Margin/HBox/Right/Options/VBox" parent_id_path=PackedInt32Array(213120298) index="1" unique_id=1348198578 instance=ExtResource("2_r7lq6")]
 layout_mode = 2
 _e_options_loc_id = "FW_DEBUG_CUTSCENES_TYPE_%s"
 _e_options = ["Fixed_Dir", "Look_At", "Look_Away", "Look_Degrees"]
-_e_heading_loc_id = "DEBUG_CUTSCENES_TYPE"
+_e_heading_loc_id = &"FW_DEBUG_CUTSCENES_TYPE"
 _e_var_select_scene = ExtResource("3_gdi4u")
 
 [node name="Dir" type="VBoxContainer" parent="Window/Contents/Margin/HBox/Right/Options/VBox" parent_id_path=PackedInt32Array(213120298) index="2" unique_id=106982652]
@@ -29,7 +30,7 @@ layout_mode = 2
 layout_mode = 2
 _e_options_loc_id = "FW_DEBUG_CUTSCENES_DIR_%s"
 _e_options = ["Down", "Left", "Right", "Up"]
-_e_heading_loc_id = "DEBUG_CUTSCENES_DIR"
+_e_heading_loc_id = &"FW_DEBUG_CUTSCENES_DIR"
 _e_var_select_scene = ExtResource("3_gdi4u")
 
 [node name="Look" type="HBoxContainer" parent="Window/Contents/Margin/HBox/Right/Options/VBox/Dir" index="1" unique_id=1191373371]
@@ -42,12 +43,13 @@ theme_override_constants/separation = 8
 layout_mode = 2
 _e_options_loc_id = "FW_DEBUG_CUTSCENES_%s"
 _e_options = ["Object", "Point"]
-_e_heading_loc_id = "DEBUG_CUTSCENES_TYPE"
+_e_heading_loc_id = &"FW_DEBUG_CUTSCENES_TYPE"
 _e_var_select_scene = ExtResource("3_gdi4u")
 
 [node name="Object" parent="Window/Contents/Margin/HBox/Right/Options/VBox/Dir/Look" index="1" unique_id=546296988 instance=ExtResource("4_pshul")]
 layout_mode = 2
 size_flags_horizontal = 3
+_e_allowed_classes = Array[StringName]([&"Node"])
 
 [node name="Point" parent="Window/Contents/Margin/HBox/Right/Options/VBox/Dir/Look" index="2" unique_id=2004240538 instance=ExtResource("6_e70ne")]
 layout_mode = 2

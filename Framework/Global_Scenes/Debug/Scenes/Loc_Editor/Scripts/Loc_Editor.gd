@@ -45,7 +45,7 @@ func _ready() -> void:
 	Debug.loc_data_loaded.connect(_on_Debug_loc_data_loaded)
 	
 	_a_Loc_ID.set_message_translation(false)
-	_a_Heading.set_text("[u]%s" % tr(&"DEBUG_TRANS"))
+	_a_Heading.set_text("[u]%s" % tr(&"FW_DEBUG_TRANS"))
 	
 	set_mode(_e_mode)
 	_create_loc_id_types()
@@ -55,7 +55,7 @@ func _ready() -> void:
 	hide()
 
 func update_trans() -> void:
-	_a_Heading.set_text("[u]%s" % tr(&"DEBUG_TRANS"))
+	_a_Heading.set_text("[u]%s" % tr(&"FW_DEBUG_TRANS"))
 
 func open(p_group: StringName = &"", p_loc_id: StringName = &"") -> void:
 	_update_groups()

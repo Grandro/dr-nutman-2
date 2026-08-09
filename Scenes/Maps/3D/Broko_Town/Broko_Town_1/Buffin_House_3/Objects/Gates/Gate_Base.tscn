@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bblmb8yfchyxr" path="res://Framework/Scenes/Object/Comps/3D/Display.tscn" id="2_xwodq"]
 [ext_resource type="PackedScene" uid="uid://dsp0njc065uev" path="res://Framework/Scenes/Object/Comps/3D/Collision_Shape.tscn" id="3_qp7oj"]
 [ext_resource type="PackedScene" uid="uid://cfdwl620axohy" path="res://Framework/Scenes/Object/Comps/3D/Audio.tscn" id="4_dktm6"]
-[ext_resource type="PackedScene" uid="uid://b1q143fixhaj5" path="res://Framework/Scenes/Object/Comps/Anims.tscn" id="5_g3yj5"]
+[ext_resource type="PackedScene" uid="uid://b1q143fixhaj5" path="res://Framework/Scenes/Object/Comps/Anims_Player.tscn" id="5_g3yj5"]
 [ext_resource type="PackedScene" uid="uid://boh1rwcj5rgwf" path="res://Framework/Scenes/Object/Comps/States.tscn" id="5_qp7oj"]
 [ext_resource type="PackedScene" uid="uid://de2jy2ixhp2mw" path="res://Framework/Scenes/Object/Comps/Save.tscn" id="6_dktm6"]
 

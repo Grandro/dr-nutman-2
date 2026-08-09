@@ -32,7 +32,7 @@ func update_types(p_type_keys: Dictionary[Variant.Type, String], p_editable: boo
 		
 		var instance: Button = _a_Type_Entry_Scene.instantiate()
 		instance.pressed.connect(_on_Remove_Item_pressed)
-		instance.set_text(tr(&"DEBUG_VALUE_EDIT_REMOVE_ITEM"))
+		instance.set_text(tr(&"FW_DEBUG_VALUE_EDIT_REMOVE_ITEM"))
 		_a_Types_VBox.add_child(instance)
 
 func _on_Select_pressed() -> void:

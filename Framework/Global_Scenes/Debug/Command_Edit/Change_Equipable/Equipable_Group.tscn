@@ -11,4 +11,4 @@ _e_heading_loc_id = &"FW_DEBUG_CUTSCENES_EQUIPABLE_GROUP"
 _e_var_select_scene = ExtResource("3_cn372")
 
 [node name="Heading" parent="HBox" parent_id_path=PackedInt32Array(1270824968) index="0" unique_id=1181981547]
-text = "DEBUG_CUTSCENES_EQUIPABLE_GROUP"
+text = "FW_DEBUG_CUTSCENES_EQUIPABLE_GROUP"

@@ -59,14 +59,14 @@ light_mask = 8
 visibility_layer = 8
 custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
-text = "OK"
+text = "FW_OK"
 
 [node name="Cancel" type="Button" parent="Window/Contents/Margin/VBox/HBox" index="1" unique_id=2025070650]
 light_mask = 8
 visibility_layer = 8
 custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
-text = "CANCEL"
+text = "FW_CANCEL"
 
 [editable path="Window"]
 [editable path="Window/Contents/Margin/VBox/Amount"]

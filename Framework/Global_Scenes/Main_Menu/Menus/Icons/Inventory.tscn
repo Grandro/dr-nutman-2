@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cvvtbog5w6a0b" path="res://Framework/Global_Scenes/Main_Menu/Menus/Icons/Menu_Icon.tscn" id="1"]
 [ext_resource type="PackedScene" uid="uid://cbwvbrff3tof0" path="res://Framework/Global_Scenes/Main_Menu/Sub_Menus/Inventory/Inventory_Menu.tscn" id="2_6onik"]
 [ext_resource type="Shader" uid="uid://cv6h04um0pgyr" path="res://Framework/Global_Resources/Materials/2D/Shaders/Outline.gdshader" id="4"]
-[ext_resource type="Texture2D" uid="uid://cn133o3nv3ip8" path="res://Icon.svg" id="4_3yhb5"]
+[ext_resource type="Texture2D" uid="uid://bw8l4pjcfvduw" path="res://Global_Resources/Sprites/Items/Cookie.png" id="4_3yhb5"]
 
 [sub_resource type="ShaderMaterial" id="1"]
 shader = ExtResource("4")

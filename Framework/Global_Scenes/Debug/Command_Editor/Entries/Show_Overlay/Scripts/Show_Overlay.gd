@@ -25,7 +25,7 @@ func _update_display_main_base_args() -> void:
 	var mask_file: String = mask_path.get_file()
 	var anim_text: String = _get_display_text(_a_data[&"Anim"])
 	
-	var text: String = tr("DEBUG_CUTSCENES_%s" % type.to_upper())
+	var text: String = tr("FW_DEBUG_CUTSCENES_%s" % type.to_upper())
 	match type:
 		&"Trans":
 			text += ", %s" % mask_file

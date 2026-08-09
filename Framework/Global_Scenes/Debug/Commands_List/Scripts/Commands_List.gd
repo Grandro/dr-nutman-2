@@ -26,13 +26,13 @@ func update_trans() -> void:
 	_update_heading_trans()
 
 func _update_heading_trans() -> void:
-	_a_Movement_Heading.set_text("[u]%s" % tr(&"FW_DEBUG_CUTSCENES_COMMANDS_LIST_MOVEMENT"))
-	_a_Camera_Heading.set_text("[u]%s" % tr(&"FW_DEBUG_CUTSCENES_COMMANDS_LIST_CAMERA"))
-	_a_Flow_Control_Heading.set_text("[u]%s" % tr(&"FW_DEBUG_CUTSCENES_COMMANDS_LIST_FLOW_CONTROL"))
-	_a_Items_Heading.set_text("[u]%s" % tr(&"FW_DEBUG_CUTSCENES_COMMANDS_LIST_ITEMS"))
-	_a_Timing_Heading.set_text("[u]%s" % tr(&"FW_DEBUG_CUTSCENES_COMMANDS_LIST_TIMING"))
-	_a_Audio_Heading.set_text("[u]%s" % tr(&"FW_DEBUG_CUTSCENES_COMMANDS_LIST_AUDIO"))
-	_a_Misc_Heading.set_text("[u]%s" % tr(&"FW_DEBUG_CUTSCENES_COMMANDS_LIST_MISC"))
+	_a_Movement_Heading.set_text(tr(&"FW_DEBUG_CUTSCENES_COMMANDS_LIST_MOVEMENT"))
+	_a_Camera_Heading.set_text(tr(&"FW_DEBUG_CUTSCENES_COMMANDS_LIST_CAMERA"))
+	_a_Flow_Control_Heading.set_text(tr(&"FW_DEBUG_CUTSCENES_COMMANDS_LIST_FLOW_CONTROL"))
+	_a_Items_Heading.set_text(tr(&"FW_DEBUG_CUTSCENES_COMMANDS_LIST_ITEMS"))
+	_a_Timing_Heading.set_text(tr(&"FW_DEBUG_CUTSCENES_COMMANDS_LIST_TIMING"))
+	_a_Audio_Heading.set_text(tr(&"FW_DEBUG_CUTSCENES_COMMANDS_LIST_AUDIO"))
+	_a_Misc_Heading.set_text(tr(&"FW_DEBUG_CUTSCENES_COMMANDS_LIST_MISC"))
 
 func open() -> void:
 	_a_Window.show()

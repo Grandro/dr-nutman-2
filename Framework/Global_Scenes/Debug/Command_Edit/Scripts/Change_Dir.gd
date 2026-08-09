@@ -36,7 +36,7 @@ func update_grid() -> void:
 	super()
 	if _a_Point.is_point_visible():
 		_a_dimensions.update_point()
-		_update_object_dir()
+		_update_object_dir_vec()
 
 func open(p_instance: FWDebugCommandEditorEntryBase, p_data: Dictionary, p_res_data: Dictionary) -> void:
 	super(p_instance, p_data, p_res_data)
@@ -78,21 +78,21 @@ func _create_objects() -> void:
 	_a_Look_Object.set_viewport(_a_preview_vp)
 	_a_Look_Object.update_options()
 
-func _update_object_dir() -> void:
+func _update_object_dir_vec() -> void:
 	var instance: Node = _a_Object.get_selected_value()
 	var type: StringName = _a_Type.get_selected_key()
-	var revert_dir: Variant = _get_object_revert_property_value(instance, &"Movement", &"_a_shared._a_dir")
-	if revert_dir == null:
-		revert_dir = _a_object.comph().call_comp("Movement", &"get_dir")
-	var dir: StringName
+	var revert_dir_vec: Variant = _get_object_revert_property_value(instance, &"Movement", &"_a_shared._a_dir_vec")
+	if revert_dir_vec == null:
+		revert_dir_vec = _a_object.comph().call_comp("Movement", &"get_dir_vec")
+	var dir_vec: Variant
 	match type:
 		&"Fixed_Dir":
-			dir = _a_Fixed_Dir.get_selected_key()
+			var dir_name: StringName = _a_Fixed_Dir.get_selected_key()
+			dir_vec = Global.get_dir_name_vec(dir_name, _e_dim)
 		
 		&"Look_Degrees":
 			var degrees: float = _a_Look_Degrees.get_selected_key()
-			dir = revert_dir
-			dir = Global.get_dir_rotated(dir, degrees)
+			dir_vec = Global.get_dir_vec_rotated(revert_dir_vec, degrees)
 		
 		_:
 			# Look_At, Look_Away
@@ -102,38 +102,38 @@ func _update_object_dir() -> void:
 				&"Object":
 					var look_instance: Node = _a_Look_Object.get_selected_value()
 					var end_pos: Variant = look_instance.get_position()
-					dir = Global.get_dir_to_pos(start_pos, end_pos)
+					dir_vec = end_pos - start_pos
 					if type == &"Look_Away":
-						dir = Global.get_opposite_dir(dir)
+						dir_vec = Global.get_dir_vec_rotated(dir_vec, 180.0)
 				
 				&"Point":
 					if _a_Point.is_point_visible():
 						var point: Variant = _a_Point.get_point_vec()
 						var end_pos: Variant = _grid_point_to_pos(point)
-						dir = Global.get_dir_to_pos(start_pos, end_pos)
+						dir_vec = end_pos - start_pos
 					else:
-						dir = revert_dir
+						dir_vec = revert_dir_vec
 					
 					if type == &"Look_Away":
-						dir = Global.get_opposite_dir(dir)
+						dir_vec = Global.get_dir_vec_rotated(dir_vec, 180.0)
 	
-	_set_object_revert_property_value(_a_object, &"Movement", &"_a_shared._a_dir", revert_dir)
-	instance.comph().call_comp("Movement", &"set_dir", [dir])
+	_set_object_revert_property_value(_a_object, &"Movement", &"_a_shared._a_dir_vec", revert_dir_vec)
+	instance.comph().call_comp("Movement", &"set_dir_vec", [dir_vec])
 	instance.comph().call_comp("Anims", &"update_anim")
 
 func _selected_object_changed() -> void:
 	super()
 	if _a_object != null:
-		_revert_object_property(_a_object, &"Movement", &"_a_shared._a_dir")
+		_revert_object_property(_a_object, &"Movement", &"_a_shared._a_dir_vec")
 	
 	_a_object = _a_Object.get_selected_value()
-	_update_object_dir()
+	_update_object_dir_vec()
 	
-	var old_allowed_classes: Array[String] = _a_Look_Object.get_allowed_classes()
-	var allowed_classes: Array[String]
-	if _a_object is Node2D: allowed_classes = ["Node2D"]
-	elif _a_object is Node3D: allowed_classes = ["Node3D"]
-	else: allowed_classes = ["Node"]
+	var old_allowed_classes: Array[StringName] = _a_Look_Object.get_allowed_classes()
+	var allowed_classes: Array[StringName]
+	if _a_object is Node2D: allowed_classes = [&"Node2D"]
+	elif _a_object is Node3D: allowed_classes = [&"Node3D"]
+	else: allowed_classes = [&"Node"]
 	if allowed_classes != old_allowed_classes:
 		_a_Look_Object.set_allowed_classes(allowed_classes)
 		_a_Look_Object.update_options()
@@ -160,9 +160,8 @@ func _selected_type_changed() -> void:
 			_selected_look_type_changed()
 			box = _a_Look_HBox
 	
-	_update_object_dir()
+	_update_object_dir_vec()
 	box.show()
-	
 	_a_type_box = box
 
 func _selected_look_type_changed() -> void:
@@ -198,8 +197,8 @@ func _get_save_data() -> Dictionary:
 func _adjust_object_properties(p_properties: Dictionary) -> void:
 	p_properties[&"Movement"] = {}
 	
-	var dir: StringName = _a_object.comph().call_comp("Movement", &"get_dir")
-	p_properties[&"Movement"][&"_a_shared._a_dir"] = dir
+	var dir_vec: Variant = _a_object.comph().call_comp("Movement", &"get_dir_vec")
+	p_properties[&"Movement"][&"_a_shared._a_dir_vec"] = dir_vec
 
 func _on_Preview_gui_input(p_event: InputEvent) -> void:
 	super(p_event)
@@ -219,20 +218,20 @@ func _on_Preview_gui_input(p_event: InputEvent) -> void:
 					_a_dimensions.update_point()
 					_a_Point.set_point_visible(true)
 			
-			_update_object_dir()
+			_update_object_dir_vec()
 
 func _on_Type_selected() -> void:
 	_selected_type_changed()
 
 func _on_Fixed_Dir_selected() -> void:
-	_update_object_dir()
+	_update_object_dir_vec()
 
 func _on_Look_Type_selected() -> void:
 	_selected_look_type_changed()
-	_update_object_dir()
+	_update_object_dir_vec()
 
 func _on_Look_Object_selected() -> void:
-	_update_object_dir()
+	_update_object_dir_vec()
 
 func _on_Look_Degrees_selected() -> void:
-	_update_object_dir()
+	_update_object_dir_vec()

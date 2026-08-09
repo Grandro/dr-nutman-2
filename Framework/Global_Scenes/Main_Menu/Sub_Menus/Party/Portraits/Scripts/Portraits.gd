@@ -3,7 +3,7 @@ class_name MainMenuSubMenuPartyPortraits
 
 signal entry_pressed(p_key: String, p_args: Dictionary)
 
-const _a_ENTRY_SCENE_PATH: String = "res://Global_Scenes/Main_Menu/Sub_Menus/Party/Portraits/Entries/%s.tscn"
+const _a_ENTRY_SCENE_PATH: String = "res://Framework/Global_Scenes/Main_Menu/Sub_Menus/Party/Portraits/Entries/%s.tscn"
 const _a_SELECTED_COLOR: Color = Color.WHITE
 const _a_NORMAL_COLOR: Color = Color(0.5, 0.5, 0.5, 1.0)
 

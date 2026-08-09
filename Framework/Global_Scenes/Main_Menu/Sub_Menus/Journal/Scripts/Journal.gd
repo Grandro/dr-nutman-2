@@ -74,7 +74,7 @@ func _change_arrow_pos(p_idx: int) -> void:
 	tween.tween_property(_a_Arrow, "position:x", arrow_pos_x, 0.2)
 
 func _set_heading(p_state: String) -> void:
-	_a_Heading.set_text(tr("MAIN_MENU_JOURNAL_%s" % p_state.to_upper()))
+	_a_Heading.set_text(tr("FW_MAIN_MENU_JOURNAL_%s" % p_state.to_upper()))
 
 func _on_Back_select_pressed() -> void:
 	_close()
@@ -84,11 +84,11 @@ func _on_Entry_Select_pressed(p_instance: MainMenuSubMenuJournalFileEntry) -> vo
 	match _e_state:
 		&"Write":
 			set_process_unhandled_input(false)
-			messages_si.show_proceed(tr(&"WRITE_READ_PROCEEDWRITE"), _CB_Messages_Proceed.bind(p_instance))
+			messages_si.show_proceed(tr(&"FW_WRITE_READ_PROCEEDWRITE"), _CB_Messages_Proceed.bind(p_instance))
 		&"Read":
 			if !p_instance.is_empty():
 				set_process_unhandled_input(false)
-				messages_si.show_proceed(tr(&"WRITE_READ_PROCEEDREAD"), _CB_Messages_Proceed.bind(p_instance))
+				messages_si.show_proceed(tr(&"FW_WRITE_READ_PROCEEDREAD"), _CB_Messages_Proceed.bind(p_instance))
 
 func _on_Entry_Select_focus_entered(p_idx: int) -> void:
 	Global_Data.set_save_file_idx(p_idx + 1)

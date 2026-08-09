@@ -150,15 +150,21 @@ func get_save_data(p_location: StringName) -> Dictionary:
 
 func _get_save_data_bgm() -> Array[Dictionary]:
 	var data: Array[Dictionary] = []
-	for child: FWPausableAudio in _a_BGM.get_children():
+	var size: int = _a_BGM.get_child_count()
+	data.resize(size)
+	for i: int in size:
+		var child: FWPausableAudio = _a_BGM.get_child(i)
 		var args: Dictionary = child.get_save_data()
-		data.push_back(args)
+		data[i] = args
 	
 	return data
 
 func _get_save_data_bgs() -> Array[Dictionary]:
 	var data: Array[Dictionary] = []
-	for child: AudioStreamPlayer in _a_BGS.get_children():
+	var size: int = _a_BGS.get_child_count()
+	data.resize(size)
+	for i: int in size:
+		var child: AudioStreamPlayer = _a_BGS.get_child(i)
 		var args: Dictionary = {}
 		var stream: AudioStream = child.get_stream()
 		var stream_path: String = stream.get_path()
@@ -167,13 +173,16 @@ func _get_save_data_bgs() -> Array[Dictionary]:
 		args[&"Pitch"] = child.get_pitch_scale()
 		args[&"Playback_Pos"] = child.get_playback_position()
 		
-		data.push_back(args)
+		data[i] = args
 	
 	return data
 
 func _get_save_data_sfx() -> Array[Dictionary]:
 	var data: Array[Dictionary] = []
-	for child: AudioStreamPlayer in _a_SFX.get_children():
+	var size: int = _a_SFX.get_child_count()
+	data.resize(size)
+	for i: int in size:
+		var child: AudioStreamPlayer = _a_SFX.get_child(i)
 		var args: Dictionary = {}
 		var stream: AudioStream = child.get_stream()
 		var stream_path: String = stream.get_path()
@@ -182,7 +191,7 @@ func _get_save_data_sfx() -> Array[Dictionary]:
 		args[&"Pitch"] = child.get_pitch_scale()
 		args[&"Playback_Pos"] = child.get_playback_position()
 		
-		data.push_back(args)
+		data[i] = args
 	
 	return data
 
@@ -231,16 +240,17 @@ func _load_data_bgm(p_args: Array[Dictionary]) -> void:
 
 func _load_data_bgs(p_args: Array[Dictionary]) -> void:
 	var players: Array[AudioStreamPlayer] = []
-	for i: int in p_args.size():
+	var size: int = p_args.size()
+	players.resize(size)
+	for i: int in size:
 		var args: Dictionary = p_args[i]
 		var stream_path: String = args[&"Stream_Path"]
 		var stream: AudioStream = load(stream_path)
 		var volume: float = db_to_linear(args[&"Volume"])
 		var pitch: float = args[&"Pitch"]
 		var playback_pos: float = args[&"Playback_Pos"]
-		
 		var player: AudioStreamPlayer = replace_bgs(stream, volume, pitch, playback_pos)
-		players.push_back(player)
+		players[i] = player
 	flatten_bgs(players)
 
 func _load_data_sfx(p_args: Array[Dictionary]) -> void:

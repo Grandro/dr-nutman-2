@@ -70,8 +70,8 @@ func _adjust_object_properties(p_properties: Dictionary) -> void:
 			
 			var instance: Node = _a_Object.get_selected_value()
 			var from: Variant = instance.get_position()
-			var dir: StringName = Global.get_dir_to_pos(from, pos)
-			p_properties[&"Movement"][&"_a_shared._a_dir"] = dir
+			var dir_vec: Variant = pos - from
+			p_properties[&"Movement"][&"_a_shared._a_dir_vec"] = dir_vec
 
 func _on_Preview_gui_input(p_event: InputEvent) -> void:
 	super(p_event)

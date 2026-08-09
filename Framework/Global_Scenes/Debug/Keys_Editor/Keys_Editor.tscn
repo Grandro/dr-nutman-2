@@ -7,10 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://brwnr7v5wrvx" path="res://Framework/Scenes/Search/Search.tscn" id="4_y2ige"]
 [ext_resource type="Texture2D" uid="uid://ds3xrue2a8h8y" path="res://Global_Resources/Sprites/UI/Save.png" id="5_a454i"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sp2t4"]
-content_margin_left = 36.0
-bg_color = Color(0.145098, 0.172549, 0.231373, 1)
-
 [node name="Keys_Editor" type="MarginContainer" unique_id=967443618]
 light_mask = 8
 visibility_layer = 8
@@ -59,9 +55,6 @@ layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 8
 
-[node name="Input" parent="HBox/VBox/Options/Search" index="0" unique_id=1159315697]
-theme_override_styles/normal = SubResource("StyleBoxFlat_sp2t4")
-
 [node name="Scroll" type="ScrollContainer" parent="HBox/VBox" unique_id=364322789]
 light_mask = 8
 visibility_layer = 8
@@ -99,5 +92,3 @@ layout_mode = 2
 icon = ExtResource("5_a454i")
 icon_alignment = 1
 expand_icon = true
-
-[editable path="HBox/VBox/Options/Search"]

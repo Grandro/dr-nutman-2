@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bi1osipdrngwn" path="res://Scenes/Maps/3D/Broko_Town/Broko_Town_1/Buffin_House_3/Objects/Pressure_Plates/Arrow_Right_1.tscn" id="3_81bc2"]
 [ext_resource type="PackedScene" uid="uid://dsp0njc065uev" path="res://Framework/Scenes/Object/Comps/3D/Collision_Shape.tscn" id="4_adbhe"]
 [ext_resource type="PackedScene" uid="uid://cfdwl620axohy" path="res://Framework/Scenes/Object/Comps/3D/Audio.tscn" id="5_6eumq"]
-[ext_resource type="PackedScene" uid="uid://b1q143fixhaj5" path="res://Framework/Scenes/Object/Comps/Anims.tscn" id="6_47fxi"]
+[ext_resource type="PackedScene" uid="uid://b1q143fixhaj5" path="res://Framework/Scenes/Object/Comps/Anims_Player.tscn" id="6_47fxi"]
 [ext_resource type="PackedScene" uid="uid://dllj5lbxwqy17" path="res://Framework/Scenes/Pausable_Audio/3D/Pausable_Audio.tscn" id="6_emelb"]
 [ext_resource type="AudioStream" uid="uid://bk6rek2rqilg1" path="res://Global_Resources/Audio/BGS/Engine_Generator_1.ogg" id="7_emelb"]
 

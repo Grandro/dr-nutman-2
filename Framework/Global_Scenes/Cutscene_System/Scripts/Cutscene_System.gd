@@ -205,7 +205,6 @@ func _set_main_active(p_active: bool) -> void:
 func get_save_data(p_location: StringName, p_for_file: bool) -> Dictionary:
 	_a_save_data[p_location] = {}
 	var data: Dictionary = _a_save_data[p_location]
-	
 	data[&"Main_Active"] = _a_main_active
 	data[&"Branches"] = []
 	for child: FWCutsceneBranch in _a_Branches.get_children():

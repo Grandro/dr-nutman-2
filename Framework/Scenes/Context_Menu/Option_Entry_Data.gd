@@ -5,6 +5,8 @@ class_name FWContextMenuOptionEntryData
 @export var _e_icon_texture: Texture2D = null
 @export var _e_show_left: bool = true
 @export var _e_show_right: bool = false
+@export var _e_loc_id_left: StringName = &""
+@export var _e_loc_id_right: StringName = &""
 @export var _e_visible: bool = true
 @export var _e_disabled: bool = false
 @export var _e_options: Dictionary[StringName, FWContextMenuOptionEntryData] = {} # Match key to entry data
@@ -21,6 +23,12 @@ func get_show_left() -> bool:
 
 func get_show_right() -> bool:
 	return _e_show_right
+
+func get_loc_id_left() -> String:
+	return _e_loc_id_left
+
+func get_loc_id_right() -> String:
+	return _e_loc_id_right
 
 func set_visible(p_visible: bool) -> void:
 	_e_visible = p_visible

@@ -35,7 +35,7 @@ func _update_display_main_base_args() -> void:
 		text += ", %s - %s" % [start_value_text, end_value_text]
 		text += ", %s" % str(duration_text)
 		if wait_finish:
-			text += " (%s)" % tr(&"WAIT")
+			text += " (%s)" % tr(&"FW_WAIT")
 	else:
 		text += ", %s" % end_value_text
 	_a_Main.set_base_args(text)

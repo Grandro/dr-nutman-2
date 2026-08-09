@@ -17,7 +17,7 @@ length = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:scale")
+tracks/0/path = NodePath(".:offset_transform_scale")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -33,7 +33,7 @@ length = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:scale")
+tracks/0/path = NodePath(".:offset_transform_scale")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -87,7 +87,6 @@ _data = {
 }
 
 [node name="Intro" type="MarginContainer" unique_id=1868958819]
-modulate = Color(0, 0, 0, 1)
 light_mask = 8
 visibility_layer = 8
 anchors_preset = 15
@@ -218,6 +217,7 @@ visibility_layer = 8
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
+offset_transform_enabled = true
 texture_normal = ExtResource("6_hbbo5")
 
 [node name="Anims" type="AnimationPlayer" parent="Margin/VBox/HBox/Right/Proceed" unique_id=603631988]

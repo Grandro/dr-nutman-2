@@ -8325,7 +8325,7 @@ _e_containers_offset = Dictionary[StringName, Vector3]({
 _e_container_scene = ExtResource("22_bkbgs")
 
 [node name="Origin" parent="Objects/Buffin_Child_1/Balloons" index="0" unique_id=106054285]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.599998, 0.29, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.59999084, 0.29, 0)
 
 [node name="Lines" parent="Objects/Buffin_Child_1/Balloons" index="2" unique_id=610066751]
 skeleton = NodePath("../../../..")
@@ -8355,7 +8355,7 @@ _e_containers_offset = Dictionary[StringName, Vector3]({
 _e_container_scene = ExtResource("22_bkbgs")
 
 [node name="Origin" parent="Objects/Buffin_Child_2/Balloons" index="0" unique_id=106054285]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.599998, 0.29, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.59999084, 0.29, 0)
 
 [node name="Lines" parent="Objects/Buffin_Child_2/Balloons" index="2" unique_id=610066751]
 skeleton = NodePath("../../../..")
@@ -8380,7 +8380,7 @@ _e_containers_offset = Dictionary[StringName, Vector3]({
 _e_container_scene = ExtResource("22_bkbgs")
 
 [node name="Origin" parent="Objects/Buffin_Child_3/Balloons" index="0" unique_id=106054285]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.599998, 0.29, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.59999084, 0.29, 0)
 
 [node name="Lines" parent="Objects/Buffin_Child_3/Balloons" index="2" unique_id=610066751]
 skeleton = NodePath("../../../..")
@@ -8405,7 +8405,7 @@ _e_containers_offset = Dictionary[StringName, Vector3]({
 _e_container_scene = ExtResource("22_bkbgs")
 
 [node name="Origin" parent="Objects/Buffin_Child_4/Balloons" index="0" unique_id=106054285]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.599998, 0.29, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.59999084, 0.29, 0)
 
 [node name="Lines" parent="Objects/Buffin_Child_4/Balloons" index="2" unique_id=610066751]
 skeleton = NodePath("../../../..")
@@ -8577,7 +8577,7 @@ _e_destination = Array[StringName]([&"Broko_Forest_1", &"Down_Right"])
 
 [node name="1" parent="Objects/Teleporters/Teleporter_Down_Left/Interactions" parent_id_path=PackedInt32Array(1539410244, 873204466) index="0" unique_id=1097719813]
 _e_type = "Walk_In"
-_e_dirs = Array[StringName]([&"Left"])
+_e_dir_names = Array[StringName]([&"Left"])
 _e_popup_type = "None"
 
 [node name="Collision" parent="Objects/Teleporters/Teleporter_Down_Left/Interactions/1" index="0" unique_id=1431980935]

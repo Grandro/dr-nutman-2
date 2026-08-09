@@ -29,9 +29,6 @@ _e_options = ["Map", "Global"]
 _e_heading_loc_id = &"FW_DEBUG_CUTSCENES_KEY_TYPE"
 _e_var_select_scene = ExtResource("4_bflua")
 
-[node name="Heading" parent="VBox/Key_Type/HBox" parent_id_path=PackedInt32Array(469907410, 1270824968) index="0" unique_id=1181981547]
-text = "DEBUG_CUTSCENES_KEY_TYPE"
-
 [node name="Chapter" parent="VBox" index="1" unique_id=221931984 instance=ExtResource("5_ad1qi")]
 layout_mode = 2
 
@@ -43,7 +40,6 @@ layout_mode = 2
 
 [node name="Part" parent="VBox" index="4" unique_id=1748507396 instance=ExtResource("5_bflua")]
 layout_mode = 2
-_e_heading_loc_id = &""
 
 [node name="VBox" type="VBoxContainer" parent="VBox" index="5" unique_id=1282255277]
 light_mask = 8
@@ -59,6 +55,8 @@ bbcode_enabled = true
 text = "{Choices}"
 fit_content = true
 scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Choices" type="HBoxContainer" parent="VBox/VBox" index="1" unique_id=839312442]
 light_mask = 8
@@ -67,5 +65,3 @@ clip_contents = true
 layout_mode = 2
 theme_override_constants/separation = 32
 alignment = 1
-
-[editable path="VBox/Key_Type"]

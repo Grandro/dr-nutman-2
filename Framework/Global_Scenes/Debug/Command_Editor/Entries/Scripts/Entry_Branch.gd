@@ -17,7 +17,7 @@ func _ready() -> void:
 	_a_End.focus_entered.connect(_on_Unselectable_focus_entered)
 	_a_End.gui_input.connect(_on_Unselectable_gui_input)
 	
-	_a_End.set_desc(tr(&"DEBUG_CUTSCENES_END"))
+	_a_End.set_desc(tr(&"FW_DEBUG_CUTSCENES_END"))
 
 func connect_to_editor(p_editor: FWDebugCommandEditor) -> void:
 	super(p_editor)
@@ -40,14 +40,6 @@ func add_res_data(p_res_data: Dictionary, p_args: Array = []) -> void:
 		
 		var entry: FWDebugCommandEditorEntryBase = entries[i]
 		entry.add_res_data(p_res_data)
-
-func update_data(p_data: Dictionary) -> void:
-	var is_empty_: bool = _a_data.is_empty()
-	super(p_data)
-	
-	if is_empty_:
-		_init_branches()
-	_update_branches()
 
 func swap_process(p_branch_idx: int) -> void:
 	if _a_process_branch_idx != -1:
@@ -110,6 +102,14 @@ func _init_branches_data(p_data: Dictionary, p_margin: float) -> void:
 
 func _update_branches() -> void:
 	pass
+
+func set_data(p_data: Dictionary) -> void:
+	var is_empty_: bool = _a_data.is_empty()
+	super(p_data)
+	
+	if is_empty_:
+		_init_branches()
+	_update_branches()
 
 func set_args(p_args: Dictionary) -> void:
 	super(p_args)

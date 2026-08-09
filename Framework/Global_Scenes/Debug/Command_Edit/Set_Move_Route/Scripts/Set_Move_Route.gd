@@ -5,7 +5,7 @@ class_name FWDebugCommandEditCommandSetMoveRoute
 @onready var _a_Speed: FWDebugValueSelectSlider = get_node("Window/Contents/Margin/HBox/Right/Options/VBox/Speed")
 @onready var _a_Wait_Finish: FWDebugValueSelectBool = get_node("Window/Contents/Margin/HBox/Right/Options/VBox/Wait_Finish")
 
-var _a_last_dir: StringName # Current last_dir of selected object by Draw_Path
+var _a_last_dir_vec: StringName # Current last_dir_vec of selected object by Draw_Path
 
 func open(p_instance: FWDebugCommandEditorEntryBase, p_data: Dictionary, p_res_data: Dictionary) -> void:
 	await super(p_instance, p_data, p_res_data)
@@ -54,7 +54,7 @@ func _adjust_object_properties(p_properties: Dictionary) -> void:
 	var nav_mesh_path_points: Array = _a_gen_path.get_nav_mesh_path_points()
 	if nav_mesh_path_points.size() > 1:
 		p_properties[&"Movement"] = {}
-		p_properties[&"Movement"][&"_a_shared._a_dir"] = _a_last_dir
+		p_properties[&"Movement"][&"_a_shared._a_dir_vec"] = _a_last_dir_vec
 
-func _on_Gen_Path_last_dir_changed(p_dir: StringName) -> void:
-	_a_last_dir = p_dir
+func _on_Gen_Path_last_dir_name_changed(p_dir_name: StringName) -> void:
+	_a_last_dir_vec = Global.get_dir_name_vec(p_dir_name, _e_dim)

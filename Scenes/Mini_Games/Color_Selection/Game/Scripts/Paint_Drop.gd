@@ -36,7 +36,7 @@ func get_neighbors(p_prev: Array[MiniGameColorSelectionPaintDrop] = []) -> Array
 	var all_neighbors: Array[MiniGameColorSelectionPaintDrop] = []
 	for neighbor: MiniGameColorSelectionPaintDrop in _a_neighbors:
 		if !p_prev.has(neighbor):
-			all_neighbors.append(neighbor)
+			all_neighbors.push_back(neighbor)
 	
 	for neighbor: MiniGameColorSelectionPaintDrop in all_neighbors:
 		var neighbors: Array[MiniGameColorSelectionPaintDrop] = neighbor.get_neighbors(all_neighbors + p_prev)
@@ -47,7 +47,6 @@ func get_neighbors(p_prev: Array[MiniGameColorSelectionPaintDrop] = []) -> Array
 func _on_body_entered(p_instance: Node) -> void:
 	if !p_instance.is_in_group(&"Paint_Drop"):
 		return
-
 	_a_neighbors.push_back(p_instance)
 	
 	if _a_Audio_Bump_CD.get_time_left() == 0.0:

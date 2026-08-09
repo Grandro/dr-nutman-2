@@ -26,7 +26,7 @@ func _ready() -> void:
 	update_trans()
 
 func update_trans() -> void:
-	_a_Choices_Heading.set_text("[u][center]%s" % tr(&"CHOICES"))
+	_a_Choices_Heading.set_text(tr(&"FW_CHOICES"))
 
 func _update_choices() -> void:
 	for child: FWDebugCommandEditCommandMatchChoicesChoiceEntry in _a_Choices.get_children():

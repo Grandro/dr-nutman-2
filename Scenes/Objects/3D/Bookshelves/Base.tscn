@@ -34,7 +34,7 @@ _e_shared = ExtResource("6_4cnhh")
 
 [node name="1" parent="Interactions" index="0" unique_id=1097719813]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.65, 0.25, 0.375)
-_e_dirs = Array[StringName]([&"Up"])
+_e_dir_names = Array[StringName]([&"Up"])
 _e_popup_pos = Vector3(0.6, 3.3, 0.01)
 _e_speech_bubble_pos = Vector3(0.625, 5, 0.03)
 
@@ -43,7 +43,7 @@ shape = SubResource("BoxShape3D_sa5bt")
 
 [node name="2" parent="Interactions" unique_id=1405559958 instance=ExtResource("6_gtwip")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.65, 0.25, 0.375)
-_e_dirs = Array[StringName]([&"Up"])
+_e_dir_names = Array[StringName]([&"Up"])
 _e_popup_pos = Vector3(-0.6, 3.3, 0.01)
 _e_speech_bubble_pos = Vector3(-0.625, 5, 0.03)
 

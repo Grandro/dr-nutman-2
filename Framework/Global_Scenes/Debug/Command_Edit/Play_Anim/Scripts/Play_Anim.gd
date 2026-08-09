@@ -58,7 +58,8 @@ func _selected_object_changed() -> void:
 			_a_object.comph().call_comp("Movement", &"stop")
 	
 	_a_object = _a_Object.get_selected_value()
-	var anim_list: Array[StringName]; anim_list.assign(Array(_a_object.comph().call_comp("Anims", &"get_animation_list")))
+	var anim_list: Array[StringName];
+	anim_list.assign(Array(_a_object.comph().call_comp("Anims", &"get_animation_list")))
 	_a_Anim_All.set_options(anim_list)
 	_a_Anim_Keep_Dir.set_options(anim_list)
 	_a_Anim_All.update_options()
@@ -82,11 +83,12 @@ func _play_selected_anim() -> void:
 	var keep_dir: bool = _a_Keep_Dir.is_pressed()
 	if keep_dir && _a_Keep_Dir.is_visible():
 		var anims: Dictionary[StringName, StringName]; anims.assign(_a_Anim_Keep_Dir.get_selected_key())
-		var dir: Variant = _get_object_revert_property_value(instance, "Movement", &"_a_shared._a_dir")
-		if dir == null:
-			dir = instance.comph().call_comp("Movement", &"get_dir")
-		if anims.has(dir):
-			anim_name = anims[dir]
+		var dir_vec: Variant = _get_object_revert_property_value(instance, "Movement", &"_a_shared._a_dir_vec")
+		if dir_vec == null:
+			dir_vec = instance.comph().call_comp("Movement", &"get_dir_vec")
+		var dir_name: StringName = Global.get_dir_vec_name(dir_vec)
+		if anims.has(dir_name):
+			anim_name = anims[dir_name]
 	else:
 		anim_name = _a_Anim_All.get_selected_key()
 	

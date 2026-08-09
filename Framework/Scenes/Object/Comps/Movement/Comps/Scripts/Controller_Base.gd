@@ -33,8 +33,7 @@ func _process_move() -> void:
 	_a_velocity = _a_velocity.normalized()
 	
 	if _a_velocity.length() > 0.0:
-		var dir: StringName = Global.get_vec_dir(_a_velocity)
-		_a_movement.set_dir(dir)
+		_a_movement.set_dir_vec(_a_velocity)
 	
 	_change_state(_a_velocity)
 	_a_velocity *= _a_movement.get_speed()

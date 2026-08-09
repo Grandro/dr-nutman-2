@@ -1,17 +1,18 @@
 extends FWExtensionBase
 class_name FWCompMovementSharedBase
 
-signal dir_changed(p_dir: StringName)
+signal dir_vec_changed(p_dir_vec: Variant)
 
-var _a_dirs: Array[StringName]
-var _a_reset_dir: StringName
+var _a_limit_dirs: bool
+var _a_dir_names: Array[StringName]
+var _a_reset_dir_vec: Variant # Vector
 
 var _a_entity_entity: Node
 var _a_entity_entity_comph: FWCompHandler
 var _a_comph: FWCompHandler
 
 var _a_velocity: Variant # Vector
-var _a_dir: StringName
+var _a_dir_vec: Variant # Vector
 var _a_base_speed: float = 0.0
 var _a_speed: float = 0.0
 
@@ -20,7 +21,7 @@ func _init(p_entity: Node) -> void:
 	_a_comph = FWCompHandler.new(p_entity)
 
 func ready() -> void:
-	reset_dir()
+	reset_dir_vec()
 	_a_velocity = _a_entity.get_init_velocity()
 	_update_speed()
 
@@ -46,6 +47,9 @@ func _update_speed() -> void:
 	for instance: Node in comps.values():
 		if instance.is_in_group(&"Movement"):
 			_a_speed += instance.get_speed()
+	
+	if Input.is_action_pressed(&"Move_Run"):
+		_a_speed *= 1.5
 
 func _reset_velocity() -> void:
 	_a_velocity = _a_entity.get_init_velocity()
@@ -54,19 +58,25 @@ func _reset_velocity() -> void:
 		if instance.is_in_group(&"Movement"):
 			instance.reset_velocity()
 
-func reset_dir() -> void:
-	set_dir(_a_reset_dir)
+func reset_dir_vec() -> void:
+	set_dir_vec(_a_reset_dir_vec)
 
 func get_velocity() -> Variant:
 	return _a_velocity
 
-func set_dir(p_dir: StringName) -> void:
-	if _a_dirs.has(p_dir):
-		_a_dir = p_dir
-		dir_changed.emit(p_dir)
+func set_dir_vec(p_dir_vec: Variant) -> void:
+	if _a_limit_dirs:
+		var dir_name: StringName = Global.get_dir_vec_name(p_dir_vec)
+		if !_a_dir_names.has(dir_name):
+			return
+	_a_dir_vec = p_dir_vec
+	dir_vec_changed.emit(p_dir_vec)
 
-func get_dir() -> StringName:
-	return _a_dir
+func get_dir_vec() -> Variant:
+	return _a_dir_vec
+
+func get_dir_name() -> StringName:
+	return Global.get_dir_vec_name(_a_dir_vec)
 
 func set_base_speed(p_base_speed: float) -> void:
 	_a_base_speed = p_base_speed
@@ -74,17 +84,18 @@ func set_base_speed(p_base_speed: float) -> void:
 func get_speed() -> float:
 	return _a_speed
 
-func set_dirs(p_dirs: Array[StringName]) -> void:
-	_a_dirs = p_dirs
-	if !p_dirs.is_empty():
-		_a_dir = p_dirs[0]
+func set_limit_dirs(p_limit_dirs: bool) -> void:
+	_a_limit_dirs = p_limit_dirs
 
-func set_reset_dir(p_reset_dir: StringName) -> void:
-	_a_reset_dir = p_reset_dir
+func set_dir_names(p_dir_names: Array[StringName]) -> void:
+	_a_dir_names = p_dir_names
+
+func set_reset_dir_vec(p_reset_dir_vec: Variant) -> void:
+	_a_reset_dir_vec = p_reset_dir_vec
 
 func get_save_data() -> Dictionary:
 	var data: Dictionary = {}
-	data[&"Dir"] = _a_dir
+	data[&"Dir_Vec"] = _a_dir_vec
 	data[&"Comps"] = {}
 	var comps: Dictionary[StringName, Node] = _a_comph.get_comps()
 	for key: StringName in comps:
@@ -96,8 +107,7 @@ func get_save_data() -> Dictionary:
 	return data
 
 func load_data(p_data: Dictionary) -> void:
-	set_dir(p_data[&"Dir"])
-	
+	set_dir_vec(p_data[&"Dir_Vec"])
 	var comps: Dictionary[StringName, Node] = _a_comph.get_comps()
 	for key: StringName in comps:
 		var instance: Node = comps[key]

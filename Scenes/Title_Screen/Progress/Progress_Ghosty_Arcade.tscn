@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b6kvg6rhp0oc3"]
 
-[ext_resource type="PackedScene" uid="uid://cl525dd882uw0" path="res://Framework/Scenes/Title_Screen/Progress/Progress_None.tscn" id="1_jbodt"]
+[ext_resource type="PackedScene" uid="uid://cl525dd882uw0" path="res://Scenes/Title_Screen/Progress/Progress_None.tscn" id="1_jbodt"]
 [ext_resource type="Script" uid="uid://b7he65nsulc0r" path="res://Scenes/Title_Screen/Progress/Scripts/Progress_Ghosty_Arcade.gd" id="3_e8fcp"]
 [ext_resource type="Texture2D" uid="uid://bibp3ffijm6sn" path="res://Global_Resources/Sprites/Backgrounds/2_Spritesheet.png" id="4_nmqnh"]
 [ext_resource type="Texture2D" uid="uid://dvafsb44rr3jr" path="res://Global_Resources/Sprites/Objects/Enemies/Ghosty/Spritesheet.png" id="5_u6a0k"]

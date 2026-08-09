@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bkih1khneqk6f" path="res://Framework/Scenes/Object/Comps/2D/Display.tscn" id="2_o3xin"]
 [ext_resource type="Texture2D" uid="uid://u1yg30f1ktl7" path="res://Scenes/Objects/2D/Tutato/Sprites/Spritesheet.png" id="3_y1ggt"]
 [ext_resource type="PackedScene" uid="uid://biq4rxen0mdkv" path="res://Framework/Scenes/Object/Comps/2D/Speech_Bubble.tscn" id="4_a35qh"]
-[ext_resource type="PackedScene" uid="uid://b1q143fixhaj5" path="res://Framework/Scenes/Object/Comps/Anims.tscn" id="5_n0m2k"]
+[ext_resource type="PackedScene" uid="uid://b1q143fixhaj5" path="res://Framework/Scenes/Object/Comps/Anims_Player.tscn" id="5_n0m2k"]
 [ext_resource type="PackedScene" uid="uid://csu6abhhga573" path="res://Scenes/Objects/2D/Tutato/Comps/Explain/Explain_Intro.tscn" id="5_y1ggt"]
 [ext_resource type="PackedScene" uid="uid://nejpwwkbci35" path="res://Scenes/Objects/2D/Tutato/Comps/Explain/Explain_First_Battle.tscn" id="6_a35qh"]
 [ext_resource type="PackedScene" uid="uid://b4dvlhw3jh0go" path="res://Framework/Scenes/Object/Comps/Cutscene.tscn" id="6_jyo7a"]

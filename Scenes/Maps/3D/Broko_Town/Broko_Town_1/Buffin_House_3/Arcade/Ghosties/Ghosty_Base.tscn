@@ -24,7 +24,7 @@
 [ext_resource type="Animation" uid="uid://cxrvbkk6j4rrf" path="res://Scenes/Objects/3D/Enemies/Ghosty/Anims/Terrain/Stop_Up.res" id="19_ngm71"]
 [ext_resource type="PackedScene" uid="uid://ks3max245ufk" path="res://Framework/Scenes/Object/Comps/3D/Movement/Comps/Nav_Agent.tscn" id="20_mqrb4"]
 [ext_resource type="PackedScene" uid="uid://cekkcfeurbewx" path="res://Framework/Scenes/Object/Comps/3D/Movement/Comps/States.tscn" id="21_3vmmt"]
-[ext_resource type="PackedScene" uid="uid://b1q143fixhaj5" path="res://Framework/Scenes/Object/Comps/Anims.tscn" id="22_faj58"]
+[ext_resource type="PackedScene" uid="uid://b1q143fixhaj5" path="res://Framework/Scenes/Object/Comps/Anims_Player.tscn" id="22_faj58"]
 [ext_resource type="Animation" uid="uid://b7op5sivuj4bd" path="res://Scenes/Objects/3D/Enemies/Ghosty/Anims/Float_Down.res" id="23_pfodg"]
 [ext_resource type="Animation" uid="uid://djbgxkrxc13em" path="res://Scenes/Objects/3D/Enemies/Ghosty/Anims/Float_Left.res" id="24_jlblk"]
 [ext_resource type="Animation" uid="uid://bygxkm8jixapf" path="res://Scenes/Objects/3D/Enemies/Ghosty/Anims/Float_Right.res" id="25_5y5xg"]
@@ -161,6 +161,8 @@ collision_mask = 4
 shape = SubResource("CapsuleShape3D_g14o5")
 
 [node name="Movement" parent="." unique_id=1775514236 instance=ExtResource("5_xlh4b")]
+_e_limit_dirs = true
+_e_dir_names = Array[StringName]([&"Down"])
 
 [node name="Terrain" parent="Movement" unique_id=138096041 instance=ExtResource("6_ufm75")]
 
@@ -184,6 +186,7 @@ _e_speeds = Dictionary[StringName, float]({
 
 [node name="Anims" parent="." unique_id=1923294124 instance=ExtResource("22_faj58")]
 libraries/ = SubResource("AnimationLibrary_e0ipy")
+_e_use_dir_name = true
 
 [node name="Floating" type="AnimationPlayer" parent="." unique_id=2014909540]
 libraries/ = SubResource("AnimationLibrary_fdks5")

@@ -152,9 +152,10 @@ theme_override_constants/separation = 16
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
-bbcode_enabled = true
 fit_content = true
 scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="VBox" type="VBoxContainer" parent="HSplit/Left/Teleport_Scene/Select_Teleport/Control/VBox/Scroll/VBox/Teleportations" unique_id=1158749754]
 light_mask = 8
@@ -247,9 +248,10 @@ theme_override_constants/separation = 16
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
-bbcode_enabled = true
 fit_content = true
 scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Curr" type="HBoxContainer" parent="HSplit/Left/Change_Chapter/Select_Chapter/Control/VBox/Scroll/Chapters" unique_id=869136297]
 light_mask = 8

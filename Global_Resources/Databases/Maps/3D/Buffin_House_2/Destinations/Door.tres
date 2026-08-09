@@ -1,8 +1,8 @@
-[gd_resource type="Resource" script_class="DestinationData3D" format=3 uid="uid://qcm15y0n0p2i"]
+[gd_resource type="Resource" script_class="FWDestinationData3D" format=3 uid="uid://qcm15y0n0p2i"]
 
 [ext_resource type="Script" uid="uid://dd8g42vshsje" path="res://Framework/Global_Resources/Databases/Maps/3D/Destination_Data.gd" id="1_xbxo4"]
 
 [resource]
 script = ExtResource("1_xbxo4")
 _e_pos = Vector3(25.5, 0, 30.5)
-_e_dir = "Up"
+_e_dir_name = &"Up"

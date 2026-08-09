@@ -15,8 +15,8 @@ func process_start() -> void:
 	var instance: Node3D = _a_behavior.get_socialize_instance()
 	var entity_pos: Vector3 = _a_entity.get_global_position()
 	var body_pos: Vector3 = instance.get_global_position()
-	var dir: StringName = Global.get_dir_to_pos(entity_pos, body_pos)
-	_a_entity_comph.call_comp("Movement", &"set_dir", [dir])
+	var dir_vec: Vector3 = body_pos - entity_pos
+	_a_entity_comph.call_comp("Movement", &"set_dir_vec", [dir_vec])
 	_a_entity_comph.call_comp("States", &"set_state", [&"Cry"])
 	_a_entity_comph.call_comp("Anims", &"update_anim")
 

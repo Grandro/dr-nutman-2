@@ -3,8 +3,12 @@
 [ext_resource type="PackedScene" uid="uid://wn70bfluq2r3" path="res://Scenes/NPC/3D/Buffins/Small_Base/Small_Base.tscn" id="1_vtqp5"]
 [ext_resource type="PackedScene" uid="uid://xwh3xagds0sk" path="res://Scenes/Equipable/3D/Objects/Buffins/Small_Base/Head/Party_Hats/1.tscn" id="2_jxlm6"]
 [ext_resource type="Animation" uid="uid://bx7tjeqknt2oo" path="res://Scenes/NPC/3D/Buffins/Small_Base/Anims/Terrain/Global/Idle_Down.tres" id="3_bh3st"]
+[ext_resource type="Animation" uid="uid://bfe2fqduldcgi" path="res://Scenes/NPC/3D/Buffins/Small_Base/Anims/Terrain/Global/Fall_Down.tres" id="3_erusx"]
 [ext_resource type="Animation" uid="uid://bw38y5focyymc" path="res://Scenes/NPC/3D/Buffins/Small_Base/Anims/Terrain/Global/Idle_Left.tres" id="4_jrruq"]
+[ext_resource type="Animation" uid="uid://d4i88ta6alb5b" path="res://Scenes/NPC/3D/Buffins/Small_Base/Anims/Terrain/Global/Fall_Left.tres" id="4_rh3h1"]
 [ext_resource type="Animation" uid="uid://dfhoepkrox2rj" path="res://Scenes/NPC/3D/Buffins/Small_Base/Anims/Terrain/Global/Idle_Right.tres" id="5_54rh2"]
+[ext_resource type="Animation" uid="uid://wye1vkuubonp" path="res://Scenes/NPC/3D/Buffins/Small_Base/Anims/Terrain/Global/Fall_Right.tres" id="5_cqjmr"]
+[ext_resource type="Animation" uid="uid://dxcxvt2urbcl0" path="res://Scenes/NPC/3D/Buffins/Small_Base/Anims/Terrain/Global/Fall_Up.tres" id="6_2oj3u"]
 [ext_resource type="Animation" uid="uid://b5hk18ht3py47" path="res://Scenes/NPC/3D/Buffins/Small_Base/Anims/Terrain/Global/Idle_Up.tres" id="6_j2ibn"]
 [ext_resource type="Animation" uid="uid://c7hf20fys7tvj" path="res://Scenes/NPC/3D/Buffins/Small_Base/Anims/Terrain/Global/Jump_Down.tres" id="7_ed0f6"]
 [ext_resource type="Animation" uid="uid://bmew7civlnpqs" path="res://Scenes/NPC/3D/Buffins/Small_Base/Anims/Terrain/Global/Jump_Left.tres" id="8_05vtm"]
@@ -26,10 +30,14 @@
 [ext_resource type="Animation" uid="uid://cwircykrnqgoy" path="res://Scenes/NPC/3D/Buffins/Small_Base/Anims/Terrain/Global/Walk_Left.tres" id="24_ywtee"]
 [ext_resource type="Animation" uid="uid://5a7eg6du6f12" path="res://Scenes/NPC/3D/Buffins/Small_Base/Anims/Terrain/Global/Walk_Right.tres" id="25_tw0mf"]
 [ext_resource type="Animation" uid="uid://bogdori6ol3pm" path="res://Scenes/NPC/3D/Buffins/Small_Base/Anims/Terrain/Global/Walk_Up.tres" id="26_8p2sd"]
+[ext_resource type="Animation" uid="uid://437dle8ydvf8" path="res://Framework/Scenes/NPC/Anims/Global/Fall_Down.tres" id="27_ed0f6"]
 [ext_resource type="Animation" uid="uid://t1d0xnt5g3wr" path="res://Framework/Scenes/NPC/Anims/Global/Idle_Down.tres" id="27_gtavt"]
+[ext_resource type="Animation" uid="uid://crx4h5ltxjq0a" path="res://Framework/Scenes/NPC/Anims/Global/Fall_Left.tres" id="28_05vtm"]
 [ext_resource type="Animation" uid="uid://dhkgoyij1x6rk" path="res://Framework/Scenes/NPC/Anims/Global/Idle_Left.tres" id="28_jylqt"]
 [ext_resource type="Animation" uid="uid://c3foxhmlybn11" path="res://Framework/Scenes/NPC/Anims/Global/Idle_Right.tres" id="29_5dshb"]
+[ext_resource type="Animation" uid="uid://cbq27x7uw6hsr" path="res://Framework/Scenes/NPC/Anims/Global/Fall_Right.tres" id="29_bwk5a"]
 [ext_resource type="Animation" uid="uid://c8q8sqkqu8wo6" path="res://Framework/Scenes/NPC/Anims/Global/Idle_Up.tres" id="30_e8up4"]
+[ext_resource type="Animation" uid="uid://yc776vn38u75" path="res://Framework/Scenes/NPC/Anims/Global/Fall_Up.tres" id="30_kuefk"]
 [ext_resource type="Animation" uid="uid://c716o5kooeclg" path="res://Framework/Scenes/NPC/Anims/Global/Jump_Down.tres" id="31_47ekm"]
 [ext_resource type="Animation" uid="uid://dyih225e0mbm8" path="res://Framework/Scenes/NPC/Anims/Global/Jump_Left.tres" id="32_hyd4f"]
 [ext_resource type="Animation" uid="uid://dattgub6k7ygj" path="res://Framework/Scenes/NPC/Anims/Global/Jump_Right.tres" id="33_frlhf"]
@@ -53,6 +61,10 @@
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_etd23"]
 _data = {
+&"Fall_Down": ExtResource("3_erusx"),
+&"Fall_Left": ExtResource("4_rh3h1"),
+&"Fall_Right": ExtResource("5_cqjmr"),
+&"Fall_Up": ExtResource("6_2oj3u"),
 &"Idle_Down": ExtResource("3_bh3st"),
 &"Idle_Left": ExtResource("4_jrruq"),
 &"Idle_Right": ExtResource("5_54rh2"),
@@ -79,8 +91,27 @@ _data = {
 &"Walk_Up": ExtResource("26_8p2sd")
 }
 
+[sub_resource type="Animation" id="Animation_ed0f6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Display:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [62]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_diesr"]
 _data = {
+&"Fall_Down": ExtResource("27_ed0f6"),
+&"Fall_Left": ExtResource("28_05vtm"),
+&"Fall_Right": ExtResource("29_bwk5a"),
+&"Fall_Up": ExtResource("30_kuefk"),
 &"Idle_Down": ExtResource("27_gtavt"),
 &"Idle_Left": ExtResource("28_jylqt"),
 &"Idle_Right": ExtResource("29_5dshb"),
@@ -93,6 +124,7 @@ _data = {
 &"Place_Left": ExtResource("36_letpe"),
 &"Place_Right": ExtResource("37_kbyo5"),
 &"Place_Up": ExtResource("38_3syk1"),
+&"RESET": SubResource("Animation_ed0f6"),
 &"Stop_Down": ExtResource("39_wkv0d"),
 &"Stop_Left": ExtResource("40_nkjkv"),
 &"Stop_Right": ExtResource("41_ojnix"),
@@ -109,12 +141,15 @@ _data = {
 
 [node name="Buffin_Child_1" unique_id=2033406997 instance=ExtResource("1_vtqp5")]
 
-[node name="1" parent="Equipment/Head" index="0" unique_id=1503591403 instance=ExtResource("2_jxlm6")]
+[node name="Display" parent="." index="0" unique_id=484337952]
+frame = 62
 
-[node name="Anims" parent="Movement/Terrain" index="1"]
+[node name="1" parent="Equipment/Head" parent_id_path=PackedInt32Array(2139283990, 617759960) index="0" unique_id=1503591403 instance=ExtResource("2_jxlm6")]
+
+[node name="Anims" parent="Movement/Terrain" parent_id_path=PackedInt32Array(493980995) index="1" unique_id=1905048887]
 libraries/ = SubResource("AnimationLibrary_etd23")
 
-[node name="Anims" parent="." index="16"]
+[node name="Anims" parent="." index="16" unique_id=1122559351]
 libraries/ = SubResource("AnimationLibrary_diesr")
 
 [editable path="Equipment"]

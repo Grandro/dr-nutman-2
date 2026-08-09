@@ -49,7 +49,7 @@ collision_mask = 64
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.7, 0)
 
 [node name="Movement" parent="." index="6" unique_id=2026549712]
-_e_reset_dir = "Right"
+_e_reset_dir_vec = Vector3(1, 0, 0)
 
 [node name="Jump" parent="Movement" index="3" unique_id=625083948 instance=ExtResource("5_3x2ef")]
 

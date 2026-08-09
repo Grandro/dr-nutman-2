@@ -5,9 +5,13 @@
 [ext_resource type="Script" uid="uid://cpsxd6q2trjb2" path="res://Scenes/NPC/3D/Buffins/Paint_Apprentice/Comps/Scripts/Display.gd" id="3_4ble0"]
 [ext_resource type="Texture2D" uid="uid://ch5jchjsb56q4" path="res://Global_Resources/Sprites/Objects/Buffins/Paint_Apprentice/Spritesheet.png" id="3_jgkpl"]
 [ext_resource type="Animation" uid="uid://bx7tjeqknt2oo" path="res://Scenes/NPC/3D/Buffins/Small_Base/Anims/Terrain/Global/Idle_Down.tres" id="5_8ql0j"]
+[ext_resource type="Animation" uid="uid://bfe2fqduldcgi" path="res://Scenes/NPC/3D/Buffins/Small_Base/Anims/Terrain/Global/Fall_Down.tres" id="5_u3d7q"]
 [ext_resource type="Animation" uid="uid://bw38y5focyymc" path="res://Scenes/NPC/3D/Buffins/Small_Base/Anims/Terrain/Global/Idle_Left.tres" id="6_u7bxl"]
+[ext_resource type="Animation" uid="uid://d4i88ta6alb5b" path="res://Scenes/NPC/3D/Buffins/Small_Base/Anims/Terrain/Global/Fall_Left.tres" id="6_w5ffq"]
+[ext_resource type="Animation" uid="uid://wye1vkuubonp" path="res://Scenes/NPC/3D/Buffins/Small_Base/Anims/Terrain/Global/Fall_Right.tres" id="7_6pbuy"]
 [ext_resource type="Animation" uid="uid://dfhoepkrox2rj" path="res://Scenes/NPC/3D/Buffins/Small_Base/Anims/Terrain/Global/Idle_Right.tres" id="7_v8pat"]
 [ext_resource type="Animation" uid="uid://b5hk18ht3py47" path="res://Scenes/NPC/3D/Buffins/Small_Base/Anims/Terrain/Global/Idle_Up.tres" id="8_u3d7q"]
+[ext_resource type="Animation" uid="uid://dxcxvt2urbcl0" path="res://Scenes/NPC/3D/Buffins/Small_Base/Anims/Terrain/Global/Fall_Up.tres" id="8_xfbc7"]
 [ext_resource type="Animation" uid="uid://c7hf20fys7tvj" path="res://Scenes/NPC/3D/Buffins/Small_Base/Anims/Terrain/Global/Jump_Down.tres" id="9_w5ffq"]
 [ext_resource type="Animation" uid="uid://bmew7civlnpqs" path="res://Scenes/NPC/3D/Buffins/Small_Base/Anims/Terrain/Global/Jump_Left.tres" id="10_6pbuy"]
 [ext_resource type="Animation" uid="uid://cj7jsvylpfukd" path="res://Scenes/NPC/3D/Buffins/Small_Base/Anims/Terrain/Global/Jump_Right.tres" id="11_xfbc7"]
@@ -29,7 +33,7 @@
 [ext_resource type="Animation" uid="uid://5a7eg6du6f12" path="res://Scenes/NPC/3D/Buffins/Small_Base/Anims/Terrain/Global/Walk_Right.tres" id="27_57t0w"]
 [ext_resource type="Animation" uid="uid://bogdori6ol3pm" path="res://Scenes/NPC/3D/Buffins/Small_Base/Anims/Terrain/Global/Walk_Up.tres" id="28_tljfu"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_1xxye"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y7joi"]
 resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("2_o4af3")
@@ -42,6 +46,10 @@ shader_parameter/progress = 0.0
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_etd23"]
 _data = {
+&"Fall_Down": ExtResource("5_u3d7q"),
+&"Fall_Left": ExtResource("6_w5ffq"),
+&"Fall_Right": ExtResource("7_6pbuy"),
+&"Fall_Up": ExtResource("8_xfbc7"),
 &"Idle_Down": ExtResource("5_8ql0j"),
 &"Idle_Left": ExtResource("6_u7bxl"),
 &"Idle_Right": ExtResource("7_v8pat"),
@@ -144,18 +152,11 @@ stereo = true
 [node name="Paint_Apprentice" unique_id=1346330200 instance=ExtResource("1")]
 
 [node name="Display" parent="." index="0" unique_id=484337952]
-material_override = SubResource("ShaderMaterial_1xxye")
+material_override = SubResource("ShaderMaterial_y7joi")
 texture = ExtResource("3_jgkpl")
-frame = 0
 script = ExtResource("3_4ble0")
 
-[node name="Left_Foot" parent="Movement/Terrain/Areas" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22, 0, 0)
-
-[node name="Right_Foot" parent="Movement/Terrain/Areas" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22, 0, 0)
-
-[node name="Anims" parent="Movement/Terrain" parent_id_path=PackedInt32Array(493980995) index="1"]
+[node name="Anims" parent="Movement/Terrain" parent_id_path=PackedInt32Array(493980995) index="1" unique_id=1905048887]
 libraries/ = SubResource("AnimationLibrary_etd23")
 
 [node name="Speech_Bubble" parent="." index="8" unique_id=1364219094]
@@ -164,10 +165,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.2, 0.03)
 [node name="Popup" parent="." index="9" unique_id=151653346]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.27, 0)
 
-[node name="Anims" parent="Popup" index="0"]
+[node name="Anims" parent="Popup" index="0" unique_id=146921372]
 libraries/ = SubResource("AnimationLibrary_4a5nk")
 
-[node name="Audio" parent="Popup" index="1"]
+[node name="Audio" parent="Popup" index="1" unique_id=612955126]
 stream = SubResource("7")
 
 [editable path="Interactions"]

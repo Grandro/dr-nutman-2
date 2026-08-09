@@ -67,6 +67,7 @@ text = "{Movement}"
 fit_content = true
 scroll_active = false
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="VBox" type="VBoxContainer" parent="Window/Contents/Margin/Tab/1/HSplit/Left/Movement" unique_id=1970253031]
 layout_mode = 2
@@ -154,6 +155,7 @@ text = "{Camera}"
 fit_content = true
 scroll_active = false
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="VBox" type="VBoxContainer" parent="Window/Contents/Margin/Tab/1/HSplit/Left/Camera" unique_id=714865559]
 layout_mode = 2
@@ -191,6 +193,7 @@ text = "{Items}"
 fit_content = true
 scroll_active = false
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="VBox" type="VBoxContainer" parent="Window/Contents/Margin/Tab/1/HSplit/Left/Items" unique_id=737777997]
 layout_mode = 2
@@ -228,6 +231,7 @@ text = "{Timing}"
 fit_content = true
 scroll_active = false
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="VBox" type="VBoxContainer" parent="Window/Contents/Margin/Tab/1/HSplit/Left/Timing" unique_id=1872595494]
 layout_mode = 2
@@ -255,6 +259,7 @@ text = "{Audio}"
 fit_content = true
 scroll_active = false
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="VBox" type="VBoxContainer" parent="Window/Contents/Margin/Tab/1/HSplit/Left/Audio" unique_id=1893002879]
 layout_mode = 2
@@ -287,6 +292,7 @@ text = "{Misc}"
 fit_content = true
 scroll_active = false
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="VBox" type="VBoxContainer" parent="Window/Contents/Margin/Tab/1/HSplit/Right/Misc" unique_id=2076718738]
 layout_mode = 2
@@ -475,6 +481,7 @@ text = "{Flow_Control}"
 fit_content = true
 scroll_active = false
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="VBox" type="VBoxContainer" parent="Window/Contents/Margin/Tab/2/HSplit/Left/Flow_Control" unique_id=1618202237]
 layout_mode = 2

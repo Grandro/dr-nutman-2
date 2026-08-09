@@ -100,13 +100,13 @@ albedo_color = Color(0, 0, 0, 1)
 material = SubResource("StandardMaterial3D_w2dn0")
 size = Vector2(50, 50)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nd48f"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vg5qr"]
 albedo_texture = ExtResource("4_i7gc7")
 uv1_scale = Vector3(16, 10, 1)
 texture_filter = 0
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_r12hj"]
-material = SubResource("StandardMaterial3D_nd48f")
+[sub_resource type="PlaneMesh" id="PlaneMesh_nasxj"]
+material = SubResource("StandardMaterial3D_vg5qr")
 size = Vector2(16, 10)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_71n6v"]
@@ -205,7 +205,7 @@ mesh = SubResource("PlaneMesh_2o5y5")
 
 [node name="Floor_Tile_1" parent="Terrain/Below" parent_id_path=PackedInt32Array(1561908858) index="0" unique_id=1813249417 instance=ExtResource("3_71n6v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 20)
-mesh = SubResource("PlaneMesh_r12hj")
+mesh = SubResource("PlaneMesh_nasxj")
 _e_size = Vector3(16, 1, 10)
 
 [node name="Wall_Up_1" type="Node3D" parent="Terrain/Same_As" parent_id_path=PackedInt32Array(1960974899) index="0" unique_id=177360768]
@@ -253,7 +253,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 1.5, 15.01)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 20)
 _e_audio_keys = Array[String](["Tile_1"])
 
-[node name="Collision" parent="Terrain/Areas/Tile_1" index="0"]
+[node name="Collision" parent="Terrain/Areas/Tile_1" index="0" unique_id=871130983]
 shape = SubResource("BoxShape3D_71n6v")
 
 [node name="$Free_Camera" parent="Objects" parent_id_path=PackedInt32Array(1255743078) index="0" unique_id=1112581883]
@@ -262,16 +262,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 0, 18)
 [node name="Paint_DeLere" parent="Objects" parent_id_path=PackedInt32Array(1255743078) index="2" unique_id=1748750374 instance=ExtResource("14_i8o08")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.5, 0, 22.5)
 
-[node name="Equipment" parent="Objects/Paint_DeLere" index="2"]
+[node name="Equipment" parent="Objects/Paint_DeLere" index="2" unique_id=2139283990]
 _e_shaded = true
 
-[node name="Movement" parent="Objects/Paint_DeLere" index="4"]
-_e_reset_dir = "Up"
+[node name="Movement" parent="Objects/Paint_DeLere" index="4" unique_id=366123676]
+_e_reset_dir_vec = Vector3(0, 0, -1)
 
-[node name="Anims" parent="Objects/Paint_DeLere/Movement/Terrain" index="1"]
+[node name="Anims" parent="Objects/Paint_DeLere/Movement/Terrain" parent_id_path=PackedInt32Array(1748750374, 493980995) index="1" unique_id=1905048887]
 libraries/ = SubResource("AnimationLibrary_mvnwa")
 
-[node name="Anims" parent="Objects/Paint_DeLere" index="16"]
+[node name="Anims" parent="Objects/Paint_DeLere" index="16" unique_id=1122559351]
 libraries/ = SubResource("AnimationLibrary_6alg2")
 
 [node name="Canvas" parent="Objects" parent_id_path=PackedInt32Array(1255743078) index="3" unique_id=566997111 instance=ExtResource("8_nwdfh")]
@@ -282,14 +282,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.5, 0, 22)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.5, 1.335, 22)
 visible = false
 
-[node name="Picture" parent="Objects/Frame_Disposable_Glove" index="1"]
+[node name="Picture" parent="Objects/Frame_Disposable_Glove" index="1" unique_id=1866849750]
 texture = ExtResource("19_gxs0q")
 
 [node name="Frame_Brown_Popsicle" parent="Objects" parent_id_path=PackedInt32Array(1255743078) index="5" unique_id=1319450095 instance=ExtResource("11_5fv4t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.5, 1.335, 22.01)
 visible = false
 
-[node name="Picture" parent="Objects/Frame_Brown_Popsicle" index="1"]
+[node name="Picture" parent="Objects/Frame_Brown_Popsicle" index="1" unique_id=1866849750]
 texture = ExtResource("20_r2hei")
 
 [node name="Bag" parent="Objects" parent_id_path=PackedInt32Array(1255743078) index="6" unique_id=557610558 instance=ExtResource("15_t6wyw")]

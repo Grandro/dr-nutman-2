@@ -10,28 +10,35 @@ var _a_Entry_Base_Scene: PackedScene = preload("uid://bc28ss3fdbnss")
 
 const _a_ENTRY_PATH: String = "res://Framework/Global_Scenes/Debug/Command_Editor/Entries/%s/%s.tscn"
 
-@onready var _a_Entries: VBoxContainer = get_node("Contents/Panel/Entries")
-@onready var _a_Options: FWDebugCommandEditorOptions = get_node("Contents/Panel/Options")
+@onready var _a_Entries: FWDebugCommandEditorEntries = get_node("Contents/Panel/Entries")
+@onready var _a_Options: FWContextMenu = get_node("Contents/Panel/Options")
 @onready var _a_Warnings: FWDebugCommandEditorWarnings = get_node("Contents/Panel/Warnings")
 
+var _a_undo_redo: UndoRedo = UndoRedo.new()
 var _a_active: bool = false # Is currently active?
 var _a_new_option: bool = false # Commands_List openend to create a new entry?
 var _a_selected: Array[FWDebugCommandEditorEntryBase] = [] # Selected entries 
 var _a_first: FWDebugCommandEditorEntryBase = null # First selected entry
 var _a_last_focused: FWDebugCommandEditorEntryBase = null # Last focused entry
-var _a_test_entry: FWDebugCommandEditorEntryBase = null # Entry with test mark
+var _a_test_entry: FWDebugCommandEditorEntryBase = null # test mark entry
 
 func _ready() -> void:
 	_a_Options.option_selected.connect(_on_Options_option_selected)
+	_a_undo_redo.version_changed.connect(_on_Undo_Redo_version_changed)
 	Debug.closing.connect(_on_Debug_closing)
 	
+	_a_Options.set_options_disabled([&"Undo", &"Redo", &"Paste"], true)
 	set_process_unhandled_input(false)
 
 func _unhandled_input(p_event: InputEvent) -> void:
 	if _a_Options.is_visible():
 		return
 	
-	if p_event.is_action_pressed(&"Space"):
+	if p_event.is_action_pressed(&"Redo"):
+		_option_redo()
+	elif p_event.is_action_pressed(&"Undo"):
+		_option_undo()
+	elif p_event.is_action_pressed(&"Space"):
 		_option_edit()
 	elif p_event.is_action_pressed(&"Cut"):
 		_option_cut()
@@ -94,7 +101,7 @@ func _instantiate_command_entry(p_command: StringName, p_data: Dictionary, p_arg
 	instance.set_command(p_command)
 	instance.set_branches_margin.call_deferred(p_margin)
 	instance.set_args.call_deferred(p_args)
-	instance.update_data.call_deferred(p_data)
+	instance.set_data.call_deferred(p_data)
 	
 	return instance
 
@@ -104,6 +111,60 @@ func _instantiate_command_entry_add(p_command: StringName, p_data: Dictionary, p
 	_a_Entries.add_child(instance)
 	_a_Entries.move_child(instance, child_count - 1)
 
+func _instantiate_entries(p_entries_data: Array[_EntryInstantiateData], p_data: Array[Dictionary]) -> void:
+	for i: int in p_data.size():
+		var entry_data: _EntryInstantiateData = p_entries_data[i]
+		var data: Dictionary = p_data[i]
+		var command: StringName = data[&"Command"]
+		var command_data: Dictionary = data[&"Data"].duplicate(true)
+		var command_args: Dictionary = data[&"Args"].duplicate(true)
+		var branches_margin: float = entry_data.get_branches_margin()
+		var parent: Node = entry_data.get_parent()
+		var parents: Array[FWDebugCommandEditorEntryBase] = entry_data.get_parents()
+		var branch_idx: int = entry_data.get_branch_idx()
+		var idx: int = entry_data.get_index()
+		var instance: FWDebugCommandEditorEntryBase = _instantiate_command_entry(command, command_data, command_args, branches_margin)
+		instance.set_parents(parents)
+		instance.set_branch_idx(branch_idx)
+		
+		parent.add_child(instance)
+		parent.move_child(instance, idx)
+
+func _delete_entries(p_entries_data: Array[_EntryInstantiateData]) -> void:
+	if p_entries_data.is_empty():
+		return
+	
+	var instances: Array[FWDebugCommandEditorEntryBase] = []
+	var size_: int = p_entries_data.size()
+	instances.resize(size_)
+	for i: int in size_:
+		var entry_data: _EntryInstantiateData = p_entries_data[i]
+		var instance: FWDebugCommandEditorEntryBase = entry_data.get_instance()
+		instances[i] = instance
+	
+	var first: FWDebugCommandEditorEntryBase = instances[0]
+	var last: FWDebugCommandEditorEntryBase = instances[-1]
+	var first_idx: int = first.get_index()
+	var last_idx: int = last.get_index()
+	var next_idx: int = max(first_idx, last_idx) + 1
+	
+	for instance: FWDebugCommandEditorEntryBase in instances:
+		instance.queue_free()
+	
+	var parent: Container = _get_nearest_parent(first)
+	var branch_idx: int = first.get_branch_idx()
+	var entry_count: int = parent.get_entries_count(branch_idx)
+	var next_focus: FWDebugCommandEditorEntryBase
+	if entry_count > next_idx:
+		next_focus = parent.get_branch_entry(branch_idx, next_idx)
+	else:
+		var child_count: int = parent.get_entries_count(branch_idx)
+		next_focus = parent.get_branch_entry(branch_idx, child_count - 1)
+	next_focus.grab_main_base_focus()
+	
+	_a_selected = [next_focus]
+	_a_first = next_focus
+
 func _add_for_loop_idx_ords(p_res_data: Dictionary) -> void:
 	var idx_ords: Array[int] = _get_for_loop_idx_ords(_a_first)
 	p_res_data[&"Misc"][&"For_Loop_Idx_Ords"] = idx_ords
@@ -111,6 +172,12 @@ func _add_for_loop_idx_ords(p_res_data: Dictionary) -> void:
 func _add_sub_process_id_ords(p_res_data: Dictionary) -> void:
 	var id_ords: Array[int] = _get_sub_process_id_ords(_a_first)
 	p_res_data[&"Misc"][&"Sub_Process_ID_Ords"] = id_ords
+
+func _option_undo() -> void:
+	_a_undo_redo.undo()
+
+func _option_redo() -> void:
+	_a_undo_redo.redo()
 
 func _option_new() -> void:
 	_a_new_option = true
@@ -134,54 +201,26 @@ func _option_edit() -> void:
 	command_edit.open(_a_first, command, uid, data, res_data)
 
 func _option_cut() -> void:
-	var to_copy: Array[FWDebugCommandEditorEntryBase] = _get_selected_copyable()
+	var to_copy: Array[FWDebugCommandEditorEntryBase] = _get_selected_entries()
 	if to_copy.is_empty():
 		return
 	
-	var first_idx: int = _a_first.get_index()
-	var last: FWDebugCommandEditorEntryBase = to_copy.back()
-	var last_idx: int = last.get_index()
-	var next_idx: int = max(first_idx, last_idx) + 1
-	
-	var clipboard: Array[Dictionary] = []
-	for instance: FWDebugCommandEditorEntryBase in to_copy:
-		var data: Dictionary = instance.get_save_data()
-		clipboard.push_back(data)
-		instance.queue_free()
+	var entries_data: Array[_EntryInstantiateData] = _get_entries_data(to_copy)
+	var clipboard: Array[Dictionary] = _get_clipboard_entries(to_copy)
 	Debug.set_command_editor_clipboard(clipboard)
 	
-	var parent: Container = _get_nearest_parent(_a_first)
-	var branch_idx: int = _a_first.get_branch_idx()
-	var entry_count: int
-	if parent == _a_Entries:
-		entry_count = parent.get_child_count()
-	else:
-		entry_count = parent.get_entries_count(branch_idx)
-	
-	if entry_count > next_idx:
-		var next_focus: FWDebugCommandEditorEntryBase
-		if parent == _a_Entries:
-			next_focus = parent.get_child(next_idx)
-		else:
-			next_focus = parent.get_branch_entry(branch_idx, next_idx)
-		next_focus.grab_main_base_focus()
-		
-		_a_selected = [next_focus]
-		_a_first = next_focus
-	
+	var do_method: Callable = _delete_entries.bind(entries_data)
+	var undo_method: Callable = _instantiate_entries.bind(entries_data, clipboard)
+	_create_undo_redo_action("Cut", do_method, undo_method)
 	_a_Options.set_option_disabled(&"Paste", false)
 
 func _option_copy() -> void:
-	var to_copy: Array[FWDebugCommandEditorEntryBase] = _get_selected_copyable()
+	var to_copy: Array[FWDebugCommandEditorEntryBase] = _get_selected_entries()
 	if to_copy.is_empty():
 		return
 	
-	var clipboard: Array[Dictionary] = []
-	for instance in to_copy:
-		var data: Dictionary = instance.get_save_data()
-		clipboard.push_back(data)
+	var clipboard: Array[Dictionary] = _get_clipboard_entries(to_copy)
 	Debug.set_command_editor_clipboard(clipboard)
-	
 	_a_Options.set_option_disabled(&"Paste", false)
 
 func _option_paste() -> void:
@@ -189,92 +228,77 @@ func _option_paste() -> void:
 	if clipboard.is_empty():
 		return
 	
-	var parents: Array[FWDebugCommandEditorEntryBase] = _a_first.get_parents().duplicate()
-	var branch_idx: int = _a_first.get_branch_idx()
-	var margin: float = _a_first.get_branches_margin()
+	var entries_data: Array[_EntryInstantiateData] = []
 	var parent: Node = _a_first.get_parent()
-	var focused_idx: int = _a_first.get_index()
-	var size_: int = clipboard.size()
-	for i: int in size_:
-		var idx: int = size_ - 1 - i
-		var data: Dictionary = clipboard[idx]
-		var command: StringName = data[&"Command"]
-		var command_data: Dictionary = data[&"Data"]
-		var command_args: Dictionary = data[&"Args"]
-		
-		var instance: FWDebugCommandEditorEntryBase = _instantiate_command_entry(command, command_data, command_args, margin)
-		instance.set_parents(parents)
-		instance.set_branch_idx(branch_idx)
-		
-		parent.add_child(instance)
-		parent.move_child(instance, focused_idx)
+	var idx: int = _a_first.get_index()
+	var branch_idx: int = _a_first.get_branch_idx()
+	var branches_margin: float = _a_first.get_branches_margin()
+	var parents: Array[FWDebugCommandEditorEntryBase] = _a_first.get_parents()
+	entries_data.resize(clipboard.size())
+	for i: int in clipboard.size():
+		var entry_data: _EntryInstantiateData = _EntryInstantiateData.new(_a_Entries, parent, idx + i, branch_idx, branches_margin, parents)
+		entries_data[i] = entry_data
+	
+	var do_method: Callable = _instantiate_entries.bind(entries_data, clipboard)
+	var undo_method: Callable = _delete_entries.bind(entries_data)
+	_create_undo_redo_action("Paste", do_method, undo_method)
 
 func _option_delete() -> void:
-	var selected: Array[FWDebugCommandEditorEntryBase] = _get_selected_copyable()
+	var selected: Array[FWDebugCommandEditorEntryBase] = _get_selected_entries()
 	if selected.is_empty():
 		return
 	
-	var first_idx: int = _a_first.get_index()
-	var last: FWDebugCommandEditorEntryBase = selected.back()
-	var last_idx: int = last.get_index()
-	var next_idx: int = max(first_idx, last_idx) + 1
-	
-	for instance: FWDebugCommandEditorEntryBase in selected:
-		instance.queue_free()
-	
-	var parent: Container = _get_nearest_parent(_a_first)
-	var branch_idx: int = _a_first.get_branch_idx()
-	var entry_count: int
-	if parent == _a_Entries:
-		entry_count = parent.get_child_count()
-	else:
-		entry_count = parent.get_entries_count(branch_idx)
-	
-	var next_focus: FWDebugCommandEditorEntryBase
-	if entry_count > next_idx:
-		if parent == _a_Entries:
-			next_focus = parent.get_child(next_idx)
-		else:
-			next_focus = parent.get_branch_entry(branch_idx, next_idx)
-	else:
-		if parent == _a_Entries:
-			var child_count: int = parent.get_child_count()
-			next_focus = parent.get_child(child_count - 1)
-		else:
-			var child_count: int = parent.get_entries_count(branch_idx)
-			next_focus = parent.get_branch_entry(branch_idx, child_count - 1)
-	
-	next_focus.grab_main_base_focus()
-	
-	_a_selected = [next_focus]
-	_a_first = next_focus
+	var entries_data: Array[_EntryInstantiateData] = _get_entries_data(selected)
+	var clipboard: Array[Dictionary] = _get_clipboard_entries(selected)
+	var do_method: Callable = _delete_entries.bind(entries_data)
+	var undo_method: Callable = _instantiate_entries.bind(entries_data, clipboard)
+	_create_undo_redo_action("Delete", do_method, undo_method)
 
 func _option_select_all() -> void:
-	_a_selected.clear()
 	_a_first = null
 	
-	var children: Array[Node] = _a_Entries.get_children()
-	for i: int in children.size() - 1:
-		var child: FWDebugCommandEditorEntryBase = children[i]
+	var size_: int = _a_Entries.get_entries_count(0) - 1
+	_a_selected.resize(size_)
+	for i: int in size_:
+		var child: FWDebugCommandEditorEntryBase = _a_Entries.get_branch_entry(0, i)
 		if i == 0:
 			child.grab_main_base_focus()
 			_a_first = child
 		
 		child.set_fake_focus(true)
-		_a_selected.push_back(child)
+		_a_selected[i] = child
 
 func _option_test() -> void:
 	option_test_selected.emit(_a_first)
 
 func _option_swap_process() -> void:
 	var branches_idxs: Array[int] = _a_first.get_used_branches_idxs()
-	if branches_idxs.size() <= 1:
-		return
-	
-	_a_first.swap_process_next()
+	if branches_idxs.size() > 1:
+		_a_first.swap_process_next()
 
 func _option_change_mark(p_mark: StringName) -> void:
-	_a_first.set_mark(p_mark)
+	var ref_data: _EntryRefData = _get_entry_ref_data(_a_first)
+	var mark: StringName = _a_first.get_mark()
+	var do_method: Callable = _set_entry_mark.bind(ref_data, p_mark)
+	var undo_method: Callable = _set_entry_mark.bind(ref_data, mark)
+	_a_undo_redo.create_action("Change_Mark")
+	_a_undo_redo.add_do_method(do_method)
+	_a_undo_redo.add_undo_method(undo_method)
+	
+	if p_mark == &"Test" && is_instance_valid(_a_test_entry):
+		ref_data = _get_entry_ref_data(_a_test_entry)
+		do_method = _set_entry_mark.bind(ref_data, &"Default")
+		undo_method = _set_entry_mark.bind(ref_data, &"Test")
+		_a_undo_redo.add_do_method(do_method)
+		_a_undo_redo.add_undo_method(undo_method)
+	
+	_a_undo_redo.commit_action()
+
+func _create_undo_redo_action(p_name: String, p_do_method: Callable, p_undo_method: Callable) -> void:
+	_a_undo_redo.create_action(p_name)
+	_a_undo_redo.add_do_method(p_do_method)
+	_a_undo_redo.add_undo_method(p_undo_method)
+	_a_undo_redo.commit_action()
 
 func _shift_logic(p_clicked: FWDebugCommandEditorEntryBase) -> void:
 	if _a_selected.is_empty():
@@ -307,13 +331,7 @@ func _shift_logic(p_clicked: FWDebugCommandEditorEntryBase) -> void:
 	# Get instance which is a parent of lo_entry and a child of nearest parent
 	var sel_idx: int = sel_entry.get_index()
 	var nosel_idx: int = 0
-	
-	var children: Array
-	if nearest_parent == _a_Entries:
-		children = nearest_parent.get_children()
-	else:
-		children = nearest_parent.get_entries()
-	
+	var children: Array = nearest_parent.get_entries()
 	for child: FWDebugCommandEditorEntryBase in children:
 		if child.is_ancestor_of(nosel_entry) || child == nosel_entry:
 			nosel_idx = child.get_index()
@@ -352,17 +370,12 @@ func _shift_logic(p_clicked: FWDebugCommandEditorEntryBase) -> void:
 	
 	# Focus the entries
 	for i: int in range(start_idx, end_idx + 1):
-		var entry: FWDebugCommandEditorEntryBase
-		if nearest_parent == _a_Entries:
-			entry = nearest_parent.get_child(i)
-		else:
-			entry = nearest_parent.get_branch_entry(branch_idx, i)
-		
-		entry.set_fake_focus(true)
-		_a_selected.push_back(entry)
+		var instance: FWDebugCommandEditorEntryBase = nearest_parent.get_branch_entry(branch_idx, i)
+		instance.set_fake_focus(true)
+		_a_selected.push_back(instance)
 	
 	if !_a_selected.has(_a_first):
-		if focused_parents.size() > 0:
+		if !focused_parents.is_empty():
 			var next_parent: FWDebugCommandEditorEntryBase = focused_parents[-1]
 			if _a_selected.has(next_parent):
 				_a_first.set_fake_focus(true)
@@ -389,17 +402,12 @@ func _shift_arrows(p_shift: int) -> void:
 				entry_parent = parent
 				break
 		
-		var parent_idx: int = parent.get_index()
-		if p_shift == -1:
-			shifted_idx = parent_idx
-		else:
-			shifted_idx = parent_idx + p_shift
+		shifted_idx = parent.get_index()
+		if p_shift != -1:
+			shifted_idx += p_shift
 	
-	if entry_parent == _a_Entries:
-		if shifted_idx >= 0:
-			if _a_Entries.get_child_count() > shifted_idx:
-				next_focus = _a_Entries.get_child(shifted_idx)
-	else:
+	var entries_count: int = entry_parent.get_entries_count(branch_idx)
+	if shifted_idx >= 0 && shifted_idx < entries_count:
 		next_focus = entry_parent.get_branch_entry(branch_idx, shifted_idx)
 	
 	_shift_logic(next_focus)
@@ -465,39 +473,64 @@ func _get_empty_res_data() -> Dictionary:
 	
 	return data
 
-func _get_selected_real() -> Array[FWDebugCommandEditorEntryBase]:
-	# First entry in a_selected could be nested too deep
-	var entries: Array[FWDebugCommandEditorEntryBase] = []
-	for entry: FWDebugCommandEditorEntryBase in _a_selected:
-		if entry == _a_first:
-			if _a_selected.size() > 1:
-				var second: FWDebugCommandEditorEntryBase = _a_selected[1]
-				var first_parents: Array[FWDebugCommandEditorEntryBase] = _a_first.get_parents()
-				var second_parents: Array[FWDebugCommandEditorEntryBase] = second.get_parents()
-				if first_parents.size() > second_parents.size():
-					continue
+func _get_selected_entries() -> Array[FWDebugCommandEditorEntryBase]:
+	var selected: Array[FWDebugCommandEditorEntryBase] = []
+	for instance: FWDebugCommandEditorEntryBase in _a_selected:
+		if instance.is_empty():
+			continue
 		
-		entries.push_back(entry)
+		var parents: Array[FWDebugCommandEditorEntryBase] = instance.get_parents()
+		var has_parent: bool = false
+		for parent: FWDebugCommandEditorEntryBase in parents:
+			if _a_selected.has(parent):
+				has_parent = true
+				break
+		if has_parent:
+			continue
+		
+		selected.push_back(instance)
 	
-	return entries
-
-func _get_selected_copyable() -> Array[FWDebugCommandEditorEntryBase]:
-	# Command of entry could be empty
-	var entries: Array[FWDebugCommandEditorEntryBase] = []
-	var real_entries: Array[FWDebugCommandEditorEntryBase] = _get_selected_real()
-	for entry: FWDebugCommandEditorEntryBase in real_entries:
-		if !entry.is_empty():
-			entries.push_back(entry)
-	
-	return entries
+	return selected
 
 func _get_nearest_parent(p_entry: FWDebugCommandEditorEntryBase) -> Container:
 	var nearest: Container = _a_Entries
 	var parents: Array[FWDebugCommandEditorEntryBase] = p_entry.get_parents()
-	if parents.size() > 0:
+	if !parents.is_empty():
 		nearest = parents[-1]
 	
 	return nearest
+
+func _get_entries_data(p_instances: Array[FWDebugCommandEditorEntryBase]) -> Array[_EntryInstantiateData]:
+	var entries_data: Array[_EntryInstantiateData] = []
+	var size_: int = p_instances.size()
+	entries_data.resize(size_)
+	for i: int in size_:
+		var instance: FWDebugCommandEditorEntryBase = p_instances[i]
+		var parent: Node = instance.get_parent()
+		var idx: int = instance.get_index()
+		var branch_idx: int = instance.get_branch_idx()
+		var branches_margin: float = instance.get_branches_margin()
+		var parents: Array[FWDebugCommandEditorEntryBase] = instance.get_parents()
+		var entry_data: _EntryInstantiateData = _EntryInstantiateData.new(_a_Entries, parent, idx, branch_idx, branches_margin, parents)
+		entries_data[i] = entry_data
+	
+	return entries_data
+
+func _get_entry_ref_data(p_instance: FWDebugCommandEditorEntryBase) -> _EntryRefData:
+	var parent: Node = p_instance.get_parent()
+	var idx: int = p_instance.get_index()
+	return _EntryRefData.new(_a_Entries, parent, idx)
+
+func _get_clipboard_entries(p_instances: Array[FWDebugCommandEditorEntryBase]) -> Array[Dictionary]:
+	var clipboard: Array[Dictionary] = []
+	var size_: int = p_instances.size()
+	clipboard.resize(size_)
+	for i: int in size_:
+		var instance: FWDebugCommandEditorEntryBase = p_instances[i]
+		var data: Dictionary = instance.get_save_data()
+		clipboard[i] = data
+	
+	return clipboard
 
 func _get_for_loop_idx_ords(p_instance: FWDebugCommandEditorEntryBase) -> Array[int]:
 	var idx_ords: Array[int] = []
@@ -533,12 +566,14 @@ func get_skip_idxs(p_instance: FWDebugCommandEditorEntryBase = null) -> Array[in
 			p_instance = _a_test_entry
 	
 	var parents: Array[FWDebugCommandEditorEntryBase] = p_instance.get_parents()
+	var size_: int = parents.size()
 	var idxs: Array[int] = []
-	for parent: FWDebugCommandEditorEntryBase in parents:
+	idxs.resize(size_ + 1)
+	for i: int in size_:
+		var parent: FWDebugCommandEditorEntryBase = parents[i]
 		var parent_idx: int = parent.get_index()
-		idxs.push_back(parent_idx)
-	var idx: int = p_instance.get_index()
-	idxs.push_back(idx)
+		idxs[i] = parent_idx
+	idxs[size_] = p_instance.get_index()
 	
 	return idxs
 
@@ -598,27 +633,48 @@ func _on_Commands_List_closed() -> void:
 
 func _on_Command_Edit_command_ok(p_data: Dictionary, p_command: StringName) -> void:
 	if _a_new_option:
-		var margin: float = _a_first.get_branches_margin()
-		var parent: Node = _a_first.get_parent()
-		var instance: FWDebugCommandEditorEntryBase = _instantiate_command_entry(p_command, p_data, {}, margin)
-		var parents: Array[FWDebugCommandEditorEntryBase] = _a_first.get_parents().duplicate()
-		var branch_idx: int = _a_first.get_branch_idx()
-		instance.set_parents(parents)
-		instance.set_branch_idx(branch_idx)
-		
-		var idx: int = _a_first.get_index()
-		parent.add_child(instance)
-		parent.move_child(instance, idx)
+		var entries_data: Array[_EntryInstantiateData] = _get_entries_data([_a_first])
+		var data: Dictionary = {}
+		data[&"Command"] = p_command
+		data[&"Data"] = p_data
+		data[&"Args"] = {}
+		var data_: Array[Dictionary] = [data]
+		var do_method: Callable = _instantiate_entries.bind(entries_data, data_)
+		var undo_method: Callable = _delete_entries.bind(entries_data)
+		_create_undo_redo_action("New", do_method, undo_method)
 	else:
-		_a_first.update_data(p_data)
-	
-	_a_first.grab_main_base_focus()
+		var curr_data: Dictionary = _a_first.get_data()
+		if p_data != curr_data:
+			var parent: Node = _a_first.get_parent()
+			var idx: int = _a_first.get_index()
+			var ref_data: _EntryRefData = _EntryRefData.new(_a_Entries, parent, idx)
+			var do_method: Callable = _set_entry_data.bind(ref_data, p_data)
+			var undo_method: Callable = _set_entry_data.bind(ref_data, curr_data)
+			_create_undo_redo_action("Edit", do_method, undo_method)
 	
 	var commands_list: FWDebugCommandsList = Debug.get_commands_list()
+	_a_first.grab_main_base_focus()
 	commands_list.close()
+
+func _set_entry_data(p_ref_data: _EntryRefData, p_data: Dictionary) -> void:
+	var instance: FWDebugCommandEditorEntryBase = p_ref_data.get_instance()
+	instance.set_data(p_data)
+
+func _set_entry_mark(p_ref_data: _EntryRefData, p_mark: StringName) -> void:
+	var instance: FWDebugCommandEditorEntryBase = p_ref_data.get_instance()
+	instance.set_mark(p_mark)
+	
+	match p_mark:
+		&"Test":
+			_a_test_entry = instance
+		_:
+			if _a_test_entry == instance:
+				_a_test_entry = null
 
 func _on_Options_option_selected(p_option: StringName) -> void:
 	match p_option:
+		&"Undo": _option_undo()
+		&"Redo": _option_redo()
 		&"New": _option_new()
 		&"Edit": _option_edit()
 		&"Cut": _option_cut()
@@ -631,6 +687,12 @@ func _on_Options_option_selected(p_option: StringName) -> void:
 		&"Change_Mark_Default": _option_change_mark(&"Default")
 		&"Change_Mark_Test": _option_change_mark(&"Test")
 
+func _on_Undo_Redo_version_changed() -> void:
+	var has_undo: bool = _a_undo_redo.has_undo()
+	var has_redo: bool = _a_undo_redo.has_redo()
+	_a_Options.set_option_disabled(&"Undo", !has_undo)
+	_a_Options.set_option_disabled(&"Redo", !has_redo)
+
 func _on_Debug_closing() -> void:
 	_a_Options.close()
 
@@ -639,17 +701,13 @@ func _on_Entry_activated() -> void:
 
 func _on_Entry_selectable_focus_entered(p_instance: FWDebugCommandEditorEntryBase) -> void:
 	if !Input.is_action_pressed(&"Shift"):
-		for instance: FWDebugCommandEditorEntryBase in _a_selected:
-			if instance != p_instance:
-				instance.set_fake_focus(false)
-				instance.release_main_base_focus()
+		clear_selected()
 		p_instance.set_fake_focus(true)
-		
+		p_instance.grab_main_base_focus()
 		_a_selected = [p_instance]
 		_a_first = p_instance
 	
 	_a_last_focused = p_instance
-	
 	selectable_focus_entered.emit()
 
 func _on_Entry_selectable_left_clicked(p_instance: FWDebugCommandEditorEntryBase) -> void:
@@ -659,17 +717,14 @@ func _on_Entry_selectable_left_clicked(p_instance: FWDebugCommandEditorEntryBase
 func _on_Entry_selectable_right_clicked(p_pos: Vector2, p_instance: FWDebugCommandEditorEntryBase) -> void:
 	if p_instance.is_empty():
 		var options: Array[StringName] = [&"Change_Mark", &"Copy", &"Cut", &"Delete", &"Edit", &"Test"]
-		for option: StringName in options:
-			_a_Options.set_option_disabled(option, true)
+		_a_Options.set_options_disabled(options, true)
 	else:
-		_a_Options.set_options_disabled_all(false, [&"Paste"])
+		var options: Array[StringName] = _a_Options.get_option_names()
+		_a_Options.set_options_disabled(options, false, [&"Undo", &"Redo", &"Paste"])
 	
 	p_instance.set_fake_focus(true)
 	if !_a_selected.has(p_instance):
-		for instance: FWDebugCommandEditorEntryBase in _a_selected:
-			instance.set_fake_focus(false)
-			instance.release_main_base_focus()
-		
+		clear_selected()
 		_a_selected = [p_instance]
 	_a_first = p_instance
 	
@@ -682,25 +737,20 @@ func _on_Entry_arg_focus_entered(p_instance: FWDebugCommandEditorEntryBase) -> v
 	if Input.is_action_pressed(&"Shift"):
 		_shift_logic(p_instance)
 	else:
-		for instance: FWDebugCommandEditorEntryBase in _a_selected:
-			instance.release_main_base_focus()
-			instance.set_fake_focus(false)
-		
-		_a_selected.clear()
+		clear_selected()
 		_a_first = p_instance
 
 func _on_Entry_arg_right_clicked(p_pos: Vector2, p_instance: FWDebugCommandEditorEntryBase) -> void:
 	if _a_selected.has(p_instance):
-		_a_Options.set_options_disabled_all(false)
+		var options: Array[StringName] = _a_Options.get_option_names()
+		_a_Options.set_options_disabled(options, false, [&"Undo", &"Redo", &"Paste"])
 		p_instance.set_fake_focus(true)
 	else:
-		for instance: FWDebugCommandEditorEntryBase in _a_selected:
-			instance.release_main_base_focus()
-			instance.set_fake_focus(false)
-		
-		_a_selected.clear()
+		clear_selected()
+		var options: Array[StringName] = _a_Options.get_option_names()
+		_a_Options.set_option_disabled(&"Select_All", false)
+		_a_Options.set_options_disabled(options, true, [&"Undo", &"Redo", &"Select_All"])
 		_a_first = p_instance
-		_a_Options.set_options_disabled([&"Select_All"], false, true)
 	
 	_a_Options.set_option_visible(&"Swap_Process", false)
 	_a_Options.open(p_pos)
@@ -708,23 +758,15 @@ func _on_Entry_arg_right_clicked(p_pos: Vector2, p_instance: FWDebugCommandEdito
 func _on_Entry_warning_pressed(p_pos: Vector2, p_instance: FWDebugCommandEditorEntryBase) -> void:
 	_a_Warnings.open(p_pos, p_instance)
 
-func _on_Entry_mark_changed(p_mark: StringName, p_instance: FWDebugCommandEditorEntryBase) -> void:
-	match p_mark:
-		&"Default":
-			if _a_test_entry == p_instance:
-				_a_test_entry = null
-		&"Test":
-			if is_instance_valid(_a_test_entry):
-				_a_test_entry.set_mark(&"Default")
-			_a_test_entry = p_instance
-
 func _on_Entry_unselectable_focus_entered() -> void:
 	clear_selected()
 
 func _on_Entry_unselectable_right_clicked(p_pos: Vector2) -> void:
 	clear_selected()
 	
-	_a_Options.set_options_disabled([&"Select_All"], false, true)
+	var options: Array[StringName] = _a_Options.get_option_names()
+	_a_Options.set_option_disabled(&"Select_All", false)
+	_a_Options.set_options_disabled(options, true, [&"Undo", &"Redo", &"Select_All"])
 	_a_Options.set_option_visible(&"Swap_Process", false)
 	_a_Options.open(p_pos)
 
@@ -746,3 +788,60 @@ func _on_Entry_request_command_entry(p_command: StringName, p_data: Dictionary, 
 	instance.set_parents(parents)
 	instance.set_branch_idx(p_branch_idx)
 	p_entries.add_child(instance)
+
+class _EntryInstantiateData extends _EntryRefData:
+	var _a_branch_idx: int
+	var _a_branches_margin: float
+	var _a_parents_paths: Array[NodePath] = []
+	
+	func _init(p_origin: Node, p_parent: Node, p_idx: int, p_branch_idx: int,
+			   p_branches_margin: float, p_parents: Array[FWDebugCommandEditorEntryBase]) -> void:
+		super(p_origin, p_parent, p_idx)
+		_a_branch_idx = p_branch_idx
+		_a_branches_margin = p_branches_margin
+		
+		var size_: int = p_parents.size()
+		_a_parents_paths.resize(size_)
+		for i: int in size_:
+			var parent: FWDebugCommandEditorEntryBase = p_parents[i]
+			var parent_path: NodePath = p_origin.get_path_to(parent)
+			_a_parents_paths[i] = parent_path
+	
+	func get_branches_margin() -> float:
+		return _a_branches_margin
+	
+	func get_branch_idx() -> int:
+		return _a_branch_idx
+	
+	func get_index() -> int:
+		return _a_idx
+	
+	func get_parent() -> FWDebugCommandEditorEntryBase:
+		return _a_origin.get_node(_a_parent_path)
+	
+	func get_parents() -> Array[FWDebugCommandEditorEntryBase]:
+		var parents: Array[FWDebugCommandEditorEntryBase] = []
+		var size_: int = _a_parents_paths.size()
+		parents.resize(size_)
+		for i: int in size_:
+			var parent_path: NodePath = _a_parents_paths[i]
+			var parent: FWDebugCommandEditorEntryBase = _a_origin.get_node(parent_path)
+			parents[i] = parent
+		
+		return parents
+
+class _EntryRefData:
+	var _a_origin: Node
+	var _a_parent_path: NodePath
+	var _a_idx: int
+	
+	func _init(p_origin: Node, p_parent: Node, p_idx: int) -> void:
+		_a_origin = p_origin
+		_a_parent_path = p_origin.get_path_to(p_parent)
+		_a_idx = p_idx
+	
+	func get_instance() -> FWDebugCommandEditorEntryBase:
+		var parent: Node = _a_origin.get_node(_a_parent_path)
+		var instance: FWDebugCommandEditorEntryBase = parent.get_child(_a_idx)
+		
+		return instance

@@ -37,7 +37,7 @@ func start_timer(p_seconds: float) -> void:
 func get_anim_pos() -> float:
 	return _a_shared.get_anim_pos()
 
-func get_assigned_anim() -> String:
+func get_assigned_anim() -> StringName:
 	return _a_shared.get_assigned_anim()
 
 func get_timer_time_left() -> float:

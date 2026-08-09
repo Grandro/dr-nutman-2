@@ -24,12 +24,15 @@ func _process(_p_delta: float) -> void:
 	var bottom_right: Vector2 = Global.get_base_vp_size()
 	var screen_pos: Array[Vector2] = [top_left, bottom_right]
 	var world_pos: Array[Vector3] = []
-	for curr_screen_pos: Vector2 in screen_pos:
+	var size_: int = screen_pos.size()
+	world_pos.resize(size_)
+	for i: int in size_:
+		var curr_screen_pos: Vector2 = screen_pos[i]
 		var origin: Vector3 = project_ray_origin(curr_screen_pos)
 		var dir: Vector3 = project_ray_normal(curr_screen_pos)
 		var distance: float = -origin.y / dir.y
 		var curr_world_pos: Vector3 = origin + dir * distance
-		world_pos.push_back(curr_world_pos)
+		world_pos[i] = curr_world_pos
 	
 	# Top
 	var top_diff: float = _a_limit[SIDE_TOP] - (world_pos[0].z - _a_offset[SIDE_TOP])

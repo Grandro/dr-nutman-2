@@ -15,7 +15,7 @@ func _ready() -> void:
 	_a_OK.pressed.connect(_on_OK_pressed)
 	_a_Cancel.pressed.connect(_on_Cancel_pressed)
 	
-	_a_Window.set_title(tr(&"DEBUG_FIX_WARNINGS"))
+	_a_Window.set_title(tr(&"FW_DEBUG_FIX_WARNINGS"))
 	hide()
 
 func open(p_instance: FWDebugCommandEditorEntryCommand) -> void:

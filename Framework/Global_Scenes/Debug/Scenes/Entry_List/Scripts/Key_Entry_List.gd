@@ -12,9 +12,12 @@ func instantiate_entry_(p_key: StringName) -> FWDebugEntryListKeyEntry:
 
 func get_entries_keys() -> Array[StringName]:
 	var keys: Array[StringName] = []
-	for child: FWDebugEntryListKeyEntry in _a_VBox.get_children():
+	var size_: int = _a_VBox.get_child_count()
+	keys.resize(size_)
+	for i: int in size_:
+		var child: FWDebugEntryListKeyEntry = _a_VBox.get_child(i)
 		var key: StringName = child.get_key()
-		keys.push_back(key)
+		keys[i] = key
 	
 	return keys
 

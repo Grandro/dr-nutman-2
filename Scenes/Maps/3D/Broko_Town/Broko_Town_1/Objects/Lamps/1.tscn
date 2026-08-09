@@ -40,6 +40,7 @@ stream = ExtResource("6_iu1nt")
 bus = &"SFX"
 
 [node name="Interactions" parent="." unique_id=342536242 instance=ExtResource("5_dld87")]
+_e_needs_look_at = true
 
 [node name="1" parent="Interactions" index="0" unique_id=1097719813]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)

@@ -8,22 +8,22 @@
 
 [node name="Change_Args_Base" unique_id=1292682774 instance=ExtResource("1_i5vc7")]
 script = ExtResource("2_bh26c")
+_e_dim = "2D"
 _e_draw_grid_scene = null
 
 [node name="Object" parent="Window/Contents/Margin/HBox/Right/Options/VBox" parent_id_path=PackedInt32Array(213120298) index="0" unique_id=1444006414]
 _e_needed_comps = Array[String](["Reference", "Interactions"])
+_e_allowed_classes = Array[StringName]([&"Node"])
 
 [node name="Type" parent="Window/Contents/Margin/HBox/Right/Options/VBox" parent_id_path=PackedInt32Array(213120298) index="1" unique_id=1017189420 instance=ExtResource("3_cvrox")]
 layout_mode = 2
 _e_options_loc_id = "FW_DEBUG_CUTSCENES_TYPE_%s"
 _e_options = ["Set"]
-_e_heading_loc_id = "DEBUG_CUTSCENES_TYPE"
+_e_heading_loc_id = &"FW_DEBUG_CUTSCENES_TYPE"
 _e_var_select_scene = ExtResource("4_e2ar6")
 
 [node name="Idx" parent="Window/Contents/Margin/HBox/Right/Options/VBox" parent_id_path=PackedInt32Array(213120298) index="2" unique_id=1015819252 instance=ExtResource("5_5eu1l")]
 layout_mode = 2
-_e_options_loc_id = null
-_e_options = null
 
 [editable path="Window"]
 [editable path="Window/Contents/Margin/HBox/Left/Preview"]

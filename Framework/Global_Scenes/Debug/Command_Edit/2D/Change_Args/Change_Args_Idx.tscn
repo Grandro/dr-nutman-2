@@ -6,9 +6,6 @@
 
 [node name="Change_Args_Idx" unique_id=201838203 instance=ExtResource("1_h3qm6")]
 
-[node name="Idx" parent="Window/Contents/Margin/HBox/Right/Options/VBox" parent_id_path=PackedInt32Array(213120298) index="2" unique_id=1015819252]
-_e_options = []
-
 [node name="Value" parent="Window/Contents/Margin/HBox/Right/Options/VBox" parent_id_path=PackedInt32Array(213120298) index="3" unique_id=498377906 instance=ExtResource("2_fisgm")]
 layout_mode = 2
 _e_heading_loc_id = &"FW_DEBUG_CUTSCENES_VALUE"

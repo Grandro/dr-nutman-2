@@ -22,7 +22,7 @@ func _update_display_main_base_args() -> void:
 	text += ", %s" % state_text
 	text += ", %s" % speed_text
 	if wait_finish:
-		text += " (%s)" % tr(&"WAIT")
+		text += " (%s)" % tr(&"FW_WAIT")
 	_a_Main.set_base_args(text)
 
 func _update_display_main_args() -> void:

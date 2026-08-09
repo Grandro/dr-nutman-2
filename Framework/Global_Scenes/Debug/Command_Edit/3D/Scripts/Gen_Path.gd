@@ -11,8 +11,8 @@ func _instantiate_sprite(p_point: Vector3, p_sprite_name: String, p_main: bool) 
 
 	return instance
 
-func _adjust_approach(p_approach: Vector3, p_dir: StringName) -> Vector3:
-	match p_dir:
+func _adjust_approach(p_approach: Vector3, p_dir_name: StringName) -> Vector3:
+	match p_dir_name:
 		&"Right": p_approach.x -= 1
 		&"Left": p_approach.x += 1
 		&"Down": p_approach.z -= 1
@@ -33,20 +33,20 @@ func _get_nav_path(p_from: Vector3, p_to: Vector3, p_map_rid: RID) -> PackedVect
 	
 	return nav_path
 
-func _get_next_dir(p_approach: Vector3) -> StringName:
-	var dir: StringName
+func _get_next_dir_name(p_approach: Vector3) -> StringName:
+	var dir_name: StringName
 	if abs(p_approach.x) > abs(p_approach.z):
 		if p_approach.x > 0:
-			dir = &"Right"
+			dir_name = &"Right"
 		else:
-			dir = &"Left"
+			dir_name = &"Left"
 	else:
 		if p_approach.z > 0:
-			dir = &"Down"
+			dir_name = &"Down"
 		else:
-			dir = &"Up"
+			dir_name = &"Up"
 	
-	return dir
+	return dir_name
 
 func _is_approach_at_target(p_approach: Vector3) -> bool:
 	return p_approach.x == 0.0 && p_approach.z == 0.0

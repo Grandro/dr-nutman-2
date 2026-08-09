@@ -33,20 +33,20 @@ func _get_nav_path(p_from: Vector2, p_to: Vector2, p_map_rid: RID):
 	
 	return nav_path
 
-func _get_next_dir(p_approach: Vector2) -> StringName:
-	var dir: StringName
+func _get_next_dir_name(p_approach: Vector2) -> StringName:
+	var dir_name: StringName
 	if abs(p_approach.x) > abs(p_approach.y):
 		if p_approach.x > 0:
-			dir = &"Right"
+			dir_name = &"Right"
 		else:
-			dir = &"Left"
+			dir_name = &"Left"
 	else:
 		if p_approach.y > 0:
-			dir = &"Down"
+			dir_name = &"Down"
 		else:
-			dir = &"Up"
+			dir_name = &"Up"
 	
-	return dir
+	return dir_name
 
 func _is_approach_at_target(p_approach: Vector2) -> bool:
 	return p_approach == Vector2.ZERO

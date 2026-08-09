@@ -12,7 +12,7 @@ func _ready() -> void:
 	_a_Return.pressed.connect(_on_Return_pressed)
 	Databases.data_loaded.connect(_on_Databases_data_loaded)
 	
-	_a_Chapters_Heading.set_text("[center][u]%s" % tr(&"DEBUG_GENERAL_CHAPTERS"))
+	_a_Chapters_Heading.set_text(tr(&"FW_DEBUG_GENERAL_CHAPTERS"))
 	
 	close()
 

@@ -49,14 +49,14 @@ func _on_Start_pressed() -> void:
 	global_si.start_game()
 	
 	#var dest: Array[StringName] = [&"Doctor_Dream_1", &"Start"]
-	var dest: Array[StringName] = [&"Dr_Nutman_Home_1", &"Start"]
+	#var dest: Array[StringName] = [&"Dr_Nutman_Home_1", &"Start"]
 	#var dest: Array[StringName] = [&"Broko_Town_1", &"Dr_Nutman_House"]
 	#var dest: Array[StringName] = [&"Broko_House_1", &"Door"]
 	#var dest: Array[StringName] = [&"Broko_House_2", &"Door"]
 	#var dest: Array[StringName] = [&"Broko_House_3", &"Door"]
 	#var dest: Array[StringName] = [&"Buffin_House_1", &"Door"]
 	#var dest: Array[StringName] = [&"Buffin_House_2", &"Door"]
-	#var dest: Array[StringName] = [&"Buffin_House_3", &"Door"]
+	var dest: Array[StringName] = [&"Buffin_House_3", &"Door"]
 	#var dest: Array[StringName] = [&"Buffin_House_3", &"Stairway_2"]
 	#var dest: Array[StringName] = [&"Buffin_House_3", &"Stairway_4"]
 	#var dest: Array[StringName] = [&"Buffin_House_3", &"Stairway_5"]

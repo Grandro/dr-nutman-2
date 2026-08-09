@@ -27,8 +27,12 @@ var _a_play_vox: bool = true
 func _ready() -> void:
 	var dialogues_data: Dictionary = Databases.get_global_map_data(&"Dialogues", _a_key_type, &"", &"", self)
 	var data: Dictionary = dialogues_data[_a_key][&"Data"]
-	for args: Dictionary in data.values():
-		_a_parts.push_back(args)
+	var data_values: Array[Dictionary]; data_values.assign(data.values())
+	var size: int = data_values.size()
+	_a_parts.resize(size)
+	for i: int in size:
+		var args: Dictionary = data_values[i]
+		_a_parts[i] = args
 	
 	# Set default values for idxs
 	if _a_idx == -1:

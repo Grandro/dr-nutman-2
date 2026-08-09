@@ -6,8 +6,6 @@
 
 [node name="Actions" type="Node3D" unique_id=345964575 groups=["Comp"]]
 script = ExtResource("1_tm8ta")
-_e_commands = null
-_e_specials = null
 
 [node name="Commands" parent="." unique_id=773948402 instance=ExtResource("2_rvn5c")]
 

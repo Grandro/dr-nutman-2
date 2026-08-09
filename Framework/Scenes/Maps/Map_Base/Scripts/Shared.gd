@@ -27,13 +27,16 @@ func _play_BGM() -> void:
 func _play_BGS() -> void:
 	var audio_manager_si: Audio_Manager = Global.get_singleton(_a_entity, "Audio_Manager")
 	var players: Array[AudioStreamPlayer] = []
-	for BGS: FWAudioPlayback in _a_BGS:
+	var size: int = _a_BGS.size()
+	players.resize(size)
+	for i: int in size:
+		var BGS: FWAudioPlayback = _a_BGS[i]
 		var stream: AudioStream = BGS.get_stream()
 		var volume: float = BGS.get_volume()
 		var pitch: float = BGS.get_pitch()
 		var from: float = BGS.get_from()
 		var player: AudioStreamPlayer = audio_manager_si.replace_bgs(stream, volume, pitch, from)
-		players.push_back(player)
+		players[i] = player
 	audio_manager_si.flatten_bgs(players)
 
 func get_free_camera() -> Node:

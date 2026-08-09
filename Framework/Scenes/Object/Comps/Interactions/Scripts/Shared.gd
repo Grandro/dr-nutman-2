@@ -42,18 +42,18 @@ func interaction(p_area: Node) -> void:
 	if empty:
 		interacted_empty.emit()
 
-func interaction_update(p_dir: StringName) -> void:
+func interaction_update(p_dir_vec: Variant) -> void:
 	if _a_look_at_update:
-		_look_at_dir(p_dir)
+		_look_at_dir_vec(p_dir_vec)
 
-func interaction_activate(p_area: Node, p_dir: StringName) -> void:
+func interaction_activate(p_area: Node, p_dir_vec: Variant) -> void:
 	var popup_type: StringName = p_area.get_popup_type()
 	if popup_type != &"None":
 		p_area.set_active(true)
 		interaction_activated.emit(p_area)
 	
 	if _a_look_at_activate:
-		_look_at_dir(p_dir)
+		_look_at_dir_vec(p_dir_vec)
 
 func interaction_deactivate(p_area: Node) -> void:
 	var popup_type: StringName = p_area.get_popup_type()
@@ -95,8 +95,8 @@ func _interaction_dialogue(p_area: Node, p_args: Array[StringName]) -> void:
 	dialogue_system_si.set_dialogue_completed_cb(key, _a_entity.CB_dialogue_completed)
 	dialogue_system_si.set_dialogue_choice_selected_cb(key, _a_entity.CB_dialogue_choice_selected)
 
-func _look_at_dir(p_dir: StringName) -> void:
-	_a_entity_entity_comph.call_comp("Movement", &"set_dir", [p_dir])
+func _look_at_dir_vec(p_dir_vec: Variant) -> void:
+	_a_entity_entity_comph.call_comp("Movement", &"set_dir_vec", [p_dir_vec])
 	_a_entity_entity_comph.call_comp("Anims", &"update_anim")
 
 func set_interaction_cutscene_args_idx(p_idx: int, p_args_idx: int) -> void:
@@ -153,11 +153,15 @@ func get_entity_entity() -> Node:
 
 func get_save_data() -> Dictionary:
 	var data: Dictionary = {}
-	data[&"Interactions"] = []
-	for child: Node in _a_entity.get_children():
+	
+	var interactions_data: Array[Dictionary] = []
+	var size: int = _a_entity.get_child_count()
+	interactions_data.resize(size)
+	for i: int in size:
+		var child: Node = _a_entity.get_child(i)
 		var args: Dictionary = {}
 		args[&"Type"] = child.get_type()
-		args[&"Dirs"] = child.get_dirs()
+		args[&"Dir_Names"] = child.get_dir_names()
 		args[&"Use_Dir"] = child.get_use_dir()
 		args[&"Use_Transform"] = child.get_use_transform()
 		args[&"Popup_Type"] = child.get_popup_type()
@@ -166,8 +170,8 @@ func get_save_data() -> Dictionary:
 		args[&"Dialogue_Args"] = child.get_dialogue_args()
 		args[&"Dialogue_Args_Idx"] = child.get_dialogue_args_idx()
 		args[&"Interaction_Count"] = child.get_interaction_count()
-		
-		data[&"Interactions"].push_back(args)
+		interactions_data[i] = args
+	data[&"Interactions"] = interactions_data
 	
 	data[&"Allowed"] = get_allowed()
 	data[&"Needs_Look_At"] = get_needs_look_at()
@@ -181,7 +185,7 @@ func load_data(p_data: Dictionary) -> void:
 		var child: Node = _a_entity.get_child(i)
 		var args: Dictionary = p_data[&"Interactions"][i]
 		child.set_type(args[&"Type"])
-		child.set_dirs(args[&"Dirs"])
+		child.set_dir_names(args[&"Dir_Names"])
 		child.set_use_dir(args[&"Use_Dir"])
 		child.set_use_transform(args[&"Use_Transform"])
 		child.set_popup_type(args[&"Popup_Type"])

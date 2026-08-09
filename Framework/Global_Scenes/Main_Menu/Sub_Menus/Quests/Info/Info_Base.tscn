@@ -56,19 +56,21 @@ theme_override_constants/separation = 48
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
-bbcode_enabled = true
-text = "[center]Heading"
+text = "Heading"
 fit_content = true
 autowrap_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Desc" type="RichTextLabel" parent="Margin/VBox/VBox/VBox" unique_id=1507275197]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
-bbcode_enabled = true
-text = "[center]Description"
+text = "Description"
 fit_content = true
 autowrap_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Objectives" type="VBoxContainer" parent="Margin/VBox/VBox" unique_id=22341841]
 light_mask = 8

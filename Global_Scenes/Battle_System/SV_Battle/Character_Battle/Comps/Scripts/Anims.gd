@@ -8,6 +8,6 @@ func update_anim() -> void:
 		return
 	
 	var state_tmp: StringName = _a_entity_comph.call_comp("States", &"get_state_tmp")
-	var dir: StringName = _a_entity_comph.call_comp("Movement", &"get_dir")
-	var anim_name: StringName = "SV/%s_%s" % [state_tmp, dir]
+	var dir_name: StringName = _a_entity_comph.call_comp("Movement", &"get_dir_name")
+	var anim_name: StringName = "SV/%s_%s" % [state_tmp, dir_name]
 	play_anim(anim_name)

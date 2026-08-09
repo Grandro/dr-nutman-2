@@ -108,9 +108,9 @@ anchor_top = 0.833
 anchor_right = 0.2
 anchor_bottom = 0.9
 offset_left = 0.19998169
-offset_top = -4.9699707
+offset_top = -9.499817
 offset_right = 3.0
-offset_bottom = -5.2099
+offset_bottom = -9.739746
 texture = ExtResource("4")
 
 [node name="Anims" type="AnimationPlayer" parent="Arrow" unique_id=308130149]

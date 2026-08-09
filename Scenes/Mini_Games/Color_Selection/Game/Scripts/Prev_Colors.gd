@@ -33,9 +33,12 @@ func close() -> void:
 	entry_data[&"Selected"] = _a_selected.get_self_color()
 	
 	var prev_colors: PackedColorArray = PackedColorArray()
-	for child: MiniGameColorSelectionPrevColorEntry in _a_HFlow.get_children():
+	var size_: int = _a_HFlow.get_child_count()
+	prev_colors.resize(size_)
+	for i: int in size_:
+		var child: MiniGameColorSelectionPrevColorEntry = _a_HFlow.get_child(i)
 		var color: Color = child.get_self_color()
-		prev_colors.push_back(color)
+		prev_colors[i] = color
 		child.queue_free()
 	entry_data[&"Prev"] = prev_colors
 	

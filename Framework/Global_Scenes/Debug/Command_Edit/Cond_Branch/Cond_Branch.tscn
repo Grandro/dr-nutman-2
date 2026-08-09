@@ -18,7 +18,7 @@ anchors_preset = 15
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Margin" type="MarginContainer" parent="Window/Contents" index="0" unique_id=1526779286]
+[node name="Margin" type="MarginContainer" parent="Window/Contents" parent_id_path=PackedInt32Array(2046277392, 1946629432) index="0" unique_id=1526779286]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
@@ -57,7 +57,7 @@ layout_mode = 2
 
 [node name="Amount" parent="Window/Contents/Margin/VBox/Menus/Items/VBox" index="1" unique_id=1345410741 instance=ExtResource("10_jqowe")]
 layout_mode = 2
-_e_heading_loc_id = "DEBUG_CUTSCENES_AMOUNT"
+_e_heading_loc_id = &"FW_DEBUG_CUTSCENES_AMOUNT"
 
 [node name="Script" parent="Window/Contents/Margin/VBox/Menus" index="2" unique_id=1935410827 instance=ExtResource("17")]
 visible = false
@@ -82,7 +82,7 @@ layout_mode = 2
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
-text = "DEBUG_CUTSCENES_ELSE_BRANCH"
+text = "FW_DEBUG_CUTSCENES_ELSE_BRANCH"
 
 [node name="Value" type="CheckBox" parent="Window/Contents/Margin/VBox/Else_Branch" index="1" unique_id=630082186]
 light_mask = 8
@@ -100,13 +100,13 @@ light_mask = 8
 visibility_layer = 8
 custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
-text = "OK"
+text = "FW_OK"
 
 [node name="Cancel" type="Button" parent="Window/Contents/Margin/VBox/HBox" index="1" unique_id=2029184606]
 light_mask = 8
 visibility_layer = 8
 custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
-text = "CANCEL"
+text = "FW_CANCEL"
 
 [editable path="Window"]

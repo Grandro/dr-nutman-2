@@ -119,13 +119,18 @@ func get_save_data(p_location: StringName, p_for_file: bool) -> Dictionary:
 	var data: Dictionary = _a_save_data[p_location]
 	
 	data[&"Main_Active"] = _a_main_active
-	data[&"Threads"] = []
-	for child: FWDialogueSystemThread in _a_Threads.get_children():
+	
+	var threads_data: Array[Dictionary] = []
+	var size: int = _a_Threads.get_child_count()
+	threads_data.resize(size)
+	for i: int in size:
+		var child: FWDialogueSystemThread = _a_Threads.get_child(i)
 		var save_data: Dictionary = child.get_save_data()
-		data[&"Threads"].push_back(save_data)
+		threads_data[i] = save_data
 		
 		if !p_for_file:
 			child.queue_free()
+	data[&"Threads"] = threads_data
 	
 	return _a_save_data
 

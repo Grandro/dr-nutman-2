@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://tvoa2vh57v8o" path="res://Global_Resources/Sprites/Objects/Enemies/Citrin/Citrin_Ball_Spritesheet.png" id="2_ki32i"]
 [ext_resource type="PackedScene" uid="uid://dsp0njc065uev" path="res://Framework/Scenes/Object/Comps/3D/Collision_Shape.tscn" id="3_jj4b5"]
 [ext_resource type="PackedScene" uid="uid://dhm6aai8dt4md" path="res://Framework/Scenes/Object/Comps/3D/Movement/Movement_Rigid.tscn" id="5_a3vs5"]
-[ext_resource type="PackedScene" uid="uid://b1q143fixhaj5" path="res://Framework/Scenes/Object/Comps/Anims.tscn" id="5_p2xeb"]
+[ext_resource type="PackedScene" uid="uid://b1q143fixhaj5" path="res://Framework/Scenes/Object/Comps/Anims_Player.tscn" id="5_p2xeb"]
 [ext_resource type="PackedScene" uid="uid://bybab63s04t0p" path="res://Framework/Scenes/Object/Comps/3D/Movement/Comps/Terrain/Terrain_Rigid.tscn" id="6_cbqog"]
 [ext_resource type="PackedScene" uid="uid://b028hrfen5mpa" path="res://Framework/Scenes/Object/Comps/3D/Movement/Comps/Terrain/Area.tscn" id="7_a3vs5"]
 [ext_resource type="Texture2D" uid="uid://bpoffym7j5b66" path="res://Global_Resources/Sprites/Terrain_Veils/Grass_1.png" id="8_fwh08"]

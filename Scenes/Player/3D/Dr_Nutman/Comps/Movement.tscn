@@ -119,7 +119,7 @@ libraries/SV = SubResource("AnimationLibrary_4hp7d")
 
 [node name="States" parent="." index="3" unique_id=613341567 instance=ExtResource("39_q0qgp")]
 _e_speeds = Dictionary[StringName, float]({
-&"Run": 9.0,
+&"Run": 6.0,
 &"Stop": 0.0,
 &"Walk": 6.0
 })

@@ -1,7 +1,9 @@
-[gd_resource type="Resource" script_class="ContextMenuOptionEntryData" format=3 uid="uid://op81dkx8jk7w"]
+[gd_resource type="Resource" script_class="FWContextMenuOptionEntryData" format=3 uid="uid://op81dkx8jk7w"]
 
 [ext_resource type="Script" uid="uid://v0jwe56fkhao" path="res://Framework/Scenes/Context_Menu/Option_Entry_Data.gd" id="1_cu6fp"]
 
 [resource]
 script = ExtResource("1_cu6fp")
 _e_show_right = true
+_e_loc_id_left = &"FW_CONTEXT_MENU_OPTIONS_DELETE_LEFT"
+_e_loc_id_right = &"FW_CONTEXT_MENU_OPTIONS_DELETE_RIGHT"

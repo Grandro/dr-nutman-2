@@ -7,8 +7,8 @@ func _update_display_main_base_args() -> void:
 	
 	var text: String = ""
 	if is_visible_:
-		text += tr(&"SHOW")
+		text += tr(&"FW_SHOW")
 	else:
-		text += tr(&"HIDE")
+		text += tr(&"FW_HIDE")
 	text += " %s" % object_text
 	_a_Main.set_base_args(text)

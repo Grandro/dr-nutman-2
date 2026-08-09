@@ -20,9 +20,12 @@ func _ready() -> void:
 		var grid_step: Variant = _a_args[&"Grid"][&"Step"]
 		var grid_start: Variant = _a_args[&"Grid"][&"Start"]
 		var gen_points: Array = _a_args[&"Gen_Path"][&"Gen_Points"]
-		for gen_point: Variant in gen_points:
+		var gen_points_size: int = gen_points.size()
+		_a_path_pos.resize(gen_points_size)
+		for i: int in gen_points_size:
+			var gen_point: Variant = gen_points[i]
 			var pos: Variant = Global.grid_point_to_pos(gen_point, grid_step, grid_start)
-			_a_path_pos.push_back(pos)
+			_a_path_pos[i] = pos
 		
 		_process_command()
 
@@ -38,12 +41,12 @@ func skip() -> void:
 		else:
 			prev_pos = _a_path_pos[-2]
 		var new_pos: Variant = _a_path_pos[-1]
-		var dir: StringName = Global.get_dir_to_pos(prev_pos, new_pos)
+		var dir_vec: Vector3 = new_pos - prev_pos
 		var path: Array[Vector3] = []
 		_a_object.set_global_position(new_pos)
 		_a_object.comph().call_comp("Movement/Nav_Agent", &"set_path", [path])
 		_a_object.comph().call_comp("States", &"set_state_tmp", [&"Stop"])
-		_a_object.comph().call_comp("Movement", &"set_dir", [dir])
+		_a_object.comph().call_comp("Movement", &"set_dir_vec", [dir_vec])
 		_a_object.comph().call_comp("Anims", &"update_anim")
 	
 	queue_free()

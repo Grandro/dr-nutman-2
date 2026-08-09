@@ -122,9 +122,9 @@ func close() -> void:
 	
 	hide()
 
-func _move(p_dir: StringName) -> void:
+func _move(p_dir_name: StringName) -> void:
 	var new_angle: float = snapped(_a_angle - 90.0, _a_angle_step)
-	match p_dir:
+	match p_dir_name:
 		&"Left": new_angle += _a_angle_step
 		&"Right": new_angle -= _a_angle_step
 	new_angle += 90.0

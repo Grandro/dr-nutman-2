@@ -4,7 +4,7 @@ class_name MainMenuSubMenuPartySelection
 signal closed()
 signal entry_selected(p_key: StringName, p_args: Dictionary)
 
-const _a_ENTRY_PATH: String = "res://Global_Scenes/Main_Menu/Sub_Menus/Party/Selection/%s.tscn"
+const _a_ENTRY_PATH: String = "res://Framework/Global_Scenes/Main_Menu/Sub_Menus/Party/Selection/%s.tscn"
 
 @onready var _a_Back: FWIndicatorButton = get_node("Back")
 @onready var _a_HBox: HBoxContainer = get_node("Margin/VBox/HBox")

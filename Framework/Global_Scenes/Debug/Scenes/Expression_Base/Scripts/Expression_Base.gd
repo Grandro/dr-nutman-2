@@ -89,7 +89,7 @@ func _update_expression_error(p_expression: String) -> void:
 	var instance: Node = metadata.get_instance()
 	if !is_instance_valid(instance):
 		_a_Expression_Error.set(&"theme_override_colors/font_color", Color.WHITE)
-		_a_Expression_Error.set_text(tr(&"DEBUG_EXPRESSION_NO_INSTANCE"))
+		_a_Expression_Error.set_text(tr(&"FW_DEBUG_EXPRESSION_NO_INSTANCE"))
 		return
 	
 	var expr: Expression = Expression.new()
@@ -104,10 +104,10 @@ func _update_expression_error(p_expression: String) -> void:
 		var res: Variant = expr.execute([], instance, false)
 		if expr.has_execute_failed():
 			_a_Expression_Error.set(&"theme_override_colors/font_color", Color.RED)
-			error_text = tr(&"DEBUG_EXPRESSION_EXECUTE_FAILED")
+			error_text = tr(&"FW_DEBUG_EXPRESSION_EXECUTE_FAILED")
 		else:
 			_a_Expression_Error.set(&"theme_override_colors/font_color", Color.GREEN)
-			error_text = "%s!: %s" % [tr(&"DEBUG_EXPRESSION_SUCCESS"), res]
+			error_text = "%s!: %s" % [tr(&"FW_DEBUG_EXPRESSION_SUCCESS"), res]
 	else:
 		_a_Expression_Error.set(&"theme_override_colors/font_color", Color.RED)
 		error_text = expr.get_error_text()

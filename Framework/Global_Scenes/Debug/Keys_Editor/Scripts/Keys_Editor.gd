@@ -159,7 +159,7 @@ func _on_Search_input_text_changed(p_text: String) -> void:
 func _on_Add_text_submitted(p_key: StringName) -> void:
 	if _is_key_used(p_key):
 		var messages: Messages = Debug.get_messages()
-		messages.show_info(tr(&"DEBUG_KEY_IN_USE"))
+		messages.show_info(tr(&"FW_DEBUG_KEY_IN_USE"))
 	else:
 		_create_new_key_entry(p_key)
 		_a_Add.clear()
@@ -178,7 +178,7 @@ func _on_Scene_Manager_scene_changed(_p_instance: Node, _p_loaded_file_data: boo
 func _on_Key_Entry_request_key(p_key: StringName, p_instance: FWDebugKeysEditorKeyEntry) -> void:
 	if _is_key_used(p_key):
 		var messages: Messages = Debug.get_messages()
-		messages.show_info(tr(&"DEBUG_KEY_IN_USE"))
+		messages.show_info(tr(&"FW_DEBUG_KEY_IN_USE"))
 		return
 	
 	var old_key: StringName = p_instance.get_key()
@@ -205,7 +205,7 @@ func _on_Key_Entry_duplicate_pressed(p_instance: FWDebugKeysEditorKeyEntry) -> v
 	
 	if _is_key_used(key):
 		var messages: Messages = Debug.get_messages()
-		messages.show_info(tr(&"DEBUG_KEY_IN_USE"))
+		messages.show_info(tr(&"FW_DEBUG_KEY_IN_USE"))
 	else:
 		_create_new_key_entry(key, data.duplicate(true))
 

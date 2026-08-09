@@ -12,9 +12,12 @@ func _ready() -> void:
 
 func _update_collision_shape(p_shape: Shape3D, p_size: Vector3) -> void:
 	var points: PackedVector3Array = PackedVector3Array()
-	for base_point: Vector3 in _a_base_points:
+	var size: int = _a_base_points.size()
+	points.resize(size)
+	for i: int in size:
+		var base_point: Vector3 = _a_base_points[i]
 		var point: Vector3 = base_point * p_size
-		points.push_back(point)
+		points[i] = point
 	
 	p_shape.set_points(points)
 	_a_Collision.set_shape(p_shape)

@@ -60,10 +60,11 @@ light_mask = 8
 visibility_layer = 8
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
-bbcode_enabled = true
-text = "[center]Ein Party-Hut um einem gegebenen festlichen Anlass einen besonderen Pepp zu verleihen."
+text = "Ein Party-Hut um einem gegebenen festlichen Anlass einen besonderen Pepp zu verleihen."
 fit_content = true
 scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Stats" type="HBoxContainer" parent="Margin/VBox/VBox" unique_id=926131025]
 light_mask = 8

@@ -5,9 +5,14 @@
 [ext_resource type="PackedScene" uid="uid://qs71x71lxlxi" path="res://Framework/Global_Scenes/Debug/Scenes/Value_Select/Value_Edit.tscn" id="6_vv03g"]
 
 [node name="Change_Args" unique_id=386022860 instance=ExtResource("1_vbfn1")]
+_e_dim = "2D"
+
+[node name="Object" parent="Window/Contents/Margin/HBox/Right/Options/VBox" parent_id_path=PackedInt32Array(213120298) index="0" unique_id=1444006414]
+_e_allowed_classes = Array[StringName]([&"Node"])
 
 [node name="Value" parent="Window/Contents/Margin/HBox/Right/Options/VBox" parent_id_path=PackedInt32Array(213120298) index="3" unique_id=1992660556 instance=ExtResource("6_vv03g")]
 layout_mode = 2
+_e_heading_loc_id = &"FW_DEBUG_CUTSCENES_VALUE"
 _e_var_select_scene = ExtResource("4_e2ar6")
 
 [editable path="Window"]

@@ -119,7 +119,7 @@ func _on_Movement_Nav_Agent_path_finished() -> void:
 	match state:
 		&"Recover_Knockback":
 			_a_States.set_state(&"Idle")
-			_a_Movement.reset_dir()
+			_a_Movement.reset_dir_vec()
 			_a_Anims.update_anim()
 
 func _on_Movement_Knockbacks_started() -> void:

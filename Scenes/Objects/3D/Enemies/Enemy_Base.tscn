@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://de2jy2ixhp2mw" path="res://Framework/Scenes/Object/Comps/Save.tscn" id="6_t6qjh"]
 [ext_resource type="PackedScene" uid="uid://cekkcfeurbewx" path="res://Framework/Scenes/Object/Comps/3D/Movement/Comps/States.tscn" id="6_y64kj"]
 [ext_resource type="PackedScene" uid="uid://b7h012x035k2o" path="res://Scenes/Objects/3D/Enemies/Comps/Battle_Starter/Battle_Starter.tscn" id="7_77khg"]
-[ext_resource type="PackedScene" uid="uid://b1q143fixhaj5" path="res://Framework/Scenes/Object/Comps/Anims.tscn" id="7_lb4di"]
+[ext_resource type="PackedScene" uid="uid://b1q143fixhaj5" path="res://Framework/Scenes/Object/Comps/Anims_Player.tscn" id="7_lb4di"]
 [ext_resource type="PackedScene" uid="uid://bqd5wag3i55mk" path="res://Scenes/Objects/3D/Enemies/Comps/Battle_Starter/Area.tscn" id="8_06f12"]
 
 [node name="Enemy_Base" type="CharacterBody3D" unique_id=116374851 groups=["Object"]]
@@ -31,5 +31,6 @@ script = ExtResource("1_77khg")
 [node name="Neutral" parent="Battle_Starter" unique_id=1561785572 instance=ExtResource("8_06f12")]
 
 [node name="Anims" parent="." unique_id=423240117 instance=ExtResource("7_lb4di")]
+_e_use_dir_name = true
 
 [node name="Save" parent="." unique_id=1023832090 instance=ExtResource("6_t6qjh")]

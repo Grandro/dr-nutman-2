@@ -33,11 +33,11 @@ func init(p_entities: Array[Node]) -> void:
 func interaction(p_area: FWCompInteractionsInteraction3D) -> void:
 	_a_shared.interaction(p_area)
 
-func interaction_update(p_dir: StringName) -> void:
-	_a_shared.interaction_update(p_dir)
+func interaction_update(p_dir_vec: Vector3) -> void:
+	_a_shared.interaction_update(p_dir_vec)
 
-func interaction_activate(p_area: FWCompInteractionsInteraction3D, p_dir: StringName) -> void:
-	_a_shared.interaction_activate(p_area, p_dir)
+func interaction_activate(p_area: FWCompInteractionsInteraction3D, p_dir_vec: Vector3) -> void:
+	_a_shared.interaction_activate(p_area, p_dir_vec)
 
 func interaction_deactivate(p_area: FWCompInteractionsInteraction3D) -> void:
 	_a_shared.interaction_deactivate(p_area)

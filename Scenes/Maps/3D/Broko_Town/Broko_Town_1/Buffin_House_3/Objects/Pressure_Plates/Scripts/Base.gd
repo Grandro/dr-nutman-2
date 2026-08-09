@@ -52,20 +52,28 @@ func set_state(p_state: StringName) -> void:
 
 func get_save_data() -> Dictionary:
 	var data: Dictionary = super()
-	data[&"Instances"] = []
-	for instance: Node in _a_instances:
-		var path: String = instance.get_path()
-		data[&"Instances"].push_back(path)
+	
+	var instances_data: Array[NodePath] = []
+	var size: int = _a_instances.size()
+	instances_data.resize(size)
+	for i: int in size:
+		var instance: Node = _a_instances[i]
+		var path: NodePath = instance.get_path()
+		instances_data[i] = path
+	data[&"Instances"] = instances_data
 	data[&"Locked"] = _a_locked
 	
 	return data
 
 func load_data(p_data: Dictionary) -> void:
 	super(p_data)
-	_a_instances.clear()
-	for path: String in p_data[&"Instances"]:
+	var instances_data: Array[NodePath] = p_data[&"Instances"]
+	var size: int = instances_data.size()
+	_a_instances.resize(size)
+	for i: int in size:
+		var path: NodePath = instances_data[i]
 		var instance: Node = get_node(path)
-		_a_instances.push_back(instance)
+		_a_instances[i] = instance
 	set_locked(p_data[&"Locked"])
 
 func _on_Area_body_entered(p_body: Node) -> void:

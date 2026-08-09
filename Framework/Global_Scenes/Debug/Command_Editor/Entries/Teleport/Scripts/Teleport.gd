@@ -15,8 +15,8 @@ func _ready() -> void:
 			child.base_focus_entered.connect(_on_Unselectable_focus_entered)
 			child.base_gui_input.connect(_on_Unselectable_gui_input)
 	
-	_a_Battle_Won.set_base_desc(tr(&"DEBUG_CUTSCENES_BATTLE_WON"))
-	_a_Battle_Lost.set_base_desc(tr(&"DEBUG_CUTSCENES_BATTLE_LOST"))
+	_a_Battle_Won.set_base_desc(tr(&"FW_DEBUG_CUTSCENES_BATTLE_WON"))
+	_a_Battle_Lost.set_base_desc(tr(&"FW_DEBUG_CUTSCENES_BATTLE_LOST"))
 	_a_Battle_Won.hide()
 	_a_Battle_Lost.hide()
 

@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://drpp26gth4snn" path="res://Framework/Scenes/Object/Comps/Reference.tscn" id="10_akrdg"]
 [ext_resource type="PackedScene" uid="uid://de2jy2ixhp2mw" path="res://Framework/Scenes/Object/Comps/Save.tscn" id="11_akrdg"]
 [ext_resource type="PackedScene" uid="uid://b4dvlhw3jh0go" path="res://Framework/Scenes/Object/Comps/Cutscene.tscn" id="11_vgvbk"]
-[ext_resource type="PackedScene" uid="uid://b1q143fixhaj5" path="res://Framework/Scenes/Object/Comps/Anims.tscn" id="11_xfm4c"]
+[ext_resource type="PackedScene" uid="uid://b1q143fixhaj5" path="res://Framework/Scenes/Object/Comps/Anims_Player.tscn" id="11_xfm4c"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_n3hbt"]
 friction = 0.7
@@ -291,3 +291,4 @@ _e_state = "Stop"
 
 [node name="Anims" parent="." unique_id=458841829 instance=ExtResource("11_xfm4c")]
 libraries/ = SubResource("AnimationLibrary_mdeqi")
+_e_use_dir_name = true

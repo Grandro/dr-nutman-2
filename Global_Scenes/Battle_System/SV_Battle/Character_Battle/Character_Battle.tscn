@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cekkcfeurbewx" path="res://Framework/Scenes/Object/Comps/3D/Movement/Comps/States.tscn" id="6_08j4g"]
 [ext_resource type="PackedScene" uid="uid://kwe0wi2c8er5" path="res://Global_Scenes/Battle_System/SV_Battle/Character_Battle/Comps/Stats.tscn" id="6_w5p3p"]
 [ext_resource type="PackedScene" uid="uid://d07xolpcrrwob" path="res://Framework/Scenes/Object/Comps/Movement/Comps/Knockbacks/Knockbacks.tscn" id="7_dhbqu"]
-[ext_resource type="PackedScene" uid="uid://b1q143fixhaj5" path="res://Framework/Scenes/Object/Comps/Anims.tscn" id="7_djs4b"]
+[ext_resource type="PackedScene" uid="uid://b1q143fixhaj5" path="res://Framework/Scenes/Object/Comps/Anims_Player.tscn" id="7_djs4b"]
 [ext_resource type="Script" uid="uid://14x1ifsvgd6b" path="res://Global_Scenes/Battle_System/SV_Battle/Character_Battle/Comps/Scripts/Anims.gd" id="8_bmb2c"]
 [ext_resource type="PackedScene" uid="uid://dtsovamjoipgb" path="res://Global_Scenes/Battle_System/SV_Battle/Character_Battle/Comps/Status/Status.tscn" id="9_vbmw5"]
 [ext_resource type="PackedScene" uid="uid://dt0oqeg1pngnh" path="res://Global_Scenes/Battle_System/SV_Battle/Character_Battle/Comps/Actions/Actions.tscn" id="10_08j4g"]
@@ -61,5 +61,6 @@ monitorable = false
 
 [node name="Anims" parent="." unique_id=1809209056 instance=ExtResource("7_djs4b")]
 script = ExtResource("8_bmb2c")
+_e_use_dir_name = true
 
 [editable path="Movement/Terrain"]

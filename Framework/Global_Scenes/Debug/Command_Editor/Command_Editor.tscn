@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bdm8bdyt8jrh" path="res://Framework/Scenes/Context_Menu/Context_Menu.tscn" id="1"]
 [ext_resource type="Texture2D" uid="uid://d2o1fmlrae4qu" path="res://Framework/Global_Scenes/Debug/Command_Editor/Sprites/Contents_BG.png" id="2"]
-[ext_resource type="Script" uid="uid://b3upn0eay11yg" path="res://Framework/Global_Scenes/Debug/Command_Editor/Scripts/Options.gd" id="5"]
+[ext_resource type="Script" uid="uid://cc458e1jqysyh" path="res://Framework/Global_Scenes/Debug/Command_Editor/Scripts/Entries.gd" id="4_nicnh"]
 [ext_resource type="Script" uid="uid://vi0vpusmi5uu" path="res://Framework/Global_Scenes/Debug/Command_Editor/Scripts/Command_Editor.gd" id="6"]
 [ext_resource type="Script" uid="uid://v0jwe56fkhao" path="res://Framework/Scenes/Context_Menu/Option_Entry_Data.gd" id="6_42cq7"]
 [ext_resource type="Resource" uid="uid://duicl4g8h75yq" path="res://Framework/Global_Scenes/Debug/Command_Editor/Options/Change_Mark.tres" id="6_ll326"]
@@ -12,13 +12,14 @@
 [ext_resource type="Script" uid="uid://dno4u2qhj8qfi" path="res://Framework/Global_Scenes/Debug/Command_Editor/Scripts/Warnings.gd" id="9"]
 [ext_resource type="Resource" uid="uid://op81dkx8jk7w" path="res://Framework/Global_Scenes/Debug/Command_Editor/Options/Delete.tres" id="9_ud1o6"]
 [ext_resource type="Resource" uid="uid://nyws4po5lwwo" path="res://Framework/Global_Scenes/Debug/Command_Editor/Options/Edit.tres" id="10_rupqi"]
-[ext_resource type="Resource" uid="uid://cme23a5k67kff" path="res://Framework/Global_Scenes/Debug/Command_Editor/Options/HSep_1.tres" id="11_t5gcx"]
-[ext_resource type="Resource" uid="uid://b6kstnnakekjf" path="res://Framework/Global_Scenes/Debug/Command_Editor/Options/HSep_2.tres" id="12_g4tgp"]
+[ext_resource type="Resource" uid="uid://cme23a5k67kff" path="res://Framework/Global_Scenes/Debug/Command_Editor/Options/HSep.tres" id="11_t5gcx"]
 [ext_resource type="Resource" uid="uid://c7ca4bf88645e" path="res://Framework/Global_Scenes/Debug/Command_Editor/Options/New.tres" id="13_rscwg"]
 [ext_resource type="Resource" uid="uid://boam02r4a3d8f" path="res://Framework/Global_Scenes/Debug/Command_Editor/Options/Paste.tres" id="14_w338d"]
 [ext_resource type="Resource" uid="uid://00wdt534fk8o" path="res://Framework/Global_Scenes/Debug/Command_Editor/Options/Select_All.tres" id="15_l8edf"]
 [ext_resource type="Resource" uid="uid://cpty52ewdxhui" path="res://Framework/Global_Scenes/Debug/Command_Editor/Options/Swap_Process.tres" id="16_j86y4"]
 [ext_resource type="Resource" uid="uid://b5rjlaisi1ojc" path="res://Framework/Global_Scenes/Debug/Command_Editor/Options/Test.tres" id="17_20kki"]
+[ext_resource type="Resource" uid="uid://catdk88e1t8ar" path="res://Framework/Global_Scenes/Debug/Command_Editor/Options/Undo.tres" id="18_nicnh"]
+[ext_resource type="Resource" uid="uid://duigr7tqwmym6" path="res://Framework/Global_Scenes/Debug/Command_Editor/Options/Redo.tres" id="19_7vppw"]
 
 [node name="Command_Editor" type="HBoxContainer" unique_id=1937727120]
 light_mask = 8
@@ -197,10 +198,10 @@ light_mask = 8
 visibility_layer = 8
 layout_mode = 2
 theme_override_constants/separation = 0
+script = ExtResource("4_nicnh")
 
 [node name="Options" parent="Contents/Panel" unique_id=1525377377 instance=ExtResource("1")]
 layer = 2
-script = ExtResource("5")
 _e_options = Dictionary[StringName, ExtResource("6_42cq7")]({
 &"Change_Mark": ExtResource("6_ll326"),
 &"Copy": ExtResource("7_4keym"),
@@ -208,14 +209,18 @@ _e_options = Dictionary[StringName, ExtResource("6_42cq7")]({
 &"Delete": ExtResource("9_ud1o6"),
 &"Edit": ExtResource("10_rupqi"),
 &"HSep_1": ExtResource("11_t5gcx"),
-&"HSep_2": ExtResource("12_g4tgp"),
+&"HSep_2": ExtResource("11_t5gcx"),
+&"HSep_3": ExtResource("11_t5gcx"),
+&"HSep_4": ExtResource("11_t5gcx"),
 &"New": ExtResource("13_rscwg"),
 &"Paste": ExtResource("14_w338d"),
+&"Redo": ExtResource("19_7vppw"),
 &"Select_All": ExtResource("15_l8edf"),
 &"Swap_Process": ExtResource("16_j86y4"),
-&"Test": ExtResource("17_20kki")
+&"Test": ExtResource("17_20kki"),
+&"Undo": ExtResource("18_nicnh")
 })
-_e_options_order = Array[StringName]([&"New", &"Edit", &"HSep_1", &"Cut", &"Copy", &"Paste", &"Delete", &"Select_All", &"HSep_2", &"Test", &"Swap_Process", &"Change_Mark"])
+_e_options_order = Array[StringName]([&"Undo", &"Redo", &"HSep_1", &"New", &"Edit", &"HSep_2", &"Cut", &"Copy", &"Paste", &"Delete", &"HSep_3", &"Select_All", &"HSep_4", &"Test", &"Swap_Process", &"Change_Mark"])
 
 [node name="Warnings" type="Control" parent="Contents/Panel" unique_id=2035124074]
 light_mask = 8

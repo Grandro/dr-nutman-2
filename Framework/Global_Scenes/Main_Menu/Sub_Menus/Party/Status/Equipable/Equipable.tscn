@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://nt5gfdybdx7v" path="res://Framework/Scenes/VP_Container/VP.tscn" id="5_sfv0c"]
 [ext_resource type="Texture2D" uid="uid://dfuhlj2mlxms5" path="res://Global_Resources/Sprites/UI/Arrow_Left_Normal.png" id="6"]
 [ext_resource type="PackedScene" uid="uid://bp3l5j3x50mlt" path="res://Scenes/Characters/Dr_Nutman/Dr_Nutman.tscn" id="6_l2u2q"]
+[ext_resource type="Texture2D" uid="uid://0m0fk0ph0b0y" path="res://Global_Resources/Sprites/UI/Arrow_Right_Normal.png" id="8_kqanp"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_v1fbo"]
 viewport_path = NodePath("HBox/Character/Panel/Margin/VP")
@@ -150,6 +151,5 @@ light_mask = 8
 visibility_layer = 8
 custom_minimum_size = Vector2(24, 24)
 layout_mode = 2
-texture_normal = ExtResource("6")
+texture_normal = ExtResource("8_kqanp")
 stretch_mode = 5
-flip_h = true

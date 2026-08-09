@@ -8,7 +8,7 @@
 script = ExtResource("2")
 _e_entry_scene = ExtResource("3")
 
-[node name="Add" parent="." index="2"]
+[node name="Add" parent="." index="2" unique_id=1878864085]
 visible = false
 
 [editable path="Search"]

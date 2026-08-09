@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bblmb8yfchyxr" path="res://Framework/Scenes/Object/Comps/3D/Display.tscn" id="2_5eagc"]
 [ext_resource type="PackedScene" uid="uid://dsp0njc065uev" path="res://Framework/Scenes/Object/Comps/3D/Collision_Shape.tscn" id="4_l7712"]
 [ext_resource type="PackedScene" uid="uid://fnej1f64wfc2" path="res://Framework/Scenes/Object/Comps/3D/Nav_Obstacle.tscn" id="5_oiog1"]
-[ext_resource type="PackedScene" uid="uid://b1q143fixhaj5" path="res://Framework/Scenes/Object/Comps/Anims.tscn" id="5_qyva0"]
+[ext_resource type="PackedScene" uid="uid://b1q143fixhaj5" path="res://Framework/Scenes/Object/Comps/Anims_Player.tscn" id="5_qyva0"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2joe0"]
 radius = 0.7

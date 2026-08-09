@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dsp0njc065uev" path="res://Framework/Scenes/Object/Comps/3D/Collision_Shape.tscn" id="3_pjeth"]
 [ext_resource type="PackedScene" uid="uid://cfdwl620axohy" path="res://Framework/Scenes/Object/Comps/3D/Audio.tscn" id="4_fex1m"]
 [ext_resource type="PackedScene" uid="uid://dllj5lbxwqy17" path="res://Framework/Scenes/Pausable_Audio/3D/Pausable_Audio.tscn" id="6_11gfe"]
-[ext_resource type="PackedScene" uid="uid://b1q143fixhaj5" path="res://Framework/Scenes/Object/Comps/Anims.tscn" id="6_cxm8x"]
+[ext_resource type="PackedScene" uid="uid://b1q143fixhaj5" path="res://Framework/Scenes/Object/Comps/Anims_Player.tscn" id="6_cxm8x"]
 [ext_resource type="PackedScene" uid="uid://fnej1f64wfc2" path="res://Framework/Scenes/Object/Comps/3D/Nav_Obstacle.tscn" id="8_mw8mp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wg8rh"]

@@ -29,13 +29,14 @@ shape = SubResource("BoxShape3D_0m2wt")
 
 [node name="Interactions" parent="." unique_id=1779800828 instance=ExtResource("4_w1f6o")]
 
-[node name="1" parent="Interactions" index="0"]
+[node name="1" parent="Interactions" index="0" unique_id=1097719813]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.375, -0.3)
+_e_dir_names = Array[StringName]([&"Up"])
 _e_popup_pos = Vector3(0, 1.9, 0.01)
 _e_speech_bubble_pos = Vector3(0, 3.3, 0.01)
 _e_dialogue_args = Array[StringName]([&"Gem_Pool_1_1"])
 
-[node name="Collision" parent="Interactions/1" index="0"]
+[node name="Collision" parent="Interactions/1" index="0" unique_id=1431980935]
 shape = SubResource("BoxShape3D_yx8bk")
 
 [node name="Popup" parent="." unique_id=1979664584 instance=ExtResource("5_mul2r")]

@@ -63,13 +63,13 @@ func _process_command() -> void:
 
 func _jump_object_to_pos() -> void:
 	if !_a_loads_data:
-		var dir: StringName
+		var dir_vec: Variant
 		if _a_keep_dir:
-			dir = _a_object.comph().call_comp("Movement", &"get_dir")
+			dir_vec = _a_object.comph().call_comp("Movement", &"get_dir_vec")
 		else:
-			var start_pos: Variant = _a_object.get_global_position()
-			dir = Global.get_dir_to_pos(start_pos, _a_pos)
-		_a_object.comph().call_comp("Movement", &"set_dir", [dir])
+			var from: Variant = _a_object.get_global_position()
+			dir_vec = _a_pos - from
+		_a_object.comph().call_comp("Movement", &"set_dir_vec", [dir_vec])
 		_a_object.comph().call_comp("Movement/Jump", &"jump")
 	
 	_tween_object_to_pos(0.5)

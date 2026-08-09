@@ -15,7 +15,7 @@ custom_minimum_size = Vector2(300, 0)
 
 [node name="Object" parent="Window/Contents/Margin/HBox/Right/Options/VBox" parent_id_path=PackedInt32Array(213120298) index="0" unique_id=2124627041]
 _e_needed_comps = Array[String](["Reference", "Movement", "States"])
-_e_allowed_classes = Array[String](["Node3D"])
+_e_allowed_classes = Array[StringName]([&"Node3D"])
 
 [node name="State" parent="Window/Contents/Margin/HBox/Right/Options/VBox" parent_id_path=PackedInt32Array(213120298) index="1" unique_id=1027914208 instance=ExtResource("2_b1kch")]
 layout_mode = 2

@@ -41,8 +41,8 @@ func _handle_interactions_press_key() -> void:
 			continue
 		
 		var area_pos: Variant = area.get_global_position()
-		var dir: StringName = Global.get_dir_to_pos(area_pos, entity_pos)
-		body.comph().call_comp("Interactions", &"interaction_update", [dir])
+		var dir_vec: Variant = entity_pos - area_pos
+		body.comph().call_comp("Interactions", &"interaction_update", [dir_vec])
 		
 		var distance: float = entity_pos.distance_to(area_pos)
 		if best_area == null:
@@ -68,33 +68,34 @@ func _can_interact_with(p_area: Node, p_body: Node) -> bool:
 		if in_cutscene || disabled_by_cutscene:
 			return false
 	
-	var dirs: Array[StringName] = p_area.get_dirs().duplicate()
-	var entity_dir: StringName = _a_entity_comph.call_comp("Movement", &"get_dir")
+	var dir_names: Array[StringName] = p_area.get_dir_names().duplicate()
+	var entity_dir_name: StringName = _a_entity_comph.call_comp("Movement", &"get_dir_name")
 	
 	var needs_look_at: bool = p_body.comph().call_comp("Interactions", &"get_needs_look_at")
 	if needs_look_at:
 		var entity_pos: Variant = _a_entity_comph.call_comp("Interactions", &"get_default_interaction_pos")
 		var area_pos: Variant = p_area.get_global_position()
-		var face_dir = Global.get_dir_to_pos(entity_pos, area_pos)
-		if entity_dir != face_dir:
+		var face_dir_vec: Variant = area_pos - entity_pos
+		var face_dir_name: StringName = Global.get_dir_vec_name(face_dir_vec)
+		if entity_dir_name != face_dir_name:
 			return false
 	
 	if p_area.get_use_dir():
-		var body_dir: StringName = p_body.comph().call_comp("Movement", &"get_dir")
-		var body_rotation_deg: float = Global.get_dir_rotation_deg(body_dir).y
-		for i: int in dirs.size():
-			var dir: StringName = dirs[i]
-			var rotated_dir: StringName = Global.get_dir_rotated(dir, -body_rotation_deg)
-			dirs[i] = rotated_dir
+		var body_dir_vec: Variant = p_body.comph().call_comp("Movement", &"get_dir_vec")
+		var body_rotation_deg: float = Global.get_dir_vec_rotation_deg(body_dir_vec)
+		for i: int in dir_names.size():
+			var dir_name: StringName = dir_names[i]
+			var dir_name_rotated: StringName = Global.get_dir_name_rotated(dir_name, -body_rotation_deg)
+			dir_names[i] = dir_name_rotated
 	
 	if p_area.get_use_transform():
 		var body_rotation_deg: float = p_body.get_global_rotation_degrees().y
-		for i: int in dirs.size():
-			var dir: StringName = dirs[i]
-			var rotated_dir: StringName = Global.get_dir_rotated(dir, -body_rotation_deg)
-			dirs[i] = rotated_dir
+		for i: int in dir_names.size():
+			var dir_name: StringName = dir_names[i]
+			var dir_name_rotated: StringName = Global.get_dir_name_rotated(dir_name, -body_rotation_deg)
+			dir_names[i] = dir_name_rotated
 	
-	if !dirs.has(entity_dir):
+	if !dir_names.has(entity_dir_name):
 		return false
 	
 	return true
@@ -103,8 +104,8 @@ func _set_interaction(p_body: Node, p_area: Node) -> void:
 	if is_instance_valid(_a_body):
 		_a_body.comph().call_comp("Interactions", &"interaction_deactivate", [_a_area])
 	if is_instance_valid(p_body):
-		var entity_dir: StringName = _a_entity_comph.call_comp("Movement", &"get_dir")
-		p_body.comph().call_comp("Interactions", &"interaction_activate", [p_area, entity_dir])
+		var entity_dir_vec: Variant = _a_entity_comph.call_comp("Movement", &"get_dir_vec")
+		p_body.comph().call_comp("Interactions", &"interaction_activate", [p_area, entity_dir_vec])
 	
 	_a_body = p_body
 	_a_area = p_area

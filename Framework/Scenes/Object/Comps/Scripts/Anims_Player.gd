@@ -5,6 +5,7 @@ signal anim_seeked(p_seconds: float, p_update: bool)
 signal anim_stopped(p_reset: bool)
 signal anim_played(p_name: StringName)
 
+@export var _e_use_dir_name: bool = false
 @export var _e_seek_on_load: bool = true
 
 var _a_entity_comph: FWCompHandler
@@ -17,30 +18,19 @@ func update_anim() -> void:
 	if !_a_entity_comph.has_comp("States"):
 		return
 	
-	var state_tmp: StringName = _a_entity_comph.call_comp("States", &"get_state_tmp")
-	var dir: StringName = &""
-	if _a_entity_comph.has_comp("Movement"):
-		dir = _a_entity_comph.call_comp("Movement", &"get_dir")
-		
-		if _a_entity_comph.has_comp("Display"):
-			var display_comp: Node = _a_entity_comph.get_comp("Display")
-			var billboard: bool = display_comp.get_billboard()
-			if billboard:
-				var rotation_degrees: Variant = display_comp.get_global_rotation_degrees()
-				dir = Global.get_dir_rotated(dir, rotation_degrees.y)
+	var anim_name: StringName = _a_entity_comph.call_comp("States", &"get_state_tmp")
+	if _e_use_dir_name:
+		var dir_name: StringName = _get_dir_name()
+		if dir_name != &"":
+			anim_name = "%s_%s" % [anim_name, dir_name]
 	
-	if dir == &"":
-		play_anim(state_tmp)
-	else:
-		var anim_name: StringName = "%s_%s" % [state_tmp, dir]
-		play_anim(anim_name)
+	play_anim(anim_name)
 
 func play_anim(p_name: StringName, p_speed: float = 1.0, p_backwards: bool = false) -> void:
 	if p_backwards:
 		play(p_name, -1, -p_speed, true)
 	else:
 		play(p_name, -1, p_speed)
-	
 	anim_played.emit(p_name)
 
 func seek_anim(p_seconds: float, p_update: bool = false) -> void:
@@ -50,6 +40,20 @@ func seek_anim(p_seconds: float, p_update: bool = false) -> void:
 func stop_anim(p_keep_state: bool = false) -> void:
 	stop(p_keep_state)
 	anim_stopped.emit(p_keep_state)
+
+func _get_dir_name() -> StringName:
+	var dir_name: StringName = &""
+	if _a_entity_comph.has_comp("Movement"):
+		var dir_vec: Variant = _a_entity_comph.call_comp("Movement", &"get_dir_vec")
+		if _a_entity_comph.has_comp("Display"):
+			var display_comp: Node = _a_entity_comph.get_comp("Display")
+			var billboard: bool = display_comp.get_billboard()
+			if billboard:
+				var rotation_degrees: Variant = display_comp.get_global_rotation_degrees()
+				dir_vec = Global.get_dir_vec_rotated(dir_vec, rotation_degrees.y)
+		dir_name = Global.get_dir_vec_name(dir_vec)
+	
+	return dir_name
 
 func get_save_data() -> Dictionary:
 	var data: Dictionary = {}

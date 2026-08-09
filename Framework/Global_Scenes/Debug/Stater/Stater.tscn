@@ -31,7 +31,6 @@ _e_key = &"Stater"
 custom_minimum_size = Vector2(200, 0)
 _e_types = Array[StringName]([&"General", &"One_Time"])
 _e_default_value = {}
-_e_delete_loc_id = &""
 
 [node name="VSep" type="VSeparator" parent="VBox/HBox" parent_id_path=PackedInt32Array(1093986736) index="1" unique_id=2028553045]
 light_mask = 8

@@ -162,13 +162,16 @@ func _play_BGM() -> void:
 func _play_BGS() -> void:
 	var audio_manager_si: Audio_Manager = Global.get_singleton(self, "Audio_Manager")
 	var players: Array[AudioStreamPlayer] = []
-	for BGS: FWAudioPlayback in _e_BGS:
+	var size: int = _e_BGS.size()
+	players.resize(size)
+	for i: int in size:
+		var BGS: FWAudioPlayback = _e_BGS[i]
 		var stream: AudioStream = BGS.get_stream()
 		var volume: float = BGS.get_volume()
 		var pitch: float = BGS.get_pitch()
 		var from: float = BGS.get_from()
 		var player: AudioStreamPlayer = audio_manager_si.replace_bgs(stream, volume, pitch, from)
-		players.push_back(player)
+		players[i] = player
 	audio_manager_si.flatten_bgs(players)
 
 func _instantiate_party_members() -> void:
@@ -302,18 +305,23 @@ func _update_turn() -> void:
 	_a_instance = _a_characters[key]
 
 func _update_order() -> void:
-	_a_order.clear()
+	var keys: Array[StringName] = _a_characters_alive.keys()
+	var size: int = keys.size()
 	var order_args: Array = []
-	for key: StringName in _a_characters_alive:
+	_a_order.resize(size)
+	order_args.resize(size)
+	for i: int in size:
+		var key: StringName = keys[i]
 		var instance: SVCharacter = _a_characters_alive[key]
 		var SPEED: int = instance.comph().call_comp("Stats", &"get_curr_stat", [&"SPEED"])
 		instance.set_turn_completed(false)
-		order_args.push_back([SPEED, key])
+		order_args[i] = [SPEED, key]
 	order_args.sort_custom(Global.sort_high_nested)
 	
-	for args: Array in order_args:
+	for i: int in size:
+		var args: Array = order_args[i]
 		var key: StringName = args[1]
-		_a_order.push_back(key)
+		_a_order[i] = key
 
 func _erase_from_order(p_key: StringName) -> void:
 	_a_order.erase(p_key)

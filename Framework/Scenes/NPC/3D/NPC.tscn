@@ -24,10 +24,14 @@
 [ext_resource type="PackedScene" uid="uid://de2jy2ixhp2mw" path="res://Framework/Scenes/Object/Comps/Save.tscn" id="22_qvmyy"]
 [ext_resource type="PackedScene" uid="uid://boh1rwcj5rgwf" path="res://Framework/Scenes/Object/Comps/States.tscn" id="23_vhqr6"]
 [ext_resource type="PackedScene" uid="uid://du0jobeb0veao" path="res://Framework/Scenes/Object/Comps/Stater.tscn" id="24_8ilb6"]
-[ext_resource type="PackedScene" uid="uid://b1q143fixhaj5" path="res://Framework/Scenes/Object/Comps/Anims.tscn" id="25_58agt"]
+[ext_resource type="PackedScene" uid="uid://b1q143fixhaj5" path="res://Framework/Scenes/Object/Comps/Anims_Player.tscn" id="25_58agt"]
+[ext_resource type="Animation" uid="uid://437dle8ydvf8" path="res://Framework/Scenes/NPC/Anims/Global/Fall_Down.tres" id="26_lvsao"]
 [ext_resource type="Animation" uid="uid://t1d0xnt5g3wr" path="res://Framework/Scenes/NPC/Anims/Global/Idle_Down.tres" id="26_yfili"]
 [ext_resource type="Animation" uid="uid://dhkgoyij1x6rk" path="res://Framework/Scenes/NPC/Anims/Global/Idle_Left.tres" id="27_wgk2r"]
+[ext_resource type="Animation" uid="uid://crx4h5ltxjq0a" path="res://Framework/Scenes/NPC/Anims/Global/Fall_Left.tres" id="27_wr71o"]
+[ext_resource type="Animation" uid="uid://cbq27x7uw6hsr" path="res://Framework/Scenes/NPC/Anims/Global/Fall_Right.tres" id="28_6hlmi"]
 [ext_resource type="Animation" uid="uid://c3foxhmlybn11" path="res://Framework/Scenes/NPC/Anims/Global/Idle_Right.tres" id="28_kbudq"]
+[ext_resource type="Animation" uid="uid://yc776vn38u75" path="res://Framework/Scenes/NPC/Anims/Global/Fall_Up.tres" id="29_3o6pi"]
 [ext_resource type="Animation" uid="uid://c8q8sqkqu8wo6" path="res://Framework/Scenes/NPC/Anims/Global/Idle_Up.tres" id="29_yvvvn"]
 [ext_resource type="Animation" uid="uid://c716o5kooeclg" path="res://Framework/Scenes/NPC/Anims/Global/Jump_Down.tres" id="30_k1hix"]
 [ext_resource type="Animation" uid="uid://dyih225e0mbm8" path="res://Framework/Scenes/NPC/Anims/Global/Jump_Left.tres" id="31_5isxp"]
@@ -53,6 +57,10 @@
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_diesr"]
 _data = {
+&"Fall_Down": ExtResource("26_lvsao"),
+&"Fall_Left": ExtResource("27_wr71o"),
+&"Fall_Right": ExtResource("28_6hlmi"),
+&"Fall_Up": ExtResource("29_3o6pi"),
 &"Idle_Down": ExtResource("26_yfili"),
 &"Idle_Left": ExtResource("27_wgk2r"),
 &"Idle_Right": ExtResource("28_kbudq"),
@@ -112,6 +120,7 @@ _e_speeds = Dictionary[StringName, float]({
 })
 
 [node name="Jump" parent="Movement" unique_id=890223057 instance=ExtResource("10_0jqm3")]
+_e_speed = 10.0
 
 [node name="Gravity" parent="Movement" unique_id=799719492 instance=ExtResource("11_tuggl")]
 
@@ -147,6 +156,7 @@ _e_state = &"Stop"
 
 [node name="Anims" parent="." unique_id=1122559351 instance=ExtResource("25_58agt")]
 libraries/ = SubResource("AnimationLibrary_diesr")
+_e_use_dir_name = true
 
 [node name="Debug" parent="." unique_id=573530566 instance=ExtResource("50_mw3qc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)

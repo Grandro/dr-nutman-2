@@ -28,13 +28,14 @@ texture = ExtResource("2_bs58h")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 shape = SubResource("BoxShape3D_7roa2")
 
-[node name="1" parent="Interactions" index="0"]
+[node name="1" parent="Interactions" parent_id_path=PackedInt32Array(836926504) index="0" unique_id=1097719813]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.25, 3.5)
+_e_dir_names = Array[StringName]([&"Up"])
 
-[node name="Collision" parent="Interactions/1" index="0"]
+[node name="Collision" parent="Interactions/1" index="0" unique_id=1431980935]
 shape = SubResource("BoxShape3D_77ts4")
 
-[node name="Nav_Obstacle" parent="." index="4"]
+[node name="Nav_Obstacle" parent="." index="4" unique_id=275977184]
 height = 6.8
 vertices = PackedVector3Array(3, 0, 3, -3, 0, 3, -3, 0, -3, 3, 0, -3)
 

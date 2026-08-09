@@ -36,7 +36,7 @@ var _a_can_move: int = 0 # 0 = enabled, > 0 = disabled
 var _a_velocity: Vector2 = Vector2.ZERO
 var _a_speed: int = _e_walk_speed
 var _a_state_tmp: StringName = &"Idle"
-var _a_dir: StringName = &"Down"
+var _a_dir_name: StringName = &"Down"
 var _a_popup_offset: Vector2 = Vector2.ZERO
 var _a_path: PackedVector2Array = PackedVector2Array()
 var _a_target = null
@@ -62,7 +62,7 @@ func play_anim(p_name: StringName) -> void:
 	_a_Anims.play(p_name)
 
 func update_anim() -> void:
-	var anim_name: StringName = "%s_%s" % [_a_state_tmp, _a_dir]
+	var anim_name: StringName = "%s_%s" % [_a_state_tmp, _a_dir_name]
 	play_anim(anim_name)
 
 func knockback(p_dir_vec) -> void:
@@ -198,8 +198,8 @@ func set_state_tmp(p_state_tmp: StringName) -> void:
 func set_speed(p_speed: int) -> void:
 	_a_speed = p_speed
 
-func set_dir(p_dir: StringName) -> void:
-	_a_dir = p_dir
+func set_dir_name(p_dir_name: StringName) -> void:
+	_a_dir_name = p_dir_name
 
 func set_popup_offset(p_offset: Vector2) -> void:
 	_a_popup_offset = p_offset

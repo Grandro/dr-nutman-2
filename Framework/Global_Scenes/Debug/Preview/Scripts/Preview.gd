@@ -33,7 +33,7 @@ func open() -> void:
 		var vp_child: Node = _a_vp.get_node(si_name)
 		_copy_singleton_vars(si_name, root_child, vp_child)
 	
-	var instances: Array[Node] = Global.get_objects_vp(_a_vp, ["Operate"])
+	var instances: Array[Node] = Global.get_objects_vp(_a_vp, [&"Operate"])
 	for instance: Node in instances:
 		instance.comph().call_comp("Operate", &"disable")
 	PhysicsServer3D.set_active(true)

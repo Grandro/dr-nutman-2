@@ -72,10 +72,12 @@ func _on_Gen_Path_path_updated() -> void:
 func _on_Path_Points_entry_moved(_p_old_idx: int, _p_new_idx: int) -> void:
 	var nav_mesh_path_points: Array = _a_Path_Points.get_points()
 	var path_points: Array = []
-	for nav_mesh_path_point in nav_mesh_path_points:
+	var size_: int = nav_mesh_path_points.size()
+	path_points.resize(size_)
+	for i: int in size_:
+		var nav_mesh_path_point: Variant = nav_mesh_path_points[i]
 		var path_point: Variant = _a_gen_path.get_path_point(nav_mesh_path_point)
-		path_points.push_back(path_point)
-	
+		path_points[i] = path_point
 	_a_gen_path.set_path_points(path_points)
 
 func _on_Path_Points_entry_select_pressed(p_instance: FWDebugEntryListPointEntry) -> void:

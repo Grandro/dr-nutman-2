@@ -13,10 +13,9 @@ func set_z_value(p_value: float) -> void:
 	_a_Z.set_value(p_value)
 
 func get_value() -> Variant:
-	var x = _a_X.get_value()
-	var y = _a_Y.get_value()
-	var z = _a_Z.get_value()
-	
+	var x: float = _a_X.get_value()
+	var y: float = _a_Y.get_value()
+	var z: float = _a_Z.get_value()
 	return Vector3(x, y, z)
 
 func set_z_max(p_max: float) -> void:

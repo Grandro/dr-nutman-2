@@ -5,4 +5,4 @@
 
 [node name="Set_Move_Route" unique_id=455599231 instance=ExtResource("1_yehct")]
 script = ExtResource("2_2dw7c")
-_e_dim = null
+_e_dim = "2D"

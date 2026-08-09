@@ -49,15 +49,15 @@ func _update_display_main_base_args() -> void:
 		&"Choices":
 			var dialogue_key: String = _get_display_text(menu_data[&"Dialogue"])
 			var part_entry_key: String = _get_display_text(menu_data[&"Part"])
-			text = "%s: " % tr(&"CHOICES")
+			text = "%s: " % tr(&"FW_CHOICES")
 			text += dialogue_key
-			text += ", %s: " % tr(&"DEBUG_PART")
+			text += ", %s: " % tr(&"FW_DEBUG_PART")
 			text += part_entry_key
 		
 		&"Script":
 			var instance_key: String = menu_data[&"Expression"][&"Instance_Key"]
 			var expression: String = menu_data[&"Expression"][&"Expression"]
-			text = "%s: " % tr(&"DEBUG_CUTSCENES_SCRIPT")
+			text = "%s: " % tr(&"FW_DEBUG_CUTSCENES_SCRIPT")
 			text += instance_key
 			text += ": %s" % expression
 	_a_Main.set_base_args(text)

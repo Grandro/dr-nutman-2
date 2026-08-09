@@ -38,7 +38,7 @@ func update_trans() -> void:
 	for i: int in children.size():
 		var child: MainMenuSubMenuOptionsOptionTab = children[i]
 		var key: StringName = child.get_name()
-		var text: String = tr("OPTIONS_%s" % key.to_upper())
+		var text: String = tr("FW_OPTIONS_%s" % key.to_upper())
 		_a_Tabs.set_tab_title(i, text)
 
 func _tutato_explain() -> void:

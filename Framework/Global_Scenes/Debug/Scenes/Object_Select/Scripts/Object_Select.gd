@@ -4,7 +4,7 @@ class_name FWDebugObjectSelect
 const _a_ICON_TEXTURE_PATH: String = "res://Framework/Global_Resources/Sprites/Debug/Classes/%s.png"
 
 @export var _e_needed_comps: Array[String] = ["Reference"]
-@export var _e_allowed_classes: Array[String] = ["Node"]
+@export var _e_allowed_classes: Array[StringName] = [&"Node"]
 
 var _a_vp: Viewport
 
@@ -27,10 +27,10 @@ func update_options() -> void:
 		_a_Value.set_item_metadata(i, key)
 		i += 1
 
-func set_allowed_classes(p_allowed_classes: Array[String]) -> void:
+func set_allowed_classes(p_allowed_classes: Array[StringName]) -> void:
 	_e_allowed_classes = p_allowed_classes
 
-func get_allowed_classes() -> Array[String]:
+func get_allowed_classes() -> Array[StringName]:
 	return _e_allowed_classes
 
 func set_viewport(p_vp: Viewport) -> void:

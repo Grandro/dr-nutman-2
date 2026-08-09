@@ -2,19 +2,12 @@ extends FWObjectCompBehaviorStatesStateBase
 class_name FWObjectCompBehaviorStatesStateMoveBase
 
 @export var _e_move_state: StringName = &"Walk"
-@export var _e_wait_finish: bool = true # Wait until Nav_Agent finished?
-@export var _e_process_time: float = 0.1 # If !wait_finish process this long
 @export var _e_reset_on_finish: bool = true
 @export var _e_min_radius: float = 2.0
 @export var _e_max_radius: float = 5.0
 
-@onready var _a_Process_Time: Timer = get_node("Process_Time")
-
 var _a_nav_agent_comp: FWCompMovementNavAgent3D
 var _a_try: int = 0
-
-func _ready() -> void:
-	_a_Process_Time.timeout.connect(_on_Process_Time_timeout)
 
 func init(p_behavior: FWObjectCompBehaviorBase, p_entity: Node3D, p_entity_comph: FWCompHandler) -> void:
 	super(p_behavior, p_entity, p_entity_comph)
@@ -45,17 +38,16 @@ func process_start() -> void:
 	_a_entity_comph.call_comp("States", &"set_state", [_e_move_state])
 	_a_entity_comph.call_comp("Anims", &"update_anim")
 	
-	if _e_wait_finish:
+	if !_e_use_process_time:
 		_a_nav_agent_comp.path_finished.connect(_on_Nav_Agent_path_finished, CONNECT_ONE_SHOT)
-	else:
-		_a_Process_Time.start(_e_process_time)
+	super()
 	_a_nav_agent_comp.set_path([pos])
 
 func process_end() -> void:
 	if _a_nav_agent_comp.path_finished.is_connected(_on_Nav_Agent_path_finished):
 		_a_nav_agent_comp.path_finished.disconnect(_on_Nav_Agent_path_finished)
 	_a_nav_agent_comp.set_path([])
-	_a_Process_Time.stop()
+	super()
 	_move_to_finished()
 
 func _move_to_finished() -> void:
@@ -105,15 +97,15 @@ func _get_point_rotated(p_from: Vector3, p_to_vec: Vector3, p_min_radius: float,
 	return point
 
 func _get_point_circle(p_from: Vector3, p_min_radius: float, p_max_radius: float) -> Vector3:
-	var point2D: Vector2 = Global.get_rndm_point_circle(p_min_radius, p_max_radius)
-	var point3D: Vector3 = p_from + Vector3(point2D.x, 0.0, point2D.y)
+	var point_2D: Vector2 = Global.get_rndm_point_circle(p_min_radius, p_max_radius)
+	var point_3D: Vector3 = p_from + Vector3(point_2D.x, 0.0, point_2D.y)
 	
-	return point3D
+	return point_3D
 
 func _on_Process_Time_timeout() -> void:
 	_a_nav_agent_comp.set_path([])
 	_move_to_finished()
-	processed.emit()
+	super()
 
 func _on_Nav_Agent_path_finished() -> void:
 	_move_to_finished()

@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://boh1rwcj5rgwf" path="res://Framework/Scenes/Object/Comps/States.tscn" id="6_yn735"]
 [ext_resource type="PackedScene" uid="uid://drpp26gth4snn" path="res://Framework/Scenes/Object/Comps/Reference.tscn" id="7_u3l0g"]
 [ext_resource type="PackedScene" uid="uid://b4dvlhw3jh0go" path="res://Framework/Scenes/Object/Comps/Cutscene.tscn" id="8_4haog"]
-[ext_resource type="PackedScene" uid="uid://b1q143fixhaj5" path="res://Framework/Scenes/Object/Comps/Anims.tscn" id="9_2iivk"]
+[ext_resource type="PackedScene" uid="uid://b1q143fixhaj5" path="res://Framework/Scenes/Object/Comps/Anims_Player.tscn" id="9_2iivk"]
 
 [sub_resource type="Animation" id="Animation_3c0he"]
 resource_name = "Default"
